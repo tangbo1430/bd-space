@@ -18,6 +18,8 @@ const products = defineCollection({
     params: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
     listImageId: z.string(),
     detailImageId: z.string(),
+    /** 已批准真实辅图（public/assets/img/ 名前缀）；缺省=占位。含第三方车辆的图不得配置 */
+    approvedImages: z.array(z.string()).default([]),
     published: z.boolean().default(true),
   }),
 });

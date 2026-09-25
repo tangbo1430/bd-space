@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PhImg from '../../../components/PhImg.astro';
 import ProductArt from '../../../components/ProductArt.astro';
+import { PRODUCT_ASSETS, SPACE_ASSETS } from '../../../lib/assets';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -11,6 +12,10 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 const { Content } = await render(product);
+// 已批准真实辅图（不含第三方车辆）；列表主图/详情主图含车辆继续占位（主管首批决策）
+const approvedImgs = product.data.approvedImages
+  .map((base) => Object.values(PRODUCT_ASSETS).find((a) => a.base === base))
+  .filter((a): a is NonNullable<typeof a> => Boolean(a));
 ---
 
 <BaseLayout
@@ -54,6 +59,20 @@ const { Content } = await render(product);
       </div>
     </div>
 
+    {approvedImgs.length > 0 && (
+      <div style="padding-bottom:60px">
+        <div class="en">Product Gallery</div>
+        <h2 style="margin:12px 0 22px">产品图鉴</h2>
+        <div style="display:grid;gap:26px">
+          {approvedImgs.map((a) => (
+            <div class="imgbox" style="position:relative;min-height:280px;border-radius:6px;overflow:hidden">
+              <PhImg g="factory" tag={`${a.base}（已批准素材）`} img={a} />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
     {product.data.scenes.length > 0 && (
       <div style="padding-bottom:60px">
         <div class="en">Applications</div>
@@ -61,6 +80,14 @@ const { Content } = await render(product);
         <ul style="list-style:none;display:grid;gap:10px;font-size:15px">
           {product.data.scenes.map((s) => <li style="border-bottom:1px solid var(--line);padding:10px 4px">{s}</li>)}
         </ul>
+        {/* 首批批准空间氛围图（60m² 方案 p07–p11，厨房/卫浴/家政/卧室；餐厨已用于首页分屏） */}
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px" class="space-grid">
+          {[SPACE_ASSETS.kitchen, SPACE_ASSETS.bath, SPACE_ASSETS.laundry, SPACE_ASSETS.bedroom].map((a) => (
+            <div class="imgbox" style="position:relative;min-height:260px;border-radius:6px;overflow:hidden">
+              <PhImg g="yard" tag={`${a.base}（已批准素材）`} img={a} />
+            </div>
+          ))}
+        </div>
       </div>
     )}
 

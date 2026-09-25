@@ -23,7 +23,7 @@ function page(path) {
 console.log('== 路由产物 ==');
 const routes = [
   'zh', 'zh/about', 'zh/about/investors', 'zh/about/careers',
-  'zh/products', 'zh/products/slab', 'zh/products/wall', 'zh/products/stair',
+  'zh/products', 'zh/products/slab', 'zh/products/wall', 'zh/products/stair', 'zh/products/bd8', 'zh/products/bd9',
   'zh/cases', 'zh/news', 'zh/qualifications', 'zh/contact', 'zh/privacy', 'zh/cookies', 'en',
 ];
 for (const r of routes) ok(page(r) !== null, `/${r}/ 已生成`);
@@ -145,6 +145,40 @@ ok(home?.includes('>投资者关系</a>') && home?.includes('>人才招聘</a>')
 
 const notFound = existsSync(join(dist, '404.html')) ? readFileSync(join(dist, '404.html'), 'utf8') : '';
 ok(notFound.includes('noindex'), '404 为 noindex');
+
+console.log('== v1.5 首批真实素材 ==');
+const assetsDir = join(dist, 'assets', 'img');
+const distAssets = existsSync(assetsDir) ? readdirSync(assetsDir) : [];
+ok(distAssets.length === 30, `打包素材恰为 30 个批准文件（实际 ${distAssets.length}）`);
+ok(existsSync(join(assetsDir, 'asset-manifest.csv')), 'asset-manifest.csv 已随包');
+ok(existsSync(join(assetsDir, 'home-banner-60m-living-01.webp')) && existsSync(join(assetsDir, 'home-banner-60m-living-01.jpg')), 'Banner1 WebP+JPG 就位');
+ok(existsSync(join(assetsDir, 'home-banner-60m-living-01-m4x5.webp')), 'Banner1 移动 4:5 就位');
+ok(existsSync(join(assetsDir, 'home-banner-60m-dining-02.webp')) && existsSync(join(assetsDir, 'home-banner-60m-dining-02.jpg')), 'Banner2 WebP+JPG 就位');
+for (const s of ['dining', 'kitchen', 'bath', 'laundry', 'bedroom']) {
+  ok(existsSync(join(assetsDir, `space-60m-${s}.webp`)) && existsSync(join(assetsDir, `space-60m-${s}.jpg`)) && existsSync(join(assetsDir, `space-60m-${s}-960w.webp`)), `氛围图 ${s} 三档就位`);
+}
+ok(existsSync(join(assetsDir, 'product-bd8-interior-01.webp')) && existsSync(join(assetsDir, 'product-bd8-interior-01.jpg')), 'BD8 室内辅图就位');
+ok(existsSync(join(assetsDir, 'product-bd9-floorplan.webp')) && existsSync(join(assetsDir, 'product-bd9-floorplan.jpg')), 'BD9 户型图就位');
+/* 含第三方车辆/未批准素材不得打包、不得引用 */
+for (const banned of ['product-bd8-hero', 'product-bd8-card', 'product-bd9-hero', 'product-bd9-card']) {
+  ok(!distAssets.some((f) => f.startsWith(banned)), `未打包含车辆素材 ${banned}`);
+}
+const allHtml = readdirSync(dist, { recursive: true }).filter((f) => String(f).endsWith('.html')).map((f) => readFileSync(join(dist, String(f)), 'utf8')).join('\n');
+ok(!allHtml.includes('product-bd8-hero') && !allHtml.includes('product-bd8-card') && !allHtml.includes('product-bd9-hero') && !allHtml.includes('product-bd9-card'), '页面未引用含车辆的 BD8/BD9 hero/card');
+ok(!allHtml.includes('商业计划') && !allHtml.includes('business-plan'), '未打包商业计划素材');
+ok(home?.includes('<picture') && home?.includes('type="image/webp"'), 'Banner 使用 <picture> WebP 优先');
+ok(home?.includes('home-banner-60m-living-01.jpg'), 'Banner1 JPG 回退引用');
+ok(/media="\(max-width: ?767px\)"/.test(home ?? ''), 'Banner 移动 4:5 媒体查询');
+ok(home?.includes('fetchpriority="high"'), '首屏 Banner fetchpriority=high 预加载');
+ok(home?.includes('width="1920" height="823"'), 'Banner 明确宽高（防 CLS）');
+ok(home?.includes('半打空间 60㎡'), 'Banner/氛围图准确中文 alt');
+ok(home?.includes('onerror='), '图片失败回退降级钩子存在');
+ok(home?.includes('loading="lazy"'), '非首帧/氛围图懒加载');
+const bd8 = page('zh/products/bd8');
+ok(bd8?.includes('product-bd8-interior-01'), 'BD8 详情含室内辅图');
+ok(bd8 !== null && !bd8.includes('product-bd8-hero'), 'BD8 详情无含车辆主图');
+const bd9 = page('zh/products/bd9');
+ok(bd9?.includes('product-bd9-floorplan'), 'BD9 详情含户型图辅图');
 
 if (failures > 0) {
   console.error(`\n${failures} 项验证失败`);

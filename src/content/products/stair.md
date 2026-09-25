@@ -1,7 +1,7 @@
----
+﻿---
 name: 预制楼梯
-enTag: 03 / Stair
-order: 3
+enTag: 05 / Stair
+order: 5
 tagline: 【待确认】现场即吊即装。
 description: 【待确认】产品简介。当前为占位文案，待客户提供经审核的产品介绍后替换。产品清单以 PRD §5 为准，名称待客户确认。
 scenes:

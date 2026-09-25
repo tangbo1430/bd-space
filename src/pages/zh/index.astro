@@ -5,6 +5,7 @@ import PhImg from '../../components/PhImg.astro';
 import ConsultForm from '../../components/ConsultForm.astro';
 import ProductArt from '../../components/ProductArt.astro';
 import { site, PLACEHOLDER } from '../../lib/site';
+import { BANNER_ASSETS, SPACE_ASSETS } from '../../lib/assets';
 import { getCollection } from 'astro:content';
 
 const products = (await getCollection('products', ({ data }) => data.published))
@@ -37,8 +38,21 @@ const quals = [
   <section class="hero" data-carousel role="region" aria-roledescription="carousel" aria-label="首页横幅">
     <p class="sr-only" data-banner-live aria-live="polite" style="position:absolute;left:-9999px">第 1 张，共 3 张</p>
     <div class="slide on" data-slide aria-roledescription="slide" aria-label="第 1 张，共 3 张">
+      {/* 首批批准素材：60m² 客厅场景（已裁除第三方车辆）；桌面 21:9 / 移动 4:5，WebP 优先 + JPG 回退；加载失败回退原线稿占位 */}
       <div class="ph ph-1">
-        <svg width="900" height="520" viewBox="0 0 900 520" fill="none" style="opacity:.55" aria-hidden="true">
+        <picture class="ph-pic">
+          <source media="(max-width: 767px)" type="image/webp" srcset={`/assets/img/${BANNER_ASSETS.living.base}-m4x5.webp`} />
+          <source media="(max-width: 767px)" srcset={`/assets/img/${BANNER_ASSETS.living.base}-m4x5.jpg`} />
+          <source type="image/webp" srcset={`/assets/img/${BANNER_ASSETS.living.base}.webp`} />
+          <img
+            src={`/assets/img/${BANNER_ASSETS.living.base}.jpg`}
+            width="1920" height="823"
+            alt={BANNER_ASSETS.living.alt}
+            loading="eager" fetchpriority="high" decoding="async"
+            onerror="this.closest('.ph').classList.add('ph-fallback');this.closest('picture').remove()"
+          />
+        </picture>
+        <svg class="ph-art" width="900" height="520" viewBox="0 0 900 520" fill="none" style="opacity:.55" aria-hidden="true">
           <g stroke="rgba(255,255,255,.55)" stroke-width="1">
             <path d="M180 400 L450 300 L720 400 L450 500 Z" />
             <path d="M250 380 L450 305 L650 380 L650 250 L450 175 L250 250 Z" />
@@ -68,7 +82,22 @@ const quals = [
       </div>
     </div>
     <div class="slide" data-slide aria-roledescription="slide" aria-label="第 2 张，共 3 张">
-      <div class="ph ph-2"><span class="tag">IMG-HERO-2 · 2560×1440 · 构件堆场/吊装（占位）</span></div>
+      {/* 首批批准素材：60m² 餐厨场景；懒加载（非首帧） */}
+      <div class="ph ph-2">
+        <picture class="ph-pic">
+          <source media="(max-width: 767px)" type="image/webp" srcset={`/assets/img/${BANNER_ASSETS.dining.base}-m4x5.webp`} />
+          <source media="(max-width: 767px)" srcset={`/assets/img/${BANNER_ASSETS.dining.base}-m4x5.jpg`} />
+          <source type="image/webp" srcset={`/assets/img/${BANNER_ASSETS.dining.base}.webp`} />
+          <img
+            src={`/assets/img/${BANNER_ASSETS.dining.base}.jpg`}
+            width="1920" height="823"
+            alt={BANNER_ASSETS.dining.alt}
+            loading="lazy" decoding="async"
+            onerror="this.closest('.ph').classList.add('ph-fallback');this.closest('picture').remove()"
+          />
+        </picture>
+        <span class="tag">IMG-HERO-2 · 2560×1440 · 构件堆场/吊装（占位）</span>
+      </div>
       <div class="hero-copy">
         <div class="en" style="color:rgba(255,255,255,.6)">Factory Capacity</div>
         <h1>从产线，到工地</h1>
@@ -111,7 +140,7 @@ const quals = [
   <section class="sec" style="padding-left:0;padding-right:0" aria-label="关于半打">
     <div class="split">
       <div class="imgbox rv">
-        <PhImg g="factory" tag="IMG-ABOUT-1 · 2000×1300 · 厂房/产线（占位）" />
+        <PhImg g="factory" tag="IMG-ABOUT-1 · 2000×1300 · 厂房/产线（占位）" img={SPACE_ASSETS.dining} />
       </div>
       <div class="txt rv">
         <div class="en">About Banda</div>

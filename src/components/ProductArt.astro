@@ -34,6 +34,14 @@ const { slug, variant = 'icon' } = Astro.props;
   </svg>
 )}
 
+{variant === 'icon' && !['slab', 'wall', 'stair'].includes(slug) && (
+  /* 通用产品小图占位（BD8/BD9 等未配专属线稿时） */
+  <svg width="120" height="80" viewBox="0 0 120 80" fill="none" aria-hidden="true">
+    <g stroke="#5a6660"><path d="M22 62 L22 34 L60 16 L98 34 L98 62" /><path d="M22 62 L98 62" /><path d="M48 62 L48 42 L72 42 L72 62" /></g>
+    <circle cx="60" cy="16" r="2.5" fill="#1FA87A" />
+  </svg>
+)}
+
 {variant === 'exploded' && slug === 'slab' && (
   <svg viewBox="0 0 400 240" width="100%" fill="none" role="img" aria-label="叠合板原创分解线稿（占位）" data-explode>
     <g stroke="#8A8F8C">
@@ -58,6 +66,20 @@ const { slug, variant = 'icon' } = Astro.props;
     <text x="200" y="232" text-anchor="middle" fill="#8A8F8C" font-size="10" letter-spacing="2" font-family="Arial">原创分解线稿占位 · 滚动驱动部件外扩 0→24px</text>
   </svg>
 )}
+{variant === 'exploded' && !['slab', 'wall', 'stair'].includes(slug) && (
+  /* 未配原创分解线稿的产品（BD8/BD9 空间产品）：通用占位，不留空白 */
+  <svg viewBox="0 0 400 240" width="100%" fill="none" role="img" aria-label="产品结构分解示意（原创线稿占位）" data-explode>
+    <g stroke="#8A8F8C">
+      <path data-part="1" d="M90 180 L90 110 L200 74 L310 110 L310 180" />
+      <path data-part="0" d="M90 180 L200 144 L310 180" />
+      <path data-part="-1" d="M90 180 L90 196 L200 232 L310 196 L310 180" />
+    </g>
+    <g stroke="#1FA87A" stroke-dasharray="3 4"><path d="M200 144 L200 74" /></g>
+    <g fill="#1FA87A"><circle cx="200" cy="74" r="3.5" /><circle cx="90" cy="180" r="3.5" /><circle cx="310" cy="180" r="3.5" /></g>
+    <text x="200" y="232" text-anchor="middle" fill="#8A8F8C" font-size="10" letter-spacing="2" font-family="Arial">原创分解线稿占位 · 待产品图补绘</text>
+  </svg>
+)}
+
 {variant === 'exploded' && slug === 'stair' && (
   <svg viewBox="0 0 400 240" width="100%" fill="none" role="img" aria-label="预制楼梯原创分解线稿（占位）" data-explode>
     <g stroke="#8A8F8C">

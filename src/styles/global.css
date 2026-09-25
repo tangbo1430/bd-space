@@ -191,6 +191,11 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
 .ph-1 { background: linear-gradient(160deg, #3c4a45 0%, #5a6a62 45%, #2c3632 100%); }
 .ph-2 { background: linear-gradient(200deg, #4a5550 0%, #6d7a72 50%, #38423d 100%); }
 .ph-3 { background: linear-gradient(120deg, #374440 0%, #54605a 55%, #2a332f 100%); }
+/* 真实 Banner 素材（v1.5 首批）：picture 铺满帧，覆盖渐变底；加载失败 .ph-fallback 回退线稿/标注 */
+.ph .ph-pic, .ph .ph-pic img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.ph .ph-pic img { object-fit: cover; object-position: center; }
+.ph .ph-pic ~ .ph-art, .ph .ph-pic ~ .tag { visibility: hidden; }
+.ph.ph-fallback .ph-art, .ph.ph-fallback .tag { visibility: visible; }
 .ph::after {
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(120% 90% at 50% 100%, transparent 55%, rgba(0, 0, 0, .42) 100%);
@@ -237,6 +242,11 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
   padding: 3px 10px; border-radius: 999px;
 }
 .img-ph.on-dark i { color: rgba(255, 255, 255, .75); background: rgba(0, 0, 0, .3); }
+/* 真实素材态：图片铺满容器（object-fit 裁剪对齐原占位版式），隐藏占位标注；加载失败移除 .has-img 即回退 */
+.img-ph.has-img { display: block; }
+.img-ph.has-img > i { display: none; }
+.img-ph picture, .img-ph picture img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.img-ph picture img { object-fit: cover; object-position: center; }
 .g-factory { background: linear-gradient(150deg, #cfd4cf 0%, #e6e8e2 50%, #b9c2bb 100%); }
 .g-yard { background: linear-gradient(210deg, #d8d5cc 0%, #efede6 55%, #c6c9bf 100%); }
 .g-site { background: linear-gradient(120deg, #c9cfc9 0%, #e9eae2 60%, #b3bdb5 100%); }
@@ -707,7 +717,7 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   .hero-copy .btn { max-width: 320px; justify-content: center; }
   .dots { left: 22px; }
   .scroll-hint { display: none; }
-  .split, .dark-grid, .cta-grid, .cases, .pd-body, .plist-item, .news-grid { grid-template-columns: 1fr; }
+  .split, .dark-grid, .cta-grid, .cases, .pd-body, .plist-item, .news-grid, .space-grid { grid-template-columns: 1fr; }
   .plist-item.rev .p-img { order: 0; }
   .p-txt { padding: 36px 24px; }
   .split .txt { padding: 40px 20px 0; }

@@ -1,7 +1,7 @@
----
+﻿---
 name: 预应力叠合板
 enTag: 01 / Slab
-order: 1
+order: 3
 tagline: 【待确认】楼盖系统的标准化单元。
 description: 【待确认】产品简介。当前为占位文案，待客户提供经审核的产品介绍后替换。产品清单以 PRD §5 为准，名称待客户确认。
 scenes:

@@ -1,20 +1,58 @@
 ---
 /**
- * 占位图：几何渐变底 + 素材 ID 标注（BR-15 开发阶段正式状态）。
- * 正式素材到位后整图替换本组件输出，不得改变布局。
+ * 图片位：已批准真实素材输出 <picture>（WebP 优先、JPG 回退、srcset/sizes、明确宽高）；
+ * 未提供素材或图片加载失败时回退原有几何渐变占位，不出现破图（BR-15）。
  */
+interface ImgVariant {
+  /** 图片名前缀（/assets/img/ 下，不含扩展名） */
+  base: string;
+  w: number;
+  h: number;
+  /** 移动档宽度（存在 -960w 变体时提供） */
+  mw?: number;
+  mh?: number;
+  alt: string;
+  /** 首屏主图传 false（eager + fetchpriority=high），其余默认懒加载 */
+  lazy?: boolean;
+}
 interface Props {
-  /** 渐变变体 */
+  /** 渐变变体（占位/降级底色） */
   g?: 'factory' | 'yard' | 'site' | 'dark-1' | 'dark-2';
-  /** 素材 ID 标注，如 IMG-HERO-1 · 2560×1440 · 工厂全景（占位） */
+  /** 素材 ID 标注（占位态展示） */
   tag: string;
   onDark?: boolean;
   class?: string;
+  /** 批准素材：提供则输出 <picture>，失败自动回退占位 */
+  img?: ImgVariant;
 }
-const { g = 'factory', tag, onDark = false, class: cls = '' } = Astro.props;
+const { g = 'factory', tag, onDark = false, class: cls = '', img } = Astro.props;
 ---
 
-<div class:list={['img-ph', `g-${g}`, { 'on-dark': onDark }, cls]} role="img" aria-label={`占位图：${tag}`}>
-  <slot />
-  <i>{tag}</i>
-</div>
+{img ? (
+  <div class:list={['img-ph', `g-${g}`, { 'on-dark': onDark }, cls, 'has-img']}>
+    <picture>
+      <source
+        type="image/webp"
+        srcset={img.mw ? `/assets/img/${img.base}-960w.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w` : `/assets/img/${img.base}.webp`}
+        sizes="(max-width: 767px) 100vw, 50vw"
+      />
+      <img
+        src={`/assets/img/${img.base}.jpg`}
+        width={img.w}
+        height={img.h}
+        alt={img.alt}
+        loading={img.lazy === false ? 'eager' : 'lazy'}
+        fetchpriority={img.lazy === false ? 'high' : undefined}
+        decoding="async"
+        onerror="this.closest('.img-ph').classList.remove('has-img');this.closest('picture').remove()"
+      />
+    </picture>
+    {/* 占位标注在 has-img 时隐藏；图片 onerror 移除 has-img 即回退色块+标注 */}
+    <i aria-hidden="true">{tag}</i>
+  </div>
+) : (
+  <div class:list={['img-ph', `g-${g}`, { 'on-dark': onDark }, cls]} role="img" aria-label={`占位图：${tag}`}>
+    <slot />
+    <i>{tag}</i>
+  </div>
+)}
