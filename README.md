@@ -36,7 +36,7 @@ npm run check       # 以上全部串联
 | 变量 | 用途 | 未配置时行为 |
 | --- | --- | --- |
 | `PUBLIC_SITE_URL` | canonical / sitemap / robots 的绝对地址 | 退回 `http://localhost:4321`（仅本地） |
-| `PUBLIC_FORM_ENDPOINT` | 咨询表单提交端点（Web3Forms 兼容） | 表单展示“暂未开通”并禁用提交（BR-16） |
+| `PUBLIC_FORM_ENDPOINT` | 咨询表单提交端点（Web3Forms 兼容，如 `https://api.web3forms.com/submit`） | 与 key 任一缺失即禁用提交并提示（BR-16） |
 | `PUBLIC_FORM_ACCESS_KEY` | 表单服务访问密钥 | 不附加 |
 | `PUBLIC_ANALYTICS_SCRIPT_URL` / `PUBLIC_ANALYTICS_DOMAIN` | Plausible 兼容统计 | 不注入任何统计脚本 |
 

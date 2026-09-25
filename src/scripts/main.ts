@@ -3,7 +3,7 @@
  * 动效降级（UI 规范 §5）：满足其一即进入静态模式——
  *   1) prefers-reduced-motion；2) saveData；3) 低性能启发式（硬件并发 ≤4 且视口 <1280）。
  */
-import { validateInquiry, hasErrors, type InquiryField } from '../lib/form';
+import { validateInquiry, hasErrors, isSubmitSuccess, type InquiryField } from '../lib/form';
 import { track } from '../lib/analytics';
 
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -218,14 +218,9 @@ document.querySelectorAll<HTMLFormElement>('form[data-consult-form]').forEach((f
         headers: { Accept: 'application/json' },
         body: payload,
       });
-      // 仅服务端确认成功才展示成功态（BR-10）
-      let ok = res.ok;
-      if (ok) {
-        try {
-          const json = (await res.json()) as { success?: boolean };
-          if (json && typeof json === 'object' && 'success' in json) ok = json.success === true;
-        } catch { /* 非 JSON 响应以 HTTP 状态为准 */ }
-      }
+      // 失败闭合：仅 HTTP 2xx 且 JSON {success:true} 才展示成功态（BR-10），
+      // 非 JSON / 缺 success / success 非 true 一律进入失败分支并保留输入
+      const ok = await isSubmitSuccess(res);
       if (ok) {
         track('form_submit_success', { source: input.source });
         form.hidden = true;

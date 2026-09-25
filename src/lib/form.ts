@@ -62,3 +62,31 @@ export function validateInquiry(input: InquiryInput): InquiryErrors {
 export function hasErrors(errors: InquiryErrors): boolean {
   return errors.spam || Object.keys(errors.fieldErrors).length > 0;
 }
+
+/**
+ * 表单启用判定：端点与有效 access key 均满足才允许提交（BR-16）。
+ * 仅有端点而无 key 时保持禁用态，不发出无法识别的真实提交。
+ */
+export function isFormEnabled(endpoint: string | undefined | null, accessKey: string | undefined | null): boolean {
+  return Boolean(endpoint?.trim()) && Boolean(accessKey?.trim());
+}
+
+/**
+ * 提交结果判定（失败闭合，BR-10）：
+ * 仅当 HTTP 2xx 且响应为 JSON 且 success === true 才视为服务端确认成功；
+ * 非 JSON 响应、缺少 success 字段或 success 非 true 一律判定失败，由调用方保留输入并提示重试。
+ */
+export async function isSubmitSuccess(res: Response): Promise<boolean> {
+  if (!res.ok) return false;
+  let json: unknown;
+  try {
+    json = await res.json();
+  } catch {
+    return false; // 响应非 JSON：无法确认服务端接收，失败闭合
+  }
+  return (
+    typeof json === 'object' &&
+    json !== null &&
+    (json as { success?: unknown }).success === true
+  );
+}

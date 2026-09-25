@@ -5,13 +5,16 @@
  * 失败保留输入；仅服务端确认成功后展示成功态（BR-10）。
  * 未配置 PUBLIC_FORM_ENDPOINT 时禁用提交并展示提示（BR-16：邮箱未验证前不启用真实提交）。
  */
+import { isFormEnabled } from '../lib/form';
+
 interface Props {
   id?: string;
 }
 const { id = 'consult' } = Astro.props;
 const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
 const accessKey = import.meta.env.PUBLIC_FORM_ACCESS_KEY ?? '';
-const enabled = Boolean(endpoint);
+// 端点与有效 key 均满足才允许提交（BR-16）
+const enabled = isFormEnabled(endpoint, accessKey);
 ---
 
 <div class="form-wrap" data-form-root>
