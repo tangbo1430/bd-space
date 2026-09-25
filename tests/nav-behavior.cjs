@@ -163,7 +163,7 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await p1280.waitForTimeout(250);
   check('AC-47 1280 导航带可打开', await p1280.locator('.has-sub.open').count() === 1 || await (async () => { const el = p1280.locator('.sub-panel'); return await el.evaluate((e) => getComputedStyle(e).visibility === 'visible'); })());
   const gap1280 = await p1280.evaluate(() => getComputedStyle(document.querySelector('.mega-in')).columnGap);
-  check('1280 视口列间距压缩至 48px（M5）', gap1280 === '48px');
+  check('v1.5.3 三列内容区收窄至 960px、列间距 32px', gap1280 === '32px');
   await p1280.screenshot({ path: 'shots/v14-desktop-1280-mega.png', clip: { x: 0, y: 0, width: 1280, height: 300 } });
   await p1280.close();
 

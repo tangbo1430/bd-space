@@ -105,7 +105,7 @@ ok(cardRule.includes('border-top:1px solid var(--line)') && cardRule.includes('b
 ok(!/box-shadow:[^n]/.test(cardRule) && !/border-radius:[^0]/.test(cardRule), '面板无阴影/圆角（AC-46）');
 ok(css.includes('grid-template-columns:repeat(3,1fr)'), '三列 1fr 均布（AC-V2）');
 ok(css.includes('min-height:128px'), '面板高 128px（AC-V1）');
-ok(css.includes('column-gap:80px') && css.includes('column-gap:48px'), '列间距 ≥80px / 1280 视口 48px（M4/M5）');
+ok(css.includes('column-gap:32px'), 'v1.5.3 列间距收窄至 32px');
 ok(/\.mega-ic\{[^}]*width:40px[^}]*height:40px/.test(css), '桌面图标 40×40 视框');
 ok(/\.mega-t b\{[^}]*font-size:17px[^}]*font-weight:400/.test(css) || /\.mega-t b\{[^}]*font-weight:400[^}]*font-size:17px/.test(css), '中文标题 17px/400');
 ok(/\.mega-en\{[^}]*font-size:11px/.test(css) && /\.mega-en\{[^}]*letter-spacing:\.2em/.test(css), '英文标签 11px/大写/字距 .2em');

@@ -434,10 +434,10 @@ html[data-motion=off] .slide { transform: none; }
   display: block; background: #fff; border-top: 1px solid var(--line);
   box-shadow: none; border-radius: 0;
 }
-/* 1280 容器内三列 1fr 均布（恰三项，不虚构栏目，AC-V2）；列间距 ≥80px */
+/* v1.5.3：三列内容区收窄至 960px 容器，消除过宽稀疏感；仍三列 1fr 均布 */
 .mega-in {
-  max-width: 1280px; margin: 0 auto; padding: 0 56px;
-  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 80px;
+  max-width: 960px; margin: 0 auto; padding: 0 40px;
+  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px;
   min-height: 128px;
 }
 /* 列 = 图标 + 中文标题 + 英文小标签；整块 <a> 可点击（触控高 ≥88px） */
@@ -466,9 +466,7 @@ html[data-motion=off] .slide { transform: none; }
 /* v1.5.2：用户确认 Mega Subnav 全场景统一浅色白底（含深色 Hero 页头），移除深色变体 */
 html[data-motion=off] .sub-panel { transition: none; transform: none; }
 @media (prefers-reduced-motion: reduce) { .sub-panel { transition: none; transform: none; } }
-/* 1280–1360 视口：容器 padding 40px、列间距 ≥48px（M4/M5） */
-@media (max-width: 1360px) { .mega-in { padding: 0 40px; column-gap: 48px; } }
-/* 平板/移动 ≤1279：不加载桌面 mega 面板，走抽屉方案（M5） */
+/* ≤1279：不加载桌面 mega 面板，走抽屉方案（M5）；1280–1360 无需再压缩列间距 */
 @media (max-width: 1279px) { .sub-panel { display: none; } }
 
 /* 移动抽屉内关于分组（v1.3：文字链接与展开按钮拆分为两个独立控件，AC-40） */
