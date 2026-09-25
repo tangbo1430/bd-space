@@ -139,6 +139,10 @@ ok((home?.match(/class="p-ic"/g) ?? []).length === 3, '移动抽屉子项含图�
 const careersCur = page('zh/about/careers');
 ok(careersCur?.includes('mega-col cur'), '当前子页 mega 列当前态标记');
 
+console.log('== 页脚导航 ==');
+ok(!home?.includes('└'), '页脚子项平铺展示（无层级符号/缩进）');
+ok(home?.includes('>投资者关系</a>') && home?.includes('>人才招聘</a>'), '页脚子项直链与一级栏目同层');
+
 const notFound = existsSync(join(dist, '404.html')) ? readFileSync(join(dist, '404.html'), 'utf8') : '';
 ok(notFound.includes('noindex'), '404 为 noindex');
 
