@@ -4,7 +4,7 @@
  *  - SEO：/zh/ 页含自引用 canonical 与 zh-CN hreflang；/en/ 为 noindex 且不进入 sitemap；
  *  - 表单：含 honeypot 与来源字段。
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const dist = new URL('../dist', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
@@ -81,6 +81,21 @@ const investors = page('zh/about/investors');
 ok(investors?.includes('股权结构') && investors?.includes('融资历程'), '投资者页分区完整');
 ok(investors?.includes('【待提供】'), '投资者事实字段占位');
 ok(investors !== null && !investors.includes('application/ld+json'), '投资者页无事实型结构化数据（BR-25）');
+
+console.log('== 二级导航样式回归（下拉修复） ==');
+const cssFile = readdirSync(join(dist, '_astro')).find((f) => f.endsWith('.css'));
+ok(Boolean(cssFile), '构建 CSS 产物存在');
+const css = cssFile ? readFileSync(join(dist, '_astro', cssFile), 'utf8') : '';
+// 注：构建期 LightningCSS 会将 ::before 规范化为 :before，断言需兼容两者
+const curBefore = /\.sub-panel a\.cur:{0,2}before\{[^}]*\}/.exec(css)?.[0] ?? '';
+ok(curBefore.length > 0, '当前态竖线规则存在');
+ok(curBefore.includes('left:0'), '竖线 left:0 贴面板内缘（不压文字）');
+ok(curBefore.includes('width:3px'), '竖线宽 3px');
+ok(css.includes('.sub-panel a{display:flex;align-items:center;min-height:40px;padding:0 14px 0 15px'), '紧凑行高 40px 与左内边距 15px（竖线-文字间距 ≥12px）');
+ok(css.includes('min-width:176px'), '面板宽度收紧至 176px');
+ok(css.includes('.sub-trigger .chev svg') && css.includes('rotate(180deg)'), 'chevron 为 12px SVG 且展开旋转');
+ok(!/\.sub-panel a\.cur:{0,2}after/.test(css), '当前态无重复短横线装饰');
+ok(home?.includes('class="chev" aria-hidden="true"><svg'), '触发器 chevron 使用 SVG 而非文本符号');
 
 const notFound = existsSync(join(dist, '404.html')) ? readFileSync(join(dist, '404.html'), 'utf8') : '';
 ok(notFound.includes('noindex'), '404 为 noindex');

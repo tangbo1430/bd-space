@@ -26,7 +26,7 @@ const { current, style, lang, aboutSub = null } = Astro.props;
             data-sub-trigger
             id="about-sub-trigger"
           >
-            {item.label} <span class="chev" aria-hidden="true">▾</span>
+            {item.label} <span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
           <span class="sub-panel" role="menu" aria-label="关于我们子栏目" data-sub-panel>
             {ABOUT_SUB_ITEMS.map((sub) => (
@@ -62,7 +62,7 @@ const { current, style, lang, aboutSub = null } = Astro.props;
     item.key === 'about' ? (
       <div class="p-sub" data-subnav-mobile>
         <button type="button" class="p-sub-btn" aria-expanded="false" data-sub-trigger-mobile>
-          {item.label} <span class="chev" aria-hidden="true">▾</span>
+          {item.label} <span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         </button>
         <div class="p-sub-items">
           {ABOUT_SUB_ITEMS.map((sub) => (

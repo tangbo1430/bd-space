@@ -381,34 +381,38 @@ html[data-motion=off] .slide { transform: none; }
 .hero { touch-action: pan-y; }
 
 /* ============ v1.2 增量：关于我们二级导航 ============ */
-.has-sub { position: relative; display: inline-flex; }
+.has-sub { position: relative; display: inline-flex; align-items: center; }
 .sub-trigger {
   display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
   background: none; border: none; font: inherit; color: inherit;
   opacity: .85; padding: 6px 0;
 }
-.sub-trigger .chev { font-size: 9px; transition: transform .2s; }
-.has-sub.open .sub-trigger .chev { transform: rotate(180deg); }
+/* chevron：12px 内联 SVG，block 对齐基线，展开旋转 180°（v1.2 D3.1） */
+.sub-trigger .chev { display: inline-flex; width: 12px; height: 12px; flex: none; }
+.sub-trigger .chev svg { display: block; width: 12px; height: 12px; transition: transform .2s cubic-bezier(.22, .61, .36, 1); }
+.has-sub.open .sub-trigger .chev svg { transform: rotate(180deg); }
+/* 面板：紧凑导航列表——宽 176px、行高 40px、上下 6px（修复 v0.4 评审缺陷） */
 .sub-panel {
-  position: absolute; top: calc(100% + 14px); left: 50%;
-  transform: translate(-50%, -6px); min-width: 200px;
+  position: absolute; top: calc(100% + 10px); left: 50%;
+  transform: translate(-50%, -6px); min-width: 176px; width: max-content;
   background: #fff; border: 1px solid var(--line); border-radius: 8px;
-  box-shadow: var(--shadow-float); padding: 8px;
+  box-shadow: var(--shadow-float); padding: 6px;
   opacity: 0; visibility: hidden;
   transition: opacity .2s cubic-bezier(.22, .61, .36, 1), transform .2s cubic-bezier(.22, .61, .36, 1);
   z-index: 120;
 }
 .has-sub.open .sub-panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
 .sub-panel a {
-  display: flex; align-items: center; min-height: 48px; padding: 0 16px 0 18px;
-  font-size: 14px; color: var(--ink-body); border-radius: 5px;
+  display: flex; align-items: center; min-height: 40px; padding: 0 14px 0 15px;
+  font-size: 14px; line-height: 1.4; color: var(--ink-body); border-radius: 5px;
   position: relative; white-space: nowrap;
 }
 .sub-panel a:hover { background: var(--accent-tint); }
+/* 当前态唯一标识：左侧 3px 竖线（left:0，与文字 12px 间距，不覆盖文字）+ 字重 + 颜色；移除重复短横线 */
 .sub-panel a.cur { color: var(--accent); font-weight: 500; }
 .sub-panel a.cur::before {
-  content: ""; position: absolute; left: 6px; top: 50%; transform: translateY(-50%);
-  width: 3px; height: 20px; border-radius: 2px; background: var(--accent);
+  content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 18px; border-radius: 2px; background: var(--accent);
 }
 html[data-motion=off] .sub-panel { transition: none; }
 @media (prefers-reduced-motion: reduce) { .sub-panel { transition: none; } }
@@ -420,17 +424,18 @@ html[data-motion=off] .sub-panel { transition: none; }
   background: none; border: none; font: inherit; font-size: 30px; font-weight: 200;
   color: var(--ink-strong); padding: 13px 0; cursor: pointer; min-height: 48px;
 }
-.p-sub-btn .chev { font-size: 14px; transition: transform .2s; }
-.p-sub.open .p-sub-btn .chev { transform: rotate(180deg); }
+.p-sub-btn .chev { display: inline-flex; width: 14px; height: 14px; flex: none; }
+.p-sub-btn .chev svg { display: block; width: 14px; height: 14px; transition: transform .2s cubic-bezier(.22, .61, .36, 1); }
+.p-sub.open .p-sub-btn .chev svg { transform: rotate(180deg); }
 .p-sub-items { max-height: 0; overflow: hidden; transition: max-height .25s cubic-bezier(.22, .61, .36, 1); }
 .p-sub.open .p-sub-items { max-height: 260px; }
 .p-sub-items a {
   display: block; font-size: 22px; font-weight: 200; color: var(--ink-body);
-  padding: 10px 0 10px 20px; position: relative; min-height: 44px;
+  padding: 10px 0 10px 15px; position: relative; min-height: 44px;
 }
 .p-sub-items a.cur { color: var(--accent); font-weight: 400; }
 .p-sub-items a.cur::before {
-  content: ""; position: absolute; left: 6px; top: 50%; transform: translateY(-50%);
+  content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
   width: 3px; height: 18px; background: var(--accent); border-radius: 2px;
 }
 html[data-motion=off] .p-sub-items { transition: none; }
