@@ -29,15 +29,17 @@ const { current, style, lang, aboutSub = null } = Astro.props;
             {item.label} <span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
           <span class="sub-panel" role="menu" aria-label="关于我们子栏目" data-sub-panel>
-            {ABOUT_SUB_ITEMS.map((sub) => (
-              <a
-                role="menuitem"
-                href={sub.href}
-                class:list={[{ cur: sub.key === aboutSub }]}
-                aria-current={sub.key === aboutSub ? 'page' : undefined}
-                data-track="about_sub_click"
-              >{sub.label}</a>
-            ))}
+            <span class="sub-panel-card">
+              {ABOUT_SUB_ITEMS.map((sub) => (
+                <a
+                  role="menuitem"
+                  href={sub.href}
+                  class:list={[{ cur: sub.key === aboutSub }]}
+                  aria-current={sub.key === aboutSub ? 'page' : undefined}
+                  data-track="about_sub_click"
+                >{sub.label}</a>
+              ))}
+            </span>
           </span>
         </span>
       ) : (

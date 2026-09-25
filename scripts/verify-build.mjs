@@ -68,7 +68,8 @@ ok(home?.includes('role="menuitem"'), '二级导航菜单项');
 ok(home?.includes('/zh/about/investors/') && home?.includes('/zh/about/careers/'), '桌面下拉含三子项链接（无脚本可达）');
 
 const about = page('zh/about');
-ok(about?.includes('投资者关系') && about?.includes('人才招聘'), '公司介绍页内置子页入口卡');
+ok(about !== null && !about.includes('about-entry'), '公司介绍页不再含与下拉重复的子页入口块');
+ok(about?.includes('/zh/about/investors/') && about?.includes('/zh/about/careers/'), '子页仍可通过导航/页脚链接到达（无脚本无死链）');
 
 const careers = page('zh/about/careers');
 ok(careers !== null && !careers.includes('mailto:'), '招聘邮箱未配置时 DOM 无 mailto（AC-30）');
@@ -89,10 +90,12 @@ const css = cssFile ? readFileSync(join(dist, '_astro', cssFile), 'utf8') : '';
 // 注：构建期 LightningCSS 会将 ::before 规范化为 :before，断言需兼容两者
 const curBefore = /\.sub-panel a\.cur:{0,2}before\{[^}]*\}/.exec(css)?.[0] ?? '';
 ok(curBefore.length > 0, '当前态竖线规则存在');
-ok(curBefore.includes('left:0'), '竖线 left:0 贴面板内缘（不压文字）');
+ok(curBefore.includes('left:6px'), '竖线 left:6px 内缩（与文字间距充足，不压字）');
 ok(curBefore.includes('width:3px'), '竖线宽 3px');
-ok(css.includes('.sub-panel a{display:flex;align-items:center;min-height:40px;padding:0 14px 0 15px'), '紧凑行高 40px 与左内边距 15px（竖线-文字间距 ≥12px）');
-ok(css.includes('min-width:176px'), '面板宽度收紧至 176px');
+ok(css.includes('.sub-panel a{display:flex;align-items:center;min-height:42px;padding:0 16px 0 17px'), '行高 42px 与左内边距 17px');
+ok(css.includes('.sub-panel{position:absolute;top:100%'), '面板紧贴触发器（top:100% 无间隙，hover 不中断）');
+ok(css.includes('.sub-panel-card'), '面板卡片本体样式存在');
+ok(css.includes('min-width:180px'), '面板宽度 180px');
 ok(css.includes('.sub-trigger .chev svg') && css.includes('rotate(180deg)'), 'chevron 为 12px SVG 且展开旋转');
 ok(!/\.sub-panel a\.cur:{0,2}after/.test(css), '当前态无重复短横线装饰');
 ok(css.includes('.gnb nav>a.cur:before') || css.includes('.gnb nav > a.cur::after') || css.includes('.gnb nav>a.cur::after') || /\.gnb nav>a\.cur:{0,1}:[a-z]+/.test(css), '一级当前页短线仅作用于顶级项（不下渗子项）');

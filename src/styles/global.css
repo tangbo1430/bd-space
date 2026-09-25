@@ -383,7 +383,7 @@ html[data-motion=off] .slide { transform: none; }
 .hero { touch-action: pan-y; }
 
 /* ============ v1.2 增量：关于我们二级导航 ============ */
-.has-sub { position: relative; display: inline-flex; align-items: center; }
+.has-sub { position: relative; display: inline-flex; align-items: center; height: 100%; }
 .sub-trigger {
   display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
   background: none; border: none; font: inherit; color: inherit;
@@ -391,30 +391,36 @@ html[data-motion=off] .slide { transform: none; }
 }
 /* chevron：12px 内联 SVG，block 对齐基线，展开旋转 180°（v1.2 D3.1） */
 .sub-trigger .chev { display: inline-flex; width: 12px; height: 12px; flex: none; }
-.sub-trigger .chev svg { display: block; width: 12px; height: 12px; transition: transform .2s cubic-bezier(.22, .61, .36, 1); }
+.sub-trigger .chev svg { display: block; width: 12px; height: 12px; transition: transform .2s cubic-bezier(.22, .61,.36,1); }
 .has-sub.open .sub-trigger .chev svg { transform: rotate(180deg); }
-/* 面板：紧凑导航列表——宽 176px、行高 40px、上下 6px（修复 v0.4 评审缺陷） */
+/* 面板：紧贴触发器（top:100% 无间隙，hover 不中断）；用 padding-top 做视觉间距，形成无缝悬停桥 */
 .sub-panel {
-  position: absolute; top: calc(100% + 10px); left: 50%;
-  transform: translate(-50%, -6px); min-width: 176px; width: max-content;
-  background: #fff; border: 1px solid var(--line); border-radius: 8px;
-  box-shadow: var(--shadow-float); padding: 6px;
+  position: absolute; top: 100%; left: 50%;
+  transform: translate(-50%, -4px); min-width: 180px; width: max-content;
+  background: transparent; border: none; box-shadow: none;
+  padding: 14px 0 0;
   opacity: 0; visibility: hidden;
-  transition: opacity .2s cubic-bezier(.22, .61, .36, 1), transform .2s cubic-bezier(.22, .61, .36, 1);
+  transition: opacity .18s cubic-bezier(.22, .61, .36, 1), transform .18s cubic-bezier(.22, .61, .36, 1), visibility 0s linear .18s;
   z-index: 120;
 }
-.has-sub.open .sub-panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-.sub-panel a {
-  display: flex; align-items: center; min-height: 40px; padding: 0 14px 0 15px;
-  font-size: 14px; line-height: 1.4; color: var(--ink-body); border-radius: 5px;
-  position: relative; white-space: nowrap;
+.has-sub.open .sub-panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: 0s, 0s, 0s; }
+/* 面板卡片本体（圆角 10px、细描边、浮起阴影；白底裁切防当前态遮盖兄弟项） */
+.sub-panel-card {
+  background: #fff; border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 12px 36px rgba(26, 29, 28, .12); padding: 6px; overflow: hidden;
+  display: flex; flex-direction: column; gap: 2px;
 }
-.sub-panel a:hover { background: var(--accent-tint); }
-/* 当前态唯一标识：左侧 3px 竖线（left:0，与文字 12px 间距，不覆盖文字）+ 字重 + 颜色；移除重复短横线 */
-.sub-panel a.cur { color: var(--accent); font-weight: 500; }
+.sub-panel a {
+  display: flex; align-items: center; min-height: 42px; padding: 0 16px 0 17px;
+  font-size: 14px; line-height: 1.4; color: var(--ink-body); border-radius: 6px;
+  position: relative; white-space: nowrap; transition: background .15s, color .15s;
+}
+.sub-panel a:hover { background: var(--accent-tint); color: var(--ink-strong); }
+/* 当前态：左竖线 + 字重 + 颜色 + 浅底（浅底在行内，不遮盖其他行） */
+.sub-panel a.cur { color: var(--accent); font-weight: 500; background: var(--accent-tint); padding-left: 21px; }
 .sub-panel a.cur::before {
-  content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-  width: 3px; height: 18px; border-radius: 2px; background: var(--accent);
+  content: ""; position: absolute; left: 6px; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 16px; border-radius: 2px; background: var(--accent);
 }
 html[data-motion=off] .sub-panel { transition: none; }
 @media (prefers-reduced-motion: reduce) { .sub-panel { transition: none; } }
@@ -442,15 +448,7 @@ html[data-motion=off] .sub-panel { transition: none; }
 }
 html[data-motion=off] .p-sub-items { transition: none; }
 
-/* 公司介绍页子页入口卡（细线行，无脚本可访问） */
-.about-entry { border-top: 1px solid var(--line); margin-top: 30px; }
-.about-entry a {
-  display: flex; align-items: center; justify-content: space-between; gap: 20px;
-  padding: 24px 8px; border-bottom: 1px solid var(--line); transition: padding .2s;
-}
-.about-entry a:hover { padding-left: 18px; }
-.about-entry b { font-weight: 400; color: var(--ink-strong); font-size: 17px; }
-.about-entry span { font-size: 13px; color: var(--ink-muted); }
+
 
 /* ============ v1.2 增量：投资者关系 ============ */
 .eq-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
