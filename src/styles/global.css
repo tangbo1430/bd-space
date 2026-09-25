@@ -382,57 +382,84 @@ html[data-motion=off] .slide { transform: none; }
 .hero.paused .pause-line { opacity: 1; }
 .hero { touch-action: pan-y; }
 
-/* ============ v1.2 增量：关于我们二级导航 ============ */
-.has-sub { position: relative; display: inline-flex; align-items: center; height: 100%; }
+/* ============ v1.3 专项：关于我们导航带（页头一体化，替代 v1.2 卡片下拉） ============ */
+/* 职责分离：一级「关于我们」为纯链接；子导航仅 hover/focus 展示（v0.4.1 N1） */
+.has-sub { position: static; display: inline-flex; align-items: center; height: 100%; }
 .sub-trigger {
-  display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+  display: inline-flex; align-items: center; cursor: pointer;
   background: none; border: none; font: inherit; color: inherit;
   opacity: .85; padding: 6px 0;
 }
-/* chevron：12px 内联 SVG，block 对齐基线，展开旋转 180°（v1.2 D3.1） */
-.sub-trigger .chev { display: inline-flex; width: 12px; height: 12px; flex: none; }
-.sub-trigger .chev svg { display: block; width: 12px; height: 12px; transition: transform .2s cubic-bezier(.22, .61,.36,1); }
-.has-sub.open .sub-trigger .chev svg { transform: rotate(180deg); }
-/* 面板：紧贴触发器（top:100% 无间隙，hover 不中断）；用 padding-top 做视觉间距，形成无缝悬停桥 */
+/* 导航带：页头底边自然延伸并贴合；12px 透明连接层仍由 padding 承接（命中无洞，无视觉断层） */
 .sub-panel {
-  position: absolute; top: 100%; left: 50%;
-  transform: translate(-50%, -4px); min-width: 180px; width: max-content;
-  background: transparent; border: none; box-shadow: none;
-  padding: 14px 0 0;
+  position: absolute; top: 100%; left: 0; right: 0;
+  padding-top: 12px; /* 透明连接层（透明，不产生视觉空隙） */
+  margin-top: -12px; /* 视觉上与页头底边贴合 */
   opacity: 0; visibility: hidden;
-  transition: opacity .18s cubic-bezier(.22, .61, .36, 1), transform .18s cubic-bezier(.22, .61, .36, 1), visibility 0s linear .18s;
+  transition: opacity .15s cubic-bezier(.22, .61, .36, 1), visibility 0s linear .15s;
   z-index: 120;
+  pointer-events: none;
 }
-.has-sub.open .sub-panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition-delay: 0s, 0s, 0s; }
-/* 面板卡片本体（圆角 10px、细描边、浮起阴影；白底裁切防当前态遮盖兄弟项） */
+.has-sub.open .sub-panel, .has-sub:hover .sub-panel, .has-sub:focus-within .sub-panel {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: opacity .1s cubic-bezier(.22, .61, .36, 1), visibility 0s;
+}
+/* Escape 焦点返回触发器后的抑制态：不因 :focus-within 回退重新展开（焦点移出即解除） */
+.has-sub[data-suppress] .sub-panel,
+.has-sub[data-suppress]:hover .sub-panel,
+.has-sub[data-suppress]:focus-within .sub-panel {
+  opacity: 0; visibility: hidden; pointer-events: none;
+}
+/* 浅色页头：白底 + 顶部 1px 细线，无阴影 */
 .sub-panel-card {
-  background: #fff; border: 1px solid var(--line); border-radius: 10px;
-  box-shadow: 0 12px 36px rgba(26, 29, 28, .12); padding: 6px; overflow: hidden;
-  display: flex; flex-direction: column; gap: 2px;
+  background: #fff; border-top: 1px solid var(--line);
+  padding: 0 64px; display: flex; align-items: center; gap: 44px; height: 56px;
+  max-width: 1360px; margin: 0 auto;
+}
+/* 深色 Hero 叠加：半透明深色层 + 模糊，白字（降级实色） */
+.gnb:not(.gnb-solid):not(.scrolled) .sub-panel-card {
+  background: rgba(17, 21, 20, .92); border-top: 1px solid rgba(255, 255, 255, .14);
+}
+@supports (backdrop-filter: blur(8px)) {
+  .gnb:not(.gnb-solid):not(.scrolled) .sub-panel-card {
+    background: rgba(17, 21, 20, .82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 .sub-panel a {
-  display: flex; align-items: center; min-height: 42px; padding: 0 16px 0 17px;
-  font-size: 14px; line-height: 1.4; color: var(--ink-body); border-radius: 6px;
-  position: relative; white-space: nowrap; transition: background .15s, color .15s;
+  display: inline-flex; align-items: center; height: 56px;
+  font-size: 14px; color: var(--ink-body); position: relative;
+  transition: color .15s, background .15s; padding: 0 4px;
 }
-.sub-panel a:hover { background: var(--accent-tint); color: var(--ink-strong); }
-/* 当前态：左竖线 + 字重 + 颜色 + 浅底（浅底在行内，不遮盖其他行） */
-.sub-panel a.cur { color: var(--accent); font-weight: 500; background: var(--accent-tint); padding-left: 21px; }
+.sub-panel a:hover { color: var(--accent); }
+.gnb:not(.gnb-solid):not(.scrolled) .sub-panel a { color: rgba(255, 255, 255, .82); }
+.gnb:not(.gnb-solid):not(.scrolled) .sub-panel a:hover { color: #fff; }
+/* 当前子项：左侧 16×2px 青绿短横线 + 字重 500 + 青绿色（三重冗余） */
+.sub-panel a.cur { color: var(--accent); font-weight: 500; }
+.gnb:not(.gnb-solid):not(.scrolled) .sub-panel a.cur { color: #3ecf9e; }
 .sub-panel a.cur::before {
-  content: ""; position: absolute; left: 6px; top: 50%; transform: translateY(-50%);
-  width: 3px; height: 16px; border-radius: 2px; background: var(--accent);
+  content: ""; position: absolute; left: -14px; top: 50%; transform: translateY(-50%);
+  width: 16px; height: 2px; border-radius: 1px; background: var(--accent);
 }
+.sub-panel a.cur { margin-left: 18px; }
 html[data-motion=off] .sub-panel { transition: none; }
 @media (prefers-reduced-motion: reduce) { .sub-panel { transition: none; } }
+/* 桌面触屏/平板（hover 不可靠，走抽屉方案）；面板默认隐藏由基础规则承担 */
+@media (max-width: 1279px) { .sub-panel { display: none; } }
 
-/* 移动抽屉内关于分组 */
+/* 移动抽屉内关于分组（v1.3：文字链接与展开按钮拆分为两个独立控件，AC-40） */
 .p-sub { border-bottom: 1px solid var(--line); }
-.p-sub-btn {
-  width: 100%; display: flex; justify-content: space-between; align-items: center;
-  background: none; border: none; font: inherit; font-size: 30px; font-weight: 200;
-  color: var(--ink-strong); padding: 13px 0; cursor: pointer; min-height: 48px;
+.p-sub-row { display: flex; align-items: center; justify-content: space-between; }
+.p-sub-link {
+  flex: 1; font-size: 30px; font-weight: 200; color: var(--ink-strong);
+  padding: 13px 0; min-height: 48px; display: flex; align-items: center;
 }
-.p-sub-btn .chev { display: inline-flex; width: 14px; height: 14px; flex: none; }
+.p-sub-btn {
+  width: 44px; height: 44px; flex: none; display: inline-flex; align-items: center; justify-content: center;
+  background: none; border: none; color: var(--ink-body); cursor: pointer;
+}
+.p-sub-btn .chev { display: inline-flex; width: 14px; height: 14px; }
 .p-sub-btn .chev svg { display: block; width: 14px; height: 14px; transition: transform .2s cubic-bezier(.22, .61, .36, 1); }
 .p-sub.open .p-sub-btn .chev svg { transform: rotate(180deg); }
 .p-sub-items { max-height: 0; overflow: hidden; transition: max-height .25s cubic-bezier(.22, .61, .36, 1); }
@@ -623,14 +650,10 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   .eq-cards { gap: 26px; }
 }
 
-@media (max-width: 767px) {
-  .wrap { padding: 0 20px; }
-  .sec { padding: 72px 0; }
-  h1 { font-size: 34px; }
-  h2 { font-size: 28px; }
-  .gnb { padding: 16px 20px; }
-  .gnb.scrolled { padding: 10px 20px; }
+/* 平板/移动 ≤1279：抽屉方案（hover 不可靠，v1.3 N6）；桌面 ≥1280 用导航带 */
+@media (max-width: 1279px) {
   .gnb nav, .gnb .lang, .gnb .cta-phone { display: none; }
+  .gnb .sub-panel { display: none; }
   .gnb .burger {
     display: flex; width: 44px; height: 44px;
     flex-direction: column; justify-content: center; gap: 6px; align-items: flex-end;
@@ -639,6 +662,16 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   .gnb .burger i { display: block; height: 1.5px; background: currentColor; }
   .gnb .burger i:nth-child(1) { width: 22px; }
   .gnb .burger i:nth-child(2) { width: 16px; }
+  .drawer { display: flex; }
+}
+
+@media (max-width: 767px) {
+  .wrap { padding: 0 20px; }
+  .sec { padding: 72px 0; }
+  h1 { font-size: 34px; }
+  h2 { font-size: 28px; }
+  .gnb { padding: 16px 20px; }
+  .gnb.scrolled { padding: 10px 20px; }
   .hero { min-height: 560px; }
   .hero-copy { padding: 0 22px 12vh; max-width: 100%; }
   .hero-copy .btn { max-width: 320px; justify-content: center; }
@@ -672,7 +705,7 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   .qual { flex-wrap: wrap; gap: 6px; }
   .sec-head { flex-direction: column; align-items: flex-start; gap: 10px; }
   .link-more { margin-top: 24px; }
-  /* v1.2 移动增量 */
+  /* v1.2/v1.3 移动增量 */
   .bnav { display: none; }
   .dots { left: 50%; transform: translateX(-50%); bottom: 28px; }
   .pause-line { display: none; }
@@ -686,4 +719,9 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   .job-detail-in { grid-template-columns: 1fr; }
   .tl2 { padding-left: 30px; }
   .tl2-item::before { left: -36px; }
+}
+
+/* 平板 768–1279：导航带宽度沿用页头栅格 */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .sub-panel-card { padding: 0 40px; gap: 40px; }
 }

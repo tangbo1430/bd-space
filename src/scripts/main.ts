@@ -157,72 +157,137 @@ if (hero) {
   setState();
 }
 
-/* ---------- 「关于我们」二级导航（桌面下拉 + 移动分组，AC-25） ---------- */
+/* ---------- 「关于我们」子导航（v1.3 页头一体化导航带，hover/focus 展示） ----------
+ * 职责分离（v0.4.1）：一级「关于我们」为纯链接，本脚本不绑定任何点击/按键展开逻辑，
+ * 只渐进增强打开/关闭时序与安全走廊；绝不 preventDefault 一级链接（BR-23.2）。
+ * 定参（v1.3 N4，开发不自造）：指针打开 100ms / 关闭 300ms 单计时器 /
+ * 12px 连接层 / 意图走廊 ≈160×68px；键盘 focus 即时打开。
+ */
 document.querySelectorAll<HTMLElement>('[data-subnav]').forEach((box) => {
   const trigger = box.querySelector<HTMLElement>('[data-sub-trigger]');
-  if (!trigger) return;
-  let suppressNextClick = false;
+  const panel = box.querySelector<HTMLElement>('[data-sub-panel]');
+  const gnb = box.closest<HTMLElement>('.gnb');
+  if (!trigger || !panel || !gnb) return;
 
-  const setOpen = (open: boolean) => {
-    box.classList.toggle('open', open);
-    trigger.setAttribute('aria-expanded', String(open));
+  let openTimer: number | undefined;
+  let closeTimer: number | undefined;
+  let pointerOpened = false;
+  let lastY = 0;
+
+  const clearTimers = () => {
+    if (openTimer) { window.clearTimeout(openTimer); openTimer = undefined; }
+    if (closeTimer) { window.clearTimeout(closeTimer); closeTimer = undefined; }
   };
-  const isOpen = () => box.classList.contains('open');
+  const open = (immediate: boolean) => {
+    window.clearTimeout(closeTimer ?? 0); closeTimer = undefined;
+    if (box.classList.contains('open')) return;
+    if (immediate) { box.classList.add('open'); return; }
+    if (openTimer) return; // 单一计时器（AC-37）
+    openTimer = window.setTimeout(() => { box.classList.add('open'); openTimer = undefined; }, 100);
+  };
+  const scheduleClose = () => {
+    if (openTimer) { window.clearTimeout(openTimer); openTimer = undefined; }
+    if (closeTimer) return;
+    closeTimer = window.setTimeout(() => {
+      box.classList.remove('open');
+      pointerOpened = false;
+      closeTimer = undefined;
+    }, 300);
+  };
 
-  // 点击 chevron 区域切换展开；点击文字仍跟随链接跳转（无脚本时链接天然有效，BR-23）
-  trigger.addEventListener('click', (e) => {
-    if (suppressNextClick) { suppressNextClick = false; e.preventDefault(); return; }
-    const target = e.target as HTMLElement;
-    if (target.closest('.chev')) {
-      e.preventDefault();
-      setOpen(!isOpen());
+  /* 安全走廊（意图三角 ≈160×68px，v1.3 S6）：指针沿「一级项右缘 → 面板顶边」方向
+     朝面板移动时即使短暂离开组命中区也不关闭；不使用覆盖 Hero 的巨型遮罩。 */
+  let corridor: { x1: number; y1: number; x2: number; y2: number; w: number } | null = null;
+  const buildCorridor = () => {
+    const t = trigger.getBoundingClientRect();
+    const p = panel.getBoundingClientRect();
+    corridor = { x1: t.right, y1: t.bottom, x2: p.left, y2: p.top, w: Math.max(p.width, 160) };
+  };
+  const inCorridor = (x: number, y: number): boolean => {
+    if (!corridor) return false;
+    const { y1, y2, w } = corridor;
+    if (y < y1 - 2 || y > y2 + 6) return false;
+    const t = (y - y1) / Math.max(y2 - y1, 1);
+    const panelCenter = corridor.x2 + w / 2;
+    const cx = corridor.x1 + (panelCenter - corridor.x1) * t;
+    return Math.abs(x - cx) <= w / 2;
+  };
+
+  box.addEventListener('pointerenter', (e) => {
+    if (e.pointerType !== 'mouse') return; // 触屏不依赖 hover（BR-23.3）
+    buildCorridor();
+    pointerOpened = true;
+    open(false);
+  });
+  box.addEventListener('pointerleave', (e) => {
+    if (e.pointerType !== 'mouse') return;
+    if (!pointerOpened) return;
+    // 指针在组内移动时已记录轨迹；离开时若在走廊内且方向朝面板，保持开启
+    if (corridor && inCorridor(e.clientX, e.clientY) && e.clientY > lastY) return;
+    scheduleClose();
+  });
+  box.addEventListener('pointermove', (e) => {
+    lastY = e.clientY;
+    if (pointerOpened && closeTimer && corridor && inCorridor(e.clientX, e.clientY)) {
+      window.clearTimeout(closeTimer);
+      closeTimer = undefined;
     }
   });
-  // Enter/Space 切换（拦截链接默认行为）；Escape 关闭并将焦点返回触发器
-  trigger.addEventListener('keydown', (e) => {
-    if (e.key === ' ' || (e.key === 'Enter' && (e.target as HTMLElement).closest('.chev'))) {
-      e.preventDefault();
-      setOpen(!isOpen());
-      if (isOpen()) box.querySelector<HTMLElement>('.sub-panel a')?.focus();
-    } else if (e.key === 'Enter' && isOpen()) {
-      setOpen(false); // 完成跳转前关闭
-    } else if (e.key === 'Escape' && isOpen()) {
-      e.preventDefault();
-      setOpen(false);
-      trigger.focus();
-    }
+  // 面板/连接层回到命中区：取消关闭
+  panel.addEventListener('pointerenter', () => {
+    if (closeTimer) { window.clearTimeout(closeTimer); closeTimer = undefined; }
   });
-  box.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && isOpen()) {
-      e.preventDefault();
-      setOpen(false);
-      trigger.focus();
+
+  // 键盘 focus 即时打开（AC-38），移出组即关；Escape 关闭并焦点返回一级链接。
+  // 注意：:focus-within CSS 回退会因焦点返回触发器而重新展开，故 Escape 后挂
+  // data-suppress 标记，待焦点真正移出组后解除。
+  const clearSuppress = () => {
+    if (box.hasAttribute('data-suppress')) {
+      box.removeAttribute('data-suppress');
+      if (box.contains(document.activeElement)) box.classList.add('open');
     }
-  });
-  // 桌面 hover 辅助展开（不得作为唯一触发方式，键盘路径独立）
-  box.addEventListener('mouseenter', () => setOpen(true));
-  box.addEventListener('mouseleave', () => setOpen(false));
-  // 焦点移出菜单即关闭（焦点位置可预测）
+  };
+  box.addEventListener('focusin', () => { if (!box.hasAttribute('data-suppress')) open(true); });
   box.addEventListener('focusout', () => {
     window.setTimeout(() => {
-      if (!box.contains(document.activeElement)) setOpen(false);
+      if (!box.contains(document.activeElement)) {
+        clearTimers();
+        box.classList.remove('open');
+        pointerOpened = false;
+        clearSuppress();
+      }
     }, 0);
   });
-  // 点击面板外关闭
-  document.addEventListener('click', (e) => {
-    if (isOpen() && !box.contains(e.target as Node)) setOpen(false);
+  box.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && box.classList.contains('open')) {
+      e.preventDefault();
+      clearTimers();
+      box.classList.remove('open');
+      pointerOpened = false;
+      box.setAttribute('data-suppress', '');
+      trigger.focus();
+    }
   });
-  // 点击子项跳转后关闭
-  box.querySelectorAll('.sub-panel a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
+  // 点击外部即时关闭，不阻断外部目标（AC-39）；子项点击 = 普通链接导航，不拦截
+  document.addEventListener('click', (e) => {
+    if (box.classList.contains('open') && !box.contains(e.target as Node)) {
+      clearTimers();
+      box.classList.remove('open');
+      pointerOpened = false;
+    }
+  });
 });
 
-/* 移动抽屉：关于分组展开（整行可击 ≥48px） */
+/* 移动抽屉：文字链接 + 独立展开按钮（AC-40）；当前属 about 组时默认展开（AC-41，无 JS 时平铺可见） */
 document.querySelectorAll<HTMLElement>('[data-subnav-mobile]').forEach((box) => {
   const btn = box.querySelector<HTMLButtonElement>('[data-sub-trigger-mobile]');
+  const defaultOpen = box.dataset.defaultOpen === 'true';
+  box.classList.toggle('open', defaultOpen);
   btn?.addEventListener('click', () => {
-    const open = !box.classList.contains('open');
-    box.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', String(open));
+    const openNow = !box.classList.contains('open');
+    box.classList.toggle('open', openNow);
+    btn.setAttribute('aria-expanded', String(openNow));
+    btn.setAttribute('aria-label', openNow ? '收起关于我们子导航' : '展开关于我们子导航');
   });
 });
 

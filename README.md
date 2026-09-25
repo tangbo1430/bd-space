@@ -27,6 +27,7 @@ npm run test        # Vitest：表单校验 + 路由/SEO 规则
 npm run build       # 静态构建到 dist/
 npm run verify      # 构建产物验证：关键路由 / canonical / hreflang / sitemap / 表单字段
 npm run check       # 以上全部串联
+npm run test:nav    # 导航带行为测试（Playwright，需先启动预览服务并监听 4321）
 ```
 
 ## 部署

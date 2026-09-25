@@ -63,8 +63,17 @@ ok(home?.includes('aria-roledescription="carousel"'), 'Banner 容器 carousel �
 ok(home?.includes('aria-label="上一张"') && home?.includes('aria-label="下一张"'), 'Banner 上一张/下一张控件');
 ok(home?.includes('data-banner-live'), 'Banner aria-live 播报位（仅手动切换播报）');
 ok(home?.includes('暂停') || home?.includes('pause-line'), 'Banner 暂停可视化位');
-ok(home?.includes('aria-haspopup="true"'), '关于我们二级导航触发器');
-ok(home?.includes('role="menuitem"'), '二级导航菜单项');
+console.log('== v0.4.1/v1.3 导航带 ==');
+ok(home?.includes('data-subnav'), '关于导航组存在');
+ok(!home?.includes('aria-haspopup'), '一级为纯链接，无展开按钮语义（AC-34）');
+ok(!home?.includes('aria-expanded') || !/data-sub-trigger[^>]*aria-expanded/.test(home ?? ''), '桌面触发器无 aria-expanded');
+ok(home?.includes('class="sub-trigger'), '一级触发器为链接');
+ok(!home?.includes('role="menu"') && !home?.includes('role="menuitem"'), '子导航为普通链接集合（无 menu 语义，N5）');
+ok(home?.includes('aria-label="展开关于我们子导航"') || home?.includes('收起关于我们子导航'), '移动独立展开按钮存在');
+ok(home?.includes('aria-controls="about-sub-items"'), '移动按钮 aria-controls 关联');
+const careersPage = page('zh/about/careers');
+ok(careersPage?.includes('data-default-open="true"'), 'about 组路由移动默认展开（AC-41）');
+ok(!(page('zh/products')?.includes('data-default-open="true"')), '非 about 路由移动默认收起');
 ok(home?.includes('/zh/about/investors/') && home?.includes('/zh/about/careers/'), '桌面下拉含三子项链接（无脚本可达）');
 
 const about = page('zh/about');
@@ -83,25 +92,26 @@ ok(investors?.includes('股权结构') && investors?.includes('融资历程'), '
 ok(investors?.includes('【待提供】'), '投资者事实字段占位');
 ok(investors !== null && !investors.includes('application/ld+json'), '投资者页无事实型结构化数据（BR-25）');
 
-console.log('== 二级导航样式回归（下拉修复） ==');
+console.log('== v1.3 导航带样式回归 ==');
 const cssFile = readdirSync(join(dist, '_astro')).find((f) => f.endsWith('.css'));
 ok(Boolean(cssFile), '构建 CSS 产物存在');
 const css = cssFile ? readFileSync(join(dist, '_astro', cssFile), 'utf8') : '';
-// 注：构建期 LightningCSS 会将 ::before 规范化为 :before，断言需兼容两者
+ok(css.includes('.sub-panel{position:absolute;top:100%'), '导航带 top:100% 无缝（无 hover 空洞）');
+ok(css.includes('padding-top:12px'), '12px 透明连接层');
+ok(css.includes('.has-sub:hover .sub-panel') && css.includes('.has-sub:focus-within .sub-panel'), '无 JS 时 :hover/:focus-within 纯 CSS 回退（AC-43）');
+ok(css.includes('.sub-panel-card') && css.includes('border-top:1px solid var(--line)'), '浅色页头：白底+顶部细线');
+ok(css.includes('backdrop-filter:blur(8px)'), '深色 Hero：半透明模糊层（含 @supports 降级）');
+ok(!/\.sub-panel-card\{[^}]*box-shadow:[^u]/.test(css) || css.includes('.sub-panel-card{background:#fff;border-top:1px solid var(--line)'), '导航带无重阴影');
+const curRule = /\.sub-panel a\.cur\{[^}]*\}/.exec(css)?.[0] ?? '';
+const curMargin = /\.sub-panel a\.cur\{margin-left:18px\}/.test(css);
+ok(curRule.includes('font-weight:500') && curMargin, '当前子项字重+缩进');
 const curBefore = /\.sub-panel a\.cur:{0,2}before\{[^}]*\}/.exec(css)?.[0] ?? '';
-ok(curBefore.length > 0, '当前态竖线规则存在');
-ok(curBefore.includes('left:6px'), '竖线 left:6px 内缩（与文字间距充足，不压字）');
-ok(curBefore.includes('width:3px'), '竖线宽 3px');
-ok(css.includes('.sub-panel a{display:flex;align-items:center;min-height:42px;padding:0 16px 0 17px'), '行高 42px 与左内边距 17px');
-ok(css.includes('.sub-panel{position:absolute;top:100%'), '面板紧贴触发器（top:100% 无间隙，hover 不中断）');
-ok(css.includes('.sub-panel-card'), '面板卡片本体样式存在');
-ok(css.includes('min-width:180px'), '面板宽度 180px');
-ok(css.includes('.sub-trigger .chev svg') && css.includes('rotate(180deg)'), 'chevron 为 12px SVG 且展开旋转');
-ok(!/\.sub-panel a\.cur:{0,2}after/.test(css), '当前态无重复短横线装饰');
-ok(css.includes('.gnb nav>a.cur:before') || css.includes('.gnb nav > a.cur::after') || css.includes('.gnb nav>a.cur::after') || /\.gnb nav>a\.cur:{0,1}:[a-z]+/.test(css), '一级当前页短线仅作用于顶级项（不下渗子项）');
-const subDash = /\.gnb nav a\.cur:{0,2}after/.test(css);
-ok(!subDash, '旧版全后代 a.cur::after 规则已移除');
-ok(home?.includes('class="chev" aria-hidden="true"><svg'), '触发器 chevron 使用 SVG 而非文本符号');
+ok(curBefore.includes('width:16px') && curBefore.includes('height:2px'), '当前态为 16×2px 短横线（非竖线）');
+ok(!/\.sub-panel a\.cur:{0,2}after/.test(css), '当前态无重复装饰');
+const mBtn = /\.p-sub-btn\{[^}]*\}/.exec(css)?.[0] ?? '';
+ok(mBtn.includes('width:44px') && mBtn.includes('height:44px'), '移动展开按钮 ≥44×44px（AC-40）');
+const mLink = /\.p-sub-link\{[^}]*\}/.exec(css)?.[0] ?? '';
+ok(mLink.includes('min-height:48px'), '移动文字链接行高 ≥48px');
 
 const notFound = existsSync(join(dist, '404.html')) ? readFileSync(join(dist, '404.html'), 'utf8') : '';
 ok(notFound.includes('noindex'), '404 为 noindex');

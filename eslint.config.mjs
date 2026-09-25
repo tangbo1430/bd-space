@@ -13,6 +13,11 @@ export default [
     languageOptions: { globals: { ...globals.node } },
   },
   {
+    files: ['tests/nav-behavior.cjs'],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+    rules: { '@typescript-eslint/no-require-imports': 'off' },
+  },
+  {
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     },

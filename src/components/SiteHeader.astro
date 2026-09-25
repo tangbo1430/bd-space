@@ -9,6 +9,8 @@ interface Props {
   aboutSub?: string | null;
 }
 const { current, style, lang, aboutSub = null } = Astro.props;
+// 移动抽屉：当前路由属 about 组时子导航默认展开（AC-41）
+const aboutGroupActive = aboutSub !== null;
 ---
 
 <header class:list={['gnb', { 'gnb-solid': style === 'solid' }]} data-gnb>
@@ -17,22 +19,20 @@ const { current, style, lang, aboutSub = null } = Astro.props;
     {NAV_ITEMS.map((item) => (
       item.key === 'about' ? (
         <span class="has-sub" data-subnav>
+          {/* 一级为纯链接：点击/Enter 唯一行为=进入公司介绍，无展开语义（v0.4.1 N1） */}
           <a
             href={item.href}
             class:list={['sub-trigger', { cur: item.key === current }]}
             aria-current={item.key === current ? 'page' : undefined}
-            aria-expanded="false"
-            aria-haspopup="true"
             data-sub-trigger
-            id="about-sub-trigger"
           >
-            {item.label} <span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            {item.label}
           </a>
-          <span class="sub-panel" role="menu" aria-label="关于我们子栏目" data-sub-panel>
+          {/* 页头一体化导航带：普通链接集合，非 menu（N5） */}
+          <span class="sub-panel" data-sub-panel aria-label="关于我们子栏目">
             <span class="sub-panel-card">
               {ABOUT_SUB_ITEMS.map((sub) => (
                 <a
-                  role="menuitem"
                   href={sub.href}
                   class:list={[{ cur: sub.key === aboutSub }]}
                   aria-current={sub.key === aboutSub ? 'page' : undefined}
@@ -62,11 +62,22 @@ const { current, style, lang, aboutSub = null } = Astro.props;
   <button type="button" class="p-close" data-drawer-close aria-label="关闭导航菜单">×</button>
   {NAV_ITEMS.map((item) => (
     item.key === 'about' ? (
-      <div class="p-sub" data-subnav-mobile>
-        <button type="button" class="p-sub-btn" aria-expanded="false" data-sub-trigger-mobile>
-          {item.label} <span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </button>
-        <div class="p-sub-items">
+      /* 文字链接与展开按钮为两个独立控件（AC-40）；无 JS 时子项平铺直链 */
+      <div class="p-sub" data-subnav-mobile data-default-open={String(aboutGroupActive)}>
+        <div class="p-sub-row">
+          <a class="p-sub-link" href={item.href}>{item.label}</a>
+          <button
+            type="button"
+            class="p-sub-btn"
+            aria-expanded={aboutGroupActive ? ('true' as const) : ('false' as const)}
+            aria-controls="about-sub-items"
+            data-sub-trigger-mobile="true"
+            aria-label={aboutGroupActive ? '收起关于我们子导航' : '展开关于我们子导航'}
+          >
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+        </div>
+        <div class="p-sub-items" id="about-sub-items">
           {ABOUT_SUB_ITEMS.map((sub) => (
             <a
               href={sub.href}
