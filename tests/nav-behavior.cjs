@@ -36,7 +36,7 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
     return { w: r.width, h: r.height, shadow: cs.boxShadow, radius: cs.borderRadius, borderTop: cs.borderTopWidth, bg: cs.backgroundColor };
   });
   check('AC-V1 面板 100vw 全宽', Math.abs(geo.w - 1440) <= 1);
-  check('AC-V1 面板高 128px', Math.abs(geo.h - 128) <= 1);
+  check('AC-V1 面板高 96px（v1.5.4 收窄）', Math.abs(geo.h - 96) <= 1);
   check('AC-V1 顶部 1px 分隔线', geo.borderTop === '1px');
   check('AC-46 无阴影/圆角', geo.shadow === 'none' && geo.radius === '0px');
   check('面板统一白色底（v1.5.2，含深色 Hero 页头）', geo.bg === 'rgb(255, 255, 255)');

@@ -438,15 +438,15 @@ html[data-motion=off] .slide { transform: none; }
 .mega-in {
   max-width: 960px; margin: 0 auto; padding: 0 40px;
   display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px;
-  min-height: 128px;
+  min-height: 96px; /* v1.5.4 上下收窄，减少首屏遮挡 */
 }
 /* 列 = 图标 + 中文标题 + 英文小标签；整块 <a> 可点击（触控高 ≥88px） */
 .mega-col {
-  display: flex; align-items: center; justify-content: center; gap: 14px;
-  padding: 40px 24px; position: relative;
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 24px 24px; position: relative;
   transition: background .15s;
 }
-.mega-ic { width: 40px; height: 40px; flex: none; color: var(--ink-strong); transition: color .15s; }
+.mega-ic { width: 32px; height: 32px; flex: none; color: var(--ink-strong); transition: color .15s; }
 .mega-t { text-align: left; }
 .mega-t b { display: block; font-size: 17px; font-weight: 400; color: var(--ink-strong); transition: color .15s; }
 .mega-en {
@@ -460,7 +460,7 @@ html[data-motion=off] .slide { transform: none; }
 .mega-col.cur .mega-ic { color: var(--accent); }
 .mega-col.cur .mega-t b { color: var(--accent); font-weight: 500; }
 .mega-col.cur::after {
-  content: ""; position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+  content: ""; position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
   width: 24px; height: 2px; background: var(--accent); border-radius: 2px;
 }
 /* v1.5.2：用户确认 Mega Subnav 全场景统一浅色白底（含深色 Hero 页头），移除深色变体 */
