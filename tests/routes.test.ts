@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { NAV_ITEMS, LEGAL_LINKS, DEFAULT_LOCALE, LOCALES } from '../src/lib/routes';
+import { NAV_ITEMS, LEGAL_LINKS, DEFAULT_LOCALE, LOCALES, ABOUT_SUB_ITEMS, currentAboutSub } from '../src/lib/routes';
 import { hreflangLinks, canonicalUrl } from '../src/lib/seo';
 
 describe('全局路由清单（PRD §5：7 个一级栏目）', () => {
@@ -29,6 +29,22 @@ describe('全局路由清单（PRD §5：7 个一级栏目）', () => {
 
   it('法务页面提供路由（仅模板，不编造正文）', () => {
     expect(LEGAL_LINKS.map((l) => l.href)).toEqual(['/zh/privacy/', '/zh/cookies/']);
+  });
+});
+
+describe('关于我们二级导航（PRD v0.4 §3.1/3.2，AC-24）', () => {
+  it('三个子项：公司介绍/投资者关系/人才招聘，路由正确', () => {
+    expect(ABOUT_SUB_ITEMS.map((i) => i.href)).toEqual([
+      '/zh/about/', '/zh/about/investors/', '/zh/about/careers/',
+    ]);
+  });
+
+  it('当前子项判定：长前缀优先，不误判', () => {
+    expect(currentAboutSub('/zh/about/')).toBe('about');
+    expect(currentAboutSub('/zh/about/investors/')).toBe('investors');
+    expect(currentAboutSub('/zh/about/careers/')).toBe('careers');
+    expect(currentAboutSub('/zh/')).toBeNull();
+    expect(currentAboutSub('/zh/products/')).toBeNull();
   });
 });
 

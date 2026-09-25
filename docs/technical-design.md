@@ -54,6 +54,9 @@
 | `form_submit_attempt` | 表单校验通过发起提交 |
 | `form_submit_success` | 仅服务端确认后 |
 | `form_submit_error` | 提交失败（网络/服务异常） |
+| `banner_prev` / `banner_dot` / `banner_cta` | Banner 手动切换 / CTA 点击（v0.4 FR-32） |
+| `about_sub_click` | 关于我们子项访问（FR-32） |
+| `job_filter` / `job_expand` / `apply_click` | 职位筛选 / 展开 / 申请邮件点击（FR-32；不采集邮件正文、简历） |
 
 同意管理、保留期限与访问权限随统计平台账号配置验收（当前默认不启用追踪）。
 
@@ -82,3 +85,11 @@ npm run check     # lint + type-check + test + build + verify（交付门禁自�
 3. 表单真实提交依赖 OP-21 企业邮箱与表单服务密钥，未配置前保持禁用态。
 4. 联系方式、ICP 备案号、法务正文均为【待提供】，上线检查点前由需求方/法务补齐。
 5. 性能预算（首屏图 ≤350KB 等）需在正式素材到位后复测；当前占位图为纯 CSS/SVG，无图片请求。
+
+## 10. v0.4 增量（FR-17~32 / v1.2 设计）
+
+- **Banner 七态状态机**（`src/lib/banner.ts`）：`resolveBannerState()` 纯函数实现 playing / paused-hover / paused-focus / paused-hidden / reduced-motion / static-fallback / single-item；固定参数 6000ms 间隔 / 1200ms 过渡 / 40px 滑动阈值集中在该模块，无第二套数值（BR-19）。单一计时器，状态变化即重置（AC-18）；标签页隐藏暂停、返回续播；手动切换时 `aria-live="polite"` 播报帧标签（FR-20）。
+- **微动效 M1~M10**：缓动统一 `cubic-bezier(.22,.61,.36,1)`，仅 transform/opacity；`——` 占位数字不渐显（BR-25）；全部动效受 `data-motion=off` 与 `prefers-reduced-motion` 降级（BR-20/21）。
+- **关于我们二级导航**（D3）：桌面触发器链接（无脚本直达 `/zh/about/`，BR-23）+ chevron 点击 / Enter / Space 展开，`Escape` 关闭并焦点返回，hover 仅辅助；移动抽屉为可展开分组。当前态三重冗余（竖条 + 字重 + 颜色，AC-26）。
+- **投资者关系** `/zh/about/investors/`：IR-Hero + 摘要 + 股权卡片 + 融资时间轴 + 联系，全字段【待提供】，无结构化数据、占位不入 SEO 事实（AC-27/28）。
+- **人才招聘** `/zh/about/careers/`：职位内容集合 `src/content/jobs/`（Zod schema，placeholder/published 字段）；chip 筛选（部门/地点）+ 清空 + 无结果空态；独立展开（aria-expanded）；邮箱由 `site.careersEmail` 配置，无效时 DOM 无 mailto、显示「招聘邮箱待提供」（AC-30）；点击 mailto 仅提示打开邮件客户端，不显示申请成功（BR-28）。

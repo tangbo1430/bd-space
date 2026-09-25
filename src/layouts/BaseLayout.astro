@@ -5,6 +5,7 @@ import { hreflangLinks } from '../lib/seo';
 import { ANALYTICS_SCRIPT_URL, ANALYTICS_DOMAIN, analyticsEnabled } from '../lib/analytics';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { currentAboutSub } from '../lib/routes';
 
 interface Props {
   title: string;
@@ -25,6 +26,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).hr
 const altLinks = lang === 'zh-CN'
   ? hreflangLinks(String(Astro.site ?? Astro.url.origin), Astro.url.pathname, { zh: true, en: false })
   : [];
+// 「关于我们」二级导航当前态（AC-26：一级与二级同时非纯颜色当前态）
+const aboutSub = currentAboutSub(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
@@ -49,7 +52,7 @@ const altLinks = lang === 'zh-CN'
 </head>
 <body>
   <a class="skip-link" href="#main">跳转到主要内容</a>
-  <SiteHeader current={current} style={headerStyle} lang={lang} />
+  <SiteHeader current={current} style={headerStyle} lang={lang} aboutSub={aboutSub} />
   <main id="main">
     <slot />
   </main>

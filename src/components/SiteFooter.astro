@@ -1,6 +1,6 @@
 ---
 import { site, PLACEHOLDER } from '../lib/site';
-import { NAV_ITEMS, LEGAL_LINKS } from '../lib/routes';
+import { NAV_ITEMS, LEGAL_LINKS, ABOUT_SUB_ITEMS } from '../lib/routes';
 ---
 
 <footer>
@@ -12,6 +12,7 @@ import { NAV_ITEMS, LEGAL_LINKS } from '../lib/routes';
     <div>
       <h4>导航</h4>
       {NAV_ITEMS.map((item) => <a href={item.href}>{item.label}</a>)}
+      {ABOUT_SUB_ITEMS.filter((s) => s.key !== 'about').map((s) => <a href={s.href}>└ {s.label}</a>)}
     </div>
     <div>
       <h4>联系</h4>

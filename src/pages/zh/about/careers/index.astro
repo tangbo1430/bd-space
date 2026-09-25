@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PhImg from '../../../../components/PhImg.astro';
+import { site } from '../../../../lib/site';
+import { buildJobApplyMailto } from '../../../../lib/mailto';
+import { getCollection } from 'astro:content';
+
+/**
+ * 人才招聘（PRD v0.4 FR-29~31 / BR-26~28 / AC-29~31）。
+ * 职位由内容集合维护；占位职位 placeholder:true；邮箱未配置/无效时不生成 mailto。
+ */
+
+const jobs = (await getCollection('jobs', ({ data }) => data.published))
+  .sort((a, b) => a.data.order - b.data.order);
+const allPlaceholder = jobs.every((j) => j.data.placeholder);
+const hasJobs = jobs.length > 0 && !allPlaceholder;
+
+const departments = [...new Set(jobs.map((j) => j.data.department))];
+const locations = [...new Set(jobs.map((j) => j.data.location))];
+const hrEmail = site.careersEmail;
+---
+
+<BaseLayout
+  title="人才招聘"
+  description="加入半打空间：查看开放职位并通过邮件申请。职位信息由 HR 确认后发布。"
+  current="about"
+  headerStyle="solid"
+>
+  <div class="wrap">
+    <p class="crumb" style="padding-left:0;padding-right:0"><a href="/zh/">HOME</a> / <a href="/zh/about/">ABOUT</a> / CAREERS</p>
+
+    <!-- 页头（非 Hero 大图，D5.1） -->
+    <div class="careers-head">
+      <div>
+        <div class="en">Careers</div>
+        <h2>和半打一起建造</h2>
+        <p style="margin-top:14px;max-width:440px;font-size:15px">
+          【待确认】招聘理念一句。{allPlaceholder && '以下为占位职位，正式职位由 HR 确认后发布（BR-26）。'}
+        </p>
+      </div>
+      <div class="imgbox">
+        <PhImg g="yard" tag="IMG-CAREERS-1 · 1600×900 · 团队/工厂人文场景（占位）" />
+      </div>
+    </div>
+
+    {hasJobs || jobs.length > 0 ? (
+      <div data-jobs>
+        <!-- 筛选条（胶囊 chip，选中=实底+字重非纯颜色；右侧清空） -->
+        <div class="filters" role="group" aria-label="职位筛选">
+          <div class="grp" role="group" aria-label="按部门筛选">
+            <span>部门</span>
+            <button type="button" class="chip on" data-chip-group="department" data-chip-value="all" aria-pressed="true">全部</button>
+            {departments.map((d) => (
+              <button type="button" class="chip" data-chip-group="department" data-chip-value={d} aria-pressed="false">{d}</button>
+            ))}
+          </div>
+          <div class="grp" role="group" aria-label="按地点筛选">
+            <span>地点</span>
+            <button type="button" class="chip on" data-chip-group="location" data-chip-value="all" aria-pressed="true">全部</button>
+            {locations.map((l) => (
+              <button type="button" class="chip" data-chip-group="location" data-chip-value={l} aria-pressed="false">{l}</button>
+            ))}
+          </div>
+          <button type="button" class="clear-f" data-clear-filters>清空筛选</button>
+        </div>
+
+        <!-- 筛选无结果空态（保留条件 + 清空） -->
+        <div class="empty-box" data-no-result hidden>
+          <h3>暂无匹配职位</h3>
+          <p>当前筛选条件下暂无匹配职位，您可以清空筛选查看全部职位。</p>
+        </div>
+
+        <!-- 职位列表（细线行 + 独立展开） -->
+        <div>
+          {jobs.map((j) => {
+            const mailto = buildJobApplyMailto(hrEmail, j.data.title, '/zh/about/careers/');
+            const panelId = `job-panel-${j.id}`;
+            return (
+              <div class="job" data-job={j.id} data-department={j.data.department} data-location={j.data.location}>
+                <button type="button" class="job-row" data-job-toggle aria-expanded="false" aria-controls={panelId}>
+                  <h3>{j.data.title}</h3>
+                  <span class="tags">
+                    <span>{j.data.department}</span>
+                    <span>{j.data.location}</span>
+                    <span>{j.data.type}</span>
+                  </span>
+                  <span class="chev" aria-hidden="true">▾</span>
+                </button>
+                <div class="job-detail" id={panelId}>
+                  <div class="job-detail-in">
+                    <div>
+                      <h4>职责</h4>
+                      <ul>{j.data.responsibilities.map((r) => <li>{r}</li>)}</ul>
+                    </div>
+                    <div>
+                      <h4>任职要求</h4>
+                      <ul>{j.data.requirements.map((r) => <li>{r}</li>)}</ul>
+                      <h4 style="margin-top:18px">工作地点 · 类型</h4>
+                      <p>{j.data.location} · {j.data.type}</p>
+                    </div>
+                    <div class="job-apply">
+                      {mailto ? (
+                        <>
+                          <a class="btn btn-primary" href={mailto} data-apply={j.data.title}>通过邮件申请 <span class="arr">→</span></a>
+                          <span class="mail-note">将打开您的邮件客户端；发送前请自行确认内容。本操作不代表申请已送达。</span>
+                        </>
+                      ) : (
+                        <>
+                          <span class="btn btn-primary btn-disabled" aria-disabled="true">招聘邮箱待提供</span>
+                          <span class="mail-note">招聘邮箱尚未确认（OP-27），请通过「联系我们」页与我们取得联系。</span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    ) : (
+      <Fragment>
+        <!-- 无职位空态：筛选控件整体隐藏 -->
+        <div class="empty-box">
+          <h3>暂无开放职位</h3>
+          <p>当前暂无经确认的开放职位。您可以先通过以下方式与我们取得联系：<br />电话：{site.contact.phone} · 邮箱：{site.contact.email}</p>
+          <p style="margin-top:22px"><a class="btn btn-ghost" href="/zh/contact/">联系我们 <span class="arr">→</span></a></p>
+        </div>
+      </Fragment>
+    )}
+  </div>
+
+  <div style="padding-bottom:110px"></div>
+  <div class="lang-toast" data-mail-toast role="status">将打开您的邮件客户端</div>
+</BaseLayout>

@@ -17,5 +17,7 @@ export const site = {
     address: PLACEHOLDER,
   },
   icp: PLACEHOLDER, // ICP 备案号
+  /** 招聘邮箱（OP-27）：未确认前保持占位，页面不生成 mailto（BR-27/AC-30） */
+  careersEmail: PLACEHOLDER,
   year: new Date().getFullYear(),
 } as const;

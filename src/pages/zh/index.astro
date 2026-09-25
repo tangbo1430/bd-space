@@ -33,9 +33,10 @@ const quals = [
 >
   <FloatRail />
 
-  <!-- S1 首屏 Hero：100dvh 三帧轮播 -->
-  <section class="hero" data-carousel aria-label="首屏轮播">
-    <div class="slide on" data-slide>
+  <!-- S1 首屏 Hero：100dvh 三帧轮播（七态状态机，v1.2 D1） -->
+  <section class="hero" data-carousel role="region" aria-roledescription="carousel" aria-label="首页横幅">
+    <p class="sr-only" data-banner-live aria-live="polite" style="position:absolute;left:-9999px">第 1 张，共 3 张</p>
+    <div class="slide on" data-slide aria-roledescription="slide" aria-label="第 1 张，共 3 张">
       <div class="ph ph-1">
         <svg width="900" height="520" viewBox="0 0 900 520" fill="none" style="opacity:.55" aria-hidden="true">
           <g stroke="rgba(255,255,255,.55)" stroke-width="1">
@@ -61,12 +62,12 @@ const quals = [
         <h1>装配式混凝土<br />空间的制造者</h1>
         <p>以工业化方式建造空间——从构件到建筑，半打空间提供装配式混凝土产品的研发、制造与交付。【示例文案，待确认】</p>
         <div class="btns">
-          <a class="btn btn-primary" href="#contact" data-track="consult_click">预约咨询 <span class="arr">→</span></a>
+          <a class="btn btn-primary" href="#contact" data-track="consult_click" data-banner-cta>预约咨询 <span class="arr">→</span></a>
           <a class="btn btn-ghost on-dark" href="/zh/products/">了解产品 <span class="arr">→</span></a>
         </div>
       </div>
     </div>
-    <div class="slide" data-slide>
+    <div class="slide" data-slide aria-roledescription="slide" aria-label="第 2 张，共 3 张">
       <div class="ph ph-2"><span class="tag">IMG-HERO-2 · 2560×1440 · 构件堆场/吊装（占位）</span></div>
       <div class="hero-copy">
         <div class="en" style="color:rgba(255,255,255,.6)">Factory Capacity</div>
@@ -75,7 +76,7 @@ const quals = [
         <div class="btns"><a class="btn btn-primary" href="/zh/about/">走进工厂 <span class="arr">→</span></a></div>
       </div>
     </div>
-    <div class="slide" data-slide>
+    <div class="slide" data-slide aria-roledescription="slide" aria-label="第 3 张，共 3 张">
       <div class="ph ph-3"><span class="tag">IMG-HERO-3 · 2560×1440 · 建成项目（占位）</span></div>
       <div class="hero-copy">
         <div class="en" style="color:rgba(255,255,255,.6)">Projects</div>
@@ -84,11 +85,16 @@ const quals = [
         <div class="btns"><a class="btn btn-primary" href="/zh/cases/">查看案例 <span class="arr">→</span></a></div>
       </div>
     </div>
-    <div class="dots" role="tablist" aria-label="轮播切换">
-      <button class="on" data-dot aria-label="第 1 帧"></button>
-      <button data-dot aria-label="第 2 帧"></button>
-      <button data-dot aria-label="第 3 帧"></button>
+    <div class="dots" role="group" aria-label="轮播指示器">
+      <button class="on" data-dot aria-label="切换到第 1 张" aria-current="true"></button>
+      <button data-dot aria-label="切换到第 2 张" aria-current="false"></button>
+      <button data-dot aria-label="切换到第 3 张" aria-current="false"></button>
     </div>
+    <div class="bnav">
+      <button type="button" data-prev aria-label="上一张">←</button>
+      <button type="button" data-next aria-label="下一张">→</button>
+    </div>
+    <div class="pause-line" aria-hidden="true"></div>
     <div class="scroll-hint">SCROLL</div>
   </section>
 

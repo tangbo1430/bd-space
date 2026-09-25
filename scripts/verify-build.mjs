@@ -22,7 +22,8 @@ function page(path) {
 
 console.log('== 路由产物 ==');
 const routes = [
-  'zh', 'zh/about', 'zh/products', 'zh/products/slab', 'zh/products/wall', 'zh/products/stair',
+  'zh', 'zh/about', 'zh/about/investors', 'zh/about/careers',
+  'zh/products', 'zh/products/slab', 'zh/products/wall', 'zh/products/stair',
   'zh/cases', 'zh/news', 'zh/qualifications', 'zh/contact', 'zh/privacy', 'zh/cookies', 'en',
 ];
 for (const r of routes) ok(page(r) !== null, `/${r}/ 已生成`);
@@ -56,6 +57,30 @@ const contact = page('zh/contact');
 ok(contact?.includes('name="bd_website"'), '表单含 honeypot 防滥用字段');
 ok(contact?.includes('name="source"'), '表单含来源页面字段');
 ok(contact?.includes('隐私政策'), '表单含隐私同意');
+
+console.log('== v0.4 增量 ==');
+ok(home?.includes('aria-roledescription="carousel"'), 'Banner 容器 carousel 角色');
+ok(home?.includes('aria-label="上一张"') && home?.includes('aria-label="下一张"'), 'Banner 上一张/下一张控件');
+ok(home?.includes('data-banner-live'), 'Banner aria-live 播报位（仅手动切换播报）');
+ok(home?.includes('暂停') || home?.includes('pause-line'), 'Banner 暂停可视化位');
+ok(home?.includes('aria-haspopup="true"'), '关于我们二级导航触发器');
+ok(home?.includes('role="menuitem"'), '二级导航菜单项');
+ok(home?.includes('/zh/about/investors/') && home?.includes('/zh/about/careers/'), '桌面下拉含三子项链接（无脚本可达）');
+
+const about = page('zh/about');
+ok(about?.includes('投资者关系') && about?.includes('人才招聘'), '公司介绍页内置子页入口卡');
+
+const careers = page('zh/about/careers');
+ok(careers !== null && !careers.includes('mailto:'), '招聘邮箱未配置时 DOM 无 mailto（AC-30）');
+ok(careers?.includes('招聘邮箱待提供'), '招聘邮箱占位态文案');
+ok(careers?.includes('data-chip-group'), '招聘筛选 chip 存在');
+ok(careers?.includes('aria-expanded="false"'), '职位展开控件暴露状态');
+ok(careers?.includes('暂无匹配职位'), '筛选无结果空态就位');
+
+const investors = page('zh/about/investors');
+ok(investors?.includes('股权结构') && investors?.includes('融资历程'), '投资者页分区完整');
+ok(investors?.includes('【待提供】'), '投资者事实字段占位');
+ok(investors !== null && !investors.includes('application/ld+json'), '投资者页无事实型结构化数据（BR-25）');
 
 const notFound = existsSync(join(dist, '404.html')) ? readFileSync(join(dist, '404.html'), 'utf8') : '';
 ok(notFound.includes('noindex'), '404 为 noindex');

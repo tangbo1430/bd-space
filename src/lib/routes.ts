@@ -24,6 +24,34 @@ export const NAV_ITEMS: NavItem[] = [
   { key: 'contact', label: '联系我们', href: '/zh/contact/' },
 ];
 
+/** 「关于我们」二级导航（PRD v0.4 §3.2 / UI v1.2 D3，桌面与移动同一 IA） */
+export interface AboutSubItem extends NavItem {
+  /** 精确路径匹配用 key 前缀 */
+  matchPrefix: string;
+}
+
+export const ABOUT_SUB_ITEMS: AboutSubItem[] = [
+  { key: 'about', label: '公司介绍', href: '/zh/about/', matchPrefix: '/zh/about/' },
+  { key: 'investors', label: '投资者关系', href: '/zh/about/investors/', matchPrefix: '/zh/about/investors/' },
+  { key: 'careers', label: '人才招聘', href: '/zh/about/careers/', matchPrefix: '/zh/about/careers/' },
+];
+
+/**
+ * 当前子项判定：长前缀优先（/zh/about/investors/ 不会误判为 about）。
+ * pathname 为当前页路径。
+ */
+export function currentAboutSub(pathname: string): string | null {
+  const sorted = [...ABOUT_SUB_ITEMS].sort((a, b) => b.matchPrefix.length - a.matchPrefix.length);
+  for (const item of sorted) {
+    if (item.key === 'about') {
+      if (pathname === '/zh/about/' || pathname === '/zh/about') return item.key;
+    } else if (pathname.startsWith(item.matchPrefix)) {
+      return item.key;
+    }
+  }
+  return null;
+}
+
 export const LEGAL_LINKS: NavItem[] = [
   { key: 'privacy', label: '隐私政策', href: '/zh/privacy/' },
   { key: 'cookies', label: 'Cookie 政策', href: '/zh/cookies/' },

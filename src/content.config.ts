@@ -22,4 +22,24 @@ const products = defineCollection({
   }),
 });
 
-export const collections = { products };
+/**
+ * 招聘职位（PRD v0.4 FR-29~31 / BR-26）。
+ * 职位须由 HR 确认后发布；占位职位显式 placeholder:true。
+ */
+const jobs = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/jobs' }),
+  schema: z.object({
+    title: z.string(),
+    department: z.string(),
+    location: z.string(),
+    type: z.string(),
+    summary: z.string().default(''),
+    responsibilities: z.array(z.string()).default([]),
+    requirements: z.array(z.string()).default([]),
+    placeholder: z.boolean().default(false),
+    published: z.boolean().default(true),
+    order: z.number().int().default(0),
+  }),
+});
+
+export const collections = { products, jobs };

@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PhImg from '../../../../components/PhImg.astro';
+import { PLACEHOLDER } from '../../../../lib/site';
+
+/**
+ * 投资者关系（PRD v0.4 FR-25~28 / BR-24/25 / AC-27/28）。
+ * 全部事实字段为【待提供】占位：不执行数字渐显、不输出事实型结构化数据、不进入 SEO 事实描述。
+ */
+
+const summaryStats = [
+  { num: '——', label: `注册资本${PLACEHOLDER}` },
+  { num: '——', label: `股东数量${PLACEHOLDER}` },
+  { num: '——', label: `融资轮次${PLACEHOLDER}` },
+];
+
+const equityCards = [
+  { name: `${PLACEHOLDER}股东 A`, type: PLACEHOLDER, ratio: '——', note: `${PLACEHOLDER}持股说明`, updated: PLACEHOLDER },
+  { name: `${PLACEHOLDER}股东 B`, type: PLACEHOLDER, ratio: '——', note: `${PLACEHOLDER}持股说明`, updated: PLACEHOLDER },
+  { name: `${PLACEHOLDER}股东 C`, type: PLACEHOLDER, ratio: '——', note: `${PLACEHOLDER}持股说明`, updated: PLACEHOLDER },
+];
+
+const rounds: { round: string; date: string; amount: string; investors: string; brief: string }[] = [
+  { round: `${PLACEHOLDER}轮次 01`, date: PLACEHOLDER, amount: PLACEHOLDER, investors: PLACEHOLDER, brief: `${PLACEHOLDER}融资摘要` },
+];
+
+const irContact = [
+  { label: '投资者联系人', value: PLACEHOLDER },
+  { label: '投资者联系邮箱', value: PLACEHOLDER },
+  { label: '说明', value: `${PLACEHOLDER}本页信息以经审核披露为准` },
+];
+---
+
+<BaseLayout
+  title="投资者关系"
+  description="半打空间投资者关系：股权结构、融资历程与投资者联系渠道（信息披露以企业确认内容为准）。"
+  current="about"
+  headerStyle="overlay"
+>
+  <!-- IR-Hero（65vh，D4.1） -->
+  <section class="page-hero" style="height:65vh;min-height:440px" aria-label="投资者关系首屏">
+    <PhImg g="dark-2" tag="IMG-IR-HERO · 2400×1200 · 总部/工厂远景（占位）" onDark />
+    <div class="hero-copy">
+      <div class="en" style="color:rgba(255,255,255,.6)">Investor Relations</div>
+      <h1>与制造者同行</h1>
+      <p>半打空间投资者关系信息披露页。【示例文案，待确认】</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="crumb" style="padding-left:0;padding-right:0"><a href="/zh/">HOME</a> / <a href="/zh/about/">ABOUT</a> / INVESTORS</p>
+
+    <!-- S-IR1 核心信息摘要（分屏；占位数字不渐显，BR-25） -->
+    <div class="pd-body" style="align-items:start">
+      <div>
+        <div class="en">Summary</div>
+        <h2 style="margin:12px 0 18px">投资者摘要</h2>
+        <p style="font-size:15px;max-width:440px">
+          企业主体：{PLACEHOLDER}<br />
+          成立与治理概述：{PLACEHOLDER}
+        </p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px">
+        {summaryStats.map((s) => (
+          <div class="stat"><div class="num" style="font-size:48px">{s.num}</div><p>{s.label}</p></div>
+        ))}
+      </div>
+    </div>
+
+    <!-- S-IR2 股权结构（白底细线卡片，无示例股东） -->
+    <section style="padding-bottom:90px" aria-label="股权结构">
+      <div class="en">Shareholding</div>
+      <h2 style="margin:12px 0 8px">股权结构</h2>
+      <p style="font-size:14px;color:var(--ink-muted);max-width:560px">
+        股东名称、类型与持股信息均为占位骨架；经需求方确认后替换（OP-24），未确认前不发布任何虚构股东或比例。
+      </p>
+      <div class="eq-cards">
+        {equityCards.map((c) => (
+          <div class="eq-card">
+            <h3>{c.name}</h3>
+            <div class="ratio">{c.ratio}</div>
+            <dl>
+              <dt>股东类型</dt><dd>{c.type}</dd>
+              <dt>持股说明</dt><dd>{c.note}</dd>
+              <dt>更新时间</dt><dd>{c.updated}</dd>
+            </dl>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+
+  <!-- S-IR3 融资历程（--bg-alt 时间轴） -->
+  <section style="background:var(--bg-alt);padding:90px 0" aria-label="融资历程">
+    <div class="wrap">
+      <div class="en">Funding History</div>
+      <h2 style="margin:12px 0 8px">融资历程</h2>
+      <p style="font-size:14px;color:var(--ink-muted);max-width:560px">
+        轮次、日期、金额与投资方均为占位（OP-25）；按时间顺序展示，最新在上。
+      </p>
+      <div class="tl2">
+        {rounds.map((r) => (
+          <div class="tl2-item">
+            <div class="tl2-card">
+              <div class="round">{r.round}</div>
+              <div class="meta">日期：{r.date} · 金额：{r.amount} · 投资方：{r.investors}</div>
+              <p>{r.brief}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- S-IR4 投资者联系（细线行；无交易/公告功能） -->
+  <div class="wrap" style="padding:90px 0 120px">
+    <div class="en">Contact</div>
+    <h2 style="margin:12px 0 8px">投资者联系</h2>
+    <div class="ir-contact">
+      <div class="quals" style="margin-top:0;border-top:none">
+        {irContact.map((c) => (
+          <div class="qual"><b>{c.label}</b><span>{c.value}</span></div>
+        ))}
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-muted);margin-top:26px">
+      本页不提供在线交易、公告查询等功能入口；占位字段不进入结构化数据与 SEO 事实描述（BR-25）。
+    </p>
+  </div>
+</BaseLayout>
