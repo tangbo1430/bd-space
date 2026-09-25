@@ -95,6 +95,9 @@ ok(css.includes('.sub-panel a{display:flex;align-items:center;min-height:40px;pa
 ok(css.includes('min-width:176px'), '面板宽度收紧至 176px');
 ok(css.includes('.sub-trigger .chev svg') && css.includes('rotate(180deg)'), 'chevron 为 12px SVG 且展开旋转');
 ok(!/\.sub-panel a\.cur:{0,2}after/.test(css), '当前态无重复短横线装饰');
+ok(css.includes('.gnb nav>a.cur:before') || css.includes('.gnb nav > a.cur::after') || css.includes('.gnb nav>a.cur::after') || /\.gnb nav>a\.cur:{0,1}:[a-z]+/.test(css), '一级当前页短线仅作用于顶级项（不下渗子项）');
+const subDash = /\.gnb nav a\.cur:{0,2}after/.test(css);
+ok(!subDash, '旧版全后代 a.cur::after 规则已移除');
 ok(home?.includes('class="chev" aria-hidden="true"><svg'), '触发器 chevron 使用 SVG 而非文本符号');
 
 const notFound = existsSync(join(dist, '404.html')) ? readFileSync(join(dist, '404.html'), 'utf8') : '';

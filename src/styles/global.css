@@ -107,7 +107,8 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
 .gnb nav { display: flex; gap: 38px; font-size: 15px; }
 .gnb nav a { opacity: .85; padding: 6px 0; position: relative; }
 .gnb nav a.cur { opacity: 1; }
-.gnb nav a.cur::after {
+/* 一级当前页指示仅作用于顶级导航项与触发器，不下渗到下拉子项（避免与竖线重复装饰） */
+.gnb nav > a.cur::after, .gnb nav .sub-trigger.cur::after {
   content: ""; position: absolute; left: 50%; transform: translateX(-50%);
   bottom: 0; width: 18px; height: 2px; background: var(--accent);
 }
@@ -128,12 +129,13 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
   padding: 14px 64px; box-shadow: var(--shadow-float); border-bottom: 1px solid var(--line);
 }
 
-/* 移动端抽屉 */
+/* 移动端抽屉（仅 ≤767 存在；更大视口不渲染，避免 translateX(100%) 产生横向溢出） */
 .drawer {
   position: fixed; inset: 0; z-index: 150; background: var(--bg-base);
-  padding: 90px 34px 40px; display: flex; flex-direction: column;
+  padding: 90px 34px 40px; display: none; flex-direction: column;
   transform: translateX(100%); transition: transform .3s ease; visibility: hidden;
 }
+@media (max-width: 767px) { .drawer { display: flex; } }
 .drawer.open { transform: none; visibility: visible; }
 .drawer a.drawer-link {
   font-size: 30px; font-weight: 200; color: var(--ink-strong);
@@ -242,7 +244,7 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
 /* ============ S4 深底产品线稿区 ============ */
 .dark-sec { background: var(--bg-dark); color: var(--ink-on-dark-body); padding: 150px 0; position: relative; overflow: hidden; }
 .dark-sec h2 { color: var(--ink-on-dark); }
-.dark-grid { display: grid; grid-template-columns: 38% 62%; gap: 40px; align-items: center; }
+.dark-grid { display: grid; grid-template-columns: 38fr 62fr; gap: 40px; align-items: center; }
 .dark-copy h2 { margin: 14px 0 22px; }
 .dark-copy p { max-width: 380px; }
 .dark-copy .btn { margin-top: 32px; }
@@ -302,7 +304,7 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
 
 /* ============ S8 CTA + 表单 ============ */
 .cta-sec { background: linear-gradient(120deg, #EAF4EF 0%, var(--accent-tint) 55%, #F2F0EA 100%); }
-.cta-grid { display: grid; grid-template-columns: 45% 55%; gap: 80px; align-items: start; }
+.cta-grid { display: grid; grid-template-columns: 45fr 55fr; gap: 80px; align-items: start; }
 .cta-grid h2 { font-size: 52px; }
 .cta-grid .note { font-size: 13px; color: var(--ink-muted); margin-top: 22px; }
 
