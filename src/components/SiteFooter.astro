@@ -1,0 +1,31 @@
+---
+import { site, PLACEHOLDER } from '../lib/site';
+import { NAV_ITEMS, LEGAL_LINKS } from '../lib/routes';
+---
+
+<footer>
+  <div class="wrap f-grid">
+    <div>
+      <div class="logo">半打空间 <span style={`font-family:var(--font-en);font-size:11px;letter-spacing:.3em;color:var(--ink-muted)`}>BANDA SPACE</span></div>
+      <p style="margin-top:18px;max-width:300px">{site.tagline}。【示例文案，待确认】</p>
+    </div>
+    <div>
+      <h4>导航</h4>
+      {NAV_ITEMS.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+    <div>
+      <h4>联系</h4>
+      <p>地址：{site.contact.address}<br />电话：{site.contact.phone}<br />邮箱：{site.contact.email}</p>
+    </div>
+  </div>
+  <div class="wrap f-bottom">
+    <span>© {site.year} 半打空间 · 版权所有</span>
+    <span>
+      {site.icp === PLACEHOLDER ? `${PLACEHOLDER}ICP 备案号` : site.icp}
+      {' · '}
+      {LEGAL_LINKS.map((l, i) => (
+        <>{i > 0 && ' / '}<a href={l.href}>{l.label}</a></>
+      ))}
+    </span>
+  </div>
+</footer>

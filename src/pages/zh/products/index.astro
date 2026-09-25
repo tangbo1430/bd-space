@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PhImg from '../../../components/PhImg.astro';
+import { getCollection } from 'astro:content';
+
+const products = (await getCollection('products', ({ data }) => data.published))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="产品中心"
+  description="半打空间产品中心：预应力叠合板、预制夹心墙板、预制楼梯等装配式混凝土构件（名称与参数以客户确认为准）。"
+  current="products"
+  headerStyle="solid"
+>
+  <p class="crumb"><a href="/zh/">HOME</a> / PRODUCTS</p>
+  <div class="wrap" style="padding-top:40px;padding-bottom:60px">
+    <div class="en">Products</div>
+    <h2 style="font-size:52px;margin-top:10px">产品中心</h2>
+  </div>
+
+  <div style="border-top:1px solid var(--line)">
+    {products.map((p, i) => (
+      <article class:list={['plist-item', { rev: i % 2 === 1 }]}>
+        <div class="p-img">
+          <PhImg g={i % 3 === 0 ? 'factory' : i % 3 === 1 ? 'yard' : 'site'} tag={`${p.data.listImageId} · 替换整图（占位=原创线稿版式位）`} />
+        </div>
+        <div class="p-txt">
+          <div class="en">{p.data.enTag}</div>
+          <h2>{p.data.name}</h2>
+          <p>{p.data.tagline}</p>
+          <a class="btn btn-primary" href={`/zh/products/${p.id}/`}>查看详情 <span class="arr">→</span></a>
+        </div>
+      </article>
+    ))}
+  </div>
+</BaseLayout>

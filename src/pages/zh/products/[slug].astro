@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PhImg from '../../../components/PhImg.astro';
+import ProductArt from '../../../components/ProductArt.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products', ({ data }) => data.published);
+  return products.map((p) => ({ params: { slug: p.id }, props: { product: p } }));
+}
+
+const { product } = Astro.props;
+const { Content } = await render(product);
+---
+
+<BaseLayout
+  title={product.data.name}
+  description={`${product.data.name}——${product.data.tagline} 半打空间装配式混凝土构件产品。`}
+  current="products"
+  headerStyle="overlay"
+>
+  <section class="page-hero" style="height:70vh;min-height:480px" aria-label={`${product.data.name}首屏`}>
+    <PhImg g="dark-2" tag={`${product.data.detailImageId} · 产品实拍/应用（占位）`} onDark />
+    <div class="hero-copy">
+      <div class="en" style="color:rgba(255,255,255,.6)">Product Detail</div>
+      <h1>{product.data.name}</h1>
+      <p>{product.data.tagline}</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="crumb" style="padding-left:0;padding-right:0">
+      <a href="/zh/">HOME</a> / <a href="/zh/products/">PRODUCTS</a> / {product.data.name}
+    </p>
+
+    <div class="pd-body">
+      <div>
+        <div class="en">Exploded View</div>
+        <h2 style="margin:12px 0 22px">分解示意</h2>
+        <ProductArt slug={product.id} variant="exploded" />
+        <p style="font-size:13px;color:var(--ink-muted);margin-top:18px">{product.data.description}</p>
+      </div>
+      <div>
+        <div class="en">Parameters</div>
+        <h2 style="margin:12px 0 22px">技术参数</h2>
+        <table class="param-table">
+          <tbody>
+            {product.data.params.map((row) => (
+              <tr><td>{row.label}</td><td>{row.value}</td></tr>
+            ))}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="/zh/contact/" style="margin-top:30px" data-track="consult_click">咨询该产品 <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    {product.data.scenes.length > 0 && (
+      <div style="padding-bottom:60px">
+        <div class="en">Applications</div>
+        <h2 style="margin:12px 0 22px">应用场景</h2>
+        <ul style="list-style:none;display:grid;gap:10px;font-size:15px">
+          {product.data.scenes.map((s) => <li style="border-bottom:1px solid var(--line);padding:10px 4px">{s}</li>)}
+        </ul>
+      </div>
+    )}
+
+    <div class="legal" style="max-width:none;padding:0 0 110px">
+      <Content />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+/**
+ * 占位图：几何渐变底 + 素材 ID 标注（BR-15 开发阶段正式状态）。
+ * 正式素材到位后整图替换本组件输出，不得改变布局。
+ */
+interface Props {
+  /** 渐变变体 */
+  g?: 'factory' | 'yard' | 'site' | 'dark-1' | 'dark-2';
+  /** 素材 ID 标注，如 IMG-HERO-1 · 2560×1440 · 工厂全景（占位） */
+  tag: string;
+  onDark?: boolean;
+  class?: string;
+}
+const { g = 'factory', tag, onDark = false, class: cls = '' } = Astro.props;
+---
+
+<div class:list={['img-ph', `g-${g}`, { 'on-dark': onDark }, cls]} role="img" aria-label={`占位图：${tag}`}>
+  <slot />
+  <i>{tag}</i>
+</div>

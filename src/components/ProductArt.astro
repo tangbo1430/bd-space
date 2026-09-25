@@ -1,0 +1,70 @@
+---
+/**
+ * 产品原创线稿（SVG，非竞品图形，UI 规范 §3.2/§6）。
+ * variant=icon：列表/首页小图；variant=exploded：详情分解示意（支持滚动外扩）。
+ */
+interface Props {
+  slug: string;
+  variant?: 'icon' | 'exploded';
+}
+const { slug, variant = 'icon' } = Astro.props;
+---
+
+{variant === 'icon' && slug === 'slab' && (
+  <svg width="120" height="80" viewBox="0 0 120 80" fill="none" aria-hidden="true">
+    <g stroke="#5a6660"><path d="M10 30 L60 14 L110 30 L60 46 Z" /><path d="M10 44 L60 28 L110 44 L60 60 Z" /></g>
+    <g stroke="#1FA87A" stroke-dasharray="2 3"><path d="M30 37 L30 33 M60 45 L60 29 M90 37 L90 33" /></g>
+    <circle cx="60" cy="14" r="2.5" fill="#1FA87A" />
+  </svg>
+)}
+{variant === 'icon' && slug === 'wall' && (
+  <svg width="120" height="80" viewBox="0 0 120 80" fill="none" aria-hidden="true">
+    <g stroke="#5a6660">
+      <path d="M30 12 L44 12 L44 68 L30 68 Z" /><path d="M50 12 L70 12 L70 68 L50 68 Z" /><path d="M76 12 L90 12 L90 68 L76 68 Z" />
+    </g>
+    <g stroke="#3a4540" stroke-width=".7"><path d="M52 16 L68 26 M52 26 L68 36 M52 36 L68 46 M52 46 L68 56 M52 56 L68 66" /></g>
+    <circle cx="90" cy="12" r="2.5" fill="#1FA87A" />
+  </svg>
+)}
+{variant === 'icon' && slug === 'stair' && (
+  <svg width="120" height="80" viewBox="0 0 120 80" fill="none" aria-hidden="true">
+    <path d="M16 64 L34 64 L34 54 L48 54 L48 44 L62 44 L62 34 L76 34 L76 24 L104 24" stroke="#5a6660" />
+    <path d="M16 64 L16 70 L104 70 L104 24" stroke="#3a4540" stroke-dasharray="3 4" />
+    <circle cx="24" cy="60" r="2.5" fill="#1FA87A" /><circle cx="96" cy="28" r="2.5" fill="#1FA87A" />
+  </svg>
+)}
+
+{variant === 'exploded' && slug === 'slab' && (
+  <svg viewBox="0 0 400 240" width="100%" fill="none" role="img" aria-label="叠合板原创分解线稿（占位）" data-explode>
+    <g stroke="#8A8F8C">
+      <path data-part="1" d="M60 80 L200 44 L340 80 L200 116 Z" />
+      <path data-part="0" d="M60 120 L200 84 L340 120 L200 156 Z" />
+      <path data-part="-1" d="M60 164 L200 128 L340 164 L200 200 Z" />
+    </g>
+    <g stroke="#1FA87A" stroke-dasharray="3 4"><path d="M200 116 L200 84 M200 156 L200 128" /></g>
+    <g fill="#1FA87A"><circle cx="200" cy="44" r="3.5" /><circle cx="60" cy="120" r="3.5" /><circle cx="340" cy="120" r="3.5" /></g>
+    <text x="200" y="232" text-anchor="middle" fill="#8A8F8C" font-size="10" letter-spacing="2" font-family="Arial">原创分解线稿占位 · 滚动驱动部件外扩 0→24px</text>
+  </svg>
+)}
+{variant === 'exploded' && slug === 'wall' && (
+  <svg viewBox="0 0 400 240" width="100%" fill="none" role="img" aria-label="夹心墙板原创分解线稿（占位）" data-explode>
+    <g stroke="#8A8F8C">
+      <path data-part="-1" d="M120 40 L168 40 L168 200 L120 200 Z" />
+      <path data-part="0" d="M180 40 L220 40 L220 200 L180 200 Z" />
+      <path data-part="1" d="M232 40 L280 40 L280 200 L232 200 Z" />
+    </g>
+    <g stroke="#8A8F8C" stroke-width=".7"><path d="M184 60 L216 80 M184 90 L216 110 M184 120 L216 140 M184 150 L216 170" /></g>
+    <g fill="#1FA87A"><circle cx="120" cy="40" r="3.5" /><circle cx="220" cy="120" r="3.5" /><circle cx="280" cy="200" r="3.5" /></g>
+    <text x="200" y="232" text-anchor="middle" fill="#8A8F8C" font-size="10" letter-spacing="2" font-family="Arial">原创分解线稿占位 · 滚动驱动部件外扩 0→24px</text>
+  </svg>
+)}
+{variant === 'exploded' && slug === 'stair' && (
+  <svg viewBox="0 0 400 240" width="100%" fill="none" role="img" aria-label="预制楼梯原创分解线稿（占位）" data-explode>
+    <g stroke="#8A8F8C">
+      <path data-part="-1" d="M70 190 L120 190 L120 160 L160 160 L160 130 L200 130 L200 100 L240 100 L240 70 L330 70" />
+      <path data-part="1" d="M70 190 L70 210 L330 210 L330 70" stroke-dasharray="4 5" />
+    </g>
+    <g fill="#1FA87A"><circle cx="95" cy="180" r="3.5" /><circle cx="310" cy="80" r="3.5" /></g>
+    <text x="200" y="232" text-anchor="middle" fill="#8A8F8C" font-size="10" letter-spacing="2" font-family="Arial">原创分解线稿占位 · 滚动驱动部件外扩 0→24px</text>
+  </svg>
+)}

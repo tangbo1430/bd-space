@@ -1,0 +1,19 @@
+---
+/**
+ * 右侧浮动联系条（克制版，UI 规范 §2.2）：
+ * 仅桌面 ≥1280 显示；滚动进页尾 600px 内自动隐藏；无闪烁动画。
+ */
+import { site } from '../lib/site';
+---
+
+<nav class="float-rail" data-float-rail aria-label="快捷联系">
+  <a href="#contact" data-track="consult_click" aria-label="电话咨询">
+    <span aria-hidden="true">☎</span><span class="rail-text">{site.contact.phone}</span>
+  </a>
+  <a href="/zh/contact/" data-track="consult_click" aria-label="在线留言">
+    <span aria-hidden="true">✉</span><span class="rail-text">在线留言</span>
+  </a>
+  <a href="#top" data-back-top aria-label="回到顶部">
+    <span aria-hidden="true">↑</span><span class="rail-text">回到顶部</span>
+  </a>
+</nav>

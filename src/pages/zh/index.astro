@@ -1,0 +1,243 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FloatRail from '../../components/FloatRail.astro';
+import PhImg from '../../components/PhImg.astro';
+import ConsultForm from '../../components/ConsultForm.astro';
+import ProductArt from '../../components/ProductArt.astro';
+import { site, PLACEHOLDER } from '../../lib/site';
+import { getCollection } from 'astro:content';
+
+const products = (await getCollection('products', ({ data }) => data.published))
+  .sort((a, b) => a.data.order - b.data.order);
+
+const stats = [
+  { num: '——', unit: '㎡', label: `年产能${PLACEHOLDER}` },
+  { num: '——', unit: '项', label: `服务项目${PLACEHOLDER}` },
+  { num: '——', unit: '个', label: `覆盖区域${PLACEHOLDER}` },
+  { num: '——', unit: '项', label: `专利与资质${PLACEHOLDER}` },
+];
+
+const quals = [
+  { name: `${PLACEHOLDER}资质/认证名称 01`, no: 'CERT-NO.【待提供】' },
+  { name: `${PLACEHOLDER}资质/认证名称 02`, no: 'CERT-NO.【待提供】' },
+  { name: `${PLACEHOLDER}体系认证 03`, no: 'CERT-NO.【待提供】' },
+  { name: `${PLACEHOLDER}专利/荣誉 04`, no: 'NO.【待提供】' },
+];
+---
+
+<BaseLayout
+  title="首页"
+  description="半打空间——装配式混凝土空间产品的研发、制造与交付。了解我们的工厂能力、产品中心、工程案例与资质。"
+  current="home"
+  headerStyle="overlay"
+>
+  <FloatRail />
+
+  <!-- S1 首屏 Hero：100dvh 三帧轮播 -->
+  <section class="hero" data-carousel aria-label="首屏轮播">
+    <div class="slide on" data-slide>
+      <div class="ph ph-1">
+        <svg width="900" height="520" viewBox="0 0 900 520" fill="none" style="opacity:.55" aria-hidden="true">
+          <g stroke="rgba(255,255,255,.55)" stroke-width="1">
+            <path d="M180 400 L450 300 L720 400 L450 500 Z" />
+            <path d="M250 380 L450 305 L650 380 L650 250 L450 175 L250 250 Z" />
+            <path d="M250 250 L450 325 L650 250" />
+            <path d="M450 325 L450 175" />
+            <path d="M330 275 L330 220 M570 275 L570 220" />
+          </g>
+          <g fill="#1FA87A">
+            <circle cx="250" cy="250" r="3.5" /><circle cx="650" cy="250" r="3.5" />
+            <circle cx="450" cy="175" r="3.5" /><circle cx="450" cy="325" r="3.5" />
+          </g>
+          <g fill="rgba(31,168,122,.18)">
+            <circle cx="250" cy="250" r="12" /><circle cx="650" cy="250" r="12" />
+            <circle cx="450" cy="175" r="12" /><circle cx="450" cy="325" r="12" />
+          </g>
+        </svg>
+        <span class="tag">IMG-HERO-1 · 2560×1440 · 工厂全景（占位）</span>
+      </div>
+      <div class="hero-copy">
+        <div class="en" style="color:rgba(255,255,255,.6)">Prefabricated Concrete Space</div>
+        <h1>装配式混凝土<br />空间的制造者</h1>
+        <p>以工业化方式建造空间——从构件到建筑，半打空间提供装配式混凝土产品的研发、制造与交付。【示例文案，待确认】</p>
+        <div class="btns">
+          <a class="btn btn-primary" href="#contact" data-track="consult_click">预约咨询 <span class="arr">→</span></a>
+          <a class="btn btn-ghost on-dark" href="/zh/products/">了解产品 <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="slide" data-slide>
+      <div class="ph ph-2"><span class="tag">IMG-HERO-2 · 2560×1440 · 构件堆场/吊装（占位）</span></div>
+      <div class="hero-copy">
+        <div class="en" style="color:rgba(255,255,255,.6)">Factory Capacity</div>
+        <h1>从产线，到工地</h1>
+        <p>标准化产线与严格品控，让每一个构件可追溯、可交付。【示例文案，待确认】</p>
+        <div class="btns"><a class="btn btn-primary" href="/zh/about/">走进工厂 <span class="arr">→</span></a></div>
+      </div>
+    </div>
+    <div class="slide" data-slide>
+      <div class="ph ph-3"><span class="tag">IMG-HERO-3 · 2560×1440 · 建成项目（占位）</span></div>
+      <div class="hero-copy">
+        <div class="en" style="color:rgba(255,255,255,.6)">Projects</div>
+        <h1>空间，已被使用</h1>
+        <p>服务多类工程场景的装配式解决方案。【示例文案，待确认】</p>
+        <div class="btns"><a class="btn btn-primary" href="/zh/cases/">查看案例 <span class="arr">→</span></a></div>
+      </div>
+    </div>
+    <div class="dots" role="tablist" aria-label="轮播切换">
+      <button class="on" data-dot aria-label="第 1 帧"></button>
+      <button data-dot aria-label="第 2 帧"></button>
+      <button data-dot aria-label="第 3 帧"></button>
+    </div>
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- S2 数据带 -->
+  <section class="stats" aria-label="关键数据">
+    <div class="wrap grid">
+      {stats.map((s) => (
+        <div class="stat rv"><div class="num">{s.num}<em>{s.unit}</em></div><p>{s.label}</p></div>
+      ))}
+    </div>
+  </section>
+
+  <!-- S3 关于半打（分屏） -->
+  <section class="sec" style="padding-left:0;padding-right:0" aria-label="关于半打">
+    <div class="split">
+      <div class="imgbox rv">
+        <PhImg g="factory" tag="IMG-ABOUT-1 · 2000×1300 · 厂房/产线（占位）" />
+      </div>
+      <div class="txt rv">
+        <div class="en">About Banda</div>
+        <h2>把建造，<br />变成制造</h2>
+        <p>半打空间专注于装配式混凝土空间产品。我们相信建筑可以像工业产品一样被设计、制造与交付——更短的工期、更稳定的品质、更少的现场不确定性。【示例文案，待确认】</p>
+        <a class="btn btn-ghost" href="/zh/about/">走进半打 <span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 产品中心（深底叙事区 + 原创线稿分解） -->
+  <section class="dark-sec" aria-label="产品中心">
+    <div class="wrap">
+      <div class="dark-grid">
+        <div class="dark-copy rv">
+          <div class="en on-dark">Products</div>
+          <h2>模块，即空间</h2>
+          <p>每一类构件都是空间的一个可组合单元。分解它们，你会看到半打对结构与工艺的理解。【示例文案，待确认】</p>
+          <a class="btn btn-primary" href="/zh/products/">产品中心 <span class="arr">→</span></a>
+        </div>
+        <div class="rv">
+          <svg viewBox="0 0 640 420" width="100%" fill="none" role="img" aria-label="预制构件分解示意（原创线稿占位）">
+            <g stroke="#5a6660" stroke-width="1">
+              <path d="M170 96 L320 50 L470 96 L320 142 Z" />
+              <path d="M170 96 L170 108 L320 154 L320 142" />
+              <path d="M470 96 L470 108 L320 154" />
+              <path d="M196 176 L240 190 L240 300 L196 286 Z" />
+              <path d="M444 176 L400 190 L400 300 L444 286 Z" />
+              <path d="M262 200 L320 184 L378 200 L378 296 L320 312 L262 296 Z" />
+              <path d="M262 200 L320 216 L378 200" />
+              <path d="M320 216 L320 312" />
+              <path d="M190 336 L320 296 L450 336 L320 376 Z" />
+              <path d="M190 336 L190 348 L320 388 L320 376" />
+              <path d="M450 336 L450 348 L320 388" />
+              <g stroke-dasharray="3 5" stroke="#3a4540">
+                <path d="M320 154 L320 184" /><path d="M240 240 L262 240" />
+                <path d="M400 240 L378 240" /><path d="M320 312 L320 296" />
+              </g>
+            </g>
+            <g fill="#1FA87A">
+              <circle cx="320" cy="50" r="3" /><circle cx="196" cy="176" r="3" />
+              <circle cx="444" cy="176" r="3" /><circle cx="320" cy="216" r="3" /><circle cx="320" cy="388" r="3" />
+            </g>
+            <g fill="rgba(31,168,122,.16)">
+              <circle cx="320" cy="50" r="11" /><circle cx="196" cy="176" r="11" />
+              <circle cx="444" cy="176" r="11" /><circle cx="320" cy="216" r="11" /><circle cx="320" cy="388" r="11" />
+            </g>
+            <text x="320" y="418" text-anchor="middle" fill="#5a6660" font-size="10" letter-spacing="3" font-family="Arial">ORIGINAL LINE-ART PLACEHOLDER · 预制构件分解示意（原创）</text>
+          </svg>
+        </div>
+      </div>
+      <div class="prod-list">
+        {products.map((p) => (
+          <a class="prod-item rv" href={`/zh/products/${p.id}/`}>
+            <span class="go" aria-hidden="true">↗</span>
+            <ProductArt slug={p.id} variant="icon" />
+            <h3>{p.data.name}</h3>
+            <p>{p.data.tagline}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 工程案例（错位双联，占位态不可点击——未获授权前不生成虚构详情） -->
+  <section class="sec" aria-label="工程案例">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><div class="en">Selected Projects</div><h2>被建造，也被使用</h2></div>
+        <a class="link-more" href="/zh/cases/">查看全部案例 <span class="arr">→</span></a>
+      </div>
+      <div class="cases">
+        <div class="case rv">
+          <div class="cimg"><PhImg g="yard" tag="IMG-CASE-1 · 2000×1250 · 项目实景（占位）" /></div>
+          <div class="meta"><h3>{PLACEHOLDER}项目名称 A</h3><span>{PLACEHOLDER}地点 · 年份</span><div class="kpis">构件用量 —— m³ · 工期 —— 天</div></div>
+        </div>
+        <div class="case rv">
+          <div class="cimg"><PhImg g="site" tag="IMG-CASE-2 · 2000×1250 · 项目实景（占位）" /></div>
+          <div class="meta"><h3>{PLACEHOLDER}项目名称 B</h3><span>{PLACEHOLDER}地点 · 年份</span><div class="kpis">建筑面积 —— ㎡ · 构件 —— 件</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 资质能力（横排细线表） -->
+  <section class="sec" style="background:#fff" aria-label="资质能力">
+    <div class="wrap">
+      <div class="sec-head rv"><div><div class="en">Qualifications</div><h2>资质与能力</h2></div>
+        <a class="link-more" href="/zh/qualifications/">全部资质 <span class="arr">→</span></a>
+      </div>
+      <div class="quals">
+        {quals.map((q) => (
+          <div class="qual rv"><b>{q.name}</b><span>{q.no}</span><span class="arr" aria-hidden="true">→</span></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- S7 新闻资讯（占位条目；无已发布内容时列表页展示空态） -->
+  <section class="sec news-sec" aria-label="新闻资讯">
+    <div class="wrap">
+      <div class="sec-head rv"><div><div class="en">Newsroom</div><h2>新闻资讯</h2></div></div>
+      <div class="news-grid">
+        <div>
+          {['01', '02', '03'].map((no) => (
+            <div class="news-item rv">
+              <div class="no" aria-hidden="true">{no}</div>
+              <div>
+                <time>{PLACEHOLDER}2025-00-00</time>
+                <h3>{PLACEHOLDER}新闻标题占位：公司动态 / 项目签约 / 行业观察</h3>
+                <p>{PLACEHOLDER}摘要两行以内。此处为版式占位文案，展示信息密度与行高节奏，不作为真实新闻内容。</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="news-side rv"><a href="/zh/news/">全部资讯 →</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8 底部 CTA + 表单 -->
+  <section class="sec cta-sec" id="contact" aria-label="预约咨询">
+    <div class="wrap cta-grid">
+      <div class="rv">
+        <div class="en">Contact</div>
+        <h2>让我们谈谈<br />您的项目</h2>
+        <p style="margin-top:20px;max-width:380px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
+        <p class="note">电话：{site.contact.phone}<br />邮箱：{site.contact.email}<br />地址：{site.contact.address}</p>
+      </div>
+      <div class="rv">
+        <ConsultForm id="home" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

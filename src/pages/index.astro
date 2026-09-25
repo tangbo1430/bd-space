@@ -1,0 +1,17 @@
+---
+/** 根路径：默认简体中文，进入 /zh/（PRD OP-2 / AC-7）。静态站使用 meta refresh + 链接兜底。 */
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>半打空间 BANDA SPACE</title>
+  <meta http-equiv="refresh" content="0; url=/zh/" />
+  <link rel="canonical" href={new URL('/zh/', Astro.site ?? Astro.url.origin).href} />
+</head>
+<body>
+  <p>正在进入 <a href="/zh/">半打空间</a> …</p>
+</body>
+</html>

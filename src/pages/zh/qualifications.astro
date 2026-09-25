@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { PLACEHOLDER } from '../../lib/site';
+
+// 资质事实纪律（FR-7 / AC-6）：仅展示经审核、适用目标市场且有效的资质；
+// 全部名称为占位，过期/未授权记录不得呈现为有效背书。国内与海外资质分组展示。
+const groups = [
+  {
+    title: '国内资质',
+    en: 'Domestic Certifications',
+    items: [
+      { name: `${PLACEHOLDER}营业执照/建筑业企业资质`, no: 'CERT-NO.【待提供】' },
+      { name: `${PLACEHOLDER}安全生产许可证`, no: 'CERT-NO.【待提供】' },
+      { name: `${PLACEHOLDER}体系认证（质量/环境/职业健康）`, no: 'CERT-NO.【待提供】' },
+    ],
+  },
+  {
+    title: '海外认证（面向目标市场发布）',
+    en: 'Overseas Certifications',
+    items: [
+      { name: `${PLACEHOLDER}出口相关认证/检测报告`, no: 'CERT-NO.【待提供】' },
+      { name: `${PLACEHOLDER}专利/荣誉`, no: 'NO.【待提供】' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="资质能力"
+  description="半打空间资质能力：国内资质、体系认证与海外认证按适用市场展示（名称与编号以企业提供的有效文件为准）。"
+  current="qualifications"
+  headerStyle="solid"
+>
+  <p class="crumb"><a href="/zh/">HOME</a> / QUALIFICATIONS</p>
+  <div class="wrap" style="padding-top:40px;padding-bottom:30px">
+    <div class="en">Qualifications</div>
+    <h2 style="font-size:52px;margin-top:10px">资质能力</h2>
+    <p style="max-width:560px;margin-top:18px;font-size:15px;color:var(--ink-muted)">
+      以下资质条目均为{PLACEHOLDER}占位。正式内容须由企业提供有效文件并注明适用范围与有效状态后发布；过期、无授权或不适用目标市场的资质不予展示。
+    </p>
+  </div>
+
+  {groups.map((g) => (
+    <div class="wrap" style="padding-bottom:70px">
+      <div class="en">{g.en}</div>
+      <h3 style="margin:10px 0 0;font-weight:300;font-size:26px">{g.title}</h3>
+      <div class="quals" style="margin-top:30px">
+        {g.items.map((q) => (
+          <div class="qual"><b>{q.name}</b><span>{q.no}</span><span class="arr" aria-hidden="true">→</span></div>
+        ))}
+      </div>
+    </div>
+  ))}
+
+  <div class="wrap" style="padding-bottom:110px">
+    <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">索取资质文件 <span class="arr">→</span></a>
+  </div>
+</BaseLayout>

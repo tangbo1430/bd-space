@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhImg from '../../components/PhImg.astro';
+import { PLACEHOLDER } from '../../lib/site';
+
+const factoryStats = [
+  { num: '——', label: `自动化产线（条）${PLACEHOLDER}` },
+  { num: '——', label: `堆场面积（㎡）${PLACEHOLDER}` },
+];
+const milestones = [
+  { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 01` },
+  { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 02` },
+  { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 03` },
+];
+---
+
+<BaseLayout
+  title="关于我们"
+  description="了解半打空间：企业简介、工厂能力、生产流程与质检体系。数据与事实信息以客户提供为准。"
+  current="about"
+  headerStyle="overlay"
+>
+  <section class="page-hero" aria-label="关于我们首屏">
+    <PhImg g="dark-1" tag="IMG-ABOUT-HERO · 2400×1100 · 工厂大场景（占位）" onDark />
+    <div class="hero-copy">
+      <div class="en" style="color:rgba(255,255,255,.6)">About Banda</div>
+      <h1>把建造，变成制造</h1>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <p class="crumb" style="padding-left:0;padding-right:0"><a href="/zh/">HOME</a> / ABOUT</p>
+
+    <!-- 企业简介 -->
+    <div class="pd-body">
+      <div>
+        <div class="en">Profile</div>
+        <h2 style="margin:12px 0 18px">企业简介</h2>
+        <p style="font-size:15px;max-width:440px">
+          {PLACEHOLDER}公司简介、核心优势与经营理念。此处为占位文案，待客户提供经审核的企业介绍后替换（PRD §8 企业必填字段）。
+        </p>
+      </div>
+      <div class="imgbox" style="position:relative;min-height:320px;border-radius:6px;overflow:hidden">
+        <PhImg g="yard" tag="IMG-ABOUT-2 · 1600×1000 · 厂区（占位）" />
+      </div>
+    </div>
+
+    <!-- 工厂能力 -->
+    <div class="pd-body">
+      <div>
+        <div class="en">Factory</div>
+        <h2 style="margin:12px 0 18px">工厂能力</h2>
+        <p style="font-size:15px;max-width:440px">{PLACEHOLDER}产线、设备、品控体系介绍。占位文案。</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px">
+          {factoryStats.map((s) => (
+            <div class="stat"><div class="num" style="font-size:48px">{s.num}</div><p>{s.label}</p></div>
+          ))}
+        </div>
+      </div>
+      <div style="display:grid;gap:18px">
+        <div class="imgbox" style="position:relative;min-height:180px;border-radius:6px;overflow:hidden">
+          <PhImg g="yard" tag="IMG-FACTORY-1 · 1600×1000 · 产线（占位）" />
+        </div>
+        <div class="imgbox" style="position:relative;min-height:180px;border-radius:6px;overflow:hidden">
+          <PhImg g="site" tag="IMG-FACTORY-2 · 1600×1000 · 设备/堆场（占位）" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 发展历程 -->
+    <div class="tl" aria-label="发展历程">
+      <div class="en" style="margin-left:-40px;padding-left:40px">Milestones</div>
+      {milestones.map((m) => (
+        <div class="tl-item"><div class="yr">{m.yr}</div><p>{m.text}</p></div>
+      ))}
+    </div>
+
+    <div style="padding-bottom:110px">
+      <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">预约咨询 <span class="arr">→</span></a>
+    </div>
+  </div>
+</BaseLayout>

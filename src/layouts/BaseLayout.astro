@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+import { site } from '../lib/site';
+import { hreflangLinks } from '../lib/seo';
+import { ANALYTICS_SCRIPT_URL, ANALYTICS_DOMAIN, analyticsEnabled } from '../lib/analytics';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  /** 页面语言；未发布预留态用 en */
+  lang?: 'zh-CN' | 'en';
+  /** 当前栏目 key（导航高亮），见 lib/routes.ts */
+  current?: string;
+  /** 导航样式：overlay=透明叠加于深色首屏；solid=白底实底 */
+  headerStyle?: 'overlay' | 'solid';
+  /** 未发布/错误页不索引 */
+  noindex?: boolean;
+}
+
+const { title, description, lang = 'zh-CN', current = '', headerStyle = 'overlay', noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
+// 当前仅中文发布：hreflang 仅 zh-CN 自引用 + x-default（BR-14）
+const altLinks = lang === 'zh-CN'
+  ? hreflangLinks(String(Astro.site ?? Astro.url.origin), Astro.url.pathname, { zh: true, en: false })
+  : [];
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | {site.name}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {altLinks.map((l) => <link rel="alternate" hreflang={l.lang} href={l.href} />)}
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={`${title} | ${site.name}`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:locale" content={lang === 'zh-CN' ? 'zh_CN' : 'en'} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  {analyticsEnabled && (
+    <script defer data-domain={ANALYTICS_DOMAIN} src={ANALYTICS_SCRIPT_URL}></script>
+  )}
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到主要内容</a>
+  <SiteHeader current={current} style={headerStyle} lang={lang} />
+  <main id="main">
+    <slot />
+  </main>
+  <SiteFooter />
+  <script>
+    import '../scripts/main.ts';
+  </script>
+</body>
+</html>

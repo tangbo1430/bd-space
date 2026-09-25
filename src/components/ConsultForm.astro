@@ -1,0 +1,86 @@
+---
+/**
+ * 咨询表单（UI 规范 §3.6 状态机 + Leader 统一口径）。
+ * 必填：称呼 / 联系方式（手机或邮箱）/ 咨询内容 / 隐私同意；选填：企业、项目所在地。
+ * 失败保留输入；仅服务端确认成功后展示成功态（BR-10）。
+ * 未配置 PUBLIC_FORM_ENDPOINT 时禁用提交并展示提示（BR-16：邮箱未验证前不启用真实提交）。
+ */
+interface Props {
+  id?: string;
+}
+const { id = 'consult' } = Astro.props;
+const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
+const accessKey = import.meta.env.PUBLIC_FORM_ACCESS_KEY ?? '';
+const enabled = Boolean(endpoint);
+---
+
+<div class="form-wrap" data-form-root>
+  <form
+    class="form"
+    data-consult-form
+    data-endpoint={endpoint}
+    data-access-key={accessKey}
+    data-enabled={String(enabled)}
+    novalidate
+    aria-label="咨询留言表单"
+  >
+    {!enabled && (
+      <p class="form-banner info show" role="note">
+        在线留言服务暂未开通（接收邮箱待配置，BR-16）。您可先通过电话或邮箱与我们联系——联系方式见本页左侧信息。
+      </p>
+    )}
+    <p class="form-banner" data-form-banner role="alert"></p>
+
+    <div class="field" data-field="name">
+      <label for={`${id}-name`}>称呼 <b>*</b></label>
+      <input id={`${id}-name`} name="name" type="text" placeholder="您的称呼" autocomplete="name" maxlength="50" />
+      <div class="msg" data-msg></div>
+    </div>
+    <div class="field" data-field="company">
+      <label for={`${id}-company`}>企业</label>
+      <input id={`${id}-company`} name="company" type="text" placeholder="公司/组织名称（选填）" autocomplete="organization" maxlength="100" />
+      <div class="msg" data-msg></div>
+    </div>
+    <div class="field" data-field="contact">
+      <label for={`${id}-contact`}>联系方式 <b>*</b></label>
+      <input id={`${id}-contact`} name="contact" type="text" placeholder="手机或邮箱" autocomplete="tel" maxlength="100" />
+      <div class="msg" data-msg></div>
+    </div>
+    <div class="field" data-field="location">
+      <label for={`${id}-location`}>项目所在地</label>
+      <input id={`${id}-location`} name="location" type="text" placeholder="选填" maxlength="100" />
+      <div class="msg" data-msg></div>
+    </div>
+    <div class="field full" data-field="message">
+      <label for={`${id}-message`}>需求描述 <b>*</b></label>
+      <textarea id={`${id}-message`} name="message" rows="3" placeholder="简单描述您的项目或问题" maxlength="1000"></textarea>
+      <div class="msg" data-msg></div>
+    </div>
+
+    <!-- 防滥用：honeypot（正常用户不可见）+ 来源页面 -->
+    <div class="field-hp" aria-hidden="true">
+      <label for={`${id}-website`}>请勿填写</label>
+      <input id={`${id}-website`} name="bd_website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <input type="hidden" name="source" data-source-field value="" />
+
+    <label class="agree" data-field="agree">
+      <input type="checkbox" name="agree" />
+      <span>
+        我已阅读并同意<a href="/zh/privacy/" target="_blank">《隐私政策》</a>【页面待提供】，同意半打空间就本次咨询与我联系。
+        <b style="color:var(--state-error)">*</b>
+        <span class="msg" data-msg style="display:block"></span>
+      </span>
+    </label>
+
+    <button class="btn btn-primary" type="submit" disabled={!enabled}>
+      <span data-submit-text>提交留言</span> <span class="arr">→</span>
+    </button>
+  </form>
+
+  <div class="form-success" data-form-success hidden>
+    <div class="ic">✓</div>
+    <h3>已收到您的留言</h3>
+    <p>我们将在 1 个工作日内与您联系。【示例文案，待确认】</p>
+  </div>
+</div>

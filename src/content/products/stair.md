@@ -1,0 +1,20 @@
+---
+name: 预制楼梯
+enTag: 03 / Stair
+order: 3
+tagline: 【待确认】现场即吊即装。
+description: 【待确认】产品简介。当前为占位文案，待客户提供经审核的产品介绍后替换。产品清单以 PRD §5 为准，名称待客户确认。
+scenes:
+  - 【待提供】适用场景 01
+  - 【待提供】适用场景 02
+params:
+  - { label: 规格尺寸, value: 【待提供】 }
+  - { label: 混凝土强度等级, value: 【待提供】 }
+  - { label: 吊装与连接, value: 【待提供】 }
+  - { label: 表面处理, value: 【待提供】 }
+  - { label: 执行标准, value: 【待提供】 }
+listImageId: IMG-PRODUCT-LIST-3 · 1800×1200
+detailImageId: IMG-PRODUCT-DETAIL-3 · 2400×1350
+published: true
+---
+【待确认】产品正文介绍。此处为占位内容，不展示任何虚构参数或承诺。

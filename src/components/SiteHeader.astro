@@ -1,0 +1,38 @@
+---
+import { NAV_ITEMS, EN_COMING_SOON } from '../lib/routes';
+
+interface Props {
+  current: string;
+  style: 'overlay' | 'solid';
+  lang: 'zh-CN' | 'en';
+}
+const { current, style, lang } = Astro.props;
+---
+
+<header class:list={['gnb', { 'gnb-solid': style === 'solid' }]} data-gnb>
+  <a class="logo" href="/zh/">半打<b>空间</b><span class="logo-en">BANDA SPACE</span></a>
+  <nav aria-label="主导航">
+    {NAV_ITEMS.map((item) => (
+      <a href={item.href} class:list={[{ cur: item.key === current }]} aria-current={item.key === current ? 'page' : undefined}>{item.label}</a>
+    ))}
+  </nav>
+  <div class="right">
+    {lang === 'zh-CN' && (
+      <button type="button" class="lang" data-lang-toggle aria-label="切换语言（英文版筹备中）">中&nbsp;|&nbsp;EN</button>
+    )}
+    <a class="cta-phone" href="/zh/contact/" data-track="consult_click">☎&nbsp;预约咨询</a>
+  </div>
+  <button type="button" class="burger" data-drawer-open aria-label="打开导航菜单" aria-expanded="false">
+    <i></i><i></i>
+  </button>
+</header>
+
+<div class="drawer" data-drawer aria-hidden="true">
+  <button type="button" class="p-close" data-drawer-close aria-label="关闭导航菜单">×</button>
+  {NAV_ITEMS.map((item) => (
+    <a class="drawer-link" href={item.href}>{item.label}</a>
+  ))}
+  <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">☎ 预约咨询</a>
+</div>
+
+<div class="lang-toast" data-lang-toast role="status">{EN_COMING_SOON}</div>

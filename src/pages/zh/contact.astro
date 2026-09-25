@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PhImg from '../../components/PhImg.astro';
+import ConsultForm from '../../components/ConsultForm.astro';
+import { site } from '../../lib/site';
+---
+
+<BaseLayout
+  title="联系我们"
+  description="联系半打空间：电话、邮箱、地址与在线咨询表单。留下您的项目需求，我们将在 1 个工作日内回复。"
+  current="contact"
+  headerStyle="solid"
+>
+  <p class="crumb"><a href="/zh/">HOME</a> / CONTACT</p>
+  <div class="wrap" style="padding-top:40px;padding-bottom:20px">
+    <div class="en">Contact</div>
+    <h2 style="font-size:52px;margin-top:10px">联系我们</h2>
+  </div>
+
+  <div class="wrap" style="padding-bottom:120px">
+    <div class="cta-grid" style="align-items:start">
+      <div>
+        <div class="en">Info</div>
+        <h3 style="margin:12px 0 22px;font-weight:300;font-size:30px">半打空间</h3>
+        <p style="font-size:15px;line-height:2.2">
+          地址：{site.contact.address}<br />
+          电话：{site.contact.phone}<br />
+          邮箱：{site.contact.email}<br />
+          企业微信/公众号：【待提供】<br />
+          WhatsApp（海外）：【待提供】
+        </p>
+        <div style="position:relative;height:280px;border-radius:6px;overflow:hidden;margin-top:34px">
+          <PhImg g="yard" tag="IMG-MAP-1 · 1200×900 · 静态地图图（占位；建议接入高德/百度静态图）" />
+        </div>
+      </div>
+      <div>
+        <div class="en">Message</div>
+        <h3 style="margin:12px 0 30px;font-weight:300;font-size:30px">在线留言</h3>
+        <ConsultForm id="contact" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>
