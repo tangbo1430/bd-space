@@ -167,6 +167,28 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await p1280.screenshot({ path: 'shots/v14-desktop-1280-mega.png', clip: { x: 0, y: 0, width: 1280, height: 300 } });
   await p1280.close();
 
+  // ============ v1.5.1 导航视口居中（1440/1360/1280 × 双页头态） ============
+  for (const w of [1440, 1360, 1280]) {
+    // 叠加 Hero 态（首页顶部）
+    const pc = await browser.newPage({ viewport: { width: w, height: 800 } });
+    await pc.goto('http://localhost:4321/zh/', { waitUntil: 'networkidle' });
+    const overlayDev = await pc.evaluate(() => {
+      const r = document.querySelector('.gnb nav').getBoundingClientRect();
+      return (r.left + r.width / 2) - innerWidth / 2;
+    });
+    check(`${w} overlay 态导航居中偏差 ≤2px（实测 ${overlayDev.toFixed(1)}px）`, Math.abs(overlayDev) <= 2);
+    // 纯色态（滚动后 .scrolled）
+    await pc.evaluate(() => window.scrollTo(0, 900));
+    await pc.waitForTimeout(400);
+    const solidDev = await pc.evaluate(() => {
+      const r = document.querySelector('.gnb nav').getBoundingClientRect();
+      return (r.left + r.width / 2) - innerWidth / 2;
+    });
+    check(`${w} solid 态导航居中偏差 ≤2px（实测 ${solidDev.toFixed(1)}px）`, Math.abs(solidDev) <= 2);
+    await pc.screenshot({ path: `shots/v151-nav-centered-${w}.png`, clip: { x: 0, y: 0, width: w, height: 120 } });
+    await pc.close();
+  }
+
   // ============ 无 JS（AC-43） ============
   const ctxNoJs = await browser.newContext({ viewport: { width: 1440, height: 900 }, javaScriptEnabled: false });
   const nojs = await ctxNoJs.newPage();

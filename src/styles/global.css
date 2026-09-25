@@ -123,6 +123,12 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
 }
 .gnb .burger { display: none; }
 
+/* 桌面 GNB：两侧区等宽，主导航精确视口居中（v1.5.1 视觉修正） */
+@media (min-width: 1280px) {
+  .gnb .logo { flex: 1; }
+  .gnb .right { flex: 1; justify-content: flex-end; }
+}
+
 /* 内页（无深色首屏）导航默认实底 */
 .gnb.gnb-solid { color: var(--ink-strong); background: var(--bg-surface); border-bottom: 1px solid var(--line); }
 /* 滚动后：白底收缩悬浮条 */
