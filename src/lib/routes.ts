@@ -28,12 +28,16 @@ export const NAV_ITEMS: NavItem[] = [
 export interface AboutSubItem extends NavItem {
   /** 精确路径匹配用 key 前缀 */
   matchPrefix: string;
+  /** 英文小标签（v1.4 Mega Subnav，11px 大写） */
+  en: string;
+  /** 原创线性图标 symbol id（v1.4 M2，1.5px 描边） */
+  icon: string;
 }
 
 export const ABOUT_SUB_ITEMS: AboutSubItem[] = [
-  { key: 'about', label: '公司介绍', href: '/zh/about/', matchPrefix: '/zh/about/' },
-  { key: 'investors', label: '投资者关系', href: '/zh/about/investors/', matchPrefix: '/zh/about/investors/' },
-  { key: 'careers', label: '人才招聘', href: '/zh/about/careers/', matchPrefix: '/zh/about/careers/' },
+  { key: 'about', label: '公司介绍', href: '/zh/about/', matchPrefix: '/zh/about/', en: 'About Banda', icon: 'ic-about' },
+  { key: 'investors', label: '投资者关系', href: '/zh/about/investors/', matchPrefix: '/zh/about/investors/', en: 'Investors', icon: 'ic-ir' },
+  { key: 'careers', label: '人才招聘', href: '/zh/about/careers/', matchPrefix: '/zh/about/careers/', en: 'Careers', icon: 'ic-career' },
 ];
 
 /**

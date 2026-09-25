@@ -161,7 +161,7 @@ if (hero) {
  * 职责分离（v0.4.1）：一级「关于我们」为纯链接，本脚本不绑定任何点击/按键展开逻辑，
  * 只渐进增强打开/关闭时序与安全走廊；绝不 preventDefault 一级链接（BR-23.2）。
  * 定参（v1.3 N4，开发不自造）：指针打开 100ms / 关闭 300ms 单计时器 /
- * 12px 连接层 / 意图走廊 ≈160×68px；键盘 focus 即时打开。
+ * 12px 连接层 / 意图走廊 ≈160×128px；键盘 focus 即时打开。
  */
 document.querySelectorAll<HTMLElement>('[data-subnav]').forEach((box) => {
   const trigger = box.querySelector<HTMLElement>('[data-sub-trigger]');
@@ -195,7 +195,7 @@ document.querySelectorAll<HTMLElement>('[data-subnav]').forEach((box) => {
     }, 300);
   };
 
-  /* 安全走廊（意图三角 ≈160×68px，v1.3 S6）：指针沿「一级项右缘 → 面板顶边」方向
+  /* 安全走廊（意图三角 ≈160×128px，v1.4 M4）：指针沿「一级项右缘 → 面板顶边」方向
      朝面板移动时即使短暂离开组命中区也不关闭；不使用覆盖 Hero 的巨型遮罩。 */
   let corridor: { x1: number; y1: number; x2: number; y2: number; w: number } | null = null;
   const buildCorridor = () => {

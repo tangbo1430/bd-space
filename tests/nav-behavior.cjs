@@ -1,4 +1,4 @@
-/* v1.3 导航带行为验证（AC-34~47 覆盖）：时序、轨迹、键盘、触屏、无 JS、四视口 */
+﻿/* v1.4 Mega Subnav 行为验证（AC-34~47 + AC-V1~V3）：时序、轨迹、键盘、触屏、无 JS、四视口、深浅背景、三列几何 */
 const { chromium } = require('playwright');
 
 const results = [];
@@ -27,6 +27,33 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await page.mouse.move(tcx, tcy);
   await page.waitForTimeout(180);
   check('AC-35 停留100ms后打开', await isOpen());
+
+  // ===== v1.4 几何与深色 Hero 变体（首页顶部，面板开启中） =====
+  const geo = await page.evaluate(() => {
+    const card = document.querySelector('.sub-panel-card');
+    const cs = getComputedStyle(card);
+    const r = card.getBoundingClientRect();
+    return { w: r.width, h: r.height, shadow: cs.boxShadow, radius: cs.borderRadius, borderTop: cs.borderTopWidth, bg: cs.backgroundColor };
+  });
+  check('AC-V1 面板 100vw 全宽', Math.abs(geo.w - 1440) <= 1);
+  check('AC-V1 面板高 128px', Math.abs(geo.h - 128) <= 1);
+  check('AC-V1 顶部 1px 分隔线', geo.borderTop === '1px');
+  check('AC-46 无阴影/圆角', geo.shadow === 'none' && geo.radius === '0px');
+  check('深色 Hero 半透明深底 rgba(17,21,20,.82)', geo.bg === 'rgba(17, 21, 20, 0.82)');
+  const colCount = await page.evaluate(() => getComputedStyle(document.querySelector('.mega-in')).gridTemplateColumns.split(' ').length);
+  check('AC-V2 三列 1fr 均布', colCount === 3);
+  check('AC-V3 三枚原创线性图标', await page.locator('.mega-col .mega-ic').count() === 3 && await page.locator('symbol#ic-about').count() === 1 && await page.locator('symbol#ic-ir').count() === 1 && await page.locator('symbol#ic-career').count() === 1);
+  // 深色 hover：图标+标题转青绿 + 14% tint
+  const colBox = await page.locator('.mega-col').first().boundingBox();
+  await page.mouse.move(colBox.x + colBox.width / 2, colBox.y + colBox.height / 2);
+  await page.waitForTimeout(250);
+  const darkHover = await page.locator('.mega-col').first().evaluate((el) => ({
+    ic: getComputedStyle(el.querySelector('.mega-ic')).color,
+    b: getComputedStyle(el.querySelector('.mega-t b')).color,
+    bg: getComputedStyle(el).backgroundColor,
+  }));
+  check('深色 hover 图标+标题转青绿', darkHover.ic === 'rgb(31, 168, 122)' && darkHover.b === 'rgb(31, 168, 122)');
+  check('深色 hover 列底 14% 青绿 tint', darkHover.bg === 'rgba(31, 168, 122, 0.14)');
 
   // AC-36: 慢速直向移入面板（经 12px 连接层）
   const card = await page.locator('.sub-panel-card').boundingBox();
@@ -80,11 +107,13 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await page.waitForTimeout(60); // focus 即时（<100ms）
   check('AC-38 focus 即时打开', await isOpen());
   await page.keyboard.press('Tab');
-  const focused1 = await page.evaluate(() => document.activeElement?.textContent?.trim());
-  check('AC-38 Tab 进入「公司介绍」', focused1 === '公司介绍');
+  const focused1 = await page.evaluate(() => document.activeElement?.getAttribute('href'));
+  check('AC-38 Tab 进入「公司介绍」', focused1 === '/zh/about/');
+  const ring = await page.evaluate(() => { const cs = getComputedStyle(document.activeElement); return { w: cs.outlineWidth, off: cs.outlineOffset }; });
+  check('焦点环 2px 青绿外扩 4px', ring.w === '2px' && ring.off === '4px');
   await page.keyboard.press('Tab');
-  const focused2 = await page.evaluate(() => document.activeElement?.textContent?.trim());
-  check('AC-38 Tab 进入「投资者关系」', focused2 === '投资者关系');
+  const focused2 = await page.evaluate(() => document.activeElement?.getAttribute('href'));
+  check('AC-38 Tab 进入「投资者关系」', focused2 === '/zh/about/investors/');
   await page.keyboard.press('Escape');
   await page.waitForTimeout(100);
   const backToTrigger = await page.evaluate(() => document.activeElement?.classList.contains('sub-trigger'));
@@ -94,17 +123,38 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await page.waitForURL('**/zh/about/**');
   check('AC-38 Enter 正常导航', page.url().endsWith('/zh/about/'));
 
-  // AC-46/47 截图证据：深色 Hero 上的导航带
+  // AC-46/47 截图证据：浅色页头白底 Mega Subnav + 浅色 hover/英文标签对比度（滚动后页头转浅色 .scrolled）
   await page.goto('http://localhost:4321/zh/about/', { waitUntil: 'networkidle' });
+  await page.evaluate(() => window.scrollTo(0, 900));
+  await page.waitForTimeout(400);
   await page.locator('.sub-trigger').hover();
   await page.waitForTimeout(250);
-  await page.screenshot({ path: '../shots/v13-desktop-1440-band.png', clip: { x: 0, y: 0, width: 1440, height: 300 } });
-  const noCardShadow = await page.evaluate(() => {
-    const el = document.querySelector('.sub-panel-card');
-    const cs = getComputedStyle(el);
-    return cs.boxShadow === 'none' && cs.borderRadius === '0px';
+  await page.screenshot({ path: 'shots/v14-desktop-1440-mega-light.png', clip: { x: 0, y: 0, width: 1440, height: 320 } });
+  const lightHoverCol = page.locator('.mega-col').first();
+  const lhBox = await lightHoverCol.boundingBox();
+  await page.mouse.move(lhBox.x + lhBox.width / 2, lhBox.y + lhBox.height / 2);
+  await page.waitForTimeout(250);
+  const lightHover = await lightHoverCol.evaluate((el) => ({
+    ic: getComputedStyle(el.querySelector('.mega-ic')).color,
+    b: getComputedStyle(el.querySelector('.mega-t b')).color,
+    bg: getComputedStyle(el).backgroundColor,
+    en: getComputedStyle(el.querySelector('.mega-en')).color,
+  }));
+  check('浅色 hover 图标+标题转青绿', lightHover.ic === 'rgb(31, 168, 122)' && lightHover.b === 'rgb(31, 168, 122)');
+  check('浅色 hover 列底 4% 青绿 tint', lightHover.bg === 'rgba(31, 168, 122, 0.06)' || lightHover.bg === 'rgba(31, 168, 122, 0.059)');
+  check('英文标签 #6F7572（白底 AA 4.5:1）', lightHover.en === 'rgb(111, 117, 114)');
+
+  // 当前子页三重冗余（careers 路由）：字重 500 + 青绿 + 24×2 短横线
+  await page.goto('http://localhost:4321/zh/about/careers/', { waitUntil: 'networkidle' });
+  await page.locator('.sub-trigger').hover();
+  await page.waitForTimeout(250);
+  const curState = await page.locator('.mega-col.cur').evaluate((el) => {
+    const b = getComputedStyle(el.querySelector('.mega-t b'));
+    const after = getComputedStyle(el, '::after');
+    return { w: b.fontWeight, color: b.color, aw: after.width, ah: after.height };
   });
-  check('AC-46 无白卡/重阴影/大圆角', noCardShadow);
+  check('当前子页 字重500+青绿+24×2 短横线', curState.w === '500' && curState.color === 'rgb(31, 168, 122)' && curState.aw === '24px' && curState.ah === '2px');
+  await page.screenshot({ path: 'shots/v14-desktop-1440-mega-current.png', clip: { x: 0, y: 0, width: 1440, height: 320 } });
 
   // ============ 1280 视口 ============
   const p1280 = await browser.newPage({ viewport: { width: 1280, height: 800 } });
@@ -112,7 +162,9 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await p1280.locator('.sub-trigger').hover();
   await p1280.waitForTimeout(250);
   check('AC-47 1280 导航带可打开', await p1280.locator('.has-sub.open').count() === 1 || await (async () => { const el = p1280.locator('.sub-panel'); return await el.evaluate((e) => getComputedStyle(e).visibility === 'visible'); })());
-  await p1280.screenshot({ path: '../shots/v13-desktop-1280-band.png', clip: { x: 0, y: 0, width: 1280, height: 280 } });
+  const gap1280 = await p1280.evaluate(() => getComputedStyle(document.querySelector('.mega-in')).columnGap);
+  check('1280 视口列间距压缩至 48px（M5）', gap1280 === '48px');
+  await p1280.screenshot({ path: 'shots/v14-desktop-1280-mega.png', clip: { x: 0, y: 0, width: 1280, height: 300 } });
   await p1280.close();
 
   // ============ 无 JS（AC-43） ============
@@ -139,7 +191,11 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   check('AC-41 about 路由抽屉默认展开', defaultExpanded === 1);
   const btnBox = await mp.locator('.p-sub-btn').boundingBox();
   check('AC-40 展开按钮 ≥44×44', btnBox.width >= 44 && btnBox.height >= 44);
-  await mp.screenshot({ path: '../shots/v13-mobile-375-expanded.png' });
+  const mIcons = await mp.locator('.p-sub-items .p-ic').count();
+  check('移动子项 24×24 原创图标×3', mIcons === 3);
+  const mItemH = await mp.locator('.p-sub-items a').first().evaluate((el) => el.getBoundingClientRect().height);
+  check('移动子项触控高 ≥48px', mItemH >= 48);
+  await mp.screenshot({ path: 'shots/v14-mobile-375-expanded.png' });
   // 文字仅导航
   await mp.tap('.p-sub-link');
   await mp.waitForTimeout(1200);
@@ -168,7 +224,9 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await tp.waitForTimeout(250);
   const expanded = await tp.locator('.p-sub.open').count();
   check('AC-40 768 按钮展开子项', expanded === 1);
-  await tp.screenshot({ path: '../shots/v13-tablet-768-drawer.png' });
+  const megaHidden768 = await tp.locator('.sub-panel').evaluate((el) => getComputedStyle(el).display === 'none');
+  check('768 不加载桌面 mega 面板（M5）', megaHidden768);
+  await tp.screenshot({ path: 'shots/v14-tablet-768-drawer.png' });
   await t768.close();
 
   // ============ 触屏桌面宽度（hover:none 模拟，AC-45） ============
@@ -187,3 +245,4 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   console.log(`\n${results.length - failed.length}/${results.length} 项通过`);
   process.exit(failed.length ? 1 : 0);
 })().catch((e) => { console.error(e.message); process.exit(1); });
+

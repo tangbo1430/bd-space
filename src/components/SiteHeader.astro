@@ -14,6 +14,12 @@ const aboutGroupActive = aboutSub !== null;
 ---
 
 <header class:list={['gnb', { 'gnb-solid': style === 'solid' }]} data-gnb>
+  {/* v1.4 M2：原创统一线性图标（1.5px 描边、圆角接头、40×40 视框，symbol 复用） */}
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ic-about" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="20" cy="20" r="13"></circle><line x1="20" y1="17" x2="20" y2="27"></line><circle cx="20" cy="12.5" r="1.1" fill="currentColor" stroke="none"></circle></g></symbol>
+    <symbol id="ic-ir" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="8,28 16,20 22,24 31,13"></polyline><polyline points="24,13 31,13 31,20"></polyline><line x1="8" y1="33" x2="32" y2="33"></line></g></symbol>
+    <symbol id="ic-career" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="20" cy="13" r="5.5"></circle><path d="M9,31 C9,24 14,21.5 20,21.5 C26,21.5 31,24 31,31"></path><line x1="13" y1="34.5" x2="27" y2="34.5"></line></g></symbol>
+  </svg>
   <a class="logo" href="/zh/">半打<b>空间</b><span class="logo-en">BANDA SPACE</span></a>
   <nav aria-label="主导航">
     {NAV_ITEMS.map((item) => (
@@ -28,17 +34,22 @@ const aboutGroupActive = aboutSub !== null;
           >
             {item.label}
           </a>
-          {/* 页头一体化导航带：普通链接集合，非 menu（N5） */}
+          {/* v1.4 Mega Subnav：100vw 全宽面板内 1280 容器三列均布；普通链接集合，非 menu（N5） */}
           <span class="sub-panel" data-sub-panel aria-label="关于我们子栏目">
             <span class="sub-panel-card">
-              {ABOUT_SUB_ITEMS.map((sub) => (
-                <a
-                  href={sub.href}
-                  class:list={[{ cur: sub.key === aboutSub }]}
-                  aria-current={sub.key === aboutSub ? 'page' : undefined}
-                  data-track="about_sub_click"
-                >{sub.label}</a>
-              ))}
+              <span class="mega-in">
+                {ABOUT_SUB_ITEMS.map((sub) => (
+                  <a
+                    href={sub.href}
+                    class:list={['mega-col', { cur: sub.key === aboutSub }]}
+                    aria-current={sub.key === aboutSub ? 'page' : undefined}
+                    data-track="about_sub_click"
+                  >
+                    <svg class="mega-ic" aria-hidden="true"><use href={`#${sub.icon}`} /></svg>
+                    <span class="mega-t"><b>{sub.label}</b><span class="mega-en">{sub.en}</span></span>
+                  </a>
+                ))}
+              </span>
             </span>
           </span>
         </span>
@@ -84,7 +95,7 @@ const aboutGroupActive = aboutSub !== null;
               class:list={[{ cur: sub.key === aboutSub }]}
               aria-current={sub.key === aboutSub ? 'page' : undefined}
               data-track="about_sub_click"
-            >{sub.label}</a>
+            ><svg class="p-ic" aria-hidden="true"><use href={`#${sub.icon}`} /></svg>{sub.label}</a>
           ))}
         </div>
       </div>
