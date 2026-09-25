@@ -39,7 +39,7 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   check('AC-V1 面板高 128px', Math.abs(geo.h - 128) <= 1);
   check('AC-V1 顶部 1px 分隔线', geo.borderTop === '1px');
   check('AC-46 无阴影/圆角', geo.shadow === 'none' && geo.radius === '0px');
-  check('深色 Hero 半透明深底 rgba(17,21,20,.82)', geo.bg === 'rgba(17, 21, 20, 0.82)');
+  check('面板统一白色底（v1.5.2，含深色 Hero 页头）', geo.bg === 'rgb(255, 255, 255)');
   const colCount = await page.evaluate(() => getComputedStyle(document.querySelector('.mega-in')).gridTemplateColumns.split(' ').length);
   check('AC-V2 三列 1fr 均布', colCount === 3);
   check('AC-V3 三枚原创线性图标', await page.locator('.mega-col .mega-ic').count() === 3 && await page.locator('symbol#ic-about').count() === 1 && await page.locator('symbol#ic-ir').count() === 1 && await page.locator('symbol#ic-career').count() === 1);
@@ -52,8 +52,8 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
     b: getComputedStyle(el.querySelector('.mega-t b')).color,
     bg: getComputedStyle(el).backgroundColor,
   }));
-  check('深色 hover 图标+标题转青绿', darkHover.ic === 'rgb(31, 168, 122)' && darkHover.b === 'rgb(31, 168, 122)');
-  check('深色 hover 列底 14% 青绿 tint', darkHover.bg === 'rgba(31, 168, 122, 0.14)');
+  check('overlay 页头 hover 图标+标题转青绿（白底浅色系）', darkHover.ic === 'rgb(31, 168, 122)' && darkHover.b === 'rgb(31, 168, 122)');
+  check('overlay 页头 hover 列底 6% 青绿 tint（浅色档）', darkHover.bg === 'rgba(31, 168, 122, 0.06)' || darkHover.bg === 'rgba(31, 168, 122, 0.059)');
 
   // AC-36: 慢速直向移入面板（经 12px 连接层）
   const card = await page.locator('.sub-panel-card').boundingBox();

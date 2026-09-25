@@ -113,10 +113,9 @@ ok(/--ink-muted2:\s*#6F7572/i.test(css), '英文标签加深灰令牌 #6F7572（
 ok(/\.mega-en\{[^}]*color:var\(--ink-muted2\)/.test(css), '英文标签使用加深灰（浅色页头）');
 /* LightningCSS 将 rgba 归一化为 8 位 hex：.06→0f / .14→24 / .82→d1 / .92→eb */
 ok(css.includes('.mega-col:hover{background:#1fa87a0f}'), '浅色 hover 列底 4% 青绿 tint');
-ok(css.includes('.mega-col:hover{background:#1fa87a24}'), '深色 Hero hover 14% 青绿 tint');
-ok(css.includes('backdrop-filter:blur(8px)'), '深色 Hero：半透明模糊层（含 @supports 降级）');
-ok(css.includes('background:#111514d1') && css.includes('background:#111514eb'), '深色变体 .82 半透明 + .92 实色降级');
-ok(css.includes('rgba(255,255,255,.14)'), '深色变体顶部 1px 白 14% 细线');
+/* v1.5.2：面板全场景统一白色，深色变体已移除 */
+ok(!css.includes('.mega-col:hover{background:#1fa87a24}'), '无深色 hover 14% tint 残留（已统一浅色）');
+ok(!css.includes('background:#111514d1') && !css.includes('background:#111514eb'), '无深色变体 .82/.92 实色残留');
 const curB = /\.mega-col\.cur \.mega-t b\{[^}]*\}/.exec(css)?.[0] ?? '';
 ok(curB.includes('font-weight:500'), '当前子页标题字重 500');
 const curAfter = /\.mega-col\.cur:{0,2}after\{[^}]*\}/.exec(css)?.[0] ?? '';

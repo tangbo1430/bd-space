@@ -463,26 +463,7 @@ html[data-motion=off] .slide { transform: none; }
   content: ""; position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
   width: 24px; height: 2px; background: var(--accent); border-radius: 2px;
 }
-/* 深色 Hero 变体：半透明深底 + 模糊，细线白 14%；降级 .92 实色 */
-.gnb:not(.gnb-solid):not(.scrolled) .sub-panel-card {
-  background: rgba(17, 21, 20, .92); border-top: 1px solid rgba(255, 255, 255, .14);
-}
-@supports (backdrop-filter: blur(8px)) {
-  .gnb:not(.gnb-solid):not(.scrolled) .sub-panel-card {
-    background: rgba(17, 21, 20, .82);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-  }
-}
-.gnb:not(.gnb-solid):not(.scrolled) .mega-ic { color: rgba(255, 255, 255, .85); }
-.gnb:not(.gnb-solid):not(.scrolled) .mega-t b { color: rgba(255, 255, 255, .92); }
-.gnb:not(.gnb-solid):not(.scrolled) .mega-en { color: rgba(255, 255, 255, .5); }
-/* 深色 hover：图标与标题均转青绿 */
-.gnb:not(.gnb-solid):not(.scrolled) .mega-col:hover { background: rgba(31, 168, 122, .14); }
-.gnb:not(.gnb-solid):not(.scrolled) .mega-col:hover .mega-ic,
-.gnb:not(.gnb-solid):not(.scrolled) .mega-col:hover .mega-t b { color: var(--accent); }
-.gnb:not(.gnb-solid):not(.scrolled) .mega-col.cur .mega-ic,
-.gnb:not(.gnb-solid):not(.scrolled) .mega-col.cur .mega-t b { color: var(--accent); }
+/* v1.5.2：用户确认 Mega Subnav 全场景统一浅色白底（含深色 Hero 页头），移除深色变体 */
 html[data-motion=off] .sub-panel { transition: none; transform: none; }
 @media (prefers-reduced-motion: reduce) { .sub-panel { transition: none; transform: none; } }
 /* 1280–1360 视口：容器 padding 40px、列间距 ≥48px（M4/M5） */
