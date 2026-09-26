@@ -1,0 +1,20 @@
+﻿source_file,source_page,crop,export_files,usage,max_display_width,copyright,note,degrade
+biz-p12-x59.png,bizplan p12,center-crop 4:3,case-cayman-hero.webp 1920x1440; case-cayman-hero.jpg 1920x1440; case-cayman-hero-m.webp 960x720,案例页 开曼 主图 (M4),1920,自有资料/商业计划内嵌原图(已批准页),3443x2463 原图降采样,
+biz-p12-x60.png,bizplan p12,center-crop 4:3,case-cayman-alt.webp 1920x1440; case-cayman-alt.jpg 1920x1440; case-cayman-alt-m.webp 960x720,案例页 开曼 备用/详情 (M4),1920,自有资料/商业计划内嵌原图(已批准页),3357x2518 原图降采样,
+biz-p14-x68.png,bizplan p14,center-crop 4:3,case-brisbane-ext.webp 711x533; case-brisbane-ext.jpg 711x533,案例页 布里斯班 主图 (M4),711,自有资料/商业计划内嵌原图(已批准页),800x533 原生; x67 因可读门牌号排除,
+biz-p14-x69.png,bizplan p14,center-crop 4:3,case-brisbane-int.webp 711x533; case-brisbane-int.jpg 711x533,案例页 布里斯班 备用厨房内景 (M4),711,自有资料/商业计划内嵌原图(已批准页),800x533 原生,
+biz-p16-x78.png,bizplan p16,"(1421, 570, 1989, 996)",case-zhongshan-house.webp 568x426; case-zhongshan-house.jpg 568x426,案例页 中山 主图 (M4),568,自有资料/商业计划内嵌原图(已批准页),"660x426 内裁 4:3=568x426; 原 crop (1375,570)-(2035,996) 去人物/红钢条/上部残框","占位降级: 原生宽度有限, 展示<=568px, 不足时换占位"
+biz-p20-x130.png,bizplan p20,center-crop 4:3,case-fiji-interior.webp 1705x1279; case-fiji-interior.jpg 1705x1279; case-fiji-interior-m.webp 960x720,案例页 斐济 主图 (M4),1920,自有资料/商业计划内嵌原图(已批准页),"1706x1279 横版客厅, 无人物/时间戳",
+biz-p19-x120.png,bizplan p19,center-crop 4:3,flow-mech-piping.webp 1379x1034; flow-mech-piping.jpg 1379x1034,首页 施工交付 step04 机电与内装 (M3),1379,自有资料/商业计划内嵌原图(已批准页),1379x1838 竖版中心裁 4:3,
+biz-p19-x121.png,bizplan p19,center-crop 4:3,flow-mech-piping-alt.webp 1376x1032; flow-mech-piping-alt.jpg 1376x1032,首页 施工交付 step04 备用 (M3),1376,自有资料/商业计划内嵌原图(已批准页),1376x1835 竖版中心裁 4:3,
+biz-p15-x75.png,bizplan p15,"(280, 95, 790, 300)",flow-transport-frames.webp 510x205; flow-transport-frames.jpg 510x205,首页 施工交付 step05 运输组织 b (M3),510,自有资料/商业计划内嵌原图(已批准页),510x205 厂区运输框架; 展示<=510px,
+biz-p19-x122.png,bizplan p19,center-crop 4:3,flow-delivery-module.webp 1920x1440; flow-delivery-module.jpg 1920x1440; flow-delivery-module-m.webp 960x720,首页 施工交付 step05 运输组织 a / step06 备用 (M3),1920,自有资料/商业计划内嵌原图(已批准页),2142x1831 中心裁 4:3,
+original-svg,-,none,flow-step-01-design.svg 320x240,?? ???? step01 ???? ?? (M3),320,??????(?????),"??????, ??????",
+original-svg,-,none,flow-step-02-factory.svg 320x240,?? ???? step02 ???? ?? (M3),320,??????(?????),??????,
+original-svg,-,none,flow-step-03-inspection.svg 320x240,?? ???? step03 ???? ?? (M3),320,??????(?????),??????,
+original-svg,-,none,flow-step-06-install.svg 320x240,?? ???? step06 ????/?? ?? (M3),320,??????(?????),? p15 ?????????????,
+original-svg,-,none,system-2d-panel.svg 320x240,??? ?????? 2D ?? (M5),320,??????(?????),"??????, ?????????",
+original-svg,-,none,system-3d-module.svg 320x240,??? ?????? 3D ?? (M5),320,??????(?????),???????,
+original-svg,-,none,system-combined.svg 320x240,??? ?????? ???? (M5),320,??????(?????),????????,
+biz-p15-x75.png,bizplan p15,"(830,450)-(1565,785)",(???),??? M3 step05 ????,-,-,"?????: ?????????????????????, ???????, step05 ?? p19-x122 + ????",???
+biz-p14-x67.png,bizplan p14,-,(???),??? M4 ??????,-,-,"????????(85), ??, ?? x68/x69",???

@@ -12,6 +12,21 @@ const milestones = [
   { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 02` },
   { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 03` },
 ];
+
+/* M1 愿景（v1.6 DSN-160，PM 中性稿） */
+const visionValues = [
+  { no: '01', title: '标准化制造', desc: `${PLACEHOLDER}以标准化设计与制造提升产品一致性。` },
+  { no: '02', title: '高效率交付', desc: `${PLACEHOLDER}工厂预制与现场装配并行，缩短建造周期。` },
+  { no: '03', title: '模块化与可复制', desc: `${PLACEHOLDER}模块单元灵活组合，适配多种空间需求。` },
+];
+
+/* M2 研发与产品演进（v1.6 DSN-161；年份未核实整列隐藏，ol 保持 01→04） */
+const evoStages = [
+  { no: '01', stage: '研发探索', desc: `${PLACEHOLDER}装配式空间技术路线探索。` },
+  { no: '02', stage: '体系验证', desc: `${PLACEHOLDER}建造体系与构件性能验证。` },
+  { no: '03', stage: '产品化', desc: `${PLACEHOLDER}标准化产品定型与量产准备。` },
+  { no: '04', stage: '项目交付', desc: `${PLACEHOLDER}产品进入项目交付阶段。` },
+];
 ---
 
 <BaseLayout
@@ -30,6 +45,39 @@ const milestones = [
 
   <div class="wrap">
     <p class="crumb" style="padding-left:0;padding-right:0"><a href="/zh/">HOME</a> / ABOUT</p>
+
+    <!-- M1 愿景（v1.6） -->
+    <section class="vision" aria-label="我们的愿景">
+      <div class="rv">
+        <div class="v-label">我们的愿景</div>
+        <h2>让房屋制造更标准、更高效、更易交付。</h2>
+      </div>
+      <div class="vision-vals rv">
+        {visionValues.map((v) => (
+          <div class="vision-val">
+            <span class="v-no" aria-hidden="true">{v.no}</span>
+            <div><b>{v.title}</b><p>{v.desc}</p></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- M2 研发与产品演进（v1.6；年份未核实不渲染） -->
+    <section class="evo" aria-label="研发与产品演进" data-evo>
+      <div class="en rv">Evolution</div>
+      <h2 class="rv" style="margin-top:12px">研发与产品演进</h2>
+      <ol data-evo-list>
+        {evoStages.map((s) => (
+          <li>
+            <div class="evo-t">
+              <span class="evo-no" aria-hidden="true">{s.no}</span>
+              <div class="evo-stage">{s.stage}</div>
+              <p class="evo-desc">{s.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
 
     <!-- 企业简介 -->
     <div class="pd-body">
@@ -74,6 +122,7 @@ const milestones = [
         <div class="tl-item"><div class="yr">{m.yr}</div><p>{m.text}</p></div>
       ))}
     </div>
+
 
     <div style="padding-bottom:110px">
       <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">预约咨询 <span class="arr">→</span></a>

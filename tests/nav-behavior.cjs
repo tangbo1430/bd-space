@@ -36,7 +36,7 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
     return { w: r.width, h: r.height, shadow: cs.boxShadow, radius: cs.borderRadius, borderTop: cs.borderTopWidth, bg: cs.backgroundColor };
   });
   check('AC-V1 面板 100vw 全宽', Math.abs(geo.w - 1440) <= 1);
-  check('AC-V1 面板高 96px（v1.5.4 收窄）', Math.abs(geo.h - 96) <= 1);
+  check('AC-V1 面板高 96px（v1.5.4 收窄，v1.6 不回退）', Math.abs(geo.h - 96) <= 1);
   check('AC-V1 顶部 1px 分隔线', geo.borderTop === '1px');
   check('AC-46 无阴影/圆角', geo.shadow === 'none' && geo.radius === '0px');
   check('面板统一白色底（v1.5.2，含深色 Hero 页头）', geo.bg === 'rgb(255, 255, 255)');
@@ -162,8 +162,12 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   await p1280.locator('.sub-trigger').hover();
   await p1280.waitForTimeout(250);
   check('AC-47 1280 导航带可打开', await p1280.locator('.has-sub.open').count() === 1 || await (async () => { const el = p1280.locator('.sub-panel'); return await el.evaluate((e) => getComputedStyle(e).visibility === 'visible'); })());
-  const gap1280 = await p1280.evaluate(() => getComputedStyle(document.querySelector('.mega-in')).columnGap);
-  check('v1.5.3 三列内容区收窄至 960px、列间距 32px', gap1280 === '32px');
+  const gap1280 = await p1280.evaluate(() => getComputedStyle(document.querySelector('.mega-in')).maxWidth);
+  check('v1.6 三列内容容器收窄至 840px', gap1280 === '840px');
+  const hit = await p1280.evaluate(() => { const r = document.querySelector('.mega-col').getBoundingClientRect(); return { w: r.width, h: r.height }; });
+  check('v1.6 单项命中区约 200×88px', Math.abs(hit.w - 200) <= 2 && Math.abs(hit.h - 88) <= 2);
+  const icon28 = await p1280.evaluate(() => document.querySelector('.mega-ic').getBoundingClientRect().width);
+  check('v1.6 桌面图标 28px', Math.abs(icon28 - 28) <= 1);
   await p1280.screenshot({ path: 'shots/v14-desktop-1280-mega.png', clip: { x: 0, y: 0, width: 1280, height: 300 } });
   await p1280.close();
 

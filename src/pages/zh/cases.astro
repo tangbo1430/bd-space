@@ -1,27 +1,52 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { CASE_ASSETS } from '../../lib/assets';
+
+/* M4 项目实践视觉案例墙（v1.6 DSN-163）：仅地点+类型，无客户名/数量/金额/周期/抗震/收益 */
+const cases = [
+  { loc: '开曼群岛', type: '海外住宅', img: CASE_ASSETS.cayman },
+  { loc: '澳大利亚', type: '布里斯班住宅', img: CASE_ASSETS.brisbane },
+  { loc: '中国 · 中山', type: '低层住宅', img: CASE_ASSETS.zhongshan },
+  { loc: '斐济', type: '模块化酒店', img: CASE_ASSETS.fiji },
+];
 ---
 
 <BaseLayout
   title="工程案例"
-  description="半打空间工程案例：国内/海外项目实录。案例资料经授权后发布，当前正在整理中。"
+  description="半打空间项目实践：开曼群岛海外住宅、澳大利亚布里斯班住宅、中国中山低层住宅、斐济模块化酒店。"
   current="cases"
   headerStyle="solid"
 >
   <p class="crumb"><a href="/zh/">HOME</a> / PROJECTS</p>
   <div class="wrap" style="padding-top:40px">
     <div class="en">Selected Projects</div>
-    <h2 style="font-size:52px;margin-top:10px">工程案例</h2>
+    <h2 style="font-size:52px;margin-top:10px">项目实践</h2>
   </div>
 
-  <!-- 空态（PRD §9 / 规范 §3.3）：无已授权发布案例时展示，禁止虚构案例 -->
-  <div class="wrap empty-state">
-    <div class="ic" aria-hidden="true">▦</div>
-    <h2>案例整理中</h2>
-    <p>我们正在整理经客户授权的项目案例（BR-8）。欢迎致电或留言，了解我们的项目经验与交付能力。</p>
-    <div class="btns">
-      <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">联系我们 <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="/zh/">返回首页 <span class="arr">→</span></a>
+  <section class="case-wall" aria-label="项目实践案例墙">
+    <div class="case-wall-grid">
+      {cases.map((c) => (
+        <article class="case-card rv">
+          <div class:list={['cc-img', c.img.maxW ? `maxw-${c.img.maxW}` : '']}>
+            <picture>
+              {c.img.mw && (
+                <source type="image/webp" srcset={`/assets/img/${c.img.base}-m.webp ${c.img.mw}w, /assets/img/${c.img.base}.webp ${c.img.w}w`} sizes="(max-width: 1279px) 100vw, 50vw" />
+              )}
+              {!c.img.mw && <source type="image/webp" srcset={`/assets/img/${c.img.base}.webp`} />}
+              <img
+                src={`/assets/img/${c.img.base}.jpg`}
+                width={c.img.w} height={c.img.h} alt={c.img.alt}
+                loading="lazy" decoding="async"
+                onerror="this.closest('.cc-img').classList.add('ph-fallback');this.closest('picture').remove()"
+              />
+            </picture>
+          </div>
+          <div class="cc-meta">
+            <div class="cc-loc">{c.loc}</div>
+            <div class="cc-type">{c.type}</div>
+          </div>
+        </article>
+      ))}
     </div>
-  </div>
+  </section>
 </BaseLayout>

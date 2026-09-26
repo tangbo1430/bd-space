@@ -4,6 +4,7 @@ import FloatRail from '../../components/FloatRail.astro';
 import PhImg from '../../components/PhImg.astro';
 import ConsultForm from '../../components/ConsultForm.astro';
 import ProductArt from '../../components/ProductArt.astro';
+import FlowSteps from '../../components/FlowSteps.astro';
 import { site, PLACEHOLDER } from '../../lib/site';
 import { BANNER_ASSETS, SPACE_ASSETS } from '../../lib/assets';
 import { getCollection } from 'astro:content';
@@ -224,6 +225,9 @@ const quals = [
       </div>
     </div>
   </section>
+
+  <!-- S5b M3 从工厂到现场：六步交付流程（v1.6 DSN-162） -->
+  <FlowSteps />
 
   <!-- S6 资质能力（横排细线表） -->
   <section class="sec" style="background:#fff" aria-label="资质能力">

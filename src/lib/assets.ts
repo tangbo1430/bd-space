@@ -50,3 +50,44 @@ export const WITHHELD_ASSETS = [
   'product-bd9-hero',
   'product-bd9-card',
 ] as const;
+
+/* ==================== v1.6 增量素材（asset-manifest-v16.csv，均已批准） ==================== */
+
+export interface Img16 {
+  base: string;
+  w: number;
+  h: number;
+  /** 移动档后缀 -m（存在时提供尺寸） */
+  mw?: number;
+  mh?: number;
+  alt: string;
+  /** 展示宽上限（低清素材不放大，manifest max_display_width） */
+  maxW?: number;
+}
+
+/** M4 案例墙（仅地点+类型，无客户/金额/工期） */
+export const CASE_ASSETS: Record<'cayman' | 'brisbane' | 'zhongshan' | 'fiji', Img16> = {
+  cayman: { base: 'case-cayman-hero', w: 1920, h: 1440, mw: 960, mh: 720, alt: '开曼群岛海外住宅项目建成实景' },
+  brisbane: { base: 'case-brisbane-ext', w: 711, h: 533, alt: '澳大利亚布里斯班住宅项目后院外观', maxW: 711 },
+  zhongshan: { base: 'case-zhongshan-house', w: 568, h: 426, alt: '中国中山低层住宅项目建成实景', maxW: 568 },
+  fiji: { base: 'case-fiji-interior', w: 1705, h: 1279, mw: 960, mh: 720, alt: '斐济模块化酒店室内客厅实景' },
+};
+
+/** M3 交付流程实拍步骤（step 01–03 为原创 SVG 线稿占位，不在此列） */
+export const FLOW_ASSETS = {
+  mechPiping: { base: 'flow-mech-piping', w: 1379, h: 1034, alt: '工厂内机电管线预制特写' },
+  transport: { base: 'flow-delivery-module', w: 1920, h: 1440, mw: 960, mh: 720, alt: '模块构件吊装运输现场' },
+  transportFrames: { base: 'flow-transport-frames', w: 510, h: 205, alt: '厂区运输框架', maxW: 510 },
+  delivery: { base: 'flow-delivery-module', w: 1920, h: 1440, mw: 960, mh: 720, alt: '模块构件现场吊装交付' },
+} satisfies Record<string, Img16>;
+
+/** 原创 SVG 线稿（设计师原创，320×240 视框） */
+export const LINEART_SVGS = {
+  flowStep01: 'flow-step-01-design.svg',
+  flowStep02: 'flow-step-02-factory.svg',
+  flowStep03: 'flow-step-03-inspection.svg',
+  flowStep06: 'flow-step-06-install.svg',
+  system2d: 'system-2d-panel.svg',
+  system3d: 'system-3d-module.svg',
+  systemCombined: 'system-combined.svg',
+} as const;

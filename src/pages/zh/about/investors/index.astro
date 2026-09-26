@@ -6,22 +6,25 @@ import { PLACEHOLDER } from '../../../../lib/site';
 /**
  * 投资者关系（PRD v0.4 FR-25~28 / BR-24/25 / AC-27/28）。
  * 全部事实字段为【待提供】占位：不执行数字渐显、不输出事实型结构化数据、不进入 SEO 事实描述。
+ * v1.6 红线（用户 2026-09-26 批准）：金额类财务数据与持股数字
+ * 永久不上站——不渲染也不预留字段位；卡片仅保留中性结构描述。
  */
 
 const summaryStats = [
   { num: '——', label: `注册资本${PLACEHOLDER}` },
   { num: '——', label: `股东数量${PLACEHOLDER}` },
-  { num: '——', label: `融资轮次${PLACEHOLDER}` },
 ];
 
+/* 股权结构：仅中性结构描述，不设比例数字字段（v1.6 红线，永久移除） */
 const equityCards = [
-  { name: `${PLACEHOLDER}股东 A`, type: PLACEHOLDER, ratio: '——', note: `${PLACEHOLDER}持股说明`, updated: PLACEHOLDER },
-  { name: `${PLACEHOLDER}股东 B`, type: PLACEHOLDER, ratio: '——', note: `${PLACEHOLDER}持股说明`, updated: PLACEHOLDER },
-  { name: `${PLACEHOLDER}股东 C`, type: PLACEHOLDER, ratio: '——', note: `${PLACEHOLDER}持股说明`, updated: PLACEHOLDER },
+  { name: `${PLACEHOLDER}股东 A`, type: PLACEHOLDER, note: `${PLACEHOLDER}股东背景说明`, updated: PLACEHOLDER },
+  { name: `${PLACEHOLDER}股东 B`, type: PLACEHOLDER, note: `${PLACEHOLDER}股东背景说明`, updated: PLACEHOLDER },
+  { name: `${PLACEHOLDER}股东 C`, type: PLACEHOLDER, note: `${PLACEHOLDER}股东背景说明`, updated: PLACEHOLDER },
 ];
 
-const rounds: { round: string; date: string; amount: string; investors: string; brief: string }[] = [
-  { round: `${PLACEHOLDER}轮次 01`, date: PLACEHOLDER, amount: PLACEHOLDER, investors: PLACEHOLDER, brief: `${PLACEHOLDER}融资摘要` },
+/* 融资历程：仅轮次名称 + 阶段中性说明，不含日期金额投资方字段（v1.6 红线，永久移除） */
+const rounds: { round: string; brief: string }[] = [
+  { round: `${PLACEHOLDER}轮次 01`, brief: `${PLACEHOLDER}该阶段发展概况（中性描述，不含财务数据）` },
 ];
 
 const irContact = [
@@ -72,16 +75,15 @@ const irContact = [
       <div class="en">Shareholding</div>
       <h2 style="margin:12px 0 8px">股权结构</h2>
       <p style="font-size:14px;color:var(--ink-muted);max-width:560px">
-        股东名称、类型与持股信息均为占位骨架；经需求方确认后替换（OP-24），未确认前不发布任何虚构股东或比例。
+        股东名称与类型为占位骨架；经需求方确认后替换（OP-24）。按信息披露规范，持股数字不上站，本页不设该字段。
       </p>
       <div class="eq-cards">
         {equityCards.map((c) => (
           <div class="eq-card">
             <h3>{c.name}</h3>
-            <div class="ratio">{c.ratio}</div>
             <dl>
               <dt>股东类型</dt><dd>{c.type}</dd>
-              <dt>持股说明</dt><dd>{c.note}</dd>
+              <dt>股东说明</dt><dd>{c.note}</dd>
               <dt>更新时间</dt><dd>{c.updated}</dd>
             </dl>
           </div>
@@ -96,14 +98,13 @@ const irContact = [
       <div class="en">Funding History</div>
       <h2 style="margin:12px 0 8px">融资历程</h2>
       <p style="font-size:14px;color:var(--ink-muted);max-width:560px">
-        轮次、日期、金额与投资方均为占位（OP-25）；按时间顺序展示，最新在上。
+        仅展示轮次名称与阶段中性说明；按信息披露规范，金额、日期、投资方等字段不上站（OP-25，v1.6 红线）。
       </p>
       <div class="tl2">
         {rounds.map((r) => (
           <div class="tl2-item">
             <div class="tl2-card">
               <div class="round">{r.round}</div>
-              <div class="meta">日期：{r.date} · 金额：{r.amount} · 投资方：{r.investors}</div>
               <p>{r.brief}</p>
             </div>
           </div>

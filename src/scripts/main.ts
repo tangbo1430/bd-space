@@ -389,6 +389,74 @@ if (motionOff || !('IntersectionObserver' in window)) {
   rvEls.forEach((el) => io.observe(el));
 }
 
+/* ---------- v1.6 M2 研发演进：节点自左而右（移动自上而下）stagger 渐显 120ms ---------- */
+const evoList = document.querySelector<HTMLElement>('[data-evo-list]');
+if (evoList) {
+  const items = Array.from(evoList.querySelectorAll<HTMLElement>('li'));
+  const revealAll = () => items.forEach((el) => el.classList.add('in'));
+  if (motionOff || !('IntersectionObserver' in window)) {
+    revealAll();
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          items.forEach((el, i) => window.setTimeout(() => el.classList.add('in'), i * 120));
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    io.observe(evoList);
+  }
+}
+
+/* ---------- v1.6 M3 交付流程：APG Tabs（roving tabindex + 左右键，不自动轮播） ---------- */
+document.querySelectorAll<HTMLElement>('[data-flow]').forEach((flow) => {
+  const tabs = Array.from(flow.querySelectorAll<HTMLButtonElement>('[data-flow-tab]'));
+  const panels = Array.from(flow.querySelectorAll<HTMLElement>('[data-flow-panel]'));
+  if (!tabs.length || tabs.length !== panels.length) return;
+
+  const activate = (idx: number, focus = true) => {
+    const prevIdx = tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true');
+    if (idx === prevIdx) return;
+    tabs.forEach((t, i) => {
+      const on = i === idx;
+      t.setAttribute('aria-selected', String(on));
+      t.classList.toggle('on', on);
+      t.tabIndex = on ? 0 : -1;
+    });
+    const prevPanel = panels[prevIdx];
+    const nextPanel = panels[idx];
+    const swap = () => {
+      if (prevPanel) { prevPanel.hidden = true; prevPanel.classList.remove('fading'); }
+      nextPanel.hidden = false;
+    };
+    if (motionOff) {
+      swap();
+    } else if (prevPanel) {
+      prevPanel.classList.add('fading');
+      window.setTimeout(swap, 120);
+    } else {
+      nextPanel.hidden = false;
+    }
+    if (focus) tabs[idx].focus();
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => activate(i, false));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const dir = e.key === 'ArrowRight' ? 1 : -1;
+        activate((i + dir + tabs.length) % tabs.length);
+      } else if (e.key === 'Home') {
+        e.preventDefault(); activate(0);
+      } else if (e.key === 'End') {
+        e.preventDefault(); activate(tabs.length - 1);
+      }
+    });
+  });
+});
+
 /* ---------- 浮动联系条：页尾 600px 内隐藏（克制规则） ---------- */
 const rail = document.querySelector<HTMLElement>('[data-float-rail]');
 if (rail) {

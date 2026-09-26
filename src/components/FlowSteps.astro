@@ -1,0 +1,98 @@
+---
+/**
+ * M3 首页「从工厂到现场」六步交付流程（v1.6，DSN-162）。
+ * APG Tabs：tablist/tab/tabpanel、aria-selected、roving tabindex、左右键切换（main.ts）。
+ * 不自动轮播；步骤 01–03/06 为原创几何线稿 SVG 占位，04/05 为已批准实拍图，加载失败回退占位。
+ */
+import { FLOW_ASSETS, LINEART_SVGS, type Img16 } from '../lib/assets';
+
+interface Step {
+  no: string;
+  name: string;
+  desc: string;
+  img?: Img16;
+  svg?: string;
+}
+
+const STEPS: Step[] = [
+  { no: '01', name: '方案设计', desc: '按项目条件完成空间与构件的协同设计。【待确认】', svg: LINEART_SVGS.flowStep01 },
+  { no: '02', name: '构件生产', desc: '工厂标准化产线完成构件制造。【待确认】', svg: LINEART_SVGS.flowStep02 },
+  { no: '03', name: '模块组装', desc: '构件在工厂内完成模块组装与预检。【待确认】', svg: LINEART_SVGS.flowStep03 },
+  { no: '04', name: '机电与内装', desc: '机电管线与内装在工厂阶段同步完成。【待确认】', img: FLOW_ASSETS.mechPiping },
+  { no: '05', name: '运输组织', desc: '按交付计划组织构件与模块的运输。【待确认】', img: FLOW_ASSETS.transport },
+  { no: '06', name: '现场交付', desc: '现场吊装、安装并完成质量复核。【待确认】', svg: LINEART_SVGS.flowStep06 },
+];
+---
+
+<section class="sec flow-sec" aria-label="从工厂到现场：交付流程" data-flow>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <div class="en">Delivery</div>
+        <h2>从工厂到现场</h2>
+        <p class="flow-sub">设计协同、工厂生产、运输组织、现场吊装、安装交付、质量复核</p>
+      </div>
+    </div>
+
+    <div class="flow-tabs" role="tablist" aria-label="交付流程步骤" data-flow-tablist>
+      {STEPS.map((s, i) => (
+        <button
+          type="button"
+          role="tab"
+          id={`flow-tab-${s.no}`}
+          aria-selected={i === 0 ? 'true' : 'false'}
+          aria-controls={`flow-panel-${s.no}`}
+          tabindex={i === 0 ? 0 : -1}
+          class:list={['flow-tab', { on: i === 0 }]}
+          data-flow-tab
+        >
+          <span class="flow-no" aria-hidden="true">{s.no}</span>
+          <span class="flow-name">{s.name}</span>
+        </button>
+      ))}
+    </div>
+
+    {STEPS.map((s, i) => (
+      <div
+        role="tabpanel"
+        id={`flow-panel-${s.no}`}
+        aria-labelledby={`flow-tab-${s.no}`}
+        class="flow-panel"
+        hidden={i !== 0}
+        data-flow-panel
+      >
+        <div class="flow-img">
+          {s.img ? (
+            <picture>
+              {s.img.mw && (
+                <source type="image/webp" srcset={`/assets/img/${s.img.base}-m.webp ${s.img.mw}w, /assets/img/${s.img.base}.webp ${s.img.w}w`} sizes="(max-width: 767px) 100vw, 55vw" />
+              )}
+              {!s.img.mw && <source type="image/webp" srcset={`/assets/img/${s.img.base}.webp`} />}
+              <img
+                src={`/assets/img/${s.img.base}.jpg`}
+                width={s.img.w} height={s.img.h} alt={s.img.alt}
+                loading="lazy" decoding="async"
+                onerror="this.closest('.flow-img').classList.add('ph-fallback');this.closest('picture').remove()"
+              />
+            </picture>
+          ) : (
+            <img
+              class="flow-svg"
+              src={`/assets/img/${s.svg}`}
+              width="320" height="240"
+              alt={`${s.name} 原创几何线稿占位（实拍图待补充）`}
+              loading="lazy" decoding="async"
+              onerror="this.closest('.flow-img').classList.add('ph-fallback');this.remove()"
+            />
+          )}
+          <i class="flow-tag" aria-hidden="true">{s.img ? '' : `IMG-FLOW-${s.no} · 原创线稿占位 · 图片待补充`}</i>
+        </div>
+        <div class="flow-txt">
+          <div class="en" aria-hidden="true">Step {s.no}</div>
+          <h3>{s.name}</h3>
+          <p>{s.desc}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

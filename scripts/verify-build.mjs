@@ -103,10 +103,12 @@ ok(css.includes('translateY(-6px)'), '打开动效 opacity+translateY(-6px→0)�
 const cardRule = /\.sub-panel-card\{[^}]*\}/.exec(css)?.[0] ?? '';
 ok(cardRule.includes('border-top:1px solid var(--line)') && cardRule.includes('background:#fff'), '浅色页头：白底 + 顶部 1px 细线');
 ok(!/box-shadow:[^n]/.test(cardRule) && !/border-radius:[^0]/.test(cardRule), '面板无阴影/圆角（AC-46）');
-ok(css.includes('grid-template-columns:repeat(3,1fr)'), '三列 1fr 均布（AC-V2）');
-ok(css.includes('min-height:96px'), '面板高 96px（v1.5.4 上下收窄）');
-ok(css.includes('column-gap:32px'), 'v1.5.3 列间距收窄至 32px');
-ok(/\.mega-ic\{[^}]*width:32px[^}]*height:32px/.test(css), '桌面图标 32×32 视框（v1.5.4）');
+ok(css.includes('grid-template-columns:repeat(3,auto)'), '三列 auto + 两端对齐（v1.6 DSN-165 命中区收窄）');
+ok(css.includes('justify-content:space-between'), '三列两端对齐（v1.6）');
+ok(css.includes('min-height:96px'), '面板高 96px（v1.5.4 上下收窄，v1.6 不回退）');
+ok(css.includes('max-width:840px'), 'Mega 容器收窄至 840px（v1.6 DSN-165）');
+ok(/\.mega-col\{[^}]*width:200px/.test(css), '单项命中区约 200px 宽（v1.6）');
+ok(/\.mega-ic\{[^}]*width:28px[^}]*height:28px/.test(css), '桌面图标 28×28 视框（v1.6）');
 ok(/\.mega-t b\{[^}]*font-size:17px[^}]*font-weight:400/.test(css) || /\.mega-t b\{[^}]*font-weight:400[^}]*font-size:17px/.test(css), '中文标题 17px/400');
 ok(/\.mega-en\{[^}]*font-size:11px/.test(css) && /\.mega-en\{[^}]*letter-spacing:\.2em/.test(css), '英文标签 11px/大写/字距 .2em');
 ok(/--ink-muted2:\s*#6F7572/i.test(css), '英文标签加深灰令牌 #6F7572（AA 4.5:1）');
@@ -148,8 +150,9 @@ ok(notFound.includes('noindex'), '404 为 noindex');
 console.log('== v1.5 首批真实素材 ==');
 const assetsDir = join(dist, 'assets', 'img');
 const distAssets = existsSync(assetsDir) ? readdirSync(assetsDir) : [];
-ok(distAssets.length === 30, `打包素材恰为 30 个批准文件（实际 ${distAssets.length}）`);
+ok(distAssets.length === 62, `打包素材恰为 62 个批准文件（v1.5 批次 30 + v1.6 批次 32，实际 ${distAssets.length}）`);
 ok(existsSync(join(assetsDir, 'asset-manifest.csv')), 'asset-manifest.csv 已随包');
+ok(existsSync(join(assetsDir, 'asset-manifest-v16.csv')), 'asset-manifest-v16.csv 已随包');
 ok(existsSync(join(assetsDir, 'home-banner-60m-living-01.webp')) && existsSync(join(assetsDir, 'home-banner-60m-living-01.jpg')), 'Banner1 WebP+JPG 就位');
 ok(existsSync(join(assetsDir, 'home-banner-60m-living-01-m4x5.webp')), 'Banner1 移动 4:5 就位');
 ok(existsSync(join(assetsDir, 'home-banner-60m-dining-02.webp')) && existsSync(join(assetsDir, 'home-banner-60m-dining-02.jpg')), 'Banner2 WebP+JPG 就位');
@@ -178,6 +181,58 @@ ok(bd8?.includes('product-bd8-interior-01'), 'BD8 详情含室内辅图');
 ok(bd8 !== null && !bd8.includes('product-bd8-hero'), 'BD8 详情无含车辆主图');
 const bd9 = page('zh/products/bd9');
 ok(bd9?.includes('product-bd9-floorplan'), 'BD9 详情含户型图辅图');
+
+console.log('== v1.6 内容模块 ==');
+/* M1 愿景（公司介绍页） */
+ok(about?.includes('我们的愿景'), 'M1 愿景小标题');
+ok(about?.includes('让房屋制造更标准、更高效、更易交付'), 'M1 主文案（PM 中性稿）');
+ok(about?.includes('标准化制造') && about?.includes('高效率交付') && about?.includes('模块化与可复制'), 'M1 三枚价值主张');
+/* M2 研发演进（无年份，ol 顺序 01→04） */
+ok(about?.includes('研发与产品演进'), 'M2 时间线标题');
+ok(about?.includes('data-evo-list'), 'M2 时间线容器');
+const evoOl = /<ol[^>]*data-evo-list[^>]*>[\s\S]*?<\/ol>/.exec(about ?? '')?.[0] ?? '';
+ok(evoOl.startsWith('<ol'), 'M2 使用 ol');
+ok(evoOl.indexOf('研发探索') < evoOl.indexOf('体系验证') && evoOl.indexOf('体系验证') < evoOl.indexOf('产品化') && evoOl.indexOf('产品化') < evoOl.indexOf('项目交付'), 'M2 DOM 顺序 01→04');
+ok(!/<span[^>]*class="evo-yr"/.test(about ?? '') && !/(19|20)\d{2}\s*年/.test(evoOl), 'M2 无未核实年份');
+/* M3 首页交付流程（APG Tabs） */
+ok(home?.includes('从工厂到现场'), 'M3 区块标题');
+ok(home?.includes('role="tablist"'), 'M3 tablist 语义');
+ok((home?.match(/role="tab"/g) ?? []).length === 6, 'M3 六个 tab');
+ok((home?.match(/role="tabpanel"/g) ?? []).length === 6, 'M3 六个 tabpanel');
+ok(home?.includes('aria-selected="true"'), 'M3 默认选中态');
+ok(home?.includes('tabindex="-1"'), 'M3 roving tabindex（非当前 tab -1）');
+ok(home?.includes('flow-mech-piping') && home?.includes('flow-delivery-module'), 'M3 实拍步骤图（04 机电/05 运输）');
+ok(home?.includes('flow-step-01-design.svg') && home?.includes('flow-step-03-inspection.svg') && home?.includes('flow-step-06-install.svg'), 'M3 01–03/06 原创线稿占位');
+ok(/aria-controls="flow-panel-\d{2}"/.test(home ?? ''), 'M3 tab aria-controls 关联 panel');
+/* M4 案例墙（仅地点+类型） */
+const cases = page('zh/cases');
+ok(cases?.includes('开曼群岛') && cases?.includes('布里斯班') && cases?.includes('中山') && cases?.includes('斐济'), 'M4 四案例地点');
+ok(cases?.includes('海外住宅') && cases?.includes('低层住宅') && cases?.includes('模块化酒店'), 'M4 项目类型');
+ok(cases?.includes('case-cayman-hero') && cases?.includes('case-brisbane-ext') && cases?.includes('case-zhongshan-house') && cases?.includes('case-fiji-interior'), 'M4 四案例图引用');
+ok(cases?.includes('maxw-568'), 'M4 中山低清图限宽 ≤568px');
+ok(cases?.includes('maxw-711'), 'M4 布里斯班中清图限宽 ≤711px');
+ok(cases !== null && !cases.includes('案例整理中'), 'M4 案例墙已替换旧空态');
+ok(cases !== null && !/href="\/zh\/cases\/[^"]+"/.test(cases), 'M4 案例卡无详情链接（本轮不接详情）');
+/* M5 建造体系（产品页原创 SVG） */
+const productsIdx = page('zh/products');
+ok(productsIdx?.includes('三种建造体系'), 'M5 区块标题');
+ok(productsIdx?.includes('system-2d-panel.svg') && productsIdx?.includes('system-3d-module.svg') && productsIdx?.includes('system-combined.svg'), 'M5 三枚原创 SVG');
+ok(productsIdx?.includes('2D 板式体系') && productsIdx?.includes('3D 模块体系') && productsIdx?.includes('组合建造'), 'M5 三体系名');
+/* 敏感信息红线：金额/估值/股权数字不出现、不预留（断言避开本脚本注释，检查 HTML 正文） */
+ok(investors !== null && !investors.includes('金额：') && !investors.includes('投资方：'), 'IR 融资卡片无金额/投资方字段（v1.6 红线）');
+ok(investors !== null && !investors.includes('持股说明') && !/class="ratio"/.test(investors), 'IR 股权卡片无比例字段（v1.6 红线）');
+ok(!/融资轮次/.test(investors ?? ''), 'IR 摘要无融资轮次统计');
+const stripMeta = (s) => s.replace(/<meta[^>]*>/g, '').replace(/<title>[\s\S]*?<\/title>/g, '');
+ok(!new RegExp(['估', '值'].join('') + '|' + ['营', '收'].join('') + '|' + ['利', '润'].join('') + '|' + ['股权', '比例'].join('') + '|' + ['持股', '比例'].join('')).test(stripMeta(allHtml)), '全站正文无敏感财务词');
+ok(!/[￥¥$]\s*\d|\d+\s*(万元|亿元|万美元|亿美元)/.test(stripMeta(allHtml)), '全站无金额数字');
+/* v1.6 素材就位 */
+for (const f of ['case-cayman-hero.webp', 'case-brisbane-ext.webp', 'case-zhongshan-house.webp', 'case-fiji-interior.webp', 'flow-mech-piping.webp', 'flow-delivery-module.webp', 'flow-transport-frames.webp']) {
+  ok(existsSync(join(assetsDir, f)), `v1.6 素材 ${f} 就位`);
+}
+for (const f of ['flow-step-01-design.svg', 'flow-step-02-factory.svg', 'flow-step-03-inspection.svg', 'flow-step-06-install.svg', 'system-2d-panel.svg', 'system-3d-module.svg', 'system-combined.svg']) {
+  ok(existsSync(join(assetsDir, f)), `v1.6 原创 SVG ${f} 就位`);
+}
+ok(!distAssets.some((f) => f.includes('biz-p')), '未打包商业计划原始提取文件');
 
 if (failures > 0) {
   console.error(`\n${failures} 项验证失败`);

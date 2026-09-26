@@ -434,19 +434,20 @@ html[data-motion=off] .slide { transform: none; }
   display: block; background: #fff; border-top: 1px solid var(--line);
   box-shadow: none; border-radius: 0;
 }
-/* v1.5.3：三列内容区收窄至 960px 容器，消除过宽稀疏感；仍三列 1fr 均布 */
+/* v1.6 DSN-165 终态：内容容器收窄至 840px，三列 auto + 两端对齐，命中区为内容块本身 */
 .mega-in {
-  max-width: 960px; margin: 0 auto; padding: 0 40px;
-  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 32px;
+  max-width: 840px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between;
   min-height: 96px; /* v1.5.4 上下收窄，减少首屏遮挡 */
 }
-/* 列 = 图标 + 中文标题 + 英文小标签；整块 <a> 可点击（触控高 ≥88px） */
+/* 列 = 图标 + 中文标题 + 英文小标签；命中区收窄为内容块本身（200×88px，列间空白不触发 hover） */
 .mega-col {
   display: flex; align-items: center; justify-content: center; gap: 12px;
-  padding: 24px 24px; position: relative;
+  padding: 0 12px; position: relative; width: 200px; height: 88px; box-sizing: border-box;
+  border-radius: 6px;
   transition: background .15s;
 }
-.mega-ic { width: 32px; height: 32px; flex: none; color: var(--ink-strong); transition: color .15s; }
+.mega-ic { width: 28px; height: 28px; flex: none; color: var(--ink-strong); transition: color .15s; }
 .mega-t { text-align: left; }
 .mega-t b { display: block; font-size: 17px; font-weight: 400; color: var(--ink-strong); transition: color .15s; }
 .mega-en {
@@ -747,3 +748,143 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
 }
 
 /* 平板 768–1279：抽屉方案（hover 不可靠，v1.3 N6），桌面 mega 面板不加载 */
+
+/* ==================== v1.6 内容模块（DSN-160~164） ==================== */
+
+/* --- M1 愿景（公司介绍页） --- */
+.vision { display: grid; grid-template-columns: 40% 1fr; gap: 60px; padding: 110px 0; border-bottom: 1px solid var(--line); }
+.vision .v-label { font-size: 14px; color: var(--accent); letter-spacing: 4px; font-weight: 500; }
+.vision h2 { font-size: 40px; line-height: 1.4; font-weight: 300; max-width: 420px; margin-top: 16px; }
+.vision-vals { position: relative; padding-top: 26px; }
+.vision-vals::before { content: ""; position: absolute; top: 0; left: 0; width: 56px; height: 2px; background: var(--accent); }
+.vision-val { display: grid; grid-template-columns: 56px 1fr; gap: 18px; padding: 20px 0; border-bottom: 1px solid #E8E4DC; align-items: baseline; }
+.vision-val:last-child { border-bottom: none; }
+.vision-val .v-no { font-family: var(--font-en); color: var(--accent); font-size: 15px; }
+.vision-val b { font-size: 20px; font-weight: 500; display: block; }
+.vision-val p { font-size: 14px; color: var(--ink-body); margin-top: 6px; max-width: 46em; }
+
+/* --- M2 研发演进时间线（无年份，ol 保持 01→04 DOM 顺序） --- */
+.evo { padding: 110px 0; }
+/* 桌面：三行 grid（上文案 / 轴 / 下文案），奇数位在上、偶数位在下 */
+.evo ol {
+  list-style: none; margin: 70px 0 0; padding: 0; position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr 12px 1fr;
+}
+.evo ol::before { content: ""; grid-area: 2 / 1 / 3 / 5; height: 2px; background: #E8E4DC; align-self: center; position: relative; z-index: 0; }
+.evo li { position: relative; display: flex; flex-direction: column; }
+.evo li::before {
+  content: ""; position: absolute; left: 50%; transform: translateX(-50%);
+  width: 12px; height: 12px; border-radius: 50%; background: var(--accent); z-index: 1;
+}
+.evo li:nth-child(odd) { grid-row: 1 / 3; justify-content: flex-end; }
+.evo li:nth-child(odd)::before { bottom: -6px; }
+.evo li:nth-child(even) { grid-row: 2 / 4; }
+.evo li:nth-child(even)::before { top: -6px; }
+/* 显式列归位：轴线 ::before 占满 row2 col1-4，auto 放置会把跨行 li 挤进隐式列 */
+.evo li:nth-child(1) { grid-column: 1; }
+.evo li:nth-child(2) { grid-column: 2; }
+.evo li:nth-child(3) { grid-column: 3; }
+.evo li:nth-child(4) { grid-column: 4; }
+.evo li .evo-t { max-width: 240px; margin: 0 auto; }
+.evo li:nth-child(odd) .evo-t { padding-bottom: 28px; }
+.evo li:nth-child(even) .evo-t { padding-top: 28px; }
+.evo .evo-stage { font-size: 18px; font-weight: 600; }
+.evo .evo-desc { font-size: 15px; line-height: 1.7; color: var(--ink-body); margin-top: 8px; }
+.evo .evo-no { font-family: var(--font-en); font-size: 12px; color: var(--accent); letter-spacing: .18em; display: block; margin-bottom: 6px; }
+/* 节点自左而右 stagger 渐显（120ms 间隔） */
+.evo li { opacity: 0; transition: opacity .4s ease-out; }
+.evo li.in { opacity: 1; }
+html[data-motion=off] .evo li { opacity: 1; transition: none; }
+@media (prefers-reduced-motion: reduce) { .evo li { opacity: 1; transition: none; } }
+
+/* --- M3 交付流程（首页，APG Tabs） --- */
+.flow-sec { background: #fff; }
+.flow-sub { font-size: 14px; color: var(--ink-muted); margin-top: 12px; }
+.flow-tabs { display: grid; grid-template-columns: repeat(6, 1fr); margin-top: 60px; border-bottom: 1px solid var(--line); }
+.flow-tab {
+  display: flex; align-items: baseline; gap: 8px; justify-content: center;
+  background: none; border: none; font: inherit; cursor: pointer;
+  padding: 14px 8px 16px; position: relative; color: var(--ink-body);
+  transition: color .15s;
+}
+.flow-tab .flow-no { font-family: var(--font-en); font-size: 13px; color: var(--accent); }
+.flow-tab .flow-name { font-size: 16px; }
+.flow-tab:hover { color: var(--accent); }
+.flow-tab.on { color: var(--ink-strong); }
+.flow-tab.on::after { content: ""; position: absolute; left: 50%; bottom: -1px; transform: translateX(-50%); width: 36px; height: 2px; background: var(--accent); }
+.flow-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.flow-panel { display: grid; grid-template-columns: 55% 1fr; gap: 56px; align-items: center; padding-top: 56px; }
+.flow-panel[hidden] { display: none; }
+/* 切换交叉淡入 250ms（reduced-motion 直接切换） */
+.flow-panel.fading { opacity: 0; transition: opacity .12s linear; }
+.flow-panel { transition: opacity .25s linear; }
+html[data-motion=off] .flow-panel { transition: none; }
+@media (prefers-reduced-motion: reduce) { .flow-panel, .flow-panel.fading { transition: none; opacity: 1; } }
+.flow-img { position: relative; aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden; background: var(--bg-alt); }
+.flow-img picture, .flow-img picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.flow-img .flow-svg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 12%; box-sizing: border-box; }
+.flow-img .flow-tag {
+  position: absolute; left: 14px; bottom: 12px; font-style: normal; font-size: 11px;
+  font-family: var(--font-en); letter-spacing: .08em; color: var(--ink-muted);
+  background: rgba(255, 255, 255, .82); padding: 4px 10px; border-radius: 3px;
+}
+.flow-img .flow-tag:empty { display: none; }
+.flow-img.ph-fallback { background: linear-gradient(135deg, #e9e6df, #dcd8cf); }
+.flow-img.ph-fallback::after { content: "图片待补充"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-size: 14px; letter-spacing: .2em; }
+.flow-img.ph-fallback .flow-tag { display: none; }
+.flow-txt h3 { font-size: 24px; font-weight: 400; margin: 10px 0 14px; }
+.flow-txt p { font-size: 15px; color: var(--ink-body); max-width: 40em; }
+
+/* --- M4 案例墙（案例页；无链接卡不做缩放 hover，仅青绿短线） --- */
+.case-wall { padding-bottom: 130px; }
+.case-wall-grid { max-width: 1280px; margin: 70px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding: 0 64px; }
+.case-card { position: relative; }
+.case-card:nth-child(even) { margin-top: 80px; }
+.case-card .cc-img { position: relative; aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden; background: var(--bg-alt); }
+.case-card .cc-img picture, .case-card .cc-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* 低清素材不放大：中山 ≤568px、布里斯班 ≤711px，容器内居中 */
+.case-card .cc-img.maxw-568 picture, .case-card .cc-img.maxw-568 img { max-width: 568px; max-height: 100%; left: 50%; transform: translateX(-50%); width: 100%; }
+.case-card .cc-img.maxw-711 picture, .case-card .cc-img.maxw-711 img { max-width: 711px; max-height: 100%; left: 50%; transform: translateX(-50%); width: 100%; }
+.case-card .cc-img.ph-fallback { background: linear-gradient(135deg, #e9e6df, #dcd8cf); }
+.case-card .cc-img.ph-fallback::after { content: "案例图待补充"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-size: 13px; letter-spacing: .2em; }
+.case-card .cc-meta { padding: 18px 2px 0; position: relative; }
+.case-card .cc-loc { font-size: 18px; font-weight: 600; color: var(--ink-strong); }
+.case-card .cc-type { font-size: 15px; color: var(--accent); margin-top: 4px; }
+.case-card .cc-meta::after { content: ""; position: absolute; left: 2px; bottom: -8px; width: 0; height: 2px; background: var(--accent); transition: width .45s cubic-bezier(.22, .61, .36, 1); }
+.case-card:hover .cc-meta::after { width: 36px; }
+@media (prefers-reduced-motion: reduce) { .case-card .cc-meta::after { transition: none; } }
+
+/* --- M5 建造体系图解（产品页，原创 SVG） --- */
+.sys { padding: 100px 0 60px; }
+.sys-grid { max-width: 1200px; margin: 60px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.sys-item .sys-img { aspect-ratio: 4 / 3; background: #fff; border: 1px solid var(--line); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.sys-item .sys-img img { width: 100%; height: 100%; object-fit: contain; padding: 8%; box-sizing: border-box; }
+.sys-item b { display: block; font-size: 20px; font-weight: 600; margin-top: 20px; }
+.sys-item p { font-size: 14px; color: var(--ink-body); margin-top: 8px; max-width: 30em; }
+
+/* v1.6 移动断点 */
+@media (max-width: 1279px) {
+  .evo ol { grid-template-columns: 1fr; grid-template-rows: none; padding-left: 40px; }
+  .evo ol::before { grid-area: auto; position: absolute; left: 20px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .evo li { padding: 0 0 48px; display: block; }
+  .evo li:nth-child(odd), .evo li:nth-child(even) { grid-row: auto; grid-column: auto; }
+  .evo li::before { left: -25px; top: 6px; transform: none; }
+  .evo li:nth-child(odd) .evo-t, .evo li:nth-child(even) .evo-t { padding: 0; margin: 0; max-width: none; }
+  .flow-tabs { display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; gap: 8px; border-bottom: none; padding-bottom: 8px; }
+  .flow-tab { flex: none; min-height: 44px; align-items: center; padding: 10px 16px; border-radius: 22px; background: var(--bg-alt); }
+  .flow-tab.on { background: var(--accent); color: #fff; }
+  .flow-tab.on .flow-no { color: rgba(255, 255, 255, .85); }
+  .flow-tab.on::after { display: none; }
+  .flow-panel { grid-template-columns: 1fr; gap: 30px; }
+  .case-wall-grid { grid-template-columns: 1fr; gap: 44px; padding: 0 64px; }
+  .case-card:nth-child(even) { margin-top: 0; }
+  .sys-grid { grid-template-columns: 1fr; }
+  .sys-item .sys-img { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 767px) {
+  .vision { grid-template-columns: 1fr; gap: 34px; padding: 72px 0; }
+  .vision h2 { font-size: 28px; }
+  .evo { padding: 72px 0; }
+  .case-wall-grid { padding: 0 20px; }
+  .case-wall { padding-bottom: 72px; }
+}
