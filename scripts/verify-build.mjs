@@ -150,9 +150,10 @@ ok(notFound.includes('noindex'), '404 为 noindex');
 console.log('== v1.5 首批真实素材 ==');
 const assetsDir = join(dist, 'assets', 'img');
 const distAssets = existsSync(assetsDir) ? readdirSync(assetsDir) : [];
-ok(distAssets.length === 62, `打包素材恰为 62 个批准文件（v1.5 批次 30 + v1.6 批次 32，实际 ${distAssets.length}）`);
+ok(distAssets.length === 107, `打包素材恰为 107 个批准文件（v1.5 批次 30 + v1.6 批次 17 + v1.7 RAR 批次 60，实际 ${distAssets.length}）`);
 ok(existsSync(join(assetsDir, 'asset-manifest.csv')), 'asset-manifest.csv 已随包');
 ok(existsSync(join(assetsDir, 'asset-manifest-v16.csv')), 'asset-manifest-v16.csv 已随包');
+ok(existsSync(join(assetsDir, 'asset-manifest-rar.csv')), 'asset-manifest-rar.csv 已随包');
 ok(existsSync(join(assetsDir, 'home-banner-60m-living-01.webp')) && existsSync(join(assetsDir, 'home-banner-60m-living-01.jpg')), 'Banner1 WebP+JPG 就位');
 ok(existsSync(join(assetsDir, 'home-banner-60m-living-01-m4x5.webp')), 'Banner1 移动 4:5 就位');
 ok(existsSync(join(assetsDir, 'home-banner-60m-dining-02.webp')) && existsSync(join(assetsDir, 'home-banner-60m-dining-02.jpg')), 'Banner2 WebP+JPG 就位');
@@ -169,13 +170,16 @@ const allHtml = readdirSync(dist, { recursive: true }).filter((f) => String(f).e
 ok(!allHtml.includes('product-bd8-hero') && !allHtml.includes('product-bd8-card') && !allHtml.includes('product-bd9-hero') && !allHtml.includes('product-bd9-card'), '页面未引用含车辆的 BD8/BD9 hero/card');
 ok(!allHtml.includes('商业计划') && !allHtml.includes('business-plan'), '未打包商业计划素材');
 ok(home?.includes('<picture') && home?.includes('type="image/webp"'), 'Banner 使用 <picture> WebP 优先');
-ok(home?.includes('home-banner-60m-living-01.jpg'), 'Banner1 JPG 回退引用');
-ok(/media="\(max-width: ?767px\)"/.test(home ?? ''), 'Banner 移动 4:5 媒体查询');
+ok(home?.includes('home-hero-01.jpg') && home?.includes('home-hero-02.jpg') && home?.includes('home-hero-03.jpg'), 'v1.7 RAR Banner 三帧 JPG 回退引用');
+ok(home?.includes('home-hero-01-m.webp'), 'Banner 移动档 -m.webp 引用');
+ok(/media="\(max-width: ?767px\)"/.test(home ?? ''), 'Banner 移动媒体查询');
 ok(home?.includes('fetchpriority="high"'), '首屏 Banner fetchpriority=high 预加载');
 ok(home?.includes('width="1920" height="823"'), 'Banner 明确宽高（防 CLS）');
-ok(home?.includes('半打空间 60㎡'), 'Banner/氛围图准确中文 alt');
+ok(home?.includes('半打空间 4S 模块化建筑') && home?.includes('半打空间 60㎡'), 'Banner/氛围图准确中文 alt');
 ok(home?.includes('onerror='), '图片失败回退降级钩子存在');
 ok(home?.includes('loading="lazy"'), '非首帧/氛围图懒加载');
+ok(home?.includes('case-cover-cayman') && home?.includes('case-cover-brisbane'), '首页 S5 案例接入 RAR 封面');
+ok(!home?.includes('项目名称 A') && !home?.includes('构件用量'), '首页 S5 案例无虚构 KPI/项目名');
 const bd8 = page('zh/products/bd8');
 ok(bd8?.includes('product-bd8-interior-01'), 'BD8 详情含室内辅图');
 ok(bd8 !== null && !bd8.includes('product-bd8-hero'), 'BD8 详情无含车辆主图');
@@ -201,18 +205,19 @@ ok((home?.match(/role="tab"/g) ?? []).length === 6, 'M3 六个 tab');
 ok((home?.match(/role="tabpanel"/g) ?? []).length === 6, 'M3 六个 tabpanel');
 ok(home?.includes('aria-selected="true"'), 'M3 默认选中态');
 ok(home?.includes('tabindex="-1"'), 'M3 roving tabindex（非当前 tab -1）');
-ok(home?.includes('flow-mech-piping') && home?.includes('flow-delivery-module'), 'M3 实拍步骤图（04 机电/05 运输）');
-ok(home?.includes('flow-step-01-design.svg') && home?.includes('flow-step-03-inspection.svg') && home?.includes('flow-step-06-install.svg'), 'M3 01–03/06 原创线稿占位');
+ok(home?.includes('flow-factory-module') && home?.includes('flow-mech-piping') && home?.includes('flow-delivery-module'), 'M3 实拍步骤图（02 工厂/04 机电/05 运输）');
+ok(home?.includes('flow-step-01-design.svg') && home?.includes('flow-step-03-inspection.svg') && home?.includes('flow-step-06-install.svg'), 'M3 01/03/06 原创线稿占位');
+ok(!home?.includes('flow-step-02-factory.svg'), 'M3 step02 线稿已被工厂实拍替换');
 ok(/aria-controls="flow-panel-\d{2}"/.test(home ?? ''), 'M3 tab aria-controls 关联 panel');
-/* M4 案例墙（仅地点+类型） */
+/* M4 案例墙（v1.7 RAR 封面；仅地点+类型） */
 const cases = page('zh/cases');
 ok(cases?.includes('开曼群岛') && cases?.includes('布里斯班') && cases?.includes('中山') && cases?.includes('斐济'), 'M4 四案例地点');
-ok(cases?.includes('海外住宅') && cases?.includes('低层住宅') && cases?.includes('模块化酒店'), 'M4 项目类型');
-ok(cases?.includes('case-cayman-hero') && cases?.includes('case-brisbane-ext') && cases?.includes('case-zhongshan-house') && cases?.includes('case-fiji-interior'), 'M4 四案例图引用');
-ok(cases?.includes('maxw-568'), 'M4 中山低清图限宽 ≤568px');
-ok(cases?.includes('maxw-711'), 'M4 布里斯班中清图限宽 ≤711px');
+ok(cases?.includes('海外住宅') && cases?.includes('低层住宅') && cases?.includes('模块化建筑'), 'M4 项目类型');
+ok(cases?.includes('case-cover-cayman') && cases?.includes('case-cover-brisbane') && cases?.includes('case-cover-zhongshan-fd') && cases?.includes('case-cover-fiji'), 'M4 四案例 RAR 封面引用');
+ok(cases !== null && !cases.includes('maxw-568') && !cases.includes('maxw-711'), 'M4 低清限宽已随 RAR 全尺寸封面解除');
 ok(cases !== null && !cases.includes('案例整理中'), 'M4 案例墙已替换旧空态');
 ok(cases !== null && !/href="\/zh\/cases\/[^"]+"/.test(cases), 'M4 案例卡无详情链接（本轮不接详情）');
+ok(cases !== null && !cases.includes('case-cayman-hero') && !cases.includes('case-zhongshan-house') && !cases.includes('case-fiji-interior'), 'M4 不再引用已删除的 v1.6 低清案例图');
 /* M5 建造体系（产品页原创 SVG） */
 const productsIdx = page('zh/products');
 ok(productsIdx?.includes('三种建造体系'), 'M5 区块标题');
@@ -226,13 +231,47 @@ const stripMeta = (s) => s.replace(/<meta[^>]*>/g, '').replace(/<title>[\s\S]*?<
 ok(!new RegExp(['估', '值'].join('') + '|' + ['营', '收'].join('') + '|' + ['利', '润'].join('') + '|' + ['股权', '比例'].join('') + '|' + ['持股', '比例'].join('')).test(stripMeta(allHtml)), '全站正文无敏感财务词');
 ok(!/[￥¥$]\s*\d|\d+\s*(万元|亿元|万美元|亿美元)/.test(stripMeta(allHtml)), '全站无金额数字');
 /* v1.6 素材就位 */
-for (const f of ['case-cayman-hero.webp', 'case-brisbane-ext.webp', 'case-zhongshan-house.webp', 'case-fiji-interior.webp', 'flow-mech-piping.webp', 'flow-delivery-module.webp', 'flow-transport-frames.webp']) {
+for (const f of ['flow-mech-piping.webp', 'flow-delivery-module.webp', 'flow-transport-frames.webp']) {
   ok(existsSync(join(assetsDir, f)), `v1.6 素材 ${f} 就位`);
 }
 for (const f of ['flow-step-01-design.svg', 'flow-step-02-factory.svg', 'flow-step-03-inspection.svg', 'flow-step-06-install.svg', 'system-2d-panel.svg', 'system-3d-module.svg', 'system-combined.svg']) {
   ok(existsSync(join(assetsDir, f)), `v1.6 原创 SVG ${f} 就位`);
 }
 ok(!distAssets.some((f) => f.includes('biz-p')), '未打包商业计划原始提取文件');
+ok(!distAssets.some((f) => /^case-(cayman|brisbane|zhongshan-house|fiji-interior)/.test(f)), '已删除的 v1.6 低清案例图未打包');
+
+console.log('== v1.7 RAR 批次素材 ==');
+/* 首页 Banner 三帧 + 关于我们首图 */
+for (const f of ['home-hero-01', 'home-hero-02', 'home-hero-03', 'about-hero']) {
+  ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}.jpg`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `v1.7 ${f} 三档就位`);
+}
+/* 案例封面 ×10 */
+for (const f of ['case-cover-cayman', 'case-cover-brisbane', 'case-cover-zhongshan-fd', 'case-cover-zhongshan-mg', 'case-cover-zhongshan-cabin', 'case-cover-chengdu-dorm', 'case-cover-shenzhen-camp', 'case-cover-fiji', 'case-cover-jiangmen', 'case-cover-changzhou']) {
+  ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}.jpg`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `v1.7 案例封面 ${f} 三档就位`);
+}
+/* 产品详情主图 ×4 + 工厂实拍 ×2 */
+for (const f of ['product-4s-hero', 'product-5s-hero', 'product-6s-hero', 'product-grayscale-hero', 'flow-factory-module']) {
+  ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}.jpg`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `v1.7 ${f} 三档就位`);
+}
+ok(existsSync(join(assetsDir, 'flow-factory-panels.webp')) && existsSync(join(assetsDir, 'flow-factory-panels.jpg')), 'v1.7 flow-factory-panels 双档就位（无移动档，上限1280）');
+/* 证书与黑底 Logo 本轮不上站 */
+for (const f of ['award-gd-civil-society', 'award-gd-tech-2nd', 'brand-logo']) {
+  ok(!distAssets.some((x) => x.startsWith(f)), `v1.7 ${f} 未打包（待口径确认/黑底禁入浅底）`);
+  ok(!allHtml.includes(f), `v1.7 ${f} 页面未引用`);
+}
+/* 产品详情主图接入 */
+for (const slug of ['4s', '5s', '6s', 'grayscale']) {
+  const pd = page(`zh/products/${slug}`);
+  ok(pd !== null && pd.includes(`product-${slug}-hero`), `产品 ${slug} 详情主图接入`);
+  ok(pd !== null && pd.includes('fetchpriority="high"'), `产品 ${slug} 详情主图首屏 eager`);
+}
+const productsIdxV17 = page('zh/products');
+ok(productsIdxV17?.includes('product-4s-hero') && productsIdxV17?.includes('product-grayscale-hero'), '产品列表卡片接入主图');
+ok(about?.includes('about-hero'), '关于我们首图接入');
+/* 敏感词红线：中建三局不得出现在任何页面文案/alt/title/URL */
+ok(!new RegExp(['中', '建', '三', '局'].join('')).test(allHtml), '全站无「中建三局」（深圳营房用中性表述）');
+/* manifest 源文件名列含客户名，属内部溯源、不渲染到页面；但确认其不进入打包 HTML（上条已覆盖 HTML），此处确认深圳案例页文案中性 */
+ok(cases !== null && !cases.includes('shenzhen'), '案例页未接入深圳营房卡（保留未上站素材、页面不引用）');
 
 if (failures > 0) {
   console.error(`\n${failures} 项验证失败`);

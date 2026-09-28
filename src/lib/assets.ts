@@ -51,8 +51,44 @@ export const WITHHELD_ASSETS = [
   'product-bd9-card',
 ] as const;
 
+/* ==================== v1.7 RAR 批次真实素材（asset-manifest-rar.csv，G1/Reviewer PASS） ==================== */
+/* 全部自有版权；award-* 证书与黑底 brand-logo 本轮不上站（证书口径待确认；黑底 Logo 禁入浅底区域） */
+
+/** 首页 Banner 三帧（21:9 桌面 1920×823 + 移动 960×411） */
+export const HOME_HERO_ASSETS = {
+  hero01: { base: 'home-hero-01', w: 1920, h: 823, mw: 960, mh: 411, msuf: '-m', alt: '半打空间 4S 模块化建筑黄昏全景' },
+  hero02: { base: 'home-hero-02', w: 1920, h: 823, mw: 960, mh: 411, msuf: '-m', alt: '半打空间 5S 模块化建筑日景正面' },
+  hero03: { base: 'home-hero-03', w: 1920, h: 823, mw: 960, mh: 411, msuf: '-m', alt: '半打空间 6S 模块化建筑黄昏实景' },
+} satisfies Record<string, Img16>;
+
+/** 关于我们首图（21:9；右栏含愿景文案，移动裁左半建筑） */
+export const ABOUT_HERO_ASSET: Img16 = { base: 'about-hero', w: 1920, h: 823, mw: 960, mh: 412, msuf: '-m', alt: '半打空间白盒装配式建筑与愿景标语' };
+
+/** M4 案例墙（v1.7 RAR 封面替换 v1.6 低清/旧图；仅地点+类型，无客户名） */
+export const CASE_COVER_ASSETS: Record<'cayman' | 'brisbane' | 'zhongshan' | 'fiji', Img16> = {
+  cayman: { base: 'case-cover-cayman', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目外观实景' },
+  brisbane: { base: 'case-cover-brisbane', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '澳大利亚布里斯班住宅项目外观实景' },
+  zhongshan: { base: 'case-cover-zhongshan-fd', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国中山低层住宅项目外观实景' },
+  fiji: { base: 'case-cover-fiji', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '斐济模块化建筑样箱外观实景' },
+};
+
+/** 产品详情主图（16:9 桌面 1920×1080 + 移动 960×540；按产品系列名映射） */
+export const PRODUCT_HERO_ASSETS: Record<string, Img16> = {
+  '4s': { base: 'product-4s-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '半打 4S 产品外观实景' },
+  '5s': { base: 'product-5s-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '半打 5S 产品外观实景' },
+  '6s': { base: 'product-6s-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '半打 6S 产品外观实景' },
+  grayscale: { base: 'product-grayscale-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '灰度空间产品外观实景' },
+};
+
+/** M3 交付流程 step02 工厂生产实拍（无人物；panels 无移动档、上限 1280px） */
+export const FLOW_FACTORY_ASSETS = {
+  module: { base: 'flow-factory-module', w: 1080, h: 810, mw: 960, mh: 720, msuf: '-m', alt: '工厂车间内白色模块构件实拍' },
+  panels: { base: 'flow-factory-panels', w: 1280, h: 960, alt: '工厂墙板存放区实拍' },
+} satisfies Record<string, Img16>;
+
 /* ==================== v1.6 增量素材（asset-manifest-v16.csv，均已批准） ==================== */
 
+/** Img16 移动档后缀：v1.6 批次为 -960w（默认），v1.7 RAR 批次为 -m */
 export interface Img16 {
   base: string;
   w: number;
@@ -60,18 +96,14 @@ export interface Img16 {
   /** 移动档后缀 -m（存在时提供尺寸） */
   mw?: number;
   mh?: number;
+  /** 移动档文件后缀（缺省 -960w；RAR 批次传 '-m'） */
+  msuf?: string;
   alt: string;
   /** 展示宽上限（低清素材不放大，manifest max_display_width） */
   maxW?: number;
 }
 
-/** M4 案例墙（仅地点+类型，无客户/金额/工期） */
-export const CASE_ASSETS: Record<'cayman' | 'brisbane' | 'zhongshan' | 'fiji', Img16> = {
-  cayman: { base: 'case-cayman-hero', w: 1920, h: 1440, mw: 960, mh: 720, alt: '开曼群岛海外住宅项目建成实景' },
-  brisbane: { base: 'case-brisbane-ext', w: 711, h: 533, alt: '澳大利亚布里斯班住宅项目后院外观', maxW: 711 },
-  zhongshan: { base: 'case-zhongshan-house', w: 568, h: 426, alt: '中国中山低层住宅项目建成实景', maxW: 568 },
-  fiji: { base: 'case-fiji-interior', w: 1705, h: 1279, mw: 960, mh: 720, alt: '斐济模块化酒店室内客厅实景' },
-};
+/* M4 案例墙素材由 v1.7 CASE_COVER_ASSETS 取代（RAR 全尺寸封面；原 v1.6 低清/裁剪图已删除） */
 
 /** M3 交付流程实拍步骤（step 01–03 为原创 SVG 线稿占位，不在此列） */
 export const FLOW_ASSETS = {

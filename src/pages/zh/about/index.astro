@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PhImg from '../../../components/PhImg.astro';
 import { PLACEHOLDER } from '../../../lib/site';
+import { ABOUT_HERO_ASSET } from '../../../lib/assets';
 
 const factoryStats = [
   { num: '——', label: `自动化产线（条）${PLACEHOLDER}` },
@@ -36,7 +37,8 @@ const evoStages = [
   headerStyle="overlay"
 >
   <section class="page-hero" aria-label="关于我们首屏">
-    <PhImg g="dark-1" tag="IMG-ABOUT-HERO · 2400×1100 · 工厂大场景（占位）" onDark />
+    {/* v1.7 RAR 关于我们首图：白盒建筑+愿景文案（21:9，移动裁左半建筑）；首屏 eager 预加载，失败回退深色渐变 */}
+    <PhImg g="dark-1" tag="IMG-ABOUT-HERO · 白盒建筑+愿景文案" onDark img={{ ...ABOUT_HERO_ASSET, lazy: false }} />
     <div class="hero-copy">
       <div class="en" style="color:rgba(255,255,255,.6)">About Banda</div>
       <h1>把建造，变成制造</h1>

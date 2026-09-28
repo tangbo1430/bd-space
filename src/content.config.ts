@@ -20,6 +20,8 @@ const products = defineCollection({
     detailImageId: z.string(),
     /** 已批准真实辅图（public/assets/img/ 名前缀）；缺省=占位。含第三方车辆的图不得配置 */
     approvedImages: z.array(z.string()).default([]),
+    /** 产品详情主图（PRODUCT_HERO_ASSETS 键：4s/5s/6s/grayscale）；缺省=占位 */
+    heroAsset: z.string().optional(),
     published: z.boolean().default(true),
   }),
 });

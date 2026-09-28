@@ -1,19 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { CASE_ASSETS } from '../../lib/assets';
+import { CASE_COVER_ASSETS } from '../../lib/assets';
 
-/* M4 项目实践视觉案例墙（v1.6 DSN-163）：仅地点+类型，无客户名/数量/金额/周期/抗震/收益 */
+/* M4 项目实践视觉案例墙（v1.7 RAR 封面；仅地点+类型，无客户名/数量/金额/周期/抗震/收益） */
 const cases = [
-  { loc: '开曼群岛', type: '海外住宅', img: CASE_ASSETS.cayman },
-  { loc: '澳大利亚', type: '布里斯班住宅', img: CASE_ASSETS.brisbane },
-  { loc: '中国 · 中山', type: '低层住宅', img: CASE_ASSETS.zhongshan },
-  { loc: '斐济', type: '模块化酒店', img: CASE_ASSETS.fiji },
+  { loc: '开曼群岛', type: '海外住宅', img: CASE_COVER_ASSETS.cayman },
+  { loc: '澳大利亚', type: '布里斯班住宅', img: CASE_COVER_ASSETS.brisbane },
+  { loc: '中国 · 中山', type: '低层住宅', img: CASE_COVER_ASSETS.zhongshan },
+  { loc: '斐济', type: '模块化建筑', img: CASE_COVER_ASSETS.fiji },
 ];
 ---
 
 <BaseLayout
   title="工程案例"
-  description="半打空间项目实践：开曼群岛海外住宅、澳大利亚布里斯班住宅、中国中山低层住宅、斐济模块化酒店。"
+  description="半打空间项目实践：开曼群岛海外住宅、澳大利亚布里斯班住宅、中国中山低层住宅、斐济模块化建筑。"
   current="cases"
   headerStyle="solid"
 >

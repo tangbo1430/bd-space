@@ -8,9 +8,11 @@ interface ImgVariant {
   base: string;
   w: number;
   h: number;
-  /** 移动档宽度（存在 -960w 变体时提供） */
+  /** 移动档宽度（存在移动变体时提供） */
   mw?: number;
   mh?: number;
+  /** 移动档后缀：v1.5 批次为 -960w，v1.6/v1.7 批次为 -m（默认 -960w 保持兼容） */
+  msuf?: string;
   alt: string;
   /** 首屏主图传 false（eager + fetchpriority=high），其余默认懒加载 */
   lazy?: boolean;
@@ -33,7 +35,7 @@ const { g = 'factory', tag, onDark = false, class: cls = '', img } = Astro.props
     <picture>
       <source
         type="image/webp"
-        srcset={img.mw ? `/assets/img/${img.base}-960w.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w` : `/assets/img/${img.base}.webp`}
+        srcset={img.mw ? `/assets/img/${img.base}${img.msuf ?? '-960w'}.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w` : `/assets/img/${img.base}.webp`}
         sizes="(max-width: 767px) 100vw, 50vw"
       />
       <img

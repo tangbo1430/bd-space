@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PhImg from '../../../components/PhImg.astro';
-import { LINEART_SVGS } from '../../../lib/assets';
+import { LINEART_SVGS, PRODUCT_HERO_ASSETS } from '../../../lib/assets';
 import { getCollection } from 'astro:content';
 
 const products = (await getCollection('products', ({ data }) => data.published))
@@ -56,7 +56,7 @@ const systems = [
     {products.map((p, i) => (
       <article class:list={['plist-item', { rev: i % 2 === 1 }]}>
         <div class="p-img">
-          <PhImg g={i % 3 === 0 ? 'factory' : i % 3 === 1 ? 'yard' : 'site'} tag={`${p.data.listImageId} · 替换整图（占位=原创线稿版式位）`} />
+          <PhImg g={i % 3 === 0 ? 'factory' : i % 3 === 1 ? 'yard' : 'site'} tag={`${p.data.listImageId} · 替换整图（占位=原创线稿版式位）`} img={p.data.heroAsset ? PRODUCT_HERO_ASSETS[p.data.heroAsset] : undefined} />
         </div>
         <div class="p-txt">
           <div class="en">{p.data.enTag}</div>

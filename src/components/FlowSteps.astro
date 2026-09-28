@@ -4,7 +4,7 @@
  * APG Tabs：tablist/tab/tabpanel、aria-selected、roving tabindex、左右键切换（main.ts）。
  * 不自动轮播；步骤 01–03/06 为原创几何线稿 SVG 占位，04/05 为已批准实拍图，加载失败回退占位。
  */
-import { FLOW_ASSETS, LINEART_SVGS, type Img16 } from '../lib/assets';
+import { FLOW_ASSETS, FLOW_FACTORY_ASSETS, LINEART_SVGS, type Img16 } from '../lib/assets';
 
 interface Step {
   no: string;
@@ -16,7 +16,7 @@ interface Step {
 
 const STEPS: Step[] = [
   { no: '01', name: '方案设计', desc: '按项目条件完成空间与构件的协同设计。【待确认】', svg: LINEART_SVGS.flowStep01 },
-  { no: '02', name: '构件生产', desc: '工厂标准化产线完成构件制造。【待确认】', svg: LINEART_SVGS.flowStep02 },
+  { no: '02', name: '构件生产', desc: '工厂标准化产线完成构件制造。【待确认】', img: FLOW_FACTORY_ASSETS.module },
   { no: '03', name: '模块组装', desc: '构件在工厂内完成模块组装与预检。【待确认】', svg: LINEART_SVGS.flowStep03 },
   { no: '04', name: '机电与内装', desc: '机电管线与内装在工厂阶段同步完成。【待确认】', img: FLOW_ASSETS.mechPiping },
   { no: '05', name: '运输组织', desc: '按交付计划组织构件与模块的运输。【待确认】', img: FLOW_ASSETS.transport },

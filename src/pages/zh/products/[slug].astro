@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PhImg from '../../../components/PhImg.astro';
 import ProductArt from '../../../components/ProductArt.astro';
-import { PRODUCT_ASSETS, SPACE_ASSETS } from '../../../lib/assets';
+import { PRODUCT_ASSETS, SPACE_ASSETS, PRODUCT_HERO_ASSETS } from '../../../lib/assets';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -12,6 +12,8 @@ export async function getStaticPaths() {
 
 const { product } = Astro.props;
 const { Content } = await render(product);
+// v1.7 RAR 产品详情主图（4S/5S/6S/灰度空间；16:9，overlay 深色区首屏 eager）
+const heroImg = product.data.heroAsset ? PRODUCT_HERO_ASSETS[product.data.heroAsset] : undefined;
 // 已批准真实辅图（不含第三方车辆）；列表主图/详情主图含车辆继续占位（主管首批决策）
 const approvedImgs = product.data.approvedImages
   .map((base) => Object.values(PRODUCT_ASSETS).find((a) => a.base === base))
@@ -25,7 +27,7 @@ const approvedImgs = product.data.approvedImages
   headerStyle="overlay"
 >
   <section class="page-hero" style="height:70vh;min-height:480px" aria-label={`${product.data.name}首屏`}>
-    <PhImg g="dark-2" tag={`${product.data.detailImageId} · 产品实拍/应用（占位）`} onDark />
+    <PhImg g="dark-2" tag={`${product.data.detailImageId} · 产品实拍/应用（占位）`} onDark img={heroImg ? { ...heroImg, lazy: false } : undefined} />
     <div class="hero-copy">
       <div class="en" style="color:rgba(255,255,255,.6)">Product Detail</div>
       <h1>{product.data.name}</h1>
