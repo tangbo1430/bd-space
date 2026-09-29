@@ -150,10 +150,12 @@ ok(notFound.includes('noindex'), '404 为 noindex');
 console.log('== v1.5 首批真实素材 ==');
 const assetsDir = join(dist, 'assets', 'img');
 const distAssets = existsSync(assetsDir) ? readdirSync(assetsDir) : [];
-ok(distAssets.length === 107, `打包素材恰为 107 个批准文件（v1.5 批次 30 + v1.6 批次 17 + v1.7 RAR 批次 60，实际 ${distAssets.length}）`);
+ok(distAssets.length === 151, `打包素材恰为 151 个批准文件（v1.5 批次 30 + v1.6 批次 14 + v1.7 RAR 批次 60 + v1.8 批次 47，实际 ${distAssets.length}）`);
 ok(existsSync(join(assetsDir, 'asset-manifest.csv')), 'asset-manifest.csv 已随包');
 ok(existsSync(join(assetsDir, 'asset-manifest-v16.csv')), 'asset-manifest-v16.csv 已随包');
 ok(existsSync(join(assetsDir, 'asset-manifest-rar.csv')), 'asset-manifest-rar.csv 已随包');
+ok(existsSync(join(assetsDir, 'asset-manifest-v18.csv')), 'asset-manifest-v18.csv 已随包（v1.8 增量）');
+ok(existsSync(join(assetsDir, 'asset-manifest-v2.csv')), 'asset-manifest-v2.csv 已随包（v1.8 终态全量）');
 ok(existsSync(join(assetsDir, 'home-banner-60m-living-01.webp')) && existsSync(join(assetsDir, 'home-banner-60m-living-01.jpg')), 'Banner1 WebP+JPG 就位');
 ok(existsSync(join(assetsDir, 'home-banner-60m-living-01-m4x5.webp')), 'Banner1 移动 4:5 就位');
 ok(existsSync(join(assetsDir, 'home-banner-60m-dining-02.webp')) && existsSync(join(assetsDir, 'home-banner-60m-dining-02.jpg')), 'Banner2 WebP+JPG 就位');
@@ -205,8 +207,11 @@ ok((home?.match(/role="tab"/g) ?? []).length === 6, 'M3 六个 tab');
 ok((home?.match(/role="tabpanel"/g) ?? []).length === 6, 'M3 六个 tabpanel');
 ok(home?.includes('aria-selected="true"'), 'M3 默认选中态');
 ok(home?.includes('tabindex="-1"'), 'M3 roving tabindex（非当前 tab -1）');
-ok(home?.includes('flow-factory-module') && home?.includes('flow-mech-piping') && home?.includes('flow-delivery-module'), 'M3 实拍步骤图（02 工厂/04 机电/05 运输）');
-ok(home?.includes('flow-step-01-design.svg') && home?.includes('flow-step-03-inspection.svg') && home?.includes('flow-step-06-install.svg'), 'M3 01/03/06 原创线稿占位');
+ok(home?.includes('flow-factory-module') && home?.includes('flow-mech-piping'), 'M3 实拍步骤图（02 工厂/04 机电）');
+ok(home?.includes('flow-step01-mold') && home?.includes('flow-step03-panel-lift') && home?.includes('flow-step05-frames-load') && home?.includes('flow-step06-crane-panel'), 'M3 v1.8 实拍步骤图（01 制模/03 检验/05 装载/06 吊装）');
+ok(home?.includes('设计与制模') && home?.includes('出厂检验'), 'M3 步骤名与 v1.8 素材口径一致');
+ok(!home?.includes('flow-delivery-module'), 'M3 step05 旧运输图已被 v1.8 替换');
+ok(!home?.includes('flow-step-01-design.svg') && !home?.includes('flow-step-03-inspection.svg') && !home?.includes('flow-step-06-install.svg'), 'M3 01/03/06 线稿已被 v1.8 实拍替换（SVG 文件保留为底稿）');
 ok(!home?.includes('flow-step-02-factory.svg'), 'M3 step02 线稿已被工厂实拍替换');
 ok(/aria-controls="flow-panel-\d{2}"/.test(home ?? ''), 'M3 tab aria-controls 关联 panel');
 /* M4 案例墙（v1.7 RAR 封面；仅地点+类型） */
@@ -231,14 +236,15 @@ const stripMeta = (s) => s.replace(/<meta[^>]*>/g, '').replace(/<title>[\s\S]*?<
 ok(!new RegExp(['估', '值'].join('') + '|' + ['营', '收'].join('') + '|' + ['利', '润'].join('') + '|' + ['股权', '比例'].join('') + '|' + ['持股', '比例'].join('')).test(stripMeta(allHtml)), '全站正文无敏感财务词');
 ok(!/[￥¥$]\s*\d|\d+\s*(万元|亿元|万美元|亿美元)/.test(stripMeta(allHtml)), '全站无金额数字');
 /* v1.6 素材就位 */
-for (const f of ['flow-mech-piping.webp', 'flow-delivery-module.webp', 'flow-transport-frames.webp']) {
+for (const f of ['flow-mech-piping.webp', 'flow-transport-frames.webp']) {
   ok(existsSync(join(assetsDir, f)), `v1.6 素材 ${f} 就位`);
 }
+ok(!distAssets.some((f) => f.startsWith('flow-delivery-module')), '被 v1.8 替换的 flow-delivery-module 已删除未打包');
 for (const f of ['flow-step-01-design.svg', 'flow-step-02-factory.svg', 'flow-step-03-inspection.svg', 'flow-step-06-install.svg', 'system-2d-panel.svg', 'system-3d-module.svg', 'system-combined.svg']) {
   ok(existsSync(join(assetsDir, f)), `v1.6 原创 SVG ${f} 就位`);
 }
 ok(!distAssets.some((f) => f.includes('biz-p')), '未打包商业计划原始提取文件');
-ok(!distAssets.some((f) => /^case-(cayman|brisbane|zhongshan-house|fiji-interior)/.test(f)), '已删除的 v1.6 低清案例图未打包');
+ok(!distAssets.some((f) => /^case-(cayman-hero|brisbane-hero|zhongshan-house|fiji-interior)/.test(f)), '已删除的 v1.6 低清案例图未打包');
 
 console.log('== v1.7 RAR 批次素材 ==');
 /* 首页 Banner 三帧 + 关于我们首图 */
@@ -272,6 +278,58 @@ ok(about?.includes('about-hero'), '关于我们首图接入');
 ok(!new RegExp(['中', '建', '三', '局'].join('')).test(allHtml), '全站无「中建三局」（深圳营房用中性表述）');
 /* manifest 源文件名列含客户名，属内部溯源、不渲染到页面；但确认其不进入打包 HTML（上条已覆盖 HTML），此处确认深圳案例页文案中性 */
 ok(cases !== null && !cases.includes('shenzhen'), '案例页未接入深圳营房卡（保留未上站素材、页面不引用）');
+
+console.log('== v1.8 素材增强（沉浸式 Hero + 案例实景 + 流程替换 + 4S 图组） ==');
+/* 45 个 v1.8 图像文件全部就位（v1.8.1/v1.8.2 补丁已覆盖同名主包文件） */
+const v18Files = [
+  'case-cayman-install-wall.webp', 'case-cayman-install-wall.jpg', 'case-cayman-install-wall-m.webp',
+  'case-cayman-install-crane.webp', 'case-cayman-install-crane.jpg', 'case-cayman-install-crane-m.webp',
+  'case-cayman-install-roof.webp', 'case-cayman-install-roof.jpg', 'case-cayman-install-roof-m.webp',
+  'case-brisbane-install-frame.webp', 'case-brisbane-install-frame.jpg', 'case-brisbane-install-frame-m.webp',
+  'case-brisbane-install-lift.webp', 'case-brisbane-install-lift.jpg',
+  'case-cabin-site-aerial.webp', 'case-cabin-site-aerial.jpg', 'case-cabin-site-aerial-m.webp',
+  'case-cabin-rows.webp', 'case-cabin-rows.jpg', 'case-cabin-rows-m.webp',
+  'case-chengdu-site-wide.webp', 'case-chengdu-site-wide.jpg', 'case-chengdu-site-wide-m.webp',
+  'case-fiji-box-ext.webp', 'case-fiji-box-ext.jpg',
+  'case-fiji-box-door.webp', 'case-fiji-box-door.jpg',
+  'flow-step01-mold.webp', 'flow-step01-mold.jpg',
+  'flow-step03-panel-lift.webp', 'flow-step03-panel-lift.jpg',
+  'flow-step05-frames-load.webp', 'flow-step05-frames-load.jpg', 'flow-step05-frames-load-m.webp',
+  'flow-step06-crane-panel.webp', 'flow-step06-crane-panel.jpg', 'flow-step06-crane-panel-m.webp',
+  'product-4s-dusk.webp', 'product-4s-dusk.jpg', 'product-4s-dusk-m.webp',
+  'product-4s-detail-wall.webp', 'product-4s-detail-wall.jpg', 'product-4s-detail-wall-m.webp',
+  'product-4s-dusk-door.webp', 'product-4s-dusk-door.jpg',
+];
+ok(v18Files.length === 45, 'v1.8 文件清单恰 45 个');
+for (const f of v18Files) ok(existsSync(join(assetsDir, f)), `v1.8 素材 ${f} 就位`);
+ok(!distAssets.some((f) => f.startsWith('case-shenzhen-steel-frame')), '深圳营房素材（客户名待确认）未打包');
+ok(!allHtml.includes('case-shenzhen-steel-frame'), '深圳营房素材页面未引用');
+/* 沉浸式 Hero 终态（CSS 已压缩，匹配无空格形式） */
+ok(/\.hero\{[^}]*min\(92vh,880px\)[^}]*min\(92dvh,880px\)/.test(css) || /\.hero\{[^}]*min\(92d?v?h,880px\)/.test(css), 'Hero 桌面 min(92vh,880px)');
+ok(/88dvh/.test(css) && /72dvh/.test(css) && /78dvh/.test(css), 'Hero 88vh@1280 / 72vh@768 / 78vh@375 断点');
+ok(/linear-gradient\(to top,rgba\(20,24,22,\.55\),transparent 55%\)/.test(css), 'Hero scrim 渐变（对比度 ≥4.5）');
+ok(/\.hero-controls\{[^}]*display:flex/.test(css), 'Hero 右下控件组');
+ok(/\.dots button\{[^}]*width:44px[^}]*height:44px/.test(css), '分页点 44×44 触控区');
+ok(/\.bnav button\{[^}]*width:44px[^}]*height:44px/.test(css), '箭头 44×44 触控区');
+ok(/\.ph-1 \.ph-pic img[^{]*\{[^}]*object-position:50% 33%/.test(css), '帧 1/3 焦点中上 1/3 裁切');
+ok(home?.includes('hero-controls'), '首页控件组 DOM 就位');
+/* 案例施工实景图组 */
+ok(cases?.includes('data-case-gallery'), '案例页施工实景模块');
+ok((cases?.match(/cg-group/g) ?? []).length >= 5, '五组案例实景（开曼/布里斯班/中山/成都/斐济）');
+ok(cases?.includes('case-cayman-install-crane') && cases?.includes('case-cabin-rows') && cases?.includes('case-chengdu-site-wide') && cases?.includes('case-fiji-box-door') && cases?.includes('case-brisbane-install-lift'), '案例实景图组引用 v1.8 素材');
+ok(cases?.includes('方舱建筑') && cases?.includes('宿舍建筑'), '案例实景仅地点+类型中性标注');
+/* 4S 产品详情图组（dusk-door 限宽 608px，不放大） */
+const p4s = page('zh/products/4s');
+ok(p4s?.includes('product-4s-dusk') && p4s?.includes('product-4s-detail-wall') && p4s?.includes('product-4s-dusk-door'), '4S 详情图组三张接入');
+ok(p4s?.includes('max-width:608px') && p4s?.includes('aspect-ratio:608/810'), '4S dusk-door 限宽 608px 且保持 3:4');
+/* 红线：核心优势「全球独有」不得上页（v1.8 文案源处理口径） */
+ok(!allHtml.includes('全球独有'), '全站无「全球独有」表述');
+/* 版本证据：version.json 与页面 meta 一致 */
+const versionRaw = existsSync(join(dist, 'version.json')) ? readFileSync(join(dist, 'version.json'), 'utf8') : '';
+let version = null;
+try { version = JSON.parse(versionRaw); } catch { version = null; }
+ok(version && typeof version.commit === 'string' && version.commit.length >= 7 && typeof version.builtAt === 'string', 'version.json 含 commit/builtAt');
+ok(version !== null && (home ?? '').includes(`name="build-commit" content="${version.commit}"`), '页面 meta build-commit 与 version.json 一致');
 
 if (failures > 0) {
   console.error(`\n${failures} 项验证失败`);

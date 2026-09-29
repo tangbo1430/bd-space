@@ -1,26 +1,27 @@
 ---
 /**
- * M3 首页「从工厂到现场」六步交付流程（v1.6，DSN-162）。
+ * M3 首页「从工厂到现场」六步交付流程（v1.6，DSN-162；v1.8 实拍替换 step01/03/05/06）。
  * APG Tabs：tablist/tab/tabpanel、aria-selected、roving tabindex、左右键切换（main.ts）。
- * 不自动轮播；步骤 01–03/06 为原创几何线稿 SVG 占位，04/05 为已批准实拍图，加载失败回退占位。
+ * 不自动轮播；六步均为已批准实拍图（v1.6/v1.7/v1.8 批次），加载失败回退占位。
  */
-import { FLOW_ASSETS, FLOW_FACTORY_ASSETS, LINEART_SVGS, type Img16 } from '../lib/assets';
+import { FLOW_ASSETS, FLOW_FACTORY_ASSETS, FLOW_V18_ASSETS, type Img16 } from '../lib/assets';
 
 interface Step {
   no: string;
   name: string;
   desc: string;
-  img?: Img16;
-  svg?: string;
+  img: Img16;
+  /** 横幅特写比例（step06 6:1 原图以 3:1 cover 展示） */
+  ratio?: string;
 }
 
 const STEPS: Step[] = [
-  { no: '01', name: '方案设计', desc: '按项目条件完成空间与构件的协同设计。【待确认】', svg: LINEART_SVGS.flowStep01 },
+  { no: '01', name: '设计与制模', desc: '按项目条件完成空间与构件的协同设计，并制备生产模具。【待确认】', img: FLOW_V18_ASSETS.step01Mold },
   { no: '02', name: '构件生产', desc: '工厂标准化产线完成构件制造。【待确认】', img: FLOW_FACTORY_ASSETS.module },
-  { no: '03', name: '模块组装', desc: '构件在工厂内完成模块组装与预检。【待确认】', svg: LINEART_SVGS.flowStep03 },
+  { no: '03', name: '出厂检验', desc: '构件与模块在出厂前完成检验与吊装复核。【待确认】', img: FLOW_V18_ASSETS.step03PanelLift },
   { no: '04', name: '机电与内装', desc: '机电管线与内装在工厂阶段同步完成。【待确认】', img: FLOW_ASSETS.mechPiping },
-  { no: '05', name: '运输组织', desc: '按交付计划组织构件与模块的运输。【待确认】', img: FLOW_ASSETS.transport },
-  { no: '06', name: '现场交付', desc: '现场吊装、安装并完成质量复核。【待确认】', svg: LINEART_SVGS.flowStep06 },
+  { no: '05', name: '运输组织', desc: '按交付计划组织构件与模块的运输。【待确认】', img: FLOW_V18_ASSETS.step05FramesLoad },
+  { no: '06', name: '现场交付', desc: '现场吊装、安装并完成质量复核。【待确认】', img: FLOW_V18_ASSETS.step06CranePanel, ratio: '3 / 1' },
 ];
 ---
 
@@ -30,7 +31,7 @@ const STEPS: Step[] = [
       <div>
         <div class="en">Delivery</div>
         <h2>从工厂到现场</h2>
-        <p class="flow-sub">设计协同、工厂生产、运输组织、现场吊装、安装交付、质量复核</p>
+        <p class="flow-sub">设计制模、构件生产、出厂检验、机电内装、运输组织、现场交付</p>
       </div>
     </div>
 
@@ -61,31 +62,20 @@ const STEPS: Step[] = [
         hidden={i !== 0}
         data-flow-panel
       >
-        <div class="flow-img">
-          {s.img ? (
-            <picture>
-              {s.img.mw && (
-                <source type="image/webp" srcset={`/assets/img/${s.img.base}-m.webp ${s.img.mw}w, /assets/img/${s.img.base}.webp ${s.img.w}w`} sizes="(max-width: 767px) 100vw, 55vw" />
-              )}
-              {!s.img.mw && <source type="image/webp" srcset={`/assets/img/${s.img.base}.webp`} />}
-              <img
-                src={`/assets/img/${s.img.base}.jpg`}
-                width={s.img.w} height={s.img.h} alt={s.img.alt}
-                loading="lazy" decoding="async"
-                onerror="this.closest('.flow-img').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
-            </picture>
-          ) : (
+        <div class="flow-img" style={s.ratio ? `aspect-ratio:${s.ratio}` : undefined}>
+          <picture>
+            {s.img.mw && (
+              <source type="image/webp" srcset={`/assets/img/${s.img.base}${s.img.msuf ?? '-m'}.webp ${s.img.mw}w, /assets/img/${s.img.base}.webp ${s.img.w}w`} sizes="(max-width: 767px) 100vw, 55vw" />
+            )}
+            {!s.img.mw && <source type="image/webp" srcset={`/assets/img/${s.img.base}.webp`} />}
             <img
-              class="flow-svg"
-              src={`/assets/img/${s.svg}`}
-              width="320" height="240"
-              alt={`${s.name} 原创几何线稿占位（实拍图待补充）`}
+              src={`/assets/img/${s.img.base}.jpg`}
+              width={s.img.w} height={s.img.h} alt={s.img.alt}
               loading="lazy" decoding="async"
-              onerror="this.closest('.flow-img').classList.add('ph-fallback');this.remove()"
+              onerror="this.closest('.flow-img').classList.add('ph-fallback');this.closest('picture').remove()"
             />
-          )}
-          <i class="flow-tag" aria-hidden="true">{s.img ? '' : `IMG-FLOW-${s.no} · 原创线稿占位 · 图片待补充`}</i>
+          </picture>
+          <i class="flow-tag" aria-hidden="true"></i>
         </div>
         <div class="flow-txt">
           <div class="en" aria-hidden="true">Step {s.no}</div>

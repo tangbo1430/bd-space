@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { CASE_COVER_ASSETS } from '../../lib/assets';
+import { CASE_COVER_ASSETS, CASE_DETAIL_GROUPS } from '../../lib/assets';
 
 /* M4 项目实践视觉案例墙（v1.7 RAR 封面；仅地点+类型，无客户名/数量/金额/周期/抗震/收益） */
 const cases = [
@@ -46,6 +46,38 @@ const cases = [
             <div class="cc-type">{c.type}</div>
           </div>
         </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- v1.8 案例施工实景图组（桌面 2–3 列网格 / 移动单列横滑；仅地点+类型，无客户名） -->
+  <section class="sec case-gallery" aria-label="案例施工实景" data-case-gallery>
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div><div class="en">On Site</div><h2>施工实景</h2></div>
+      </div>
+      {CASE_DETAIL_GROUPS.map((g) => (
+        <div class="cg-group rv">
+          <h3 class="cg-title">{g.loc} · {g.type}</h3>
+          <div class="cg-grid">
+            {g.imgs.map((img) => (
+              <figure class="cg-item">
+                <picture>
+                  {img.mw && (
+                    <source type="image/webp" srcset={`/assets/img/${img.base}${img.msuf ?? '-m'}.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 767px) 82vw, 33vw" />
+                  )}
+                  {!img.mw && <source type="image/webp" srcset={`/assets/img/${img.base}.webp`} />}
+                  <img
+                    src={`/assets/img/${img.base}.jpg`}
+                    width={img.w} height={img.h} alt={img.alt}
+                    loading="lazy" decoding="async"
+                    onerror="this.closest('.cg-item').classList.add('ph-fallback');this.closest('picture').remove()"
+                  />
+                </picture>
+              </figure>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   </section>

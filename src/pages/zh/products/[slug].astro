@@ -67,7 +67,10 @@ const approvedImgs = product.data.approvedImages
         <h2 style="margin:12px 0 22px">产品图鉴</h2>
         <div style="display:grid;gap:26px">
           {approvedImgs.map((a) => (
-            <div class="imgbox" style="position:relative;min-height:280px;border-radius:6px;overflow:hidden">
+            <div
+              class="imgbox"
+              style={`position:relative;border-radius:6px;overflow:hidden;${'maxW' in a && a.maxW ? `max-width:${a.maxW}px;aspect-ratio:${a.w}/${a.h};` : 'min-height:280px;'}`}
+            >
               <PhImg g="factory" tag={`${a.base}（已批准素材）`} img={a} />
             </div>
           ))}

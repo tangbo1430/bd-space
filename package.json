@@ -13,6 +13,7 @@
     "test": "vitest run",
     "verify": "node scripts/verify-build.mjs",
     "test:nav": "node tests/nav-behavior.cjs",
+    "test:hero": "node tests/hero-v18.cjs",
     "check": "npm run lint && npm run type-check && npm run test && npm run build && npm run verify"
   },
   "dependencies": {

@@ -183,10 +183,15 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
 .float-rail a:hover .rail-text { display: inline; }
 @media (min-width: 1280px) { .float-rail { display: flex; } }
 
-/* ============ 首页 S1 Hero ============ */
-.hero { position: relative; height: 100vh; height: 100dvh; min-height: 640px; overflow: hidden; background: #222; }
+/* ============ 首页 S1 Hero（v1.8 沉浸式：min(92vh,880px) / 88vh@≤1280 / 72vh@≤1023 / 78vh@≤767） ============ */
+.hero { position: relative; height: min(92vh, 880px); height: min(92dvh, 880px); min-height: 560px; overflow: hidden; background: #222; }
 .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; display: flex; align-items: flex-end; }
 .slide.on { opacity: 1; }
+/* 文字层 scrim：保证标题对比度 ≥4.5（v1.8 设计规范） */
+.slide::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to top, rgba(20, 24, 22, .55), transparent 55%);
+}
 .ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .ph .tag {
   position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
@@ -200,24 +205,33 @@ h3 { font-size: var(--fs-h3); font-weight: 400; color: var(--ink-strong); line-h
 /* 真实 Banner 素材（v1.5 首批）：picture 铺满帧，覆盖渐变底；加载失败 .ph-fallback 回退线稿/标注 */
 .ph .ph-pic, .ph .ph-pic img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .ph .ph-pic img { object-fit: cover; object-position: center; }
+/* v1.8 焦点裁切：帧 1/3 黄昏景焦点中上 1/3，帧 2 日景居中；移动档全部竖向中心裁切 */
+.ph-1 .ph-pic img, .ph-3 .ph-pic img { object-position: 50% 33%; }
 .ph .ph-pic ~ .ph-art, .ph .ph-pic ~ .tag { visibility: hidden; }
 .ph.ph-fallback .ph-art, .ph.ph-fallback .tag { visibility: visible; }
 .ph::after {
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(120% 90% at 50% 100%, transparent 55%, rgba(0, 0, 0, .42) 100%);
 }
-.hero-copy { position: relative; z-index: 5; padding: 0 64px 15vh; max-width: 860px; color: #fff; }
+/* v1.8 文字安全区：1200 容器内，左 40px / 底 96px（移动 24/64px） */
+.hero-copy { position: relative; z-index: 5; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 40px 96px; color: #fff; }
 .hero-copy h1 { color: #fff; font-weight: 200; margin: 14px 0 22px; }
 .hero-copy p { max-width: 520px; color: rgba(255, 255, 255, .82); font-size: 16px; line-height: 1.9; }
 .hero-copy .btns { display: flex; gap: 16px; margin-top: 36px; flex-wrap: wrap; }
-.dots { position: absolute; z-index: 6; left: 64px; bottom: 40px; display: flex; gap: 10px; }
+/* v1.8 控件组：右下「‹ 分页点 ›」，44×44px 触控区 */
+.hero-controls { position: absolute; z-index: 6; right: 64px; bottom: 40px; display: flex; align-items: center; gap: 22px; }
+.dots { display: flex; gap: 4px; }
 .dots button {
-  width: 26px; height: 4px; border-radius: 999px; border: none;
-  background: rgba(255, 255, 255, .35); cursor: pointer; padding: 0;
+  position: relative; width: 44px; height: 44px; border: none; padding: 0;
+  background: transparent; cursor: pointer;
 }
-.dots button.on { background: var(--accent); }
+.dots button::after {
+  content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, .4); transition: background .2s;
+}
+.dots button.on::after { background: #fff; }
 .scroll-hint {
-  position: absolute; z-index: 6; right: 64px; bottom: 36px;
+  position: absolute; z-index: 6; left: 50%; bottom: 36px; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 8px;
   color: rgba(255, 255, 255, .75); font-family: var(--font-en); font-size: 10px; letter-spacing: .3em;
 }
@@ -386,7 +400,7 @@ footer { background: var(--bg-alt); border-top: 1px solid var(--line); padding: 
 .slide { transition: opacity 1.2s cubic-bezier(.22, .61, .36, 1), transform 1.2s cubic-bezier(.22, .61, .36, 1); transform: scale(1.04); }
 .slide.on { transform: scale(1); }
 html[data-motion=off] .slide { transform: none; }
-.bnav { position: absolute; z-index: 6; right: 64px; bottom: 96px; display: flex; gap: 12px; }
+.bnav { display: flex; gap: 12px; }
 .bnav button {
   width: 44px; height: 44px; border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, .6); background: transparent;
@@ -395,8 +409,8 @@ html[data-motion=off] .slide { transform: none; }
 }
 .bnav button:hover { border-color: var(--accent); background: rgba(255, 255, 255, .1); }
 .bnav button:focus-visible, .dots button:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-/* 暂停可视化：指示器下 16px 青绿细线（paused-hover / paused-focus） */
-.pause-line { position: absolute; z-index: 6; left: 64px; bottom: 30px; width: 16px; height: 2px; background: var(--accent); opacity: 0; transition: opacity .3s; }
+/* 暂停可视化：文字安全区左缘下 16px 青绿细线（paused-hover / paused-focus） */
+.pause-line { position: absolute; z-index: 6; left: max(40px, calc((100% - 1200px) / 2 + 40px)); bottom: 72px; width: 16px; height: 2px; background: var(--accent); opacity: 0; transition: opacity .3s; }
 .hero.paused .pause-line { opacity: 1; }
 .hero { touch-action: pan-y; }
 
@@ -659,6 +673,13 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
 }
 
 /* ============ 响应式 ============ */
+/* v1.8 沉浸式 Hero 高度断点：≤1280 → 88vh；≤1023 → 72vh；≤767 → 78vh */
+@media (max-width: 1280px) {
+  .hero { height: 88vh; height: 88dvh; }
+}
+@media (max-width: 1023px) {
+  .hero { height: 72vh; height: 72dvh; }
+}
 @media (max-width: 1279px) {
   .wrap { padding: 0 40px; }
   .sec { padding: 96px 0; }
@@ -667,11 +688,7 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   h2 { font-size: 36px; }
   .gnb { padding: 22px 40px; }
   .gnb.scrolled { padding: 12px 40px; }
-  .hero-copy { padding: 0 40px 14vh; }
-  .dots { left: 40px; }
-  .pause-line { left: 40px; }
-  .bnav { right: 40px; }
-  .scroll-hint { right: 40px; }
+  .hero-controls { right: 40px; }
   .crumb { padding: 100px 40px 0; }
   .eq-cards { gap: 26px; }
 }
@@ -698,10 +715,11 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   h2 { font-size: 28px; }
   .gnb { padding: 16px 20px; }
   .gnb.scrolled { padding: 10px 20px; }
-  .hero { min-height: 560px; }
-  .hero-copy { padding: 0 22px 12vh; max-width: 100%; }
+  .hero { height: 78vh; height: 78dvh; min-height: 520px; }
+  .hero-copy { padding: 0 24px 64px; max-width: 100%; }
   .hero-copy .btn { max-width: 320px; justify-content: center; }
-  .dots { left: 22px; }
+  /* v1.8 移动 4:5 竖向中心裁切保建筑主体 */
+  .ph .ph-pic img { object-position: 50% 50%; }
   .scroll-hint { display: none; }
   .split, .dark-grid, .cta-grid, .cases, .pd-body, .plist-item, .news-grid, .space-grid { grid-template-columns: 1fr; }
   .plist-item.rev .p-img { order: 0; }
@@ -731,9 +749,9 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   .qual { flex-wrap: wrap; gap: 6px; }
   .sec-head { flex-direction: column; align-items: flex-start; gap: 10px; }
   .link-more { margin-top: 24px; }
-  /* v1.2/v1.3 移动增量 */
-  .bnav { display: none; }
-  .dots { left: 50%; transform: translateX(-50%); bottom: 28px; }
+  /* v1.2/v1.3 移动增量（v1.8：控件组居中，箭头隐藏仅留分页点） */
+  .hero-controls .bnav { display: none; }
+  .hero-controls { left: 50%; right: auto; transform: translateX(-50%); bottom: 28px; }
   .pause-line { display: none; }
   .eq-cards { grid-template-columns: 1fr; }
   .careers-head { grid-template-columns: 1fr; gap: 24px; padding-top: 30px; }
@@ -836,7 +854,7 @@ html[data-motion=off] .flow-panel { transition: none; }
 .flow-txt p { font-size: 15px; color: var(--ink-body); max-width: 40em; }
 
 /* --- M4 案例墙（案例页；无链接卡不做缩放 hover，仅青绿短线） --- */
-.case-wall { padding-bottom: 130px; }
+.case-wall { padding-bottom: 40px; }
 .case-wall-grid { max-width: 1280px; margin: 70px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding: 0 64px; }
 .case-card { position: relative; }
 .case-card:nth-child(even) { margin-top: 80px; }
@@ -853,6 +871,26 @@ html[data-motion=off] .flow-panel { transition: none; }
 .case-card .cc-meta::after { content: ""; position: absolute; left: 2px; bottom: -8px; width: 0; height: 2px; background: var(--accent); transition: width .45s cubic-bezier(.22, .61, .36, 1); }
 .case-card:hover .cc-meta::after { width: 36px; }
 @media (prefers-reduced-motion: reduce) { .case-card .cc-meta::after { transition: none; } }
+
+/* --- v1.8 案例施工实景图组（案例页；桌面 3 列网格 / 平板 2 列 / 移动单列横滑） --- */
+.case-gallery { background: var(--bg-surface); }
+.case-gallery .sec-head { margin-bottom: 8px; }
+.cg-group { margin-top: 64px; }
+.cg-title { font-size: 20px; font-weight: 500; color: var(--ink-strong); display: flex; align-items: center; gap: 12px; }
+.cg-title::before { content: ""; width: 22px; height: 2px; background: var(--accent); flex: none; }
+.cg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 24px; }
+.cg-item { position: relative; margin: 0; aspect-ratio: 4 / 3; border-radius: 8px; overflow: hidden; background: var(--bg-alt); }
+.cg-item picture, .cg-item picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cg-item.ph-fallback { background: linear-gradient(135deg, #e9e6df, #dcd8cf); }
+.cg-item.ph-fallback::after { content: "图片待补充"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-size: 13px; letter-spacing: .2em; }
+@media (max-width: 1279px) {
+  .cg-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .cg-group { margin-top: 48px; }
+  .cg-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 14px; padding-bottom: 8px; }
+  .cg-item { flex: 0 0 82%; scroll-snap-align: start; }
+}
 
 /* --- M5 建造体系图解（产品页，原创 SVG） --- */
 .sys { padding: 100px 0 60px; }

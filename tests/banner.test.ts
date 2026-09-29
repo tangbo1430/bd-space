@@ -22,7 +22,7 @@ const env = (over: Partial<BannerEnv> = {}): BannerEnv => ({
 
 describe('Banner 七态状态机（PRD v0.4 §5 / UI v1.2 D1）', () => {
   it('固定参数与设计标注一致（BR-19）', () => {
-    expect(BANNER_INTERVAL_MS).toBe(6000);
+    expect(BANNER_INTERVAL_MS).toBe(5000);
     expect(BANNER_TRANSITION_MS).toBe(1200);
     expect(BANNER_SWIPE_THRESHOLD_PX).toBe(40);
   });

@@ -1,10 +1,10 @@
 /**
- * Banner 轮播状态机（PRD v0.4 §5 / UI v1.2 D1）。
- * 参数由设计 v1.2 固定标注，开发不得产生第二套参数（BR-19）。
+ * Banner 轮播状态机（PRD v0.4 §5 / UI v1.2 D1；v1.8 沉浸式 Hero 将自动轮播间隔更新为 5s）。
+ * 参数由设计固定标注，开发不得产生第二套参数（BR-19）。
  */
 import type { TrackEvent } from './analytics';
 
-export const BANNER_INTERVAL_MS = 6000;
+export const BANNER_INTERVAL_MS = 5000;
 export const BANNER_TRANSITION_MS = 1200;
 export const BANNER_SWIPE_THRESHOLD_PX = 40;
 

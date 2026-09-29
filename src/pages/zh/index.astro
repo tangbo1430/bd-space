@@ -35,7 +35,7 @@ const quals = [
 >
   <FloatRail />
 
-  <!-- S1 首屏 Hero：100dvh 三帧轮播（七态状态机，v1.2 D1） -->
+  <!-- S1 首屏 Hero：沉浸式三帧轮播（v1.8：min(92vh,880px)/88vh/72vh/78vh，七态状态机） -->
   <section class="hero" data-carousel role="region" aria-roledescription="carousel" aria-label="首页横幅">
     <p class="sr-only" data-banner-live aria-live="polite" style="position:absolute;left:-9999px">第 1 张，共 3 张</p>
     <div class="slide on" data-slide aria-roledescription="slide" aria-label="第 1 张，共 3 张">
@@ -140,14 +140,18 @@ const quals = [
         <div class="btns"><a class="btn btn-primary" href="/zh/cases/">查看案例 <span class="arr">→</span></a></div>
       </div>
     </div>
-    <div class="dots" role="group" aria-label="轮播指示器">
-      <button class="on" data-dot aria-label="切换到第 1 张" aria-current="true"></button>
-      <button data-dot aria-label="切换到第 2 张" aria-current="false"></button>
-      <button data-dot aria-label="切换到第 3 张" aria-current="false"></button>
-    </div>
-    <div class="bnav">
-      <button type="button" data-prev aria-label="上一张">←</button>
-      <button type="button" data-next aria-label="下一张">→</button>
+    <div class="hero-controls">
+      <div class="bnav">
+        <button type="button" data-prev aria-label="上一张">←</button>
+      </div>
+      <div class="dots" role="group" aria-label="轮播指示器">
+        <button class="on" data-dot aria-label="切换到第 1 张" aria-current="true"></button>
+        <button data-dot aria-label="切换到第 2 张" aria-current="false"></button>
+        <button data-dot aria-label="切换到第 3 张" aria-current="false"></button>
+      </div>
+      <div class="bnav">
+        <button type="button" data-next aria-label="下一张">→</button>
+      </div>
     </div>
     <div class="pause-line" aria-hidden="true"></div>
     <div class="scroll-hint">SCROLL</div>
