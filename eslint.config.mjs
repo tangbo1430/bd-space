@@ -13,7 +13,7 @@ export default [
     languageOptions: { globals: { ...globals.node } },
   },
   {
-    files: ['tests/nav-behavior.cjs'],
+    files: ['tests/**/*.cjs'],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
     rules: { '@typescript-eslint/no-require-imports': 'off' },
   },
