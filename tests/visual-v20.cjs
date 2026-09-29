@@ -30,7 +30,7 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
           const f = document.querySelector('.mfg .figx'); const c = document.querySelector('.mfg-card');
           if (!f || !c) return false;
           const fb = f.getBoundingClientRect(); const cb = c.getBoundingClientRect();
-          return cb.left >= fb.right - 1 || cb.top >= fb.bottom - 1; // 水平或垂直方向无重叠
+          return cb.left >= fb.right - 1; // 文字列起点在图片右缘之右（rv 过渡仅垂直位移，不影响水平判断）
         })(),
         pmBig: document.querySelectorAll('.pm-big > a').length,
         pmBigImg: g('.pm-big .figx img'),
@@ -41,7 +41,7 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
     });
     ok(r.statsRemoved, 'S2 数据带已整块移除（v2.0.1）');
     ok(r.heroNextIsMfg, 'Hero 之后直接进入 S3 暖米白内容区（无深色过渡带）');
-    ok(r.mfgImg && r.mfgImg[1] >= 540, 'S3 制造主图 ≥540px 高（编辑式大图）');
+    ok(r.mfgImg && r.mfgImg[1] >= 460 && r.mfgImg[1] <= 500, 'S3 制造主图 ~480px 高（7:5 编辑式大图，v2.0.2 去 min-height）');
     ok(r.mfgCard && r.mfgCard[0] >= 300 && r.mfgNoOverlap, 'S3 文字列并排不叠压图片（v2.0.2）');
     ok(r.pmBig === 3, 'S4 产品矩阵首行 3 大卡');
     ok(r.pmBigImg && r.pmBigImg[1] >= 280, 'S4 大卡图 ≥280px 高');
