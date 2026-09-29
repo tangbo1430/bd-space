@@ -27,10 +27,12 @@ export interface BannerEnv {
   visible: boolean;
   hovering: boolean;
   focused: boolean;
+  /** v1.8.2：仅系统 reduce 偏好（无低性能/省流），保留手动控件，不落入 static-fallback */
+  reducedOnly?: boolean;
 }
 
 export function resolveBannerState(env: BannerEnv): BannerState {
-  if (env.lowPower) return 'static-fallback';
+  if (env.lowPower && !env.reducedOnly) return 'static-fallback';
   if (env.reducedMotion) return 'reduced-motion';
   if (env.slideCount <= 1) return 'single-item';
   if (!env.visible) return 'paused-hidden';

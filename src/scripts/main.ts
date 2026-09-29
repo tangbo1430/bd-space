@@ -15,13 +15,34 @@ import {
   type BannerState,
 } from '../lib/banner';
 
+const motionParam = new URLSearchParams(window.location.search).get('motion');
+const motionFull = motionParam === 'full'; // 验收模式：显式开启全部动效，覆盖系统偏好
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
 const lowPower = (navigator.hardwareConcurrency ?? 8) <= 4 && window.innerWidth < 1280;
-if (reduced || saveData || lowPower) {
+// motion=full 时不进入任何降级；否则 reduced/saveData/lowPower 触发静态模式
+const sysReduced = reduced || saveData || lowPower;
+if (sysReduced && !motionFull) {
   document.documentElement.dataset.motion = 'off';
 }
+if (motionFull) {
+  document.documentElement.dataset.motion = 'full';
+}
 const motionOff = document.documentElement.dataset.motion === 'off';
+// 轮播 env 用的 reducedMotion：验收模式下视为无偏好
+const reducedForBanner = reduced && !motionFull;
+// 仅系统 reduce 偏好（无 saveData / 低性能）→ 保留手动控件，不判 static-fallback
+const reducedOnly = reduced && !saveData && !lowPower && !motionFull;
+
+/* ---------- 验收标识：仅 motion=full 显示，非干扰式 ---------- */
+if (motionFull) {
+  const commit = document.querySelector<HTMLMetaElement>('meta[name="build-commit"]')?.content ?? 'dev';
+  const badge = document.createElement('div');
+  badge.setAttribute('data-motion-badge', '');
+  badge.setAttribute('role', 'status');
+  badge.textContent = `完整动态模式 · commit ${commit}`;
+  document.body.appendChild(badge);
+}
 
 /* ---------- 导航：滚动收缩 ---------- */
 const gnb = document.querySelector<HTMLElement>('[data-gnb]');
@@ -72,12 +93,13 @@ if (hero) {
   let hovering = false;
   let focused = false;
   let state: BannerState = resolveBannerState({
-    slideCount: slides.length, reducedMotion: reduced, lowPower: motionOff,
+    slideCount: slides.length, reducedMotion: reducedForBanner, lowPower: motionOff, reducedOnly,
     visible: !document.hidden, hovering, focused,
   });
 
   const applyChrome = () => {
-    // single-item / static-fallback：隐藏无意义控件（AC-17）
+    // single-item / static-fallback：隐藏无意义控件（AC-17）；
+    // reduced-motion 保留手动控件（不自动播放但可手动切换，主管 v1.8.2 验收口径）
     const hideControls = slides.length <= 1 || state === 'static-fallback';
     dots.forEach((d) => { d.style.display = hideControls ? 'none' : ''; });
     if (prevBtn) prevBtn.style.display = hideControls ? 'none' : '';
@@ -93,7 +115,7 @@ if (hero) {
   };
 
   const currentEnv = () => ({
-    slideCount: slides.length, reducedMotion: reduced, lowPower: motionOff,
+    slideCount: slides.length, reducedMotion: reducedForBanner, lowPower: motionOff, reducedOnly,
     visible: !document.hidden, hovering, focused,
   });
 

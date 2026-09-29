@@ -664,12 +664,25 @@ html[data-motion=off] .plist-item:hover .p-img .img-ph { transform: none; }
 html[data-motion=off] .rv { opacity: 1; transform: none; transition: none; }
 html[data-motion=off] .slide { transition: none; }
 html[data-motion=off] .scroll-hint::after { animation: none; }
+
+/* 验收模式标识：仅 motion=full 时由 JS 注入，固定左下、非干扰式 */
+[data-motion-badge] {
+  position: fixed; left: 12px; bottom: 12px; z-index: 9999;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(20, 24, 22, .78); color: #fff;
+  font-size: 11px; line-height: 1.6; letter-spacing: .02em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  pointer-events: none; user-select: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .rv { opacity: 1; transform: none; transition: none; }
-  .slide { transition: none; }
-  .scroll-hint::after { animation: none; }
-  .drawer { transition: none; }
+  /* 验收模式 motion=full：覆盖系统偏好，恢复全部动效 */
+  html:not([data-motion=full]) { scroll-behavior: auto; }
+  html:not([data-motion=full]) .rv { opacity: 1; transform: none; transition: none; }
+  html:not([data-motion=full]) .slide { transition: none; }
+  html:not([data-motion=full]) .scroll-hint::after { animation: none; }
+  html:not([data-motion=full]) .drawer { transition: none; }
 }
 
 /* ============ 响应式 ============ */

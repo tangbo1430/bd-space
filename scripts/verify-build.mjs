@@ -330,6 +330,13 @@ let version = null;
 try { version = JSON.parse(versionRaw); } catch { version = null; }
 ok(version && typeof version.commit === 'string' && version.commit.length >= 7 && typeof version.builtAt === 'string', 'version.json 含 commit/builtAt');
 ok(version !== null && (home ?? '').includes(`name="build-commit" content="${version.commit}"`), '页面 meta build-commit 与 version.json 一致');
+/* 双模式验收（v1.8.2）：?motion=full 覆盖系统偏好 + 验收标识 + reduce 保留手动控件 */
+const jsFile = readdirSync(join(dist, '_astro')).find((f) => f.endsWith('.js'));
+const bundle = jsFile ? readFileSync(join(dist, '_astro', jsFile), 'utf8') : '';
+ok(bundle.includes('motion=full') || bundle.includes('完整动态模式'), 'JS 含 motion=full 验收逻辑');
+ok(bundle.includes('data-motion-badge') || bundle.includes('完整动态模式'), 'JS 含验收标识（完整动态模式·commit）');
+ok(css.includes('[data-motion-badge]'), 'CSS 含验收标识样式');
+ok(css.includes('data-motion=full'), 'CSS reduced-motion 对 motion=full 放行');
 
 if (failures > 0) {
   console.error(`\n${failures} 项验证失败`);

@@ -64,6 +64,14 @@ describe('Banner 七态状态机（PRD v0.4 §5 / UI v1.2 D1）', () => {
     expect(controlsEnabled(s)).toBe(false);
   });
 
+  it('v1.8.2：仅系统 reduce 偏好（reducedOnly）保留手动控件，不落 static-fallback', () => {
+    // motionOff 为 true（lowPower 入参），但 reducedOnly 标记表明仅偏好降级 → reduced-motion 而非 static-fallback
+    const s = resolveBannerState(env({ lowPower: true, reducedMotion: true, reducedOnly: true }));
+    expect(s).toBe('reduced-motion');
+    expect(shouldAutoplay(s)).toBe(false);
+    expect(controlsEnabled(s)).toBe(true);
+  });
+
   it('single-item：单帧不轮播且控件隐藏', () => {
     const s = resolveBannerState(env({ slideCount: 1 }));
     expect(s).toBe('single-item');
