@@ -983,9 +983,10 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
 
 /* --- 首页 S3 编辑式叠压：7:5 大图 8 列 + 文字卡 5 列叠压右缘（v2.0 节奏压缩） --- */
 .sec:has(> .wrap > .mfg) { padding: 104px 0 96px; }
-.mfg { display: grid; grid-template-columns: 8fr 5fr; align-items: center; }
+/* v2.0.2：文字卡不再叠压图片（用户意见）——图 7 : 文 5 清爽两列、无重叠 */
+.mfg { display: grid; grid-template-columns: 7fr 5fr; align-items: center; gap: 56px; }
 .mfg .figx { position: relative; }
-.mfg-card { position: relative; z-index: 2; background: var(--bg-base); padding: 40px; margin-left: -90px; box-shadow: 0 16px 40px rgba(0, 0, 0, .08); }
+.mfg-card { position: relative; background: transparent; padding: 0; box-shadow: none; }
 .mfg-card h2 { margin: 12px 0 16px; }
 .mfg-card p { font-size: 14px; line-height: 1.9; color: var(--ink-body); }
 .mfg-card .btn { margin-top: 24px; }
@@ -1048,9 +1049,8 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
 @media (max-width: 1279px) {
   .sec-tight { padding: 72px 0; }
   .sec:has(> .wrap > .mfg) { padding: 80px 0 72px; }
-  .mfg { grid-template-columns: 1fr; }
+  .mfg { grid-template-columns: 1fr; gap: 40px; }
   .mfg .figx.r-75 { aspect-ratio: 21 / 9; max-height: 400px; }
-  .mfg-card { margin: -64px 40px 0; }
   .pm-big { grid-template-columns: 1fr 1fr; }
   .pm-mid { grid-template-columns: 1fr 1fr; }
   .pm-small { grid-template-columns: repeat(3, 1fr); }
@@ -1061,8 +1061,8 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
   .cg2-group .figx.r-219 { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 767px) {
+  .mfg { gap: 28px; }
   .mfg .figx.r-75 { aspect-ratio: 16 / 10; }
-  .mfg-card { margin: -40px 20px 0; padding: 28px; }
   .pm-big { grid-template-columns: 1fr; }
   .pm-mid { grid-template-columns: 1fr; }
   .pm-small { grid-template-columns: 1fr 1fr; gap: 14px; }

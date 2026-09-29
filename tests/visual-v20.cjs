@@ -26,6 +26,12 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
         heroBottomBg: hero ? getComputedStyle(hero.nextElementSibling ?? hero).backgroundColor : null,
         mfgImg: g('.mfg .figx img'),
         mfgCard: g('.mfg-card'),
+        mfgNoOverlap: (() => {
+          const f = document.querySelector('.mfg .figx'); const c = document.querySelector('.mfg-card');
+          if (!f || !c) return false;
+          const fb = f.getBoundingClientRect(); const cb = c.getBoundingClientRect();
+          return cb.left >= fb.right - 1 || cb.top >= fb.bottom - 1; // 水平或垂直方向无重叠
+        })(),
         pmBig: document.querySelectorAll('.pm-big > a').length,
         pmBigImg: g('.pm-big .figx img'),
         bltLead: g('.blt-lead'),
@@ -36,7 +42,7 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
     ok(r.statsRemoved, 'S2 数据带已整块移除（v2.0.1）');
     ok(r.heroNextIsMfg, 'Hero 之后直接进入 S3 暖米白内容区（无深色过渡带）');
     ok(r.mfgImg && r.mfgImg[1] >= 540, 'S3 制造主图 ≥540px 高（编辑式大图）');
-    ok(r.mfgCard && r.mfgCard[0] >= 400, 'S3 文字卡叠压（宽度正常）');
+    ok(r.mfgCard && r.mfgCard[0] >= 300 && r.mfgNoOverlap, 'S3 文字列并排不叠压图片（v2.0.2）');
     ok(r.pmBig === 3, 'S4 产品矩阵首行 3 大卡');
     ok(r.pmBigImg && r.pmBigImg[1] >= 280, 'S4 大卡图 ≥280px 高');
     ok(r.bltLead && r.bltLead[0] >= 1100 && r.bltLead[1] >= 480, 'S5 通栏首图 21:9 大图');

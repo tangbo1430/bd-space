@@ -386,7 +386,8 @@ ok((productsIdx ?? '').includes('图片待替换'), '色卡含「图片待替换
 /* 首页区块（v2.0.1：S2 数据带整块移除，Hero 直进 S3 暖米白内容区） */
 ok(!home?.includes('stats-v2') && !home?.includes('data-v2="stats"'), '首页 S2 数据带已移除（v2.0.1）');
 ok(/<\/section>\s*<section class="sec sec-tight" aria-label="关于半打"/.test(home ?? ''), 'Hero 与 S3 相邻无断层（v2.0.1）');
-ok(home?.includes('data-v2="mfg"') && home?.includes('mfg-card'), '首页 S3 编辑式叠压（图 7:5 + 文字卡）');
+ok(home?.includes('data-v2="mfg"') && home?.includes('mfg-card'), '首页 S3 图文并排（7:5 图 + 文字列，v2.0.2 不叠压）');
+ok(!css.includes('.mfg-card { position: relative; z-index: 2') && !/-90px/.test(css.match(/\.mfg-card \{[^}]*\}/)?.[0] ?? ''), 'S3 文字卡无负边距叠压（v2.0.2）');
 ok(home?.includes('data-v2="pm-big"') && home?.includes('pm-mid') && home?.includes('pm-small'), '首页 S4 产品矩阵（3 大卡 + 中行 + 5 文字卡）');
 ok(home?.includes('blt-lead') && home?.includes('blt-grid'), '首页 S5 被建造（21:9 通栏 + 2×4:3）');
 ok(home?.includes('cta-sec-v2') && home?.includes('cta-bg'), '首页 S8 CTA 航拍背景');
