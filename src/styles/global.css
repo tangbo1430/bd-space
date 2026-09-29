@@ -614,7 +614,7 @@ html[data-motion=off] .plist-item:hover .p-img .img-ph { transform: none; }
 .page-hero { position: relative; height: 440px; display: flex; align-items: flex-end; background: #222; overflow: hidden; }
 /* v2.0.4 关于页首图整幅模式：素材为成品横幅（21:9，右侧含烘焙文案），
    高度由宽度按比例推导，任何视口不裁切文案；页头为浅色实底（about 页 headerStyle="solid"） */
-.page-hero--full { height: auto; aspect-ratio: 1920 / 823; display: block; background: #f4f1ea; }
+.page-hero--full { height: auto; aspect-ratio: 1920 / 823; display: block; background: #f4f1ea; margin-top: 100px; }
 .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip-path: inset(50%) !important; white-space: nowrap !important; border: 0 !important; }
 .page-hero .hero-copy { padding: 0 64px 56px; }
 .page-hero h1 { color: #fff; font-size: 46px; }
@@ -764,7 +764,7 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
   .cta-grid h2 { font-size: 32px; }
   .page-hero { height: 320px; }
   /* v2.0.4 移动端：整幅过矮则文案不可读，裁到横幅左半航拍建筑（不含烘焙文案，无截断感） */
-  .page-hero--full { height: 300px; aspect-ratio: auto; }
+  .page-hero--full { height: 300px; aspect-ratio: auto; margin-top: 78px; }
   .page-hero--full .img-ph picture img { object-position: left center; }
   .page-hero .hero-copy { padding: 0 20px 40px; }
   .page-hero h1 { font-size: 30px; }
