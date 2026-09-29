@@ -625,12 +625,16 @@ html[data-motion=off] .plist-item:hover .p-img .img-ph { transform: none; }
 
 /* 产品中心列表 */
 .plist-item { display: grid; grid-template-columns: 58% 42%; min-height: 460px; border-bottom: 1px solid var(--line); }
+/* v2.0：图侧容器扩至 6 列（6+6 交替），色卡占位无图产品；行高由图侧 4:3 决定 */
+.plist-v2 { grid-template-columns: 6fr 6fr; min-height: 0; }
+.plist-v2 .p-img .p-img-phv2 { position: absolute; inset: 0; padding: 0; }
+/* 注：plist 色卡的「绝对铺满」覆写见文件尾部 v2.0 区块（级联顺序保证生效） */
 .plist-item.rev .p-img { order: 2; }
 .p-img { position: relative; overflow: hidden; min-height: 320px; }
-.p-txt { display: flex; flex-direction: column; justify-content: center; padding: 60px 70px; }
-.p-txt h2 { margin: 12px 0 16px; font-size: 36px; }
+.p-txt { display: flex; flex-direction: column; justify-content: center; padding: 32px 48px; }
+.p-txt h2 { margin: 8px 0 12px; font-size: 32px; }
+.p-txt .btn { margin-top: 24px; align-self: flex-start; }
 .p-txt p { max-width: 400px; font-size: 15px; }
-.p-txt .btn { margin-top: 28px; align-self: flex-start; }
 
 /* 时间轴 */
 .tl { border-left: 1px solid var(--line); margin: 50px 0; padding-left: 40px; }
@@ -844,7 +848,7 @@ html[data-motion=off] .evo li { opacity: 1; transition: none; }
 .flow-tab.on { color: var(--ink-strong); }
 .flow-tab.on::after { content: ""; position: absolute; left: 50%; bottom: -1px; transform: translateX(-50%); width: 36px; height: 2px; background: var(--accent); }
 .flow-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
-.flow-panel { display: grid; grid-template-columns: 55% 1fr; gap: 56px; align-items: center; padding-top: 56px; }
+.flow-panel { display: grid; grid-template-columns: 7fr 5fr; gap: 56px; align-items: center; padding-top: 56px; }
 .flow-panel[hidden] { display: none; }
 /* 切换交叉淡入 250ms（reduced-motion 直接切换） */
 .flow-panel.fading { opacity: 0; transition: opacity .12s linear; }
@@ -911,13 +915,13 @@ html[data-motion=off] .flow-panel { transition: none; }
   .cg-item { flex: 0 0 82%; scroll-snap-align: start; }
 }
 
-/* --- M5 建造体系图解（产品页，原创 SVG） --- */
-.sys { padding: 100px 0 60px; }
-.sys-grid { max-width: 1200px; margin: 60px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+/* --- M5 建造体系图解（产品页，原创 SVG；v2.0 节奏压缩，移到底部真图带之下） --- */
+.sys { padding: 56px 0 40px; }
+.sys-grid { max-width: 960px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
 .sys-item .sys-img { aspect-ratio: 4 / 3; background: #fff; border: 1px solid var(--line); border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .sys-item .sys-img img { width: 100%; height: 100%; object-fit: contain; padding: 8%; box-sizing: border-box; }
-.sys-item b { display: block; font-size: 20px; font-weight: 600; margin-top: 20px; }
-.sys-item p { font-size: 14px; color: var(--ink-body); margin-top: 8px; max-width: 30em; }
+.sys-item b { display: block; font-size: 20px; font-weight: 600; margin-top: 16px; }
+.sys-item p { font-size: 14px; color: var(--ink-body); margin-top: 6px; max-width: 30em; }
 
 /* v1.6 移动断点 */
 @media (max-width: 1279px) {
@@ -945,3 +949,163 @@ html[data-motion=off] .flow-panel { transition: none; }
   .case-wall-grid { padding: 0 20px; }
   .case-wall { padding-bottom: 72px; }
 }
+
+/* ==================== v2.0 视觉优化（SPEC-v2.0） ==================== */
+
+/* --- 编辑式图片容器：统一圆角/描边/hover 缩放/图注浮层 --- */
+.figx { position: relative; overflow: hidden; border-radius: 4px; background: var(--bg-alt); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06); margin: 0; }
+.figx picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+.figx picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--figx-focus, center); }
+.figx.r-219 { aspect-ratio: 21 / 9; }
+.figx.r-43 { aspect-ratio: 4 / 3; }
+.figx.r-75 { aspect-ratio: 7 / 5; }
+.figx.r-1610 { aspect-ratio: 16 / 10; }
+.figx .figx-cap {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  padding: 40% 32px 24px; color: #fff;
+  background: linear-gradient(180deg, rgba(20, 24, 22, 0) 0%, rgba(20, 24, 22, .55) 100%);
+  pointer-events: none;
+}
+.figx .figx-cap .t { font-size: 20px; font-weight: 600; }
+.figx .figx-cap .s { font-size: 13px; opacity: .85; margin-top: 4px; }
+.figx picture img { transition: transform .4s cubic-bezier(.22, 1, .36, 1); }
+.figx:hover picture img, .figx:focus-within picture img { transform: scale(1.03); }
+.figx.ph-fallback::after { content: "图片待补充"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-size: 13px; letter-spacing: .2em; }
+html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus-within picture img { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html:not([data-motion=full]) .figx picture img { transition: none; }
+  html:not([data-motion=full]) .figx:hover picture img, html:not([data-motion=full]) .figx:focus-within picture img { transform: none; }
+}
+
+/* --- 编辑式图片容器：统一圆角/描边/hover 缩放/图注浮层 --- */
+
+/* --- 首页 S2 数据带 v2.0：整宽深青绿横带 + 左 40% 工厂实拍 --- */
+.stats-v2 { background: #14322B; color: #fff; }
+.stats-v2-in { display: grid; grid-template-columns: 2fr 3fr; min-height: 280px; }
+.stats-v2-img { position: relative; overflow: hidden; min-height: 200px; }
+.stats-v2-img picture, .stats-v2-img picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.55); }
+.stats-v2-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-content: center; padding: 48px 64px; }
+.stats-v2-nums .num { font-family: var(--font-en); font-size: 40px; font-weight: 600; line-height: 1.1; color: #fff; }
+.stats-v2-nums .num em { font-style: normal; font-size: 16px; opacity: .6; }
+.stats-v2-nums p { font-size: 13px; opacity: .7; margin-top: 6px; color: #fff; }
+
+/* --- 首页 S3 编辑式叠压：7:5 大图 8 列 + 文字卡 5 列叠压右缘（v2.0 节奏压缩） --- */
+.sec:has(> .wrap > .mfg) { padding: 96px 0; }
+.mfg { display: grid; grid-template-columns: 8fr 5fr; align-items: center; }
+.mfg .figx { position: relative; }
+.mfg-card { position: relative; z-index: 2; background: var(--bg-base); padding: 40px; margin-left: -90px; box-shadow: 0 16px 40px rgba(0, 0, 0, .08); }
+.mfg-card h2 { margin: 12px 0 16px; }
+.mfg-card p { font-size: 14px; line-height: 1.9; color: var(--ink-body); }
+.mfg-card .btn { margin-top: 24px; }
+
+/* --- 首页 S4 产品矩阵 v2.0：首行 3 大图卡 + 次行 BD9 色卡/6S/灰度 + 末行 5 文字卡 --- */
+.dark-sec { padding: 64px 0; }
+.dark-grid { display: grid; grid-template-columns: 38fr 62fr; gap: 40px; align-items: center; }
+.dark-copy h2 { margin: 10px 0 14px; }
+.dark-copy .btn { margin-top: 20px; }
+.pm-big { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+.pm-big .figx, .pm-big .ph-card { transition: transform .3s cubic-bezier(.22, 1, .36, 1), box-shadow .3s; }
+.pm-big a:hover .figx, .pm-big a:hover .ph-card { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, .25); }
+.pm-small { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-top: 20px; }
+.pm-mid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 20px; }
+.pm-mid a { display: block; }
+.pm-mid .figx, .pm-mid .ph-card { transition: transform .3s cubic-bezier(.22, 1, .36, 1), box-shadow .3s; }
+.pm-mid a:hover .figx, .pm-mid a:hover .ph-card { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0, 0, 0, .25); }
+.pm-small a {
+  display: block; border: 1px solid rgba(255, 255, 255, .14); border-radius: 4px; padding: 20px;
+  font-size: 13px; color: var(--ink-on-dark); transition: border-color .2s;
+}
+.pm-small a:hover { border-color: var(--accent); }
+.pm-small a span { display: block; opacity: .55; margin-top: 4px; font-size: 12px; }
+
+/* --- 首页 S5 被建造：21:9 通栏 + 2×4:3 半宽卡（节奏压缩） --- */
+.sec-tight { padding: 56px 0; }
+.blt-lead { margin-top: 32px; }
+.blt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
+
+/* --- 首页 S8 CTA：右半区航拍背景 + 左半表单浮卡 --- */
+.cta-sec-v2 { position: relative; overflow: hidden; background: var(--bg-base); }
+.cta-sec-v2 .cta-bg { position: absolute; top: 0; right: 0; bottom: 0; width: 50%; overflow: hidden; }
+.cta-sec-v2 .cta-bg picture, .cta-sec-v2 .cta-bg picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.5); }
+
+/* --- 首页 S6 资质行 v2.0：行高 72px→56px --- */
+[data-v2='quals'] .qual { padding: 14px 8px; }
+
+/* --- 首页 S7 新闻 v2.0：横向三列色卡缩略图 --- */
+.news-v2-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+
+/* --- v2.0 关于页节奏压缩（SPEC §2.1 图区紧文区松） --- */
+.v2-tight.vision { padding: 48px 0; }
+.v2-tight.evo ol { margin-top: 44px; }
+/* 发展历程 + 旁侧实拍两列（v2.0：时间线 4 列 + 双图 7 列） */
+.tl-wrap { display: grid; grid-template-columns: 4fr 7fr; gap: 40px; align-items: start; margin: 32px 0; }
+.tl-wrap .tl-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* --- 案例页 v2.0：封面通栏首卡 + 2 列大卡 --- */
+.cw2-grid { max-width: 1280px; margin: 56px auto 0; padding: 0 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.cw2-lead { grid-column: 1 / -1; }
+.cw2-grid .figx { display: block; }
+
+/* --- 案例页施工实景 v2.0：通栏首图 + 两列大图 --- */
+.cg2-group { margin-top: 72px; }
+.cg2-title { font-family: var(--font-en); font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-muted2); margin-bottom: 20px; }
+.cg2-title::before { content: "— "; }
+.cg2-bigs { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
+
+/* --- v2.0 响应式 --- */
+@media (max-width: 1279px) {
+  .sec-tight { padding: 72px 0; }
+  .stats-v2-in { grid-template-columns: 1fr; }
+  .stats-v2-img { min-height: 160px; }
+  .stats-v2-nums { padding: 40px; }
+  .mfg { grid-template-columns: 1fr; }
+  .mfg .figx.r-75 { aspect-ratio: 21 / 9; max-height: 400px; }
+  .mfg-card { margin: -64px 40px 0; }
+  .pm-big { grid-template-columns: 1fr 1fr; }
+  .pm-mid { grid-template-columns: 1fr 1fr; }
+  .pm-small { grid-template-columns: repeat(3, 1fr); }
+  .blt-grid { grid-template-columns: 1fr; }
+  .cta-sec-v2 .cta-bg { display: none; }
+  .cw2-grid { padding: 0 40px; }
+  .cg2-bigs { grid-template-columns: 1fr; }
+  .cg2-group .figx.r-219 { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 767px) {
+  .stats-v2-img { min-height: 120px; }
+  .stats-v2-nums { grid-template-columns: 1fr; gap: 22px; padding: 32px 20px; }
+  .mfg .figx.r-75 { aspect-ratio: 16 / 10; }
+  .mfg-card { margin: -40px 20px 0; padding: 28px; }
+  .pm-big { grid-template-columns: 1fr; }
+  .pm-mid { grid-template-columns: 1fr; }
+  .pm-small { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .news-v2-grid { grid-template-columns: 1fr; }
+  .ab-factory-grid { grid-template-columns: 1fr; }
+  .tl-wrap { grid-template-columns: 1fr; }
+  .tl-wrap .tl-imgs { grid-template-columns: 1fr 1fr; }
+  .cw2-grid { grid-template-columns: 1fr; padding: 0 20px; }
+  .cw2-grid .figx.r-219, .cg2-group .figx.r-219 { aspect-ratio: 4 / 3; }
+  .cg2-group { margin-top: 48px; }
+  .ph-card-nm { font-size: 22px; }
+}
+
+/* ============================================================
+   v2.0 收尾区块（位于全部样式末尾，确保级联最终生效）
+   ============================================================ */
+/* PLACEHOLDER-CARD 色卡（SPEC §3；色卡即最终图片位，只换图不改版） */
+.ph-card { position: relative; overflow: hidden; border-radius: 4px; display: flex; flex-direction: column; padding: 24px; box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .06); }
+.ph-card-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(28, 36, 32, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(28, 36, 32, .05) 1px, transparent 1px); background-size: 32px 32px; }
+.ph-card-wire { position: absolute; right: 6%; bottom: 8%; width: 38%; opacity: .5; }
+.ph-card-no { position: relative; font-family: var(--font-en); font-size: 12px; letter-spacing: .15em; }
+.ph-card-nm { position: relative; font-size: 28px; font-weight: 600; margin-top: auto; color: inherit; }
+.ph-card[data-ph-ratio='21:9'] .ph-card-nm, .ph-card[data-ph-ratio='16:5'] .ph-card-nm { font-size: 22px; }
+.ph-card-tag { position: absolute; top: 20px; right: 20px; font-size: 11px; padding: 4px 12px; border: 1px solid currentColor; border-radius: 999px; opacity: .45; }
+/* 产品列表内色卡：绝对铺满图侧容器（在 .ph-card 基础规则之后，覆盖生效） */
+.plist-v2 .p-img .p-img-phv2 .ph-card { position: absolute; inset: 0; aspect-ratio: auto; height: 100%; border-radius: 0; box-shadow: none; }
+/* --- v2.0 产品列表（紧凑单行：图侧 4:3 / 色卡 fill 铺满；色卡行下加细节/场景双色卡） --- */
+.figx.r-32 { aspect-ratio: 3 / 2; }
+/* 色卡产品行：主卡 fill + 下方两张 3:2 色卡（布局即最终图片位） */
+.plist-v2 .p-img .p-img-phv2 { position: absolute; inset: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.plist-v2 .p-img .p-img-phv2 > .ph-card[data-ph-ratio='fill'] { position: relative; inset: auto; flex: 1 1 auto; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+.p-img-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 0 0 auto; }
+.p-img-row2 .ph-card { border-radius: 0; box-shadow: none; }
+.ab-factory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }

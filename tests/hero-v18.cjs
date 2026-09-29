@@ -81,21 +81,24 @@ const check = (name, cond, extra = '') => { results.push([name, cond]); console.
   const bad = [];
   page2.on('response', (r) => { if (/case-(cayman|brisbane|cabin|chengdu|fiji)-/.test(r.url()) && r.status() !== 200) bad.push(`${r.status()} ${r.url()}`); });
   await page2.goto(`${BASE}/zh/cases/`, { waitUntil: 'networkidle' });
-  const groups = await page2.locator('.cg-group').count();
-  const items = await page2.locator('.cg-item img').count();
-  check('案例实景十组', groups === 10, `groups=${groups}`);
-  check('案例实景 28 张图', items === 28, `imgs=${items}`);
+  const groups = await page2.locator('.cg2-group').count();
+  const items = await page2.locator('.cg2-group img').count();
+  check('案例实景十组（v2.0 通栏首图+两列大图）', groups === 10, `groups=${groups}`);
+  check('案例实景 30 张图（10 首图 + 20 大图）', items === 30, `imgs=${items}`);
   check('案例实景图片请求全部 200', bad.length === 0, bad.join('; '));
   const hasShenzhen = await page2.locator('img[src*="shenzhen-steel-frame"]').count();
-  check('实景图组无受限客户名源（深圳以中性营房呈现）', hasShenzhen === 0);
+  const shenzhenAlt = await page2.locator('img[alt*="深圳"]').count();
+  check('实景图组深圳中性命名（客户名不上页，图可上）', hasShenzhen === 1 && shenzhenAlt >= 2, `steelFrame=${hasShenzhen} shenzhenAlt=${shenzhenAlt}`);
   await ctx2.close();
 
-  // 移动 375：实景图组单列横滑
+  // 移动 375：实景图组大图单列（v2.0 单列堆叠，不再横滑）
   const ctx3 = await browser.newContext({ viewport: { width: 375, height: 667 } });
   const page3 = await ctx3.newPage();
   await page3.goto(`${BASE}/zh/cases/`, { waitUntil: 'networkidle' });
-  const swipe = await page3.locator('.cg-group').first().locator('.cg-grid').evaluate((el) => ({ sw: el.scrollWidth, cw: el.clientWidth, snap: getComputedStyle(el).scrollSnapType }));
-  check('移动实景图组可横滑 + snap', swipe.sw > swipe.cw + 50 && swipe.snap.includes('x'), `scrollWidth=${swipe.sw} clientWidth=${swipe.cw}`);
+  const cols = await page3.locator('.cg2-bigs').first().evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(' ').length);
+  const leadW = await page3.locator('.cg2-group > .figx.r-219').first().evaluate((el) => Math.round(el.getBoundingClientRect().width));
+  check('移动实景图组单列', cols === 1, `cols=${cols}`);
+  check('移动通栏首图近全宽', leadW >= 330, `leadW=${leadW}`);
   // 移动 Hero 无箭头、分页点居中
   const prevVisible = await page3.locator('[data-prev]').isVisible().catch(() => false);
   check('移动档箭头隐藏', !prevVisible);

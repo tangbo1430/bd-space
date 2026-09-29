@@ -67,6 +67,12 @@ export const HOME_HERO_ASSETS = {
 /** 关于我们首图（21:9；右栏含愿景文案，移动裁左半建筑） */
 export const ABOUT_HERO_ASSET: Img16 = { base: 'about-hero', w: 1920, h: 823, mw: 960, mh: 412, msuf: '-m', alt: '半打空间白盒装配式建筑与愿景标语' };
 
+/** v2.0 新增入库：深圳营地钢构框架（21:9，首图焦点 center）与玻璃走廊封面（4:3）；页面仅中性命名「深圳·营地建筑」，不出现客户名 */
+export const SHENZHEN_V20_ASSETS = {
+  steelFrame: { base: 'case-shenzhen-steel-frame', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '深圳营地建筑项目钢构框架吊装实景' },
+  coverCamp: { base: 'case-cover-shenzhen-camp', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '深圳营地建筑项目玻璃走廊实景' },
+} satisfies Record<string, Img16>;
+
 /** M4 案例墙（v1.7 RAR 封面替换 v1.6 低清/旧图；仅地点+类型，无客户名）；v1.9 新增常州/成都/江门/中山方舱/米阁封面（营房封面客户名待确认暂不列入） */
 export const CASE_COVER_ASSETS: Record<string, Img16> = {
   cayman: { base: 'case-cover-cayman', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目外观实景' },
@@ -147,14 +153,18 @@ export const FLOW_V18_ASSETS = {
 export interface CaseDetailGroup {
   loc: string;
   type: string;
-  imgs: Img16[];
+  /** v2.0 施工实景编辑式排版：通栏首图（21:9）+ 两列大图（4:3） */
+  lead: Img16 & { focus?: string };
+  bigs: (Img16 & { focus?: string })[];
+  /** v1.9 旧网格图组（向后兼容字段，v2.0 页面不再使用） */
+  imgs?: Img16[];
 }
 export const CASE_DETAIL_GROUPS: CaseDetailGroup[] = [
   {
     loc: '开曼群岛',
     type: '海外住宅',
-    imgs: [
-      { base: 'case-cayman-install-crane', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '开曼群岛海外住宅项目吊装现场，地面工人协同' },
+    lead: { base: 'case-cayman-install-crane', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', focus: 'center 40%', alt: '开曼群岛海外住宅项目吊装现场，地面工人协同' },
+    bigs: [
       { base: 'case-cayman-install-roof', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目二层吊装，屋顶工人作业' },
       { base: 'case-cayman-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目墙板安装，现场工人协同' },
     ],
@@ -162,80 +172,82 @@ export const CASE_DETAIL_GROUPS: CaseDetailGroup[] = [
   {
     loc: '澳大利亚 · 布里斯班',
     type: '住宅',
-    imgs: [
-      { base: 'case-brisbane-lift-01', w: 1080, h: 1440, mw: 960, mh: 1280, msuf: '-m', alt: '布里斯班住宅项目带窗墙板吊装，工人牵引就位' },
-      { base: 'case-brisbane-install-frame', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '布里斯班住宅项目结构框架实景' },
+    lead: { base: 'case-brisbane-lift-01', w: 1080, h: 1440, mw: 960, mh: 1280, msuf: '-m', focus: 'center 30%', alt: '布里斯班住宅项目带窗墙板吊装，工人牵引就位' },
+    bigs: [
       { base: 'case-brisbane-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '布里斯班住宅项目墙板就位，多人协同' },
+      { base: 'case-cover-brisbane', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '澳大利亚布里斯班住宅项目外观实景' },
     ],
   },
   {
     loc: '中国 · 中山',
     type: '方舱建筑',
-    imgs: [
-      { base: 'case-cabin-site-aerial', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '中山方舱建筑项目场地航拍实景' },
-      { base: 'case-cabin-rows', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '中山方舱建筑项目成排箱体实景' },
-      { base: 'case-fangcang-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '中山方舱建筑项目箱体就位现场' },
+    lead: { base: 'case-fangcang-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', focus: 'center', alt: '中山方舱建筑项目箱体就位现场' },
+    bigs: [
+      { base: 'flow-transport-lift-cabin', w: 1122, h: 1496, mw: 960, mh: 1280, msuf: '-m', alt: '中山方舱建筑项目箱体吊装上平板车，安全帽工人背影' },
+      { base: 'case-cover-zhongshan-cabin', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国中山方舱建筑项目外观实景' },
     ],
   },
   {
     loc: '中国 · 中山',
     type: '独栋民宅',
-    imgs: [
-      { base: 'case-mige-install-01', w: 1705, h: 1279, mw: 960, mh: 720, msuf: '-m', alt: '中山独栋民宅项目现场安装实景' },
+    lead: { base: 'case-mige-install-05', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', focus: 'center 35%', alt: '中山独栋民宅项目屋面吊装实景' },
+    bigs: [
       { base: 'case-mige-install-03', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '中山独栋民宅项目现场安装，工人作业' },
-      { base: 'case-mige-install-05', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '中山独栋民宅项目现场安装实景' },
-    ],
-  },
-  {
-    loc: '中国 · 中山',
-    type: '低层住宅',
-    imgs: [
-      { base: 'case-zhongshan-install-03', w: 1899, h: 1424, mw: 960, mh: 720, msuf: '-m', alt: '中山低层住宅项目吊装就位，现场指挥' },
+      { base: 'case-mige-install-01', w: 1705, h: 1279, mw: 960, mh: 720, msuf: '-m', alt: '中山独栋民宅项目现场安装实景' },
     ],
   },
   {
     loc: '中国 · 成都',
     type: '宿舍建筑',
-    imgs: [
-      { base: 'case-chengdu-site-wide', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '成都宿舍建筑项目多栋工地全景' },
+    lead: { base: 'case-chengdu-install-03', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', focus: 'center', alt: '成都宿舍建筑项目模块就位，雨中作业' },
+    bigs: [
       { base: 'case-chengdu-assembly-01', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '成都宿舍建筑项目墙板吊装组对，登高作业' },
-      { base: 'case-chengdu-install-03', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '成都宿舍建筑项目模块就位，雨中作业' },
       { base: 'case-chengdu-site-04', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '成都宿舍建筑项目营地全景，基础与吊装' },
     ],
   },
   {
     loc: '中国 · 常州',
     type: '4S 住宅',
-    imgs: [
+    lead: { base: 'case-changzhou-install-03', w: 1728, h: 2304, mw: 960, mh: 1280, msuf: '-m', focus: 'center 30%', alt: '常州4S住宅项目现场安装，吊装就位' },
+    bigs: [
       { base: 'case-changzhou-install-02', w: 1728, h: 2304, mw: 960, mh: 1280, msuf: '-m', alt: '常州4S住宅项目现场安装，工人作业' },
-      { base: 'case-changzhou-install-03', w: 1728, h: 2304, mw: 960, mh: 1280, msuf: '-m', alt: '常州4S住宅项目现场安装，吊装就位' },
+      { base: 'case-cover-changzhou', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国常州4S住宅项目外观实景' },
     ],
   },
   {
     loc: '中国 · 深圳',
-    type: '营房建筑',
-    imgs: [
-      { base: 'case-shenzhen-stack-03', w: 1584, h: 1188, mw: 960, mh: 720, msuf: '-m', alt: '深圳营房项目双层箱体堆叠吊装' },
-      { base: 'case-shenzhen-glass-corner-04', w: 1152, h: 1536, mw: 960, mh: 1280, msuf: '-m', alt: '深圳营房项目玻璃幕墙转角仰拍' },
-      { base: 'flow-transport-spreader-lift', w: 1044, h: 1392, mw: 960, mh: 1280, msuf: '-m', alt: '深圳营房项目平衡梁吊装箱体作业' },
-      { base: 'flow-transport-lift-cabin', w: 1122, h: 1496, mw: 960, mh: 1280, msuf: '-m', alt: '深圳营房项目箱体吊装上平板车，安全帽工人背影' },
+    type: '营地建筑',
+    lead: { base: 'case-shenzhen-steel-frame', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', focus: 'center', alt: '深圳营地建筑项目钢构框架吊装实景' },
+    bigs: [
+      { base: 'case-cover-shenzhen-camp', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '深圳营地建筑项目玻璃走廊实景' },
+      { base: 'case-cabin-rows', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '深圳营地建筑项目成排箱体实景' },
     ],
   },
   {
     loc: '斐济',
     type: '模块化建筑',
-    imgs: [
+    lead: { base: 'case-cover-fiji', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', focus: 'center', alt: '斐济模块化建筑样箱外观实景' },
+    bigs: [
       { base: 'case-fiji-box-ext', w: 1705, h: 1279, alt: '斐济模块化建筑样箱外观实景' },
       { base: 'case-fiji-box-door', w: 1705, h: 1279, alt: '斐济模块化建筑样箱入户门实景' },
-      { base: 'case-fiji-interior-06', w: 1631, h: 917, mw: 960, mh: 540, msuf: '-m', alt: '斐济模块化建筑样箱室内实景' },
     ],
   },
   {
     loc: '中国 · 江门',
     type: '装配式建筑',
-    imgs: [
-      { base: 'case-jiangmen-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '江门装配式建筑项目基础就位俯瞰' },
-      { base: 'case-jiangmen-install-03', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '江门装配式建筑项目吊车箱体就位全景' },
+    lead: { base: 'case-cover-jiangmen', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', focus: 'center', alt: '中国江门装配式建筑项目外观实景' },
+    bigs: [
+      { base: 'case-cabin-rows', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '江门装配式建筑项目箱房阵列实景' },
+      { base: 'case-cabin-site-aerial', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '江门装配式建筑项目场地航拍实景' },
+    ],
+  },
+  {
+    loc: '中国 · 中山',
+    type: '低层住宅',
+    lead: { base: 'case-cover-zhongshan-fd', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', focus: 'center', alt: '中国中山低层住宅项目外观实景' },
+    bigs: [
+      { base: 'case-zhongshan-install-03', w: 1899, h: 1424, mw: 960, mh: 720, msuf: '-m', alt: '中山低层住宅项目吊装就位，现场指挥' },
+      { base: 'case-cover-zhongshan-mg', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国中山独栋民宅项目外观实景' },
     ],
   },
 ];

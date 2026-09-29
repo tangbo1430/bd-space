@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PhImg from '../../../components/PhImg.astro';
 import ProductArt from '../../../components/ProductArt.astro';
+import PlaceholderCard from '../../../components/PlaceholderCard.astro';
 import { PRODUCT_ASSETS, SPACE_ASSETS, PRODUCT_HERO_ASSETS } from '../../../lib/assets';
 import { getCollection, render } from 'astro:content';
 
@@ -9,6 +10,12 @@ export async function getStaticPaths() {
   const products = await getCollection('products', ({ data }) => data.published);
   return products.map((p) => ({ params: { slug: p.id }, props: { product: p } }));
 }
+
+/* v2.0：无真图产品详情首图用 21:9 色卡（PH-*，与列表一致锁定最终图片位） */
+const PH_MAP: Record<string, string> = {
+  bd8: 'PH-BD8', bd9: 'PH-BD9', '5s': 'PH-5S', '6s': 'PH-6S',
+  grayscale: 'PH-GS', slab: 'PH-SLAB', wall: 'PH-WALL', stair: 'PH-STAIR',
+};
 
 const { product } = Astro.props;
 const { Content } = await render(product);
@@ -27,9 +34,18 @@ const approvedImgs = product.data.approvedImages
   headerStyle="overlay"
 >
   <section class="page-hero" style="height:70vh;min-height:480px" aria-label={`${product.data.name}首屏`}>
-    <PhImg g="dark-2" tag={`${product.data.detailImageId} · 产品实拍/应用（占位）`} onDark img={heroImg ? { ...heroImg, lazy: false } : undefined} />
+    {heroImg ? (
+      <PhImg g="dark-2" tag={`${product.data.detailImageId} · 产品实拍/应用（占位）`} onDark img={{ ...heroImg, lazy: false }} />
+    ) : (
+      /* v2.0：无真图产品详情首图 → 21:9 色卡（锁定最终图片位，只换图不改版） */
+      <div style="position:absolute;inset:0;display:flex;align-items:center">
+        <div class="wrap" style="width:100%">
+          <PlaceholderCard id={(PH_MAP[product.id] ?? 'PH-GS') as 'PH-BD8'} ratio="21:9" />
+        </div>
+      </div>
+    )}
     <div class="hero-copy">
-      <div class="en" style="color:rgba(255,255,255,.6)">Product Detail</div>
+      <div class="en" style={heroImg ? 'color:rgba(255,255,255,.6)' : undefined}>Product Detail</div>
       <h1>{product.data.name}</h1>
       <p>{product.data.tagline}</p>
     </div>
@@ -40,7 +56,7 @@ const approvedImgs = product.data.approvedImages
       <a href="/zh/">HOME</a> / <a href="/zh/products/">PRODUCTS</a> / {product.data.name}
     </p>
 
-    <div class="pd-body">
+    <div class="pd-body" style="padding-top:48px;padding-bottom:48px">
       <div>
         <div class="en">Exploded View</div>
         <h2 style="margin:12px 0 22px">分解示意</h2>
@@ -62,16 +78,20 @@ const approvedImgs = product.data.approvedImages
     </div>
 
     {approvedImgs.length > 0 && (
-      <div style="padding-bottom:60px">
+      <div style="padding-bottom:32px">
         <div class="en">Product Gallery</div>
         <h2 style="margin:12px 0 22px">产品图鉴</h2>
-        <div style="display:grid;gap:26px">
+        <div class="pd-gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
           {approvedImgs.map((a) => (
             <div
-              class="imgbox"
-              style={`position:relative;border-radius:6px;overflow:hidden;${'maxW' in a && a.maxW ? `max-width:${a.maxW}px;aspect-ratio:${a.w}/${a.h};` : 'min-height:280px;'}`}
+              class="figx r-43"
+              style={`${'maxW' in a && a.maxW ? `max-width:${a.maxW}px;` : ''}`}
             >
-              <PhImg g="factory" tag={`${a.base}（已批准素材）`} img={a} />
+              <picture>
+                {'mw' in a && a.mw && <source type="image/webp" srcset={`/assets/img/${a.base}${'msuf' in a && a.msuf ? a.msuf : '-960w'}.webp ${a.mw}w, /assets/img/${a.base}.webp ${a.w}w`} sizes="(max-width: 1279px) 100vw, 50vw" />}
+                {!('mw' in a && a.mw) && <source type="image/webp" srcset={`/assets/img/${a.base}.webp`} />}
+                <img src={`/assets/img/${a.base}.jpg`} width={a.w} height={a.h} alt={a.alt} loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+              </picture>
             </div>
           ))}
         </div>
@@ -79,24 +99,27 @@ const approvedImgs = product.data.approvedImages
     )}
 
     {product.data.scenes.length > 0 && (
-      <div style="padding-bottom:60px">
+      <div style="padding-bottom:32px">
         <div class="en">Applications</div>
         <h2 style="margin:12px 0 22px">应用场景</h2>
         <ul style="list-style:none;display:grid;gap:10px;font-size:15px">
           {product.data.scenes.map((s) => <li style="border-bottom:1px solid var(--line);padding:10px 4px">{s}</li>)}
         </ul>
         {/* 首批批准空间氛围图（60m² 方案 p07–p11，厨房/卫浴/家政/卧室；餐厨已用于首页分屏） */}
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:34px" class="space-grid">
+        <div class="pd-gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px">
           {[SPACE_ASSETS.kitchen, SPACE_ASSETS.bath, SPACE_ASSETS.laundry, SPACE_ASSETS.bedroom].map((a) => (
-            <div class="imgbox" style="position:relative;min-height:260px;border-radius:6px;overflow:hidden">
-              <PhImg g="yard" tag={`${a.base}（已批准素材）`} img={a} />
+            <div class="figx r-43">
+              <picture>
+                <source type="image/webp" srcset={`/assets/img/${a.base}-960w.webp ${a.mw}w, /assets/img/${a.base}.webp ${a.w}w`} sizes="(max-width: 1279px) 100vw, 50vw" />
+                <img src={`/assets/img/${a.base}.jpg`} width={a.w} height={a.h} alt={a.alt} loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+              </picture>
             </div>
           ))}
         </div>
       </div>
     )}
 
-    <div class="legal" style="max-width:none;padding:0 0 110px">
+    <div class="legal" style="max-width:none;padding:0 0 48px">
       <Content />
     </div>
   </div>

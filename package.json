@@ -16,6 +16,7 @@
     "test:hero": "node tests/hero-v18.cjs",
     "test:motion": "node tests/motion-mode.cjs",
     "audit:assets": "node scripts/audit-assets.mjs",
+    "test:visual": "node tests/visual-v20.cjs",
     "check": "npm run lint && npm run type-check && npm run test && npm run build && npm run verify && npm run audit:assets"
   },
   "dependencies": {

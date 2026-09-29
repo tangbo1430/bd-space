@@ -18,6 +18,11 @@ export default [
     rules: { '@typescript-eslint/no-require-imports': 'off' },
   },
   {
+    /* v2.0 测量脚本用 Playwright page.evaluate 内联浏览器上下文 */
+    files: ['scripts/measure-image-ratio.mjs'],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+  },
+  {
     files: ['src/**/*.astro'],
     languageOptions: { globals: { __BUILD_COMMIT__: 'readonly', __BUILD_TIME__: 'readonly' } },
   },

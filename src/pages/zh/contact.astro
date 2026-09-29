@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PhImg from '../../components/PhImg.astro';
+import PlaceholderCard from '../../components/PlaceholderCard.astro';
 import ConsultForm from '../../components/ConsultForm.astro';
 import { site } from '../../lib/site';
 ---
@@ -29,8 +29,9 @@ import { site } from '../../lib/site';
           企业微信/公众号：【待提供】<br />
           WhatsApp（海外）：【待提供】
         </p>
-        <div style="position:relative;height:280px;border-radius:6px;overflow:hidden;margin-top:34px">
-          <PhImg g="yard" tag="IMG-MAP-1 · 1200×900 · 静态地图图（占位；建议接入高德/百度静态图）" />
+        <div style="margin-top:34px">
+          {/* v2.0 PH-MAP：地图位改 PLACEHOLDER-CARD 变体（青绿底 + 定位线稿），比例 16:5 锁定最终图片位 */}
+          <PlaceholderCard id="PH-MAP" ratio="16:5" label="地图待接入" />
         </div>
       </div>
       <div>

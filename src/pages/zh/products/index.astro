@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PhImg from '../../../components/PhImg.astro';
+import PlaceholderCard from '../../../components/PlaceholderCard.astro';
 import { LINEART_SVGS, PRODUCT_HERO_ASSETS } from '../../../lib/assets';
 import { getCollection } from 'astro:content';
 
 const products = (await getCollection('products', ({ data }) => data.published))
   .sort((a, b) => a.data.order - b.data.order);
+
+/* v2.0：无真图产品的色卡 ID 映射（slug → PH-*）；4S/5S/6S/灰度有真图 */
+const PH_MAP: Record<string, string> = {
+  bd8: 'PH-BD8', bd9: 'PH-BD9', '5s': 'PH-5S', '6s': 'PH-6S',
+  grayscale: 'PH-GS', slab: 'PH-SLAB', wall: 'PH-WALL', stair: 'PH-STAIR',
+};
 
 /* M5 三种建造体系（v1.6 DSN-164，设计师原创 SVG 线稿，中性描述） */
 const systems = [
@@ -22,12 +28,100 @@ const systems = [
   headerStyle="solid"
 >
   <p class="crumb"><a href="/zh/">HOME</a> / PRODUCTS</p>
-  <div class="wrap" style="padding-top:40px;padding-bottom:60px">
+  <div class="wrap" style="padding-top:40px;padding-bottom:40px">
     <div class="en">Products</div>
     <h2 style="font-size:52px;margin-top:10px">产品中心</h2>
   </div>
 
-  <!-- M5 三种建造体系（v1.6，原创 SVG 线稿；加载失败回退几何占位） -->
+  <div style="border-top:1px solid var(--line)" data-v2="plist">
+    {products.map((p, i) => (      <article class:list={['plist-item', 'plist-v2', { rev: i % 2 === 1 }]}>
+        <div class="p-img">
+          {(PRODUCT_HERO_ASSETS[p.id] && !PH_MAP[p.id]) || PH_MAP[p.id] ? (
+            PH_MAP[p.id] ? (
+              /* v2.0 色卡行：主色卡 4:3 + 细节/场景两张 3:2 色卡（布局即最终图片位，只换图不改版） */
+              <div class="p-img-phv2">
+                <PlaceholderCard id={PH_MAP[p.id] as 'PH-BD8'} ratio="fill" />
+                <div class="p-img-row2">
+                  <PlaceholderCard id={PH_MAP[p.id] as 'PH-BD8'} ratio="3:2" label={`${p.data.name} · 细节`} />
+                  <PlaceholderCard id={PH_MAP[p.id] as 'PH-BD8'} ratio="3:2" label={`${p.data.name} · 场景`} />
+                </div>
+              </div>
+            ) : (
+              /* v2.0：桌面 6 列用桌面档 WebP（不用 -m 960w 移动档，避免低清放大） */
+              <div class="figx r-43" style="position:absolute;inset:0;border-radius:0;box-shadow:none">
+                <picture>
+                  <source type="image/webp" srcset={`/assets/img/${PRODUCT_HERO_ASSETS[p.id].base}.webp`} />
+                  <img
+                    src={`/assets/img/${PRODUCT_HERO_ASSETS[p.id].base}.jpg`}
+                    width={PRODUCT_HERO_ASSETS[p.id].w} height={PRODUCT_HERO_ASSETS[p.id].h}
+                    alt={PRODUCT_HERO_ASSETS[p.id].alt} loading="lazy" decoding="async"
+                    onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+                  />
+                </picture>
+              </div>
+            )
+          ) : (
+            <div class="p-img-phv2">
+              <PlaceholderCard id={'PH-GS' as 'PH-BD8'} ratio="fill" />
+            </div>
+          )}
+        </div>
+        <div class="p-txt">
+          <div class="en">{p.data.enTag}</div>
+          <h2>{p.data.name}</h2>
+          <p>{p.data.tagline}</p>
+          <a class="btn btn-primary" href={`/zh/products/${p.id}/`}>查看详情 <span class="arr">→</span></a>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  {/* v2.0 产品真图带：已批准真实外观（提升产品页图版率，不虚构无图产品） */}
+  <div class="wrap" style="padding-bottom:64px" data-v2="plist-real">
+    <div class="en rv">Approved Photos</div>
+    <h2 class="rv" style="margin-top:12px">已验收实拍</h2>
+    <div class="figx r-219 rv" style="margin-top:32px">
+      <picture>
+        <source type="image/webp" srcset="/assets/img/product-4s-dusk.webp" />
+        <img src="/assets/img/product-4s-dusk.jpg" width="1920" height="1080" alt="半打 4S 产品黄昏正立面实景" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+      </picture>
+      <div class="figx-cap"><div class="t">半打4S</div><div class="s">黄昏正立面</div></div>
+    </div>
+    <div class="ab-factory-grid rv" style="margin-top:32px">
+      <div class="figx r-43">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/product-5s-hero.webp" />
+          <img src="/assets/img/product-5s-hero.jpg" width="1920" height="1080" alt="半打 5S 产品外观实景" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+        </picture>
+        <div class="figx-cap"><div class="t">半打5S</div><div class="s">模块化空间产品</div></div>
+      </div>
+      <div class="figx r-43">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/product-6s-hero.webp" />
+          <img src="/assets/img/product-6s-hero.jpg" width="1920" height="1080" alt="半打 6S 产品外观实景" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+        </picture>
+        <div class="figx-cap"><div class="t">半打6S</div><div class="s">模块化空间产品</div></div>
+      </div>
+    </div>
+    <div class="ab-factory-grid rv" style="margin-top:32px">
+      <div class="figx r-43">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/product-grayscale-hero.webp" />
+          <img src="/assets/img/product-grayscale-hero.jpg" width="1920" height="1080" alt="灰度空间产品外观实景" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+        </picture>
+        <div class="figx-cap"><div class="t">灰度空间</div><div class="s">模块化空间产品</div></div>
+      </div>
+      <div class="figx r-43">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/product-4s-detail-wall.webp" />
+          <img src="/assets/img/product-4s-detail-wall.jpg" width="1920" height="1080" alt="半打 4S 产品外墙细节实景" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+        </picture>
+        <div class="figx-cap"><div class="t">半打4S</div><div class="s">外墙细节</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- M5 三种建造体系（v1.6，原创 SVG 线稿；v2.0 移至页底作技术附录，节奏压缩） -->
   <section class="sys" aria-label="三种建造体系">
     <div class="wrap">
       <div class="en rv">Build Systems</div>
@@ -51,20 +145,4 @@ const systems = [
       </div>
     </div>
   </section>
-
-  <div style="border-top:1px solid var(--line)">
-    {products.map((p, i) => (
-      <article class:list={['plist-item', { rev: i % 2 === 1 }]}>
-        <div class="p-img">
-          <PhImg g={i % 3 === 0 ? 'factory' : i % 3 === 1 ? 'yard' : 'site'} tag={`${p.data.listImageId} · 替换整图（占位=原创线稿版式位）`} img={p.data.heroAsset ? PRODUCT_HERO_ASSETS[p.data.heroAsset] : undefined} />
-        </div>
-        <div class="p-txt">
-          <div class="en">{p.data.enTag}</div>
-          <h2>{p.data.name}</h2>
-          <p>{p.data.tagline}</p>
-          <a class="btn btn-primary" href={`/zh/products/${p.id}/`}>查看详情 <span class="arr">→</span></a>
-        </div>
-      </article>
-    ))}
-  </div>
 </BaseLayout>

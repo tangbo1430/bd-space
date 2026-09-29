@@ -2,18 +2,18 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { CASE_COVER_ASSETS, CASE_DETAIL_GROUPS } from '../../lib/assets';
 
-/* M4 项目实践视觉案例墙（v1.7 RAR 封面 + v1.9 新增封面；仅地点+类型，无客户名/数量/金额/周期/抗震/收益；江门不写合作方，营房客户名待确认不上墙） */
+/* v2.0 案例墙：通栏首卡（常州）+ 2 列 4:3 大卡混排；仅地点+类型，无客户名 */
 const cases = [
   { loc: '开曼群岛', type: '海外住宅', img: CASE_COVER_ASSETS.cayman },
   { loc: '澳大利亚', type: '布里斯班住宅', img: CASE_COVER_ASSETS.brisbane },
   { loc: '中国 · 中山', type: '低层住宅', img: CASE_COVER_ASSETS.zhongshan },
   { loc: '斐济', type: '模块化建筑', img: CASE_COVER_ASSETS.fiji },
-  { loc: '中国 · 常州', type: '4S 住宅', img: CASE_COVER_ASSETS.changzhou },
   { loc: '中国 · 成都', type: '宿舍建筑', img: CASE_COVER_ASSETS.chengdu },
   { loc: '中国 · 江门', type: '装配式建筑', img: CASE_COVER_ASSETS.jiangmen },
   { loc: '中国 · 中山', type: '方舱建筑', img: CASE_COVER_ASSETS.zhongshanCabin },
   { loc: '中国 · 中山', type: '独栋民宅', img: CASE_COVER_ASSETS.mige },
 ];
+const leadCover = { loc: '中国 · 常州', type: '4S 住宅', img: CASE_COVER_ASSETS.changzhou };
 ---
 
 <BaseLayout
@@ -29,10 +29,24 @@ const cases = [
   </div>
 
   <section class="case-wall" aria-label="项目实践案例墙">
-    <div class="case-wall-grid">
+    <div class="cw2-grid" data-v2="case-wall">
+      <article class="case-card cw2-lead rv">
+        <div class="figx r-219">
+          <picture>
+            <source type="image/webp" srcset={`/assets/img/${leadCover.img.base}-m.webp 960w, /assets/img/${leadCover.img.base}.webp ${leadCover.img.w}w`} sizes="100vw" />
+            <img
+              src={`/assets/img/${leadCover.img.base}.jpg`}
+              width={leadCover.img.w} height={leadCover.img.h} alt={leadCover.img.alt}
+              loading="lazy" decoding="async"
+              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+            />
+          </picture>
+          <div class="figx-cap"><div class="t">{leadCover.loc}</div><div class="s">{leadCover.type}</div></div>
+        </div>
+      </article>
       {cases.map((c) => (
         <article class="case-card rv">
-          <div class:list={['cc-img', c.img.maxW ? `maxw-${c.img.maxW}` : '']}>
+          <div class="figx r-43">
             <picture>
               {c.img.mw && (
                 <source type="image/webp" srcset={`/assets/img/${c.img.base}-m.webp ${c.img.mw}w, /assets/img/${c.img.base}.webp ${c.img.w}w`} sizes="(max-width: 1279px) 100vw, 50vw" />
@@ -42,13 +56,10 @@ const cases = [
                 src={`/assets/img/${c.img.base}.jpg`}
                 width={c.img.w} height={c.img.h} alt={c.img.alt}
                 loading="lazy" decoding="async"
-                onerror="this.closest('.cc-img').classList.add('ph-fallback');this.closest('picture').remove()"
+                onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
               />
             </picture>
-          </div>
-          <div class="cc-meta">
-            <div class="cc-loc">{c.loc}</div>
-            <div class="cc-type">{c.type}</div>
+            <div class="figx-cap"><div class="t">{c.loc}</div><div class="s">{c.type}</div></div>
           </div>
         </article>
       ))}
@@ -62,21 +73,35 @@ const cases = [
         <div><div class="en">On Site</div><h2>施工实景</h2></div>
       </div>
       {CASE_DETAIL_GROUPS.map((g) => (
-        <div class="cg-group rv">
-          <h3 class="cg-title">{g.loc} · {g.type}</h3>
-          <div class="cg-grid">
-            {g.imgs.map((img) => (
-              <figure class="cg-item">
+        <div class="cg2-group rv">
+          <h3 class="cg2-title">{g.loc} · {g.type}</h3>
+          <div class="figx r-219" style={g.lead.focus ? `--figx-focus:${g.lead.focus}` : undefined}>
+            <picture>
+              {g.lead.mw && (
+                <source type="image/webp" srcset={`/assets/img/${g.lead.base}${g.lead.msuf ?? '-m'}.webp ${g.lead.mw}w, /assets/img/${g.lead.base}.webp ${g.lead.w}w`} sizes="100vw" />
+              )}
+              {!g.lead.mw && <source type="image/webp" srcset={`/assets/img/${g.lead.base}.webp`} />}
+              <img
+                src={`/assets/img/${g.lead.base}.jpg`}
+                width={g.lead.w} height={g.lead.h} alt={g.lead.alt}
+                loading="lazy" decoding="async"
+                onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+              />
+            </picture>
+          </div>
+          <div class="cg2-bigs">
+            {g.bigs.map((img) => (
+              <figure class="figx r-43" style={img.focus ? `--figx-focus:${img.focus}` : undefined}>
                 <picture>
                   {img.mw && (
-                    <source type="image/webp" srcset={`/assets/img/${img.base}${img.msuf ?? '-m'}.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 767px) 82vw, 33vw" />
+                    <source type="image/webp" srcset={`/assets/img/${img.base}${img.msuf ?? '-m'}.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
                   )}
                   {!img.mw && <source type="image/webp" srcset={`/assets/img/${img.base}.webp`} />}
                   <img
                     src={`/assets/img/${img.base}.jpg`}
                     width={img.w} height={img.h} alt={img.alt}
                     loading="lazy" decoding="async"
-                    onerror="this.closest('.cg-item').classList.add('ph-fallback');this.closest('picture').remove()"
+                    onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
                   />
                 </picture>
               </figure>
