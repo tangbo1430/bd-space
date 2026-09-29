@@ -19,6 +19,7 @@
 见 `.env.example`。全部为 `PUBLIC_*` 构建期变量（Astro 静态站无服务端运行时）：
 
 - `PUBLIC_SITE_URL`：站点绝对地址，决定 canonical / hreflang / sitemap / robots。**部署前必填**。
+- `PUBLIC_BUILD_MODE`（v2.0.1）：`preview` = 预览/验收构建，默认完整动态（自动轮播、全部动效）并 SSR 注入「完整动态模式 · commit」标识；`production`（默认）尊重 `prefers-reduced-motion`（静态首帧、保留手动控件）。两模式由构建配置区分，`?motion=full` 为两种模式下通用的显式覆盖入口。构建产物 `version.json` 与页面 `<meta name="build-mode">`、`<html data-build-mode>` 三处一致可核对。
 - `PUBLIC_FORM_ENDPOINT` / `PUBLIC_FORM_ACCESS_KEY`：表单服务。未配置时表单呈现“暂未开通”态并禁用提交——不伪造成功（BR-16）。
 - `PUBLIC_ANALYTICS_SCRIPT_URL` / `PUBLIC_ANALYTICS_DOMAIN`：统计脚本。未配置则不注入（无 Cookie 站）。
 

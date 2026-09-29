@@ -681,12 +681,12 @@ html[data-motion=off] .scroll-hint::after { animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  /* 验收模式 motion=full：覆盖系统偏好，恢复全部动效 */
-  html:not([data-motion=full]) { scroll-behavior: auto; }
-  html:not([data-motion=full]) .rv { opacity: 1; transform: none; transition: none; }
-  html:not([data-motion=full]) .slide { transition: none; }
-  html:not([data-motion=full]) .scroll-hint::after { animation: none; }
-  html:not([data-motion=full]) .drawer { transition: none; }
+  /* 完整动态模式（motion=full / preview 构建）：覆盖系统偏好，恢复全部动效 */
+  html:not([data-motion=full]):not([data-motion=preview]) { scroll-behavior: auto; }
+  html:not([data-motion=full]):not([data-motion=preview]) .rv { opacity: 1; transform: none; transition: none; }
+  html:not([data-motion=full]):not([data-motion=preview]) .slide { transition: none; }
+  html:not([data-motion=full]):not([data-motion=preview]) .scroll-hint::after { animation: none; }
+  html:not([data-motion=full]):not([data-motion=preview]) .drawer { transition: none; }
 }
 
 /* ============ 响应式 ============ */
@@ -973,24 +973,16 @@ html[data-motion=off] .flow-panel { transition: none; }
 .figx.ph-fallback::after { content: "图片待补充"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-size: 13px; letter-spacing: .2em; }
 html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus-within picture img { transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  html:not([data-motion=full]) .figx picture img { transition: none; }
-  html:not([data-motion=full]) .figx:hover picture img, html:not([data-motion=full]) .figx:focus-within picture img { transform: none; }
+  html:not([data-motion=full]):not([data-motion=preview]) .figx picture img { transition: none; }
+  html:not([data-motion=full]):not([data-motion=preview]) .figx:hover picture img, html:not([data-motion=full]):not([data-motion=preview]) .figx:focus-within picture img { transform: none; }
 }
 
 /* --- 编辑式图片容器：统一圆角/描边/hover 缩放/图注浮层 --- */
 
-/* --- 首页 S2 数据带 v2.0：整宽深青绿横带 + 左 40% 工厂实拍 --- */
-.stats-v2 { background: #14322B; color: #fff; }
-.stats-v2-in { display: grid; grid-template-columns: 2fr 3fr; min-height: 280px; }
-.stats-v2-img { position: relative; overflow: hidden; min-height: 200px; }
-.stats-v2-img picture, .stats-v2-img picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(.55); }
-.stats-v2-nums { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-content: center; padding: 48px 64px; }
-.stats-v2-nums .num { font-family: var(--font-en); font-size: 40px; font-weight: 600; line-height: 1.1; color: #fff; }
-.stats-v2-nums .num em { font-style: normal; font-size: 16px; opacity: .6; }
-.stats-v2-nums p { font-size: 13px; opacity: .7; margin-top: 6px; color: #fff; }
+/* v2.0.1：S2 数据带整块移除（占位数据无有效信息、破坏首屏完整性），Hero 之后直接进入暖米白 S3 */
 
 /* --- 首页 S3 编辑式叠压：7:5 大图 8 列 + 文字卡 5 列叠压右缘（v2.0 节奏压缩） --- */
-.sec:has(> .wrap > .mfg) { padding: 96px 0; }
+.sec:has(> .wrap > .mfg) { padding: 104px 0 96px; }
 .mfg { display: grid; grid-template-columns: 8fr 5fr; align-items: center; }
 .mfg .figx { position: relative; }
 .mfg-card { position: relative; z-index: 2; background: var(--bg-base); padding: 40px; margin-left: -90px; box-shadow: 0 16px 40px rgba(0, 0, 0, .08); }
@@ -1055,9 +1047,7 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
 /* --- v2.0 响应式 --- */
 @media (max-width: 1279px) {
   .sec-tight { padding: 72px 0; }
-  .stats-v2-in { grid-template-columns: 1fr; }
-  .stats-v2-img { min-height: 160px; }
-  .stats-v2-nums { padding: 40px; }
+  .sec:has(> .wrap > .mfg) { padding: 80px 0 72px; }
   .mfg { grid-template-columns: 1fr; }
   .mfg .figx.r-75 { aspect-ratio: 21 / 9; max-height: 400px; }
   .mfg-card { margin: -64px 40px 0; }
@@ -1071,8 +1061,6 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
   .cg2-group .figx.r-219 { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 767px) {
-  .stats-v2-img { min-height: 120px; }
-  .stats-v2-nums { grid-template-columns: 1fr; gap: 22px; padding: 32px 20px; }
   .mfg .figx.r-75 { aspect-ratio: 16 / 10; }
   .mfg-card { margin: -40px 20px 0; padding: 28px; }
   .pm-big { grid-template-columns: 1fr; }

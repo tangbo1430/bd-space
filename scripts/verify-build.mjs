@@ -330,13 +330,24 @@ let version = null;
 try { version = JSON.parse(versionRaw); } catch { version = null; }
 ok(version && typeof version.commit === 'string' && version.commit.length >= 7 && typeof version.builtAt === 'string', 'version.json 含 commit/builtAt');
 ok(version !== null && (home ?? '').includes(`name="build-commit" content="${version.commit}"`), '页面 meta build-commit 与 version.json 一致');
+/* 构建模式（v2.0.1）：preview/production 由 PUBLIC_BUILD_MODE 构建配置区分，不靠查询参数 */
+ok(version && (version.buildMode === 'preview' || version.buildMode === 'production'), `version.json 含 buildMode（当前 ${version?.buildMode}）`);
+ok((home ?? '').includes(`name="build-mode" content="${version?.buildMode}"`), '页面 meta build-mode 与 version.json 一致');
+ok((home ?? '').includes(`data-build-mode="${version?.buildMode}"`), '<html> data-build-mode 与构建一致');
+if (version?.buildMode === 'preview') {
+  ok((home ?? '').includes('完整动态模式') && (home ?? '').includes('data-motion-badge'), 'preview 构建：SSR 验收标识（完整动态模式·commit）默认在页');
+} else {
+  ok(!(home ?? '').includes('data-motion-badge'), 'production 构建：默认页无验收标识');
+}
 /* 双模式验收（v1.8.2）：?motion=full 覆盖系统偏好 + 验收标识 + reduce 保留手动控件 */
 const jsFile = readdirSync(join(dist, '_astro')).find((f) => f.endsWith('.js'));
 const bundle = jsFile ? readFileSync(join(dist, '_astro', jsFile), 'utf8') : '';
 ok(bundle.includes('motion=full') || bundle.includes('完整动态模式'), 'JS 含 motion=full 验收逻辑');
 ok(bundle.includes('data-motion-badge') || bundle.includes('完整动态模式'), 'JS 含验收标识（完整动态模式·commit）');
+ok(bundle.includes('buildMode') || bundle.includes('data-build-mode') || bundle.includes('build-mode'), 'JS 读取构建模式标识（preview 默认完整动态）');
 ok(css.includes('[data-motion-badge]'), 'CSS 含验收标识样式');
 ok(css.includes('data-motion=full'), 'CSS reduced-motion 对 motion=full 放行');
+ok(css.includes('data-motion=preview'), 'CSS reduced-motion 对 preview 构建放行');
 
 console.log('== v1.9 人物口径批次（恢复清晰人物版 + 25 新增源） ==');
 ok(existsSync(join(assetsDir, 'asset-manifest-v19.csv')), 'asset-manifest-v19.csv 已随包');
@@ -372,8 +383,9 @@ ok((home ?? '').includes('data-ph-card="PH-NEWS"'), '首页新闻 PH-NEWS 色卡
 ok(css.includes('.ph-card{') && css.includes('.ph-card-grid') && css.includes('.ph-card-tag'), '色卡系统 CSS（底色/网格/角标）');
 ok(css.includes('图片待替换') === false, '色卡角标文案由组件输出（非 CSS 硬编码）');
 ok((productsIdx ?? '').includes('图片待替换'), '色卡含「图片待替换」角标');
-/* 首页四大区块 */
-ok(home?.includes('data-v2="stats"') && home?.includes('stats-v2'), '首页 S2 数据带 v2.0（深青绿横带）');
+/* 首页区块（v2.0.1：S2 数据带整块移除，Hero 直进 S3 暖米白内容区） */
+ok(!home?.includes('stats-v2') && !home?.includes('data-v2="stats"'), '首页 S2 数据带已移除（v2.0.1）');
+ok(/<\/section>\s*<section class="sec sec-tight" aria-label="关于半打"/.test(home ?? ''), 'Hero 与 S3 相邻无断层（v2.0.1）');
 ok(home?.includes('data-v2="mfg"') && home?.includes('mfg-card'), '首页 S3 编辑式叠压（图 7:5 + 文字卡）');
 ok(home?.includes('data-v2="pm-big"') && home?.includes('pm-mid') && home?.includes('pm-small'), '首页 S4 产品矩阵（3 大卡 + 中行 + 5 文字卡）');
 ok(home?.includes('blt-lead') && home?.includes('blt-grid'), '首页 S5 被建造（21:9 通栏 + 2×4:3）');

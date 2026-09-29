@@ -31,7 +31,7 @@ const aboutSub = currentAboutSub(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={lang} data-build-mode={__BUILD_MODE__ ?? 'production'}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,6 +40,7 @@ const aboutSub = currentAboutSub(Astro.url.pathname);
   <link rel="canonical" href={canonical} />
   <meta name="build-commit" content={__BUILD_COMMIT__ ?? 'dev'} />
   <meta name="build-time" content={__BUILD_TIME__ ?? ''} />
+  <meta name="build-mode" content={__BUILD_MODE__ ?? 'production'} />
   {altLinks.map((l) => <link rel="alternate" hreflang={l.lang} href={l.href} />)}
   {noindex && <meta name="robots" content="noindex, nofollow" />}
   <meta property="og:type" content="website" />
@@ -53,6 +54,9 @@ const aboutSub = currentAboutSub(Astro.url.pathname);
   )}
 </head>
 <body>
+  {(__BUILD_MODE__ ?? 'production') === 'preview' && (
+    <div data-motion-badge role="status">{`完整动态模式 · commit ${__BUILD_COMMIT__ ?? 'dev'}`}</div>
+  )}
   <a class="skip-link" href="#main">跳转到主要内容</a>
   <SiteHeader current={current} style={headerStyle} lang={lang} aboutSub={aboutSub} />
   <main id="main">

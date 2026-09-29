@@ -4,7 +4,7 @@ import FloatRail from '../../components/FloatRail.astro';
 import ConsultForm from '../../components/ConsultForm.astro';
 import FlowSteps from '../../components/FlowSteps.astro';
 import { site, PLACEHOLDER } from '../../lib/site';
-import { HOME_HERO_ASSETS, CASE_COVER_ASSETS, FLOW_FACTORY_ASSETS, PRODUCT_ASSETS } from '../../lib/assets';
+import { HOME_HERO_ASSETS, CASE_COVER_ASSETS, PRODUCT_ASSETS } from '../../lib/assets';
 import PlaceholderCard from '../../components/PlaceholderCard.astro';
 import { getCollection } from 'astro:content';
 
@@ -13,13 +13,8 @@ const products = (await getCollection('products', ({ data }) => data.published))
 /* v2.0 产品矩阵：首行 3 大图卡（4S/5S 真图 + BD8 色卡），次行 BD9 色卡 + 5 文字卡 */
 const pmSmall = products.filter((p) => !['4s', 'bd8', 'bd9', '5s'].includes(p.id)).slice(0, 5);
 
-/* v2.0 数据带：沿用 v1.9 既有占位文案口径（事实数据待确认不虚构），版式改深青绿横带 */
-const stats = [
-  { num: '——', unit: '㎡', label: `年产能${PLACEHOLDER}` },
-  { num: '——', unit: '项', label: `服务项目${PLACEHOLDER}` },
-  { num: '——', unit: '个', label: `覆盖区域${PLACEHOLDER}` },
-  { num: '——', unit: '项', label: `专利与资质${PLACEHOLDER}` },
-];
+/* v2.0.1：S2 数据带已按用户意见整块移除（四项数据均为待提供占位，无有效信息且破坏首屏完整性）；
+   真实经营数据到位后再以设计评审通过的版式补回。 */
 
 /* v2.0 §4.7：资质行高压至 56px */
 const quals = [
@@ -160,27 +155,7 @@ const quals = [
     <div class="scroll-hint">SCROLL</div>
   </section>
 
-  <!-- S2 数据带 v2.0：整宽深青绿横带，左 40% 工厂产线实拍（暗化），右 60% 2×2 数据 -->
-  <section class="stats-v2" aria-label="关键数据" data-v2="stats">
-    <div class="stats-v2-in">
-      <div class="stats-v2-img">
-        <picture>
-          <source type="image/webp" srcset={`/assets/img/${FLOW_FACTORY_ASSETS.module.base}-m.webp ${FLOW_FACTORY_ASSETS.module.mw}w, /assets/img/${FLOW_FACTORY_ASSETS.module.base}.webp ${FLOW_FACTORY_ASSETS.module.w}w`} sizes="40vw" />
-          <img
-            src={`/assets/img/${FLOW_FACTORY_ASSETS.module.base}.jpg`}
-            width={FLOW_FACTORY_ASSETS.module.w} height={FLOW_FACTORY_ASSETS.module.h}
-            alt={FLOW_FACTORY_ASSETS.module.alt} loading="lazy" decoding="async"
-            onerror="this.closest('picture').remove()"
-          />
-        </picture>
-      </div>
-      <div class="stats-v2-nums">
-        {stats.map((s) => (
-          <div class="rv"><div class="num">{s.num}<em>{s.unit}</em></div><p>{s.label}</p></div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <!-- v2.0.1：Hero 轮播结束后直接进入暖米白内容区（S3 制造），无深色过渡带 -->
 
   <!-- S3 关于半打 v2.0：编辑式 7:5 大图 8 列 + 文字卡 5 列叠压右缘 -->
   <section class="sec sec-tight" aria-label="关于半打" data-v2="mfg">

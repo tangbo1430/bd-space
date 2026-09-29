@@ -14,6 +14,11 @@ try {
 } catch { /* 非 git 环境 */ }
 const builtAt = new Date().toISOString();
 
+// 构建模式（v2.0.1）：preview = 预览/验收构建，默认启用完整动态并显示版本标识；
+// production（默认）= 正式模式，尊重 prefers-reduced-motion 系统偏好。
+// 两种模式由构建配置区分，不靠用户记查询参数；?motion=full 作为显式覆盖入口保留兼容。
+const buildMode = process.env.PUBLIC_BUILD_MODE === 'preview' ? 'preview' : 'production';
+
 /** 构建结束时把版本证据写到产物根 */
 function versionEvidence() {
   return {
@@ -21,7 +26,7 @@ function versionEvidence() {
     hooks: {
       'astro:build:done': (/** @type {{ dir: URL }} */ { dir }) => {
         const out = new URL('version.json', dir);
-        writeFileSync(out, JSON.stringify({ commit, builtAt, site }, null, 2));
+        writeFileSync(out, JSON.stringify({ commit, builtAt, site, buildMode }, null, 2));
       },
     },
   };
@@ -41,6 +46,7 @@ export default defineConfig({
     define: {
       __BUILD_COMMIT__: JSON.stringify(commit),
       __BUILD_TIME__: JSON.stringify(builtAt),
+      __BUILD_MODE__: JSON.stringify(buildMode),
     },
   },
 });

@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "measure:ratio": "node scripts/measure-image-ratio.mjs",
     "preview": "astro preview",
     "lint": "eslint .",
     "type-check": "astro check",

@@ -16,26 +16,29 @@ import {
 } from '../lib/banner';
 
 const motionParam = new URLSearchParams(window.location.search).get('motion');
-const motionFull = motionParam === 'full'; // 验收模式：显式开启全部动效，覆盖系统偏好
+// v2.0.1 双模式由构建配置区分：preview 构建默认完整动态（预览/验收，不等系统偏好、不靠查询参数）；
+// production 构建尊重系统偏好；?motion=full 在两种模式下均为显式覆盖入口（兼容保留）。
+const previewBuild = document.documentElement.dataset.buildMode === 'preview';
+const motionFull = motionParam === 'full' || previewBuild;
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData === true;
 const lowPower = (navigator.hardwareConcurrency ?? 8) <= 4 && window.innerWidth < 1280;
-// motion=full 时不进入任何降级；否则 reduced/saveData/lowPower 触发静态模式
+// motion=full / 预览构建 时不进入任何降级；否则 reduced/saveData/lowPower 触发静态模式
 const sysReduced = reduced || saveData || lowPower;
 if (sysReduced && !motionFull) {
   document.documentElement.dataset.motion = 'off';
 }
 if (motionFull) {
-  document.documentElement.dataset.motion = 'full';
+  document.documentElement.dataset.motion = previewBuild && motionParam !== 'full' ? 'preview' : 'full';
 }
 const motionOff = document.documentElement.dataset.motion === 'off';
-// 轮播 env 用的 reducedMotion：验收模式下视为无偏好
+// 轮播 env 用的 reducedMotion：完整动态模式下视为无偏好
 const reducedForBanner = reduced && !motionFull;
 // 仅系统 reduce 偏好（无 saveData / 低性能）→ 保留手动控件，不判 static-fallback
 const reducedOnly = reduced && !saveData && !lowPower && !motionFull;
 
-/* ---------- 验收标识：仅 motion=full 显示，非干扰式 ---------- */
-if (motionFull) {
+/* ---------- 验收标识：preview 构建 SSR 注入；production + ?motion=full 由 JS 补注，非干扰式 ---------- */
+if (motionFull && !document.querySelector('[data-motion-badge]')) {
   const commit = document.querySelector<HTMLMetaElement>('meta[name="build-commit"]')?.content ?? 'dev';
   const badge = document.createElement('div');
   badge.setAttribute('data-motion-badge', '');

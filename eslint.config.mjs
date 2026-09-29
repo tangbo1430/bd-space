@@ -24,7 +24,7 @@ export default [
   },
   {
     files: ['src/**/*.astro'],
-    languageOptions: { globals: { __BUILD_COMMIT__: 'readonly', __BUILD_TIME__: 'readonly' } },
+    languageOptions: { globals: { __BUILD_COMMIT__: 'readonly', __BUILD_TIME__: 'readonly', __BUILD_MODE__: 'readonly' } },
   },
   {
     rules: {

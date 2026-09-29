@@ -18,9 +18,12 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
     await page.waitForTimeout(700);
     const r = await page.evaluate(() => {
       const g = (sel) => { const el = document.querySelector(sel); if (!el) return null; const b = el.getBoundingClientRect(); return [Math.round(b.width), Math.round(b.height)]; };
+      const hero = document.querySelector('.hero');
+      const mfg = document.querySelector('[data-v2="mfg"]');
       return {
-        stats: g('[data-v2="stats"]'),
-        statsImg: g('.stats-v2-img img'),
+        statsRemoved: !document.querySelector('[data-v2="stats"]') && !document.querySelector('.stats-v2'),
+        heroNextIsMfg: !!(hero && mfg && hero.nextElementSibling && hero.nextElementSibling.contains(mfg) || hero?.nextElementSibling === mfg),
+        heroBottomBg: hero ? getComputedStyle(hero.nextElementSibling ?? hero).backgroundColor : null,
         mfgImg: g('.mfg .figx img'),
         mfgCard: g('.mfg-card'),
         pmBig: document.querySelectorAll('.pm-big > a').length,
@@ -30,8 +33,8 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
         ctaBg: g('.cta-bg img'),
       };
     });
-    ok(r.stats && r.stats[1] >= 260 && r.stats[1] <= 300, 'S2 数据带高 ~280px');
-    ok(r.statsImg && r.statsImg[0] >= 480, 'S2 数据带左 40% 工厂实拍');
+    ok(r.statsRemoved, 'S2 数据带已整块移除（v2.0.1）');
+    ok(r.heroNextIsMfg, 'Hero 之后直接进入 S3 暖米白内容区（无深色过渡带）');
     ok(r.mfgImg && r.mfgImg[1] >= 540, 'S3 制造主图 ≥540px 高（编辑式大图）');
     ok(r.mfgCard && r.mfgCard[0] >= 400, 'S3 文字卡叠压（宽度正常）');
     ok(r.pmBig === 3, 'S4 产品矩阵首行 3 大卡');

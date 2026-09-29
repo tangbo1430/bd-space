@@ -1,6 +1,8 @@
-/* v1.8.2 双模式验收专项（需本机预览 http://localhost:4321 运行最新 dist）：
- * 主管口径——默认尊重系统偏好；reduce 用户保留手动控件不自动播放；
- * ?motion=full 完整动态验收模式（5s 自动轮播+全部控件+动效）+ 验收标识 */
+/* v2.0.1 双模式验收专项（需本机预览 http://localhost:4321 运行最新 dist）：
+ * 主管口径——预览/验收构建（PUBLIC_BUILD_MODE=preview）默认完整动态、自动轮播、显示版本标识；
+ * 生产构建尊重 prefers-reduced-motion（静态首帧+保留手动控件）；
+ * ?motion=full 显式覆盖入口兼容保留。本文件对 preview 构建断言默认行为，
+ * 并通过 build-mode 覆写页模拟生产构建行为。 */
 const { chromium } = require('playwright');
 
 const BASE = 'http://localhost:4321';
@@ -22,19 +24,22 @@ const badge = (page) => page.evaluate(() => document.querySelector('[data-motion
   const browser = await chromium.launch();
   const vp = { width: 1440, height: 900 };
 
-  // ============ 模式1：系统 reduce + 默认入口（不自动播放，但可手动切换） ============
+  // ============ 模式1：preview 构建默认入口 + 系统 reduce（仍自动播放，覆盖系统偏好） ============
   const ctxA = await browser.newContext({ viewport: vp, reducedMotion: 'reduce' });
   const pageA = await ctxA.newPage();
   await pageA.goto(`${BASE}/zh/`, { waitUntil: 'networkidle' });
   const metaCommit = await pageA.getAttribute('meta[name="build-commit"]', 'content');
+  const metaMode = await pageA.getAttribute('meta[name="build-mode"]', 'content');
+  check('A preview默认: meta build-mode=preview', metaMode === 'preview', String(metaMode));
   await pageA.waitForTimeout(6200);
-  check('A reduce默认: 不自动轮播（6s 仍在首帧）', (await activeIdx(pageA)) === 0, `index=${await activeIdx(pageA)}`);
+  check('A preview默认: 5s 自动轮播切帧（reduce 系统也生效）', (await activeIdx(pageA)) === 1, `index=${await activeIdx(pageA)}`);
   const ctrlA = await controlsVisible(pageA);
-  check('A reduce默认: 手动控件保留（prev/next/dots 可见）', ctrlA.prev && ctrlA.next && ctrlA.dots, JSON.stringify(ctrlA));
+  check('A preview默认: 全部控件可用（prev/next/dots 可见）', ctrlA.prev && ctrlA.next && ctrlA.dots, JSON.stringify(ctrlA));
   await pageA.click('[data-next]');
-  check('A reduce默认: 手动点击下一张可切换', (await activeIdx(pageA)) === 1, `index=${await activeIdx(pageA)}`);
-  check('A reduce默认: 无验收标识', (await badge(pageA)) === null);
-  check('A reduce默认: html[data-motion=off]', await pageA.evaluate(() => document.documentElement.dataset.motion === 'off'));
+  check('A preview默认: 手动点击下一张可切换', (await activeIdx(pageA)) === 2, `index=${await activeIdx(pageA)}`);
+  const badgeA = await badge(pageA);
+  check('A preview默认: 显示验收标识含 commit', badgeA !== null && badgeA.includes('完整动态模式') && badgeA.includes(metaCommit), badgeA ?? 'null');
+  check('A preview默认: html[data-motion=preview]', await pageA.evaluate(() => document.documentElement.dataset.motion === 'preview'));
   await ctxA.close();
 
   // ============ 模式2：系统 reduce + motion=full（自动播放 + 全部控件 + 标识） ============
@@ -60,22 +65,62 @@ const badge = (page) => page.evaluate(() => document.querySelector('[data-motion
   check('B motion=full: 键盘 Enter 切换', (await activeIdx(pageB)) === 0, `index=${await activeIdx(pageB)}`);
   await ctxB.close();
 
-  // ============ 模式3：普通系统（无偏好）+ 默认入口（行为不回退，无标识） ============
+  // ============ 模式3：preview 构建默认入口 + 普通系统（自动播放 + 标识） ============
   const ctxC = await browser.newContext({ viewport: vp });
   const pageC = await ctxC.newPage();
   await pageC.goto(`${BASE}/zh/`, { waitUntil: 'networkidle' });
   await pageC.waitForTimeout(5600);
-  check('C 普通系统: 自动轮播切到第 2 帧（不回退）', (await activeIdx(pageC)) === 1, `index=${await activeIdx(pageC)}`);
-  check('C 普通系统: 无验收标识', (await badge(pageC)) === null);
-  check('C 普通系统: 无 data-motion=off', await pageC.evaluate(() => document.documentElement.dataset.motion !== 'off'));
+  check('C 普通系统+preview默认: 自动轮播切到第 2 帧', (await activeIdx(pageC)) === 1, `index=${await activeIdx(pageC)}`);
+  check('C 普通系统+preview默认: 显示验收标识', (await badge(pageC)) !== null);
+  check('C 普通系统+preview默认: 无 data-motion=off', await pageC.evaluate(() => document.documentElement.dataset.motion !== 'off'));
   await ctxC.close();
 
-  // ============ 模式4：普通系统 + motion=full（正常 + 标识） ============
+  // ============ 模式4：普通系统 + motion=full（正常 + 标识，兼容保留） ============
   const ctxD = await browser.newContext({ viewport: vp });
   const pageD = await ctxD.newPage();
   await pageD.goto(`${BASE}/zh/?motion=full`, { waitUntil: 'networkidle' });
   check('D 普通系统+full: 显示验收标识', (await badge(pageD)) !== null);
   await ctxD.close();
+
+  // ============ 模式5：生产构建模拟（覆写 build-mode=production）+ 系统 reduce ============
+  // 预览容器服务的是 preview 构建；此处将 HTML 中构建模式标识改写为 production 并去掉 SSR 标识，
+  // 走与生产构建完全相同的 JS 路径（previewBuild=false），验证生产行为不回退。
+  const ctxE = await browser.newContext({ viewport: vp, reducedMotion: 'reduce' });
+  const pageE = await ctxE.newPage();
+  await pageE.route('**/zh/', async (route) => {
+    const resp = await route.fetch();
+    let body = await resp.text();
+    body = body.replace('data-build-mode="preview"', 'data-build-mode="production"');
+    body = body.replace('name="build-mode" content="preview"', 'name="build-mode" content="production"');
+    body = body.replace(/<div data-motion-badge[^>]*>.*?<\/div>/, '');
+    await route.fulfill({ response: resp, body });
+  });
+  await pageE.goto(`${BASE}/zh/`, { waitUntil: 'networkidle' });
+  await pageE.waitForTimeout(6200);
+  check('E 生产模拟+reduce: 不自动轮播（6s 仍在首帧）', (await activeIdx(pageE)) === 0, `index=${await activeIdx(pageE)}`);
+  const ctrlE = await controlsVisible(pageE);
+  check('E 生产模拟+reduce: 手动控件保留（prev/next/dots 可见）', ctrlE.prev && ctrlE.next && ctrlE.dots, JSON.stringify(ctrlE));
+  await pageE.click('[data-next]');
+  check('E 生产模拟+reduce: 手动点击下一张可切换', (await activeIdx(pageE)) === 1, `index=${await activeIdx(pageE)}`);
+  check('E 生产模拟+reduce: 无验收标识', (await badge(pageE)) === null);
+  check('E 生产模拟+reduce: html[data-motion=off]', await pageE.evaluate(() => document.documentElement.dataset.motion === 'off'));
+  await ctxE.close();
+
+  // ============ 模式6：生产构建模拟 + 普通系统（自动播放不回退，无标识） ============
+  const ctxF = await browser.newContext({ viewport: vp });
+  const pageF = await ctxF.newPage();
+  await pageF.route('**/zh/', async (route) => {
+    const resp = await route.fetch();
+    let body = await resp.text();
+    body = body.replace('data-build-mode="preview"', 'data-build-mode="production"');
+    body = body.replace(/<div data-motion-badge[^>]*>.*?<\/div>/, '');
+    await route.fulfill({ response: resp, body });
+  });
+  await pageF.goto(`${BASE}/zh/`, { waitUntil: 'networkidle' });
+  await pageF.waitForTimeout(5600);
+  check('F 生产模拟+普通系统: 自动轮播切到第 2 帧（不回退）', (await activeIdx(pageF)) === 1, `index=${await activeIdx(pageF)}`);
+  check('F 生产模拟+普通系统: 无验收标识', (await badge(pageF)) === null);
+  await ctxF.close();
 
   await browser.close();
   const pass = results.filter((r) => r[1]).length;
