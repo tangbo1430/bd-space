@@ -67,12 +67,17 @@ export const HOME_HERO_ASSETS = {
 /** 关于我们首图（21:9；右栏含愿景文案，移动裁左半建筑） */
 export const ABOUT_HERO_ASSET: Img16 = { base: 'about-hero', w: 1920, h: 823, mw: 960, mh: 412, msuf: '-m', alt: '半打空间白盒装配式建筑与愿景标语' };
 
-/** M4 案例墙（v1.7 RAR 封面替换 v1.6 低清/旧图；仅地点+类型，无客户名） */
-export const CASE_COVER_ASSETS: Record<'cayman' | 'brisbane' | 'zhongshan' | 'fiji', Img16> = {
+/** M4 案例墙（v1.7 RAR 封面替换 v1.6 低清/旧图；仅地点+类型，无客户名）；v1.9 新增常州/成都/江门/中山方舱/米阁封面（营房封面客户名待确认暂不列入） */
+export const CASE_COVER_ASSETS: Record<string, Img16> = {
   cayman: { base: 'case-cover-cayman', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目外观实景' },
   brisbane: { base: 'case-cover-brisbane', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '澳大利亚布里斯班住宅项目外观实景' },
   zhongshan: { base: 'case-cover-zhongshan-fd', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国中山低层住宅项目外观实景' },
   fiji: { base: 'case-cover-fiji', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '斐济模块化建筑样箱外观实景' },
+  changzhou: { base: 'case-cover-changzhou', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国常州4S住宅项目外观实景' },
+  chengdu: { base: 'case-cover-chengdu-dorm', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国成都宿舍建筑项目外观实景' },
+  jiangmen: { base: 'case-cover-jiangmen', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国江门装配式建筑项目外观实景' },
+  zhongshanCabin: { base: 'case-cover-zhongshan-cabin', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国中山方舱建筑项目外观实景' },
+  mige: { base: 'case-cover-zhongshan-mg', w: 1667, h: 1250, mw: 960, mh: 720, msuf: '-m', alt: '中国中山独栋民宅项目外观实景' },
 };
 
 /** 产品详情主图（16:9 桌面 1920×1080 + 移动 960×540；按产品系列名映射） */
@@ -108,9 +113,10 @@ export interface Img16 {
 
 /* M4 案例墙素材由 v1.7 CASE_COVER_ASSETS 取代（RAR 全尺寸封面；原 v1.6 低清/裁剪图已删除） */
 
-/** M3 交付流程实拍步骤（v1.6 批次；step05 运输图已被 v1.8 frames-load 替换并删除原图） */
+/** M3 交付流程实拍步骤（v1.6 批次；step05 运输图已被 v1.8 frames-load 替换并删除原图）；mechPipingAlt 为 step04 机电备用实拍 */
 export const FLOW_ASSETS = {
   mechPiping: { base: 'flow-mech-piping', w: 1379, h: 1034, alt: '工厂内机电管线预制特写' },
+  mechPipingAlt: { base: 'flow-mech-piping-alt', w: 1376, h: 1032, alt: '工厂内机电管线与内装同步预制实拍' },
   transportFrames: { base: 'flow-transport-frames', w: 510, h: 205, alt: '厂区运输框架', maxW: 510 },
 } satisfies Record<string, Img16>;
 
@@ -127,15 +133,17 @@ export const LINEART_SVGS = {
 
 /* ==================== v1.8 素材增强批次（asset-manifest-v18.csv，G1 三轮 PASS；人物/品牌/时间戳均已脱敏） ==================== */
 
-/** M3 交付流程 v1.8 实拍替换（step01 制模 / step03 出厂检验 / step05 框架装载 / step06 吊装特写横幅） */
+/** M3 交付流程 v1.8 实拍替换（step01 制模 / step03 出厂检验 / step05 框架装载 / step06 吊装特写横幅）；v1.9 step06 恢复全幅 16:9 含人物 */
 export const FLOW_V18_ASSETS = {
   step01Mold: { base: 'flow-step01-mold', w: 1504, h: 1128, alt: '工厂内构件生产模具制备实拍' },
   step03PanelLift: { base: 'flow-step03-panel-lift', w: 1080, h: 810, alt: '墙板出厂前吊装检验实拍' },
   step05FramesLoad: { base: 'flow-step05-frames-load', w: 1656, h: 932, mw: 960, mh: 540, msuf: '-m', alt: '构件框架装车运输组织实拍' },
-  step06CranePanel: { base: 'flow-step06-crane-panel', w: 1920, h: 320, mw: 960, mh: 160, msuf: '-m', alt: '现场吊装机具与墙板上缘特写' },
+  step06CranePanel: { base: 'flow-step06-crane-panel', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '现场吊装作业，工人协同吊装墙板' },
 } satisfies Record<string, Img16>;
 
-/** 案例施工实景图组（案例页新增模块；仅地点+项目类型，无客户名；深圳营房客户名待确认、暂缓上页不列入） */
+/** 案例施工实景图组（案例页新增模块；仅地点+项目类型，无客户名；深圳营房客户名待确认、暂缓上页不列入）
+ *  v1.9：按人物允许出镜新口径补强，恢复清晰人物版并接入新增源素材，同案例择优不堆叠。
+ *  江门不写合作方、深圳营房仅中性命名。 */
 export interface CaseDetailGroup {
   loc: string;
   type: string;
@@ -146,17 +154,18 @@ export const CASE_DETAIL_GROUPS: CaseDetailGroup[] = [
     loc: '开曼群岛',
     type: '海外住宅',
     imgs: [
-      { base: 'case-cayman-install-wall', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目墙板安装实景' },
-      { base: 'case-cayman-install-crane', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '开曼群岛海外住宅项目吊装现场实景' },
-      { base: 'case-cayman-install-roof', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目二层吊装实景' },
+      { base: 'case-cayman-install-crane', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '开曼群岛海外住宅项目吊装现场，地面工人协同' },
+      { base: 'case-cayman-install-roof', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目二层吊装，屋顶工人作业' },
+      { base: 'case-cayman-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '开曼群岛海外住宅项目墙板安装，现场工人协同' },
     ],
   },
   {
     loc: '澳大利亚 · 布里斯班',
     type: '住宅',
     imgs: [
+      { base: 'case-brisbane-lift-01', w: 1080, h: 1440, mw: 960, mh: 1280, msuf: '-m', alt: '布里斯班住宅项目带窗墙板吊装，工人牵引就位' },
       { base: 'case-brisbane-install-frame', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '布里斯班住宅项目结构框架实景' },
-      { base: 'case-brisbane-install-lift', w: 1080, h: 810, alt: '布里斯班住宅项目墙板吊装上架实景' },
+      { base: 'case-brisbane-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '布里斯班住宅项目墙板就位，多人协同' },
     ],
   },
   {
@@ -165,6 +174,23 @@ export const CASE_DETAIL_GROUPS: CaseDetailGroup[] = [
     imgs: [
       { base: 'case-cabin-site-aerial', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '中山方舱建筑项目场地航拍实景' },
       { base: 'case-cabin-rows', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '中山方舱建筑项目成排箱体实景' },
+      { base: 'case-fangcang-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '中山方舱建筑项目箱体就位现场' },
+    ],
+  },
+  {
+    loc: '中国 · 中山',
+    type: '独栋民宅',
+    imgs: [
+      { base: 'case-mige-install-01', w: 1705, h: 1279, mw: 960, mh: 720, msuf: '-m', alt: '中山独栋民宅项目现场安装实景' },
+      { base: 'case-mige-install-03', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '中山独栋民宅项目现场安装，工人作业' },
+      { base: 'case-mige-install-05', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '中山独栋民宅项目现场安装实景' },
+    ],
+  },
+  {
+    loc: '中国 · 中山',
+    type: '低层住宅',
+    imgs: [
+      { base: 'case-zhongshan-install-03', w: 1899, h: 1424, mw: 960, mh: 720, msuf: '-m', alt: '中山低层住宅项目吊装就位，现场指挥' },
     ],
   },
   {
@@ -172,6 +198,27 @@ export const CASE_DETAIL_GROUPS: CaseDetailGroup[] = [
     type: '宿舍建筑',
     imgs: [
       { base: 'case-chengdu-site-wide', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '成都宿舍建筑项目多栋工地全景' },
+      { base: 'case-chengdu-assembly-01', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '成都宿舍建筑项目墙板吊装组对，登高作业' },
+      { base: 'case-chengdu-install-03', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '成都宿舍建筑项目模块就位，雨中作业' },
+      { base: 'case-chengdu-site-04', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '成都宿舍建筑项目营地全景，基础与吊装' },
+    ],
+  },
+  {
+    loc: '中国 · 常州',
+    type: '4S 住宅',
+    imgs: [
+      { base: 'case-changzhou-install-02', w: 1728, h: 2304, mw: 960, mh: 1280, msuf: '-m', alt: '常州4S住宅项目现场安装，工人作业' },
+      { base: 'case-changzhou-install-03', w: 1728, h: 2304, mw: 960, mh: 1280, msuf: '-m', alt: '常州4S住宅项目现场安装，吊装就位' },
+    ],
+  },
+  {
+    loc: '中国 · 深圳',
+    type: '营房建筑',
+    imgs: [
+      { base: 'case-shenzhen-stack-03', w: 1584, h: 1188, mw: 960, mh: 720, msuf: '-m', alt: '深圳营房项目双层箱体堆叠吊装' },
+      { base: 'case-shenzhen-glass-corner-04', w: 1152, h: 1536, mw: 960, mh: 1280, msuf: '-m', alt: '深圳营房项目玻璃幕墙转角仰拍' },
+      { base: 'flow-transport-spreader-lift', w: 1044, h: 1392, mw: 960, mh: 1280, msuf: '-m', alt: '深圳营房项目平衡梁吊装箱体作业' },
+      { base: 'flow-transport-lift-cabin', w: 1122, h: 1496, mw: 960, mh: 1280, msuf: '-m', alt: '深圳营房项目箱体吊装上平板车，安全帽工人背影' },
     ],
   },
   {
@@ -180,6 +227,35 @@ export const CASE_DETAIL_GROUPS: CaseDetailGroup[] = [
     imgs: [
       { base: 'case-fiji-box-ext', w: 1705, h: 1279, alt: '斐济模块化建筑样箱外观实景' },
       { base: 'case-fiji-box-door', w: 1705, h: 1279, alt: '斐济模块化建筑样箱入户门实景' },
+      { base: 'case-fiji-interior-06', w: 1631, h: 917, mw: 960, mh: 540, msuf: '-m', alt: '斐济模块化建筑样箱室内实景' },
+    ],
+  },
+  {
+    loc: '中国 · 江门',
+    type: '装配式建筑',
+    imgs: [
+      { base: 'case-jiangmen-install-02', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '江门装配式建筑项目基础就位俯瞰' },
+      { base: 'case-jiangmen-install-03', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '江门装配式建筑项目吊车箱体就位全景' },
     ],
   },
 ];
+
+/* ==================== v1.9 人物口径批次（asset-manifest-v19.csv，人物允许出镜；G1 两轮 PASS） ==================== */
+
+/** 施工流程 v1.9 运输吊装载入（运输组织/现场交付环节补充实拍） */
+export const FLOW_V19_ASSETS = {
+  liftCabin: { base: 'flow-transport-lift-cabin', w: 1122, h: 1496, mw: 960, mh: 1280, msuf: '-m', alt: '箱体吊装上平板车，安全帽工人背影' },
+  spreaderLift: { base: 'flow-transport-spreader-lift', w: 1044, h: 1392, mw: 960, mh: 1280, msuf: '-m', alt: '平衡梁吊装箱体作业' },
+  stacker01: { base: 'flow-transport-stacker-01', w: 1164, h: 1552, mw: 960, mh: 1280, msuf: '-m', alt: '正面吊装箱装车作业' },
+  panel03: { base: 'flow-transport-panel-03', w: 543, h: 724, alt: '港区墙板吊卸，工人作业', maxW: 543 },
+} satisfies Record<string, Img16>;
+
+/** 工厂生产补充（关于/工厂能力区） */
+export const FACTORY_V19_ASSETS = {
+  precastUnits: { base: 'factory-precast-units', w: 1920, h: 1440, mw: 960, mh: 720, msuf: '-m', alt: '工厂预制混凝土单元构件养护现场' },
+} satisfies Record<string, Img16>;
+
+/** 现场安装细节 */
+export const INSTALL_V19_ASSETS = {
+  roofTrim: { base: 'install-detail-roof-trim', w: 1279, h: 1705, mw: 960, mh: 1280, msuf: '-m', alt: '现场安装屋面收边细节，登高作业' },
+} satisfies Record<string, Img16>;

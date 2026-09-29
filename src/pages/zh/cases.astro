@@ -2,12 +2,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { CASE_COVER_ASSETS, CASE_DETAIL_GROUPS } from '../../lib/assets';
 
-/* M4 项目实践视觉案例墙（v1.7 RAR 封面；仅地点+类型，无客户名/数量/金额/周期/抗震/收益） */
+/* M4 项目实践视觉案例墙（v1.7 RAR 封面 + v1.9 新增封面；仅地点+类型，无客户名/数量/金额/周期/抗震/收益；江门不写合作方，营房客户名待确认不上墙） */
 const cases = [
   { loc: '开曼群岛', type: '海外住宅', img: CASE_COVER_ASSETS.cayman },
   { loc: '澳大利亚', type: '布里斯班住宅', img: CASE_COVER_ASSETS.brisbane },
   { loc: '中国 · 中山', type: '低层住宅', img: CASE_COVER_ASSETS.zhongshan },
   { loc: '斐济', type: '模块化建筑', img: CASE_COVER_ASSETS.fiji },
+  { loc: '中国 · 常州', type: '4S 住宅', img: CASE_COVER_ASSETS.changzhou },
+  { loc: '中国 · 成都', type: '宿舍建筑', img: CASE_COVER_ASSETS.chengdu },
+  { loc: '中国 · 江门', type: '装配式建筑', img: CASE_COVER_ASSETS.jiangmen },
+  { loc: '中国 · 中山', type: '方舱建筑', img: CASE_COVER_ASSETS.zhongshanCabin },
+  { loc: '中国 · 中山', type: '独栋民宅', img: CASE_COVER_ASSETS.mige },
 ];
 ---
 

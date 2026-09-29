@@ -1,0 +1,116 @@
+﻿source_file,type,class,processing,page_position,export_files,copyright,note
+2\待提交素材清单.docx,doc,internal,,不上站,,用户提供的官网素材包(自有),"素材收集模板,内部工作文件,不上站"
+2\产品\产品-{半打4S}-结构图-01.png,image,direct,none,施工流程 step02 工厂生产 实拍替换候选,flow-factory-module.webp 1080x810; flow-factory-module.jpg 1080x810; flow-factory-module-m.webp 960x720,用户提供的官网素材包(自有),
+2\产品\产品-{半打4S}-结构图-02.jpg,image,salvaged,pixelate SANY logo (v1.8.1) + center-crop 4:3,施工流程 step01 设计与制模 实拍(顶部远景工人不可辨识; SANY标识已遮蔽),flow-step01-mold.webp 1504x1128; flow-step01-mold.jpg 1504x1128,用户提供的官网素材包(自有),
+2\产品\产品-{半打4S}-结构图-03.jpg,image,direct,none,施工流程 step02 备用 (墙板存放),flow-factory-panels.webp 1280x960; flow-factory-panels.jpg 1280x960,用户提供的官网素材包(自有),
+2\产品\产品-{半打4S}-结构图-04.png,image,excluded,,,,,"与案例-9安装-04哈希重复,去重排除"
+2\产品\产品-{半打4S}-详情-01.png,image,salvaged,16:9 crop; v1.9 移除人物像素化,"产品 4S 黄昏正立面(人物自然入镜,已获批准)",product-4s-dusk.webp 1920x1080; product-4s-dusk.jpg 1920x1080; product-4s-dusk-m.webp 960x540,用户提供的官网素材包(自有),
+2\产品\产品-{半打4S}-详情-02.png,image,salvaged,16:9 crop; v1.9 移除人物模糊/像素化,产品 4S 外墙细节 人物拍摄场景(已获批准出镜),product-4s-detail-wall.webp 1920x1080; product-4s-detail-wall.jpg 1920x1080; product-4s-detail-wall-m.webp 960x540,用户提供的官网素材包(自有),
+2\产品\产品-{半打4S}-详情-03.png,image,excluded,,,,,"与详情首图场景重复,增量信息低"
+2\产品\产品-{半打4S}-详情-04.png,image,salvaged,3:4 crop; v1.9 移除人物像素化,产品 4S 黄昏入户门 人物开门场景(已获批准出镜),product-4s-dusk-door.webp 608x810; product-4s-dusk-door.jpg 608x810,用户提供的官网素材包(自有),
+2\产品\产品-{半打4S}-详情首图.png,image,direct,none,产品 半打4S 详情主图,product-4s-hero.webp 1920x1080; product-4s-hero.jpg 1920x1080; product-4s-hero-m.webp 960x540,用户提供的官网素材包(自有),
+2\产品\产品-{半打4S}-资料.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),4S 参数表; 不发布内部审核列
+2\产品\产品-{半打5S}-详情首图.png,image,direct,none,产品 半打5S 详情主图,product-5s-hero.webp 1920x1080; product-5s-hero.jpg 1920x1080; product-5s-hero-m.webp 960x540,用户提供的官网素材包(自有),
+2\产品\产品-{半打5S}-资料.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),"5S 参数表,同上"
+2\产品\产品-{半打6S}-详情首图.png,image,direct,none,产品 半打6S 详情主图,product-6s-hero.webp 1920x1080; product-6s-hero.jpg 1920x1080; product-6s-hero-m.webp 960x540,用户提供的官网素材包(自有),
+2\产品\产品-{半打6S}-资料.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),"6S 参数表,同上"
+2\产品\产品-{灰度空间}-详情首图.png,image,direct,none,产品 灰度空间 详情主图,product-grayscale-hero.webp 1920x1080; product-grayscale-hero.jpg 1920x1080; product-grayscale-hero-m.webp 960x540,用户提供的官网素材包(自有),
+2\产品\产品-{灰度空间}-资料.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),"灰度空间参数表,同上"
+2\产品\产品-总清单.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),产品列表数据源(4S/5S/6S/灰度空间)
+2\产品\清晰实拍图；每张附30字内说明.docx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),产品实拍图 30 字内图注
+2\全站公共素材\公共-SEO文案.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),全站 SEO 标题/简介/关键词
+2\全站公共素材\公共-主体备案信息.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),页脚备案信息源: 工商公开字段
+2\全站公共素材\公共-分享图.png,image,excluded,,,,,"含二维码及引导信息,不适用官网"
+2\全站公共素材\公共-隐私政策.docx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),"隐私政策页正文; 含残留乱码,须清理后启用"
+2\全站公共素材\海报1.png,image,excluded,,,,,大字报风格与视觉体系冲突
+2\全站公共素材\海报2.png,image,excluded,,,,,大字报风格与视觉体系冲突
+2\全站公共素材\logo\半打空间logo.ai,doc,internal,,不上站,,用户提供的官网素材包(自有),"Logo 源文件,不上站"
+2\全站公共素材\logo\半打空间logo.dwg,doc,internal,,不上站,,用户提供的官网素材包(自有),"Logo CAD 源文件,不上站"
+2\全站公共素材\logo\半打空间logo.png,image,direct,none,全站 Logo (深色版),brand-logo.webp 1920x542; brand-logo.jpg 1920x542,用户提供的官网素材包(自有),
+2\关于我们\关于我们-公司简介.docx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),关于我们页公司介绍正文
+2\关于我们\关于我们-创始人介绍.docx,doc,pending-confirm,,待确认后启用,,用户提供的官网素材包(自有),"创始人介绍长文; 待业务确认后启用,配图肖像同期待确认"
+2\关于我们\关于我们-创始人介绍.jpg,image,pending-confirm,3:2 crop; v1.9 新增,关于我们 创始人介绍配图(待甲方书面授权确认后上线),,"用户提供素材包内文件,肖像/摄影授权待甲方书面确认",授权确认前不上线
+2\关于我们\关于我们-核心优势.docx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),核心优势文案; 须删除/改写绝对化用语后使用
+2\关于我们\关于我们-首图.png,image,direct,none,关于我们页 首图 (白盒建筑+愿景文案),about-hero.webp 1920x823; about-hero.jpg 1920x823; about-hero-m.webp 960x412,用户提供的官网素材包(自有),
+2\关于我们\生产线照片20字内说明.docx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),工厂/生产线图片 20 字内图注
+2\投资者关系\投资者关系-股权结构.xlsx,doc,sensitive-excluded,,不上站,,用户提供的官网素材包(自有),"持股比例数据,永久红线,不设字段不留占位"
+2\投资者关系\投资者关系-首图.png,image,excluded,,,,,投资者关系模块不上站(股权/财务红线)
+2\案例\案例-10{半打4S-江苏省常州}-安装-01.jpg,image,excluded,,,,,横幅含可读文字+清晰度不足
+2\案例\案例-10{半打4S-江苏省常州}-安装-02.JPG,image,direct,3:4 crop; v1.9 新增,案例详情 常州4S 现场安装(工人自然入镜),case-changzhou-install-02.webp 1728x2304; case-changzhou-install-02.jpg 1728x2304; case-changzhou-install-02-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-10{半打4S-江苏省常州}-安装-03.JPG,image,direct,3:4 crop; v1.9 新增,案例详情 常州4S 现场安装 吊装就位,case-changzhou-install-03.webp 1728x2304; case-changzhou-install-03.jpg 1728x2304; case-changzhou-install-03-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-10{半打4S-江苏省常州}-封面.png,image,direct,none,案例 常州 4S 封面,case-cover-changzhou.webp 1667x1250; case-cover-changzhou.jpg 1667x1250; case-cover-changzhou-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-1{开曼群岛独栋民宅“乡愁”}-安装-01.png,image,salvaged,"mask P&H/OMEGA brand plates (blur+pixelate, strengthened) ; v1.9 移除底部人物模糊 + 16:9 crop","案例详情 开曼 吊装场景(地面工人自然入镜,已获批准;设备品牌标识已遮蔽)",case-cayman-install-crane.webp 1920x1080; case-cayman-install-crane.jpg 1920x1080; case-cayman-install-crane-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-1{开曼群岛独栋民宅“乡愁”}-安装-02.png,image,direct,4:3 crop; v1.9 新增,案例详情 开曼 墙板安装 现场工人协同(已获批准出镜),case-cayman-install-02.webp 1920x1440; case-cayman-install-02.jpg 1920x1440; case-cayman-install-02-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-1{开曼群岛独栋民宅“乡愁”}-安装-03.png,image,salvaged,center-crop 4:3,"案例详情 开曼 墙板安装(右缘工人入镜,不可辨识)",case-cayman-install-wall.webp 1920x1440; case-cayman-install-wall.jpg 1920x1440; case-cayman-install-wall-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-1{开曼群岛独栋民宅“乡愁”}-安装-04.png,image,salvaged,4:3 crop; v1.9 移除屋顶人物像素化,"案例详情 开曼 二层吊装(屋顶工人自然入镜,已获批准)",case-cayman-install-roof.webp 1920x1440; case-cayman-install-roof.jpg 1920x1440; case-cayman-install-roof-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-1{开曼群岛独栋民宅“乡愁”}-封面.png,image,direct,none,案例 开曼“乡愁” 封面,case-cover-cayman.webp 1667x1250; case-cover-cayman.jpg 1667x1250; case-cover-cayman-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-01.jpg,image,direct,3:4 crop; v1.9 新增; v1.9.1 遮蔽拖车侧面 GAOGEN 品牌,案例详情 布里斯班 带窗墙板吊装(工人牵引入镜),case-brisbane-lift-01.webp 1080x1440; case-brisbane-lift-01.jpg 1080x1440; case-brisbane-lift-01-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-02.png,image,direct,4:3 crop; v1.9 新增,案例详情 布里斯班 墙板就位 多人协同,case-brisbane-install-02.webp 1920x1440; case-brisbane-install-02.jpg 1920x1440; case-brisbane-install-02-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-03.png,image,salvaged,center-crop 4:3,案例详情 布里斯班 结构框架(无人物),case-brisbane-install-frame.webp 1920x1440; case-brisbane-install-frame.jpg 1920x1440; case-brisbane-install-frame-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-04.jpg,image,salvaged,center-crop 4:3,案例详情 布里斯班 墙板吊装上架(无人物),case-brisbane-install-lift.webp 1080x810; case-brisbane-install-lift.jpg 1080x810,用户提供的官网素材包(自有),
+2\案例\案例-2{澳洲布里斯班独栋民宅“本真”}-封面.png,image,direct,none,案例 布里斯班“本真” 封面,case-cover-brisbane.webp 1667x1250; case-cover-brisbane.jpg 1667x1250; case-cover-brisbane-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-3{广东中山独栋民宅“风度”}-安装-01.png,image,salvaged,16:9 full-frame crop; v1.9 恢复全幅含人物; v1.9.1 柔化工服背部印字,"施工流程 step06 现场吊装(吊装工人自然入镜,已获批准)",flow-step06-crane-panel.webp 1920x1080; flow-step06-crane-panel.jpg 1920x1080; flow-step06-crane-panel-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-3{广东中山独栋民宅“风度”}-安装-02.jpg,image,salvaged,mask timestamp + 4:3 crop,施工流程 step03 出厂检验/吊装 实拍(时间戳已遮蔽),flow-step03-panel-lift.webp 1080x810; flow-step03-panel-lift.jpg 1080x810,用户提供的官网素材包(自有),
+2\案例\案例-3{广东中山独栋民宅“风度”}-安装-03.png,image,direct,4:3 crop; v1.9 新增,案例详情 中山风度 吊装就位 现场指挥,case-zhongshan-install-03.webp 1899x1424; case-zhongshan-install-03.jpg 1899x1424; case-zhongshan-install-03-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-3{广东中山独栋民宅“风度”}-安装-04.png,image,salvaged,16:9 crop,施工流程 step05 运输组织 框架装载(左下安全帽工人不可辨识),flow-step05-frames-load.webp 1656x932; flow-step05-frames-load.jpg 1656x932; flow-step05-frames-load-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-3{广东中山独栋民宅“风度”}-封面.png,image,direct,none,案例 中山“风度” 封面,case-cover-zhongshan-fd.webp 1667x1250; case-cover-zhongshan-fd.jpg 1667x1250; case-cover-zhongshan-fd-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-4{广东中山独栋民宅“米阁”}-安装-01.jpg,image,direct,4:3 crop; v1.9 新增,案例详情 米阁 现场安装(工人自然入镜),case-mige-install-01.webp 1705x1279; case-mige-install-01.jpg 1705x1279; case-mige-install-01-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-4{广东中山独栋民宅“米阁”}-安装-02.png,image,excluded,,,,,"与米阁 01/03/05 场景重复,避免堆叠"
+2\案例\案例-4{广东中山独栋民宅“米阁”}-安装-03.png,image,direct,4:3 crop; v1.9 新增; v1.9.1 移除右下角日期时间戳+柔化工人背心标识,案例详情 米阁 现场安装(工人自然入镜),case-mige-install-03.webp 1920x1440; case-mige-install-03.jpg 1920x1440; case-mige-install-03-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-4{广东中山独栋民宅“米阁”}-安装-04.png,image,excluded,,,,,"与米阁 01/03/05 场景重复,避免堆叠"
+2\案例\案例-4{广东中山独栋民宅“米阁”}-安装-05.png,image,direct,4:3 crop; v1.9 新增; v1.9.1 移除右下角日期时间戳+柔化板材印字,案例详情 米阁 现场安装(工人自然入镜),case-mige-install-05.webp 1920x1440; case-mige-install-05.jpg 1920x1440; case-mige-install-05-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-4{广东中山独栋民宅“米阁”}-封面.png,image,direct,none,案例 中山“米阁” 封面,case-cover-zhongshan-mg.webp 1667x1250; case-cover-zhongshan-mg.jpg 1667x1250; case-cover-zhongshan-mg-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-5{中山隔离方舱}-安装-01.png,image,salvaged,16:9 crop,案例详情 中山方舱 场地航拍(无人物),case-cabin-site-aerial.webp 1920x1080; case-cabin-site-aerial.jpg 1920x1080; case-cabin-site-aerial-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-5{中山隔离方舱}-安装-02.png,image,direct,4:3 crop; v1.9 新增; v1.9.1 遮蔽吊臂可读电话(400号码),案例详情 中山方舱 箱体就位,case-fangcang-install-02.webp 1920x1440; case-fangcang-install-02.jpg 1920x1440; case-fangcang-install-02-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-5{中山隔离方舱}-安装-03.png,image,direct,3:4 crop; v1.9 新增,施工流程 运输吊装 箱体吊装上平板车(安全帽工人背影入镜),flow-transport-lift-cabin.webp 1122x1496; flow-transport-lift-cabin.jpg 1122x1496; flow-transport-lift-cabin-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-5{中山隔离方舱}-安装-04.png,image,salvaged,16:9 crop,案例详情 中山方舱 成排箱体(箱体间远景人影不可辨识),case-cabin-rows.webp 1920x1080; case-cabin-rows.jpg 1920x1080; case-cabin-rows-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-5{中山隔离方舱}-封面.png,image,direct,none,案例 中山隔离方舱 封面,case-cover-zhongshan-cabin.webp 1667x1250; case-cover-zhongshan-cabin.jpg 1667x1250; case-cover-zhongshan-cabin-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-6{成都航空学院宿舍}-安装-01.png,image,direct,4:3 crop; v1.9 新增,案例详情 成都航空学院宿舍 墙板吊装组对(登高作业入镜),case-chengdu-assembly-01.webp 1920x1440; case-chengdu-assembly-01.jpg 1920x1440; case-chengdu-assembly-01-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-6{成都航空学院宿舍}-安装-02.png,image,salvaged,16:9 crop,案例详情 成都宿舍 多栋工地全景(人物极小不可辨),case-chengdu-site-wide.webp 1920x1080; case-chengdu-site-wide.jpg 1920x1080; case-chengdu-site-wide-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-6{成都航空学院宿舍}-安装-03.png,image,direct,4:3 crop; v1.9 新增,案例详情 成都航空学院宿舍 模块就位 雨中作业,case-chengdu-install-03.webp 1920x1440; case-chengdu-install-03.jpg 1920x1440; case-chengdu-install-03-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-6{成都航空学院宿舍}-安装-04.png,image,direct,16:9 crop; v1.9 新增,案例详情 成都航空学院宿舍 营地全景 基础与吊装,case-chengdu-site-04.webp 1920x1080; case-chengdu-site-04.jpg 1920x1080; case-chengdu-site-04-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-6{成都航空学院宿舍}-封面.png,image,direct,none,案例 成都航空学院宿舍 封面,case-cover-chengdu-dorm.webp 1667x1250; case-cover-chengdu-dorm.jpg 1667x1250; case-cover-chengdu-dorm-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-7{中建三局深圳营房}-安装-01.png,image,salvaged,16:9 crop,案例详情 深圳营房 钢构框架(屋顶2名工人远景不可辨识; 客户名待确认不上页),case-shenzhen-steel-frame.webp 1920x1080; case-shenzhen-steel-frame.jpg 1920x1080; case-shenzhen-steel-frame-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-7{中建三局深圳营房}-安装-02.png,image,direct,3:4 crop; v1.9 新增; 不标注客户名,施工流程 运输吊装 平衡梁吊装箱体(深圳城区背景),flow-transport-spreader-lift.webp 1044x1392; flow-transport-spreader-lift.jpg 1044x1392; flow-transport-spreader-lift-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-7{中建三局深圳营房}-安装-03.png,image,direct,pixelate vest logo + 4:3 crop; v1.9 新增,案例详情 深圳营房 双层箱体堆叠吊装(背心标识已遮蔽;客户名待确认不上页),case-shenzhen-stack-03.webp 1584x1188; case-shenzhen-stack-03.jpg 1584x1188; case-shenzhen-stack-03-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-7{中建三局深圳营房}-安装-04.png,image,direct,blur+pixelate background sign (widened) + 3:4 crop; v1.9 新增,案例详情 深圳营房 玻璃幕墙转角 仰拍(背景楼宇广告牌文字已遮蔽),case-shenzhen-glass-corner-04.webp 1152x1536; case-shenzhen-glass-corner-04.jpg 1152x1536; case-shenzhen-glass-corner-04-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-7{中建三局深圳营房}-安装-05.png,image,excluded,,,,,"墙面含客户项目名称与口号标语(客户名待确认),整幅文字不可局部遮蔽"
+2\案例\案例-7{中建三局深圳营房}-封面.png,image,direct,none,案例 深圳营房 封面(玻璃走廊; 客户名发布待业务确认),case-cover-shenzhen-camp.webp 1667x1250; case-cover-shenzhen-camp.jpg 1667x1250; case-cover-shenzhen-camp-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-8{斐济样箱}-安装-01.png,image,direct,pixelate Kalmar/CIMC/pole-sign marks + 3:4 crop; v1.9 新增,施工流程 运输吊装 正面吊装箱装车(设备与包装第三方品牌已遮蔽),flow-transport-stacker-01.webp 1164x1552; flow-transport-stacker-01.jpg 1164x1552; flow-transport-stacker-01-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-8{斐济样箱}-安装-02.jpg,image,salvaged,center-crop 4:3,案例详情 斐济 白色箱体外观(无人物),case-fiji-box-ext.webp 1705x1279; case-fiji-box-ext.jpg 1705x1279,用户提供的官网素材包(自有),
+2\案例\案例-8{斐济样箱}-安装-03.png,image,direct,3:4 crop; v1.9 新增,施工流程 运输吊装 港区墙板吊卸(工人入镜),flow-transport-panel-03.webp 543x724; flow-transport-panel-03.jpg 543x724,用户提供的官网素材包(自有),
+2\案例\案例-8{斐济样箱}-安装-04.png,image,excluded,,,,,未通过二次筛选
+2\案例\案例-8{斐济样箱}-安装-05.jpg,image,salvaged,center-crop 4:3,案例详情 斐济 箱体入户门(无人物),case-fiji-box-door.webp 1705x1279; case-fiji-box-door.jpg 1705x1279,用户提供的官网素材包(自有),
+2\案例\案例-8{斐济样箱}-安装-06.png,image,direct,16:9 crop; v1.9 新增,案例详情 斐济样箱 室内实景拼图(卧室/卫浴/起居),case-fiji-interior-06.webp 1631x917; case-fiji-interior-06.jpg 1631x917; case-fiji-interior-06-m.webp 960x540,用户提供的官网素材包(自有),
+2\案例\案例-8{斐济样箱}-封面.png,image,direct,none,案例 斐济样箱 封面(绿门箱体),case-cover-fiji.webp 1920x1440; case-cover-fiji.jpg 1920x1440; case-cover-fiji-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-9{半打4S-广东江门志特}-安装-01.JPG,image,direct,4:3 crop; v1.9 新增,工厂生产 预制混凝土单元 构件养护(工人入镜;页面不标注客户名),factory-precast-units.webp 1920x1440; factory-precast-units.jpg 1920x1440; factory-precast-units-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-9{半打4S-广东江门志特}-安装-02.JPG,image,direct,pixelate crane model marks + 4:3 crop; v1.9 新增,现场安装 基础就位 俯瞰(吊车型号标识已遮蔽;页面不标注客户名),case-jiangmen-install-02.webp 1920x1440; case-jiangmen-install-02.jpg 1920x1440; case-jiangmen-install-02-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-9{半打4S-广东江门志特}-安装-03.JPG,image,direct,4:3 crop; v1.9 新增,现场安装 吊车箱体就位 全景(页面不标注客户名),case-jiangmen-install-03.webp 1920x1440; case-jiangmen-install-03.jpg 1920x1440; case-jiangmen-install-03-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-9{半打4S-广东江门志特}-安装-04.png,image,excluded,,,,,"与产品-结构图-04哈希重复,去重排除"
+2\案例\案例-9{半打4S-广东江门志特}-安装-05.jpg,image,direct,3:4 crop; v1.9 新增,现场安装 屋面收边 细节(登高作业入镜;页面不标注客户名),install-detail-roof-trim.webp 1279x1705; install-detail-roof-trim.jpg 1279x1705; install-detail-roof-trim-m.webp 960x1280,用户提供的官网素材包(自有),
+2\案例\案例-9{半打4S-广东江门志特}-封面.png,image,direct,none,案例 江门志特 4S 封面,case-cover-jiangmen.webp 1667x1250; case-cover-jiangmen.jpg 1667x1250; case-cover-jiangmen-m.webp 960x720,用户提供的官网素材包(自有),
+2\案例\案例-总清单.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),案例数据源; 仅取已批字段(地点+项目类型+公开授权标记)
+2\联系我们\联系我们-企业微信.png,image,excluded,,,,,"含员工姓名/头像/二维码/手机号(个人信息),禁止上站"
+2\联系我们\联系我们-地图.png,image,excluded,,,,,"第三方地图截图版权不明且含周边商户信息,建议前端接正规地图组件"
+2\资质\INTEREK 180727006SHF-导热系数.pdf,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\INTEREK 180727006SHF-无石棉.pdf,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\INTEREK 180727006SHF-水密性.pdf,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\INTEREK 180727006SHF-耐火测试.pdf,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\INTEREK 180727006SHF-隔音测试.pdf,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\SGS抗压强度GZIN1810052770CM.PDF,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\SGS水渗性GZIN1808044546CM.PDF,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\SGS石棉CAN18-195254-01_MLC_GZIN1808044547CM_F.PDF,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\SGS防火GZIN1808044545CM.PDF,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\SGS隔音GZIN1808044544CM.PDF,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; PDF 原样提供,页面仅显示报告名称+机构+编号"
+2\资质\发明专利证书.pdf,doc,download,,资质页下载列表,,用户提供的官网素材包(自有),"资质页下载列表; 专利证书原件,须业务确认申请人归属后启用"
+2\资质\广东省土木建筑学会科学技术奖励-草根民墅.png,image,direct,none,资质页 获奖证书 (公司名义),award-gd-civil-society.webp 735x520; award-gd-civil-society.jpg 735x520,用户提供的官网素材包(自有),
+2\资质\广东省土木建筑学会科学技术奖励-黄昆.png,image,excluded,,,,,"个人名义证书(含个人姓名),页面仅展示公司名义证书"
+2\资质\广东省科技创新专项 二等奖.png,image,direct,none,资质页 获奖证书 (广东省科技创新专项二等奖),award-gd-tech-2nd.webp 735x520; award-gd-tech-2nd.jpg 735x520,用户提供的官网素材包(自有),
+2\资质\资质-{专利汇编}.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),专利列表数据源; 页面默认不展示发明人列
+2\资质\资质-检测报告清单.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),资质页检测报告列表数据源
+2\资质\资质-获奖证书.xlsx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),获奖证书列表数据源
+2\首页\首页-企业短介绍.docx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),"首页企业简介文案(80-120字); 含股东赋能表述,保持中性不写金额"
+2\首页\首页-轮播图1.png,image,direct,none,首页 Banner 轮播1 (4S 黄昏全景),home-hero-01.webp 1920x823; home-hero-01.jpg 1920x823; home-hero-01-m.webp 960x411,用户提供的官网素材包(自有),
+2\首页\首页-轮播图2.png,image,direct,none,首页 Banner 轮播2 (5S 日景正面),home-hero-02.webp 1920x823; home-hero-02.jpg 1920x823; home-hero-02-m.webp 960x411,用户提供的官网素材包(自有),
+2\首页\首页-轮播图3.png,image,direct,none,首页 Banner 轮播3 (6S 黄昏),home-hero-03.webp 1920x823; home-hero-03.jpg 1920x823; home-hero-03-m.webp 960x411,用户提供的官网素材包(自有),
+2\首页\首页-轮播文案.docx,doc,copy-source,,对应页面文案源,,用户提供的官网素材包(自有),首页轮播 4S/5S/6S 标题+说明+按钮文案

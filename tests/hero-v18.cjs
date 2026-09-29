@@ -83,11 +83,11 @@ const check = (name, cond, extra = '') => { results.push([name, cond]); console.
   await page2.goto(`${BASE}/zh/cases/`, { waitUntil: 'networkidle' });
   const groups = await page2.locator('.cg-group').count();
   const items = await page2.locator('.cg-item img').count();
-  check('案例实景五组', groups === 5, `groups=${groups}`);
-  check('案例实景 10 张图', items === 10, `imgs=${items}`);
+  check('案例实景十组', groups === 10, `groups=${groups}`);
+  check('案例实景 28 张图', items === 28, `imgs=${items}`);
   check('案例实景图片请求全部 200', bad.length === 0, bad.join('; '));
-  const hasShenzhen = await page2.locator('img[src*="shenzhen"]').count();
-  check('实景图组无深圳营房（暂缓上页）', hasShenzhen === 0);
+  const hasShenzhen = await page2.locator('img[src*="shenzhen-steel-frame"]').count();
+  check('实景图组无受限客户名源（深圳以中性营房呈现）', hasShenzhen === 0);
   await ctx2.close();
 
   // 移动 375：实景图组单列横滑
@@ -122,7 +122,7 @@ const check = (name, cond, extra = '') => { results.push([name, cond]); console.
   for (const no of ['01', '03', '05', '06']) {
     await page5.locator(`#flow-tab-${no}`).click();
     await page5.waitForTimeout(350);
-    const img = page5.locator(`#flow-panel-${no} img`);
+    const img = page5.locator(`#flow-panel-${no} .flow-img img`);
     const okImg = await img.evaluate((el) => el.complete && el.naturalWidth > 0);
     check(`流程 step${no} 实拍图加载成功`, okImg, await img.getAttribute('src'));
   }

@@ -4,24 +4,28 @@
  * APG Tabs：tablist/tab/tabpanel、aria-selected、roving tabindex、左右键切换（main.ts）。
  * 不自动轮播；六步均为已批准实拍图（v1.6/v1.7/v1.8 批次），加载失败回退占位。
  */
-import { FLOW_ASSETS, FLOW_FACTORY_ASSETS, FLOW_V18_ASSETS, type Img16 } from '../lib/assets';
+import { FLOW_ASSETS, FLOW_FACTORY_ASSETS, FLOW_V18_ASSETS, FLOW_V19_ASSETS, FACTORY_V19_ASSETS, INSTALL_V19_ASSETS, type Img16 } from '../lib/assets';
 
 interface Step {
   no: string;
   name: string;
   desc: string;
   img: Img16;
+  /** 补充实拍（同环节多图，主图 + 辅图；择优不堆叠，每步至多 2 辅图） */
+  extra?: Img16;
+  extra2?: Img16;
+  extra3?: Img16;
   /** 横幅特写比例（step06 6:1 原图以 3:1 cover 展示） */
   ratio?: string;
 }
 
 const STEPS: Step[] = [
   { no: '01', name: '设计与制模', desc: '按项目条件完成空间与构件的协同设计，并制备生产模具。【待确认】', img: FLOW_V18_ASSETS.step01Mold },
-  { no: '02', name: '构件生产', desc: '工厂标准化产线完成构件制造。【待确认】', img: FLOW_FACTORY_ASSETS.module },
-  { no: '03', name: '出厂检验', desc: '构件与模块在出厂前完成检验与吊装复核。【待确认】', img: FLOW_V18_ASSETS.step03PanelLift },
-  { no: '04', name: '机电与内装', desc: '机电管线与内装在工厂阶段同步完成。【待确认】', img: FLOW_ASSETS.mechPiping },
-  { no: '05', name: '运输组织', desc: '按交付计划组织构件与模块的运输。【待确认】', img: FLOW_V18_ASSETS.step05FramesLoad },
-  { no: '06', name: '现场交付', desc: '现场吊装、安装并完成质量复核。【待确认】', img: FLOW_V18_ASSETS.step06CranePanel, ratio: '3 / 1' },
+  { no: '02', name: '构件生产', desc: '工厂标准化产线完成构件制造与养护。【待确认】', img: FLOW_FACTORY_ASSETS.module, extra: FACTORY_V19_ASSETS.precastUnits },
+  { no: '03', name: '出厂检验', desc: '构件与模块在出厂前完成检验与吊装复核。【待确认】', img: FLOW_V18_ASSETS.step03PanelLift, extra: FLOW_FACTORY_ASSETS.panels },
+  { no: '04', name: '机电与内装', desc: '机电管线与内装在工厂阶段同步完成。【待确认】', img: FLOW_ASSETS.mechPiping, extra: FLOW_ASSETS.mechPipingAlt },
+  { no: '05', name: '运输组织', desc: '按交付计划组织构件与模块的装车与运输。【待确认】', img: FLOW_V18_ASSETS.step05FramesLoad, extra: FLOW_V19_ASSETS.stacker01, extra2: FLOW_V19_ASSETS.panel03, extra3: FLOW_ASSETS.transportFrames },
+  { no: '06', name: '现场交付', desc: '现场吊装、安装并完成质量复核。【待确认】', img: FLOW_V18_ASSETS.step06CranePanel, extra: INSTALL_V19_ASSETS.roofTrim, extra2: FLOW_V19_ASSETS.spreaderLift },
 ];
 ---
 
@@ -81,6 +85,27 @@ const STEPS: Step[] = [
           <div class="en" aria-hidden="true">Step {s.no}</div>
           <h3>{s.name}</h3>
           <p>{s.desc}</p>
+          {(s.extra || s.extra2) && (
+            <div class="flow-extras">
+              {[s.extra, s.extra2, s.extra3].filter(Boolean).map((ex) => (
+                <figure class="flow-extra">
+                  <picture>
+                    {ex!.mw && (
+                      <source type="image/webp" srcset={`/assets/img/${ex!.base}${ex!.msuf ?? '-m'}.webp ${ex!.mw}w, /assets/img/${ex!.base}.webp ${ex!.w}w`} sizes="(max-width: 767px) 44vw, 12vw" />
+                    )}
+                    {!ex!.mw && <source type="image/webp" srcset={`/assets/img/${ex!.base}.webp`} />}
+                    <img
+                      src={`/assets/img/${ex!.base}.jpg`}
+                      width={ex!.w} height={ex!.h} alt={ex!.alt}
+                      loading="lazy" decoding="async"
+                      style={ex!.maxW ? `max-width:${ex!.maxW}px` : undefined}
+                      onerror="this.closest('.flow-extra').classList.add('ph-fallback');this.closest('picture').remove()"
+                    />
+                  </picture>
+                </figure>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     ))}

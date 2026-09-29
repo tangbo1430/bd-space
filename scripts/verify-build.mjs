@@ -150,7 +150,7 @@ ok(notFound.includes('noindex'), '404 为 noindex');
 console.log('== v1.5 首批真实素材 ==');
 const assetsDir = join(dist, 'assets', 'img');
 const distAssets = existsSync(assetsDir) ? readdirSync(assetsDir) : [];
-ok(distAssets.length === 151, `打包素材恰为 151 个批准文件（v1.5 批次 30 + v1.6 批次 14 + v1.7 RAR 批次 60 + v1.8 批次 47，实际 ${distAssets.length}）`);
+ok(distAssets.length === 216, `打包素材恰为 216 个文件（v1.5-v1.9 累计批次 + 7 份 manifest，实际 ${distAssets.length}）`);
 ok(existsSync(join(assetsDir, 'asset-manifest.csv')), 'asset-manifest.csv 已随包');
 ok(existsSync(join(assetsDir, 'asset-manifest-v16.csv')), 'asset-manifest-v16.csv 已随包');
 ok(existsSync(join(assetsDir, 'asset-manifest-rar.csv')), 'asset-manifest-rar.csv 已随包');
@@ -222,7 +222,7 @@ ok(cases?.includes('case-cover-cayman') && cases?.includes('case-cover-brisbane'
 ok(cases !== null && !cases.includes('maxw-568') && !cases.includes('maxw-711'), 'M4 低清限宽已随 RAR 全尺寸封面解除');
 ok(cases !== null && !cases.includes('案例整理中'), 'M4 案例墙已替换旧空态');
 ok(cases !== null && !/href="\/zh\/cases\/[^"]+"/.test(cases), 'M4 案例卡无详情链接（本轮不接详情）');
-ok(cases !== null && !cases.includes('case-cayman-hero') && !cases.includes('case-zhongshan-house') && !cases.includes('case-fiji-interior'), 'M4 不再引用已删除的 v1.6 低清案例图');
+ok(cases !== null && !cases.includes('case-cayman-hero') && !cases.includes('case-zhongshan-house') && !/case-fiji-interior(?!-06)/.test(cases), 'M4 不再引用已删除的 v1.6 低清案例图');
 /* M5 建造体系（产品页原创 SVG） */
 const productsIdx = page('zh/products');
 ok(productsIdx?.includes('三种建造体系'), 'M5 区块标题');
@@ -244,17 +244,18 @@ for (const f of ['flow-step-01-design.svg', 'flow-step-02-factory.svg', 'flow-st
   ok(existsSync(join(assetsDir, f)), `v1.6 原创 SVG ${f} 就位`);
 }
 ok(!distAssets.some((f) => f.includes('biz-p')), '未打包商业计划原始提取文件');
-ok(!distAssets.some((f) => /^case-(cayman-hero|brisbane-hero|zhongshan-house|fiji-interior)/.test(f)), '已删除的 v1.6 低清案例图未打包');
+ok(!distAssets.some((f) => /^case-(cayman-hero|brisbane-hero|zhongshan-house)/.test(f) || /case-fiji-interior(?!-06)/.test(f)), '已删除的 v1.6 低清案例图未打包');
 
 console.log('== v1.7 RAR 批次素材 ==');
 /* 首页 Banner 三帧 + 关于我们首图 */
 for (const f of ['home-hero-01', 'home-hero-02', 'home-hero-03', 'about-hero']) {
   ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}.jpg`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `v1.7 ${f} 三档就位`);
 }
-/* 案例封面 ×10 */
-for (const f of ['case-cover-cayman', 'case-cover-brisbane', 'case-cover-zhongshan-fd', 'case-cover-zhongshan-mg', 'case-cover-zhongshan-cabin', 'case-cover-chengdu-dorm', 'case-cover-shenzhen-camp', 'case-cover-fiji', 'case-cover-jiangmen', 'case-cover-changzhou']) {
-  ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}.jpg`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `v1.7 案例封面 ${f} 三档就位`);
+/* 案例封面 ×9 上墙（v1.7 四张 + v1.9 新增五张）；shenzhen-camp 客户名待确认不上站（v1.9 起页面以中性「深圳营房」+ 实景图组呈现，封面卡不打包） */
+for (const f of ['case-cover-cayman', 'case-cover-brisbane', 'case-cover-zhongshan-fd', 'case-cover-zhongshan-mg', 'case-cover-zhongshan-cabin', 'case-cover-chengdu-dorm', 'case-cover-fiji', 'case-cover-jiangmen', 'case-cover-changzhou']) {
+  ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}.jpg`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `案例封面 ${f} 三档就位`);
 }
+ok(!distAssets.some((f) => f.startsWith('case-cover-shenzhen-camp')), '深圳营房封面卡未打包（客户名待确认）');
 /* 产品详情主图 ×4 + 工厂实拍 ×2 */
 for (const f of ['product-4s-hero', 'product-5s-hero', 'product-6s-hero', 'product-grayscale-hero', 'flow-factory-module']) {
   ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}.jpg`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `v1.7 ${f} 三档就位`);
@@ -277,16 +278,14 @@ ok(about?.includes('about-hero'), '关于我们首图接入');
 /* 敏感词红线：中建三局不得出现在任何页面文案/alt/title/URL */
 ok(!new RegExp(['中', '建', '三', '局'].join('')).test(allHtml), '全站无「中建三局」（深圳营房用中性表述）');
 /* manifest 源文件名列含客户名，属内部溯源、不渲染到页面；但确认其不进入打包 HTML（上条已覆盖 HTML），此处确认深圳案例页文案中性 */
-ok(cases !== null && !cases.includes('shenzhen'), '案例页未接入深圳营房卡（保留未上站素材、页面不引用）');
+ok(cases !== null && !cases.includes('shenzhen-camp') && !cases.includes('中建三局'), '案例页不含受限客户名（深圳以中性「营房建筑」呈现）');
 
 console.log('== v1.8 素材增强（沉浸式 Hero + 案例实景 + 流程替换 + 4S 图组） ==');
-/* 45 个 v1.8 图像文件全部就位（v1.8.1/v1.8.2 补丁已覆盖同名主包文件） */
+/* v1.8 上站图像（剔除 v1.9 删除的 case-cayman-install-wall×3 / case-brisbane-install-lift×2） */
 const v18Files = [
-  'case-cayman-install-wall.webp', 'case-cayman-install-wall.jpg', 'case-cayman-install-wall-m.webp',
   'case-cayman-install-crane.webp', 'case-cayman-install-crane.jpg', 'case-cayman-install-crane-m.webp',
   'case-cayman-install-roof.webp', 'case-cayman-install-roof.jpg', 'case-cayman-install-roof-m.webp',
   'case-brisbane-install-frame.webp', 'case-brisbane-install-frame.jpg', 'case-brisbane-install-frame-m.webp',
-  'case-brisbane-install-lift.webp', 'case-brisbane-install-lift.jpg',
   'case-cabin-site-aerial.webp', 'case-cabin-site-aerial.jpg', 'case-cabin-site-aerial-m.webp',
   'case-cabin-rows.webp', 'case-cabin-rows.jpg', 'case-cabin-rows-m.webp',
   'case-chengdu-site-wide.webp', 'case-chengdu-site-wide.jpg', 'case-chengdu-site-wide-m.webp',
@@ -300,8 +299,9 @@ const v18Files = [
   'product-4s-detail-wall.webp', 'product-4s-detail-wall.jpg', 'product-4s-detail-wall-m.webp',
   'product-4s-dusk-door.webp', 'product-4s-dusk-door.jpg',
 ];
-ok(v18Files.length === 45, 'v1.8 文件清单恰 45 个');
+ok(v18Files.length === 40, 'v1.8 上站文件清单恰 40 个');
 for (const f of v18Files) ok(existsSync(join(assetsDir, f)), `v1.8 素材 ${f} 就位`);
+ok(!distAssets.some((f) => /^case-(cayman-install-wall|brisbane-install-lift)/.test(f)), 'v1.9 删除的同案例旧图未打包（择优不堆叠）');
 ok(!distAssets.some((f) => f.startsWith('case-shenzhen-steel-frame')), '深圳营房素材（客户名待确认）未打包');
 ok(!allHtml.includes('case-shenzhen-steel-frame'), '深圳营房素材页面未引用');
 /* 沉浸式 Hero 终态（CSS 已压缩，匹配无空格形式） */
@@ -316,7 +316,7 @@ ok(home?.includes('hero-controls'), '首页控件组 DOM 就位');
 /* 案例施工实景图组 */
 ok(cases?.includes('data-case-gallery'), '案例页施工实景模块');
 ok((cases?.match(/cg-group/g) ?? []).length >= 5, '五组案例实景（开曼/布里斯班/中山/成都/斐济）');
-ok(cases?.includes('case-cayman-install-crane') && cases?.includes('case-cabin-rows') && cases?.includes('case-chengdu-site-wide') && cases?.includes('case-fiji-box-door') && cases?.includes('case-brisbane-install-lift'), '案例实景图组引用 v1.8 素材');
+ok(cases?.includes('case-cayman-install-crane') && cases?.includes('case-cabin-rows') && cases?.includes('case-chengdu-site-wide') && cases?.includes('case-fiji-box-door') && cases?.includes('case-brisbane-install-frame'), '案例实景图组引用 v1.8 素材');
 ok(cases?.includes('方舱建筑') && cases?.includes('宿舍建筑'), '案例实景仅地点+类型中性标注');
 /* 4S 产品详情图组（dusk-door 限宽 608px，不放大） */
 const p4s = page('zh/products/4s');
@@ -337,6 +337,29 @@ ok(bundle.includes('motion=full') || bundle.includes('完整动态模式'), 'JS 
 ok(bundle.includes('data-motion-badge') || bundle.includes('完整动态模式'), 'JS 含验收标识（完整动态模式·commit）');
 ok(css.includes('[data-motion-badge]'), 'CSS 含验收标识样式');
 ok(css.includes('data-motion=full'), 'CSS reduced-motion 对 motion=full 放行');
+
+console.log('== v1.9 人物口径批次（恢复清晰人物版 + 25 新增源） ==');
+ok(existsSync(join(assetsDir, 'asset-manifest-v19.csv')), 'asset-manifest-v19.csv 已随包');
+ok(existsSync(join(assetsDir, 'asset-manifest-v3.csv')), 'asset-manifest-v3.csv 已随包（全量 115 源）');
+/* 恢复人物版 6 项就位 */
+for (const f of ['product-4s-dusk', 'product-4s-detail-wall', 'case-cayman-install-crane', 'case-cayman-install-roof', 'flow-step06-crane-panel']) {
+  ok(existsSync(join(assetsDir, `${f}.webp`)) && existsSync(join(assetsDir, `${f}-m.webp`)), `v1.9 恢复人物版 ${f} 就位`);
+}
+ok(existsSync(join(assetsDir, 'product-4s-dusk-door.webp')), 'v1.9 恢复人物版 product-4s-dusk-door 就位（608 限宽无移动档）');
+/* 创始人文件不上线不入库 */
+ok(!distAssets.some((f) => f.startsWith('team-founder')), '创始人文件未打包');
+ok(!allHtml.includes('team-founder'), '创始人文件页面未引用');
+/* 新增案例图组关键素材就位 */
+for (const f of ['case-mige-install-03', 'case-fangcang-install-02', 'case-brisbane-lift-01', 'case-changzhou-install-02', 'case-chengdu-assembly-01', 'case-jiangmen-install-02', 'case-fiji-interior-06']) {
+  ok(existsSync(join(assetsDir, `${f}.webp`)), `v1.9 新增 ${f} 就位`);
+}
+/* 江门不写合作方、深圳中性命名、无受限客户名 */
+ok(!allHtml.includes('志特'), '全站无「志特」（江门合作方）');
+ok(cases !== null && cases.includes('营房建筑'), '案例页深圳以中性「营房建筑」标注');
+ok(!new RegExp(['中', '建', '三', '局'].join('')).test(allHtml), '全站无「中建三局」');
+/* 案例墙九卡 + 实景图组扩充 */
+ok((cases?.match(/case-card/g) ?? []).length >= 9, '案例墙九卡');
+ok((cases?.match(/cg-group/g) ?? []).length >= 10, '案例实景十组');
 
 if (failures > 0) {
   console.error(`\n${failures} 项验证失败`);

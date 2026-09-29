@@ -865,6 +865,12 @@ html[data-motion=off] .flow-panel { transition: none; }
 .flow-img.ph-fallback .flow-tag { display: none; }
 .flow-txt h3 { font-size: 24px; font-weight: 400; margin: 10px 0 14px; }
 .flow-txt p { font-size: 15px; color: var(--ink-body); max-width: 40em; }
+/* v1.9 流程辅图：主图之外同环节补充实拍，小尺寸并排内嵌于文字栏 */
+.flow-extras { display: flex; gap: 12px; margin: 18px 0 0; }
+.flow-extra { margin: 0; flex: 0 1 160px; max-width: 160px; border-radius: 8px; overflow: hidden; background: var(--bg-alt); }
+.flow-extra picture, .flow-extra img { display: block; width: 100%; height: auto; }
+.flow-extra.ph-fallback { min-height: 120px; background: linear-gradient(135deg, #e9e6df, #dcd8cf); position: relative; }
+.flow-extra.ph-fallback::after { content: "图片待补充"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--ink-muted); font-size: 12px; letter-spacing: .2em; }
 
 /* --- M4 案例墙（案例页；无链接卡不做缩放 hover，仅青绿短线） --- */
 .case-wall { padding-bottom: 40px; }

@@ -15,7 +15,8 @@
     "test:nav": "node tests/nav-behavior.cjs",
     "test:hero": "node tests/hero-v18.cjs",
     "test:motion": "node tests/motion-mode.cjs",
-    "check": "npm run lint && npm run type-check && npm run test && npm run build && npm run verify"
+    "audit:assets": "node scripts/audit-assets.mjs",
+    "check": "npm run lint && npm run type-check && npm run test && npm run build && npm run verify && npm run audit:assets"
   },
   "dependencies": {
     "astro": "^5.6.0"
