@@ -66,13 +66,21 @@ const check = (name, cond, extra = '') => { results.push([name, cond]); console.
   check('帧 1 object-position 50% 33%', op1.replace(/px/g, '').trim().startsWith('50%') && op1.includes('33'), op1);
   await ctx.close();
 
-  // ============ reduced-motion：静态首帧不自动 ============
+  // ============ reduced-motion：静态首帧不自动（v2.0.1：preview 构建默认完整动态，
+  // 此处覆写 build-mode=production 模拟生产构建验证降级行为） ============
   const ctxR = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
   const pageR = await ctxR.newPage();
+  await pageR.route('**/zh/', async (route) => {
+    const resp = await route.fetch();
+    let body = await resp.text();
+    body = body.replace('data-build-mode="preview"', 'data-build-mode="production"');
+    body = body.replace(/<div data-motion-badge[^>]*>.*?<\/div>/, '');
+    await route.fulfill({ response: resp, body });
+  });
   await pageR.goto(`${BASE}/zh/`, { waitUntil: 'networkidle' });
   await pageR.waitForTimeout(6200);
   const idxR = await pageR.evaluate(() => [...document.querySelectorAll('[data-slide]')].findIndex((s) => s.classList.contains('on')));
-  check('reduced-motion 静态首帧（6s 不自动切换）', idxR === 0, `index=${idxR}`);
+  check('reduced-motion 静态首帧（生产模式，6s 不自动切换）', idxR === 0, `index=${idxR}`);
   await ctxR.close();
 
   // ============ 案例页实景图组 ============

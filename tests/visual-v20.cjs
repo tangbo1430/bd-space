@@ -117,19 +117,32 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
     await page.close();
   }
 
-  /* ---- 5. 双模式不回退（reduce 默认静态 / motion=full 动态） ---- */
+  /* ---- 5. 双模式不回退（v2.0.1：preview 默认完整动态 / 生产模拟静态 / motion=full 兼容） ---- */
   {
     const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
     const page = await ctx.newPage();
     await page.goto(BASE + '/zh/', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(600);
     const def = await page.evaluate(() => ({ motion: document.documentElement.getAttribute('data-motion'), badge: !!document.querySelector('[data-motion-badge]') }));
-    ok(def.motion === 'off' && !def.badge, 'reduce 默认入口静态降级、无验收标识');
+    ok(def.motion === 'preview' && def.badge, 'preview 构建默认完整动态（reduce 系统也生效）+ 验收标识');
 
     await page.goto(BASE + '/zh/?motion=full', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(600);
     const full = await page.evaluate(() => ({ motion: document.documentElement.getAttribute('data-motion'), badge: !!document.querySelector('[data-motion-badge]') }));
-    ok(full.motion === 'full' && full.badge, 'motion=full 启用完整动态 + 验收标识');
+    ok(full.motion === 'full' && full.badge, 'motion=full 显式覆盖仍兼容（完整动态 + 验收标识）');
+
+    const pageP = await ctx.newPage();
+    await pageP.route('**/zh/', async (route) => {
+      const resp = await route.fetch();
+      let body = await resp.text();
+      body = body.replace('data-build-mode="preview"', 'data-build-mode="production"');
+      body = body.replace(/<div data-motion-badge[^>]*>.*?<\/div>/, '');
+      await route.fulfill({ response: resp, body });
+    });
+    await pageP.goto(BASE + '/zh/', { waitUntil: 'domcontentloaded' });
+    await pageP.waitForTimeout(600);
+    const prod = await pageP.evaluate(() => ({ motion: document.documentElement.getAttribute('data-motion'), badge: !!document.querySelector('[data-motion-badge]') }));
+    ok(prod.motion === 'off' && !prod.badge, '生产模式模拟：reduce 默认静态降级、无验收标识');
     await ctx.close();
   }
 
