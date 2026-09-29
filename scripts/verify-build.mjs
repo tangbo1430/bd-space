@@ -276,6 +276,11 @@ for (const slug of ['4s', '5s', '6s', 'grayscale']) {
 const productsIdxV17 = page('zh/products');
 ok(productsIdxV17?.includes('product-4s-hero') && productsIdxV17?.includes('product-grayscale-hero'), '产品列表卡片接入主图');
 ok(about?.includes('about-hero'), '关于我们首图接入');
+/* v2.0.4 关于页首图整幅模式（成品横幅不裁切烘焙文案；h1 sr-only 保留） */
+ok(about?.includes('page-hero page-hero--full'), 'v2.0.4 关于页首图整幅模式类');
+ok(about?.includes('hero-copy sr-only') && about?.includes('把建造，变成制造'), 'v2.0.4 关于页 h1 保留为 sr-only');
+ok(css.includes('.page-hero--full') && css.includes('aspect-ratio:1920 / 823'), 'v2.0.4 整幅比例锁定样式（1920/823）');
+ok(css.includes('.page-hero--full .img-ph picture img{object-position:left center'), 'v2.0.4 移动端裁左半航拍（不含烘焙文案）');
 /* 敏感词红线：中建三局不得出现在任何页面文案/alt/title/URL */
 ok(!new RegExp(['中', '建', '三', '局'].join('')).test(allHtml), '全站无「中建三局」（深圳营房用中性表述）');
 /* manifest 源文件名列含客户名，属内部溯源、不渲染到页面；但确认其不进入打包 HTML（上条已覆盖 HTML），此处确认深圳案例页文案中性 */

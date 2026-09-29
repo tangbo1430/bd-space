@@ -154,9 +154,19 @@ if (hero) {
   prevBtn?.addEventListener('click', () => show(i - 1, true, 'prev'));
   nextBtn?.addEventListener('click', () => show(i + 1, true, 'next'));
 
-  hero.addEventListener('mouseenter', () => { hovering = true; setState(); });
-  hero.addEventListener('mouseleave', () => { hovering = false; setState(); });
-  hero.addEventListener('focusin', () => { focused = true; setState(); });
+  /* v2.0.4 轮播逻辑整改（用户实机反馈「不轮播」的根因）：
+   * 1) 悬停暂停收敛到控件区——整屏 Hero 画面悬停不再暂停；否则指针常态停留在
+   *    首屏大图上（真实浏览的默认状态）会永久 paused-hover，表现为「从不轮播」。
+   * 2) 聚焦暂停只认键盘聚焦（:focus-visible）——鼠标点击箭头/圆点后按钮持焦，
+   *    若据此暂停则「手动点过一次就再也不轮播」。 */
+  const controlsBox = hero.querySelector<HTMLElement>('.hero-controls');
+  controlsBox?.addEventListener('mouseenter', () => { hovering = true; setState(); });
+  controlsBox?.addEventListener('mouseleave', () => { hovering = false; setState(); });
+  hero.addEventListener('focusin', () => {
+    const ae = document.activeElement;
+    focused = ae instanceof HTMLElement && ae.matches(':focus-visible');
+    setState();
+  });
   hero.addEventListener('focusout', () => {
     if (!hero.contains(document.activeElement)) { focused = false; setState(); }
   });

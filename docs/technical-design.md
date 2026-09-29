@@ -89,7 +89,7 @@ npm run check     # lint + type-check + test + build + verify（交付门禁自�
 
 ## 10. v0.4 增量（FR-17~32 / v1.2 设计）
 
-- **Banner 七态状态机**（`src/lib/banner.ts`）：`resolveBannerState()` 纯函数实现 playing / paused-hover / paused-focus / paused-hidden / reduced-motion / static-fallback / single-item；固定参数 6000ms 间隔 / 1200ms 过渡 / 40px 滑动阈值集中在该模块，无第二套数值（BR-19）。单一计时器，状态变化即重置（AC-18）；标签页隐藏暂停、返回续播；手动切换时 `aria-live="polite"` 播报帧标签（FR-20）。
+- **Banner 七态状态机**（`src/lib/banner.ts`）：`resolveBannerState()` 纯函数实现 playing / paused-hover / paused-focus / paused-hidden / reduced-motion / static-fallback / single-item；固定参数 6000ms 间隔 / 1200ms 过渡 / 40px 滑动阈值集中在该模块，无第二套数值（BR-19）。单一计时器，状态变化即重置（AC-18）；标签页隐藏暂停、返回续播；手动切换时 `aria-live="polite"` 播报帧标签（FR-20）。**v2.0.4 暂停触发口径修正**：`paused-hover` 仅由悬停控件区（`.hero-controls`）触发，画面区悬停不暂停（整屏 Hero 悬停即停会导致真实用户「从不轮播」）；`paused-focus` 只认键盘聚焦（`:focus-visible`），鼠标点击控件持焦不暂停。状态机本身不变。
 - **微动效 M1~M10**：缓动统一 `cubic-bezier(.22,.61,.36,1)`，仅 transform/opacity；`——` 占位数字不渐显（BR-25）；全部动效受 `data-motion=off` 与 `prefers-reduced-motion` 降级（BR-20/21）。
 - **关于我们二级导航**（D3）：桌面触发器链接（无脚本直达 `/zh/about/`，BR-23）+ chevron 点击 / Enter / Space 展开，`Escape` 关闭并焦点返回，hover 仅辅助；移动抽屉为可展开分组。当前态三重冗余（竖条 + 字重 + 颜色，AC-26）。
 - **投资者关系** `/zh/about/investors/`：IR-Hero + 摘要 + 股权卡片 + 融资时间轴 + 联系，全字段【待提供】，无结构化数据、占位不入 SEO 事实（AC-27/28）。

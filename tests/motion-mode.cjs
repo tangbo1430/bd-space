@@ -122,6 +122,25 @@ const badge = (page) => page.evaluate(() => document.querySelector('[data-motion
   check('F 生产模拟+普通系统: 无验收标识', (await badge(pageF)) === null);
   await ctxF.close();
 
+  // ============ 模式7（v2.0.4 用户实机场景）：指针停在画面区不暂停；悬停控件区才暂停 ============
+  // 旧逻辑整块 Hero mouseenter 即 paused-hover——真实用户指针常态停在首屏大图上，
+  // 表现为「从不轮播」。整改后：画面区悬停继续自动轮播，仅悬停控件区（箭头/圆点）暂停。
+  const ctxG = await browser.newContext({ viewport: vp });
+  const pageG = await ctxG.newPage();
+  await pageG.goto(`${BASE}/zh/`, { waitUntil: 'networkidle' });
+  await pageG.mouse.move(720, 400); // 静止悬停在首屏画面区（远离底部控件）
+  await pageG.waitForTimeout(5600);
+  check('G 画面区悬停不暂停: 5s 仍自动切到第 2 帧', (await activeIdx(pageG)) === 1, `index=${await activeIdx(pageG)}`);
+  check('G 画面区悬停不暂停: 无 paused 态', await pageG.evaluate(() => !document.querySelector('.hero')?.classList.contains('paused')));
+  const dotBox = await pageG.locator('[data-dot]').first().boundingBox();
+  if (dotBox) await pageG.mouse.move(dotBox.x + dotBox.width / 2, dotBox.y + dotBox.height / 2);
+  await pageG.waitForTimeout(100);
+  check('G 悬停控件区: 进入 paused 态', await pageG.evaluate(() => document.querySelector('.hero')?.classList.contains('paused') === true));
+  await pageG.mouse.move(720, 400);
+  await pageG.waitForTimeout(100);
+  check('G 离开控件区: 恢复播放态', await pageG.evaluate(() => !document.querySelector('.hero')?.classList.contains('paused')));
+  await ctxG.close();
+
   await browser.close();
   const pass = results.filter((r) => r[1]).length;
   console.log(`\n${pass}/${results.length} 项通过`);

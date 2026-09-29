@@ -35,13 +35,16 @@ const evoStages = [
   title="关于我们"
   description="了解半打空间：企业简介、工厂能力、生产流程与质检体系。数据与事实信息以客户提供为准。"
   current="about"
-  headerStyle="overlay"
+  headerStyle="solid"
 >
-  <section class="page-hero" aria-label="关于我们首屏">
+  {/* v2.0.4 用户意见整改：该素材为成品横幅（左航拍建筑 + 右侧烘焙愿景文案），
+      旧版 440px 居中裁切会把右侧文案拦腰切断。改为整幅比例锁定展示（不裁切），
+      页头改浅色实底避免压住横幅顶部文案；h1 保留为 sr-only（SEO/无障碍）。 */}
+  <section class="page-hero page-hero--full" aria-label="关于我们首屏">
     {/* v1.7 RAR 关于我们首图：白盒建筑+愿景文案（21:9，移动裁左半建筑）；首屏 eager 预加载，失败回退深色渐变 */}
     <PhImg g="dark-1" tag="IMG-ABOUT-HERO · 白盒建筑+愿景文案" onDark img={{ ...ABOUT_HERO_ASSET, lazy: false }} />
-    <div class="hero-copy">
-      <div class="en" style="color:rgba(255,255,255,.6)">About Banda</div>
+    <div class="hero-copy sr-only">
+      <div class="en">About Banda</div>
       <h1>把建造，变成制造</h1>
     </div>
   </section>
