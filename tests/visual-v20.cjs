@@ -36,7 +36,13 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
         pmBigImg: g('.pm-big .figx img'),
         bltLead: g('.blt-lead'),
         bltGrid: document.querySelectorAll('.blt-grid > a').length,
-        ctaBg: g('.cta-bg img'),
+        ctaBg: g('.cta-figx img'),
+        ctaNoOverlap: (() => {
+          const f = document.querySelector('.cta-sec-v2 .cta-figx'); const form = document.querySelector('.cta-sec-v2 .cta-form-plain');
+          if (!f || !form) return false;
+          const fb = f.getBoundingClientRect(); const b2 = form.getBoundingClientRect();
+          return b2.right <= fb.left + 1 || b2.left >= fb.right - 1 || b2.top >= fb.bottom - 1; // 无重叠
+        })(),
       };
     });
     ok(r.statsRemoved, 'S2 数据带已整块移除（v2.0.1）');
@@ -47,7 +53,8 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
     ok(r.pmBigImg && r.pmBigImg[1] >= 280, 'S4 大卡图 ≥280px 高');
     ok(r.bltLead && r.bltLead[0] >= 1100 && r.bltLead[1] >= 480, 'S5 通栏首图 21:9 大图');
     ok(r.bltGrid === 2, 'S5 两列半宽卡');
-    ok(r.ctaBg && r.ctaBg[1] >= 500, 'S8 CTA 航拍背景就位');
+    ok(r.ctaBg && r.ctaBg[0] >= 500, 'S8 CTA 航拍图并排就位（v2.0.3）');
+    ok(r.ctaNoOverlap, 'S8 表单不叠压图片（v2.0.3）');
     await page.close();
   }
 

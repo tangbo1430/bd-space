@@ -1017,9 +1017,13 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
 .blt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 24px; }
 
 /* --- 首页 S8 CTA：右半区航拍背景 + 左半表单浮卡 --- */
+/* v2.0.3：CTA 改左文右图并排，表单不再叠压图片（用户意见：卡片遮挡显粗糙） */
 .cta-sec-v2 { position: relative; overflow: hidden; background: var(--bg-base); }
-.cta-sec-v2 .cta-bg { position: absolute; top: 0; right: 0; bottom: 0; width: 50%; overflow: hidden; }
-.cta-sec-v2 .cta-bg picture, .cta-sec-v2 .cta-bg picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.5); }
+.cta-sec-v2 .cta-bg { display: none; }
+.cta-sec-v2 .cta-figx { margin: 0; min-height: 100%; }
+.cta-sec-v2 .cta-figx picture, .cta-sec-v2 .cta-figx picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cta-sec-v2 .cta-grid3 { display: grid; grid-template-columns: 5fr 6fr; gap: 64px; align-items: start; }
+.cta-sec-v2 .cta-form-plain { padding-top: 8px; }
 
 /* --- 首页 S6 资质行 v2.0：行高 72px→56px --- */
 [data-v2='quals'] .qual { padding: 14px 8px; }
@@ -1055,7 +1059,8 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
   .pm-mid { grid-template-columns: 1fr 1fr; }
   .pm-small { grid-template-columns: repeat(3, 1fr); }
   .blt-grid { grid-template-columns: 1fr; }
-  .cta-sec-v2 .cta-bg { display: none; }
+  .cta-sec-v2 .cta-grid3 { grid-template-columns: 1fr; gap: 40px; }
+  .cta-sec-v2 .cta-figx { aspect-ratio: 16 / 10; min-height: 0; }
   .cw2-grid { padding: 0 40px; }
   .cg2-bigs { grid-template-columns: 1fr; }
   .cg2-group .figx.r-219 { aspect-ratio: 16 / 9; }

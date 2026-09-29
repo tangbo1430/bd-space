@@ -390,7 +390,8 @@ ok(home?.includes('data-v2="mfg"') && home?.includes('mfg-card'), '首页 S3 图
 ok(!css.includes('.mfg-card { position: relative; z-index: 2') && !/-90px/.test(css.match(/\.mfg-card \{[^}]*\}/)?.[0] ?? ''), 'S3 文字卡无负边距叠压（v2.0.2）');
 ok(home?.includes('data-v2="pm-big"') && home?.includes('pm-mid') && home?.includes('pm-small'), '首页 S4 产品矩阵（3 大卡 + 中行 + 5 文字卡）');
 ok(home?.includes('blt-lead') && home?.includes('blt-grid'), '首页 S5 被建造（21:9 通栏 + 2×4:3）');
-ok(home?.includes('cta-sec-v2') && home?.includes('cta-bg'), '首页 S8 CTA 航拍背景');
+ok(home?.includes('cta-sec-v2') && home?.includes('cta-figx'), '首页 S8 CTA 图文并排（v2.0.3，表单不叠压图片）');
+ok(!/class="cta-bg"/.test(home ?? ''), '首页 S8 不再使用叠压背景位（v2.0.3）');
 /* 大图焦点裁切与编辑容器 */
 ok(css.includes('.figx') && css.includes('.figx-cap'), '编辑容器 + 图注浮层 CSS');
 ok(css.includes('--figx-focus') || css.includes('figx-focus'), '焦点裁切 CSS 变量');

@@ -388,23 +388,25 @@ const quals = [
     </div>
   </section>
 
-  <!-- S8 底部 CTA + 表单 v2.0：右半区航拍背景（暗化 50%），左半表单区 -->
+  <!-- S8 底部 CTA v2.0.3：左文案+表单、右航拍图并排，表单不再叠压图片 -->
   <section class="sec cta-sec cta-sec-v2" style="padding:72px 0" id="contact" aria-label="预约咨询">
-    <div class="cta-bg" aria-hidden="true">
-      <picture>
-        <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial-m.webp 960w, /assets/img/case-cabin-site-aerial.webp 1920w" sizes="50vw" />
-        <img src="/assets/img/case-cabin-site-aerial.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async" onerror="this.closest('.cta-bg').remove()" />
-      </picture>
-    </div>
-    <div class="wrap cta-grid" style="position:relative;z-index:2">
-      <div class="rv">
-        <div class="en">Contact</div>
-        <h2>让我们谈谈<br />您的项目</h2>
-        <p style="margin-top:20px;max-width:380px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
-        <p class="note">电话：{site.contact.phone}<br />邮箱：{site.contact.email}<br />地址：{site.contact.address}</p>
+    <div class="wrap cta-grid3">
+      <div>
+        <div class="rv">
+          <div class="en">Contact</div>
+          <h2>让我们谈谈<br />您的项目</h2>
+          <p style="margin-top:20px;max-width:380px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
+          <p class="note">电话：{site.contact.phone}<br />邮箱：{site.contact.email}<br />地址：{site.contact.address}</p>
+        </div>
+        <div class="rv cta-form-plain" style="margin-top:32px">
+          <ConsultForm id="home" />
+        </div>
       </div>
-      <div class="rv" style="background:var(--bg-base);padding:40px;border-radius:8px;box-shadow:0 16px 40px rgba(0,0,0,.08)">
-        <ConsultForm id="home" />
+      <div class="figx r-43 rv cta-figx">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial-m.webp 960w, /assets/img/case-cabin-site-aerial.webp 1920w" sizes="(max-width: 1279px) 100vw, 50vw" />
+          <img src="/assets/img/case-cabin-site-aerial.jpg" width="1920" height="1080" alt="装配式空间项目现场航拍" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+        </picture>
       </div>
     </div>
   </section>
