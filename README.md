@@ -30,6 +30,18 @@ npm run check       # 以上全部串联
 npm run test:nav    # 导航带行为测试（Playwright，需先启动预览服务并监听 4321）
 ```
 
+## 本地预览（Docker）
+
+```bash
+# preview 构建（默认完整动态 + 版本标识），随后容器托管 dist/
+$env:PUBLIC_BUILD_MODE='preview'; npm run build   # Windows PowerShell
+docker run -d --name bd-space-preview -p 4321:80 \
+  -v "${PWD}\dist:/usr/share/caddy:ro" -v "${PWD}\Caddyfile:/etc/caddy/Caddyfile:ro" caddy:2.8-alpine
+# 每次重新 build 后需重启容器：docker restart bd-space-preview
+```
+
+`Caddyfile` 约定：HTML / version.json 一律 `Cache-Control: no-cache`（防止浏览器拿到旧版本页面），`/_astro/` 哈希资源长缓存。部署到其它静态托管时请保留同等缓存策略。
+
 ## 部署
 
 静态产物在 `dist/`，可部署到任意静态托管（Nginx / OSS+CDN / Vercel / Netlify）。部署前配置环境变量（见 `.env.example` 与 `docs/technical-design.md`）：
