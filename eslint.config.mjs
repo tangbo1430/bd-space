@@ -18,6 +18,10 @@ export default [
     rules: { '@typescript-eslint/no-require-imports': 'off' },
   },
   {
+    files: ['src/**/*.astro'],
+    languageOptions: { globals: { __BUILD_COMMIT__: 'readonly', __BUILD_TIME__: 'readonly' } },
+  },
+  {
     rules: {
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
     },

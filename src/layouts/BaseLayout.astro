@@ -38,6 +38,8 @@ const aboutSub = currentAboutSub(Astro.url.pathname);
   <title>{title} | {site.name}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical} />
+  <meta name="build-commit" content={__BUILD_COMMIT__ ?? 'dev'} />
+  <meta name="build-time" content={__BUILD_TIME__ ?? ''} />
   {altLinks.map((l) => <link rel="alternate" hreflang={l.lang} href={l.href} />)}
   {noindex && <meta name="robots" content="noindex, nofollow" />}
   <meta property="og:type" content="website" />
