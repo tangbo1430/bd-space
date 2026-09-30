@@ -388,23 +388,25 @@ const quals = [
     </div>
   </section>
 
-  <!-- S8 底部 CTA v2.0.6：居中重设计——居中标题组 + 通栏 21:9 黄昏图 + 居中窄列表单 -->
+  <!-- S8 底部 CTA v2.1：方案 A 居中对称轴——居中标题组 + 白卡表单 / 竖幅黄昏入户图（设计师稿 design-cta-v2.1） -->
   <section class="sec cta-sec cta-sec-v2" style="padding:96px 0" id="contact" aria-label="预约咨询">
     <div class="wrap">
       <div class="rv cta-head">
         <div class="en">Contact</div>
         <h2>让我们谈谈您的项目</h2>
         <p style="margin-top:20px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
-        <p class="note" style="margin-top:18px">电话：{site.contact.phone} · 邮箱：{site.contact.email}<br />地址：{site.contact.address}</p>
+        <p class="note" style="margin-top:16px">电话：{site.contact.phone} · 邮箱：{site.contact.email} · 地址：{site.contact.address}</p>
       </div>
-      <div class="figx rv cta-figx">
-        <picture>
-          <source type="image/webp" srcset="/assets/img/product-4s-dusk-m.webp 960w, /assets/img/product-4s-dusk.webp 1920w" sizes="(max-width: 1279px) 100vw, 1216px" />
-          <img src="/assets/img/product-4s-dusk.jpg" width="1920" height="1080" alt="半打空间模块化建筑黄昏外观" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
-        </picture>
-      </div>
-      <div class="rv cta-form-plain">
-        <ConsultForm id="home" />
+      <div class="cta-pair">
+        <div class="rv cta-card">
+          <ConsultForm id="home" />
+        </div>
+        <div class="figx rv cta-figx">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/product-4s-dusk-door.webp" />
+            <img src="/assets/img/product-4s-dusk-door.jpg" width="608" height="810" alt="半打空间模块化建筑黄昏入户实景" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+          </picture>
+        </div>
       </div>
     </div>
   </section>

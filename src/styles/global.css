@@ -1025,12 +1025,13 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
 
 /* --- 首页 S8 CTA：右半区航拍背景 + 左半表单浮卡 --- */
 /* v2.0.3：CTA 改左文右图并排，表单不再叠压图片（用户意见：卡片遮挡显粗糙） */
-.cta-sec-v2 { position: relative; overflow: hidden; background: var(--bg-base); }
-.cta-sec-v2 .cta-bg { display: none; }
+.cta-sec-v2 { position: relative; overflow: hidden; background: linear-gradient(120deg, #EAF4EF 0%, var(--accent-tint) 55%, #F2F0EA 100%); }
 .cta-sec-v2 .cta-head { max-width: 640px; margin: 0 auto; text-align: center; }
-.cta-sec-v2 .cta-figx { margin: 52px 0 0; aspect-ratio: 21 / 9; border-radius: var(--r-card); }
+.cta-sec-v2 .cta-pair { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: stretch; margin-top: 56px; }
+.cta-sec-v2 .cta-card { background: #fff; border-radius: 12px; padding: 44px 48px; box-shadow: 0 20px 48px rgba(20, 35, 30, .08); }
+.cta-sec-v2 .cta-card .form-banner { background: var(--accent-tint); border-radius: 8px; }
+.cta-sec-v2 .cta-figx { margin: 0; aspect-ratio: 4 / 5; border-radius: var(--r-card); }
 .cta-sec-v2 .cta-figx picture, .cta-sec-v2 .cta-figx picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.cta-sec-v2 .cta-form-plain { max-width: 760px; margin: 56px auto 0; }
 .cta-sec-v2 .form .btn-primary { justify-self: center; }
 
 /* --- 首页 S6 资质行 v2.0：行高 72px→56px --- */
@@ -1067,8 +1068,9 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
   .pm-mid { grid-template-columns: 1fr 1fr; }
   .pm-small { grid-template-columns: repeat(3, 1fr); }
   .blt-grid { grid-template-columns: 1fr; }
-  .cta-sec-v2 .cta-figx { aspect-ratio: 16 / 10; margin-top: 36px; }
-  .cta-sec-v2 .cta-form-plain { margin-top: 40px; }
+  .cta-sec-v2 .cta-pair { grid-template-columns: 1fr; gap: 40px; margin-top: 44px; }
+  .cta-sec-v2 .cta-card { padding: 32px 24px; }
+  .cta-sec-v2 .cta-figx { aspect-ratio: 16 / 10; }
   .cw2-grid { padding: 0 40px; }
   .cg2-bigs { grid-template-columns: 1fr; }
   .cg2-group .figx.r-219 { aspect-ratio: 16 / 9; }

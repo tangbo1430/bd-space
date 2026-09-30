@@ -38,10 +38,19 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
         bltGrid: document.querySelectorAll('.blt-grid > a').length,
         ctaBg: g('.cta-figx img'),
         ctaNoOverlap: (() => {
-          const f = document.querySelector('.cta-sec-v2 .cta-figx'); const form = document.querySelector('.cta-sec-v2 .cta-form-plain');
-          if (!f || !form) return false;
-          const fb = f.getBoundingClientRect(); const b2 = form.getBoundingClientRect();
+          const f = document.querySelector('.cta-sec-v2 .cta-figx'); const card = document.querySelector('.cta-sec-v2 .cta-card');
+          if (!f || !card) return false;
+          const fb = f.getBoundingClientRect(); const b2 = card.getBoundingClientRect();
           return b2.right <= fb.left + 1 || b2.left >= fb.right - 1 || b2.top >= fb.bottom - 1; // 无重叠
+        })(),
+        ctaCentered: (() => {
+          const head = document.querySelector('.cta-sec-v2 .cta-head'); const pair = document.querySelector('.cta-sec-v2 .cta-pair');
+          const wrap = document.querySelector('.cta-sec-v2 .wrap');
+          if (!head || !pair || !wrap) return false;
+          const hb = head.getBoundingClientRect(); const pb = pair.getBoundingClientRect(); const wb = wrap.getBoundingClientRect();
+          const headDrift = Math.abs((hb.left + hb.right) / 2 - (wb.left + wb.right) / 2);
+          const pairDrift = Math.abs((pb.left + pb.right) / 2 - (wb.left + wb.right) / 2);
+          return headDrift <= 2 && pairDrift <= 2; // 标题组与表单/图对均居中于容器（v2.1 方案 A）
         })(),
       };
     });
@@ -53,8 +62,9 @@ const ok = (cond, label) => { if (cond) { pass++; console.log('PASS ', label); }
     ok(r.pmBigImg && r.pmBigImg[1] >= 280, 'S4 大卡图 ≥280px 高');
     ok(r.bltLead && r.bltLead[0] >= 1100 && r.bltLead[1] >= 480, 'S5 通栏首图 21:9 大图');
     ok(r.bltGrid === 2, 'S5 两列半宽卡');
-    ok(r.ctaBg && r.ctaBg[0] >= 500, 'S8 CTA 航拍图并排就位（v2.0.3）');
-    ok(r.ctaNoOverlap, 'S8 表单不叠压图片（v2.0.3）');
+    ok(r.ctaBg && r.ctaBg[0] >= 400, 'S8 CTA 竖幅入户图并排就位（v2.1）');
+    ok(r.ctaNoOverlap, 'S8 白卡表单不叠压图片（v2.1）');
+    ok(r.ctaCentered, 'S8 标题组与表单/图对居中于容器（v2.1 方案 A）');
     await page.close();
   }
 
