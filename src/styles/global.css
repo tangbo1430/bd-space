@@ -1027,10 +1027,10 @@ html[data-motion=off] .figx:hover picture img, html[data-motion=off] .figx:focus
 /* v2.0.3：CTA 改左文右图并排，表单不再叠压图片（用户意见：卡片遮挡显粗糙） */
 .cta-sec-v2 { position: relative; overflow: hidden; background: var(--bg-base); }
 .cta-sec-v2 .cta-bg { display: none; }
-.cta-sec-v2 .cta-figx { margin: 0; min-height: 100%; }
+.cta-sec-v2 .cta-figx { margin: 0; min-height: 100%; border-radius: var(--r-card); overflow: hidden; }
 .cta-sec-v2 .cta-figx picture, .cta-sec-v2 .cta-figx picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.cta-sec-v2 .cta-grid3 { display: grid; grid-template-columns: 5fr 6fr; gap: 64px; align-items: start; }
-.cta-sec-v2 .cta-form-plain { padding-top: 8px; }
+.cta-sec-v2 .cta-grid3 { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.cta-sec-v2 .cta-form-plain { padding-top: 0; }
 
 /* --- 首页 S6 资质行 v2.0：行高 72px→56px --- */
 [data-v2='quals'] .qual { padding: 14px 8px; }

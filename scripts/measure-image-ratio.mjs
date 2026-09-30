@@ -16,8 +16,8 @@ import { chromium } from 'playwright';
 const BASE = process.env.MEASURE_BASE ?? 'http://localhost:4321';
 const VIEWPORT = { width: 1440, height: 900 };
 const MIN_ICON = 64; // <64px 视为图标
-/** 首屏/装饰区块背景（数据带右图、CTA 右半区航拍）：氛围背景非内容图，按装饰剔除 */
-const DECOR_BG = new Set(['case-cabin-site-aerial']);
+/** 首屏/装饰区块背景：v2.0.5 起无装饰剔除（数据带已删除；CTA 右图 product-4s-dusk 为内容图，产品页复用） */
+const DECOR_BG = new Set();
 const PAGES = [
   { path: '/zh/', key: 'home', label: '首页', target: 55 },
   { path: '/zh/cases/', key: 'cases', label: '案例列表', target: 55 },
