@@ -43,14 +43,14 @@ const covers = [
     </div>
   </section>
 
-  {/* 项目封面：首卡 21:9 通栏 + 8 张 4:3 两列 */}
+  {/* 项目封面（v3.1：78vh 整屏首卡 + 1600 容器 8 张 16:9 两列） */}
   <section class="chap chap-paper" style="padding-bottom:0" aria-label="项目封面">
     <div class="wrap">
       <div class="shead rv">
         <div><div class="en">Selected</div><h2 class="v3h2" style="margin-bottom:0">项目封面</h2></div>
       </div>
     </div>
-    <div class="bleed r219 rv">
+    <div class="bleed b78 rv">
       <div class="ph3">
         <picture>
           <source type="image/webp" srcset="/assets/img/case-cover-changzhou-m.webp 960w, /assets/img/case-cover-changzhou.webp 1667w" sizes="100vw" />
@@ -63,29 +63,29 @@ const covers = [
           />
         </picture>
       </div>
-      <div class="cap"><div class="t">中国 · 常州</div><div class="s">4S 住宅</div></div>
+      <div class="cap"><div class="t">中国 · 常州</div><div class="s">4S 住宅 — 查看案例 →</div></div>
     </div>
-    <div class="wrap" style="padding-top:24px;padding-bottom:96px">
+    <div class="wide" style="padding-top:24px;padding-bottom:110px">
       <div class="g2">
         {covers.map((c) => (
-          <div class="cc r43 rv">
+          <div class="pbig r169 rv">
             <picture>
               <source type="image/webp" srcset={`/assets/img/${c.img.base}-m.webp ${c.img.mw}w, /assets/img/${c.img.base}.webp ${c.img.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
               <img
                 src={`/assets/img/${c.img.base}.jpg`}
                 width={c.img.w} height={c.img.h} alt={c.img.alt}
                 loading="lazy" decoding="async"
-                onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
+                onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()"
               />
             </picture>
-            <div class="cap"><div class="t">{c.loc}</div><div class="s">{c.type}</div></div>
+            <div class="cap"><div class="t">{c.loc}</div><div class="s">{c.type}</div></div><div class="go" aria-hidden="true">→</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  {/* 施工实景：10 组（组标 01–10 + 组名 + 通栏首图 + 双 4:3） */}
+  {/* 施工实景（v3.1：10 组——组标 01–10 + 64vh 整屏组首图 + 16:9 双卡；1600 容器） */}
   <section class="chap chap-paper" style="padding-top:64px" aria-label="施工实景" data-case-gallery>
     <div class="wrap">
       <div class="en rv">On Site</div>
@@ -94,14 +94,14 @@ const covers = [
     </div>
     {CASE_DETAIL_GROUPS.map((g, i) => (
       <div class="cg2-group">
-        <div class="wrap">
+        <div class="wide">
           <div class="glabel rv">
             <span class="gi-no">{String(i + 1).padStart(2, '0')}</span>
             <span class="gi-t">{g.loc} · {g.type}</span>
             <span class="gi-s">施工实景</span>
           </div>
         </div>
-        <div class="bleed r219 rv">
+        <div class="bleed b64 rv">
           <div class="ph3" style={g.lead.focus ? `--figx-focus:${g.lead.focus}` : undefined}>
             <picture>
               {g.lead.mw && (
@@ -118,10 +118,10 @@ const covers = [
             </picture>
           </div>
         </div>
-        <div class="wrap" style="padding-top:24px">
+        <div class="wide" style="padding-top:24px">
           <div class="g2">
             {g.bigs.map((img) => (
-              <div class="cc r43 rv">
+              <div class="cc r169 rv">
                 <picture>
                   {img.mw && (
                     <source type="image/webp" srcset={`/assets/img/${img.base}${img.msuf ?? '-m'}.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />

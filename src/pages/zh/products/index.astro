@@ -6,8 +6,7 @@ const products = (await getCollection('products', ({ data }) => data.published))
   .sort((a, b) => a.data.order - b.data.order);
 
 const byId = (id: string) => products.find((p) => p.id === id);
-const featured = byId('4s');
-const approved = ['5s', '6s', 'grayscale'].map(byId).filter(Boolean);
+const approved = ['4s', '5s', '6s', 'grayscale'].map(byId).filter(Boolean);
 const more = ['bd8', 'bd9', 'slab', 'wall', 'stair'].map(byId).filter(Boolean);
 
 /* v3.0.1 索引行 64×44 小色片（无图产品线的降级色块，设计包 SPEC §3 批准） */
@@ -15,6 +14,7 @@ const CHIPS: Record<string, string> = {
   bd8: '#E8ECEF', bd9: '#F0EBE2', slab: '#F0E9E3', wall: '#F0EEE8', stair: '#EFE7E4',
 };
 const HERO_IMG: Record<string, { base: string; alt: string }> = {
+  '4s': { base: 'product-4s-hero', alt: '半打 4S 产品正立面实景' },
   '5s': { base: 'product-5s-hero', alt: '半打 5S 产品外观实景' },
   '6s': { base: 'product-6s-hero', alt: '半打 6S 产品外观实景' },
   grayscale: { base: 'product-grayscale-hero', alt: '灰度空间产品外观实景' },
@@ -35,16 +35,16 @@ const systems = [
   headerStyle="overlay"
   master="v3"
 >
-  {/* 首屏 56vh：4S 外观实拍通栏 */}
-  <section class="v3hero h56" aria-label="产品中心首屏">
+  {/* 首屏 92vh（v3.1 近整屏）：4S 黄昏正立面通栏 */}
+  <section class="v3hero h92" aria-label="产品中心首屏">
     <div class="ph3">
       <picture>
-        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/product-4s-hero-m.webp" />
-        <source type="image/webp" srcset="/assets/img/product-4s-hero.webp" />
+        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/product-4s-dusk-m.webp" />
+        <source type="image/webp" srcset="/assets/img/product-4s-dusk.webp" />
         <img
-          src="/assets/img/product-4s-hero.jpg"
+          src="/assets/img/product-4s-dusk.jpg"
           width="1920" height="1080"
-          alt="半打 4S 产品外观实景"
+          alt="半打 4S 产品黄昏正立面实景"
           loading="eager" decoding="async" fetchpriority="high"
           onerror="this.closest('.v3hero').classList.add('ph-fallback');this.closest('picture').remove()"
         />
@@ -56,54 +56,41 @@ const systems = [
     </div>
   </section>
 
-  {/* 主打产品：左 8 列 7:5 大图 + 右 4 列文案 */}
-  {featured && (
-    <section class="chap chap-paper" aria-label={`主打产品 ${featured.data.name}`}>
-      <div class="wrap split3">
-        <div class="img8 r75 rv">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/product-4s-dusk.webp" />
-            <img
-              src="/assets/img/product-4s-dusk.jpg"
-              width="1920" height="1080"
-              alt="半打 4S 产品黄昏正立面实景"
-              loading="lazy" decoding="async"
-              onerror="this.closest('.img8').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-        </div>
-        <div class="tx4 rv">
-          <div class="en">Featured · {featured.data.enTag}</div>
-          <h2 class="v3h2">{featured.data.name}</h2>
-          <p class="v3lead">{featured.data.tagline}主力户型，已验收实拍。</p>
-          <div style="margin-top:36px"><a class="btn btn-primary" href={`/zh/products/${featured.id}/`}>查看详情 <span class="arr">→</span></a></div>
-        </div>
-      </div>
-    </section>
-  )}
-
-  {/* 已验收实拍（ink 章三卡） */}
-  <section class="chap chap-ink" aria-label="已验收实拍">
-    <div class="wrap">
-      <div class="shead rv">
+  {/* 已验收实拍（v3.1 ink 章 1600 容器：1 大 16:9 + 2 中 16:9 + 1 通栏 21:9） */}
+  <section class="chap chap-ink" style="padding-top:96px" aria-label="已验收实拍">
+    <div class="wide">
+      <div class="shead rv" style="margin-bottom:44px">
         <div><div class="en on-dark">Approved Photos</div><h2 class="v3h2" style="margin-bottom:0">已验收实拍</h2></div>
       </div>
-      <div class="prow p3">
-        {approved.map((p) => p && (
-          <a class="pcard r43 rv" href={`/zh/products/${p.id}/`} aria-label={`查看${p.data.name}产品详情`}>
+      {approved[0] && (
+        <a class="pbig r169 rv" href={`/zh/products/${approved[0].id}/`} aria-label={`查看${approved[0].data.name}产品详情`}>
+          <picture>
+            <source type="image/webp" srcset={`/assets/img/${HERO_IMG[approved[0].id].base}.webp`} />
+            <img src={`/assets/img/${HERO_IMG[approved[0].id].base}.jpg`} width="1920" height="1080" alt={HERO_IMG[approved[0].id].alt} loading="lazy" decoding="async" onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()" />
+          </picture>
+          <div class="cap"><div class="t">{approved[0].data.name}</div><div class="s">模块化空间产品 · 主力户型 — 查看详情</div></div><div class="go" aria-hidden="true">→</div>
+        </a>
+      )}
+      <div class="g2" style="margin-top:24px">
+        {approved.slice(1, 3).map((p) => p && (
+          <a class="pbig r169 rv" href={`/zh/products/${p.id}/`} aria-label={`查看${p.data.name}产品详情`}>
             <picture>
               <source type="image/webp" srcset={`/assets/img/${HERO_IMG[p.id].base}.webp`} />
-              <img
-                src={`/assets/img/${HERO_IMG[p.id].base}.jpg`}
-                width="1920" height="1080" alt={HERO_IMG[p.id].alt}
-                loading="lazy" decoding="async"
-                onerror="this.closest('.pcard').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
+              <img src={`/assets/img/${HERO_IMG[p.id].base}.jpg`} width="1920" height="1080" alt={HERO_IMG[p.id].alt} loading="lazy" decoding="async" onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()" />
             </picture>
-            <div class="cap"><div class="t">{p.data.name}</div><div class="s">模块化空间产品</div></div>
+            <div class="cap"><div class="t">{p.data.name}</div><div class="s">模块化空间产品</div></div><div class="go" aria-hidden="true">→</div>
           </a>
         ))}
       </div>
+      {approved[3] && (
+        <a class="pbig r219 rv" style="margin-top:24px" href={`/zh/products/${approved[3].id}/`} aria-label={`查看${approved[3].data.name}产品详情`}>
+          <picture>
+            <source type="image/webp" srcset={`/assets/img/${HERO_IMG[approved[3].id].base}.webp`} />
+            <img src={`/assets/img/${HERO_IMG[approved[3].id].base}.jpg`} width="1920" height="1080" alt={HERO_IMG[approved[3].id].alt} loading="lazy" decoding="async" onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()" />
+          </picture>
+          <div class="cap"><div class="t">{approved[3].data.name}</div><div class="s">模块化空间产品</div></div><div class="go" aria-hidden="true">→</div>
+        </a>
+      )}
     </div>
   </section>
 
@@ -123,7 +110,7 @@ const systems = [
           </a>
         ))}
       </div>
-      <p class="rv" style="margin-top:20px;font-size:13px;color:var(--v3-muted)">以上产品线图片素材待甲方提供；提供后按 4:3 卡片替换色卡位，布局不变。</p>
+      <p class="rv" style="margin-top:20px;font-size:13px;color:var(--v3-muted)">以上产品线图片素材待甲方提供；提供后按 16:9 大图卡替换色片位，布局不变。</p>
     </div>
   </section>
 

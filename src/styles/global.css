@@ -1300,6 +1300,7 @@ main.v3 .v3hero { position: relative; display: flex; align-items: flex-end; colo
 main.v3 .v3hero.h56 { height: 56vh; min-height: 420px; }
 main.v3 .v3hero.h82 { height: 82vh; min-height: 560px; }
 main.v3 .v3hero.h88 { height: 88vh; min-height: 560px; }
+main.v3 .v3hero.h92 { height: 92vh; min-height: 560px; }
 main.v3 .v3hero .ph3 { position: absolute; inset: 0; }
 main.v3 .v3hero .ph3 picture, main.v3 .v3hero .ph3 img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 main.v3 .v3hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 19, 16, .3), rgba(12, 19, 16, 0) 40%, rgba(12, 19, 16, .66)); pointer-events: none; }
@@ -1357,10 +1358,47 @@ main.v3 .flow-txt h3 { font-size: 26px; font-weight: 600; }
 .v3foot .ft-bot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 30px; font-size: 11.5px; opacity: .45; letter-spacing: .05em; }
 .v3foot .ft-bot a { text-decoration: underline; text-underline-offset: 3px; }
 
+/* ---- v3.1 大图主导增量（SPEC-v3.1 §1/§4） ---- */
+/* 1600 宽容器：全线产品/案例/应用场景大图区，与 1280 正文容器并存 */
+main.v3 .wide { max-width: 1600px; margin: 0 auto; padding: 0 48px; }
+/* 整屏卖点章：全幅背景图 + 左向渐变压文字（min-height 100vh） */
+main.v3 .screen { position: relative; min-height: 100vh; display: flex; align-items: center; background: var(--v3-deep); color: #fff; overflow: hidden; }
+main.v3 .screen .ph3 { position: absolute; inset: 0; }
+main.v3 .screen .ph3 picture, main.v3 .screen .ph3 img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+main.v3 .screen::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12, 19, 16, .72), rgba(12, 19, 16, .1) 60%); pointer-events: none; }
+main.v3 .screen .wrap { position: relative; z-index: 2; width: 100%; }
+main.v3 .screen .sc-txt { max-width: 520px; }
+/* 通栏大图整屏档：82vh 主 / 78vh 次 / 64vh 组首 */
+main.v3 .bleed.b82 { height: 82vh; min-height: 520px; }
+main.v3 .bleed.b78 { height: 78vh; min-height: 480px; }
+main.v3 .bleed.b64 { height: 64vh; min-height: 400px; }
+/* 2/3-1/3 大图 feat（模块即空间 / 详情参数区） */
+main.v3 .feat { display: grid; grid-template-columns: 2fr 1fr; gap: 56px; align-items: center; }
+main.v3 .feat .fi { border-radius: 6px; overflow: hidden; position: relative; }
+main.v3 .feat .fi picture, main.v3 .feat .fi img { display: block; width: 100%; height: 100%; object-fit: cover; }
+main.v3 .feat.rev { grid-template-columns: 1fr 2fr; }
+main.v3 .feat.rev .fi { order: 2; }
+/* 大图卡（16:9 半宽 / 21:9 通栏 + 图注 + 圆环箭头） */
+main.v3 .pbig { position: relative; border-radius: 8px; overflow: hidden; color: #fff; display: block; background: rgba(255, 255, 255, .04); }
+main.v3 .pbig::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 19, 16, 0) 50%, rgba(12, 19, 16, .72)); pointer-events: none; }
+main.v3 .pbig .cap { position: absolute; left: 36px; bottom: 30px; z-index: 2; }
+main.v3 .pbig .cap .t { font-size: 26px; font-weight: 600; }
+main.v3 .pbig .cap .s { font-size: 13.5px; opacity: .8; margin-top: 4px; }
+main.v3 .pbig .go { position: absolute; right: 30px; bottom: 30px; z-index: 2; width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .5); display: flex; align-items: center; justify-content: center; font-size: 16px; }
+main.v3 .pbig picture, main.v3 .pbig picture img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+main.v3 .pbig picture img { transition: transform .4s cubic-bezier(.22, 1, .36, 1); }
+main.v3 .pbig:hover picture img, main.v3 .pbig:focus-within picture img { transform: scale(1.03); }
+html[data-motion=off] main.v3 .pbig:hover picture img { transform: none; }
+html:not([data-motion=full]):not([data-motion=preview]) main.v3 .pbig picture img { transition: none; }
+html:not([data-motion=full]):not([data-motion=preview]) main.v3 .pbig:hover picture img { transform: none; }
+/* 转化章 v3.1：整屏 100vh */
+main.v3 .conv.conv-page { min-height: 100vh; }
+
 /* ---- 断点：≤1360 / ≤1023 / ≤767 ---- */
 @media (max-width: 1360px) {
   main.v3 .wrap { padding: 0 64px; }
   .v3foot .wrap { padding: 0 64px; }
+  main.v3 .wide { padding: 0 40px; }
   main.v3 .hero-copy { padding-left: 64px; padding-right: 64px; }
   main.v3 .bleed .cap { left: 64px; }
   main.v3 .conv > .wrap { gap: 56px; }
@@ -1391,6 +1429,12 @@ main.v3 .flow-txt h3 { font-size: 26px; font-weight: 600; }
   .v3foot .ft-top { grid-template-columns: 1fr 1fr; gap: 40px; }
   main.v3 .glabel { margin: 64px 0 24px; }
   main.v3 .flow-panel { grid-template-columns: 1fr; gap: 30px; }
+  main.v3 .wide { padding: 0 40px; }
+  main.v3 .feat, main.v3 .feat.rev { grid-template-columns: 1fr; gap: 26px; }
+  main.v3 .feat.rev .fi { order: 0; }
+  main.v3 .feat .fi { aspect-ratio: 16 / 9; }
+  main.v3 .bleed.b82, main.v3 .bleed.b78 { height: 52vh; min-height: 400px; }
+  main.v3 .bleed.b64 { height: 46vh; min-height: 340px; }
 }
 @media (max-width: 767px) {
   main.v3 .wrap { padding: 0 20px; }
@@ -1405,7 +1449,7 @@ main.v3 .flow-txt h3 { font-size: 26px; font-weight: 600; }
   main.v3 .hero-copy h1 { font-size: 31px; }
   main.v3 .hero-copy p { font-size: 14.5px; }
   main.v3 .v3hero.h56 { height: 44vh; min-height: 320px; }
-  main.v3 .v3hero.h82, main.v3 .v3hero.h88 { height: 64vh; min-height: 440px; }
+  main.v3 .v3hero.h82, main.v3 .v3hero.h88, main.v3 .v3hero.h92 { height: 64vh; min-height: 440px; }
   main.v3 .v3hero h1 { font-size: 30px; }
   main.v3 .v3hero > .wrap { padding-bottom: 44px; }
   main.v3 .v3mission { font-size: 26px; }
@@ -1432,4 +1476,12 @@ main.v3 .flow-txt h3 { font-size: 26px; font-weight: 600; }
   main.v3 .glabel { margin: 56px 0 20px; }
   main.v3 .glabel .gi-t { font-size: 19px; }
   .v3foot .ft-top { grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 40px; }
+  main.v3 .wide { padding: 0 20px; }
+  main.v3 .feat .fi { aspect-ratio: 4 / 3; }
+  main.v3 .pbig .cap { left: 20px; bottom: 18px; }
+  main.v3 .pbig .cap .t { font-size: 20px; }
+  main.v3 .pbig .go { width: 42px; height: 42px; right: 20px; bottom: 18px; }
+  main.v3 .screen { min-height: 72vh; }
+  main.v3 .bleed.b82, main.v3 .bleed.b78 { height: 46vh; min-height: 320px; }
+  main.v3 .bleed.b64 { height: 40vh; min-height: 280px; }
 }

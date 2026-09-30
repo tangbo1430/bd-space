@@ -50,38 +50,33 @@ const milestones = [
     </div>
   </section>
 
-  {/* 企业简介：左浮卡 + 右 4:3 箱房阵列实拍 */}
-  <section class="chap chap-paper" style="padding-top:0" aria-label="企业简介">
-    <div class="wrap split3">
-      <div class="tx5l rv">
-        <div class="en">Profile</div>
-        <h2 class="v3h3">企业简介</h2>
-        <p class="v3lead" style="font-size:15px">{PLACEHOLDER}公司简介。核心信息与里程碑，正式内容以客户提供的经审核的公司介绍替换。【示例文案，待确认】</p>
-        <div style="margin-top:28px"><a class="btn btn-ghost-dark" href="#factory">了解制造体系 <span class="arr">→</span></a></div>
-      </div>
-      <div class="img7r r43 rv">
+  {/* 企业简介（v3.1：21:9 通栏大图，图注即简介入口，取消浮卡叠压） */}
+  <section class="chap chap-paper" style="padding-top:0;padding-bottom:0" aria-label="企业简介">
+    <div class="bleed r219 rv">
+      <div class="ph3">
         <picture>
-          <source type="image/webp" srcset="/assets/img/case-cabin-rows-m.webp 960w, /assets/img/case-cabin-rows.webp 1920w" sizes="(max-width: 1023px) 100vw, 60vw" />
+          <source type="image/webp" srcset="/assets/img/case-cabin-rows-m.webp 960w, /assets/img/case-cabin-rows.webp 1920w" sizes="100vw" />
           <img
             src="/assets/img/case-cabin-rows.jpg"
             width="1920" height="1080"
             alt="箱房阵列实景"
             loading="lazy" decoding="async"
-            onerror="this.closest('.img7r').classList.add('ph-fallback');this.closest('picture').remove()"
+            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
       </div>
+      <div class="cap"><div class="t">企业简介</div><div class="s">{PLACEHOLDER}公司简介 — 正式内容以甲方审核文案替换</div></div>
     </div>
   </section>
 
-  {/* 工厂能力（deep 章：通栏 21:9 + 双 4:3 产线卡） */}
+  {/* 工厂能力（v3.1：78vh 整屏通栏 + 1600 容器双 16:9 产线卡） */}
   <section class="chap chap-dark" id="factory" aria-label="工厂能力">
     <div class="wrap">
       <div class="en on-dark rv">Factory</div>
       <h2 class="v3h2 rv">工厂能力</h2>
       <p class="v3lead on-dark rv" style="margin-bottom:56px">产线、模具、质检与出运——确定性从工厂开始。【待确认】</p>
     </div>
-    <div class="bleed r219 rv">
+    <div class="bleed b78 rv">
       <div class="ph3">
         <picture>
           <source type="image/webp" srcset="/assets/img/factory-precast-units-m.webp 960w, /assets/img/factory-precast-units.webp 1920w" sizes="100vw" />
@@ -96,9 +91,9 @@ const milestones = [
       </div>
       <div class="cap"><div class="t">预制产线</div><div class="s">【待确认】产线说明</div></div>
     </div>
-    <div class="wrap" style="padding-top:24px">
+    <div class="wide" style="padding-top:24px">
       <div class="g2">
-        <div class="cc r43 rv">
+        <div class="cc r169 rv">
           <picture>
             <source type="image/webp" srcset="/assets/img/flow-factory-module-m.webp 960w, /assets/img/flow-factory-module.webp 1080w" sizes="(max-width: 767px) 100vw, 50vw" />
             <img
@@ -111,7 +106,7 @@ const milestones = [
           </picture>
           <div class="cap"><div class="t">产线模块</div><div class="s">【待确认】</div></div>
         </div>
-        <div class="cc r43 rv">
+        <div class="cc r169 rv">
           <picture>
             <source type="image/webp" srcset="/assets/img/flow-factory-panels.webp" />
             <img
@@ -142,13 +137,13 @@ const milestones = [
     </div>
   </section>
 
-  {/* 现场交付（通栏 21:9 航拍 + 双 4:3 细节卡） */}
+  {/* 现场交付（v3.1：78vh 整屏通栏航拍 + 1600 容器双 16:9 细节卡） */}
   <section class="chap chap-paper" style="padding-top:0" aria-label="现场交付">
     <div class="wrap">
       <div class="en rv">On Site</div>
       <h2 class="v3h2 rv" style="margin-bottom:56px">现场交付</h2>
     </div>
-    <div class="bleed r219 rv">
+    <div class="bleed b78 rv">
       <div class="ph3">
         <picture>
           <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial-m.webp 960w, /assets/img/case-cabin-site-aerial.webp 1920w" sizes="100vw" />
@@ -163,9 +158,9 @@ const milestones = [
       </div>
       <div class="cap"><div class="t">现场交付</div><div class="s">【待确认】交付说明</div></div>
     </div>
-    <div class="wrap" style="padding-top:24px;padding-bottom:0">
+    <div class="wide" style="padding-top:24px;padding-bottom:0">
       <div class="g2">
-        <div class="cc r43 rv">
+        <div class="cc r169 rv">
           <picture>
             <source type="image/webp" srcset="/assets/img/flow-transport-spreader-lift-m.webp 960w, /assets/img/flow-transport-spreader-lift.webp 1044w" sizes="(max-width: 767px) 100vw, 50vw" />
             <img
@@ -178,7 +173,7 @@ const milestones = [
           </picture>
           <div class="cap"><div class="t">吊装就位</div><div class="s">【待确认】</div></div>
         </div>
-        <div class="cc r43 rv">
+        <div class="cc r169 rv">
           <picture>
             <source type="image/webp" srcset="/assets/img/install-detail-roof-trim-m.webp 960w, /assets/img/install-detail-roof-trim.webp 1279w" sizes="(max-width: 767px) 100vw, 50vw" />
             <img

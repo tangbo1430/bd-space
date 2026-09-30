@@ -11,16 +11,18 @@ export async function getStaticPaths() {
 const { product } = Astro.props;
 const { Content } = await render(product);
 
-/* v3.0.1：首图 82vh 通栏（4S 用黄昏正立面；5S/6S/灰度用各自 hero；无图线 21:9 色条降级位） */
+/* v3.1：首图 92vh 通栏（4S 用黄昏正立面；5S/6S/灰度用各自 hero；无图线 21:9 色条降级位） */
 const heroAsset = product.id === '4s' ? PRODUCT_ASSETS.p4sDusk : (product.data.heroAsset ? PRODUCT_HERO_ASSETS[product.data.heroAsset] : undefined);
-/* 参数区右侧 4:3 配图：4S 外墙细节；其余有图线沿用各自 hero */
+/* 参数区 2/3 配图：4S 外墙细节；其余有图线沿用各自 hero */
 const paramImg = product.id === '4s' ? PRODUCT_ASSETS.p4sDetailWall : heroAsset;
-/* 产品图鉴：asset-map 仅批准 4S（通栏 4s-hero + 4:3 detail-wall/dusk-door） */
+/* 产品图鉴：asset-map 仅批准 4S（82vh 整屏 4s-hero + 16:9 detail-wall/dusk-door） */
 const galleryImgs = product.data.approvedImages
   .map((base) => Object.values(PRODUCT_ASSETS).find((a) => a.base === base))
   .filter((a): a is NonNullable<typeof a> => Boolean(a))
   .filter((a) => a.base !== 'product-4s-dusk');
-const scenes = [SPACE_ASSETS.kitchen, SPACE_ASSETS.bedroom, SPACE_ASSETS.bath, SPACE_ASSETS.laundry];
+/* 应用场景 v3.1：21:9 通栏餐厨 + 16:9 双卡卧室/卫浴 */
+const sceneLead = SPACE_ASSETS.kitchen;
+const sceneCards = [SPACE_ASSETS.bedroom, SPACE_ASSETS.bath];
 ---
 
 <BaseLayout
@@ -30,9 +32,9 @@ const scenes = [SPACE_ASSETS.kitchen, SPACE_ASSETS.bedroom, SPACE_ASSETS.bath, S
   headerStyle="overlay"
   master="v3"
 >
-  {/* 首屏 82vh 通栏；无图产品线降级为 21:9 色条位（SPEC §3 降级清单） */}
+  {/* 首屏 92vh 通栏；无图产品线降级为 21:9 色条位（SPEC §3 降级清单） */}
   {heroAsset ? (
-    <section class="v3hero h82" aria-label={`${product.data.name}首屏`}>
+    <section class="v3hero h92" aria-label={`${product.data.name}首屏`}>
       <div class="ph3">
         <picture>
           {'mw' in heroAsset && heroAsset.mw && <source media="(max-width: 767px)" type="image/webp" srcset={`/assets/img/${heroAsset.base}-m.webp`} />}
@@ -54,7 +56,7 @@ const scenes = [SPACE_ASSETS.kitchen, SPACE_ASSETS.bedroom, SPACE_ASSETS.bath, S
       </div>
     </section>
   ) : (
-    <section class="v3hero h82" aria-label={`${product.data.name}首屏`} style="background:var(--v3-deep)">
+    <section class="v3hero h92" aria-label={`${product.data.name}首屏`} style="background:var(--v3-deep)">
       <div class="ph3" style="display:flex;align-items:center;justify-content:center">
         <div class="v3ph-banner r219" style="width:min(1280px,100% - 160px);margin:0 auto"><span>IMG-PRODUCT-BANNER · {product.data.name} 产品图待提供</span></div>
       </div>
@@ -67,20 +69,10 @@ const scenes = [SPACE_ASSETS.kitchen, SPACE_ASSETS.bedroom, SPACE_ASSETS.bath, S
     </section>
   )}
 
-  {/* 技术参数：左 5 列浮卡压右 7 列 4:3 实拍 */}
+  {/* 技术参数（v3.1 feat.rev 1/3-2/3：文字左 1/3 + 配图右 2/3 ≈ 59% 视口） */}
   <section class="chap chap-paper" aria-label="技术参数">
-    <div class="wrap split3">
-      <div class="tx5l rv">
-        <div class="en">Parameters</div>
-        <h2 class="v3h3">技术参数</h2>
-        <div class="specs3" style="margin-top:18px">
-          {product.data.params.map((row) => (
-            <div class="r"><b>{row.label}</b><span>{row.value}</span></div>
-          ))}
-        </div>
-        <p style="margin-top:16px;font-size:13px;color:var(--v3-muted)">参数待甲方确认后填入，不虚构。</p>
-      </div>
-      <div class="img7r r43 rv">
+    <div class="wrap feat rev">
+      <div class="fi r43 rv">
         {paramImg ? (
           <picture>
             {'mw' in paramImg && paramImg.mw && <source type="image/webp" srcset={`/assets/img/${paramImg.base}-m.webp ${paramImg.mw}w, /assets/img/${paramImg.base}.webp ${paramImg.w}w`} sizes="(max-width: 1023px) 100vw, 60vw" />}
@@ -90,21 +82,31 @@ const scenes = [SPACE_ASSETS.kitchen, SPACE_ASSETS.bedroom, SPACE_ASSETS.bath, S
               width={paramImg.w} height={paramImg.h}
               alt={paramImg.alt}
               loading="lazy" decoding="async"
-              onerror="this.closest('.img7r').classList.add('ph-fallback');this.closest('picture').remove()"
+              onerror="this.closest('.fi').classList.add('ph-fallback');this.closest('picture').remove()"
             />
           </picture>
         ) : (
           <div class="v3ph-banner" style="position:absolute;inset:0"><span>IMG-PRODUCT-PARAM · 配图待提供</span></div>
         )}
       </div>
+      <div class="ft rv">
+        <div class="en">Parameters</div>
+        <h2 class="v3h3">技术参数</h2>
+        <div class="specs3" style="margin-top:18px">
+          {product.data.params.map((row) => (
+            <div class="r"><b>{row.label}</b><span>{row.value}</span></div>
+          ))}
+        </div>
+        <p style="margin-top:16px;font-size:13px;color:var(--v3-muted)">参数待甲方确认后填入，不虚构。</p>
+      </div>
     </div>
   </section>
 
-  {/* 产品图鉴：21:9 通栏 + 双 4:3（当前仅 4S 有已批准辅图） */}
+  {/* 产品图鉴（v3.1：82vh 整屏通栏 + 1600 容器双 16:9，当前仅 4S 有已批准辅图） */}
   {product.id === '4s' && galleryImgs.length > 0 && (
     <section class="chap chap-paper" style="padding-top:0" aria-label="产品图鉴">
       <div class="wrap"><div class="en rv">Gallery</div><h2 class="v3h2 rv" style="margin-bottom:56px">产品图鉴</h2></div>
-      <div class="bleed r219 rv">
+      <div class="bleed b82 rv">
         <div class="ph3">
           <picture>
             <source type="image/webp" srcset="/assets/img/product-4s-hero-m.webp 960w, /assets/img/product-4s-hero.webp 1920w" sizes="100vw" />
@@ -119,10 +121,10 @@ const scenes = [SPACE_ASSETS.kitchen, SPACE_ASSETS.bedroom, SPACE_ASSETS.bath, S
         </div>
         <div class="cap"><div class="t">黄昏立面</div><div class="s">半打4S · 已验收实拍</div></div>
       </div>
-      <div class="wrap" style="padding-top:24px;padding-bottom:0">
+      <div class="wide" style="padding-top:24px;padding-bottom:0">
         <div class="g2">
           {galleryImgs.map((a) => (
-            <div class="gi r43 rv">
+            <div class="gi r169 rv">
               <picture>
                 {'mw' in a && a.mw && <source type="image/webp" srcset={`/assets/img/${a.base}-m.webp ${a.mw}w, /assets/img/${a.base}.webp ${a.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />}
                 {!('mw' in a && a.mw) && <source type="image/webp" srcset={`/assets/img/${a.base}.webp`} />}
@@ -135,15 +137,26 @@ const scenes = [SPACE_ASSETS.kitchen, SPACE_ASSETS.bedroom, SPACE_ASSETS.bath, S
     </section>
   )}
 
-  {/* 应用场景：2×2 已验收室内实拍 */}
+  {/* 应用场景（v3.1：21:9 通栏首图 + 1600 容器双 16:9 实拍） */}
   <section class="chap chap-paper" style="padding-top:96px" aria-label="应用场景">
     <div class="wrap">
       <div class="en rv">Applications</div>
       <h2 class="v3h2 rv">应用场景</h2>
       <p class="rv" style="font-size:13px;color:var(--v3-muted);margin-bottom:40px">【待提供】场景说明文字；以下为已验收室内实拍。</p>
-      <div class="g4">
-        {scenes.map((a) => (
-          <div class="gi r43 rv">
+    </div>
+    <div class="bleed r219 rv">
+      <div class="ph3">
+        <picture>
+          <source type="image/webp" srcset={`/assets/img/${sceneLead.base}-960w.webp ${sceneLead.mw}w, /assets/img/${sceneLead.base}.webp ${sceneLead.w}w`} sizes="100vw" />
+          <img src={`/assets/img/${sceneLead.base}.jpg`} width={sceneLead.w} height={sceneLead.h} alt={sceneLead.alt} loading="lazy" decoding="async" onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()" />
+        </picture>
+      </div>
+      <div class="cap"><div class="t">餐厨空间</div><div class="s">已验收室内实拍</div></div>
+    </div>
+    <div class="wide" style="padding-top:24px;padding-bottom:40px">
+      <div class="g2">
+        {sceneCards.map((a) => (
+          <div class="gi r169 rv">
             <picture>
               <source type="image/webp" srcset={`/assets/img/${a.base}-960w.webp ${a.mw}w, /assets/img/${a.base}.webp ${a.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
               <img src={`/assets/img/${a.base}.jpg`} width={a.w} height={a.h} alt={a.alt} loading="lazy" decoding="async" onerror="this.closest('.gi').classList.add('ph-fallback');this.closest('picture').remove()" />
