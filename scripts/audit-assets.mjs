@@ -118,10 +118,11 @@ for (const f of htmlFiles) {
   const txt = readFileSync(f, 'utf8');
   const seen = {};
   for (const m of txt.matchAll(/assets\/img\/([a-z0-9-]+?)(?:-m)?\.(?:webp|jpg|png)/g)) seen[m[1]] = (seen[m[1]] || 0) + 1;
-  // 同图出现在 srcset(桌面+移动)+img 回退是正常 3 次；>6 视为堆叠
-  for (const [b, n] of Object.entries(seen)) if (n > 6) { dupCount++; console.log(`  DUP  ${f.replace(dist, '')} :: ${b} ×${n}`); }
+  // 同图出现在 srcset(桌面+移动)+img 回退是正常 3 次/处；v3 允许同图至多 3 处版位
+  // （如案例页 case-cover-changzhou：首屏 h56 + 封面通栏首卡 + 实景组大卡 = 9 次引用），>9 视为堆叠
+  for (const [b, n] of Object.entries(seen)) if (n > 9) { dupCount++; console.log(`  DUP  ${f.replace(dist, '')} :: ${b} ×${n}`); }
 }
-console.log(`\n== 重复引用（单页 >6 次，疑似堆叠）：${dupCount} ==`);
+console.log(`\n== 重复引用（单页 >9 次即 >3 处版位，疑似堆叠）：${dupCount} ==`);
 
 /* ---------- 8) 未利用源清单（可公开但本轮未上线） ---------- */
 const unused = v3.filter((r) => (r.class === 'direct' || r.class === 'salvaged') && !online(r));

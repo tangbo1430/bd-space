@@ -18,9 +18,11 @@ interface Props {
   headerStyle?: 'overlay' | 'solid';
   /** 未发布/错误页不索引 */
   noindex?: boolean;
+  /** v3.0 视觉母版作用域：v3 时给 main 加 .v3（SPEC-v3.0） */
+  master?: 'v3';
 }
 
-const { title, description, lang = 'zh-CN', current = '', headerStyle = 'overlay', noindex = false } = Astro.props;
+const { title, description, lang = 'zh-CN', current = '', headerStyle = 'overlay', noindex = false, master } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
 // 当前仅中文发布：hreflang 仅 zh-CN 自引用 + x-default（BR-14）
 const altLinks = lang === 'zh-CN'
@@ -59,7 +61,7 @@ const aboutSub = currentAboutSub(Astro.url.pathname);
   )}
   <a class="skip-link" href="#main">跳转到主要内容</a>
   <SiteHeader current={current} style={headerStyle} lang={lang} aboutSub={aboutSub} />
-  <main id="main">
+  <main id="main" class={master === 'v3' ? 'v3' : undefined}>
     <slot />
   </main>
   <SiteFooter />

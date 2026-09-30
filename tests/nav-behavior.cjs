@@ -52,8 +52,8 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
     b: getComputedStyle(el.querySelector('.mega-t b')).color,
     bg: getComputedStyle(el).backgroundColor,
   }));
-  check('overlay 页头 hover 图标+标题转青绿（白底浅色系）', darkHover.ic === 'rgb(31, 168, 122)' && darkHover.b === 'rgb(31, 168, 122)');
-  check('overlay 页头 hover 列底 6% 青绿 tint（浅色档）', darkHover.bg === 'rgba(31, 168, 122, 0.06)' || darkHover.bg === 'rgba(31, 168, 122, 0.059)');
+  check('overlay 页头 hover 图标+标题转青绿（白底浅色系，v3 #0E7A5C）', darkHover.ic === 'rgb(14, 122, 92)' && darkHover.b === 'rgb(14, 122, 92)');
+  check('overlay 页头 hover 列底 6% 青绿 tint（浅色档）', darkHover.bg === 'rgba(14, 122, 92, 0.06)' || darkHover.bg === 'rgba(14, 122, 92, 0.059)');
 
   // AC-36: 慢速直向移入面板（经 12px 连接层）
   const card = await page.locator('.sub-panel-card').boundingBox();
@@ -140,8 +140,8 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
     bg: getComputedStyle(el).backgroundColor,
     en: getComputedStyle(el.querySelector('.mega-en')).color,
   }));
-  check('浅色 hover 图标+标题转青绿', lightHover.ic === 'rgb(31, 168, 122)' && lightHover.b === 'rgb(31, 168, 122)');
-  check('浅色 hover 列底 4% 青绿 tint', lightHover.bg === 'rgba(31, 168, 122, 0.06)' || lightHover.bg === 'rgba(31, 168, 122, 0.059)');
+  check('浅色 hover 图标+标题转青绿', lightHover.ic === 'rgb(14, 122, 92)' && lightHover.b === 'rgb(14, 122, 92)');
+  check('浅色 hover 列底 4% 青绿 tint', lightHover.bg === 'rgba(14, 122, 92, 0.06)' || lightHover.bg === 'rgba(14, 122, 92, 0.059)');
   check('英文标签 #6F7572（白底 AA 4.5:1）', lightHover.en === 'rgb(111, 117, 114)');
 
   // 当前子页三重冗余（careers 路由）：字重 500 + 青绿 + 24×2 短横线
@@ -153,7 +153,7 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
     const after = getComputedStyle(el, '::after');
     return { w: b.fontWeight, color: b.color, aw: after.width, ah: after.height };
   });
-  check('当前子页 字重500+青绿+24×2 短横线', curState.w === '500' && curState.color === 'rgb(31, 168, 122)' && curState.aw === '24px' && curState.ah === '2px');
+  check('当前子页 字重500+青绿+24×2 短横线', curState.w === '500' && curState.color === 'rgb(14, 122, 92)' && curState.aw === '24px' && curState.ah === '2px');
   await page.screenshot({ path: 'shots/v14-desktop-1440-mega-current.png', clip: { x: 0, y: 0, width: 1440, height: 320 } });
 
   // ============ 1280 视口 ============
@@ -203,8 +203,8 @@ const check = (name, cond) => { results.push([name, cond]); console.log((cond ? 
   check('AC-43 无 JS 纯 CSS :hover 展开', cssOpen);
   const href = await nojs.locator('.sub-trigger').getAttribute('href');
   check('AC-43 一级链接无脚本有效', href === '/zh/about/');
-  const footerInvestors = await nojs.locator('footer a[href="/zh/about/investors/"]').count();
-  check('AC-43 页脚子页直链存在', footerInvestors > 0);
+  const footerAbout = await nojs.locator('footer a[href="/zh/about/"]').count();
+  check('AC-43 页脚「关于我们」直链存在（v3 页脚一级导航列）', footerAbout > 0);
   await ctxNoJs.close();
 
   // ============ 移动 375（AC-40/41） ============

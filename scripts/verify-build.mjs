@@ -114,7 +114,7 @@ ok(/\.mega-en\{[^}]*font-size:11px/.test(css) && /\.mega-en\{[^}]*letter-spacing
 ok(/--ink-muted2:\s*#6F7572/i.test(css), '英文标签加深灰令牌 #6F7572（AA 4.5:1）');
 ok(/\.mega-en\{[^}]*color:var\(--ink-muted2\)/.test(css), '英文标签使用加深灰（浅色页头）');
 /* LightningCSS 将 rgba 归一化为 8 位 hex：.06→0f / .14→24 / .82→d1 / .92→eb */
-ok(css.includes('.mega-col:hover{background:#1fa87a0f}'), '浅色 hover 列底 4% 青绿 tint');
+ok(css.includes('.mega-col:hover{background:#0e7a5c0f}'), '浅色 hover 列底 6% 青绿 tint（v3  accent #0E7A5C）');
 /* v1.5.2：面板全场景统一白色，深色变体已移除 */
 ok(!css.includes('.mega-col:hover{background:#1fa87a24}'), '无深色 hover 14% tint 残留（已统一浅色）');
 ok(!css.includes('background:#111514d1') && !css.includes('background:#111514eb'), '无深色变体 .82/.92 实色残留');
@@ -177,30 +177,25 @@ ok(home?.includes('home-hero-01-m.webp'), 'Banner 移动档 -m.webp 引用');
 ok(/media="\(max-width: ?767px\)"/.test(home ?? ''), 'Banner 移动媒体查询');
 ok(home?.includes('fetchpriority="high"'), '首屏 Banner fetchpriority=high 预加载');
 ok(home?.includes('width="1920" height="823"'), 'Banner 明确宽高（防 CLS）');
-ok(home?.includes('半打空间 4S 模块化建筑') && home?.includes('产线全景'), 'Banner/氛围图准确中文 alt（v2.0 S3 换产线全景）');
+ok(home?.includes('半打空间 4S 模块化建筑'), 'Banner 准确中文 alt');
+ok(home?.includes('半打 4S 产品黄昏正立面实景'), 'S4 模块即空间黄昏大图 alt（v3）');
 ok(home?.includes('onerror='), '图片失败回退降级钩子存在');
 ok(home?.includes('loading="lazy"'), '非首帧/氛围图懒加载');
 ok(home?.includes('case-cayman-install-roof') && home?.includes('case-cover-changzhou'), '首页 S5 案例接入 RAR 封面（v2.0 通栏+两列大卡）');
 ok(!home?.includes('项目名称 A') && !home?.includes('构件用量'), '首页 S5 案例无虚构 KPI/项目名');
 const bd8 = page('zh/products/bd8');
-ok(bd8?.includes('product-bd8-interior-01'), 'BD8 详情含室内辅图');
+ok(bd8?.includes('IMG-PRODUCT-BANNER'), 'BD8 详情首屏色条降级占位（v3 无图线，素材待提供）');
 ok(bd8 !== null && !bd8.includes('product-bd8-hero'), 'BD8 详情无含车辆主图');
 const bd9 = page('zh/products/bd9');
-ok(bd9?.includes('product-bd9-floorplan'), 'BD9 详情含户型图辅图');
+ok(bd9?.includes('IMG-PRODUCT-BANNER'), 'BD9 详情首屏色条降级占位（v3 无图线）');
 
 console.log('== v1.6 内容模块 ==');
-/* M1 愿景（公司介绍页） */
-ok(about?.includes('我们的愿景'), 'M1 愿景小标题');
-ok(about?.includes('让房屋制造更标准、更高效、更易交付'), 'M1 主文案（PM 中性稿）');
-ok(about?.includes('标准化制造') && about?.includes('高效率交付') && about?.includes('模块化与可复制'), 'M1 三枚价值主张');
-/* M2 研发演进（v2.0 并入愿景区紧凑呈现，替代独立 ol 时间线；年份未核实不渲染） */
-ok(about?.includes('研发与产品演进'), 'M2 时间线标题');
-ok(about?.includes('研发探索') && about?.includes('体系验证') && about?.includes('产品化') && about?.includes('项目交付'), 'M2 四阶段（v2.0 并入愿景区）');
-const aboutEvo = about ?? '';
-const evoStart = aboutEvo.indexOf('研发与产品演进');
-const evoSeg = evoStart >= 0 ? aboutEvo.slice(evoStart) : aboutEvo;
-ok(evoSeg.indexOf('研发探索') >= 0 && evoSeg.indexOf('研发探索') < evoSeg.indexOf('体系验证') && evoSeg.indexOf('体系验证') < evoSeg.indexOf('产品化') && evoSeg.indexOf('产品化') < evoSeg.indexOf('项目交付'), 'M2 DOM 顺序 01→04（v2.0 愿景区段内）');
-ok(!/(19|20)\d{2}\s*年/.test(aboutEvo), 'M2 无未核实年份');
+/* v3 使命宣言 + 企业简介（关于页整页重写，SPEC-v3.0 §关于） */
+ok(about?.includes('v3mission') && about?.includes('量产房子，解决全球住房问题'), 'v3 使命宣言（980px 单列大字）');
+ok(about?.includes('企业简介') && about?.includes('case-cabin-rows'), 'v3 企业简介 split3（箱房阵列实拍）');
+/* v3 里程碑 tl3：年份未核实以【年】占位，不渲染真实年份 */
+ok(about?.includes('里程碑') && about?.includes('tl3'), 'v3 里程碑 tl3 时间轴');
+ok(!/(19|20)\d{2}\s*年/.test(about ?? ''), '里程碑无未核实年份（【年】占位）');
 /* M3 首页交付流程（APG Tabs） */
 ok(home?.includes('从工厂到现场'), 'M3 区块标题');
 ok(home?.includes('role="tablist"'), 'M3 tablist 语义');
@@ -224,10 +219,10 @@ ok(cases !== null && !cases.includes('maxw-568') && !cases.includes('maxw-711'),
 ok(cases !== null && !cases.includes('案例整理中'), 'M4 案例墙已替换旧空态');
 ok(cases !== null && !/href="\/zh\/cases\/[^"]+"/.test(cases), 'M4 案例卡无详情链接（本轮不接详情）');
 ok(cases !== null && !cases.includes('case-cayman-hero') && !cases.includes('case-zhongshan-house') && !/case-fiji-interior(?!-06)/.test(cases), 'M4 不再引用已删除的 v1.6 低清案例图');
-/* M5 建造体系（产品页原创 SVG） */
+/* M5 建造体系（v3 无图附录卡；原创 SVG 底稿保留不引用） */
 const productsIdx = page('zh/products');
 ok(productsIdx?.includes('三种建造体系'), 'M5 区块标题');
-ok(productsIdx?.includes('system-2d-panel.svg') && productsIdx?.includes('system-3d-module.svg') && productsIdx?.includes('system-combined.svg'), 'M5 三枚原创 SVG');
+ok(!productsIdx?.includes('system-2d-panel.svg'), 'v3 建造体系无图附录卡（SVG 底稿保留未引用）');
 ok(productsIdx?.includes('2D 板式体系') && productsIdx?.includes('3D 模块体系') && productsIdx?.includes('组合建造'), 'M5 三体系名');
 /* 敏感信息红线：金额/估值/股权数字不出现、不预留（断言避开本脚本注释，检查 HTML 正文） */
 ok(investors !== null && !investors.includes('金额：') && !investors.includes('投资方：'), 'IR 融资卡片无金额/投资方字段（v1.6 红线）');
@@ -275,10 +270,10 @@ for (const slug of ['4s', '5s', '6s', 'grayscale']) {
 }
 const productsIdxV17 = page('zh/products');
 ok(productsIdxV17?.includes('product-4s-hero') && productsIdxV17?.includes('product-grayscale-hero'), '产品列表卡片接入主图');
-ok(about?.includes('about-hero'), '关于我们首图接入');
-/* v2.0.4 关于页首图整幅模式（成品横幅不裁切烘焙文案；h1 sr-only 保留） */
-ok(about?.includes('page-hero page-hero--full'), 'v2.0.4 关于页首图整幅模式类');
-ok(about?.includes('hero-copy sr-only') && about?.includes('把建造，变成制造'), 'v2.0.4 关于页 h1 保留为 sr-only');
+ok(about?.includes('case-mige-install-01'), '关于我们首屏接入 case-mige-install-01（v3 替代合成图 about-hero）');
+/* v3.0.1 关于页首屏：88vh 实拍 + 可视 h1（替代 v2.0.4 整幅烘焙横幅） */
+ok(about?.includes('v3hero h88'), 'v3 关于页首屏 v3hero h88');
+ok(about?.includes('我们想做什么？'), 'v3 关于页首屏 h1 可视');
 ok(css.includes('.page-hero--full') && css.includes('aspect-ratio:1920 / 823'), 'v2.0.4 整幅比例锁定样式（1920/823）');
 ok(css.includes('.page-hero--full .img-ph picture img{object-position:left center'), 'v2.0.4 移动端裁左半航拍（不含烘焙文案）');
 /* 敏感词红线：中建三局不得出现在任何页面文案/alt/title/URL */
@@ -319,14 +314,14 @@ ok(/\.ph-1 \.ph-pic img[^{]*\{[^}]*object-position:50% 33%/.test(css), '帧 1/3 
 ok(home?.includes('hero-controls'), '首页控件组 DOM 就位');
 /* 案例施工实景图组（v2.0 编辑式：通栏首图 + 两列大图） */
 ok(cases?.includes('data-case-gallery'), '案例页施工实景模块');
-ok((cases?.match(/cg2-group/g) ?? []).length === 10, 'v2.0 十组案例实景（通栏首图+两列大图）');
-ok((cases?.match(/cg2-bigs/g) ?? []).length === 10, 'v2.0 每组两列大图容器');
+ok((cases?.match(/cg2-group/g) ?? []).length === 10, 'v3 十组案例实景（组标+通栏首图+双 4:3）');
+ok((cases?.match(/class="glabel rv"/g) ?? []).length === 10, 'v3 每组 glabel 组标（01-10）');
 ok(cases?.includes('case-cayman-install-crane') && cases?.includes('case-cabin-rows') && cases?.includes('case-fiji-box-door') && cases?.includes('case-cover-shenzhen-camp') && cases?.includes('case-shenzhen-steel-frame'), 'v2.0 案例实景图组引用（含深圳中性两图）');
 ok(cases?.includes('方舱建筑') && cases?.includes('宿舍建筑'), '案例实景仅地点+类型中性标注');
-/* 4S 产品详情图组（dusk-door 限宽 608px，不放大） */
+/* 4S 产品详情图组（v3：82vh 黄昏首图 + 图鉴通栏 hero + 双 4:3，取消 608 限宽） */
 const p4s = page('zh/products/4s');
 ok(p4s?.includes('product-4s-dusk') && p4s?.includes('product-4s-detail-wall') && p4s?.includes('product-4s-dusk-door'), '4S 详情图组三张接入');
-ok(p4s?.includes('max-width:608px') && p4s?.includes('width="608"') && p4s?.includes('height="810"'), '4S dusk-door 限宽 608px 且保持 3:4（v2.0 图鉴容器 r-43 裁切，属性保留）');
+ok(p4s?.includes('v3hero h82') && !p4s?.includes('max-width:608px'), '4S v3 首图 82vh 且 dusk-door 以图鉴 4:3 卡呈现（608 限宽移除）');
 /* 红线：核心优势「全球独有」不得上页（v1.8 文案源处理口径） */
 ok(!allHtml.includes('全球独有'), '全站无「全球独有」表述');
 /* 版本证据：version.json 与页面 meta 一致 */
@@ -373,38 +368,42 @@ for (const f of ['case-mige-install-03', 'case-fangcang-install-02', 'case-brisb
 ok(!allHtml.includes('志特'), '全站无「志特」（江门合作方）');
 ok(cases !== null && cases.includes('营地建筑'), '案例页深圳以中性「营地建筑」标注');
 ok(!new RegExp(['中', '建', '三', '局'].join('')).test(allHtml), '全站无「中建三局」');
-/* 案例墙九卡 + 实景图组扩充 */
-ok((cases?.match(/case-card/g) ?? []).length >= 9, '案例墙九卡');
+/* 案例墙 + 实景图组（v3：封面 8 张 4:3 cc 卡 + 通栏首卡；实景 10 组 ×3 图） */
+ok((cases?.match(/class="cc r43 rv"/g) ?? []).length === 28, '案例页 28 张 4:3 卡（封面 8 + 实景 20，v3）');
 ok((cases?.match(/cg2-group/g) ?? []).length >= 10, '案例实景十组');
 
-console.log('== v2.0 视觉优化（图版率 + 色卡 + 大图版式） ==');
-/* PLACEHOLDER-CARD 色卡系统：8 产品 + PH-MAP/PH-NEWS 变体，比例锁定 */
-const phIds = ['PH-BD8', 'PH-BD9', 'PH-5S', 'PH-6S', 'PH-GS', 'PH-SLAB', 'PH-WALL', 'PH-STAIR'];
-for (const id of phIds) {
-  ok((productsIdx ?? '').includes(`data-ph-card="${id}"`), `产品中心色卡 ${id} 就位`);
-}
-ok((page('zh/contact') ?? '').includes('data-ph-card="PH-MAP"'), '联系页 PH-MAP 地图色卡就位');
-ok((home ?? '').includes('data-ph-card="PH-NEWS"'), '首页新闻 PH-NEWS 色卡就位');
-ok(css.includes('.ph-card{') && css.includes('.ph-card-grid') && css.includes('.ph-card-tag'), '色卡系统 CSS（底色/网格/角标）');
+console.log('== v3.0 视觉整站（章节序列 + 索引行 + 转化章） ==');
+/* v3 产品列表：撤大色卡改索引行；无图线明示素材待提供 */
+ok((productsIdx ?? '').includes('class="idx"'), 'v3 更多产品线发丝索引行容器');
+ok(((productsIdx ?? '').match(/class="chip"/g) ?? []).length === 5, 'v3 五枚 64×44 色片（bd8/bd9/slab/wall/stair）');
+ok((productsIdx ?? '').includes('图片素材待提供'), '无图产品线明示「图片素材待提供」（v3 占位口径）');
+ok((productsIdx ?? '').includes('chap-ink') && (productsIdx ?? '').includes('prow p3'), 'v3 已验收实拍三卡（ink 章）');
+/* v3 联系页：整页转化章 + 地图说明细条（PH-MAP 大色块移除） */
+const contactPg = page('zh/contact');
+ok(contactPg?.includes('conv conv-page') && contactPg?.includes('product-4s-dusk-door'), '联系页整页转化章（dusk-door 底图，v3）');
+ok(contactPg?.includes('mapnote'), '联系页地图说明细条（v3 替代 PH-MAP）');
+ok(!contactPg?.includes('data-ph-card="PH-MAP"'), 'PH-MAP 大色块已移除（v3 设计）');
+/* v3 首页新闻章：空态收窄 96px（PH-NEWS 色卡移除） */
+ok((home ?? '').includes('aria-label="新闻资讯"'), '首页新闻章存在（v3 空态）');
+ok(!(home ?? '').includes('data-ph-card="PH-NEWS"'), 'PH-NEWS 色卡已移除（v3 设计）');
+ok(css.includes('.ph-card{') && css.includes('.ph-card-grid') && css.includes('.ph-card-tag'), '色卡系统 CSS（底色/网格/角标，旧页遗留组件样式保留）');
 ok(css.includes('图片待替换') === false, '色卡角标文案由组件输出（非 CSS 硬编码）');
-ok((productsIdx ?? '').includes('图片待替换'), '色卡含「图片待替换」角标');
-/* 首页区块（v2.0.1：S2 数据带整块移除，Hero 直进 S3 暖米白内容区） */
-ok(!home?.includes('stats-v2') && !home?.includes('data-v2="stats"'), '首页 S2 数据带已移除（v2.0.1）');
-ok(/<\/section>\s*<section class="sec sec-tight" aria-label="关于半打"/.test(home ?? ''), 'Hero 与 S3 相邻无断层（v2.0.1）');
-ok(home?.includes('data-v2="mfg"') && home?.includes('mfg-card'), '首页 S3 图文并排（7:5 图 + 文字列，v2.0.2 不叠压）');
-ok(!css.includes('.mfg-card { position: relative; z-index: 2') && !/-90px/.test(css.match(/\.mfg-card \{[^}]*\}/)?.[0] ?? ''), 'S3 文字卡无负边距叠压（v2.0.2）');
-ok(home?.includes('data-v2="pm-big"') && home?.includes('pm-mid') && home?.includes('pm-small'), '首页 S4 产品矩阵（3 大卡 + 中行 + 5 文字卡）');
-ok(home?.includes('blt-lead') && home?.includes('blt-grid'), '首页 S5 被建造（21:9 通栏 + 2×4:3）');
-ok(home?.includes('cta-sec-v2') && home?.includes('cta-figx'), '首页 S8 CTA 图文并排（v2.0.3，表单不叠压图片）');
-ok(!/class="cta-bg"/.test(home ?? ''), '首页 S8 不再使用叠压背景位（v2.0.3）');
+/* 首页章节（v3.0.1 十章：Hero/制造宣言/数据带/模块即空间/全线产品/工程案例/交付流程/资质/新闻/转化章） */
+ok(home?.includes('aria-label="把建造，变成制造"'), '首页 S2 制造宣言 chap-dark（v3）');
+ok(home?.includes('class="band"') && (home?.match(/class="num rv"/g) ?? []).length === 4, '首页 S3 数据带 4 列（v3 设计决策恢复，数字待确认占位）');
+ok(home?.includes('aria-label="模块，即空间"') && home?.includes('split3'), '首页 S4 模块即空间 split3 图文（v3）');
+ok(home?.includes('aria-label="全线产品"') && (home?.match(/class="pcard r43 rv"/g) ?? []).length === 4, '首页 S5 全线产品 4 真图大卡（chap-ink）');
+ok(home?.includes('aria-label="工程案例"') && home?.includes('case-cayman-install-roof'), '首页 S6 工程案例通栏首卡（v3）');
+ok(home?.includes('class="conv"') && home?.includes('case-cabin-site-aerial'), '首页 S10 转化章（v3 航拍底图 + 白卡表单）');
+ok(!/class="cta-bg"/.test(home ?? ''), '首页转化章无叠压背景位（v3 白卡表单并排）');
 /* 大图焦点裁切与编辑容器 */
 ok(css.includes('.figx') && css.includes('.figx-cap'), '编辑容器 + 图注浮层 CSS');
 ok(css.includes('--figx-focus') || css.includes('figx-focus'), '焦点裁切 CSS 变量');
-/* 案例封面通栏首卡 */
-ok(cases?.includes('cw2-lead') && cases?.includes('cw2-grid'), '案例封面通栏首卡 + 两列大卡');
-/* 关于页工厂/现场实拍 */
-ok(about?.includes('data-v2="factory"') && about?.includes('data-v2="onsite"'), '关于页工厂能力 + 现场交付实拍带');
-ok(about?.includes('case-cabin-rows') && about?.includes('factory-precast-units') && about?.includes('flow-transport-stacker-01'), '关于页 v2.0 实拍引用');
+/* 案例封面通栏首卡（v3 bleed + g2 两列大卡） */
+ok(cases?.includes('aria-label="项目封面"') && cases?.includes('aria-label="施工实景"'), '案例页封面区 + 施工实景（v3）');
+/* 关于页工厂/现场实拍（v3） */
+ok(about?.includes('id="factory"') && about?.includes('aria-label="现场交付"'), '关于页工厂能力 + 现场交付实拍带（v3）');
+ok(about?.includes('case-cabin-rows') && about?.includes('factory-precast-units') && about?.includes('flow-transport-spreader-lift'), '关于页 v3 实拍引用');
 /* Reviewer S4：三张图用途明确并入映射/审计 */
 ok(cases?.includes('case-cover-chengdu-dorm'), 'S4 case-cover-chengdu-dorm 用作案例墙成都封面');
 ok(home?.includes('flow-step01-mold'), 'S4 flow-step01-mold 用作流程 step01 主图');

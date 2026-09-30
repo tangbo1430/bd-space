@@ -1,27 +1,39 @@
 ---
+/**
+ * 首页 v3.0（SPEC-v3.0 §2.1 章节序列）：
+ * Hero 轮播(100vh) → 制造章(deep) → 数据带(deep) → 模块即空间(paper) → 全线产品(ink)
+ * → 被建造也被使用(通栏+双卡) → 从工厂到现场(paper2) → 资质与能力 → 新闻资讯 → 转化章(conv) 。
+ * 不回退：轮播七态 / reveal / ?motion=full / reduced-motion / 表单校验 / 事实占位规则。
+ */
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import FloatRail from '../../components/FloatRail.astro';
 import ConsultForm from '../../components/ConsultForm.astro';
 import FlowSteps from '../../components/FlowSteps.astro';
 import { site, PLACEHOLDER } from '../../lib/site';
-import { HOME_HERO_ASSETS, CASE_COVER_ASSETS, PRODUCT_ASSETS } from '../../lib/assets';
-import PlaceholderCard from '../../components/PlaceholderCard.astro';
-import { getCollection } from 'astro:content';
+import { HOME_HERO_ASSETS, CASE_COVER_ASSETS, PRODUCT_ASSETS, FLOW_FACTORY_ASSETS } from '../../lib/assets';
 
-const products = (await getCollection('products', ({ data }) => data.published))
-  .sort((a, b) => a.data.order - b.data.order);
-/* v2.0 产品矩阵：首行 3 大图卡（4S/5S 真图 + BD8 色卡），次行 BD9 色卡 + 5 文字卡 */
-const pmSmall = products.filter((p) => !['4s', 'bd8', 'bd9', '5s'].includes(p.id)).slice(0, 5);
+/* v3.0 数据带：四项经营数据均为【N】待确认（SPEC §2.1 第 3 章；甲方提供后填入，不虚构） */
+const stats = [
+  { n: '【N】', label: `${PLACEHOLDER}交付项目` },
+  { n: '【N】', label: `${PLACEHOLDER}覆盖国家与地区` },
+  { n: '【N】', label: `${PLACEHOLDER}工厂年产能` },
+  { n: '【N】', label: `${PLACEHOLDER}平均交付周期` },
+];
 
-/* v2.0.1：S2 数据带已按用户意见整块移除（四项数据均为待提供占位，无有效信息且破坏首屏完整性）；
-   真实经营数据到位后再以设计评审通过的版式补回。 */
-
-/* v2.0 §4.7：资质行高压至 56px */
+/* v3.0 资质与能力：发丝线行，条目与编号待提供 */
 const quals = [
-  { name: `${PLACEHOLDER}资质/认证名称 01`, no: 'CERT-NO.【待提供】' },
-  { name: `${PLACEHOLDER}资质/认证名称 02`, no: 'CERT-NO.【待提供】' },
-  { name: `${PLACEHOLDER}体系认证 03`, no: 'CERT-NO.【待提供】' },
-  { name: `${PLACEHOLDER}专利/荣誉 04`, no: 'NO.【待提供】' },
+  { yr: PLACEHOLDER, name: `${PLACEHOLDER}资质 / 认证名称 01`, no: 'CERT-NO.【待提供】' },
+  { yr: PLACEHOLDER, name: `${PLACEHOLDER}资质 / 认证名称 02`, no: 'CERT-NO.【待提供】' },
+  { yr: PLACEHOLDER, name: `${PLACEHOLDER}体系认证 03`, no: 'CERT-NO.【待提供】' },
+  { yr: PLACEHOLDER, name: `${PLACEHOLDER}专利 / 荣誉 04`, no: 'NO.【待提供】' },
+];
+
+/* v3.0 全线产品大卡（asset-map：4S/5S/6S/灰度已验收实拍上位） */
+const lineup = [
+  { href: '/zh/products/4s/', base: PRODUCT_ASSETS.p4sDusk.base, w: 1920, h: 1080, name: '半打4S', sub: '模块化空间产品', alt: PRODUCT_ASSETS.p4sDusk.alt },
+  { href: '/zh/products/5s/', base: 'product-5s-hero', w: 1920, h: 1080, name: '半打5S', sub: '模块化空间产品', alt: '半打 5S 产品外观实景' },
+  { href: '/zh/products/6s/', base: 'product-6s-hero', w: 1920, h: 1080, name: '半打6S', sub: '模块化空间产品', alt: '半打 6S 产品外观实景' },
+  { href: '/zh/products/grayscale/', base: 'product-grayscale-hero', w: 1920, h: 1080, name: '灰度空间', sub: '模块化空间产品', alt: '灰度空间产品外观实景' },
 ];
 ---
 
@@ -30,14 +42,14 @@ const quals = [
   description="半打空间——装配式混凝土空间产品的研发、制造与交付。了解我们的工厂能力、产品中心、工程案例与资质。"
   current="home"
   headerStyle="overlay"
+  master="v3"
 >
   <FloatRail />
 
-  <!-- S1 首屏 Hero：沉浸式三帧轮播（v1.8：min(92vh,880px)/88vh/72vh/78vh，七态状态机） -->
+  <!-- S1 首屏 Hero：100vh 三帧轮播（七态状态机与控件行为不变，v3 字级/节奏） -->
   <section class="hero" data-carousel role="region" aria-roledescription="carousel" aria-label="首页横幅">
     <p class="sr-only" data-banner-live aria-live="polite" style="position:absolute;left:-9999px">第 1 张，共 3 张</p>
     <div class="slide on" data-slide aria-roledescription="slide" aria-label="第 1 张，共 3 张">
-      {/* v1.7 RAR Banner 1：4S 黄昏全景；桌面 21:9 / 移动档 960w，WebP 优先 + JPG 回退；失败回退线稿占位 */}
       <div class="ph ph-1">
         <picture class="ph-pic">
           <source media="(max-width: 767px)" type="image/webp" srcset={`/assets/img/${HOME_HERO_ASSETS.hero01.base}-m.webp`} />
@@ -58,11 +70,11 @@ const quals = [
             <path d="M450 325 L450 175" />
             <path d="M330 275 L330 220 M570 275 L570 220" />
           </g>
-          <g fill="#1FA87A">
+          <g fill="#0E7A5C">
             <circle cx="250" cy="250" r="3.5" /><circle cx="650" cy="250" r="3.5" />
             <circle cx="450" cy="175" r="3.5" /><circle cx="450" cy="325" r="3.5" />
           </g>
-          <g fill="rgba(31,168,122,.18)">
+          <g fill="rgba(14,122,92,.18)">
             <circle cx="250" cy="250" r="12" /><circle cx="650" cy="250" r="12" />
             <circle cx="450" cy="175" r="12" /><circle cx="450" cy="325" r="12" />
           </g>
@@ -80,7 +92,6 @@ const quals = [
       </div>
     </div>
     <div class="slide" data-slide aria-roledescription="slide" aria-label="第 2 张，共 3 张">
-      {/* v1.7 RAR Banner 2：5S 日景正面；懒加载（非首帧） */}
       <div class="ph ph-2">
         <picture class="ph-pic">
           <source media="(max-width: 767px)" type="image/webp" srcset={`/assets/img/${HOME_HERO_ASSETS.hero02.base}-m.webp`} />
@@ -104,7 +115,6 @@ const quals = [
     </div>
     <div class="slide" data-slide aria-roledescription="slide" aria-label="第 3 张，共 3 张">
       <div class="ph ph-3">
-        {/* v1.7 RAR Banner 3：6S 黄昏实景；懒加载（非首帧） */}
         <picture class="ph-pic">
           <source media="(max-width: 767px)" type="image/webp" srcset={`/assets/img/${HOME_HERO_ASSETS.hero03.base}-m.webp`} />
           <source type="image/webp" srcset={`/assets/img/${HOME_HERO_ASSETS.hero03.base}.webp`} />
@@ -124,9 +134,13 @@ const quals = [
             <path d="M450 325 L450 175" />
             <path d="M330 275 L330 220 M570 275 L570 220" />
           </g>
-          <g fill="#1FA87A">
+          <g fill="#0E7A5C">
             <circle cx="250" cy="250" r="3.5" /><circle cx="650" cy="250" r="3.5" />
             <circle cx="450" cy="175" r="3.5" /><circle cx="450" cy="325" r="3.5" />
+          </g>
+          <g fill="rgba(14,122,92,.18)">
+            <circle cx="250" cy="250" r="12" /><circle cx="650" cy="250" r="12" />
+            <circle cx="450" cy="175" r="12" /><circle cx="450" cy="325" r="12" />
           </g>
         </svg>
         <span class="tag">IMG-HERO-3 · 建成项目（占位标注仅在图片缺失时显示）</span>
@@ -155,258 +169,215 @@ const quals = [
     <div class="scroll-hint">SCROLL</div>
   </section>
 
-  <!-- v2.0.1：Hero 轮播结束后直接进入暖米白内容区（S3 制造），无深色过渡带 -->
-
-  <!-- S3 关于半打 v2.0.2：7:5 工厂大图 + 文字列（两列清爽并排，不叠压图片） -->
-  <section class="sec sec-tight" aria-label="关于半打" data-v2="mfg">
-    <div class="wrap">
-      <div class="en rv">Manufacture</div>
-      <div class="mfg" style="margin-top:24px">
-        <div class="figx r-75 rv" style="--figx-focus:center">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/factory-precast-units.webp" />
-            <img
-              src="/assets/img/factory-precast-units.jpg"
-              width="1920" height="1440"
-              alt="工厂预制混凝土单元构件养护现场，产线全景"
-              loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-        </div>
-        <div class="mfg-card rv">
-          <div class="en">About Banda</div>
-          <h2>把建造，<br />变成制造</h2>
-          <p>半打空间专注于装配式混凝土空间产品。我们相信建筑可以像工业产品一样被设计、制造与交付——更短的工期、更稳定的品质、更少的现场不确定性。【示例文案，待确认】</p>
-          <a class="btn btn-ghost" href="/zh/about/">走进半打 <span class="arr">→</span></a>
-        </div>
+  <!-- S2 把建造，变成制造（deep 章：左 7 列大标题 + 右 5 列 4:3 工厂实拍） -->
+  <section class="chap chap-dark" aria-label="把建造，变成制造">
+    <div class="wrap split3">
+      <div class="tx7 rv">
+        <div class="en on-dark">Manufacturing</div>
+        <h2 class="v3h2">把建造，<br />变成制造</h2>
+        <p class="v3lead">把现场作业搬进工厂：模具、产线、质检与物流形成确定性的交付系统，房屋成为可复制的工业产品。【示例文案，待确认】</p>
+        <div style="margin-top:36px"><a class="btn btn-ghost" href="/zh/about/">了解制造体系 <span class="arr">→</span></a></div>
+      </div>
+      <div class="img5r r43 rv">
+        <picture>
+          <source type="image/webp" srcset={`/assets/img/${FLOW_FACTORY_ASSETS.module.base}-m.webp ${FLOW_FACTORY_ASSETS.module.mw}w, /assets/img/${FLOW_FACTORY_ASSETS.module.base}.webp ${FLOW_FACTORY_ASSETS.module.w}w`} sizes="(max-width: 1023px) 100vw, 40vw" />
+          <img
+            src={`/assets/img/${FLOW_FACTORY_ASSETS.module.base}.jpg`}
+            width={FLOW_FACTORY_ASSETS.module.w} height={FLOW_FACTORY_ASSETS.module.h}
+            alt={FLOW_FACTORY_ASSETS.module.alt}
+            loading="lazy" decoding="async"
+            onerror="this.closest('.img5r').classList.add('ph-fallback');this.closest('picture').remove()"
+          />
+        </picture>
       </div>
     </div>
   </section>
 
-  <!-- S4 产品中心（深底叙事区 + 原创线稿分解） -->
-  <section class="dark-sec" aria-label="产品中心">
+  <!-- S3 数据带（deep 通栏 4 列；数字待甲方确认，不虚构） -->
+  <section class="band" aria-label="关键数据">
     <div class="wrap">
-      <div class="dark-grid">
-        <div class="dark-copy rv">
-          <div class="en on-dark">Products</div>
-          <h2>模块，即空间</h2>
-          <p>每一类构件都是空间的一个可组合单元。分解它们，你会看到半打对结构与工艺的理解。【示例文案，待确认】</p>
-          <a class="btn btn-primary" href="/zh/products/">产品中心 <span class="arr">→</span></a>
-        </div>
-        <div class="rv">
-          <svg viewBox="0 0 640 420" width="100%" fill="none" role="img" aria-label="预制构件分解示意（原创线稿占位）">
-            <g stroke="#5a6660" stroke-width="1">
-              <path d="M170 96 L320 50 L470 96 L320 142 Z" />
-              <path d="M170 96 L170 108 L320 154 L320 142" />
-              <path d="M470 96 L470 108 L320 154" />
-              <path d="M196 176 L240 190 L240 300 L196 286 Z" />
-              <path d="M444 176 L400 190 L400 300 L444 286 Z" />
-              <path d="M262 200 L320 184 L378 200 L378 296 L320 312 L262 296 Z" />
-              <path d="M262 200 L320 216 L378 200" />
-              <path d="M320 216 L320 312" />
-              <path d="M190 336 L320 296 L450 336 L320 376 Z" />
-              <path d="M190 336 L190 348 L320 388 L320 376" />
-              <path d="M450 336 L450 348 L320 388" />
-              <g stroke-dasharray="3 5" stroke="#3a4540">
-                <path d="M320 154 L320 184" /><path d="M240 240 L262 240" />
-                <path d="M400 240 L378 240" /><path d="M320 312 L320 296" />
-              </g>
-            </g>
-            <g fill="#1FA87A">
-              <circle cx="320" cy="50" r="3" /><circle cx="196" cy="176" r="3" />
-              <circle cx="444" cy="176" r="3" /><circle cx="320" cy="216" r="3" /><circle cx="320" cy="388" r="3" />
-            </g>
-            <g fill="rgba(31,168,122,.16)">
-              <circle cx="320" cy="50" r="11" /><circle cx="196" cy="176" r="11" />
-              <circle cx="444" cy="176" r="11" /><circle cx="320" cy="216" r="11" /><circle cx="320" cy="388" r="11" />
-            </g>
-            <text x="320" y="418" text-anchor="middle" fill="#5a6660" font-size="10" letter-spacing="3" font-family="Arial">ORIGINAL LINE-ART PLACEHOLDER · 预制构件分解示意（原创）</text>
-          </svg>
-        </div>
-      </div>
-      <div class="pm-big" data-v2="pm-big">
-      {/* v2.0 首页大图密度：矩阵三真图/流程/制造主图桌面容器 ≤758px 宽，但源图 1920px——用桌面档保证清晰度 */}
-        <a href="/zh/products/4s/" aria-label="查看半打4S 产品详情">
-          <div class="figx r-43">
-            <picture>
-              <source type="image/webp" srcset={`/assets/img/${PRODUCT_ASSETS.p4sDusk.base}.webp`} />
-              <img
-                src={`/assets/img/${PRODUCT_ASSETS.p4sDusk.base}.jpg`}
-                width={PRODUCT_ASSETS.p4sDusk.w} height={PRODUCT_ASSETS.p4sDusk.h}
-                alt={PRODUCT_ASSETS.p4sDusk.alt} loading="lazy" decoding="async"
-                onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
-            </picture>
-            <div class="figx-cap"><div class="t">半打4S</div><div class="s">模块化空间产品</div></div>
-          </div>
-        </a>
-        <a href="/zh/products/5s/" aria-label="查看半打5S 产品详情">
-          <div class="figx r-43">
-            <picture>
-              <source type="image/webp" srcset="/assets/img/product-5s-hero.webp" />
-              <img
-                src="/assets/img/product-5s-hero.jpg"
-                width="1920" height="1080"
-                alt="半打 5S 产品外观实景" loading="lazy" decoding="async"
-                onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
-            </picture>
-            <div class="figx-cap"><div class="t">半打5S</div><div class="s">模块化空间产品</div></div>
-          </div>
-        </a>
-        <a href="/zh/products/bd8/" aria-label="查看 BD8 装配式空间产品详情">
-          <PlaceholderCard id="PH-BD8" />
-        </a>
-      </div>
-      <div class="pm-mid">
-        <a href="/zh/products/bd9/" aria-label="查看 BD9 装配式空间产品详情">
-          <PlaceholderCard id="PH-BD9" />
-        </a>
-        <a href="/zh/products/6s/" aria-label="查看半打6S 产品详情">
-          <div class="figx r-43">
-            <picture>
-              <source type="image/webp" srcset="/assets/img/product-6s-hero.webp" />
-              <img
-                src="/assets/img/product-6s-hero.jpg"
-                width="1920" height="1080"
-                alt="半打 6S 产品外观实景" loading="lazy" decoding="async"
-                onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
-            </picture>
-            <div class="figx-cap"><div class="t">半打6S</div><div class="s">模块化空间产品</div></div>
-          </div>
-        </a>
-        <a href="/zh/products/grayscale/" aria-label="查看灰度空间产品详情">
-          <div class="figx r-43">
-            <picture>
-              <source type="image/webp" srcset="/assets/img/product-grayscale-hero.webp" />
-              <img
-                src="/assets/img/product-grayscale-hero.jpg"
-                width="1920" height="1080"
-                alt="灰度空间产品外观实景" loading="lazy" decoding="async"
-                onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
-            </picture>
-            <div class="figx-cap"><div class="t">灰度空间</div><div class="s">模块化空间产品</div></div>
-          </div>
-        </a>
-      </div>
-      <div class="pm-small">
-        {pmSmall.map((p) => (
-          <a href={`/zh/products/${p.id}/`}>
-            {p.data.name}
-            <span>{p.data.tagline.replace(/【待确认】/g, '')}</span>
-          </a>
+      <div class="nums">
+        {stats.map((s) => (
+          <div class="num rv"><b>{s.n}</b><span>{s.label}</span></div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- S5 工程案例 v2.0：21:9 通栏编辑大图 + 2×4:3 半宽卡（图注浮层含「查看案例」链） -->
-  <section class="sec sec-tight" aria-label="工程案例">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <div><div class="en">Selected Projects</div><h2>被建造，也被使用</h2></div>
-        <a class="link-more" href="/zh/cases/">查看全部案例 <span class="arr">→</span></a>
-      </div>
-      <a href="/zh/cases/" class="figx r-219 blt-lead rv" style="--figx-focus:center 35%;display:block" aria-label="查看开曼群岛案例">
+  <!-- S4 模块，即空间（paper：左 8 列 7:5 大图 + 右 4 列文字） -->
+  <section class="chap chap-paper" aria-label="模块，即空间">
+    <div class="wrap split3">
+      <div class="img8 r75 rv">
         <picture>
-          <source type="image/webp" srcset="/assets/img/case-cayman-install-roof.webp" />
+          <source type="image/webp" srcset={`/assets/img/${PRODUCT_ASSETS.p4sDusk.base}.webp`} />
+          <img
+            src={`/assets/img/${PRODUCT_ASSETS.p4sDusk.base}.jpg`}
+            width={PRODUCT_ASSETS.p4sDusk.w} height={PRODUCT_ASSETS.p4sDusk.h}
+            alt={PRODUCT_ASSETS.p4sDusk.alt}
+            loading="lazy" decoding="async"
+            onerror="this.closest('.img8').classList.add('ph-fallback');this.closest('picture').remove()"
+          />
+        </picture>
+      </div>
+      <div class="tx4 rv">
+        <div class="en">Products</div>
+        <h2 class="v3h2">模块，<br />即空间</h2>
+        <p class="v3lead">从 4S 到灰度空间，每个模块都是完整、可交付的居住单元。【示例文案，待确认】</p>
+        <div style="margin-top:36px"><a class="btn btn-ghost-dark" href="/zh/products/">进入产品中心 <span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 全线产品（ink 章：4 张真图大卡 + 缺图产品线文字链） -->
+  <section class="chap chap-ink" style="padding-top:96px" aria-label="全线产品">
+    <div class="wrap">
+      <div class="shead rv">
+        <div><div class="en on-dark">Lineup</div><h2 class="v3h2">全线产品</h2></div>
+        <a class="link" href="/zh/products/">全部产品 →</a>
+      </div>
+      <div class="prow">
+        {lineup.map((p) => (
+          <a class="pcard r43 rv" href={p.href} aria-label={`查看${p.name}产品详情`}>
+            <picture>
+              <source type="image/webp" srcset={`/assets/img/${p.base}.webp`} />
+              <img
+                src={`/assets/img/${p.base}.jpg`}
+                width={p.w} height={p.h} alt={p.alt}
+                loading="lazy" decoding="async"
+                onerror="this.closest('.pcard').classList.add('ph-fallback');this.closest('picture').remove()"
+              />
+            </picture>
+            <div class="cap"><div class="t">{p.name}</div><div class="s">{p.sub}</div></div>
+          </a>
+        ))}
+      </div>
+      <p style="margin-top:40px;font-size:13px;color:rgba(255,255,255,.55)">
+        另有 <a href="/zh/products/bd8/" style="text-decoration:underline;text-underline-offset:3px">BD8</a> / <a href="/zh/products/bd9/" style="text-decoration:underline;text-underline-offset:3px">BD9</a> 装配式空间与<a href="/zh/products/slab/" style="text-decoration:underline;text-underline-offset:3px">预制构件</a>产品线 — 图片素材待甲方提供后补齐。
+      </p>
+    </div>
+  </section>
+
+  <!-- S6 被建造，也被使用（通栏 21:9 + 2 张 4:3） -->
+  <section class="chap chap-paper" style="padding-bottom:0" aria-label="工程案例">
+    <div class="wrap">
+      <div class="shead rv">
+        <div><div class="en">Selected Projects</div><h2 class="v3h2">被建造，也被使用</h2></div>
+        <a class="link" href="/zh/cases/">查看全部案例 →</a>
+      </div>
+    </div>
+    <a href="/zh/cases/" class="bleed r219 rv" style="display:block" aria-label="查看开曼群岛案例">
+      <div class="ph3" style="--figx-focus:center 35%">
+        <picture>
+          <source type="image/webp" srcset="/assets/img/case-cayman-install-roof-m.webp 960w, /assets/img/case-cayman-install-roof.webp 1920w" sizes="100vw" />
           <img
             src="/assets/img/case-cayman-install-roof.jpg"
             width="1920" height="1440"
             alt="开曼群岛海外住宅项目二层吊装，屋顶工人作业"
+            style="object-position:center 35%"
             loading="lazy" decoding="async"
-            onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
-        <div class="figx-cap"><div class="t">开曼群岛 · 海外住宅</div><div class="s">现场吊装纪实 → 查看案例</div></div>
-      </a>
-      <div class="blt-grid">
-        <a href="/zh/cases/" class="figx r-43 rv" style="display:block" aria-label="查看常州案例">
+      </div>
+      <div class="cap"><div class="t">开曼群岛 · 海外住宅</div><div class="s">二层模块吊装现场 — 查看案例 →</div></div>
+    </a>
+    <div class="wrap" style="padding-top:24px;padding-bottom:128px">
+      <div class="g2">
+        <a href="/zh/cases/" class="cc r43 rv" aria-label="查看常州案例">
           <picture>
-            <source type="image/webp" srcset={`/assets/img/${CASE_COVER_ASSETS.changzhou.base}.webp`} />
+            <source type="image/webp" srcset={`/assets/img/${CASE_COVER_ASSETS.changzhou.base}-m.webp ${CASE_COVER_ASSETS.changzhou.mw}w, /assets/img/${CASE_COVER_ASSETS.changzhou.base}.webp ${CASE_COVER_ASSETS.changzhou.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
             <img
               src={`/assets/img/${CASE_COVER_ASSETS.changzhou.base}.jpg`}
               width={CASE_COVER_ASSETS.changzhou.w} height={CASE_COVER_ASSETS.changzhou.h}
               alt={CASE_COVER_ASSETS.changzhou.alt} loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
             />
           </picture>
-          <div class="figx-cap"><div class="t">中国 · 常州</div><div class="s">4S 住宅</div></div>
+          <div class="cap"><div class="t">中国 · 常州</div><div class="s">4S 住宅</div></div>
         </a>
-        <a href="/zh/cases/" class="figx r-43 rv" style="display:block" aria-label="查看布里斯班案例">
+        <a href="/zh/cases/" class="cc r43 rv" aria-label="查看布里斯班案例">
           <picture>
-            <source type="image/webp" srcset={`/assets/img/${CASE_COVER_ASSETS.brisbane.base}.webp`} />
+            <source type="image/webp" srcset={`/assets/img/${CASE_COVER_ASSETS.brisbane.base}-m.webp ${CASE_COVER_ASSETS.brisbane.mw}w, /assets/img/${CASE_COVER_ASSETS.brisbane.base}.webp ${CASE_COVER_ASSETS.brisbane.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
             <img
               src={`/assets/img/${CASE_COVER_ASSETS.brisbane.base}.jpg`}
               width={CASE_COVER_ASSETS.brisbane.w} height={CASE_COVER_ASSETS.brisbane.h}
               alt={CASE_COVER_ASSETS.brisbane.alt} loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
             />
           </picture>
-          <div class="figx-cap"><div class="t">澳大利亚 · 布里斯班</div><div class="s">住宅</div></div>
+          <div class="cap"><div class="t">澳大利亚 · 布里斯班</div><div class="s">独栋民宅</div></div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- M3 从工厂到现场：六步交付流程（v1.6 DSN-162） -->
+  <!-- S7 从工厂到现场（paper2：胶囊 tab + 7 列 4:3 大图 + 4 列步骤文案；APG Tabs 行为不变） -->
   <FlowSteps />
 
-  <!-- S6 资质能力 v2.0（横排细线表，行高 56px 节奏压缩） -->
-  <section class="sec" style="background:#fff;padding:56px 0" aria-label="资质能力" data-v2="quals">
+  <!-- S8 资质与能力（发丝线行；条目待提供） -->
+  <section class="chap chap-paper" style="padding-top:96px;padding-bottom:96px" aria-label="资质与能力">
     <div class="wrap">
-      <div class="sec-head rv"><div><div class="en">Qualifications</div><h2>资质与能力</h2></div>
-        <a class="link-more" href="/zh/qualifications/">全部资质 <span class="arr">→</span></a>
+      <div class="shead rv">
+        <div><div class="en">Qualifications</div><h2 class="v3h2">资质与能力</h2></div>
+        <a class="link" href="/zh/qualifications/">全部资质 →</a>
       </div>
-      <div class="quals">
+      <div class="quals3">
         {quals.map((q) => (
-          <div class="qual rv"><b>{q.name}</b><span>{q.no}</span><span class="arr" aria-hidden="true">→</span></div>
+          <div class="q rv"><div class="yr">{q.yr}</div><div class="qt">{q.name}</div><div class="qs">{q.no}</div></div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- S7 新闻资讯 v2.0：1440 横向三列带 PH-NEWS 色卡缩略图（色卡 3:2，占位条目） -->
-  <section class="sec news-sec" style="padding:56px 0" aria-label="新闻资讯">
+  <!-- S9 新闻资讯（3 资讯卡，3:2 缩略位渐变签；有稿后换真图，布局不变） -->
+  <section class="chap chap-paper" style="padding-top:0" aria-label="新闻资讯">
     <div class="wrap">
-      <div class="sec-head rv"><div><div class="en">Newsroom</div><h2>新闻资讯</h2></div>
-        <a class="link-more" href="/zh/news/">全部资讯 <span class="arr">→</span></a>
+      <div class="shead rv">
+        <div><div class="en">Newsroom</div><h2 class="v3h2">新闻资讯</h2></div>
+        <a class="link" href="/zh/news/">全部资讯 →</a>
       </div>
-      <div class="news-v2-grid" style="margin-top:56px">
+      <div class="nrow">
         {['01', '02', '03'].map((no) => (
-          <article class="news-v2-item rv">
-            <PlaceholderCard id="PH-NEWS" ratio="3:2" label={`资讯配图 ${no}`} />
-            <time style="display:block;font-size:12px;color:var(--ink-muted);font-family:var(--font-en);letter-spacing:.08em;margin-top:16px">{PLACEHOLDER}2025-00-00</time>
-            <h3 style="font-weight:300;font-size:19px;margin-top:6px">{PLACEHOLDER}新闻标题占位：公司动态 / 项目签约 / 行业观察</h3>
-            <p style="font-size:13px;color:var(--ink-muted);margin-top:6px;line-height:1.8">{PLACEHOLDER}摘要两行以内。此处为版式占位文案，不作为真实新闻内容。</p>
+          <article class="ncard rv">
+            <div class="th"><span>资讯配图待替换</span></div>
+            <div class="bd">
+              <div class="dt">{PLACEHOLDER}2026-00-00 · {no}</div>
+              <div class="tt">{PLACEHOLDER}新闻标题占位：公司动态 / 项目进展 / 行业观察</div>
+            </div>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- S8 底部 CTA v2.1：方案 A 居中对称轴——居中标题组 + 白卡表单 / 竖幅黄昏入户图（设计师稿 design-cta-v2.1） -->
-  <section class="sec cta-sec cta-sec-v2" style="padding:96px 0" id="contact" aria-label="预约咨询">
+  <!-- S10 转化章（SPEC §1.7 统一件：航拍底图压暗 55% + 左标题/联系信息 + 右悬浮白卡表单） -->
+  <section class="conv" id="contact" aria-label="预约咨询">
+    <div class="ph3" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial-m.webp 960w, /assets/img/case-cabin-site-aerial.webp 1920w" sizes="100vw" />
+        <img
+          src="/assets/img/case-cabin-site-aerial.jpg"
+          width="1920" height="1080"
+          alt=""
+          loading="lazy" decoding="async"
+          onerror="this.closest('.conv').classList.add('ph-fallback');this.closest('picture').remove()"
+        />
+      </picture>
+    </div>
     <div class="wrap">
-      <div class="rv cta-head">
-        <div class="en">Contact</div>
-        <h2>让我们谈谈您的项目</h2>
-        <p style="margin-top:20px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
-        <p class="note" style="margin-top:16px">电话：{site.contact.phone} · 邮箱：{site.contact.email} · 地址：{site.contact.address}</p>
+      <div class="rv">
+        <div class="en on-dark">Contact</div>
+        <h2>让我们谈谈<br />您的项目</h2>
+        <p style="opacity:.8;max-width:420px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
+        <ul class="ci">
+          <li><b>电话</b>{site.contact.phone}</li>
+          <li><b>邮箱</b>{site.contact.email}</li>
+          <li><b>地址</b>{site.contact.address}</li>
+        </ul>
       </div>
-      <div class="cta-pair">
-        <div class="rv cta-card">
-          <ConsultForm id="home" />
-        </div>
-        <div class="figx rv cta-figx">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/product-4s-dusk-door.webp" />
-            <img src="/assets/img/product-4s-dusk-door.jpg" width="608" height="810" alt="半打空间模块化建筑黄昏入户实景" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
-          </picture>
-        </div>
+      <div class="formcard rv">
+        <h3>在线留言</h3>
+        <ConsultForm id="home" />
       </div>
     </div>
   </section>

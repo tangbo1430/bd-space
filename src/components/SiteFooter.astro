@@ -1,33 +1,60 @@
 ---
+/**
+ * v3.0 页脚（SPEC-v3.0 §1.8）：墨黑章四列 = 品牌 / 导航 / 产品 / 联系 + 底部版权与备案行。
+ * ICP 备案号由项目方办理后填入占位行（甲方无需提供）。
+ * 公众号二维码位预留 96×96：甲方提供前不渲染空框（SPEC §1.8）。
+ */
 import { site, PLACEHOLDER } from '../lib/site';
-import { NAV_ITEMS, LEGAL_LINKS, ABOUT_SUB_ITEMS } from '../lib/routes';
+import { NAV_ITEMS, LEGAL_LINKS } from '../lib/routes';
+
+const productLinks = [
+  { label: '半打4S', href: '/zh/products/4s/' },
+  { label: '半打5S', href: '/zh/products/5s/' },
+  { label: '半打6S', href: '/zh/products/6s/' },
+  { label: '灰度空间', href: '/zh/products/grayscale/' },
+  { label: 'BD8 / BD9', href: '/zh/products/bd8/' },
+  { label: '预制构件', href: '/zh/products/slab/' },
+];
 ---
 
-<footer>
-  <div class="wrap f-grid">
-    <div>
-      <div class="logo">半打空间 <span style={`font-family:var(--font-en);font-size:11px;letter-spacing:.3em;color:var(--ink-muted)`}>BANDA SPACE</span></div>
-      <p style="margin-top:18px;max-width:300px">{site.tagline}。【示例文案，待确认】</p>
+<footer class="v3foot">
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <div class="ft-logo">半打空间<small>BANDA SPACE</small></div>
+        <p class="ft-desc">{site.tagline}。【示例文案，待确认】</p>
+      </div>
+      <div>
+        <h5>导航</h5>
+        <ul>
+          {NAV_ITEMS.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h5>产品</h5>
+        <ul>
+          {productLinks.map((p) => <li><a href={p.href}>{p.label}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h5>联系</h5>
+        <ul>
+          <li>地址：{site.contact.address}</li>
+          <li>电话：{site.contact.phone}</li>
+          <li>邮箱：{site.contact.email}</li>
+        </ul>
+        {/* 公众号二维码位预留（96×96）：素材待甲方提供，提供前不渲染空框 */}
+      </div>
     </div>
-    <div>
-      <h4>导航</h4>
-      {/* 子项平铺直链，与一级栏目同层展示（不缩进、不加层级符号） */}
-      {NAV_ITEMS.map((item) => <a href={item.href}>{item.label}</a>)}
-      {ABOUT_SUB_ITEMS.filter((s) => s.key !== 'about').map((s) => <a href={s.href}>{s.label}</a>)}
+    <div class="ft-bot">
+      <span>© {site.year} 半打空间 · 版权所有</span>
+      <span>
+        {site.icp === PLACEHOLDER ? `${PLACEHOLDER}ICP 备案号（项目方办理后填入）` : site.icp}
+        {' · '}
+        {LEGAL_LINKS.map((l, i) => (
+          <>{i > 0 && ' / '}<a href={l.href}>{l.label}</a></>
+        ))}
+      </span>
     </div>
-    <div>
-      <h4>联系</h4>
-      <p>地址：{site.contact.address}<br />电话：{site.contact.phone}<br />邮箱：{site.contact.email}</p>
-    </div>
-  </div>
-  <div class="wrap f-bottom">
-    <span>© {site.year} 半打空间 · 版权所有</span>
-    <span>
-      {site.icp === PLACEHOLDER ? `${PLACEHOLDER}ICP 备案号` : site.icp}
-      {' · '}
-      {LEGAL_LINKS.map((l, i) => (
-        <>{i > 0 && ' / '}<a href={l.href}>{l.label}</a></>
-      ))}
-    </span>
   </div>
 </footer>

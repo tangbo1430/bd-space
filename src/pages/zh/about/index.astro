@@ -1,274 +1,197 @@
----
+﻿---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PhImg from '../../../components/PhImg.astro';
 import { PLACEHOLDER } from '../../../lib/site';
-import { ABOUT_HERO_ASSET, FLOW_FACTORY_ASSETS } from '../../../lib/assets';
 
-const factoryStats = [
-  { num: '——', label: `自动化产线（条）${PLACEHOLDER}` },
-  { num: '——', label: `堆场面积（㎡）${PLACEHOLDER}` },
-];
-void factoryStats; /* v2.0：工厂数字移入图注浮层文案，保留占位口径 */
 const milestones = [
   { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 01` },
   { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 02` },
   { yr: '【年】', text: `${PLACEHOLDER}里程碑事件 03` },
 ];
-
-/* M1 愿景（v1.6 DSN-160，PM 中性稿） */
-const visionValues = [
-  { no: '01', title: '标准化制造', desc: `${PLACEHOLDER}以标准化设计与制造提升产品一致性。` },
-  { no: '02', title: '高效率交付', desc: `${PLACEHOLDER}工厂预制与现场装配并行，缩短建造周期。` },
-  { no: '03', title: '模块化与可复制', desc: `${PLACEHOLDER}模块单元灵活组合，适配多种空间需求。` },
-];
-
-/* M2 研发与产品演进（v1.6 DSN-161；年份未核实整列隐藏，ol 保持 01→04） */
-const evoStages = [
-  { no: '01', stage: '研发探索', desc: `${PLACEHOLDER}装配式空间技术路线探索。` },
-  { no: '02', stage: '体系验证', desc: `${PLACEHOLDER}建造体系与构件性能验证。` },
-  { no: '03', stage: '产品化', desc: `${PLACEHOLDER}标准化产品定型与量产准备。` },
-  { no: '04', stage: '项目交付', desc: `${PLACEHOLDER}产品进入项目交付阶段。` },
-];
 ---
 
 <BaseLayout
   title="关于我们"
-  description="了解半打空间：企业简介、工厂能力、生产流程与质检体系。数据与事实信息以客户提供为准。"
+  description="了解半打空间：企业使命、简介、工厂能力与现场交付。数据与事实信息以客户提供为准。"
   current="about"
-  headerStyle="solid"
+  headerStyle="overlay"
+  master="v3"
 >
-  {/* v2.0.4 用户意见整改：该素材为成品横幅（左航拍建筑 + 右侧烘焙愿景文案），
-      旧版 440px 居中裁切会把右侧文案拦腰切断。改为整幅比例锁定展示（不裁切），
-      页头改浅色实底避免压住横幅顶部文案；h1 保留为 sr-only（SEO/无障碍）。 */}
-  <section class="page-hero page-hero--full" aria-label="关于我们首屏">
-    {/* v1.7 RAR 关于我们首图：白盒建筑+愿景文案（21:9，移动裁左半建筑）；首屏 eager 预加载，失败回退深色渐变 */}
-    <PhImg g="dark-1" tag="IMG-ABOUT-HERO · 白盒建筑+愿景文案" onDark img={{ ...ABOUT_HERO_ASSET, lazy: false }} />
-    <div class="hero-copy sr-only">
-      <div class="en">About Banda</div>
-      <h1>把建造，变成制造</h1>
+  {/* v3.0.1 关于页：首屏禁用合成横幅 about-hero（会裁切文案），改用米阁安装实拍 88vh 通栏 */}
+  <section class="v3hero h88" aria-label="关于我们首屏">
+    <div class="ph3">
+      <picture>
+        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/case-mige-install-01-m.webp" />
+        <source type="image/webp" srcset="/assets/img/case-mige-install-01.webp" />
+        <img
+          src="/assets/img/case-mige-install-01.jpg"
+          width="1705" height="1279"
+          alt="中山独栋民宅项目现场安装实景"
+          loading="eager" decoding="async" fetchpriority="high"
+          onerror="this.closest('.v3hero').classList.add('ph-fallback');this.closest('picture').remove()"
+        />
+      </picture>
+    </div>
+    <div class="wrap">
+      <div class="en on-dark">About Banda</div>
+      <h1>我们想做什么？</h1>
+      <p class="sub">What are we trying to do?</p>
     </div>
   </section>
 
-  <div class="wrap">
-    <p class="crumb" style="padding-left:0;padding-right:0"><a href="/zh/">HOME</a> / ABOUT</p>
+  {/* 使命宣言（980px 单列大字） */}
+  <section class="chap chap-paper" aria-label="使命">
+    <div class="wrap rv" style="max-width:980px">
+      <div class="en">Mission</div>
+      <div class="v3mission" style="margin-top:20px">
+        量产房子，解决全球住房问题。<br />
+        <span class="sub-en">House manufacturing — an industry not yet truly industrialized.</span>
+      </div>
+      <p class="v3lead" style="margin-top:32px">"建筑"是人类社会唯一没有被实现工业化的产业，全球都面临建房的困难。【示例文案，待确认】</p>
+    </div>
+  </section>
 
-    <!-- M1 愿景（v1.6；v2.0 节奏压缩 + 右侧愿景配图） -->
-    <section class="vision v2-tight" aria-label="我们的愿景">
-      <div class="rv">
-        <div class="v-label">我们的愿景</div>
-        <h2>让房屋制造更标准、更高效、更易交付。</h2>
-      </div>
-      <div class="vision-vals rv">
-        {visionValues.map((v) => (
-          <div class="vision-val">
-            <span class="v-no" aria-hidden="true">{v.no}</span>
-            <div><b>{v.title}</b><p>{v.desc}</p></div>
-          </div>
-        ))}
-      </div>
-      <div class="figx r-43 rv" style="grid-column:1 / -1;margin-top:8px">
-        <picture>
-          <source type="image/webp" srcset="/assets/img/case-zhongshan-install-03.webp" />
-          <img
-            src="/assets/img/case-zhongshan-install-03.jpg"
-            width="1899" height="1424"
-            alt="中山低层住宅项目吊装就位，现场指挥"
-            loading="lazy" decoding="async"
-            onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-          />
-        </picture>
-        <div class="figx-cap"><div class="t">交付现场</div><div class="s">标准化吊装【待确认】</div></div>
-      </div>
-    </section>
-
-    <!-- M2 研发与产品演进（v1.6；年份未核实不渲染；v2.0 并入愿景区紧凑呈现） -->
-    <section class="vision v2-tight" aria-label="研发与产品演进" data-evo style="border-bottom:none">
-      <div class="rv">
-        <div class="v-label">研发与产品演进</div>
-        <h2 style="font-size:32px">从研发探索、体系验证，到产品化与项目交付。</h2>
-      </div>
-      <div class="vision-vals rv">
-        {evoStages.map((s) => (
-          <div class="vision-val">
-            <span class="v-no" aria-hidden="true">{s.no}</span>
-            <div><b>{s.stage}</b><p>{s.desc}</p></div>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- 企业简介 v2.0：右图占位 → 箱房阵列真图（4:3，focus center） -->
-    <div class="pd-body" style="padding-top:40px;padding-bottom:24px">
-      <div>
+  {/* 企业简介：左浮卡 + 右 4:3 箱房阵列实拍 */}
+  <section class="chap chap-paper" style="padding-top:0" aria-label="企业简介">
+    <div class="wrap split3">
+      <div class="tx5l rv">
         <div class="en">Profile</div>
-        <h2 style="margin:12px 0 18px">企业简介</h2>
-        <p style="font-size:15px;max-width:440px">
-          {PLACEHOLDER}公司简介、核心优势与经营理念。此处为占位文案，待客户提供经审核的企业介绍后替换（PRD §8 企业必填字段）。
-        </p>
+        <h2 class="v3h3">企业简介</h2>
+        <p class="v3lead" style="font-size:15px">{PLACEHOLDER}公司简介。核心信息与里程碑，正式内容以客户提供的经审核的公司介绍替换。【示例文案，待确认】</p>
+        <div style="margin-top:28px"><a class="btn btn-ghost-dark" href="#factory">了解制造体系 <span class="arr">→</span></a></div>
       </div>
-      <div class="figx r-43 rv">
+      <div class="img7r r43 rv">
         <picture>
-          <source type="image/webp" srcset="/assets/img/case-cabin-rows.webp" />
+          <source type="image/webp" srcset="/assets/img/case-cabin-rows-m.webp 960w, /assets/img/case-cabin-rows.webp 1920w" sizes="(max-width: 1023px) 100vw, 60vw" />
           <img
             src="/assets/img/case-cabin-rows.jpg"
             width="1920" height="1080"
-            alt="厂房箱房阵列实景"
+            alt="箱房阵列实景"
             loading="lazy" decoding="async"
-            onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+            onerror="this.closest('.img7r').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
       </div>
     </div>
+  </section>
 
-    <!-- 工厂能力 v2.0：通栏工厂实拍横幅 + 2×4:3 产线/堆场卡 -->
-    <section style="padding:0 0 32px" aria-label="工厂能力" data-v2="factory">
-      <div class="en rv">Factory</div>
-      <h2 class="rv" style="margin:12px 0 18px">工厂能力</h2>
-      <div class="figx r-219 rv" style="--figx-focus:center 40%">
+  {/* 工厂能力（deep 章：通栏 21:9 + 双 4:3 产线卡） */}
+  <section class="chap chap-dark" id="factory" aria-label="工厂能力">
+    <div class="wrap">
+      <div class="en on-dark rv">Factory</div>
+      <h2 class="v3h2 rv">工厂能力</h2>
+      <p class="v3lead on-dark rv" style="margin-bottom:56px">产线、模具、质检与出运——确定性从工厂开始。【待确认】</p>
+    </div>
+    <div class="bleed r219 rv">
+      <div class="ph3">
         <picture>
-          <source type="image/webp" srcset="/assets/img/case-mige-install-01-m.webp 960w, /assets/img/case-mige-install-01.webp 1705w" sizes="100vw" />
+          <source type="image/webp" srcset="/assets/img/factory-precast-units-m.webp 960w, /assets/img/factory-precast-units.webp 1920w" sizes="100vw" />
           <img
-            src="/assets/img/case-mige-install-01.jpg"
-            width="1705" height="1279"
-            alt="工厂产线内景，模块构件生产作业"
+            src="/assets/img/factory-precast-units.jpg"
+            width="1920" height="1440"
+            alt="工厂预制混凝土单元构件养护现场"
             loading="lazy" decoding="async"
-            onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
       </div>
-      <div class="ab-factory-grid rv">
-        <div class="figx r-43">
+      <div class="cap"><div class="t">预制产线</div><div class="s">【待确认】产线说明</div></div>
+    </div>
+    <div class="wrap" style="padding-top:24px">
+      <div class="g2">
+        <div class="cc r43 rv">
           <picture>
-            <source type="image/webp" srcset={`/assets/img/${FLOW_FACTORY_ASSETS.module.base}-m.webp ${FLOW_FACTORY_ASSETS.module.mw}w, /assets/img/${FLOW_FACTORY_ASSETS.module.base}.webp ${FLOW_FACTORY_ASSETS.module.w}w`} sizes="(max-width: 1279px) 100vw, 50vw" />
+            <source type="image/webp" srcset="/assets/img/flow-factory-module-m.webp 960w, /assets/img/flow-factory-module.webp 1080w" sizes="(max-width: 767px) 100vw, 50vw" />
             <img
-              src={`/assets/img/${FLOW_FACTORY_ASSETS.module.base}.jpg`}
-              width={FLOW_FACTORY_ASSETS.module.w} height={FLOW_FACTORY_ASSETS.module.h}
-              alt={FLOW_FACTORY_ASSETS.module.alt} loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-          <div class="figx-cap"><div class="t">产线模块</div><div class="s">自动化产线【待确认】</div></div>
-        </div>
-        <div class="figx r-43">
-          <picture>
-            <source type="image/webp" srcset={`/assets/img/${FLOW_FACTORY_ASSETS.panels.base}.webp`} />
-            <img
-              src={`/assets/img/${FLOW_FACTORY_ASSETS.panels.base}.jpg`}
-              width={FLOW_FACTORY_ASSETS.panels.w} height={FLOW_FACTORY_ASSETS.panels.h}
-              alt={FLOW_FACTORY_ASSETS.panels.alt} loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-          <div class="figx-cap"><div class="t">构件存放</div><div class="s">堆场面积【待确认】</div></div>
-        </div>
-      </div>
-      {/* v2.0 补充工厂实拍（v1.9 已批准素材）：预制单元养护 / 墙板出厂检验 */}
-      <div class="ab-factory-grid rv">
-        <div class="figx r-43">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/factory-precast-units-m.webp 960w, /assets/img/factory-precast-units.webp 1920w" sizes="(max-width: 1279px) 100vw, 50vw" />
-            <img
-              src="/assets/img/factory-precast-units.jpg"
-              width="1920" height="1440"
-              alt="工厂预制混凝土单元构件养护现场"
-              loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-          <div class="figx-cap"><div class="t">构件养护</div><div class="s">标准化养护周期【待确认】</div></div>
-        </div>
-        <div class="figx r-43">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/flow-step03-panel-lift.webp" />
-            <img
-              src="/assets/img/flow-step03-panel-lift.jpg"
+              src="/assets/img/flow-factory-module.jpg"
               width="1080" height="810"
-              alt="墙板出厂前吊装检验实拍"
+              alt="工厂车间内白色模块构件实拍"
               loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
             />
           </picture>
-          <div class="figx-cap"><div class="t">出厂检验</div><div class="s">逐件检验复核【待确认】</div></div>
+          <div class="cap"><div class="t">产线模块</div><div class="s">【待确认】</div></div>
+        </div>
+        <div class="cc r43 rv">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/flow-factory-panels.webp" />
+            <img
+              src="/assets/img/flow-factory-panels.jpg"
+              width="1280" height="960"
+              alt="工厂墙板存放区实拍"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
+            />
+          </picture>
+          <div class="cap"><div class="t">构件存放</div><div class="s">【待确认】</div></div>
         </div>
       </div>
-      <p style="font-size:15px;max-width:560px;margin-top:26px">{PLACEHOLDER}产线、设备、品控体系介绍。占位文案。</p>
-    </section>
+    </div>
+  </section>
 
-    <!-- 发展历程 v2.0：年号/事件行 + 旁侧施工现场实拍（节奏压缩 + 图版率补强） -->
-    <div class="tl-wrap" aria-label="发展历程">
-      <div class="tl" style="margin:0;align-self:center" >
-        <div class="en" style="margin-left:-40px;padding-left:40px">Milestones</div>
+  {/* 里程碑（980px 单列发丝时间线；年份与事件待甲方提供，不虚构） */}
+  <section class="chap chap-paper" aria-label="里程碑">
+    <div class="wrap" style="max-width:980px">
+      <div class="en rv">Milestones</div>
+      <h2 class="v3h2 rv">里程碑</h2>
+      <div class="tl3">
         {milestones.map((m) => (
-          <div class="tl-item"><div class="yr">{m.yr}</div><p>{m.text}</p></div>
+          <div class="ti rv"><div class="y">{m.yr}</div><div class="d">{m.text}</div></div>
         ))}
       </div>
-      <div class="tl-imgs">
-        <div class="figx r-43 rv">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/case-mige-install-01.webp" />
-            <img
-              src="/assets/img/case-mige-install-01.jpg"
-              width="1705" height="1279"
-              alt="米阁模块工厂内景，产线作业实景"
-              loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-          <div class="figx-cap"><div class="t">工厂内景</div><div class="s">米阁项目模块产线【待确认】</div></div>
-        </div>
-        <div class="figx r-43 rv" style="--figx-focus:center 30%">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/install-detail-roof-trim.webp" />
-            <img
-              src="/assets/img/install-detail-roof-trim.jpg"
-              width="1279" height="1705"
-              alt="现场安装屋面收边细节，登高作业"
-              loading="lazy" decoding="async"
-              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-          <div class="figx-cap"><div class="t">现场安装</div><div class="s">屋面收边细节【待确认】</div></div>
-        </div>
-      </div>
+      <p class="rv" style="margin-top:18px;font-size:13px;color:var(--v3-muted)">年份与事件待甲方提供，不虚构。</p>
     </div>
+  </section>
 
-    {/* v2.0 现场交付实拍带：施工实景通栏（图版率补强，v1.9 已批准素材） */}
-    <section style="padding:0 0 32px" aria-label="现场交付实拍" data-v2="onsite">
+  {/* 现场交付（通栏 21:9 航拍 + 双 4:3 细节卡） */}
+  <section class="chap chap-paper" style="padding-top:0" aria-label="现场交付">
+    <div class="wrap">
       <div class="en rv">On Site</div>
-      <h2 class="rv" style="margin:12px 0 18px">现场交付</h2>
-      <div class="figx r-219 rv" style="--figx-focus:center">
+      <h2 class="v3h2 rv" style="margin-bottom:56px">现场交付</h2>
+    </div>
+    <div class="bleed r219 rv">
+      <div class="ph3">
         <picture>
-          <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial.webp" />
+          <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial-m.webp 960w, /assets/img/case-cabin-site-aerial.webp 1920w" sizes="100vw" />
           <img
             src="/assets/img/case-cabin-site-aerial.jpg"
             width="1920" height="1080"
             alt="项目场地航拍，箱体阵列吊装就位"
             loading="lazy" decoding="async"
-            onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
       </div>
-      <div class="ab-factory-grid rv" style="margin-top:32px">
-        <div class="figx r-43">
+      <div class="cap"><div class="t">现场交付</div><div class="s">【待确认】交付说明</div></div>
+    </div>
+    <div class="wrap" style="padding-top:24px;padding-bottom:0">
+      <div class="g2">
+        <div class="cc r43 rv">
           <picture>
-            <source type="image/webp" srcset="/assets/img/flow-transport-stacker-01.webp" />
-            <img src="/assets/img/flow-transport-stacker-01.jpg" width="1164" height="1552" alt="正面吊装箱装车作业" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+            <source type="image/webp" srcset="/assets/img/flow-transport-spreader-lift-m.webp 960w, /assets/img/flow-transport-spreader-lift.webp 1044w" sizes="(max-width: 767px) 100vw, 50vw" />
+            <img
+              src="/assets/img/flow-transport-spreader-lift.jpg"
+              width="1044" height="1392"
+              alt="平衡梁吊装箱体作业"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
+            />
           </picture>
-          <div class="figx-cap"><div class="t">装车作业</div><div class="s">正面吊装箱【待确认】</div></div>
+          <div class="cap"><div class="t">吊装就位</div><div class="s">【待确认】</div></div>
         </div>
-        <div class="figx r-43">
+        <div class="cc r43 rv">
           <picture>
-            <source type="image/webp" srcset="/assets/img/flow-transport-spreader-lift.webp" />
-            <img src="/assets/img/flow-transport-spreader-lift.jpg" width="1044" height="1392" alt="平衡梁吊装箱体作业" loading="lazy" decoding="async" onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()" />
+            <source type="image/webp" srcset="/assets/img/install-detail-roof-trim-m.webp 960w, /assets/img/install-detail-roof-trim.webp 1279w" sizes="(max-width: 767px) 100vw, 50vw" />
+            <img
+              src="/assets/img/install-detail-roof-trim.jpg"
+              width="1279" height="1705"
+              alt="现场安装屋面收边细节，登高作业"
+              loading="lazy" decoding="async"
+              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
+            />
           </picture>
-          <div class="figx-cap"><div class="t">吊装就位</div><div class="s">平衡梁吊装【待确认】</div></div>
+          <div class="cap"><div class="t">安装细节</div><div class="s">【待确认】</div></div>
         </div>
       </div>
-    </section>
-
-
-    <div style="padding-bottom:32px">
-      <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">预约咨询 <span class="arr">→</span></a>
     </div>
-  </div>
+  </section>
 </BaseLayout>
