@@ -1,9 +1,4 @@
----
-/**
- * 联系我们 v3.2（SPEC-v3.2 §3.6）：
- * 短页头 46vh → 白底双栏（左=联系信息细线列表+地图马赛克占位；右=下划线表单）。
- * 表单状态机与四态沿用现有实现，视觉改细线+下划线，不用卡片。
- */
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ConsultForm from '../../components/ConsultForm.astro';
 import Mos from '../../components/Mos.astro';
@@ -15,45 +10,51 @@ import { site } from '../../lib/site';
   description="联系半打空间：电话、邮箱、地址与在线咨询表单。留下您的项目需求，我们将在 1 个工作日内回复。"
   current="contact"
   headerStyle="overlay"
-  master="v32"
+  master="v3"
 >
-  {/* 短页头 46vh */}
-  <section class="phero phero-sm" aria-label="联系我们页头">
+  {/* v3.0.1 联系页：整页即转化章（黄昏入户底图 92vh + 左五行联系信息 + 右白卡表单） */}
+  <section class="conv conv-page" aria-label="联系我们">
     <div class="ph3" aria-hidden="true">
       <picture>
-        <source media="(max-width: 720px)" type="image/webp" srcset="/assets/img/case-cabin-site-aerial-m.webp" />
-        <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial.webp" />
-        <img src="/assets/img/case-cabin-site-aerial.jpg" width="1920" height="1080" alt="" loading="eager" decoding="async" fetchpriority="high" onerror="this.closest('.phero').classList.add('ph-fallback');this.closest('picture').remove()" />
+        <source type="image/webp" srcset="/assets/img/product-4s-dusk-door.webp" />
+        <img
+          src="/assets/img/product-4s-dusk-door.jpg"
+          width="608" height="810"
+          alt=""
+          loading="eager" decoding="async" fetchpriority="high"
+          onerror="this.closest('.conv').classList.add('ph-fallback');this.closest('picture').remove()"
+        />
       </picture>
     </div>
-    <div class="hc">
-      <div class="eyebrow on-dark">Contact</div>
-      <h1>联系我们</h1>
-      <p class="sub">留下需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
-    </div>
-  </section>
-
-  {/* 白底双栏：信息列表 + 地图占位 / 下划线表单 */}
-  <section class="sec" aria-label="联系方式与在线留言">
-    <div class="wrap cgrid32">
+    <div class="wrap">
       <div class="rv">
-        <div class="eyebrow">Info</div>
-        <h2 class="h2">联系方式</h2>
-        <ul class="cinfo32">
+        <div class="en on-dark">Contact</div>
+        <h2>让我们谈谈<br />您的项目</h2>
+        <p style="opacity:.8;max-width:420px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
+        <ul class="ci">
           <li><b>电话</b>{site.contact.phone}</li>
           <li><b>邮箱</b>{site.contact.email}</li>
           <li><b>地址</b>{site.contact.address}</li>
-          <li><b>商务合作</b>【待提供】</li>
+          <li><b>企业微信 / 公众号</b>【待提供】</li>
+          <li><b>WhatsApp（海外）</b>【待提供】</li>
         </ul>
-        <div style="margin-top:32px">
-          <Mos id="PH-MAP" use="公司位置地图" ratio="16:9" min="1200×675" subject="办公地点，居中标注" r="r169" />
-        </div>
       </div>
-      <div class="formflat rv">
+      <div class="formcard rv">
         <h3>在线留言</h3>
-        <p class="fs-note">带 * 为必填。提交后我们将在 1 个工作日内回复；若服务暂未开通，可先通过电话或邮箱联系。</p>
         <ConsultForm id="contact" />
       </div>
+    </div>
+  </section>
+
+  {/* 公司位置（v3.2.1：PH-MAP 16:9 马赛克占位；地图服务密钥待甲方提供后接入） */}
+  <section class="chap chap-paper" style="padding:88px 0" aria-label="公司位置">
+    <div class="wrap">
+      <div class="en rv">Location</div>
+      <h2 class="v3h2 rv" style="margin-bottom:32px">公司位置</h2>
+      <div class="rv" style="max-width:880px">
+        <Mos id="PH-MAP" use="公司位置地图" ratio="16:9" min="1200×675" subject="办公地点，居中标注" r="r169" />
+      </div>
+      <p class="v3muted rv" style="margin-top:16px">详细地址与地图服务（密钥）待甲方提供后接入；当前以文字地址为准。</p>
     </div>
   </section>
 </BaseLayout>

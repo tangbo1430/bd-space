@@ -18,8 +18,8 @@ interface Props {
   headerStyle?: 'overlay' | 'solid';
   /** 未发布/错误页不索引 */
   noindex?: boolean;
-  /** 视觉母版作用域：v3（SPEC-v3.0/3.1）或 v32（SPEC-v3.2 白底主导） */
-  master?: 'v3' | 'v32';
+  /** v3.0 视觉母版作用域：v3 时给 main 加 .v3（SPEC-v3.0） */
+  master?: 'v3';
 }
 
 const { title, description, lang = 'zh-CN', current = '', headerStyle = 'overlay', noindex = false, master } = Astro.props;
@@ -61,7 +61,7 @@ const aboutSub = currentAboutSub(Astro.url.pathname);
   )}
   <a class="skip-link" href="#main">跳转到主要内容</a>
   <SiteHeader current={current} style={headerStyle} lang={lang} aboutSub={aboutSub} />
-  <main id="main" class={master}>
+  <main id="main" class={master === 'v3' ? 'v3' : undefined}>
     <slot />
   </main>
   <SiteFooter />

@@ -1,7 +1,7 @@
 ---
 /**
- * 马赛克占位组件（SPEC-v3.2 §2 缺图统一方案，替代 v2.0 色卡）。
- * 低对比 28px 棋盘底 + 虚线边框 + 角标 + 资产 ID/比例/最低像素/主体安全区；
+ * 马赛克占位组件（v3.2.1 验收 E 组：缺图统一方案，替代色卡/渐变/文字条）。
+ * 低对比 26px 棋盘底 + 虚线边框 + 圆角 6px + 角标 + 资产 ID/比例/最低像素/主体安全区；
  * 固定最终图片比例，甲方供图后只换图不改布局；role="img" + aria-label。
  */
 interface Props {
@@ -15,8 +15,8 @@ interface Props {
   min: string;
   /** 主体位置与安全裁切说明 */
   subject: string;
-  /** 比例 class：r43 / r169 / r219 */
-  r?: 'r43' | 'r169' | 'r219';
+  /** 比例 class：r43 / r169 / r219 / r32（3:2） */
+  r?: 'r43' | 'r169' | 'r219' | 'r32';
   class?: string;
 }
 const { id, use, ratio, min, subject, r = 'r43', class: cls = '' } = Astro.props;
