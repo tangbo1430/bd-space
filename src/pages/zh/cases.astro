@@ -1,145 +1,127 @@
-﻿---
+---
+/**
+ * 工程案例 v3.2（SPEC-v3.2 §3.5）：
+ * 页头 64vh → 编辑式案例组 ×4（组头 + 首图通栏 21:9 + 两列 16:9 ×2）→ 扩展说明 → 转化章。
+ * 年份等事实一律【待确认】，不虚构。
+ */
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { CASE_COVER_ASSETS, SHENZHEN_V20_ASSETS, CASE_DETAIL_GROUPS } from '../../lib/assets';
 
-/* v3.0.1 封面区：通栏首卡（常州）+ 2 列 4:3 大卡 ×8（仅地点+类型，无客户名） */
-const covers = [
-  { loc: '开曼群岛', type: '海外住宅', img: CASE_COVER_ASSETS.cayman },
-  { loc: '中山', type: '风度住宅', img: CASE_COVER_ASSETS.zhongshan },
-  { loc: '澳大利亚 · 布里斯班', type: '独栋民宅', img: CASE_COVER_ASSETS.brisbane },
-  { loc: '成都', type: '宿舍建筑', img: CASE_COVER_ASSETS.chengdu },
-  { loc: '深圳', type: '营地建筑', img: SHENZHEN_V20_ASSETS.coverCamp },
-  { loc: '斐济', type: '模块化建筑', img: CASE_COVER_ASSETS.fiji },
-  { loc: '江门', type: '装配式建筑', img: CASE_COVER_ASSETS.jiangmen },
-  { loc: '中山', type: '方舱建筑', img: CASE_COVER_ASSETS.zhongshanCabin },
+interface CaseGroup {
+  no: string;
+  title: string;
+  sub: string;
+  lead: { base: string; alt: string };
+  caps: { lead: string; items: [string, string][] };
+  imgs: { base: string; alt: string }[];
+}
+
+const groups: CaseGroup[] = [
+  {
+    no: 'CASE 01', title: '开曼群岛 · 海外住宅', sub: '二层模块住宅 · 【待确认】年份',
+    lead: { base: 'case-cover-cayman', alt: '开曼项目全景' },
+    caps: { lead: '项目实景 — 全景', items: [['二层模块吊装', 'case-cayman-install-02'], ['屋面模块就位', 'case-cayman-install-roof']] },
+    imgs: [
+      { base: 'case-cayman-install-02', alt: '开曼项目吊装现场' },
+      { base: 'case-cayman-install-roof', alt: '开曼项目屋面吊装' },
+    ],
+  },
+  {
+    no: 'CASE 02', title: '中国 · 常州 4S 住宅', sub: '4S 独栋 · 【待确认】年份',
+    lead: { base: 'case-cover-changzhou', alt: '常州 4S 住宅全景' },
+    caps: { lead: '项目实景 — 全景', items: [['现场安装', 'case-changzhou-install-02'], ['模块就位', 'case-changzhou-install-03']] },
+    imgs: [
+      { base: 'case-changzhou-install-02', alt: '常州项目安装现场' },
+      { base: 'case-changzhou-install-03', alt: '常州项目模块就位' },
+    ],
+  },
+  {
+    no: 'CASE 03', title: '澳大利亚 · 布里斯班 独栋民宅', sub: '独栋民宅 · 【待确认】年份',
+    lead: { base: 'case-cover-brisbane', alt: '布里斯班民宅全景' },
+    caps: { lead: '项目实景 — 全景', items: [['模块吊装', 'case-brisbane-lift-01'], ['现场安装', 'case-brisbane-install-02']] },
+    imgs: [
+      { base: 'case-brisbane-lift-01', alt: '布里斯班项目吊装' },
+      { base: 'case-brisbane-install-02', alt: '布里斯班项目安装' },
+    ],
+  },
+  {
+    no: 'CASE 04', title: '中国 · 成都 集宿项目', sub: '集宿建筑 · 【待确认】年份',
+    lead: { base: 'case-cover-chengdu-dorm', alt: '成都集宿项目全景' },
+    caps: { lead: '项目实景 — 全景', items: [['现场拼装', 'case-chengdu-assembly-01'], ['模块安装', 'case-chengdu-install-03']] },
+    imgs: [
+      { base: 'case-chengdu-assembly-01', alt: '成都项目拼装现场' },
+      { base: 'case-chengdu-install-03', alt: '成都项目模块安装' },
+    ],
+  },
 ];
 ---
 
 <BaseLayout
   title="工程案例"
-  description="半打空间项目实践：开曼群岛海外住宅、澳大利亚布里斯班住宅、中国中山低层住宅、斐济模块化建筑。"
+  description="半打空间工程案例：开曼群岛、常州、布里斯班、成都等已交付与在建项目实录。"
   current="cases"
   headerStyle="overlay"
-  master="v3"
+  master="v32"
 >
-  {/* 页首 56vh：常州封面通栏 */}
-  <section class="v3hero h56" aria-label="工程案例首屏">
-    <div class="ph3">
+  {/* 页头 64vh */}
+  <section class="phero" aria-label="工程案例页头">
+    <div class="ph3" aria-hidden="true">
       <picture>
-        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/case-cover-changzhou-m.webp" />
-        <source type="image/webp" srcset="/assets/img/case-cover-changzhou.webp" />
-        <img
-          src="/assets/img/case-cover-changzhou.jpg"
-          width="1667" height="1250"
-          alt="中国常州4S住宅项目外观实景"
-          loading="eager" decoding="async" fetchpriority="high"
-          onerror="this.closest('.v3hero').classList.add('ph-fallback');this.closest('picture').remove()"
-        />
+        <source media="(max-width: 720px)" type="image/webp" srcset="/assets/img/case-cayman-install-crane-m.webp" />
+        <source type="image/webp" srcset="/assets/img/case-cayman-install-crane.webp" />
+        <img src="/assets/img/case-cayman-install-crane.jpg" width="1920" height="1080" alt="" loading="eager" decoding="async" fetchpriority="high" onerror="this.closest('.phero').classList.add('ph-fallback');this.closest('picture').remove()" />
       </picture>
     </div>
-    <div class="wrap">
-      <div class="en on-dark">Projects</div>
-      <h1>项目实践</h1>
+    <div class="hc">
+      <div class="eyebrow on-dark">Projects</div>
+      <h1>工程案例</h1>
+      <p class="sub">已交付与在建项目实录。</p>
     </div>
   </section>
 
-  {/* 项目封面（v3.1：78vh 整屏首卡 + 1600 容器 8 张 16:9 两列） */}
-  <section class="chap chap-paper" style="padding-bottom:0" aria-label="项目封面">
+  {/* 编辑式案例组 ×4 */}
+  <section class="sec" aria-label="案例组">
     <div class="wrap">
-      <div class="shead rv">
-        <div><div class="en">Selected</div><h2 class="v3h2" style="margin-bottom:0">项目封面</h2></div>
-      </div>
-    </div>
-    <div class="bleed b78 rv">
-      <div class="ph3">
-        <picture>
-          <source type="image/webp" srcset="/assets/img/case-cover-changzhou-m.webp 960w, /assets/img/case-cover-changzhou.webp 1667w" sizes="100vw" />
-          <img
-            src="/assets/img/case-cover-changzhou.jpg"
-            width="1667" height="1250"
-            alt="中国常州4S住宅项目外观实景"
-            loading="lazy" decoding="async"
-            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
-          />
-        </picture>
-      </div>
-      <div class="cap"><div class="t">中国 · 常州</div><div class="s">4S 住宅 — 查看案例 →</div></div>
-    </div>
-    <div class="wide" style="padding-top:24px;padding-bottom:110px">
-      <div class="g2">
-        {covers.map((c) => (
-          <div class="pbig r169 rv">
+      {groups.map((g) => (
+        <article class="cg32" aria-label={g.title}>
+          <div class="cgh rv"><div class="no">{g.no}</div><h2 class="t">{g.title}</h2><div class="s">{g.sub}</div></div>
+          <div class="lead-img r219 rv">
             <picture>
-              <source type="image/webp" srcset={`/assets/img/${c.img.base}-m.webp ${c.img.mw}w, /assets/img/${c.img.base}.webp ${c.img.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
-              <img
-                src={`/assets/img/${c.img.base}.jpg`}
-                width={c.img.w} height={c.img.h} alt={c.img.alt}
-                loading="lazy" decoding="async"
-                onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
-            </picture>
-            <div class="cap"><div class="t">{c.loc}</div><div class="s">{c.type}</div></div><div class="go" aria-hidden="true">→</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* 施工实景（v3.1：10 组——组标 01–10 + 64vh 整屏组首图 + 16:9 双卡；1600 容器） */}
-  <section class="chap chap-paper" style="padding-top:64px" aria-label="施工实景" data-case-gallery>
-    <div class="wrap">
-      <div class="en rv">On Site</div>
-      <h2 class="v3h2 rv">施工实景</h2>
-      <p class="rv" style="font-size:13px;color:var(--v3-muted)">每组 3–5 张精选，完整图组进入对应案例详情。</p>
-    </div>
-    {CASE_DETAIL_GROUPS.map((g, i) => (
-      <div class="cg2-group">
-        <div class="wide">
-          <div class="glabel rv">
-            <span class="gi-no">{String(i + 1).padStart(2, '0')}</span>
-            <span class="gi-t">{g.loc} · {g.type}</span>
-            <span class="gi-s">施工实景</span>
-          </div>
-        </div>
-        <div class="bleed b64 rv">
-          <div class="ph3" style={g.lead.focus ? `--figx-focus:${g.lead.focus}` : undefined}>
-            <picture>
-              {g.lead.mw && (
-                <source type="image/webp" srcset={`/assets/img/${g.lead.base}${g.lead.msuf ?? '-m'}.webp ${g.lead.mw}w, /assets/img/${g.lead.base}.webp ${g.lead.w}w`} sizes="100vw" />
-              )}
-              {!g.lead.mw && <source type="image/webp" srcset={`/assets/img/${g.lead.base}.webp`} />}
-              <img
-                src={`/assets/img/${g.lead.base}.jpg`}
-                width={g.lead.w} height={g.lead.h} alt={g.lead.alt}
-                style={g.lead.focus ? `object-position:${g.lead.focus}` : undefined}
-                loading="lazy" decoding="async"
-                onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
+              <source type="image/webp" srcset={`/assets/img/${g.lead.base}-m.webp 960w, /assets/img/${g.lead.base}.webp 1667w`} sizes="100vw" />
+              <img src={`/assets/img/${g.lead.base}.jpg`} width="1667" height="1250" alt={g.lead.alt} loading="lazy" decoding="async" onerror="this.closest('.lead-img').classList.add('ph-fallback');this.closest('picture').remove()" />
             </picture>
           </div>
-        </div>
-        <div class="wide" style="padding-top:24px">
-          <div class="g2">
-            {g.bigs.map((img) => (
-              <div class="cc r169 rv">
-                <picture>
-                  {img.mw && (
-                    <source type="image/webp" srcset={`/assets/img/${img.base}${img.msuf ?? '-m'}.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
-                  )}
-                  {!img.mw && <source type="image/webp" srcset={`/assets/img/${img.base}.webp`} />}
-                  <img
-                    src={`/assets/img/${img.base}.jpg`}
-                    width={img.w} height={img.h} alt={img.alt}
-                    style={img.focus ? `object-position:${img.focus}` : undefined}
-                    loading="lazy" decoding="async"
-                    onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
-                  />
-                </picture>
+          <div class="figcap rv" style="margin-bottom:20px">{g.caps.lead}</div>
+          <div class="grid2">
+            {g.imgs.map((im, i) => (
+              <div class="rv">
+                <div class="gi r169">
+                  <picture>
+                    <source type="image/webp" srcset={`/assets/img/${im.base}-m.webp 960w, /assets/img/${im.base}.webp 1667w`} sizes="(max-width: 720px) 100vw, 50vw" />
+                    <img src={`/assets/img/${im.base}.jpg`} width="1667" height="1250" alt={im.alt} loading="lazy" decoding="async" onerror="this.closest('.gi').classList.add('ph-fallback');this.closest('picture').remove()" />
+                  </picture>
+                </div>
+                <div class="figcap">{g.caps.items[i][0]}</div>
               </div>
             ))}
           </div>
-        </div>
-      </div>
-    ))}
+        </article>
+      ))}
+      <p class="small rv">中山、江门、深圳、斐济等更多项目素材已在素材库中，可按同一版式扩展；每组保留 3–5 张。</p>
+    </div>
+  </section>
+
+  {/* 转化章 */}
+  <section class="conv32" aria-label="案例咨询">
+    <div class="ph3" aria-hidden="true">
+      <picture>
+        <source type="image/webp" srcset="/assets/img/case-cabin-rows-m.webp 960w, /assets/img/case-cabin-rows.webp 1920w" sizes="100vw" />
+        <img src="/assets/img/case-cabin-rows.jpg" width="1920" height="1080" alt="" loading="lazy" decoding="async" onerror="this.closest('.conv32').classList.add('ph-fallback');this.closest('picture').remove()" />
+      </picture>
+    </div>
+    <div class="hc">
+      <h2 class="rv">有类似的项目？</h2>
+      <p class="rv">告诉我们场地与需求，评估适用产品。【示例文案，待确认】</p>
+      <a class="btn btn-primary rv" href="/zh/contact/" data-track="consult_click">联系我们 <span class="arr">→</span></a>
+    </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,31 @@
+---
+/**
+ * 马赛克占位组件（SPEC-v3.2 §2 缺图统一方案，替代 v2.0 色卡）。
+ * 低对比 28px 棋盘底 + 虚线边框 + 角标 + 资产 ID/比例/最低像素/主体安全区；
+ * 固定最终图片比例，甲方供图后只换图不改布局；role="img" + aria-label。
+ */
+interface Props {
+  /** 资产 ID（如 PH-PROD-BD8） */
+  id: string;
+  /** 用途说明（如「BD8 产品主图」） */
+  use: string;
+  /** 建议比例文字（如 4:3） */
+  ratio: string;
+  /** 最低分辨率（如 1600×1200） */
+  min: string;
+  /** 主体位置与安全裁切说明 */
+  subject: string;
+  /** 比例 class：r43 / r169 / r219 */
+  r?: 'r43' | 'r169' | 'r219';
+  class?: string;
+}
+const { id, use, ratio, min, subject, r = 'r43', class: cls = '' } = Astro.props;
+---
+
+<div class:list={['mos', r, cls]} role="img" aria-label={`占位图:${use},图片待补充`}>
+  <div class="mi">
+    <div class="mt">图片待补充</div>
+    <div class="md">{id} · {use}<br />建议比例 {ratio} · 最低 {min}<br />主体:{subject}</div>
+  </div>
+  <div class="badge">图片待替换</div>
+</div>

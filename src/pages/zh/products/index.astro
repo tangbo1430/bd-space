@@ -1,134 +1,86 @@
 ﻿---
+/**
+ * 产品中心 v3.2（SPEC-v3.2 §3.3）：
+ * 页头 64vh → 交替 50/50 产品行 ×6（4S/5S/6S/灰度真图 4:3，BD8/BD9 马赛克占位）
+ * → 预制构件产品线文字区（paper2，居中 CTA）。缺图只用规定占位，不虚构参数。
+ */
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
+import Mos from '../../../components/Mos.astro';
 
-const products = (await getCollection('products', ({ data }) => data.published))
-  .sort((a, b) => a.data.order - b.data.order);
+interface ProductRow {
+  tag: string;
+  name: string;
+  desc: string;
+  spec: string;
+  href: string;
+  img?: { base: string; alt: string; mw?: boolean };
+  mos?: { id: string; use: string; min: string; subject: string };
+}
 
-const byId = (id: string) => products.find((p) => p.id === id);
-const approved = ['4s', '5s', '6s', 'grayscale'].map(byId).filter(Boolean);
-const more = ['bd8', 'bd9', 'slab', 'wall', 'stair'].map(byId).filter(Boolean);
-
-/* v3.0.1 索引行 64×44 小色片（无图产品线的降级色块，设计包 SPEC §3 批准） */
-const CHIPS: Record<string, string> = {
-  bd8: '#E8ECEF', bd9: '#F0EBE2', slab: '#F0E9E3', wall: '#F0EEE8', stair: '#EFE7E4',
-};
-const HERO_IMG: Record<string, { base: string; alt: string }> = {
-  '4s': { base: 'product-4s-hero', alt: '半打 4S 产品正立面实景' },
-  '5s': { base: 'product-5s-hero', alt: '半打 5S 产品外观实景' },
-  '6s': { base: 'product-6s-hero', alt: '半打 6S 产品外观实景' },
-  grayscale: { base: 'product-grayscale-hero', alt: '灰度空间产品外观实景' },
-};
-
-/* M5 三种建造体系（中性描述，v3 无缩略图卡） */
-const systems = [
-  { name: '2D 板式体系', desc: '板式构件工厂预制，现场组装成型。' },
-  { name: '3D 模块体系', desc: '整体模块工厂完成，现场吊装就位。' },
-  { name: '组合建造', desc: '板式与模块组合，灵活适配空间需求。' },
+const rows: ProductRow[] = [
+  { tag: 'Banda 4S', name: '半打4S', desc: '紧凑型模块化居住单元，适合独栋住宅与度假场景。【示例文案，待确认】', spec: '建筑面积 / 户型：【待确认】', href: '/zh/products/4s/', img: { base: 'product-4s-dusk', alt: '半打4S 黄昏正立面', mw: true } },
+  { tag: 'Banda 5S', name: '半打5S', desc: '在 4S 基础上扩展的居住单元，空间更完整。【示例文案，待确认】', spec: '建筑面积 / 户型：【待确认】', href: '/zh/products/5s/', img: { base: 'product-5s-hero', alt: '半打5S 日景外观', mw: true } },
+  { tag: 'Banda 6S', name: '半打6S', desc: '更大尺度的模块化居住产品。【示例文案，待确认】', spec: '建筑面积 / 户型：【待确认】', href: '/zh/products/6s/', img: { base: 'product-6s-hero', alt: '半打6S 黄昏外观', mw: true } },
+  { tag: 'Grayscale', name: '灰度空间', desc: '模块化空间产品系列。【示例文案，待确认】', spec: '规格：【待确认】', href: '/zh/products/grayscale/', img: { base: 'product-grayscale-hero', alt: '灰度空间 外观', mw: true } },
+  { tag: 'Banda BD8', name: '半打 BD8', desc: '装配式空间产品，图片待甲方提供。', spec: '规格：【待确认】', href: '/zh/products/bd8/', mos: { id: 'PH-PROD-BD8', use: 'BD8 产品主图', min: '1600×1200', subject: '建筑正立面，居中' } },
+  { tag: 'Banda BD9', name: '半打 BD9', desc: '装配式空间产品，图片待甲方提供。', spec: '规格：【待确认】', href: '/zh/products/bd9/', mos: { id: 'PH-PROD-BD9', use: 'BD9 产品主图', min: '1600×1200', subject: '建筑正立面，居中' } },
 ];
 ---
 
 <BaseLayout
   title="产品中心"
-  description="半打空间产品中心：半打 4S/5S/6S、灰度空间、BD8/BD9 装配式空间与预制构件产品线（名称与参数以客户确认为准）。"
+  description="半打空间产品中心：4S / 5S / 6S / 灰度空间 / BD8 / BD9 装配式混凝土空间产品与预制构件产品线。"
   current="products"
   headerStyle="overlay"
-  master="v3"
+  master="v32"
 >
-  {/* 首屏 92vh（v3.1 近整屏）：4S 黄昏正立面通栏 */}
-  <section class="v3hero h92" aria-label="产品中心首屏">
-    <div class="ph3">
+  {/* 页头 64vh */}
+  <section class="phero" aria-label="产品中心页头">
+    <div class="ph3" aria-hidden="true">
       <picture>
-        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/product-4s-dusk-m.webp" />
-        <source type="image/webp" srcset="/assets/img/product-4s-dusk.webp" />
-        <img
-          src="/assets/img/product-4s-dusk.jpg"
-          width="1920" height="1080"
-          alt="半打 4S 产品黄昏正立面实景"
-          loading="eager" decoding="async" fetchpriority="high"
-          onerror="this.closest('.v3hero').classList.add('ph-fallback');this.closest('picture').remove()"
-        />
+        <source media="(max-width: 720px)" type="image/webp" srcset="/assets/img/product-4s-hero-m.webp" />
+        <source type="image/webp" srcset="/assets/img/product-4s-hero.webp" />
+        <img src="/assets/img/product-4s-hero.jpg" width="1920" height="1080" alt="" loading="eager" decoding="async" fetchpriority="high" onerror="this.closest('.phero').classList.add('ph-fallback');this.closest('picture').remove()" />
       </picture>
     </div>
-    <div class="wrap">
-      <div class="en on-dark">Products</div>
+    <div class="hc">
+      <div class="eyebrow on-dark">Products</div>
       <h1>产品中心</h1>
+      <p class="sub">从紧凑户型到组合空间，四个产品系列。【示例文案，待确认】</p>
     </div>
   </section>
 
-  {/* 已验收实拍（v3.1 ink 章 1600 容器：1 大 16:9 + 2 中 16:9 + 1 通栏 21:9） */}
-  <section class="chap chap-ink" style="padding-top:96px" aria-label="已验收实拍">
-    <div class="wide">
-      <div class="shead rv" style="margin-bottom:44px">
-        <div><div class="en on-dark">Approved Photos</div><h2 class="v3h2" style="margin-bottom:0">已验收实拍</h2></div>
-      </div>
-      {approved[0] && (
-        <a class="pbig r169 rv" href={`/zh/products/${approved[0].id}/`} aria-label={`查看${approved[0].data.name}产品详情`}>
-          <picture>
-            <source type="image/webp" srcset={`/assets/img/${HERO_IMG[approved[0].id].base}.webp`} />
-            <img src={`/assets/img/${HERO_IMG[approved[0].id].base}.jpg`} width="1920" height="1080" alt={HERO_IMG[approved[0].id].alt} loading="lazy" decoding="async" onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()" />
-          </picture>
-          <div class="cap"><div class="t">{approved[0].data.name}</div><div class="s">模块化空间产品 · 主力户型 — 查看详情</div></div><div class="go" aria-hidden="true">→</div>
-        </a>
-      )}
-      <div class="g2" style="margin-top:24px">
-        {approved.slice(1, 3).map((p) => p && (
-          <a class="pbig r169 rv" href={`/zh/products/${p.id}/`} aria-label={`查看${p.data.name}产品详情`}>
+  {/* 交替 50/50 产品行 ×6 */}
+  <div class="wrap">
+    {rows.map((p, i) => (
+      <section class:list={['prow32', { rev: i % 2 === 1 }]} aria-label={p.name}>
+        <div class="pi r43 rv">
+          {p.img ? (
             <picture>
-              <source type="image/webp" srcset={`/assets/img/${HERO_IMG[p.id].base}.webp`} />
-              <img src={`/assets/img/${HERO_IMG[p.id].base}.jpg`} width="1920" height="1080" alt={HERO_IMG[p.id].alt} loading="lazy" decoding="async" onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()" />
+              {p.img.mw && <source type="image/webp" srcset={`/assets/img/${p.img.base}-m.webp 960w, /assets/img/${p.img.base}.webp 1920w`} sizes="(max-width: 720px) 100vw, 50vw" />}
+              <img src={`/assets/img/${p.img.base}.jpg`} width="1920" height="1080" alt={p.img.alt} loading="lazy" decoding="async" onerror="this.closest('.pi').classList.add('ph-fallback');this.closest('picture').remove()" />
             </picture>
-            <div class="cap"><div class="t">{p.data.name}</div><div class="s">模块化空间产品</div></div><div class="go" aria-hidden="true">→</div>
-          </a>
-        ))}
-      </div>
-      {approved[3] && (
-        <a class="pbig r219 rv" style="margin-top:24px" href={`/zh/products/${approved[3].id}/`} aria-label={`查看${approved[3].data.name}产品详情`}>
-          <picture>
-            <source type="image/webp" srcset={`/assets/img/${HERO_IMG[approved[3].id].base}.webp`} />
-            <img src={`/assets/img/${HERO_IMG[approved[3].id].base}.jpg`} width="1920" height="1080" alt={HERO_IMG[approved[3].id].alt} loading="lazy" decoding="async" onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()" />
-          </picture>
-          <div class="cap"><div class="t">{approved[3].data.name}</div><div class="s">模块化空间产品</div></div><div class="go" aria-hidden="true">→</div>
-        </a>
-      )}
-    </div>
-  </section>
+          ) : (
+            <Mos id={p.mos!.id} use={p.mos!.use} ratio="4:3" min={p.mos!.min} subject={p.mos!.subject} />
+          )}
+        </div>
+        <div class="pt rv">
+          <div class="tagline">{p.tag}</div>
+          <h2 class="h2">{p.name}</h2>
+          <p class="body">{p.desc}</p>
+          <p class="small" style="margin-top:18px">{p.spec}</p>
+          <div style="margin-top:28px"><a class="btn btn-ghost-dark" href={p.href}>查看详情 <span class="arr">→</span></a></div>
+        </div>
+      </section>
+    ))}
+  </div>
 
-  {/* 更多产品线：发丝线索引行（编号+名称+一句话+色片+圆环箭头） */}
-  <section class="chap chap-paper" aria-label="更多产品线">
+  {/* 预制构件产品线（paper2，居中 CTA） */}
+  <section class="sec sec-paper2" style="text-align:center" aria-label="预制构件产品线">
     <div class="wrap">
-      <div class="shead rv">
-        <div><div class="en">More Lines</div><h2 class="v3h2" style="margin-bottom:0">更多产品线</h2></div>
-      </div>
-      <div class="idx">
-        {more.map((p) => p && (
-          <a class="rv" href={`/zh/products/${p.id}/`} aria-label={`查看${p.data.name}产品详情`}>
-            <span class="no">{p.data.enTag}</span>
-            <span class="nm">{p.data.name}<small>{p.data.tagline}图片素材待提供</small></span>
-            <span class="chip" style={`background:${CHIPS[p.id]}`} aria-hidden="true"></span>
-            <span class="go" aria-hidden="true">→</span>
-          </a>
-        ))}
-      </div>
-      <p class="rv" style="margin-top:20px;font-size:13px;color:var(--v3-muted)">以上产品线图片素材待甲方提供；提供后按 16:9 大图卡替换色片位，布局不变。</p>
-    </div>
-  </section>
-
-  {/* 三种建造体系（无图技术附录卡） */}
-  <section class="chap chap-paper" style="padding-top:0" aria-label="三种建造体系">
-    <div class="wrap">
-      <div class="en rv">Build Systems</div>
-      <h2 class="v3h2 rv">三种建造体系</h2>
-      <div class="nrow" style="margin-top:40px">
-        {systems.map((s) => (
-          <div class="ncard rv">
-            <div class="bd" style="padding:34px 30px">
-              <h3 class="v3h3" style="font-size:20px">{s.name}</h3>
-              <p style="font-size:13px;color:var(--v3-muted);line-height:1.8">{s.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <h2 class="h2 rv">预制构件产品线</h2>
+      <p class="body rv" style="margin:0 auto">楼梯、墙板、楼板等预制构件单独供应，图片待甲方提供。【示例文案，待确认】</p>
+      <div class="rv" style="margin-top:28px"><a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">咨询产品 <span class="arr">→</span></a></div>
     </div>
   </section>
 </BaseLayout>
