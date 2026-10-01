@@ -13,14 +13,14 @@ export interface NavItem {
   href: string;
 }
 
-/** 7 个一级栏目（首页 / 关于 / 产品 / 案例 / 资质 / 新闻 / 联系） */
+/** 7 个一级栏目（首页 / 产品 / 案例 / 资质 / 新闻 / 关于 / 联系，v3.1.1 按甲方要求「关于我们」移至新闻后） */
 export const NAV_ITEMS: NavItem[] = [
   { key: 'home', label: '首页', href: '/zh/' },
-  { key: 'about', label: '关于我们', href: '/zh/about/' },
   { key: 'products', label: '产品中心', href: '/zh/products/' },
   { key: 'cases', label: '工程案例', href: '/zh/cases/' },
   { key: 'qualifications', label: '资质能力', href: '/zh/qualifications/' },
   { key: 'news', label: '新闻资讯', href: '/zh/news/' },
+  { key: 'about', label: '关于我们', href: '/zh/about/' },
   { key: 'contact', label: '联系我们', href: '/zh/contact/' },
 ];
 

@@ -12,7 +12,7 @@ describe('全局路由清单（PRD §5：7 个一级栏目）', () => {
 
   it('栏目 key 与文案完整', () => {
     expect(NAV_ITEMS.map((i) => i.key)).toEqual([
-      'home', 'about', 'products', 'cases', 'qualifications', 'news', 'contact',
+      'home', 'products', 'cases', 'qualifications', 'news', 'about', 'contact',
     ]);
     for (const item of NAV_ITEMS) expect(item.label.length).toBeGreaterThan(0);
   });
