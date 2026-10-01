@@ -1,145 +1,188 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { CASE_COVER_ASSETS, SHENZHEN_V20_ASSETS, CASE_DETAIL_GROUPS } from '../../lib/assets';
 
-/* v3.0.1 封面区：通栏首卡（常州）+ 2 列 4:3 大卡 ×8（仅地点+类型，无客户名） */
-const covers = [
-  { loc: '开曼群岛', type: '海外住宅', img: CASE_COVER_ASSETS.cayman },
-  { loc: '中山', type: '风度住宅', img: CASE_COVER_ASSETS.zhongshan },
-  { loc: '澳大利亚 · 布里斯班', type: '独栋民宅', img: CASE_COVER_ASSETS.brisbane },
-  { loc: '成都', type: '宿舍建筑', img: CASE_COVER_ASSETS.chengdu },
-  { loc: '深圳', type: '营地建筑', img: SHENZHEN_V20_ASSETS.coverCamp },
-  { loc: '斐济', type: '模块化建筑', img: CASE_COVER_ASSETS.fiji },
-  { loc: '江门', type: '装配式建筑', img: CASE_COVER_ASSETS.jiangmen },
-  { loc: '中山', type: '方舱建筑', img: CASE_COVER_ASSETS.zhongshanCabin },
+/* v3.2.2 工程案例：作品集式策展——86vh 通栏首屏 + 4 组「21:9 主图 + 非对称细节组」
+   每组仅用本项目素材；无 CASE 编号、无均匀卡片墙；事实信息一律【待确认】 */
+const groups = [
+  {
+    name: '开曼群岛 · 海外住宅',
+    loc: '开曼群岛 · 二层模块住宅 · 【待确认】',
+    lead: { base: 'case-cover-cayman', w: 1667, h: 1250, alt: '开曼项目建成实景', focus: 'center' },
+    note: '建成实景与吊装过程 — 模块跨海运抵后现场吊装就位。【待确认】',
+    rev: false,
+    det: [
+      { base: 'case-cayman-install-02', w: 1920, h: 1440, alt: '开曼项目 首层模块吊装', ratio: 'r43x' },
+      { base: 'case-cayman-install-roof', w: 1920, h: 1440, alt: '开曼项目 屋面模块就位', ratio: 'r43x', focus: 'center 35%' },
+    ],
+  },
+  {
+    name: '中国 · 常州 4S 住宅',
+    loc: '中国 · 常州 · 4S 独栋住宅 · 【待确认】',
+    lead: { base: 'case-cover-changzhou', w: 1667, h: 1250, alt: '常州 4S 住宅建成实景', focus: 'center' },
+    note: '4S 户型独栋交付 — 主图 + 本项目施工实景两张。【待确认】',
+    rev: true,
+    det: [
+      { base: 'case-changzhou-install-03', w: 1728, h: 2304, alt: '常州项目 模块就位', ratio: 'r43x' },
+      { base: 'case-changzhou-install-02', w: 1728, h: 2304, alt: '常州项目 现场安装', ratio: 'r43x' },
+    ],
+  },
+  {
+    name: '澳大利亚 · 布里斯班 独栋民宅',
+    loc: '澳大利亚 · 布里斯班 · 独栋民宅 · 【待确认】',
+    lead: { base: 'case-cover-brisbane', w: 1667, h: 1250, alt: '布里斯班民宅建成实景', focus: 'center' },
+    note: '海外独栋民宅 — 模块吊装与现场拼装。【待确认】',
+    rev: false,
+    det: [
+      { base: 'case-brisbane-lift-01', w: 1080, h: 1440, alt: '布里斯班项目 模块吊装', ratio: 'r43x' },
+      { base: 'case-brisbane-install-02', w: 1920, h: 1440, alt: '布里斯班项目 现场拼装', ratio: 'r43x' },
+    ],
+  },
+  {
+    name: '中国 · 成都 集宿项目',
+    loc: '中国 · 成都 · 集宿建筑 · 【待确认】',
+    lead: { base: 'case-cover-chengdu-dorm', w: 1667, h: 1250, alt: '成都集宿项目建成实景', focus: 'center' },
+    note: '多层集宿建筑 — 拼装与安装实录。【待确认】',
+    rev: true,
+    det: [
+      { base: 'case-chengdu-assembly-01', w: 1920, h: 1440, alt: '成都项目 现场拼装', ratio: 'r43x' },
+      { base: 'case-chengdu-install-03', w: 1920, h: 1440, alt: '成都项目 模块安装', ratio: 'r32x' },
+      { base: 'case-chengdu-site-04', w: 1920, h: 1080, alt: '成都项目 场地实景', ratio: 'r32x' },
+    ],
+  },
 ];
 ---
 
 <BaseLayout
   title="工程案例"
-  description="半打空间项目实践：开曼群岛海外住宅、澳大利亚布里斯班住宅、中国中山低层住宅、斐济模块化建筑。"
+  description="半打空间项目实践：开曼群岛海外住宅、常州 4S 住宅、布里斯班独栋民宅、成都集宿建筑的建成实景与施工记录。"
   current="cases"
   headerStyle="overlay"
   master="v3"
 >
-  {/* 页首 56vh：常州封面通栏 */}
-  <section class="v3hero h56" aria-label="工程案例首屏">
-    <div class="ph3">
-      <picture>
-        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/case-cover-changzhou-m.webp" />
-        <source type="image/webp" srcset="/assets/img/case-cover-changzhou.webp" />
-        <img
-          src="/assets/img/case-cover-changzhou.jpg"
-          width="1667" height="1250"
-          alt="中国常州4S住宅项目外观实景"
-          loading="eager" decoding="async" fetchpriority="high"
-          onerror="this.closest('.v3hero').classList.add('ph-fallback');this.closest('picture').remove()"
-        />
-      </picture>
-    </div>
-    <div class="wrap">
-      <div class="en on-dark">Projects</div>
-      <h1>项目实践</h1>
-    </div>
-  </section>
-
-  {/* 项目封面（v3.1：78vh 整屏首卡 + 1600 容器 8 张 16:9 两列） */}
-  <section class="chap chap-paper" style="padding-bottom:0" aria-label="项目封面">
-    <div class="wrap">
-      <div class="shead rv">
-        <div><div class="en">Selected</div><h2 class="v3h2" style="margin-bottom:0">项目封面</h2></div>
-      </div>
-    </div>
-    <div class="bleed b78 rv">
+  <div class="v322">
+    {/* 首屏 86vh：开曼吊装实景（本页唯一记忆点），标题与图注克制置于左下 */}
+    <section class="v322hero h86" aria-label="工程案例首屏">
       <div class="ph3">
         <picture>
-          <source type="image/webp" srcset="/assets/img/case-cover-changzhou-m.webp 960w, /assets/img/case-cover-changzhou.webp 1667w" sizes="100vw" />
+          <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/case-cayman-install-crane-m.webp" />
+          <source type="image/webp" srcset="/assets/img/case-cayman-install-crane.webp" />
           <img
-            src="/assets/img/case-cover-changzhou.jpg"
-            width="1667" height="1250"
-            alt="中国常州4S住宅项目外观实景"
-            loading="lazy" decoding="async"
-            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
+            src="/assets/img/case-cayman-install-crane.jpg"
+            width="1920" height="1080"
+            alt="开曼项目二层模块吊装现场"
+            style="object-position:center 35%"
+            loading="eager" decoding="async" fetchpriority="high"
+            onerror="this.closest('.v322hero').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
       </div>
-      <div class="cap"><div class="t">中国 · 常州</div><div class="s">4S 住宅 — 查看案例 →</div></div>
-    </div>
-    <div class="wide" style="padding-top:24px;padding-bottom:110px">
-      <div class="g2">
-        {covers.map((c) => (
-          <div class="pbig r169 rv">
-            <picture>
-              <source type="image/webp" srcset={`/assets/img/${c.img.base}-m.webp ${c.img.mw}w, /assets/img/${c.img.base}.webp ${c.img.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
-              <img
-                src={`/assets/img/${c.img.base}.jpg`}
-                width={c.img.w} height={c.img.h} alt={c.img.alt}
-                loading="lazy" decoding="async"
-                onerror="this.closest('.pbig').classList.add('ph-fallback');this.closest('picture').remove()"
-              />
-            </picture>
-            <div class="cap"><div class="t">{c.loc}</div><div class="s">{c.type}</div></div><div class="go" aria-hidden="true">→</div>
-          </div>
-        ))}
+      <div class="wrap">
+        <h1>工程案例</h1>
+        <div class="meta"><span><b>图片</b>开曼群岛 · 海外住宅</span><span><b>类型</b>二层模块住宅</span><span><b>阶段</b>吊装就位 · 【待确认】年份</span></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {/* 施工实景（v3.1：10 组——组标 01–10 + 64vh 整屏组首图 + 16:9 双卡；1600 容器） */}
-  <section class="chap chap-paper" style="padding-top:64px" aria-label="施工实景" data-case-gallery>
-    <div class="wrap">
-      <div class="en rv">On Site</div>
-      <h2 class="v3h2 rv">施工实景</h2>
-      <p class="rv" style="font-size:13px;color:var(--v3-muted)">每组 3–5 张精选，完整图组进入对应案例详情。</p>
-    </div>
-    {CASE_DETAIL_GROUPS.map((g, i) => (
-      <div class="cg2-group">
-        <div class="wide">
-          <div class="glabel rv">
-            <span class="gi-no">{String(i + 1).padStart(2, '0')}</span>
-            <span class="gi-t">{g.loc} · {g.type}</span>
-            <span class="gi-s">施工实景</span>
-          </div>
+    {/* 引言窄栏 */}
+    <section class="sec tight" aria-label="引言">
+      <div class="wrap">
+        <div class="narrow">
+          <p class="t-body" style="font-size:17px;color:var(--v3-text)">每个项目记录从出厂到就位的真实过程。以下按项目编排，每组保留主图与施工细节。【示例文案，待确认】</p>
         </div>
-        <div class="bleed b64 rv">
-          <div class="ph3" style={g.lead.focus ? `--figx-focus:${g.lead.focus}` : undefined}>
+      </div>
+    </section>
+
+    {/* 案例组 ×4：21:9 主图 + A/B 式交替非对称细节组，组间 1px 细线 */}
+    {groups.map((g, gi) => (
+      <section class:list={['case', { 'case-first': gi === 0 }]} aria-label={g.name}>
+        <div class="wrap">
+          <div class="case-head rv">
+            <div class="nm">{g.name}</div>
+            <div class="loc">{g.loc}</div>
+          </div>
+          <div class="figx r219x rv">
             <picture>
-              {g.lead.mw && (
-                <source type="image/webp" srcset={`/assets/img/${g.lead.base}${g.lead.msuf ?? '-m'}.webp ${g.lead.mw}w, /assets/img/${g.lead.base}.webp ${g.lead.w}w`} sizes="100vw" />
-              )}
-              {!g.lead.mw && <source type="image/webp" srcset={`/assets/img/${g.lead.base}.webp`} />}
+              <source type="image/webp" srcset={`/assets/img/${g.lead.base}-m.webp 960w, /assets/img/${g.lead.base}.webp ${g.lead.w}w`} sizes="(max-width: 1280px) 100vw, 1120px" />
               <img
                 src={`/assets/img/${g.lead.base}.jpg`}
                 width={g.lead.w} height={g.lead.h} alt={g.lead.alt}
-                style={g.lead.focus ? `object-position:${g.lead.focus}` : undefined}
+                style={`object-position:${g.lead.focus}`}
                 loading="lazy" decoding="async"
-                onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
+                onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
               />
             </picture>
           </div>
-        </div>
-        <div class="wide" style="padding-top:24px">
-          <div class="g2">
-            {g.bigs.map((img) => (
-              <div class="cc r169 rv">
-                <picture>
-                  {img.mw && (
-                    <source type="image/webp" srcset={`/assets/img/${img.base}${img.msuf ?? '-m'}.webp ${img.mw}w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 767px) 100vw, 50vw" />
-                  )}
-                  {!img.mw && <source type="image/webp" srcset={`/assets/img/${img.base}.webp`} />}
-                  <img
-                    src={`/assets/img/${img.base}.jpg`}
-                    width={img.w} height={img.h} alt={img.alt}
-                    style={img.focus ? `object-position:${img.focus}` : undefined}
-                    loading="lazy" decoding="async"
-                    onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
-                  />
-                </picture>
-              </div>
-            ))}
+          <div class="case-note rv">
+            <div class="t-cap">{g.note}</div>
+            <a class="qlink">查看项目 →</a>
+          </div>
+          <div class:list={['case-det', { rev: g.rev }]}>
+            {g.det.length === 2 ? (
+              g.det.map((img) => (
+                <div class:list={['figx', img.ratio, 'rv']}>
+                  <picture>
+                    <source type="image/webp" srcset={`/assets/img/${img.base}-m.webp 960w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 720px) 100vw, 60vw" />
+                    <img
+                      src={`/assets/img/${img.base}.jpg`}
+                      width={img.w} height={img.h} alt={img.alt}
+                      style={img.focus ? `object-position:${img.focus}` : undefined}
+                      loading="lazy" decoding="async"
+                      onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+                    />
+                  </picture>
+                </div>
+              ))
+            ) : (
+              <>
+                <div class:list={['figx', g.det[0].ratio, 'rv']}>
+                  <picture>
+                    <source type="image/webp" srcset={`/assets/img/${g.det[0].base}-m.webp 960w, /assets/img/${g.det[0].base}.webp ${g.det[0].w}w`} sizes="(max-width: 720px) 100vw, 60vw" />
+                    <img
+                      src={`/assets/img/${g.det[0].base}.jpg`}
+                      width={g.det[0].w} height={g.det[0].h} alt={g.det[0].alt}
+                      loading="lazy" decoding="async"
+                      onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+                    />
+                  </picture>
+                </div>
+                <div class="stack">
+                  {g.det.slice(1).map((img) => (
+                    <div class:list={['figx', img.ratio, 'rv']}>
+                      <picture>
+                        <source type="image/webp" srcset={`/assets/img/${img.base}-m.webp 960w, /assets/img/${img.base}.webp ${img.w}w`} sizes="(max-width: 720px) 100vw, 60vw" />
+                        <img
+                          src={`/assets/img/${img.base}.jpg`}
+                          width={img.w} height={img.h} alt={img.alt}
+                          loading="lazy" decoding="async"
+                          onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+                        />
+                      </picture>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </div>
-      </div>
+      </section>
     ))}
-  </section>
+
+    {/* 更多项目：窄栏说明 */}
+    <section class="sec tight" aria-label="更多项目">
+      <div class="wrap">
+        <div class="narrow">
+          <div class="t-h3" style="margin-bottom:14px">更多项目</div>
+          <p class="t-body">中山方舱、中山米阁、深圳营地、斐济模块化建筑、江门装配式建筑、中山风度住宅等项目的素材已在素材库中，可按同一版式扩展为本页案例组。【待确认】</p>
+        </div>
+      </div>
+    </section>
+
+    {/* 安静转化区（纸底） */}
+    <section class="sec tight sec-paper" aria-label="咨询转化">
+      <div class="wrap">
+        <div class="t-h2" style="margin-bottom:16px">有类似的项目？</div>
+        <p class="t-body" style="margin-bottom:26px">告诉我们场地与需求，评估适用产品与交付方式。【示例文案，待确认】</p>
+        <a class="qlink" href="/zh/contact/">联系我们 →</a>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

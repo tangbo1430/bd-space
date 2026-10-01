@@ -1,192 +1,192 @@
-﻿---
+---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { PLACEHOLDER } from '../../../lib/site';
 
+/* v3.2.2 关于我们：制造能力叙事——78vh 工厂首屏 + 事实宣言 + 产线通栏 + 工序分栏
+   + 深绿建造过程三图区 + 材料节点分栏 + 资质/里程碑细线表；删除使命大字块/装饰眉题/压图简介 */
+const quals = [
+  '【待提供】企业资质条目 — 由甲方提供后逐项列出，不预填。',
+  '【待提供】体系 / 产品认证',
+  '【待提供】奖项与荣誉',
+];
 const milestones = [
   { yr: '【待确认】', text: '【待甲方填写】里程碑事件 01' },
   { yr: '【待确认】', text: '【待甲方填写】里程碑事件 02' },
   { yr: '【待确认】', text: '【待甲方填写】里程碑事件 03' },
 ];
+const steps = [
+  { base: 'flow-step01-mold', w: 1504, h: 1128, alt: '设计与制模', t: '设计与制模', s: '按订单完成结构与模具设计，锁定尺寸与接口。', m: false },
+  { base: 'flow-step03-panel-lift', w: 1080, h: 810, alt: '构件生产与出厂检验', t: '生产与检验', s: '浇筑养护在产线完成，逐件检验后出厂。【检验标准待确认】', m: false },
+  { base: 'flow-step06-crane-panel', w: 1920, h: 1080, alt: '吊装就位', t: '吊装与交付', s: '现场只做吊装与拼装，完成收口验收后交付。', m: true },
+];
 ---
 
 <BaseLayout
   title="关于我们"
-  description="了解半打空间：企业使命、简介、工厂能力与现场交付。数据与事实信息以客户提供为准。"
+  description="半打空间：装配式混凝土空间的设计与制造方。设计、浇筑、养护与质检在产线上一次完成，现场只做吊装与拼装。数据与事实信息以客户提供为准。"
   current="about"
   headerStyle="overlay"
   master="v3"
 >
-  {/* v3.0.1 关于页：首屏禁用合成横幅 about-hero（会裁切文案），改用米阁安装实拍 88vh 通栏 */}
-  <section class="v3hero h88" aria-label="关于我们首屏">
-    <div class="ph3">
-      <picture>
-        <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/case-mige-install-01-m.webp" />
-        <source type="image/webp" srcset="/assets/img/case-mige-install-01.webp" />
-        <img
-          src="/assets/img/case-mige-install-01.jpg"
-          width="1705" height="1279"
-          alt="中山独栋民宅项目现场安装实景"
-          loading="eager" decoding="async" fetchpriority="high"
-          onerror="this.closest('.v3hero').classList.add('ph-fallback');this.closest('picture').remove()"
-        />
-      </picture>
-    </div>
-    <div class="wrap">
-      <div class="en on-dark">About Banda</div>
-      <h1>我们想做什么？</h1>
-      <p class="sub">What are we trying to do?</p>
-    </div>
-  </section>
-
-  {/* 使命宣言（980px 单列大字） */}
-  <section class="chap chap-paper" aria-label="使命">
-    <div class="wrap rv" style="max-width:980px">
-      <div class="en">Mission</div>
-      <div class="v3mission" style="margin-top:20px">
-        量产房子，解决全球住房问题。<br />
-        <span class="sub-en">House manufacturing — an industry not yet truly industrialized.</span>
-      </div>
-      <p class="v3lead" style="margin-top:32px">把空间主体搬进工厂：设计、浇筑、养护与质检在产线上一次完成，现场只做吊装与拼装。工期、质量与成本因此变得确定。【示例文案，待确认】</p>
-    </div>
-  </section>
-
-  {/* 企业简介（v3.1：21:9 通栏大图，图注即简介入口，取消浮卡叠压） */}
-  <section class="chap chap-paper" style="padding-top:0;padding-bottom:0" aria-label="企业简介">
-    <div class="bleed r219 rv">
+  <div class="v322">
+    {/* 首屏 78vh：工厂产线内景（材料质感，本页第一记忆点） */}
+    <section class="v322hero h78" aria-label="关于我们首屏">
       <div class="ph3">
         <picture>
-          <source type="image/webp" srcset="/assets/img/case-cabin-rows-m.webp 960w, /assets/img/case-cabin-rows.webp 1920w" sizes="100vw" />
+          <source media="(max-width: 767px)" type="image/webp" srcset="/assets/img/case-mige-install-01-m.webp" />
+          <source type="image/webp" srcset="/assets/img/case-mige-install-01.webp" />
           <img
-            src="/assets/img/case-cabin-rows.jpg"
-            width="1920" height="1080"
-            alt="箱房阵列实景"
-            loading="lazy" decoding="async"
-            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
+            src="/assets/img/case-mige-install-01.jpg"
+            width="1705" height="1279"
+            alt="工厂产线内的混凝土模块"
+            style="object-position:center 40%"
+            loading="eager" decoding="async" fetchpriority="high"
+            onerror="this.closest('.v322hero').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
       </div>
-      <div class="cap"><div class="t">企业简介</div><div class="s">{PLACEHOLDER}公司简介 — 正式内容以甲方审核文案替换</div></div>
-    </div>
-  </section>
+      <div class="wrap">
+        <h1>把建造，做成制造</h1>
+        <div class="meta"><span><b>半打空间</b>装配式混凝土空间的设计与制造方【示例文案，待确认】</span></div>
+      </div>
+    </section>
 
-  {/* 工厂能力（v3.1：78vh 整屏通栏 + 1600 容器双 16:9 产线卡） */}
-  <section class="chap chap-dark" id="factory" aria-label="工厂能力">
+    {/* 事实宣言（130px 区，H2 限宽 840） */}
+    <section class="stmt" aria-label="宣言">
+      <div class="wrap">
+        <div class="t-h2 rv">设计、浇筑、养护与质检在产线上一次完成；<br />现场只做吊装与拼装。</div>
+        <p class="t-body rv">工期、质量与成本因此变得确定。半打空间以标准化产线替代现场湿作业，让房屋成为可复制的工业产品。【示例文案，待确认】</p>
+      </div>
+    </section>
+
+    {/* 产线 16:9 通栏 + 图注 */}
     <div class="wrap">
-      <div class="en on-dark rv">Factory</div>
-      <h2 class="v3h2 rv">工厂能力</h2>
-      <p class="v3lead on-dark rv" style="margin-bottom:56px">模具、浇筑、养护、质检与出厂在产线上顺序完成；运输与吊装执行标准化流程。【示例文案，待确认】</p>
-    </div>
-    <div class="bleed b78 rv">
-      <div class="ph3">
+      <div class="figx r169x rv">
         <picture>
-          <source type="image/webp" srcset="/assets/img/factory-precast-units-m.webp 960w, /assets/img/factory-precast-units.webp 1920w" sizes="100vw" />
+          <source type="image/webp" srcset="/assets/img/factory-precast-units-m.webp 960w, /assets/img/factory-precast-units.webp 1920w" sizes="(max-width: 1280px) 100vw, 1120px" />
           <img
             src="/assets/img/factory-precast-units.jpg"
             width="1920" height="1440"
-            alt="工厂预制混凝土单元构件养护现场"
+            alt="工厂内预制的混凝土空间单元"
             loading="lazy" decoding="async"
-            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
+            onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
           />
         </picture>
       </div>
-      <div class="cap"><div class="t">预制产线</div><div class="s">【待确认】产线说明</div></div>
+      <div class="case-note rv"><div class="t-cap"><b>预制产线</b> — 混凝土空间单元在厂内完成主体结构。【待确认】</div></div>
     </div>
-    <div class="wide" style="padding-top:24px">
-      <div class="g2">
-        <div class="cc r169 rv">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/flow-factory-module-m.webp 960w, /assets/img/flow-factory-module.webp 1080w" sizes="(max-width: 767px) 100vw, 50vw" />
-            <img
-              src="/assets/img/flow-factory-module.jpg"
-              width="1080" height="810"
-              alt="工厂车间内白色模块构件实拍"
-              loading="lazy" decoding="async"
-              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-          <div class="cap"><div class="t">产线模块</div><div class="s">【待确认】</div></div>
-        </div>
-        <div class="cc r169 rv">
+
+    {/* 工序分栏（图右 1:1.15）+ 行内事实带 */}
+    <section class="sec" aria-label="工厂工序">
+      <div class="wrap split2 rev">
+        <div class="si figx r43x rv">
           <picture>
             <source type="image/webp" srcset="/assets/img/flow-factory-panels.webp" />
             <img
               src="/assets/img/flow-factory-panels.jpg"
               width="1280" height="960"
-              alt="工厂墙板存放区实拍"
+              alt="产线上的墙板构件"
               loading="lazy" decoding="async"
-              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
+              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
             />
           </picture>
-          <div class="cap"><div class="t">构件存放</div><div class="s">【待确认】</div></div>
+        </div>
+        <div>
+          <div class="t-h2 rv" style="margin-bottom:18px">主要工序<br />都在工厂完成</div>
+          <p class="t-body rv">模具、浇筑、养护、质检与出厂在产线上顺序完成；运输与吊装执行标准化流程，现场工序被压缩到最少。【示例文案，待确认】</p>
+          <div class="facts rv" style="margin-top:34px">
+            <div class="f"><b>【N】</b>年产能【待确认】</div>
+            <div class="f"><b>【N】</b>交付项目【待确认】</div>
+            <div class="f"><b>【N】天</b>平均现场工期【待确认】</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {/* 里程碑（980px 单列发丝时间线；年份与事件待甲方提供，不虚构） */}
-  <section class="chap chap-paper" aria-label="里程碑">
-    <div class="wrap" style="max-width:980px">
-      <div class="en rv">Milestones</div>
-      <h2 class="v3h2 rv">里程碑</h2>
-      <div class="tl3">
-        {milestones.map((m) => (
-          <div class="ti rv"><div class="y">{m.yr}</div><div class="d">{m.text}</div></div>
-        ))}
-      </div>
-      <p class="rv" style="margin-top:18px;font-size:13px;color:var(--v3-muted)">年份与事件待甲方提供，不虚构。</p>
-    </div>
-  </section>
-
-  {/* 现场交付（v3.1：78vh 整屏通栏航拍 + 1600 容器双 16:9 细节卡） */}
-  <section class="chap chap-paper" style="padding-top:0" aria-label="现场交付">
-    <div class="wrap">
-      <div class="en rv">On Site</div>
-      <h2 class="v3h2 rv" style="margin-bottom:56px">现场交付</h2>
-    </div>
-    <div class="bleed b78 rv">
-      <div class="ph3">
-        <picture>
-          <source type="image/webp" srcset="/assets/img/case-cabin-site-aerial-m.webp 960w, /assets/img/case-cabin-site-aerial.webp 1920w" sizes="100vw" />
-          <img
-            src="/assets/img/case-cabin-site-aerial.jpg"
-            width="1920" height="1080"
-            alt="项目场地航拍，箱体阵列吊装就位"
-            loading="lazy" decoding="async"
-            onerror="this.closest('.bleed').classList.add('ph-fallback');this.closest('picture').remove()"
-          />
-        </picture>
-      </div>
-      <div class="cap"><div class="t">现场交付</div><div class="s">【待确认】交付说明</div></div>
-    </div>
-    <div class="wide" style="padding-top:24px;padding-bottom:0">
-      <div class="g2">
-        <div class="cc r169 rv">
-          <picture>
-            <source type="image/webp" srcset="/assets/img/flow-transport-spreader-lift-m.webp 960w, /assets/img/flow-transport-spreader-lift.webp 1044w" sizes="(max-width: 767px) 100vw, 50vw" />
-            <img
-              src="/assets/img/flow-transport-spreader-lift.jpg"
-              width="1044" height="1392"
-              alt="平衡梁吊装箱体作业"
-              loading="lazy" decoding="async"
-              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
-            />
-          </picture>
-          <div class="cap"><div class="t">吊装就位</div><div class="s">【待确认】</div></div>
+    {/* 建造过程（深绿区，本页第二锚点） */}
+    <section class="proc" aria-label="建造过程">
+      <div class="wrap">
+        <div class="t-h2 rv">建造过程</div>
+        <p class="lead rv">从制模到交付的六个环节，每一步都在可控环境中完成。【示例文案，待确认】</p>
+        <div class="prow3">
+          {steps.map((s) => (
+            <div class="pcell rv">
+              <div class="figx r43x">
+                <picture>
+                  {s.m && <source type="image/webp" srcset={`/assets/img/${s.base}-m.webp 960w, /assets/img/${s.base}.webp ${s.w}w`} sizes="(max-width: 720px) 100vw, 33vw" />}
+                  {!s.m && <source type="image/webp" srcset={`/assets/img/${s.base}.webp`} />}
+                  <img
+                    src={`/assets/img/${s.base}.jpg`}
+                    width={s.w} height={s.h} alt={s.alt}
+                    loading="lazy" decoding="async"
+                    onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
+                  />
+                </picture>
+              </div>
+              <div class="pt">{s.t}</div>
+              <div class="ps">{s.s}</div>
+            </div>
+          ))}
         </div>
-        <div class="cc r169 rv">
+      </div>
+    </section>
+
+    {/* 材料与细节分栏（文左图右 1.15:1） */}
+    <section class="sec" aria-label="材料与细节">
+      <div class="wrap split2">
+        <div>
+          <div class="t-h2 rv" style="margin-bottom:18px">材料与细节</div>
+          <p class="t-body rv">混凝土墙板、屋面收口与节点做法决定建筑的长期使用状态。我们在出厂前完成主要节点处理，现场只做拼装。【示例文案，待确认】</p>
+          <div class="rv" style="margin-top:28px"><a class="qlink" href="/zh/products/">查看产品中心 →</a></div>
+        </div>
+        <div class="si figx r43x rv">
           <picture>
-            <source type="image/webp" srcset="/assets/img/install-detail-roof-trim-m.webp 960w, /assets/img/install-detail-roof-trim.webp 1279w" sizes="(max-width: 767px) 100vw, 50vw" />
+            <source type="image/webp" srcset="/assets/img/install-detail-roof-trim-m.webp 960w, /assets/img/install-detail-roof-trim.webp 1279w" sizes="(max-width: 720px) 100vw, 50vw" />
             <img
               src="/assets/img/install-detail-roof-trim.jpg"
               width="1279" height="1705"
-              alt="现场安装屋面收边细节，登高作业"
+              alt="屋面收口节点细节"
               loading="lazy" decoding="async"
-              onerror="this.closest('.cc').classList.add('ph-fallback');this.closest('picture').remove()"
+              onerror="this.closest('.figx').classList.add('ph-fallback');this.closest('picture').remove()"
             />
           </picture>
-          <div class="cap"><div class="t">安装细节</div><div class="s">【待确认】</div></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    {/* 资质与里程碑（纸色安静区，双列细线表，待补明示） */}
+    <section class="sec tight sec-paper" aria-label="资质与里程碑">
+      <div class="wrap">
+        <div class="t-h2 rv" style="margin-bottom:36px">资质与里程碑</div>
+        <div class="split2 eq">
+          <div class="rv">
+            <div class="t-h3" style="margin-bottom:14px">资质与认证</div>
+            <div class="tl2">
+              {quals.map((q) => (
+                <div class="ti flat"><div class="d">{q}</div></div>
+              ))}
+            </div>
+          </div>
+          <div class="rv">
+            <div class="t-h3" style="margin-bottom:14px">里程碑</div>
+            <div class="tl2">
+              {milestones.map((m) => (
+                <div class="ti"><div class="y">{m.yr}</div><div class="d">{m.text}</div></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 安静双文字链 */}
+    <section class="sec tight" aria-label="进一步了解">
+      <div class="wrap">
+        <div class="t-h2 rv" style="margin-bottom:16px">进一步了解我们的产品与案例</div>
+        <div class="rv" style="display:flex;gap:32px">
+          <a class="qlink" href="/zh/products/">产品中心 →</a>
+          <a class="qlink" href="/zh/cases/">工程案例 →</a>
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
