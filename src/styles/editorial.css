@@ -472,14 +472,11 @@ html {
 }
 .case-image {
   position: relative;
-  aspect-ratio: 1.2;
+  height: auto;
   overflow: hidden;
 }
-.offset .case-image {
-  aspect-ratio: 1;
-}
 .case-card:hover .editorial-image img {
-  transform: scale(1.018);
+  transform: none;
 }
 .case-caption {
   display: flex;
@@ -1242,10 +1239,6 @@ html {
   }
   .case-card.offset {
     padding-top: 45px;
-  }
-  .case-image,
-  .offset .case-image {
-    aspect-ratio: 1.2;
   }
   .case-caption {
     gap: 5px;
