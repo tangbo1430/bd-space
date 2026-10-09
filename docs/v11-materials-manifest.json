@@ -30,7 +30,7 @@
     {
       "source": "已上传网页图片修改建议\\替换的图片\\产品中心-首页增加轮播图1.jpeg",
       "base": "v11-catalog-1",
-      "purpose": "半打4S产品中心轮播 / 实拍",
+      "purpose": "半打 4S 详情页实拍图集 / 暮色住宅外观",
       "dimensions": [
         1920,
         780
@@ -39,7 +39,7 @@
     {
       "source": "已上传网页图片修改建议\\替换的图片\\产品中心-首页增加轮播图2.jpeg",
       "base": "v11-catalog-2",
-      "purpose": "半打4S产品中心轮播 / 实拍",
+      "purpose": "半打 4S 详情页实拍图集 / 屋顶与立面",
       "dimensions": [
         1920,
         780
@@ -1016,13 +1016,22 @@
         544,
         960
       ]
+    },
+    {
+      "source": "B/模块产品完整图组/BD4S/BD4S 竖图 (1).png",
+      "base": "v11-4s-living-perspective",
+      "purpose": "4S 客厅纵向视角，替换重复阁楼画面；标准版方案效果图",
+      "dimensions": [
+        1599,
+        1920
+      ]
     }
   ],
   "omissions": [
     "No clean 6S interior was supplied in the 6S folder; exterior views used, no borrowing from other models.",
     "Promotional posters, prices, authorizations and full reports are not published.",
     "Withdrawn mold photos and thumbnails removed.",
-    "The 4S mobile exterior uses a complete landscape image because the clean portrait files show interiors. Original drawing annotations are preserved, including Chinese text in English pages."
+    "The 4S mobile exterior uses a cover crop of its landscape image because the clean portrait files show interiors. Original drawing annotations are preserved, including Chinese text in English pages."
   ],
   "sources": {
     "parameters": "A/模块产品正式资料.xlsx",

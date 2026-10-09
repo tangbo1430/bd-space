@@ -65,8 +65,14 @@ for (const slug of ["4s", "grayscale"]) {
         }),
       );
     assert(
-      pictures.every((p) => p.complete && Math.abs(p.ratio - p.natural) < 0.01),
-      "all new images loaded with their complete proportions",
+      pictures.every(
+        (p) =>
+          p.complete &&
+          Math.abs(
+            p.ratio - (p.natural < 1 && width >= 768 ? 1.5 : p.natural),
+          ) < 0.01,
+      ),
+      "technical diagrams remain complete; portrait photographs use a landscape desktop preview and complete mobile view",
     );
     const tiles = page.locator(".product-design-grid figure");
     assert.equal(await tiles.count(), 6);

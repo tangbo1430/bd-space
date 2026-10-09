@@ -35,6 +35,7 @@ export default [
       "tests/immersive-browser.mjs",
       "tests/carousel-navigation.mjs",
       "tests/materials-browser.mjs",
+      "tests/material-completion-browser.mjs",
       "tests/supplement-browser.mjs",
       "tests/v11-browser.mjs",
     ],

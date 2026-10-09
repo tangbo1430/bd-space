@@ -1,0 +1,2898 @@
+{
+  "summary": {
+    "archive_files": 208,
+    "types": {
+      ".png": 134,
+      ".jpeg": 7,
+      ".docx": 28,
+      ".xlsx": 6,
+      ".ai": 1,
+      ".pdf": 15,
+      ".svg": 1,
+      ".jpg": 15,
+      ".mp4": 1
+    },
+    "direct_source_files": 116,
+    "eligible_file_count": 130,
+    "eligible_unique_count": 129,
+    "used_unique_count": 116,
+    "eligible_unique_rate": 89.9,
+    "direct_all_files_rate": 55.8
+  },
+  "files": [
+    {
+      "path": "已上传网页图片修改建议/产品中心-1-logo需要换.png",
+      "bytes": 1259774,
+      "crc": 3530638946,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "663dddc6ffc166326bc6090ba9a8d4d5ee95132abf0e8fc91e41361ee34d0a28"
+    },
+    {
+      "path": "已上传网页图片修改建议/产品中心-2-logo需要换.png",
+      "bytes": 807561,
+      "crc": 1442093390,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "a759c21c56d858ca6a9a0d6131519a8ee1138311ef6e825d748d3ec876e8ab88"
+    },
+    {
+      "path": "已上传网页图片修改建议/关于我们-1-换图.png",
+      "bytes": 1917399,
+      "crc": 3591951179,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "ec29088db203eed87b5bc6d8abd4dab7f9344c4f9724240172df0358c1869099"
+    },
+    {
+      "path": "已上传网页图片修改建议/关于我们-1-需换图.png",
+      "bytes": 3109883,
+      "crc": 1496217307,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "c3b15b447a3bb1e65b66a262dddffa441b161ebc6aaf413b22056792b415affd"
+    },
+    {
+      "path": "已上传网页图片修改建议/工程案例--1-logo需要换.png",
+      "bytes": 807097,
+      "crc": 1474728610,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "18f46f8fcb5b6137950f5940ee607b971582eb621abc94f32830fe480632f595"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-半打4S-1.png",
+      "bytes": 994734,
+      "crc": 2738864740,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "6da39796c3ff3600aa33d7be9e4cfb55af07243e61689453709ea13734c94f3f"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-半打4S-2.png",
+      "bytes": 1144857,
+      "crc": 497076129,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "d2b83d52dd590289422ef5eab5f6e055b713dcf73f023ae4d95fdef2ca3b8ce5"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-半打5S-1.png",
+      "bytes": 7278169,
+      "crc": 625919267,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "b536c16abd9d5bc39787a815b8e59a0f7efdc14674bb1b0196ab28783d928129"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-半打5S-2.png",
+      "bytes": 5804780,
+      "crc": 392949259,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "447ae5acbc607da744bc5327ab2d0fb5ef082624e1556e033cb13c44053ba987"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-半打6S-1.png",
+      "bytes": 7442663,
+      "crc": 3672315900,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "8b0ce97f9d7a58bb9c7969ffdf59bdd30c14a79b72d57928a49054a09cd8c855"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-半打6S-2.png",
+      "bytes": 7214081,
+      "crc": 2087010409,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "0bc036fc46acab7421524d3e651d1fdba8bffb470c47a169289600e681cd4db7"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-灰度空间-1.png",
+      "bytes": 8039446,
+      "crc": 769174970,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "f506eb46a9ac3d10cd405fcf398b8dde93c104cdc3cef8ec7721d8d44e34d49d"
+    },
+    {
+      "path": "已上传网页图片修改建议/手机端 750x1334（9比16）竖版的图/手机端-灰度空间-2.png",
+      "bytes": 7774386,
+      "crc": 3261917617,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "带文字宣传海报：采用对应干净照片，避免图片文字重复",
+      "sha256": "31f67afcc5b4caea65dcac69736260731d46e1cd0d3535b75b42ae600ace169b"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/logo.png",
+      "bytes": 187911,
+      "crc": 1291359451,
+      "category": "image",
+      "eligible": true,
+      "status": "identical-source",
+      "web_resources": [
+        "/assets/brand/logo-original.png"
+      ],
+      "note": "与已采用文件逐字节相同，SHA-256 去重只计一次",
+      "sha256": "320d031481a76dc36490d68ac8f99eb86cf1452a3f9692e4b99eae677d1bfcce"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/logo参考.png",
+      "bytes": 51540,
+      "crc": 4058480103,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "位置或标识参考截图，不直接铺入网页",
+      "sha256": "f1700644eda971dbacb7c8c3f204902ec6b4700d5252e21624c919fe7b569520"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/产品中心-首页增加轮播图1.jpeg",
+      "bytes": 4736840,
+      "crc": 956241329,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-catalog-1-m.webp",
+        "/assets/thumbs/v11-catalog-1.webp",
+        "/assets/img/v11-catalog-1.webp",
+        "/assets/img/v11-catalog-1.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "472d54caa59af3be8be92caff94a41716e861bf32ed9c934940b1c4457fbe077"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/产品中心-首页增加轮播图2.jpeg",
+      "bytes": 4958893,
+      "crc": 3343443039,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-catalog-2.webp",
+        "/assets/img/v11-catalog-2-m.webp",
+        "/assets/img/v11-catalog-2.webp",
+        "/assets/img/v11-catalog-2.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "52da17bb658402a8504503b01dcbb0fe79cdfe83ee0ad427792f5eaa0672a596"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/产品中心-首页增加轮播图保留.png",
+      "bytes": 1251810,
+      "crc": 3066218864,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "位置或标识参考截图，不直接铺入网页",
+      "sha256": "c384915466ad5f55c38bccd296e29651905c1c7f0ec3b4e5c2f0d600ef6d523c"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/关于我们-1-换图.png",
+      "bytes": 3541738,
+      "crc": 2574295148,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "公司愿景宣传海报：已重排为网页文字与建筑照片",
+      "sha256": "4a5b913e69ed1fec3ba2d00cc6332fbc9f89592a947f4f8deb518a6e6a143963"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/关于我们-1-需换图.jpeg",
+      "bytes": 5460161,
+      "crc": 1026100401,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-about-m.webp",
+        "/assets/img/v11-about.webp",
+        "/assets/img/v11-about.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e3eac762cc4f45d68bd61b91cb0d777d0e5c048832556c0f37c586e77cab8969"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/首页-2-轮播图需要换.jpeg",
+      "bytes": 6706559,
+      "crc": 328826778,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-home-4s.jpg",
+        "/assets/img/v11-home-4s-m.webp",
+        "/assets/img/v11-home-4s.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "435edb2d2e671cf6b0e31510c349c4619915bfb7198265b3171f70fecc2f374b"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/首页-3-轮播图需要换.jpeg",
+      "bytes": 4761123,
+      "crc": 699021829,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-home-5s.jpg",
+        "/assets/img/v11-home-5s.webp",
+        "/assets/img/v11-home-5s-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "31b7e1e8a73da81890abfdd4c98257faa7fe4702c5455cf1db2876c3e71d0b73"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/首页-4-轮播图需要换.jpeg",
+      "bytes": 4063405,
+      "crc": 1568088226,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-home-6s-m.webp",
+        "/assets/img/v11-home-6s.webp",
+        "/assets/img/v11-home-6s.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "318c4579f009733fc63c70a3b8dff7697bd3196617f4c0f0660b28f158bcd22a"
+    },
+    {
+      "path": "已上传网页图片修改建议/替换的图片/首页-8-需换图.png",
+      "bytes": 5248810,
+      "crc": 2423002748,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-factory.webp",
+        "/assets/img/v11-factory.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "c6f56918f5925b4df8db935162b1fe5b9fbc410d0ba7b0e7648fa6d23a612a42"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-1-logo需要换.png",
+      "bytes": 691296,
+      "crc": 2903438899,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "2a31472cbc0f87f63023712850bbe79b3605bd6e11a8930b73ddc9ee59e0cb98"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-10-logo需要换.png",
+      "bytes": 795987,
+      "crc": 1511390161,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "6ecbfaf90239e9001599ba4530c282cd89c8be4f38145de5954902a9f42787f6"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-2-轮播图需要换.png",
+      "bytes": 3265674,
+      "crc": 1345180167,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "6a363595840e815bbdafb4443f12caa7fe38247b3187cacdfb3d7ec86dfb9be9"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-3-轮播图需要换.png",
+      "bytes": 3346880,
+      "crc": 67603242,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "a60bde54a7679d47509deaecf91d33167add62263f83150c66f07198b9880693"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-4-轮播图需要换.png",
+      "bytes": 3105719,
+      "crc": 982028171,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "a4fb85ff7536d73cf4ddd16ddddcaedc2459dcad16894d6f5d0abaef74ece1ec"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-5-图片调整.png",
+      "bytes": 599209,
+      "crc": 2166858617,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "965c2911b9a0d512c51705401dace10845fbfd78943825f955f1564adaf98b42"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-6-图片调整.png",
+      "bytes": 515632,
+      "crc": 1479603955,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "b048952220bc1f721b7c87d673d1bb6f717e13d516fde5d1d5854a4d006f487d"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-7-图片调整.png",
+      "bytes": 778063,
+      "crc": 1008002281,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "9b5d1f5e09fc03dfd241c9c81f0fa0752822b209ae7e9d29a753a17012b0c8ed"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-8-需换图.png",
+      "bytes": 2767286,
+      "crc": 3768955977,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "e4d27caa4ee2a756d80e679b87f5260eb33f2b1b46aa0b7885891462d634081e"
+    },
+    {
+      "path": "已上传网页图片修改建议/首页-9-图片调整.png",
+      "bytes": 982925,
+      "crc": 3428050418,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "修改批注截图：作为调整依据，不作为网页图片",
+      "sha256": "8e121675accda45d3e38cd1545807107e4b34206ef2950ad27f453788774b9d5"
+    },
+    {
+      "path": "A/公司标准名称.docx",
+      "bytes": 10328,
+      "crc": 2711465772,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "09d9bcf502439c30b384b5f90c9693eefc1da7b737547407d0c676f51e637425"
+    },
+    {
+      "path": "A/公司简介.docx",
+      "bytes": 10589,
+      "crc": 4076010066,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "6239a5f81d3c03f5997c5c399c7f9c38f3137c4930875e38dd4b5272b7ea2fb0"
+    },
+    {
+      "path": "A/发展里程碑.docx",
+      "bytes": 13449,
+      "crc": 3675316767,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "f502454ab2ed58f3096678b4eb81ffb9a78b48b83b6307761ea806cf60062ab9"
+    },
+    {
+      "path": "A/愿景、使命与核心优势.docx",
+      "bytes": 12779,
+      "crc": 3007171302,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "bb33fa352a5bc4a449aedd0aa96f1ed1c6f74dbab073878a59916b53ab1fc2a2"
+    },
+    {
+      "path": "A/模块产品正式资料.docx",
+      "bytes": 11698,
+      "crc": 283399890,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "3b18c5a57860a03f7030d968018b427f2f4ae0b3f1204fb546fe90df27e9349e"
+    },
+    {
+      "path": "A/模块产品正式资料.xlsx",
+      "bytes": 13844,
+      "crc": 1940257577,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "8f750a42bb0a985eb521d728750da1854ea4db20bf11f088b99693cca8b26203"
+    },
+    {
+      "path": "A/联系信息.xlsx",
+      "bytes": 11319,
+      "crc": 3734595297,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "e0319cabb897ccbe7b55a6492b6ff14b12135a1554028aaff3e6c9977340d728"
+    },
+    {
+      "path": "A/英文全站资料.docx",
+      "bytes": 19081,
+      "crc": 2006887985,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "d9a5e9f3c02c0561f5adc69021b66c168c2d8fd9cd5b1c9d4345216a1c3440a8"
+    },
+    {
+      "path": "A/英文全站资料.xlsx",
+      "bytes": 13089,
+      "crc": 3066182204,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "d155b787a2d00af8525c9f5f7f361e6f0079e3fc14c31e3064fda951bf1bccf4"
+    },
+    {
+      "path": "A/项目案例资料.xlsx",
+      "bytes": 10856,
+      "crc": 2855147913,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "d38d4e43374904612ed2ac638446e729945ca794d7290c236429a383f3756404"
+    },
+    {
+      "path": "B/Logo 完整文件/半打空间logo.ai",
+      "bytes": 838030,
+      "crc": 2769515715,
+      "category": "brand_variant",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同一 Logo 的设计源格式，网页采用透明图",
+      "sha256": "f5e77309c598002370401f2bd9ac100f9408a6b20ace88376807929f60d652e5"
+    },
+    {
+      "path": "B/Logo 完整文件/半打空间logo.pdf",
+      "bytes": 378133,
+      "crc": 3781314236,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "3535a2c9b6ce392dc2bd6cc055fab0da182abedee4b275247c26d16a3a04e7df"
+    },
+    {
+      "path": "B/Logo 完整文件/半打空间logo.png",
+      "bytes": 187911,
+      "crc": 1291359451,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/brand/logo-original.png"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "320d031481a76dc36490d68ac8f99eb86cf1452a3f9692e4b99eae677d1bfcce"
+    },
+    {
+      "path": "B/Logo 完整文件/半打空间logo.svg",
+      "bytes": 261207,
+      "crc": 3709162665,
+      "category": "brand_variant",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同一 Logo 的设计源格式，网页采用透明图",
+      "sha256": "99fa015496e04b9e7dec58ad1129534557d02a4253d977e591c3b6fecd62f584"
+    },
+    {
+      "path": "B/SEO 分享图/SEO 分享图.png",
+      "bytes": 1013677,
+      "crc": 273146843,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "原海报不直接上线；分享图已重新排版为品牌与建筑",
+      "sha256": "5509d72540862e02fc62d75aef8cc89118bbc8ff4cb4d51f3f1a048ec0cfbcaa"
+    },
+    {
+      "path": "B/专利、检测报告与证书/INTEREK 180727006SHF-导热系数.pdf",
+      "bytes": 930341,
+      "crc": 980759636,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "14bd67e3fbe9c716e068443d0bec5356f7c68ffa2517269f6c194c1f4fdd762a"
+    },
+    {
+      "path": "B/专利、检测报告与证书/INTEREK 180727006SHF-无石棉.pdf",
+      "bytes": 938461,
+      "crc": 2404734233,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "66a8745f6de5781572db1d28483cebff31e3d96c47eb5bd370ae7f62ee44a3eb"
+    },
+    {
+      "path": "B/专利、检测报告与证书/INTEREK 180727006SHF-水密性.pdf",
+      "bytes": 969916,
+      "crc": 323683837,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "0dbd28d524a44efae53c2c50f3e53656a494dece45631f8222e21057e7193e73"
+    },
+    {
+      "path": "B/专利、检测报告与证书/INTEREK 180727006SHF-耐火测试.pdf",
+      "bytes": 2322642,
+      "crc": 1909361925,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "6d0a1ff4f20984700d63ddee071f34b9e05665216b8ac30aa3e9d9388230564a"
+    },
+    {
+      "path": "B/专利、检测报告与证书/INTEREK 180727006SHF-隔音测试.pdf",
+      "bytes": 1253216,
+      "crc": 2077666564,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "86ad5d59e336d37a9f5007a0eb7ddca28d7effc1da7b62ba619124d697a0ef0c"
+    },
+    {
+      "path": "B/专利、检测报告与证书/SGS抗压强度GZIN1810052770CM.PDF",
+      "bytes": 180628,
+      "crc": 1285714558,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "36c337eaed0ac34b58be9ee922bc8d78e7d98521ed1cadf830fc43eb3a26785a"
+    },
+    {
+      "path": "B/专利、检测报告与证书/SGS水渗性GZIN1808044546CM.PDF",
+      "bytes": 141901,
+      "crc": 1655000268,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "d9656c30fdae7c57cf84416baf8e25aa2eb7739da827d4c7833ba5f4567a791b"
+    },
+    {
+      "path": "B/专利、检测报告与证书/SGS石棉CAN18-195254-01_MLC_GZIN1808044547CM_F.PDF",
+      "bytes": 328663,
+      "crc": 3530414995,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "a6075bec4e3f121e2b41595c80dcd103f7b3688340b6aca8fa67d6d7ecaee5cb"
+    },
+    {
+      "path": "B/专利、检测报告与证书/SGS防火GZIN1808044545CM.PDF",
+      "bytes": 454037,
+      "crc": 2387118004,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "03d1bc29d171ddf8d8d26fad3df88b17583d6c2114ed376e73d1a167c73e0237"
+    },
+    {
+      "path": "B/专利、检测报告与证书/SGS隔音GZIN1808044544CM.PDF",
+      "bytes": 293224,
+      "crc": 2863165710,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "320bc270356dfc4bca1aa65c2d68228c2d16dbc0098003ce9862a23ac2a9a70f"
+    },
+    {
+      "path": "B/专利、检测报告与证书/专利、检测报告与证书台账.xlsx",
+      "bytes": 14243,
+      "crc": 1036452556,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "eaab19c4c39beb9fb9977bdab23c03c2409247f56310f470f4855ed76060a856"
+    },
+    {
+      "path": "B/专利、检测报告与证书/发明专利证书.pdf",
+      "bytes": 7069965,
+      "crc": 1078056583,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "c54943c0c44c3240bbfaaece91db9979be3802f5b01ea82ef2eea799821d9148"
+    },
+    {
+      "path": "B/专利、检测报告与证书/广东省土木建筑学会科学技术奖励-草根民墅.pdf",
+      "bytes": 169886,
+      "crc": 2237452102,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "f2157f9f14ca4d970b4f21fb164f3cced726e62e7def54497ff031e23aa8a290"
+    },
+    {
+      "path": "B/专利、检测报告与证书/广东省土木建筑学会科学技术奖励-黄昆.pdf",
+      "bytes": 265904,
+      "crc": 4031826730,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "80341e470d1ff4b33c68ace6e87a55d562a4bdf116868ebb150d1259b793d366"
+    },
+    {
+      "path": "B/专利、检测报告与证书/广东省科技创新专项 二等奖.pdf",
+      "bytes": 481237,
+      "crc": 1076513306,
+      "category": "evidence",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "Logo 同源版本或证据摘要来源，完整报告不公开",
+      "sha256": "1061909f65089a0aea253c0112d23c1481716263298a7231fc4b499bdf745904"
+    },
+    {
+      "path": "B/创始人资料/创始人照片.jpg",
+      "bytes": 1233620,
+      "crc": 1701322677,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/founder-huang-kun.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "0470ef148ebfb9b9716a81fbc2342e5d64c6b141503b6b654614632b6e3d5294"
+    },
+    {
+      "path": "B/创始人资料/姓名职务公开口径及书面发布授权.docx",
+      "bytes": 12554,
+      "crc": 4226228897,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "a7839264b34da2f7a2dada9143505bf434fe16c40a8da611d5183a9b571aca21"
+    },
+    {
+      "path": "B/创始人资料/黄昆-半打空间创始人.docx",
+      "bytes": 12641,
+      "crc": 591312316,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "9b52f34f081e5ff996c0e1a376b40f31e5d76c987dba7da9301e7a759fae010e"
+    },
+    {
+      "path": "B/地图与社媒资料/办公工厂地图坐标及企业社媒链接.xlsx",
+      "bytes": 11474,
+      "crc": 4132992043,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "e3a18e9559ed367e00c4566ea1e54c9511b3ff0a6847f5e0112ff1a264f4d6a2"
+    },
+    {
+      "path": "B/地图与社媒资料/唐小姐 18503005860.png",
+      "bytes": 242131,
+      "crc": 3801068033,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/wechat-tang.png"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "28252b2d4b16f4f6232be0500ca24c28fda985ceca95a1bd98d60696a61d9b41"
+    },
+    {
+      "path": "B/地图与社媒资料/王先生 18073804567.png",
+      "bytes": 338025,
+      "crc": 786405453,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/wechat-wang.png"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e8da61ca7a58d985ac4d6ac8c8b7442543b66257a33934b469c54ca735ff81bf"
+    },
+    {
+      "path": "B/地图与社媒资料/黄先生 13702363540.png",
+      "bytes": 261391,
+      "crc": 1437848183,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/wechat-huang.png"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "1befb4456449acbd99210c7fd1c99df90575141c5fef6da50ebc654a8111d3eb"
+    },
+    {
+      "path": "B/工厂与施工视频/附件视频-半打4S吊装全记录.mp4",
+      "bytes": 23446100,
+      "crc": 1592363385,
+      "category": "video",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-4s-video-poster.jpg",
+        "/assets/video/4s-installation.mp4"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "9fca471e8aac08a0410e20bd2a346704c1cab5ba17cca5264970cd7e117d0b47"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/授权.docx",
+      "bytes": 11348,
+      "crc": 3983699179,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "ee20a2961e8181e528d0908f062b5493a7bbbb20b8098272b1b4b1b6292d8d0e"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/案例-10{半打4S-江苏省常州}-安装-01.jpg",
+      "bytes": 1488311,
+      "crc": 4136007173,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-changzhou-01.webp",
+        "/assets/img/project-changzhou-01-m.webp",
+        "/assets/img/project-changzhou-01.webp",
+        "/assets/img/project-changzhou-01.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "2e0b457af043c0b56845e8c1fe48a39b08b2fc7afda40cd768a6e1ed6fadd9dc"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/案例-10{半打4S-江苏省常州}-安装-02.JPG",
+      "bytes": 3438964,
+      "crc": 3528070395,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-changzhou-02.jpg",
+        "/assets/thumbs/project-changzhou-02.webp",
+        "/assets/img/project-changzhou-02.webp",
+        "/assets/img/project-changzhou-02-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "793c02b64a77df7ac0f02f27ba2d7e4a5b2d58c944d0aa0ca27ce164df850b91"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/案例-10{半打4S-江苏省常州}-安装-03.JPG",
+      "bytes": 3610528,
+      "crc": 1887322926,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-changzhou-03.webp",
+        "/assets/img/project-changzhou-03.jpg",
+        "/assets/thumbs/project-changzhou-03.webp",
+        "/assets/img/project-changzhou-03-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "7c445fbe2dfd1fa89cb8ef794d9d28cfae775a2ca01ab6696520bd400020cec3"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/案例-10{半打4S-江苏省常州}-安装-04.jpg",
+      "bytes": 906283,
+      "crc": 3204754071,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-changzhou-04.webp",
+        "/assets/img/project-changzhou-04-m.webp",
+        "/assets/img/project-changzhou-04.webp",
+        "/assets/img/project-changzhou-04.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "a9781e204b5ab53ec6e9d6c927960c5c076b1744eef0e8e8c718261faa60d1b9"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/案例-10{半打4S-江苏省常州}-安装-05.png",
+      "bytes": 3071531,
+      "crc": 1034833550,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-changzhou-05-m.webp",
+        "/assets/thumbs/project-changzhou-05.webp",
+        "/assets/img/project-changzhou-05.jpg",
+        "/assets/img/project-changzhou-05.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "06baea792f4adf0588ed64d89f8346de4c73696205cb7491c3a169dbac9e4453"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/案例-10{半打4S-江苏省常州}-封面.png",
+      "bytes": 3646414,
+      "crc": 3587703572,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-changzhou-cover.webp",
+        "/assets/img/project-changzhou-cover-m.webp",
+        "/assets/thumbs/project-changzhou-cover.webp",
+        "/assets/img/project-changzhou-cover.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "9d4b8104ed6d120f58953e42d5b035421f79e56084ec0f9876e8663a4c2d43f5"
+    },
+    {
+      "path": "B/案例完整图组/案例-10半打4S-江苏省常州/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/授权.docx",
+      "bytes": 11074,
+      "crc": 2412967177,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "55af92de9a2d181302276133d1978a8575fb19ff83df2412fb46bf63f6c7bf2a"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/案例-1{开曼群岛独栋民宅“乡愁”}-安装-01.png",
+      "bytes": 3131637,
+      "crc": 3673160116,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-cayman-01-m.webp",
+        "/assets/img/project-cayman-01.webp",
+        "/assets/thumbs/project-cayman-01.webp",
+        "/assets/img/project-cayman-01.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "20ce44ba0c795216aa2b536d61dcb7d60f7314b7c1ce7056acea4b9f9fef0bdb"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/案例-1{开曼群岛独栋民宅“乡愁”}-安装-02.png",
+      "bytes": 2951285,
+      "crc": 328596547,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-cayman-02.jpg",
+        "/assets/thumbs/project-cayman-02.webp",
+        "/assets/img/project-cayman-02-m.webp",
+        "/assets/img/project-cayman-02.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "33a11ecc425e09388a1771cc89be95e5aef7818bc69f72a8a5133041f0ec717e"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/案例-1{开曼群岛独栋民宅“乡愁”}-安装-03.png",
+      "bytes": 2642797,
+      "crc": 413614131,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-cayman-03.webp",
+        "/assets/img/project-cayman-03.jpg",
+        "/assets/img/project-cayman-03-m.webp",
+        "/assets/img/project-cayman-03.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "f9006ccf7b28d984fe02674281b69dfb81aaa04f7da5dc5ac216a001a6282259"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/案例-1{开曼群岛独栋民宅“乡愁”}-安装-04.png",
+      "bytes": 2773012,
+      "crc": 467870440,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-cayman-04.webp",
+        "/assets/img/project-cayman-04-m.webp",
+        "/assets/img/project-cayman-04.jpg",
+        "/assets/thumbs/project-cayman-04.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "ecf43f656c2a3a65251852c0a5bb60c7cd6109954a2aaf322379cbf3c7109824"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/案例-1{开曼群岛独栋民宅“乡愁”}-安装-05.png",
+      "bytes": 3682606,
+      "crc": 3474892758,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-cayman-05.jpg",
+        "/assets/img/project-cayman-05.webp",
+        "/assets/thumbs/project-cayman-05.webp",
+        "/assets/img/project-cayman-05-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "a7b8fe514024ad9b5b1032dc5f1bf59cee7f4dfbe8ac6eca14ea037dc4ebefc1"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/案例-1{开曼群岛独栋民宅“乡愁”}-封面.png",
+      "bytes": 4597184,
+      "crc": 3698146351,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-cayman-cover-m.webp",
+        "/assets/img/project-cayman-cover.webp",
+        "/assets/img/project-cayman-cover.jpg",
+        "/assets/thumbs/project-cayman-cover.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d02ce0793a20b43aa426440a346b8fb197eea1bfd46514eb60781714c6426d40"
+    },
+    {
+      "path": "B/案例完整图组/案例-1开曼群岛独栋民宅“乡愁”/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/授权.docx",
+      "bytes": 11149,
+      "crc": 2969343414,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "cbaa092d8820b3f47b03c43d9f71f86585f3ee589f9dcc91f6eba5ae489b9c6b"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-01.jpg",
+      "bytes": 2794147,
+      "crc": 3920042073,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-brisbane-01-m.webp",
+        "/assets/img/project-brisbane-01.jpg",
+        "/assets/img/project-brisbane-01.webp",
+        "/assets/thumbs/project-brisbane-01.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d178e845fec711d75dc99260964780909f916e315196fbb0ef66dc40810330f7"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-02.png",
+      "bytes": 2578174,
+      "crc": 2356974108,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-brisbane-02.jpg",
+        "/assets/thumbs/project-brisbane-02.webp",
+        "/assets/img/project-brisbane-02-m.webp",
+        "/assets/img/project-brisbane-02.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e520137939cfba40920d2c30cf731bb824db1ced660f53d953955000cf5f315b"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-03.png",
+      "bytes": 2981838,
+      "crc": 552509249,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-brisbane-03.webp",
+        "/assets/thumbs/project-brisbane-03.webp",
+        "/assets/img/project-brisbane-03.jpg",
+        "/assets/img/project-brisbane-03-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "99ab78c7bf2f1522dd1c25440a39b0a8f7ad0c6dab90d877ebdd04aafe49b4ed"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-04.jpg",
+      "bytes": 3036206,
+      "crc": 2248693733,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-brisbane-04.webp",
+        "/assets/img/project-brisbane-04.jpg",
+        "/assets/img/project-brisbane-04-m.webp",
+        "/assets/img/project-brisbane-04.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "4f4439bbdf4dc7eac2c8b2434a160a83ae5448c41ea8c2243000a3385321f375"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-05.png",
+      "bytes": 5562342,
+      "crc": 1711077132,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-brisbane-05.jpg",
+        "/assets/thumbs/project-brisbane-05.webp",
+        "/assets/img/project-brisbane-05.webp",
+        "/assets/img/project-brisbane-05-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "36d48daec99f8bef49fb34df43560bf89e17a272a99afbc69680ea722f11db05"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/案例-2{澳洲布里斯班独栋民宅“本真”}-封面.png",
+      "bytes": 3577720,
+      "crc": 3464016775,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-brisbane-cover-m.webp",
+        "/assets/img/project-brisbane-cover.jpg",
+        "/assets/img/project-brisbane-cover.webp",
+        "/assets/thumbs/project-brisbane-cover.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "abd7ed7fee071d68f7f4ea2238329580c6a9297b0b0a12492e7801743442dd8f"
+    },
+    {
+      "path": "B/案例完整图组/案例-2澳洲布里斯班独栋民宅“本真”/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/授权.docx",
+      "bytes": 11160,
+      "crc": 926866917,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "30a63a88693a179bb1debe3d32fcd45bbe5888fa4ecc2711857ffb8f3161bc07"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/案例-3{广东中山独栋民宅“风度”}-安装-01.png",
+      "bytes": 2050518,
+      "crc": 650710517,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-fengdu-01.jpg",
+        "/assets/thumbs/project-zhongshan-fengdu-01.webp",
+        "/assets/img/project-zhongshan-fengdu-01.webp",
+        "/assets/img/project-zhongshan-fengdu-01-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "7d8a310dbc244fe750b1fe14cf27fd0516c02d714d4cd36e843ad2531743e090"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/案例-3{广东中山独栋民宅“风度”}-安装-02.jpg",
+      "bytes": 3947962,
+      "crc": 2669839591,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-fengdu-02.jpg",
+        "/assets/img/project-zhongshan-fengdu-02.webp",
+        "/assets/thumbs/project-zhongshan-fengdu-02.webp",
+        "/assets/img/project-zhongshan-fengdu-02-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "f442fcded2ae088b0850f0ee96645ce33f47dd729271929dd0d19c0ca068b4c4"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/案例-3{广东中山独栋民宅“风度”}-安装-03.png",
+      "bytes": 2729625,
+      "crc": 196990544,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-fengdu-03-m.webp",
+        "/assets/thumbs/project-zhongshan-fengdu-03.webp",
+        "/assets/img/project-zhongshan-fengdu-03.jpg",
+        "/assets/img/project-zhongshan-fengdu-03.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "dd2f7cc429d6558e64d82ff0cb430995265bb2d360b0beb7cbe7fc08ec5e6212"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/案例-3{广东中山独栋民宅“风度”}-安装-04.png",
+      "bytes": 3326732,
+      "crc": 3029411275,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-fengdu-04.jpg",
+        "/assets/thumbs/project-zhongshan-fengdu-04.webp",
+        "/assets/img/project-zhongshan-fengdu-04.webp",
+        "/assets/img/project-zhongshan-fengdu-04-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "c72ef9e5ae11c8f7a209a5bbb7544efd07d8d97274878552aa7eab4fce2ba9d5"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/案例-3{广东中山独栋民宅“风度”}-安装-05.png",
+      "bytes": 5957224,
+      "crc": 4265408518,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-zhongshan-fengdu-05.webp",
+        "/assets/img/project-zhongshan-fengdu-05.webp",
+        "/assets/img/project-zhongshan-fengdu-05-m.webp",
+        "/assets/img/project-zhongshan-fengdu-05.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "fb1b38e012d06d2a953f1965f95c6bcd7c731fdec87647bea0af5f2e986a90f3"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/案例-3{广东中山独栋民宅“风度”}-封面.png",
+      "bytes": 4120055,
+      "crc": 562310558,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-fengdu-cover-m.webp",
+        "/assets/img/project-zhongshan-fengdu-cover.webp",
+        "/assets/img/project-zhongshan-fengdu-cover.jpg",
+        "/assets/thumbs/project-zhongshan-fengdu-cover.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "b415244864481936da777d2d74a93ec2b8787ab8fb4d64695adc24ce3e16884c"
+    },
+    {
+      "path": "B/案例完整图组/案例-3广东中山独栋民宅“风度”/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/授权.docx",
+      "bytes": 11236,
+      "crc": 2316213447,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "cb3abdddca74ad63316940b40ee0c79de5c28acca124455204fb9b6360ca9738"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/案例-4{广东中山独栋民宅“米阁”}-安装-01.jpg",
+      "bytes": 1429528,
+      "crc": 1364041521,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-zhongshan-mige-01.webp",
+        "/assets/img/project-zhongshan-mige-01.webp",
+        "/assets/img/project-zhongshan-mige-01-m.webp",
+        "/assets/img/project-zhongshan-mige-01.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "4af72502a5e26ca9a0580a514d565313df8ba9b5f3793c54312d3525039f0b2d"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/案例-4{广东中山独栋民宅“米阁”}-安装-02.png",
+      "bytes": 2688168,
+      "crc": 2062868709,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-mige-02-m.webp",
+        "/assets/img/project-zhongshan-mige-02.jpg",
+        "/assets/thumbs/project-zhongshan-mige-02.webp",
+        "/assets/img/project-zhongshan-mige-02.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "5704164447ebb5f77a34509ae8c778e8c28f9391020113859db0720c35cba3a0"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/案例-4{广东中山独栋民宅“米阁”}-安装-03.png",
+      "bytes": 3672362,
+      "crc": 4281034355,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-mige-03-m.webp",
+        "/assets/thumbs/project-zhongshan-mige-03.webp",
+        "/assets/img/project-zhongshan-mige-03.webp",
+        "/assets/img/project-zhongshan-mige-03.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "2d8070883e56f5b88c6d1cde79a66a4814edf5df26c7903d5ea93d38f520aa2a"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/案例-4{广东中山独栋民宅“米阁”}-安装-04.png",
+      "bytes": 2697511,
+      "crc": 2334519416,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-mige-04.webp",
+        "/assets/img/project-zhongshan-mige-04.jpg",
+        "/assets/thumbs/project-zhongshan-mige-04.webp",
+        "/assets/img/project-zhongshan-mige-04-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "a279ac76fff3bbe7bf30dfb1de2945b1d85fdf5d7eca29217feebbe2aa6bdb5f"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/案例-4{广东中山独栋民宅“米阁”}-安装-05.png",
+      "bytes": 2515537,
+      "crc": 1728239707,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-mige-05-m.webp",
+        "/assets/thumbs/project-zhongshan-mige-05.webp",
+        "/assets/img/project-zhongshan-mige-05.webp",
+        "/assets/img/project-zhongshan-mige-05.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "eb93df4793c6128e3dd9420515ff6f0840dde05f8dd790b52b665bef5ed0d67c"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/案例-4{广东中山独栋民宅“米阁”}-封面.png",
+      "bytes": 3509752,
+      "crc": 1168399261,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-mige-cover.webp",
+        "/assets/img/project-zhongshan-mige-cover-m.webp",
+        "/assets/thumbs/project-zhongshan-mige-cover.webp",
+        "/assets/img/project-zhongshan-mige-cover.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e17b752e99b1583a65c69d4baae7e467741e74fb34972a277ebef352ffcf9763"
+    },
+    {
+      "path": "B/案例完整图组/案例-4广东中山独栋民宅“米阁”/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/授权.docx",
+      "bytes": 11251,
+      "crc": 324987132,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "c425e7c6d6100d3e4910b95e372fc603adec90072da63de21e00ab8b705635a3"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/案例-5{中山隔离方舱}-安装-01.png",
+      "bytes": 7545155,
+      "crc": 4200579240,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-cabins-01.webp",
+        "/assets/img/project-zhongshan-cabins-01-m.webp",
+        "/assets/thumbs/project-zhongshan-cabins-01.webp",
+        "/assets/img/project-zhongshan-cabins-01.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "32eea76576c1103d581748e8d062bf53ed665ec4d93ad0410c3bcfa5f75eefb5"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/案例-5{中山隔离方舱}-安装-02.png",
+      "bytes": 2925516,
+      "crc": 739511295,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-zhongshan-cabins-02.webp",
+        "/assets/img/project-zhongshan-cabins-02-m.webp",
+        "/assets/img/project-zhongshan-cabins-02.jpg",
+        "/assets/img/project-zhongshan-cabins-02.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "b016c2ed2db64df38bb89933da7a8d32df0d42e0b687d68ab5f12058e042afb3"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/案例-5{中山隔离方舱}-安装-03.png",
+      "bytes": 3541525,
+      "crc": 3353713129,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-zhongshan-cabins-03.webp",
+        "/assets/img/project-zhongshan-cabins-03.webp",
+        "/assets/img/project-zhongshan-cabins-03.jpg",
+        "/assets/img/project-zhongshan-cabins-03-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "cfc6e4b0b2c73e8cd5c1d107630d902c36be152a0d1e0992c1de2bc2bf3c8318"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/案例-5{中山隔离方舱}-安装-04.png",
+      "bytes": 3210503,
+      "crc": 846442769,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-cabins-04.webp",
+        "/assets/img/project-zhongshan-cabins-04-m.webp",
+        "/assets/img/project-zhongshan-cabins-04.jpg",
+        "/assets/thumbs/project-zhongshan-cabins-04.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "2baf754a818546f62338a76de4abd014dd057ed85f29de09ed3bfa28d731d724"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/案例-5{中山隔离方舱}-安装-05.png",
+      "bytes": 5409251,
+      "crc": 3544129596,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-cabins-05-m.webp",
+        "/assets/img/project-zhongshan-cabins-05.webp",
+        "/assets/img/project-zhongshan-cabins-05.jpg",
+        "/assets/thumbs/project-zhongshan-cabins-05.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "99fb520667792a50b4c07281eacf54f50a742dd6c3f8252e0e19885730dd8621"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/案例-5{中山隔离方舱}-封面.png",
+      "bytes": 4183192,
+      "crc": 3493470430,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-zhongshan-cabins-cover.jpg",
+        "/assets/thumbs/project-zhongshan-cabins-cover.webp",
+        "/assets/img/project-zhongshan-cabins-cover.webp",
+        "/assets/img/project-zhongshan-cabins-cover-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e336b320a3194d779a9f2541e09c4e5c683eb1fc389cd641289e77f93e47572b"
+    },
+    {
+      "path": "B/案例完整图组/案例-5中山隔离方舱/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/授权.docx",
+      "bytes": 11281,
+      "crc": 1151618107,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "ba108d597d3c3ac2c8a3a00ba934bc24835bcb2cf4fbc03b8dbffcef56391b65"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/案例-6{成都航空学院宿舍}-安装-01.png",
+      "bytes": 2321815,
+      "crc": 3214496658,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-chengdu-01.webp",
+        "/assets/img/project-chengdu-01.webp",
+        "/assets/img/project-chengdu-01.jpg",
+        "/assets/img/project-chengdu-01-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "860801390843e9ad520eec923a7867a2d365b20b14d96ab15d3470f3db01b220"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/案例-6{成都航空学院宿舍}-安装-02.png",
+      "bytes": 5757180,
+      "crc": 1560140071,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-chengdu-02.webp",
+        "/assets/img/project-chengdu-02-m.webp",
+        "/assets/img/project-chengdu-02.jpg",
+        "/assets/thumbs/project-chengdu-02.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "a8c5e43b56a42a5492704d6902381cdf72110b572d5f0409a0bd2a0f70bb33db"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/案例-6{成都航空学院宿舍}-安装-03.png",
+      "bytes": 2722815,
+      "crc": 1889357369,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-chengdu-03.webp",
+        "/assets/thumbs/project-chengdu-03.webp",
+        "/assets/img/project-chengdu-03-m.webp",
+        "/assets/img/project-chengdu-03.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "a152fd8fa7a6ff54508a600fb5feff5d321cb0a02b0a91211da263d9958aeb11"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/案例-6{成都航空学院宿舍}-安装-04.png",
+      "bytes": 3491065,
+      "crc": 1765106392,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-chengdu-04.jpg",
+        "/assets/img/project-chengdu-04.webp",
+        "/assets/img/project-chengdu-04-m.webp",
+        "/assets/thumbs/project-chengdu-04.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "29bdc1140e0dd2442598fc20560c06a87bef02d3bba58fbba43502020998366a"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/案例-6{成都航空学院宿舍}-安装-05.png",
+      "bytes": 6951231,
+      "crc": 1595366791,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-chengdu-05-m.webp",
+        "/assets/thumbs/project-chengdu-05.webp",
+        "/assets/img/project-chengdu-05.webp",
+        "/assets/img/project-chengdu-05.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d3a3bcc9ced37e193c303f97a4ce302c68ec82a45defba32fdbbd353aa021f09"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/案例-6{成都航空学院宿舍}-封面.png",
+      "bytes": 4257513,
+      "crc": 3460691467,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-chengdu-cover.webp",
+        "/assets/img/project-chengdu-cover.jpg",
+        "/assets/img/project-chengdu-cover-m.webp",
+        "/assets/img/project-chengdu-cover.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "6ccf8071f0b5baa0d021e86bc8fffc54a034ab9679dfa94463f1598a1647effb"
+    },
+    {
+      "path": "B/案例完整图组/案例-6成都航空学院宿舍/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/授权.docx",
+      "bytes": 11305,
+      "crc": 3641562819,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "2c6bd19c4c0b7315a8571e074c49591e6fa549b53e3f76c80e7019d33a4390aa"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/案例-7{中建三局深圳营房}-安装-01.png",
+      "bytes": 2986353,
+      "crc": 2786202806,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-shenzhen-01.webp",
+        "/assets/thumbs/project-shenzhen-01.webp",
+        "/assets/img/project-shenzhen-01.jpg",
+        "/assets/img/project-shenzhen-01-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "b28a718e6ab214e92213211759cc2d47046f05b33c564e9c3661d908baa85221"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/案例-7{中建三局深圳营房}-安装-02.png",
+      "bytes": 3563953,
+      "crc": 771806025,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-shenzhen-02.jpg",
+        "/assets/thumbs/project-shenzhen-02.webp",
+        "/assets/img/project-shenzhen-02-m.webp",
+        "/assets/img/project-shenzhen-02.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "56d45e094fe58fc10025bf3187869fd22f658d95734507fb0bfe4c361966ce33"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/案例-7{中建三局深圳营房}-安装-03.png",
+      "bytes": 2504360,
+      "crc": 1632826967,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-shenzhen-03.webp",
+        "/assets/img/project-shenzhen-03.jpg",
+        "/assets/img/project-shenzhen-03-m.webp",
+        "/assets/thumbs/project-shenzhen-03.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "f3201030fee16a48c98e1b59208256e898c78aeada128655d5f0c2d81b819b09"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/案例-7{中建三局深圳营房}-安装-04.png",
+      "bytes": 4380268,
+      "crc": 1302473776,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-shenzhen-04.webp",
+        "/assets/img/project-shenzhen-04.jpg",
+        "/assets/img/project-shenzhen-04-m.webp",
+        "/assets/thumbs/project-shenzhen-04.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "1fb5dc8061aa8bdeefc8c3618233a72bd7b022ed7019c83c4fd08403119c146d"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/案例-7{中建三局深圳营房}-安装-05.png",
+      "bytes": 3155636,
+      "crc": 2269896597,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-shenzhen-05.webp",
+        "/assets/img/project-shenzhen-05-m.webp",
+        "/assets/thumbs/project-shenzhen-05.webp",
+        "/assets/img/project-shenzhen-05.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e4d6aefedbf746cc9730c73689712d24dcc3f7e846dfd0ecbc1d33c639f7eb89"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/案例-7{中建三局深圳营房}-封面.png",
+      "bytes": 4807397,
+      "crc": 1107164903,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-shenzhen-cover-m.webp",
+        "/assets/thumbs/project-shenzhen-cover.webp",
+        "/assets/img/project-shenzhen-cover.webp",
+        "/assets/img/project-shenzhen-cover.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "08a2a2ae82324b2eb0e418da49e061e5eb3d09df0bebdfc8e2721b7fba488461"
+    },
+    {
+      "path": "B/案例完整图组/案例-7中建三局深圳营房/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/授权.docx",
+      "bytes": 11298,
+      "crc": 1004510240,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "5576c6943454b7f224485573c2dd8ae64e706db014c6cdbe1a8ac24866fab5fd"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/案例-8{斐济样箱}-安装-01.png",
+      "bytes": 3227922,
+      "crc": 460270453,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-fiji-01.webp",
+        "/assets/img/project-fiji-01.webp",
+        "/assets/img/project-fiji-01.jpg",
+        "/assets/img/project-fiji-01-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "df34d38d05139ebb3b329e6467b4e3e6a6ff89e9527d7bfde318a1aeba88e2c3"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/案例-8{斐济样箱}-安装-02.jpg",
+      "bytes": 1041823,
+      "crc": 4167479655,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-fiji-02-m.webp",
+        "/assets/img/project-fiji-02.jpg",
+        "/assets/thumbs/project-fiji-02.webp",
+        "/assets/img/project-fiji-02.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d0890c125d3ba02e3c29118954ddec0f5c5afe68efd605fccd036cc429e2f162"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/案例-8{斐济样箱}-安装-03.png",
+      "bytes": 18341481,
+      "crc": 294871940,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-fiji-03.webp",
+        "/assets/img/project-fiji-03.jpg",
+        "/assets/img/project-fiji-03.webp",
+        "/assets/img/project-fiji-03-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "7f82a1db58d340818d5c307410df98eb068007cc0f6f2775b813b1fd02ad7704"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/案例-8{斐济样箱}-安装-04.png",
+      "bytes": 4080360,
+      "crc": 898934732,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-fiji-04.webp",
+        "/assets/img/project-fiji-04-m.webp",
+        "/assets/img/project-fiji-04.jpg",
+        "/assets/img/project-fiji-04.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "40c6cf9028e36c55ca2c23a5be303bba32bea4a30bc6db405ed0a6141e0f3b98"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/案例-8{斐济样箱}-安装-05.jpg",
+      "bytes": 1130129,
+      "crc": 2026101229,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-fiji-05.webp",
+        "/assets/img/project-fiji-05.jpg",
+        "/assets/img/project-fiji-05-m.webp",
+        "/assets/img/project-fiji-05.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "86f0fbb50acf4fd2ed35635b6811e9eae3d20ba80e311d0377f9d9ecc98b8b1d"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/案例-8{斐济样箱}-安装-06.png",
+      "bytes": 2001503,
+      "crc": 855176210,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-fiji-06.jpg",
+        "/assets/thumbs/project-fiji-06.webp",
+        "/assets/img/project-fiji-06-m.webp",
+        "/assets/img/project-fiji-06.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "7d6390172d97cfbde01d6ddb039aaa1764a3584aeaed10e140c8d5822338d7d4"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/案例-8{斐济样箱}-封面.png",
+      "bytes": 4749573,
+      "crc": 604952530,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-fiji-cover.webp",
+        "/assets/img/project-fiji-cover.jpg",
+        "/assets/img/project-fiji-cover.webp",
+        "/assets/img/project-fiji-cover-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "fac06ebe539da16c8f041c0b295cdcf555214a6d4e7502895218bfd6fd79409a"
+    },
+    {
+      "path": "B/案例完整图组/案例-8斐济样箱/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/授权.docx",
+      "bytes": 11345,
+      "crc": 2540536398,
+      "category": "content",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "网页文案、参数、联系或内部审核来源，不提供原文件下载",
+      "sha256": "22ab74d6c3b2a0bba05c1a3946875083e61d68fba23963e0168c09d0d57c5ab9"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/案例-9{半打4S-广东江门志特}-安装-01.JPG",
+      "bytes": 4911264,
+      "crc": 4241557653,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-jiangmen-01-m.webp",
+        "/assets/img/project-jiangmen-01.jpg",
+        "/assets/thumbs/project-jiangmen-01.webp",
+        "/assets/img/project-jiangmen-01.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "80c36f29fc35dd31aaa714b9b0f3c7e9e5f27a42cd01f3483b55f577752853eb"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/案例-9{半打4S-广东江门志特}-安装-02.JPG",
+      "bytes": 3903944,
+      "crc": 962218341,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-jiangmen-02.webp",
+        "/assets/thumbs/project-jiangmen-02.webp",
+        "/assets/img/project-jiangmen-02.jpg",
+        "/assets/img/project-jiangmen-02-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "41e10871d858f401f33b0d31388228679f007caff46eab655f63d6e19c3c9639"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/案例-9{半打4S-广东江门志特}-安装-03.JPG",
+      "bytes": 2827613,
+      "crc": 1848894955,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-jiangmen-03.jpg",
+        "/assets/thumbs/project-jiangmen-03.webp",
+        "/assets/img/project-jiangmen-03-m.webp",
+        "/assets/img/project-jiangmen-03.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "c9d2b0a5838626a223174b64f87561e4b2b12c938a30742e245d13b90cf11792"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/案例-9{半打4S-广东江门志特}-安装-04.png",
+      "bytes": 3726589,
+      "crc": 3066824288,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/project-jiangmen-04.webp",
+        "/assets/img/project-jiangmen-04.jpg",
+        "/assets/img/project-jiangmen-04.webp",
+        "/assets/img/project-jiangmen-04-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "15568bbdd98c71d10be4a98b7691a48226ad06b4c62f2a5a67db7af57b202a9d"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/案例-9{半打4S-广东江门志特}-安装-05.jpg",
+      "bytes": 1812578,
+      "crc": 2780333672,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-jiangmen-05.jpg",
+        "/assets/img/project-jiangmen-05.webp",
+        "/assets/img/project-jiangmen-05-m.webp",
+        "/assets/thumbs/project-jiangmen-05.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "07626db1e3e374fa2460d7a899e8469c746d2631cda3163a5207e08302633a7b"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/案例-9{半打4S-广东江门志特}-封面.png",
+      "bytes": 3605049,
+      "crc": 3385527617,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/project-jiangmen-cover.jpg",
+        "/assets/img/project-jiangmen-cover.webp",
+        "/assets/img/project-jiangmen-cover-m.webp",
+        "/assets/thumbs/project-jiangmen-cover.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "061c0be07103de97ac0f00c5788c73c14a7ab4111d614788d3cec57c1c9437df"
+    },
+    {
+      "path": "B/案例完整图组/案例-9半打4S-广东江门志特/网站无需上传竣工图.docx",
+      "bytes": 0,
+      "crc": 0,
+      "category": "reference",
+      "eligible": false,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "零字节说明标记：网站无需另增独立竣工图章节",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S 平面图.png",
+      "bytes": 453750,
+      "crc": 1967295487,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-4s-drawing-0.webp",
+        "/assets/img/v11-4s-drawing-0.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "77d1be5a1ea14c24ae502eafba49b0c93cdbe4e22282b5f40dc6e22e115f7a60"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S 竖图 (1).png",
+      "bytes": 10057742,
+      "crc": 3275690177,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-4s-living-perspective.jpg",
+        "/assets/img/v11-4s-living-perspective.webp",
+        "/assets/img/v11-4s-living-perspective-m.webp",
+        "/assets/thumbs/v11-4s-living-perspective.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "86715726c20ac790749605d7c0bb6347de2852b4e3122e8675b90019977414b3"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S 竖图 (2).png",
+      "bytes": 7589148,
+      "crc": 1930668598,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "c9cae26e554af2d2c37ad6654a45263a6993e6c516d02b815916f8e4eaf1669d"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S 竖图 (3).png",
+      "bytes": 4392666,
+      "crc": 2739307248,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "c0d57a756d4bfb3c2f5e49867a8196716c184d07fecfb1ca7e6b27f8443f738a"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S横图 (1).png",
+      "bytes": 11830699,
+      "crc": 419771602,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-4s-hero-m.webp",
+        "/assets/thumbs/v11-4s-hero.webp",
+        "/assets/img/v11-4s-hero.jpg",
+        "/assets/img/v11-4s-hero.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "bd3c4c5cc68a310cff64ecefca35efa99bc331e4bae7ddb48c6e7c638e245176"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S横图 (2).png",
+      "bytes": 66764179,
+      "crc": 811213617,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-4s-portrait-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "434ffab000a7fd0995eae23d87ccc5235f9da5c56850870a3dfb10aef8742e91"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S横图 (3).png",
+      "bytes": 15226901,
+      "crc": 3372477650,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-4s-space-1.webp",
+        "/assets/img/v11-4s-space-1.jpg",
+        "/assets/img/v11-4s-space-1-m.webp",
+        "/assets/img/v11-4s-space-1.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e412e209361d02f21c97c5a0f10be18b22b747934fa3fee1ebadb2c9a838570c"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S横图 (4).png",
+      "bytes": 4645156,
+      "crc": 470565026,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-4s-space-2.webp",
+        "/assets/img/v11-4s-space-2.webp",
+        "/assets/img/v11-4s-space-2.jpg",
+        "/assets/img/v11-4s-space-2-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "ceded5206f29a615c5a8440489584f8f1d1e6a46bb9745928abaa12f581ba7c5"
+    },
+    {
+      "path": "B/模块产品完整图组/BD4S/BD4S横图 (5).png",
+      "bytes": 6539781,
+      "crc": 2238560827,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-4s-space-3.webp",
+        "/assets/img/v11-4s-space-3.jpg",
+        "/assets/thumbs/v11-4s-space-3.webp",
+        "/assets/img/v11-4s-space-3-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "aee08f9d47f68af35fb027c084d4405d3dbbf69062019f97dddca4327489a899"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S 剖面图.png",
+      "bytes": 748112,
+      "crc": 370067839,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-5s-drawing-0.webp",
+        "/assets/img/v11-5s-drawing-0.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d5cf1f5f835285df46449bc646998c55d261d78b7c0817a3fc35c289ac855ebc"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S 外面图.png",
+      "bytes": 750661,
+      "crc": 3762274682,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-5s-drawing-1.webp",
+        "/assets/thumbs/v11-5s-drawing-1.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "28f368737e0175ec3e4c236d0088669795eb3881786c868604fc7f0de4809922"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S 平面图.png",
+      "bytes": 446645,
+      "crc": 2381574880,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-5s-drawing-2.webp",
+        "/assets/img/v11-5s-drawing-2.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "2125820431486141a0270e1b6c7d255f459f3dccad294de4d52f7b908c79f864"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S 竖图1.jpeg",
+      "bytes": 10360759,
+      "crc": 949647561,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-5s-space-2-m.webp",
+        "/assets/thumbs/v11-5s-space-2.webp",
+        "/assets/img/v11-5s-space-2.webp",
+        "/assets/img/v11-5s-space-2.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "0a5508a29bcf40487574917de1da243319d34853f0c528f2042411dec1b25400"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S 竖图2.png",
+      "bytes": 6632765,
+      "crc": 1660721369,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-5s-portrait-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "dde4a1b43e9427262747669e0d0a250bddfd2136c23ebb5129c89f6d4ef88961"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S横图 (1).png",
+      "bytes": 5061895,
+      "crc": 1566846880,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-5s-hero-m.webp",
+        "/assets/img/v11-5s-hero.webp",
+        "/assets/thumbs/v11-5s-hero.webp",
+        "/assets/img/v11-5s-hero.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "70d2d295af086088d6712d8e69bd1024a8e7c5b89a9e04a7c2b33c0f4a73e44a"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S横图 (2).png",
+      "bytes": 4449683,
+      "crc": 359843425,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-5s-space-1-m.webp",
+        "/assets/img/v11-5s-space-1.webp",
+        "/assets/thumbs/v11-5s-space-1.webp",
+        "/assets/img/v11-5s-space-1.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "fc0c3954b1b54cc5d10a96e4b5640f88d28d78e5eb8eaa7d6767517229acca42"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S横图 (3).png",
+      "bytes": 4811519,
+      "crc": 1487734778,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "8cf9381ccdd4c095a73f75c55b8f1dbc9c6f9bfcfe3659796c101c1f5af07a80"
+    },
+    {
+      "path": "B/模块产品完整图组/BD5S/BD5S横图 (4).png",
+      "bytes": 2353847,
+      "crc": 2122964636,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "ca07916194a76c9a4058bc6deaafd6578a6783486da8d2684c3657a3b702477e"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S 外面图.png",
+      "bytes": 681153,
+      "crc": 317975707,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-6s-drawing-0.webp",
+        "/assets/thumbs/v11-6s-drawing-0.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "b747b93b9aa19ba7d747a19e83304d9ddc607bf30fe80cc0f62728ddc67c4956"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S 平面图.png",
+      "bytes": 310151,
+      "crc": 3174651645,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-6s-drawing-1.webp",
+        "/assets/img/v11-6s-drawing-1.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e93f7e7d430e83cdd6b0abfd8e729215552a4e6d8811ebcfd8980f74b12f0d39"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S横图 (1).png",
+      "bytes": 3692197,
+      "crc": 3003802040,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-6s-hero.jpg",
+        "/assets/img/v11-6s-hero-m.webp",
+        "/assets/thumbs/v11-6s-hero.webp",
+        "/assets/img/v11-6s-hero.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "9695c66e2ec079132975def7ddb72b12342ccc87192cce2f9c0b06f025ddf92b"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S横图 (2).png",
+      "bytes": 3861770,
+      "crc": 408425375,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "6c49470669d4797b7e0878277a1a60c9ef264219b2f1ba0cf197b0ac5636e23a"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S横图 (3).png",
+      "bytes": 3907690,
+      "crc": 3398887332,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-6s-space-2-m.webp",
+        "/assets/img/v11-6s-space-2.webp",
+        "/assets/thumbs/v11-6s-space-2.webp",
+        "/assets/img/v11-6s-space-2.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "eb71b5dcd88716a12f9a4a755b0ba965c216dffe72afe8a91d0ac1652a5d5ce8"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S横图 (4).png",
+      "bytes": 4394472,
+      "crc": 4091222739,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-6s-space-1.jpg",
+        "/assets/thumbs/v11-6s-space-1.webp",
+        "/assets/img/v11-6s-space-1.webp",
+        "/assets/img/v11-6s-space-1-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "709d8c1d131bd7cedfcf37f18fe0917bfa12085d71b5a5d98e497f8644057262"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S竖图 (1).png",
+      "bytes": 9467085,
+      "crc": 14038040,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-6s-portrait-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "1fb2763875609410973c0fbc4da76cc0d18622f5230b897ccf2f57050e724380"
+    },
+    {
+      "path": "B/模块产品完整图组/BD6S/BD6S竖图 (2).png",
+      "bytes": 11348966,
+      "crc": 1505187444,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "8337a8f1bf576a5eb2459c10ba6cbb00ba066b3d83e87ecfb7d80f444159f145"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8 剖面图 (1).png",
+      "bytes": 263120,
+      "crc": 740428923,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-drawing-0.webp",
+        "/assets/thumbs/v11-bd8-drawing-0.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d55bf43ea47b5664513f8086b5f1c38abe565d78d878fcaed8abed533533c5eb"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8 剖面图 (2).png",
+      "bytes": 238883,
+      "crc": 2180481635,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-drawing-1.webp",
+        "/assets/thumbs/v11-bd8-drawing-1.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "8dda1aaa0ecc15fd11555f526512311f21d33758e99c961b957641c8be9cbeae"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8 平面图.png",
+      "bytes": 665633,
+      "crc": 545270919,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-bd8-drawing-2.webp",
+        "/assets/img/v11-bd8-drawing-2.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "e0f7362df75a83da8204d7cb034bdcaf790d18cc0277386c51621ebe4d5027f5"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8 立面图 (1).png",
+      "bytes": 330659,
+      "crc": 1631304839,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-bd8-drawing-3.webp",
+        "/assets/img/v11-bd8-drawing-3.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "cf163cfa4062e43dc16f92a8b91d2082fad0779144e30c5002f7f281b2118bbf"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8 立面图 (2).png",
+      "bytes": 230980,
+      "crc": 79782459,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-bd8-drawing-4.webp",
+        "/assets/img/v11-bd8-drawing-4.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "3a0921e4a03b601848e08b5cbdeaa7f95e49a5f2f455a912aa3c699d393ec7a4"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8 立面图 (3).png",
+      "bytes": 241600,
+      "crc": 3960319968,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-drawing-5.webp",
+        "/assets/thumbs/v11-bd8-drawing-5.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "563a55728f7a15948d176f32280a59db535972849b3e4c0b81e3f7a5bbb1faf4"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8 立面图 (4).png",
+      "bytes": 171819,
+      "crc": 3925836501,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-drawing-6.webp",
+        "/assets/thumbs/v11-bd8-drawing-6.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "8cf9c87dfa99e8dd53b363e0870487b1dd59f508f8d15bc69df1912616315dde"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8横图 (1).png",
+      "bytes": 2582395,
+      "crc": 1530507427,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-hero-m.webp",
+        "/assets/thumbs/v11-bd8-hero.webp",
+        "/assets/img/v11-bd8-hero.webp",
+        "/assets/img/v11-bd8-hero.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "0580223979fb9b084b9af18b2c1aefbef8b3abe0c014cba89e83c6cdc32e95fe"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8横图 (2).png",
+      "bytes": 2455475,
+      "crc": 2359497648,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-space-1.webp",
+        "/assets/thumbs/v11-bd8-space-1.webp",
+        "/assets/img/v11-bd8-space-1-m.webp",
+        "/assets/img/v11-bd8-space-1.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "2eee45f3fc076b41319b172fef89f502f16dd3039b3926e76c68d2122d952260"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8横图 (3).png",
+      "bytes": 6462070,
+      "crc": 3803330505,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-space-2.webp",
+        "/assets/img/v11-bd8-space-2-m.webp",
+        "/assets/thumbs/v11-bd8-space-2.webp",
+        "/assets/img/v11-bd8-space-2.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "8244a05e243fb3c84c5c732d29a3a86ea9084f7cff172f8e1d43dc93da8a2bcb"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8竖图 (1).png",
+      "bytes": 8239371,
+      "crc": 2381937899,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd8-portrait-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "a3798855fa6948f0d97721f56cb37b77f85e34bdd772fe86caba6d51635cfcda"
+    },
+    {
+      "path": "B/模块产品完整图组/BD8/BD8竖图 (2).png",
+      "bytes": 11138606,
+      "crc": 1334957956,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "2943ad389c156cf781384cd46f214e164a4b85fb9c730748edf4bcba1a4cc973"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9 剖面图.png",
+      "bytes": 466860,
+      "crc": 1120773441,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-bd9-drawing-0.webp",
+        "/assets/img/v11-bd9-drawing-0.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "cdcd542ce37e788ce98792b53aa8b6268e8b7d6f16114cab1293ddfefb808e11"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9 平面图.png",
+      "bytes": 415199,
+      "crc": 1505245837,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-bd9-drawing-1.webp",
+        "/assets/img/v11-bd9-drawing-1.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "3dd221070194620b7625d3ced3538c7547cf6b704d5f38d891211211a3bcd897"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9 立面图.png",
+      "bytes": 190065,
+      "crc": 386227314,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-bd9-drawing-2.webp",
+        "/assets/img/v11-bd9-drawing-2.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "4d00372ecb705d31eaded5b6223b1e1478a5bebf0e2271b808ac6d7bf410c568"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9横图 (1).png",
+      "bytes": 9444949,
+      "crc": 3041756221,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd9-hero-m.webp",
+        "/assets/img/v11-bd9-hero.jpg",
+        "/assets/img/v11-bd9-hero.webp",
+        "/assets/thumbs/v11-bd9-hero.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "aee26ca06566743c9a4d49bd8cf897e710cb258eb77bbe36113412f62d294002"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9横图 (2).png",
+      "bytes": 9857782,
+      "crc": 4196688708,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd9-space-1.jpg",
+        "/assets/thumbs/v11-bd9-space-1.webp",
+        "/assets/img/v11-bd9-space-1-m.webp",
+        "/assets/img/v11-bd9-space-1.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "22b03de0a5e8f6bf4f821480d5032295771555e87fe8be8926bd5de78147f29a"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9横图 (3).png",
+      "bytes": 10945191,
+      "crc": 4000127790,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd9-space-2.webp",
+        "/assets/img/v11-bd9-space-2-m.webp",
+        "/assets/img/v11-bd9-space-2.jpg",
+        "/assets/thumbs/v11-bd9-space-2.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d2172c60e0cc3e09f5e2c51eb85e28b934cdd211276c9d36d09ec30a9638cd0c"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9竖图 (1).png",
+      "bytes": 9839641,
+      "crc": 3324295370,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-bd9-portrait-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "befeaa963b47494d95ff1886573c232a1c6ba0f6797dbda591820f1850d00a76"
+    },
+    {
+      "path": "B/模块产品完整图组/BD9/BD9竖图 (2).png",
+      "bytes": 9048236,
+      "crc": 512566523,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "49d7f1eb3458123cd9e899078fe4f15ee1ee66422570a2e2338c6bee095fae3c"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 平面图.png",
+      "bytes": 544812,
+      "crc": 412078815,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/thumbs/v11-grayscale-drawing-0.webp",
+        "/assets/img/v11-grayscale-drawing-0.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "da5ac3ba772d5975bbd5b393f1d6b6e7fe5d8b285050456138fa4a54733752a6"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 横图 (1).png",
+      "bytes": 5658620,
+      "crc": 3455280437,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-grayscale-hero.webp",
+        "/assets/thumbs/v11-grayscale-hero.webp",
+        "/assets/img/v11-grayscale-hero-m.webp",
+        "/assets/img/v11-grayscale-hero.jpg"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "d89d891cfc1e592780e0272e5129fbbd19ff6defd5c7a1e39bb5bdd9e6e7aef9"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 横图 (2).png",
+      "bytes": 5825761,
+      "crc": 658202699,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "ee9d0b8b65bc241c9b834ae0dce337c1c8a4c08154753841c97d31d966ed2a8e"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 横图 (3).png",
+      "bytes": 5708484,
+      "crc": 2456101163,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-grayscale-space-1.jpg",
+        "/assets/thumbs/v11-grayscale-space-1.webp",
+        "/assets/img/v11-grayscale-space-1-m.webp",
+        "/assets/img/v11-grayscale-space-1.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "fa32b9fee9163d8969afcf50766a1938380171d4e3d382fcd52e8b7102603584"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 横图 (4).png",
+      "bytes": 6910464,
+      "crc": 2388696690,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "8c2c4255cee1a6cdc693c1c8e68bfe62961ec32cf0ecca27ed865fdfd6cf344a"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 横图 (5).png",
+      "bytes": 3892570,
+      "crc": 268945886,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "935e5253a07a005c7503f9b499622c63c98a0de1a4a83aa6dca9ebe75a43321e"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 竖图1.png",
+      "bytes": 7245238,
+      "crc": 2603842090,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "30a055786c2bba06baac48a7bc90a78ad049873cbbce830c3bf62eacbf65a9c7"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 竖图2.png",
+      "bytes": 5390639,
+      "crc": 645400509,
+      "category": "image",
+      "eligible": true,
+      "status": "not-direct",
+      "web_resources": [],
+      "note": "同型号备选角度／重复构图，未选入当前版；对应型号已有清晰照片，避免堆叠重复画面",
+      "sha256": "792d3a052e8fac7e79793c01f1ca0a3be4a8e990fa8f8b5af915cafbc9175435"
+    },
+    {
+      "path": "B/模块产品完整图组/灰度空间/灰度空间 竖图3.png",
+      "bytes": 11888656,
+      "crc": 2792403242,
+      "category": "image",
+      "eligible": true,
+      "status": "direct",
+      "web_resources": [
+        "/assets/img/v11-grayscale-portrait-m.webp"
+      ],
+      "note": "已用于网页；网页资源地址见 web_resources",
+      "sha256": "f518af318301beabf21d5d1108da6a2f59974c54d1c498c143464036568c6454"
+    }
+  ],
+  "reviewed_date": "2026-10-09",
+  "scope": "本轮 v1.1 素材包 208 个文件；更早两批资料单独维护，不重复加入本轮分母。按源文件 SHA-256 去重；图片格式、手机图和缩略图不重复计数。",
+  "completion": {
+    "listed_products": 6,
+    "english_core_pages": 11,
+    "projects": 10,
+    "domestic_projects": 7,
+    "overseas_projects": 3,
+    "case_source_images_used": 61,
+    "case_source_images_provided": 61,
+    "new_technical_drawings_used": 17,
+    "new_technical_drawings_provided": 17,
+    "wechat_qr_used": 3,
+    "wechat_qr_provided": 3,
+    "videos_used": 1,
+    "videos_provided": 1,
+    "product_source_images_used": 42,
+    "product_source_images_provided": 55
+  },
+  "video": {
+    "url": "http://23.251.34.150:8080/zh/products/4s/#installation-video",
+    "original_file": "B/工厂与施工视频/附件视频-半打4S吊装全记录.mp4",
+    "duration_seconds": 151.572,
+    "width": 544,
+    "height": 960,
+    "bytes": 23446100,
+    "original_crc_verified": true,
+    "preload": "none",
+    "autoplay": false,
+    "browser_playback": [
+      {
+        "lang": "zh",
+        "width": 544,
+        "duration": 151.571429,
+        "height": 960,
+        "played": true,
+        "error": null
+      },
+      {
+        "lang": "zh",
+        "width": 544,
+        "duration": 151.571429,
+        "height": 960,
+        "played": true,
+        "error": null
+      },
+      {
+        "lang": "en",
+        "width": 544,
+        "duration": 151.571429,
+        "height": 960,
+        "played": true,
+        "error": null
+      },
+      {
+        "lang": "en",
+        "width": 544,
+        "duration": 151.571429,
+        "height": 960,
+        "played": true,
+        "error": null
+      }
+    ]
+  },
+  "fixes": [
+    "4S 中英文详情增加施工视频章节入口。",
+    "指定的两张 4S 外观实拍纳入实拍图集，保留型号归属。",
+    "用客厅纵向视角替换近似重复效果图；桌面采用横幅预览以避免空带，手机及阅图保留完整照片。",
+    "联系页中英文增加正式资料中的地图坐标。",
+    "补齐新增缩略图与本地字体字形。"
+  ],
+  "limitations": [
+    "6S 本轮提供的图组包含外观和技术图，未提供可确认归属的室内图；未跨型号补图。",
+    "构件系列三款预留页面、新闻及招聘仍缺正式资料，继续真实空态或不索引，不纳入本轮六款产品完成范围。",
+    "4S 阁楼等参数以新版正式表为主，旧图册不同口径记录保留；建筑面积与可使用面积不混算。",
+    "资质以送检主体、样品适用范围和历史证据摘要呈现，不等于整屋认证或当前全部专利有效。",
+    "正式域名、HTTPS 和表单发送服务不在本次验收范围。"
+  ],
+  "git_delivery": "按用户本轮明确选择，保留独立分支的本地提交，暂不推送 GitHub。代码、实际网页素材和审计记录纳入版本；原始内部表格、授权书、完整报告不作为公开资源。"
+}

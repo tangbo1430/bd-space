@@ -143,6 +143,7 @@ const next = product.data.listed
         {product.data.gallery.length > 0 && (
           <a href="#construction">实拍与构造</a>
         )}
+        {product.data.video && <a href="#installation-video">施工视频</a>}
         {product.data.diagrams.length > 0 && (
           <a href="#diagrams">{product.data.diagramLabel}</a>
         )}
@@ -201,12 +202,18 @@ const next = product.data.listed
         </div>
         <div class="product-design-grid">
           {product.data.designGallery.map((photo) => (
-            <figure class="rv">
+            <figure
+              class:list={[
+                "rv",
+                { "design-portrait": photo.height > photo.width },
+              ]}
+              style={`--photo-ratio:${photo.width}/${photo.height}`}
+            >
               <GalleryImage
                 {...photo}
                 alt={photo.caption}
                 group={product.id}
-                fit="contain"
+                fit={photo.height > photo.width ? "cover" : "contain"}
                 sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1600px) 45vw, 700px"
               />
               <figcaption>{photo.caption}</figcaption>
@@ -283,6 +290,7 @@ const next = product.data.listed
     {product.data.video && (
       <section
         class="ed-wrap ed-section installation-film"
+        id="installation-video"
         aria-labelledby="film-heading"
       >
         <div>

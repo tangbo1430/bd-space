@@ -14,25 +14,11 @@
     "bytes": 2738
   },
   {
-    "source": "/assets/img/product-4s-design-loft.webp",
-    "thumbnail": "/assets/thumbs/product-4s-design-loft.webp",
-    "width": 160,
-    "height": 107,
-    "bytes": 3788
-  },
-  {
     "source": "/assets/img/product-4s-detail-wall.webp",
     "thumbnail": "/assets/thumbs/product-4s-detail-wall.webp",
     "width": 160,
     "height": 90,
     "bytes": 1690
-  },
-  {
-    "source": "/assets/img/product-4s-dusk.webp",
-    "thumbnail": "/assets/thumbs/product-4s-dusk.webp",
-    "width": 160,
-    "height": 90,
-    "bytes": 2512
   },
   {
     "source": "/assets/img/product-4s-interior.webp",
@@ -553,6 +539,13 @@
     "bytes": 2906
   },
   {
+    "source": "/assets/img/v11-4s-living-perspective.webp",
+    "thumbnail": "/assets/thumbs/v11-4s-living-perspective.webp",
+    "width": 133,
+    "height": 160,
+    "bytes": 3982
+  },
+  {
     "source": "/assets/img/v11-4s-space-1.webp",
     "thumbnail": "/assets/thumbs/v11-4s-space-1.webp",
     "width": 160,
@@ -761,6 +754,20 @@
     "width": 160,
     "height": 98,
     "bytes": 2676
+  },
+  {
+    "source": "/assets/img/v11-catalog-1.webp",
+    "thumbnail": "/assets/thumbs/v11-catalog-1.webp",
+    "width": 160,
+    "height": 65,
+    "bytes": 1770
+  },
+  {
+    "source": "/assets/img/v11-catalog-2.webp",
+    "thumbnail": "/assets/thumbs/v11-catalog-2.webp",
+    "width": 160,
+    "height": 65,
+    "bytes": 1332
   },
   {
     "source": "/assets/img/v11-grayscale-drawing-0.webp",

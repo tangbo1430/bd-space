@@ -71,6 +71,13 @@
   margin: 0;
   min-width: 0;
 }
+.design-portrait .gallery-link {
+  height: auto;
+  aspect-ratio: 3 / 2;
+}
+.design-portrait .editorial-image img {
+  object-position: center 65%;
+}
 .product-design .section-heading > p,
 .product-diagrams .section-heading > p {
   max-width: 330px;
@@ -121,6 +128,9 @@
   font-size: 12px;
 }
 @media (max-width: 767px) {
+  .design-portrait .gallery-link {
+    aspect-ratio: var(--photo-ratio);
+  }
   .product-design-grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 32px;

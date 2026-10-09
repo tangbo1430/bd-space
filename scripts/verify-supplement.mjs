@@ -17,7 +17,7 @@ check(
     ledger.total === 118,
 );
 for (const [slug, pages, realCount] of [
-  ["4s", [4, 8, 7, 9, 10, 12], 6],
+  ["4s", [4, 8, 7, 9, 10, 12], 7],
   ["grayscale", [2, 4, 8, 9, 10, 11], 0],
 ]) {
   const data = content(slug);
