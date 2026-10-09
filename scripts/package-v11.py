@@ -1,8 +1,9 @@
 """Package the reviewed source and allowlisted static site, without raw client material."""
 from pathlib import Path
-import zipfile, tarfile, hashlib, json
+import zipfile, tarfile, hashlib, json, sys
 ROOT=Path(__file__).resolve().parents[1]
-for kind in ['source','static']:
+source_only='--source-only' in sys.argv
+for kind in (['source'] if source_only else ['source','static']):
     target=ROOT/f'bd-space-v1.1-{kind}.zip'
     with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
         if kind=='static':
@@ -14,6 +15,7 @@ for kind in ['source','static']:
             base=ROOT
         for p in files: archive.write(p,p.relative_to(base))
     print(target.name,target.stat().st_size,hashlib.sha256(target.read_bytes()).hexdigest())
+if source_only: sys.exit(0)
 target=ROOT/'artifacts/v11-static.tar.gz'
 with tarfile.open(target,'w:gz') as archive:
     for p in (ROOT/'dist').rglob('*'):
