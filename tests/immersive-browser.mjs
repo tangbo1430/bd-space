@@ -77,9 +77,8 @@ for (const [width, height] of layouts) {
           overlaps(control, caption),
         headerOverlap: title.top < header.bottom,
         headingColor: getComputedStyle(heading).color,
-        solidHeader: document
-          .querySelector("[data-gnb]")
-          .classList.contains("gnb-solid"),
+        headerBackground: getComputedStyle(document.querySelector("[data-gnb]"))
+          .backgroundColor,
         targets: [
           ...section.querySelectorAll(
             ".cover-actions a, .hero-control, .hero-scene",
@@ -98,7 +97,11 @@ for (const [width, height] of layouts) {
       JSON.stringify(report.at(-1)),
     );
     assert.equal(geometry.headingColor, "rgb(255, 255, 255)");
-    assert(geometry.solidHeader && geometry.targets);
+    assert.equal(
+      geometry.headerBackground,
+      width >= 1280 ? "rgba(0, 0, 0, 0)" : "rgb(255, 255, 255)",
+    );
+    assert(geometry.targets);
     await page.evaluate(() => window.scrollTo(0, 200));
     await page.waitForFunction(() =>
       document.querySelector("[data-gnb]").classList.contains("scrolled"),

@@ -29,7 +29,13 @@ const languageLabel =
 const aboutGroupActive = aboutSub !== null;
 ---
 
-<header class:list={["gnb", { "gnb-solid": style === "solid" }]} data-gnb>
+<header
+  class:list={[
+    "gnb",
+    { "gnb-solid": style === "solid", "gnb-overlay": style === "overlay" },
+  ]}
+  data-gnb
+>
   {/* v1.4 M2：原创统一线性图标（1.5px 描边、圆角接头、40×40 视框，symbol 复用） */}
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <symbol id="ic-about" viewBox="0 0 40 40">

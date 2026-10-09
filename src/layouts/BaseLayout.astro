@@ -43,8 +43,7 @@ const {
 const lang = Astro.url.pathname.startsWith("/en/")
   ? "en"
   : (explicitLang ?? "zh-CN");
-const headerStyle = "solid";
-void requestedHeaderStyle;
+const headerStyle = requestedHeaderStyle ?? "solid";
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
   .href;
 // 当前仅中文发布：hreflang 仅 zh-CN 自引用 + x-default（BR-14）

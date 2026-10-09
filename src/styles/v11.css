@@ -5,6 +5,11 @@
   color: #142b31;
   border-bottom: 1px solid #e7eae7;
 }
+@media (max-width: 1279px) {
+  .banda-editorial .gnb:not(.gnb-solid):not(.scrolled) :focus-visible {
+    outline-color: #007b68;
+  }
+}
 .official-brand .brand-original {
   display: block;
   width: 100%;
@@ -59,6 +64,29 @@
 }
 .banda-editorial .cover-visual {
   margin-top: 96px;
+}
+/* Restore the established desktop masthead over photography. */
+@media (min-width: 1280px) {
+  .banda-editorial .gnb.gnb-overlay:not(.scrolled) {
+    background: transparent;
+    color: #fff;
+    border-bottom-color: transparent;
+  }
+  .gnb.gnb-overlay:not(.scrolled) .brand-original {
+    filter: brightness(0) invert(1);
+  }
+  .banda-editorial .editorial-hero,
+  .banda-editorial .cover-visual {
+    margin-top: 0;
+  }
+  .banda-editorial .editorial-hero,
+  body.banda-editorial .editorial-hero .hero-intro {
+    min-height: 100svh;
+  }
+  body.banda-editorial .editorial-hero .hero-intro {
+    padding-top: 160px;
+    padding-bottom: 190px;
+  }
 }
 .installation-film {
   display: grid;
