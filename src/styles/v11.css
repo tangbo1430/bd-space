@@ -1,4 +1,5 @@
-/* v1.1: original brand colors, complete architectural images, shared bilingual layouts. */
+/* v1.1: original brand colors and shared bilingual layouts.
+   Photography retains the immersive composition; only technical figures use contain. */
 .banda-editorial .gnb {
   background: #fff;
   color: #142b31;
@@ -54,56 +55,10 @@
 }
 .banda-editorial .editorial-hero {
   margin-top: 96px;
-  height: clamp(620px, 40.625vw, 780px);
-  min-height: 620px;
-}
-.editorial-hero .editorial-image,
-.cover-visual .editorial-image {
-  background: #0b0f0e;
-}
-.banda-editorial .editorial-hero .slide .editorial-image img {
-  object-position: 50% 50%;
-}
-.banda-editorial .editorial-hero .slide .editorial-image img {
-  object-fit: contain;
+  min-height: max(620px, calc(100svh - 96px));
 }
 .banda-editorial .cover-visual {
   margin-top: 96px;
-}
-@media (min-width: 768px) {
-  .cover-visual .page-visual-frame .editorial-image img {
-    object-fit: contain;
-  }
-}
-@media (max-width: 767px) {
-  .cover-visual[data-product="4s"] .page-visual-frame .editorial-image img {
-    object-fit: contain;
-    object-position: 50% 82%;
-  }
-  .cover-visual[data-product="4s"] .cover-body {
-    justify-content: flex-start;
-    padding-top: 72px;
-    min-height: 720px;
-    padding-bottom: 320px;
-  }
-}
-.banda-editorial .collection-stage .editorial-image img,
-.banda-editorial .selected-cases .editorial-image img {
-  object-fit: contain;
-  object-position: center;
-}
-.collection-stage,
-.case-image {
-  background: #edf0ed;
-}
-.catalog-feature-image {
-  aspect-ratio: auto;
-}
-.banda-editorial .catalog-feature-image .editorial-image,
-.banda-editorial .catalog-feature-image img {
-  height: auto;
-  aspect-ratio: auto;
-  object-fit: contain;
 }
 .installation-film {
   display: grid;
@@ -186,37 +141,10 @@ html[lang="en"] .product-jump {
 @media (max-width: 767px) {
   .banda-editorial .editorial-hero {
     margin-top: 76px;
-    height: auto;
-    min-height: 850px;
+    min-height: max(664px, calc(100svh - 76px));
   }
   .banda-editorial .cover-visual {
     margin-top: 76px;
-  }
-  .banda-editorial .editorial-hero .slide .editorial-image img {
-    object-fit: cover;
-    object-position: 50% 65%;
-  }
-  .banda-editorial
-    .editorial-hero
-    .slide[data-product="4s"]
-    .editorial-image
-    img {
-    object-fit: contain;
-    object-position: 50% 78%;
-  }
-  .banda-editorial .catalog-hero .slide .editorial-image img {
-    object-fit: contain;
-    object-position: 50% 76%;
-  }
-  .cover-visual[data-product="4s"] .page-visual-frame:after {
-    background: none;
-  }
-  .editorial-hero .slide[data-product="4s"]:after {
-    background: linear-gradient(0deg, #07110c88, transparent 28%);
-  }
-  .banda-editorial .editorial-hero .hero-intro {
-    padding-top: 52px;
-    padding-bottom: 330px;
   }
   .banda-editorial .hero-intro h1 {
     font-size: 38px;
@@ -247,30 +175,16 @@ html[lang="en"] .product-jump {
     gap: 24px;
   }
 }
-@media (max-height: 500px) and (min-width: 768px) {
-  .banda-editorial .editorial-hero {
-    min-height: 650px;
-  }
-}
-
 .banda-editorial .editorial-hero .hero-intro {
-  min-height: 620px;
-  height: 100%;
+  min-height: max(620px, calc(100svh - 96px));
   padding-top: 70px;
   padding-bottom: 140px;
 }
 @media (max-width: 767px) {
   .banda-editorial .editorial-hero .hero-intro {
-    min-height: 850px;
-    padding-top: 48px;
-    padding-bottom: 350px;
-    justify-content: flex-start;
-  }
-}
-@media (max-width: 767px) {
-  .banda-editorial .catalog-hero,
-  .banda-editorial .catalog-hero .hero-intro {
-    min-height: 740px;
+    min-height: max(664px, calc(100svh - 76px));
+    padding-top: 70px;
+    padding-bottom: 190px;
   }
 }
 

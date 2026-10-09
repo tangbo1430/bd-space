@@ -214,7 +214,7 @@
   background: var(--paper-deep);
 }
 .material-detail-gallery .editorial-image img {
-  object-fit: contain;
+  object-fit: cover;
 }
 .material-detail-gallery figure:last-child {
   grid-column: 1 / -1;
