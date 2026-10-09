@@ -3,6 +3,7 @@ import Icon from "./Icon.astro";
 import BrandLogo from "./BrandLogo.astro";
 import { company } from "../data/company";
 import { site, PLACEHOLDER } from "../lib/site";
+const en = Astro.url.pathname.startsWith("/en/");
 import { LEGAL_LINKS } from "../lib/routes";
 ---
 
@@ -15,7 +16,7 @@ import { LEGAL_LINKS } from "../lib/routes";
         </a>
         <p class="footer-tagline">以制造的秩序，回应生活的自由。</p>
         <p class="footer-legal">
-          {company.legalName}
+          {!en && company.legalName}
           <span lang="en">{company.legalNameEn}</span>
         </p>
       </div>
@@ -29,23 +30,27 @@ import { LEGAL_LINKS } from "../lib/routes";
         <div>
           <span class="eyebrow">保持联系</span>
           <a href="/zh/contact/">项目咨询</a>
-          <a href="/zh/about/careers/">加入我们</a>
-          <a href="/zh/news/">新闻资讯</a>
+          {!en && <a href="/zh/about/careers/">加入我们</a>}
+          {!en && <a href="/zh/news/">新闻资讯</a>}
         </div>
-        <div class="footer-more">
-          <span class="eyebrow">更多信息</span>
-          <a href="/zh/qualifications/">资质能力</a>
-          <a href="/zh/about/investors/">投资者关系</a>
-          {LEGAL_LINKS.map((l) => (
-            <a href={l.href}>{l.label}</a>
-          ))}
-        </div>
+        {!en && (
+          <div class="footer-more">
+            <span class="eyebrow">更多信息</span>
+            <a href="/zh/qualifications/">资质能力</a>
+            <a href="/zh/about/investors/">投资者关系</a>
+            {LEGAL_LINKS.map((l) => (
+              <a href={l.href}>{l.label}</a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
     <div class="footer-bottom">
       <span>© {site.year} 半打空间</span>
       <span>ARCHITECTURE. MANUFACTURED.</span>
-      <span>{site.icp !== PLACEHOLDER ? site.icp : "备案信息待完善"}</span>
+      {!en && (
+        <span>{site.icp !== PLACEHOLDER ? site.icp : "备案信息待完善"}</span>
+      )}
       <a href="#main" class="back-top" aria-label="返回页面顶部">
         回到顶部 <Icon name="chevron-up" />
       </a>

@@ -61,7 +61,6 @@ export default defineConfig({
     sitemap({
       // /en/ 为未发布预留态、404 为错误页：不进入站点地图（PRD FR-13 / AC-10）
       filter: (page) =>
-        !page.includes("/en/") &&
         !page.includes("/404") &&
         !page.includes("/zh/privacy/") &&
         !page.includes("/zh/cookies/") &&

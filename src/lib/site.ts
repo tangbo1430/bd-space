@@ -9,7 +9,7 @@ export const PLACEHOLDER = "【待提供】";
 
 export const site = {
   name: "半打空间",
-  nameEn: "BANDA SPACE",
+  nameEn: "Semi-Six Modular",
   // 示例品牌文案需 PM/客户确认（见 UI 规范 §9 已知限制）
   tagline: "装配式混凝土空间的制造者",
   contact: company.contact,

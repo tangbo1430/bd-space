@@ -3,7 +3,7 @@
  * 规则（PRD FR-13 / BR-14 / AC-10）：
  *   - 每个可索引语言页使用自引用 canonical；
  *   - hreflang 双向且含自身；未发布英文页不得出现在 hreflang 中。
- *   当前仅 /zh/ 发布，故只输出 zh-CN 自引用 + x-default；/en/ 发布后在此扩展。
+ *   中英文核心页双向关联；中文独有栏目仅保留中文与 x-default。
  */
 export function canonicalUrl(base: string, path: string): string {
   return new URL(path, base).href;

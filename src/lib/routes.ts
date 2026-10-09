@@ -1,6 +1,6 @@
 /**
  * 全局路由清单（单一来源）。
- * 7 个一级栏目以 PRD §5 信息架构为基线；语言前缀 /zh/，/en/ 为未发布预留态。
+ * 7 个一级栏目以 PRD §5 信息架构为基线；语言前缀 /zh/，已发布英文对应页见 locale.ts。
  */
 
 export const LOCALES = ['zh', 'en'] as const;
@@ -61,5 +61,3 @@ export const LEGAL_LINKS: NavItem[] = [
   { key: 'cookies', label: 'Cookie 政策', href: '/zh/cookies/' },
 ];
 
-/** 未发布语言提示（BR-09：不提供指向空英文页的入口） */
-export const EN_COMING_SOON = '英文版筹备中';

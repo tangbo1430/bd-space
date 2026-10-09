@@ -64,9 +64,10 @@ const summaryParams = knownParams.filter((p) =>
 const isSpace = ["4s", "5s", "6s", "grayscale", "bd8", "bd9"].includes(
   product.id,
 );
-const next = { "4s": "5s", "5s": "6s", "6s": "grayscale", grayscale: "4s" }[
-  product.id as "4s" | "5s" | "6s" | "grayscale"
-];
+const ids = ["4s", "5s", "6s", "grayscale", "bd8", "bd9"];
+const next = product.data.listed
+  ? ids[(ids.indexOf(product.id) + 1) % ids.length]
+  : undefined;
 ---
 
 <BaseLayout
@@ -95,6 +96,7 @@ const next = { "4s": "5s", "5s": "6s", "6s": "grayscale", grayscale: "4s" }[
       <PageVisual
         mode="cover"
         base={copy.hero}
+        mobileImage={product.data.mobileImage}
         alt={product.data.heroCaption ?? `${product.data.name}外观`}
         galleryGroup={product.id}
         caption={product.data.heroCaption ?? `${product.data.name} / 外观`}
@@ -278,6 +280,31 @@ const next = { "4s": "5s", "5s": "6s", "6s": "grayscale", grayscale: "4s" }[
         </div>
       </section>
     )}
+    {product.data.video && (
+      <section
+        class="ed-wrap ed-section installation-film"
+        aria-labelledby="film-heading"
+      >
+        <div>
+          <span class="eyebrow">施工记录</span>
+          <h2 id="film-heading">从工厂，到场地。</h2>
+          <p>{product.data.video.caption}</p>
+          <p>手动播放，查看模块吊装与现场装配。</p>
+        </div>
+        <video
+          controls
+          playsinline
+          preload="none"
+          poster={product.data.video.poster}
+          width={product.data.video.width}
+          height={product.data.video.height}
+          aria-label={product.data.video.caption}
+        >
+          <source src={product.data.video.src} type="video/mp4" />
+          您的浏览器不支持视频播放。
+        </video>
+      </section>
+    )}
     {product.data.diagrams.length > 0 && (
       <section
         class="ed-wrap ed-section product-diagrams"
@@ -299,21 +326,28 @@ const next = { "4s": "5s", "5s": "6s", "6s": "grayscale", grayscale: "4s" }[
           </h2>
           <p>{product.data.diagramIntro}</p>
         </div>
-        {product.data.diagrams.map((diagram) => (
-          <figure class="technical-figure rv">
-            <GalleryImage
-              {...diagram}
-              alt={diagram.caption}
-              group={`${product.id}-diagrams`}
-              fit="contain"
-              sizes="(max-width: 767px) calc(100vw - 48px), 1100px"
-            />
-            <figcaption>
-              {diagram.caption}
-              <span>点击放大，查看完整标注</span>
-            </figcaption>
-          </figure>
-        ))}
+        <div
+          class:list={[
+            "technical-grid",
+            { "many-drawings": product.data.diagrams.length > 2 },
+          ]}
+        >
+          {product.data.diagrams.map((diagram) => (
+            <figure class="technical-figure rv">
+              <GalleryImage
+                {...diagram}
+                alt={diagram.caption}
+                group={`${product.id}-diagrams`}
+                fit="contain"
+                sizes="(max-width: 767px) calc(100vw - 48px), 1100px"
+              />
+              <figcaption>
+                {diagram.caption}
+                <span>点击放大，查看完整标注</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </section>
     )}
     {next && (
@@ -323,7 +357,9 @@ const next = { "4s": "5s", "5s": "6s", "6s": "grayscale", grayscale: "4s" }[
           href={`/zh/products/${next}/`}
         >
           下一款空间产品 /{" "}
-          {next === "grayscale" ? "灰度空间" : `半打 ${next.toUpperCase()}`}
+          {next === "grayscale"
+            ? "灰度空间"
+            : `半打 ${next.replace("bd", "").toUpperCase()}`}
         </a>
         <a class="text-link action action-secondary" href="/zh/products/">
           返回产品中心

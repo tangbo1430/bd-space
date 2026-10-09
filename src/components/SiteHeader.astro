@@ -1,8 +1,9 @@
 ---
 import Icon from "./Icon.astro";
 import BrandLogo from "./BrandLogo.astro";
-import { NAV_ITEMS, ABOUT_SUB_ITEMS, EN_COMING_SOON } from "../lib/routes";
+import { NAV_ITEMS, ABOUT_SUB_ITEMS } from "../lib/routes";
 
+import { alternateLanguage, hasEnglish } from "../lib/locale";
 interface Props {
   current: string;
   style: "overlay" | "solid";
@@ -12,6 +13,19 @@ interface Props {
 }
 const { current, style, lang, aboutSub = null } = Astro.props;
 // 移动抽屉：当前路由属 about 组时子导航默认展开（AC-41）
+const navItems =
+  lang === "en"
+    ? NAV_ITEMS.filter((i) =>
+        ["home", "products", "cases", "about", "contact"].includes(i.key),
+      )
+    : NAV_ITEMS;
+const languageHref = alternateLanguage(Astro.url.pathname);
+const languageLabel =
+  lang === "en"
+    ? "中文"
+    : hasEnglish(Astro.url.pathname)
+      ? "EN"
+      : "English home";
 const aboutGroupActive = aboutSub !== null;
 ---
 
@@ -66,8 +80,8 @@ const aboutGroupActive = aboutSub !== null;
     <BrandLogo />
   </a>
   <nav aria-label="主导航">
-    {NAV_ITEMS.map((item) =>
-      item.key === "about" ? (
+    {navItems.map((item) =>
+      item.key === "about" && lang !== "en" ? (
         <span class="has-sub" data-subnav>
           {/* 一级为纯链接：点击/Enter 唯一行为=进入公司介绍，无展开语义（v0.4.1 N1） */}
           <a
@@ -114,16 +128,14 @@ const aboutGroupActive = aboutSub !== null;
     )}
   </nav>
   <div class="right">
-    {lang === "zh-CN" && (
-      <button
-        type="button"
-        class="lang"
-        data-lang-toggle
-        aria-label="切换语言（英文版筹备中）"
-      >
-        中&nbsp;|&nbsp;EN
-      </button>
-    )}
+    <a
+      class="lang"
+      href={languageHref}
+      data-language-link
+      hreflang={lang === "en" ? "zh-CN" : "en"}
+    >
+      {languageLabel}
+    </a>
   </div>
   <button
     type="button"
@@ -154,8 +166,8 @@ const aboutGroupActive = aboutSub !== null;
   >
     <Icon name="close" />
   </button>
-  {NAV_ITEMS.map((item) =>
-    item.key === "about" ? (
+  {navItems.map((item) =>
+    item.key === "about" && lang !== "en" ? (
       /* 文字链接与展开按钮为两个独立控件（AC-40）；无 JS 时子项平铺直链 */
       <div
         class="p-sub"
@@ -213,8 +225,12 @@ const aboutGroupActive = aboutSub !== null;
       </a>
     ),
   )}
-</div>
-
-<div class="lang-toast" data-lang-toast role="status">
-  {EN_COMING_SOON}
+  <a
+    class="drawer-language"
+    href={languageHref}
+    data-language-link
+    hreflang={lang === "en" ? "zh-CN" : "en"}
+  >
+    {languageLabel}
+  </a>
 </div>

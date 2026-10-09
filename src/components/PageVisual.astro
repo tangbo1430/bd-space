@@ -3,6 +3,7 @@ import EditorialImage from "./EditorialImage.astro";
 import GalleryImage from "./GalleryImage.astro";
 interface Props {
   base: string;
+  mobileImage?: string;
   alt: string;
   caption: string;
   meta: string;
@@ -11,6 +12,7 @@ interface Props {
 }
 const {
   base,
+  mobileImage,
   alt,
   caption,
   meta,
@@ -20,6 +22,7 @@ const {
 ---
 
 <figure
+  data-product={galleryGroup}
   class:list={[
     "page-visual",
     { "product-detail-visual": galleryGroup, "cover-visual": mode === "cover" },
@@ -29,13 +32,14 @@ const {
     {galleryGroup ? (
       <GalleryImage
         base={base}
+        mobileImage={mobileImage}
         alt={alt}
         caption={caption}
         group={galleryGroup}
         eager
       />
     ) : (
-      <EditorialImage base={base} alt={alt} eager />
+      <EditorialImage base={base} mobileImage={mobileImage} alt={alt} eager />
     )}
   </div>
   {mode === "cover" ? (

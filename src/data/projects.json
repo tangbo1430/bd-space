@@ -14,25 +14,27 @@
     "gallery": [
       {
         "base": "project-jiangmen-01",
-        "caption": "半打4S · 广东江门志特工厂样板 · 现场记录 01"
+        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 01"
       },
       {
         "base": "project-jiangmen-02",
-        "caption": "半打4S · 广东江门志特工厂样板 · 现场记录 02"
+        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 02"
       },
       {
         "base": "project-jiangmen-03",
-        "caption": "半打4S · 广东江门志特工厂样板 · 现场记录 03"
+        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 03"
       },
       {
         "base": "project-jiangmen-04",
-        "caption": "半打4S · 广东江门志特工厂样板 · 现场记录 04"
+        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 04"
       },
       {
         "base": "project-jiangmen-05",
-        "caption": "半打4S · 广东江门志特工厂样板 · 现场记录 05"
+        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "板式主体与厨房、卫生间、衣柜模块相结合，采用2D构件与3D模块的组合方式。"
   },
   {
     "id": "changzhou",
@@ -49,17 +51,27 @@
     "gallery": [
       {
         "base": "project-changzhou-01",
-        "caption": "半打4S · 江苏常州星星充电样板 · 现场记录 01"
+        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 01"
       },
       {
         "base": "project-changzhou-02",
-        "caption": "半打4S · 江苏常州星星充电样板 · 现场记录 02"
+        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 02"
       },
       {
         "base": "project-changzhou-03",
-        "caption": "半打4S · 江苏常州星星充电样板 · 现场记录 03"
+        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 03"
+      },
+      {
+        "base": "project-changzhou-04",
+        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 04"
+      },
+      {
+        "base": "project-changzhou-05",
+        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "板式主体与厨房、卫生间、衣柜模块相结合，采用2D构件与3D模块的组合方式。"
   },
   {
     "id": "cayman",
@@ -76,21 +88,27 @@
     "gallery": [
       {
         "base": "project-cayman-01",
-        "caption": "开曼群岛独栋民宅“乡愁” · 现场记录 01"
+        "caption": "开曼群岛独栋民宅“乡愁” / 施工记录 01"
       },
       {
         "base": "project-cayman-02",
-        "caption": "开曼群岛独栋民宅“乡愁” · 现场记录 02"
+        "caption": "开曼群岛独栋民宅“乡愁” / 施工记录 02"
       },
       {
         "base": "project-cayman-03",
-        "caption": "开曼群岛独栋民宅“乡愁” · 现场记录 03"
+        "caption": "开曼群岛独栋民宅“乡愁” / 施工记录 03"
       },
       {
         "base": "project-cayman-04",
-        "caption": "开曼群岛独栋民宅“乡愁” · 现场记录 04"
+        "caption": "开曼群岛独栋民宅“乡愁” / 施工记录 04"
+      },
+      {
+        "base": "project-cayman-05",
+        "caption": "开曼群岛独栋民宅“乡愁” / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "预制墙板未做室内外装修；室内外装修及门窗安装在现场完成。"
   },
   {
     "id": "brisbane",
@@ -107,21 +125,27 @@
     "gallery": [
       {
         "base": "project-brisbane-01",
-        "caption": "澳洲布里斯班独栋民宅“本真” · 现场记录 01"
+        "caption": "澳洲布里斯班独栋民宅“本真” / 施工记录 01"
       },
       {
         "base": "project-brisbane-02",
-        "caption": "澳洲布里斯班独栋民宅“本真” · 现场记录 02"
+        "caption": "澳洲布里斯班独栋民宅“本真” / 施工记录 02"
       },
       {
         "base": "project-brisbane-03",
-        "caption": "澳洲布里斯班独栋民宅“本真” · 现场记录 03"
+        "caption": "澳洲布里斯班独栋民宅“本真” / 施工记录 03"
       },
       {
         "base": "project-brisbane-04",
-        "caption": "澳洲布里斯班独栋民宅“本真” · 现场记录 04"
+        "caption": "澳洲布里斯班独栋民宅“本真” / 施工记录 04"
+      },
+      {
+        "base": "project-brisbane-05",
+        "caption": "澳洲布里斯班独栋民宅“本真” / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "预制墙板集成外立面装饰；门窗安装与室内装修在现场完成。"
   },
   {
     "id": "zhongshan-fengdu",
@@ -138,21 +162,27 @@
     "gallery": [
       {
         "base": "project-zhongshan-fengdu-01",
-        "caption": "广东中山独栋民宅“风度” · 现场记录 01"
+        "caption": "广东中山独栋民宅“风度” / 施工记录 01"
       },
       {
         "base": "project-zhongshan-fengdu-02",
-        "caption": "广东中山独栋民宅“风度” · 现场记录 02"
+        "caption": "广东中山独栋民宅“风度” / 施工记录 02"
       },
       {
         "base": "project-zhongshan-fengdu-03",
-        "caption": "广东中山独栋民宅“风度” · 现场记录 03"
+        "caption": "广东中山独栋民宅“风度” / 施工记录 03"
       },
       {
         "base": "project-zhongshan-fengdu-04",
-        "caption": "广东中山独栋民宅“风度” · 现场记录 04"
+        "caption": "广东中山独栋民宅“风度” / 施工记录 04"
+      },
+      {
+        "base": "project-zhongshan-fengdu-05",
+        "caption": "广东中山独栋民宅“风度” / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "预制墙板集成外立面装饰与门窗构件，减少现场作业。"
   },
   {
     "id": "zhongshan-mige",
@@ -169,25 +199,27 @@
     "gallery": [
       {
         "base": "project-zhongshan-mige-01",
-        "caption": "广东中山独栋民宅“米阁” · 现场记录 01"
+        "caption": "广东中山独栋民宅“米阁” / 施工记录 01"
       },
       {
         "base": "project-zhongshan-mige-02",
-        "caption": "广东中山独栋民宅“米阁” · 现场记录 02"
+        "caption": "广东中山独栋民宅“米阁” / 施工记录 02"
       },
       {
         "base": "project-zhongshan-mige-03",
-        "caption": "广东中山独栋民宅“米阁” · 现场记录 03"
+        "caption": "广东中山独栋民宅“米阁” / 施工记录 03"
       },
       {
         "base": "project-zhongshan-mige-04",
-        "caption": "广东中山独栋民宅“米阁” · 现场记录 04"
+        "caption": "广东中山独栋民宅“米阁” / 施工记录 04"
       },
       {
         "base": "project-zhongshan-mige-05",
-        "caption": "广东中山独栋民宅“米阁” · 现场记录 05"
+        "caption": "广东中山独栋民宅“米阁” / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "墙板集成外立面装饰与门窗构件；24小时仅指主体结构安装，不含室内装修。"
   },
   {
     "id": "zhongshan-cabins",
@@ -204,21 +236,27 @@
     "gallery": [
       {
         "base": "project-zhongshan-cabins-01",
-        "caption": "中山隔离方舱 · 现场记录 01"
+        "caption": "中山隔离方舱 / 施工记录 01"
       },
       {
         "base": "project-zhongshan-cabins-02",
-        "caption": "中山隔离方舱 · 现场记录 02"
+        "caption": "中山隔离方舱 / 施工记录 02"
       },
       {
         "base": "project-zhongshan-cabins-03",
-        "caption": "中山隔离方舱 · 现场记录 03"
+        "caption": "中山隔离方舱 / 施工记录 03"
       },
       {
         "base": "project-zhongshan-cabins-04",
-        "caption": "中山隔离方舱 · 现场记录 04"
+        "caption": "中山隔离方舱 / 施工记录 04"
+      },
+      {
+        "base": "project-zhongshan-cabins-05",
+        "caption": "中山隔离方舱 / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "由175个板拼混凝土模块组装，回应集中使用的空间需求。 按项目资料采用简装交付。"
   },
   {
     "id": "chengdu",
@@ -235,21 +273,27 @@
     "gallery": [
       {
         "base": "project-chengdu-01",
-        "caption": "成都航空学院宿舍 · 现场记录 01"
+        "caption": "成都航空学院宿舍 / 施工记录 01"
       },
       {
         "base": "project-chengdu-02",
-        "caption": "成都航空学院宿舍 · 现场记录 02"
+        "caption": "成都航空学院宿舍 / 施工记录 02"
       },
       {
         "base": "project-chengdu-03",
-        "caption": "成都航空学院宿舍 · 现场记录 03"
+        "caption": "成都航空学院宿舍 / 施工记录 03"
       },
       {
         "base": "project-chengdu-04",
-        "caption": "成都航空学院宿舍 · 现场记录 04"
+        "caption": "成都航空学院宿舍 / 施工记录 04"
+      },
+      {
+        "base": "project-chengdu-05",
+        "caption": "成都航空学院宿舍 / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "由436个模块组装，通过重复与连接形成集中居住空间。 按项目资料采用简装交付。"
   },
   {
     "id": "shenzhen",
@@ -266,25 +310,27 @@
     "gallery": [
       {
         "base": "project-shenzhen-01",
-        "caption": "中建三局深圳营房 · 现场记录 01"
+        "caption": "中建三局深圳营房 / 施工记录 01"
       },
       {
         "base": "project-shenzhen-02",
-        "caption": "中建三局深圳营房 · 现场记录 02"
+        "caption": "中建三局深圳营房 / 施工记录 02"
       },
       {
         "base": "project-shenzhen-03",
-        "caption": "中建三局深圳营房 · 现场记录 03"
+        "caption": "中建三局深圳营房 / 施工记录 03"
       },
       {
         "base": "project-shenzhen-04",
-        "caption": "中建三局深圳营房 · 现场记录 04"
+        "caption": "中建三局深圳营房 / 施工记录 04"
       },
       {
         "base": "project-shenzhen-05",
-        "caption": "中建三局深圳营房 · 现场记录 05"
+        "caption": "中建三局深圳营房 / 施工记录 05"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "74个混凝土模块，按项目资料采用简装交付。"
   },
   {
     "id": "fiji",
@@ -301,28 +347,30 @@
     "gallery": [
       {
         "base": "project-fiji-01",
-        "caption": "斐济样箱 · 现场记录 01"
+        "caption": "斐济样箱 / 施工记录 01"
       },
       {
         "base": "project-fiji-02",
-        "caption": "斐济样箱 · 现场记录 02"
+        "caption": "斐济样箱 / 施工记录 02"
       },
       {
         "base": "project-fiji-03",
-        "caption": "斐济样箱 · 现场记录 03"
+        "caption": "斐济样箱 / 施工记录 03"
       },
       {
         "base": "project-fiji-04",
-        "caption": "斐济样箱 · 现场记录 04"
+        "caption": "斐济样箱 / 施工记录 04"
       },
       {
         "base": "project-fiji-05",
-        "caption": "斐济样箱 · 现场记录 05"
+        "caption": "斐济样箱 / 施工记录 05"
       },
       {
         "base": "project-fiji-06",
-        "caption": "斐济样箱 · 现场记录 06"
+        "caption": "斐济样箱 / 施工记录 06"
       }
-    ]
+    ],
+    "status": "已竣工",
+    "scope": "3个模块，每个40㎡；项目记录了精装修模块的远洋运输与现场组合。"
   }
 ]

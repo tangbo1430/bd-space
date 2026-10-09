@@ -105,14 +105,14 @@ for (const slug of ["4s", "grayscale"]) {
         violations: result.violations,
       });
     }
-    const technical = page.locator(`[data-gallery="${slug}-diagrams"]`);
+    const technical = page.locator(`[data-gallery="${slug}-diagrams"]`).first();
     await technical.click();
     await page.locator(".viewer-image").evaluate((e) => e.decode());
     assert.equal(
       await page.locator("[data-viewer-count]").textContent(),
-      "01 / 01",
+      `01 / ${String(data.diagrams.length).padStart(2, "0")}`,
     );
-    assert(await page.locator("[data-viewer-next]").isHidden());
+    assert(await page.locator("[data-viewer-next]").isVisible());
     assert(
       (
         await page.locator("[data-viewer-original]").getAttribute("href")
@@ -189,9 +189,9 @@ for (const slug of ["4s", "grayscale"]) {
       slug,
       width,
       height,
-      images: 7,
+      images: data.designGallery.length,
       photoGroup: expected,
-      diagramGroup: 1,
+      diagramGroup: data.diagrams.length,
       overflow: false,
       proportions: true,
     });

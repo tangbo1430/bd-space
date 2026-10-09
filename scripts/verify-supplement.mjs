@@ -17,7 +17,7 @@ check(
     ledger.total === 118,
 );
 for (const [slug, pages, realCount] of [
-  ["4s", [4, 8, 7, 9, 10, 12], 7],
+  ["4s", [4, 8, 7, 9, 10, 12], 6],
   ["grayscale", [2, 4, 8, 9, 10, 11], 0],
 ]) {
   const data = content(slug);
@@ -28,7 +28,7 @@ for (const [slug, pages, realCount] of [
     ),
   );
   check(
-    `${slug}: six selected renderings in approved order`,
+    `${slug}: six selected renderings; original PDF provenance retained`,
     data.designGallery.length === 6 &&
       JSON.stringify(
         source.uses.filter((u) => u.kind === "render").map((u) => u.page),
@@ -57,8 +57,8 @@ for (const [slug, pages, realCount] of [
     ),
   );
   check(
-    `${slug}: one separately grouped lossless diagram`,
-    data.diagrams.length === 1 &&
+    `${slug}: separately grouped lossless diagrams`,
+    data.diagrams.length >= 2 &&
       data.diagrams[0].src.endsWith(".png") &&
       html.includes(`data-gallery="${slug}-diagrams"`),
   );
@@ -79,7 +79,7 @@ for (const slug of ["5s", "6s"]) {
   check(
     `${slug}: own hero remains, correct render label, no borrowed gallery`,
     data.heroCaption.includes("效果图") &&
-      !data.designGallery &&
+      data.designGallery.length > 0 &&
       data.gallery.length === 0,
   );
 }

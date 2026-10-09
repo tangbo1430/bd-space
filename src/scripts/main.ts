@@ -1,3 +1,4 @@
+import { ui, isEnglish } from "../lib/translate";
 /**
  * 全站交互脚本（无框架 vanilla JS）。
  * 动效降级（UI 规范 §5）：满足其一即进入静态模式——
@@ -43,7 +44,7 @@ const motionOff = document.documentElement.dataset.motion === "off";
 let reducedForBanner = sysReduced && !motionFull;
 // Preserve manual controls for all constrained motion modes.
 let reducedOnly = sysReduced && !motionFull;
-let updateCarouselMotion = () => {};
+const carouselMotionUpdates: (() => void)[] = [];
 motionPreference.addEventListener("change", (event) => {
   const off = (event.matches || saveData || lowPower) && !motionFull;
   document.documentElement.dataset.motion = off
@@ -55,7 +56,7 @@ motionPreference.addEventListener("change", (event) => {
   reducedOnly = off;
   if (off)
     document.querySelectorAll(".rv").forEach((el) => el.classList.add("in"));
-  updateCarouselMotion();
+  carouselMotionUpdates.forEach((update) => update());
 });
 
 /* ---------- 导航：滚动收缩 ---------- */
@@ -111,19 +112,8 @@ drawer
   ?.querySelectorAll("a")
   .forEach((a) => a.addEventListener("click", () => setDrawer(false)));
 
-/* ---------- 语言切换提示（/en/ 未发布，不产生空页入口，BR-09） ---------- */
-const langToast = document.querySelector<HTMLElement>("[data-lang-toast]");
-document.querySelectorAll("[data-lang-toggle]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    if (!langToast) return;
-    langToast.classList.add("show");
-    window.setTimeout(() => langToast.classList.remove("show"), 2400);
-  });
-});
-
 /* ---------- 首屏 Banner 轮播：七态状态机（PRD v0.4 §5 / UI v1.2 D1，固定参数 BR-19） ---------- */
-const hero = document.querySelector<HTMLElement>(".hero[data-carousel]");
-if (hero) {
+document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
   const slides = Array.from(hero.querySelectorAll<HTMLElement>("[data-slide]"));
   const dots = Array.from(
     hero.querySelectorAll<HTMLButtonElement>("[data-dot]"),
@@ -209,10 +199,10 @@ if (hero) {
     applyChrome();
     play(); // Preserve elapsed time while hidden, hovered or keyboard focused.
   };
-  updateCarouselMotion = () => setState();
+  carouselMotionUpdates.push(() => setState());
 
   const announce = () => {
-    if (live) live.textContent = `第 ${i + 1} 张，共 ${slides.length} 张`;
+    if (live) live.textContent = ui(`第 ${i + 1} 张，共 ${slides.length} 张`);
   };
 
   const show = (n: number, manual: boolean, kind?: "prev" | "next" | "dot") => {
@@ -321,7 +311,7 @@ if (hero) {
       button.setAttribute("aria-pressed", String(userPaused));
       button.setAttribute(
         "aria-label",
-        userPaused ? "恢复自动播放" : "暂停自动播放",
+        userPaused ? ui("恢复自动播放") : ui("暂停自动播放"),
       );
       play();
     });
@@ -344,7 +334,7 @@ if (hero) {
   });
   show(0, false);
   setState();
-}
+});
 
 /* ---------- 「关于我们」子导航（v1.3 页头一体化导航带，hover/focus 展示） ----------
  * 职责分离（v0.4.1）：一级「关于我们」为纯链接，本脚本不绑定任何点击/按键展开逻辑，
@@ -521,7 +511,7 @@ document
       btn.setAttribute("aria-expanded", String(openNow));
       btn.setAttribute(
         "aria-label",
-        openNow ? "收起关于我们子导航" : "展开关于我们子导航",
+        openNow ? ui("收起关于我们子导航") : ui("展开关于我们子导航"),
       );
     });
   });
@@ -682,7 +672,7 @@ document
       if (!box) return;
       box.classList.toggle("err", Boolean(message));
       const msg = box.querySelector<HTMLElement>("[data-msg]");
-      if (msg) msg.textContent = message ?? "";
+      if (msg) msg.textContent = ui(message ?? "");
       box
         .querySelector<HTMLElement>("input, textarea")
         ?.setAttribute("aria-invalid", String(Boolean(message)));
@@ -712,7 +702,7 @@ document
         source: window.location.pathname,
       };
 
-      const errors = validateInquiry(input);
+      const errors = validateInquiry(input, isEnglish());
       (["name", "contact", "message", "agree"] as InquiryField[]).forEach((f) =>
         showFieldError(f, errors.fieldErrors[f]),
       );
@@ -728,7 +718,7 @@ document
 
       // 提交中：禁用防重复 + 文案变更
       submitBtn.disabled = true;
-      if (submitText) submitText.textContent = "提交中…";
+      if (submitText) submitText.textContent = ui("提交中…");
       banner?.classList.remove("show");
       track("form_submit_attempt", { source: input.source });
 
@@ -760,12 +750,13 @@ document
         // 失败：保留已填输入，顶部错误条提示重试
         track("form_submit_error", { source: input.source });
         if (banner) {
-          banner.textContent =
-            "提交未成功：网络或服务异常，请稍后重试；您填写的内容已保留。也可直接通过电话/邮箱联系我们。";
+          banner.textContent = ui(
+            "提交未成功：网络或服务异常，请稍后重试；您填写的内容已保留。也可直接通过电话/邮箱联系我们。",
+          );
           banner.classList.add("show");
         }
         submitBtn.disabled = false;
-        if (submitText) submitText.textContent = "提交留言";
+        if (submitText) submitText.textContent = ui("提交留言");
       }
     });
   });

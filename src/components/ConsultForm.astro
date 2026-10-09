@@ -150,7 +150,9 @@ const enabled = isFormEnabled(endpoint, accessKey);
     {!enabled && (
       <p class="local-save-note">
         下载文件仅保存到您的设备，填写内容不会发送给我们。
-        <a href="/zh/privacy/">隐私政策（准备中）</a>
+        {!Astro.url.pathname.startsWith("/en/") && (
+          <a href="/zh/privacy/">隐私政策（准备中）</a>
+        )}
       </p>
     )}
 

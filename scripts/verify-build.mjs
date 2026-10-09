@@ -25,6 +25,18 @@ const routes = [
   "zh/privacy",
   "zh/cookies",
   "en",
+  ...[
+    "products",
+    "products/4s",
+    "products/5s",
+    "products/6s",
+    "products/grayscale",
+    "products/bd8",
+    "products/bd9",
+    "cases",
+    "about",
+    "contact",
+  ].map((p) => `en/${p}`),
 ];
 let failures = 0;
 const ok = (condition, label) => {
@@ -66,7 +78,7 @@ ok(
   home.includes('hreflang="zh-CN"') && home.includes('hreflang="x-default"'),
   "Chinese locale and x-default are declared",
 );
-ok(!home.includes('href="/en/"'), "unpublished English page is not advertised");
+ok(home.includes('href="/en/"'), "English counterpart is linked");
 ok(
   home.includes('aria-roledescription="carousel"') &&
     home.includes("data-carousel-pause"),
@@ -77,7 +89,7 @@ ok(
     home.includes('aria-label="选择住宅照片"'),
   "three direct carousel selectors are available",
 );
-ok(page("en").includes("noindex"), "unpublished English page is noindex");
+ok(page("en").includes('<html lang="en"'), "English home is localized");
 const contact = page("zh/contact");
 ok(
   contact.includes('name="bd_website"') && contact.includes('name="source"'),
@@ -101,7 +113,7 @@ const sitemap = sitemapFiles
   .join("");
 ok(sitemapFiles.length > 0 && sitemap.includes("/zh/"), "sitemap is generated");
 ok(
-  !sitemap.includes("/en/") && !sitemap.includes("/404"),
+  sitemap.includes("/en/") && !sitemap.includes("/404"),
   "sitemap excludes unavailable routes",
 );
 ok(

@@ -86,11 +86,19 @@ const filters = [
               <dd>{p.duration}</dd>
             </div>
             <div>
+              <dt>完工状态</dt>
+              <dd>{p.status}</dd>
+            </div>
+            <div>
               <dt>建造方式</dt>
               <dd>{p.method}</dd>
             </div>
           </dl>
-          <p class="project-description">{p.description}</p>
+          <p class="project-description">
+            <span class="eyebrow">交付范围</span>
+            <br />
+            {p.scope}
+          </p>
           <div class="project-photos" aria-label={`${p.name}的现场照片`}>
             {p.gallery.map((photo) => (
               <GalleryImage

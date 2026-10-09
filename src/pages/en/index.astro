@@ -1,27 +1,5 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import Page from "../zh/index.astro";
 ---
 
-<BaseLayout
-  title="English Version Coming Soon"
-  description="The English version of Banda Space is under preparation. Please visit the Chinese site."
-  lang="en"
-  headerStyle="solid"
-  noindex={true}
->
-  <section class="state-page">
-    <div class="inner">
-      <div class="code">EN</div>
-      <h1>English version coming soon</h1>
-      <p>英文版正在筹备中。中文站点已完整开放，欢迎继续浏览或与我们联系。</p>
-      <div class="btns">
-        <a class="btn btn-primary action action-primary" href="/zh/">
-          进入中文站
-        </a>
-        <a class="btn btn-ghost action action-secondary" href="/zh/contact/">
-          联系我们
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+<Page />

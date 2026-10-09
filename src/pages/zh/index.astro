@@ -1,4 +1,5 @@
 ---
+import HeroCarousel from "../../components/HeroCarousel.astro";
 import Icon from "../../components/Icon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EditorialImage from "../../components/EditorialImage.astro";
@@ -12,34 +13,36 @@ const selectedProjects = ["cayman", "changzhou"].map((id) =>
 const slides = [
   {
     id: "6s",
-    base: "product-6s-hero",
+    base: "v11-home-6s",
     name: "半打 6S",
     note: "把生活，展开得更从容。",
   },
   {
     id: "4s",
-    base: "product-4s-dusk",
+    base: "v11-home-4s",
     name: "半打 4S",
     note: "自然之中，安放日常。",
   },
   {
     id: "5s",
-    base: "product-5s-hero",
+    base: "v11-home-5s",
     name: "半打 5S",
     note: "为相聚，留出更多空间。",
   },
 ];
 import { getListedProducts } from "../../lib/catalog";
-const products = (await getListedProducts()).map((p) => ({
-  ...p,
-  desc: `${p.desc} ${p.area} · ${p.layout}`,
-}));
+const products = (await getListedProducts())
+  .filter((p) => p.featured)
+  .map((p) => ({
+    ...p,
+    desc: `${p.desc} ${p.area} · ${p.layout}`,
+  }));
 const steps = [
   {
     title: "设计，把想法落到细节",
     en: "DESIGN",
     text: "从场地与使用需求出发，梳理空间、结构与模块之间的关系。",
-    base: "flow-step01-mold",
+    base: "v11-factory",
     mobile: false,
   },
   {
@@ -66,97 +69,27 @@ const steps = [
   headerStyle="overlay"
 >
   <div class="studio">
-    <section
-      class="hero editorial-hero"
-      data-carousel
-      role="region"
-      aria-roledescription="carousel"
-      aria-label="半打空间产品展示"
-      tabindex="0"
-    >
-      <p class="sr-only" data-banner-live aria-live="polite">
-        第 1 张，共 3 张
+    <HeroCarousel slides={slides}>
+      <span class="eyebrow">装配式混凝土空间</span>
+      <h1>
+        让空间，
+        <br />
+        回归生活。
+      </h1>
+      <p>
+        在工厂建造，为生活而生。
+        <br />
+        连接设计、制造与交付，让建筑融入日常。
       </p>
-      {slides.map((s, i) => (
-        <div
-          class:list={["slide", { on: i === 0 }]}
-          data-slide
-          aria-roledescription="slide"
-          aria-label={`第 ${i + 1} 张，共 3 张`}
-        >
-          <EditorialImage
-            base={s.base}
-            alt={`${s.name}住宅外观 / ${s.id === "4s" ? "实拍" : "效果图"}`}
-            eager={i === 0}
-          />
-          <div class="hero-bottom">
-            <a
-              class="hero-explore"
-              href={`/zh/products/${s.id}/`}
-              tabindex={i === 0 ? 0 : -1}
-            >
-              <span class="hero-model">{s.name}</span>
-              <span class="hero-model-note">{s.note}</span>
-              <span class="hero-product-action">
-                查看产品
-                <Icon name="chevron-right" />
-              </span>
-            </a>
-          </div>
-        </div>
-      ))}
-      <div class="hero-intro ed-wrap">
-        <span class="eyebrow">装配式混凝土空间</span>
-        <h1>
-          让空间，
-          <br />
-          回归生活。
-        </h1>
-        <p>
-          在工厂建造，为生活而生。
-          <br />
-          连接设计、制造与交付，让建筑融入日常。
-        </p>
-        <div class="cover-actions">
-          <a class="action action-primary" href="/zh/products/">
-            探索产品
-          </a>
-          <a class="action action-secondary" href="/zh/contact/">
-            项目咨询
-          </a>
-        </div>
+      <div class="cover-actions">
+        <a class="action action-primary" href="/zh/products/">
+          探索产品
+        </a>
+        <a class="action action-secondary" href="/zh/contact/">
+          项目咨询
+        </a>
       </div>
-      <div class="hero-controls">
-        <span class="sr-only">
-          当前照片 <span data-hero-current>01</span> / 03
-        </span>
-        <div class="hero-scenes" role="group" aria-label="选择住宅照片">
-          {slides.map((slide, index) => (
-            <button
-              type="button"
-              class:list={["hero-scene", { on: index === 0 }]}
-              data-dot={index}
-              aria-current={index === 0 ? "true" : "false"}
-              aria-label={`切换到第${index + 1}张：${slide.name}`}
-            >
-              <span class="scene-track" aria-hidden="true">
-                <span class="scene-progress" data-scene-progress></span>
-              </span>
-            </button>
-          ))}
-        </div>
-        <button
-          type="button"
-          class="hero-control hero-pause"
-          data-carousel-pause
-          aria-label="暂停自动播放"
-          aria-pressed="false"
-        >
-          <Icon name="pause" class="pause-icon" />
-          <Icon name="play" class="play-icon" />
-        </button>
-      </div>
-    </section>
+    </HeroCarousel>
 
     <section
       class="product-section ed-section"

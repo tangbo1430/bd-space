@@ -1,3 +1,4 @@
+import { ui } from "../lib/translate";
 import { resolveSwipe } from "../lib/banner";
 
 const viewer = document.querySelector<HTMLDialogElement>("[data-photo-viewer]");
@@ -32,15 +33,18 @@ if (viewer && typeof viewer.showModal === "function") {
     mount.tabIndex = value ? 0 : -1;
     mount.setAttribute(
       "aria-label",
-      value ? "放大的图片，使用方向键移动查看" : "图片画面",
+      value ? ui("放大的图片，使用方向键移动查看") : ui("图片画面"),
     );
     zoomButton.setAttribute("aria-pressed", String(value));
-    zoomButton.setAttribute("aria-label", value ? "恢复完整图片" : "放大图片");
+    zoomButton.setAttribute(
+      "aria-label",
+      value ? ui("恢复完整图片") : ui("放大图片"),
+    );
     const hint = viewer.querySelector<HTMLElement>(".viewer-hint");
     if (hint)
       hint.textContent = value
-        ? "方向键移动画面 · TAB 访问控件 · ESC 关闭"
-        : "方向键切换图片 · Esc 关闭";
+        ? ui("方向键移动画面 · TAB 访问控件 · ESC 关闭")
+        : ui("方向键切换图片 · Esc 关闭");
     requestAnimationFrame(() => {
       mount.scrollLeft = value
         ? Math.max(
@@ -67,7 +71,7 @@ if (viewer && typeof viewer.showModal === "function") {
     setZoom(false);
     image.classList.remove("loaded");
     loading.hidden = false;
-    loading.textContent = "正在加载图片…";
+    loading.textContent = ui("正在加载图片…");
     image.alt = selected.querySelector("img")?.alt ?? "";
     image.width =
       Number(selected.dataset.galleryWidth) ||
@@ -104,7 +108,7 @@ if (viewer && typeof viewer.showModal === "function") {
     loading.hidden = true;
   });
   image.addEventListener("error", () => {
-    loading.textContent = "图片暂时无法加载，请切换其他图片。";
+    loading.textContent = ui("图片暂时无法加载，请切换其他图片。");
   });
 
   links.forEach((link) =>
@@ -123,7 +127,7 @@ if (viewer && typeof viewer.showModal === "function") {
         button.type = "button";
         button.setAttribute(
           "aria-label",
-          `查看第 ${i + 1} 张：${item.dataset.galleryCaption}`,
+          ui(`查看第 ${i + 1} 张：${item.dataset.galleryCaption}`),
         );
         const thumb = document.createElement("img");
         thumb.src =

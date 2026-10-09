@@ -36,6 +36,7 @@ export default [
       "tests/carousel-navigation.mjs",
       "tests/materials-browser.mjs",
       "tests/supplement-browser.mjs",
+      "tests/v11-browser.mjs",
     ],
     languageOptions: { globals: { ...globals.node, ...globals.browser } },
   },

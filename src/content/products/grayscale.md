@@ -43,23 +43,16 @@
       "value": "1个40尺HC集装箱／套"
     }
   ],
-  "listImageId": "product-grayscale-hero",
-  "detailImageId": "product-grayscale-hero",
+  "listImageId": "v11-grayscale-hero",
+  "detailImageId": "v11-grayscale-hero",
   "heroAsset": "grayscale",
-  "heroBase": "product-grayscale-hero",
+  "heroBase": "v11-grayscale-hero",
   "gallery": [],
   "specNote": "建筑面积含外墙，不含户外平台；各项面积按提供资料分别列示，不相加。装运为资料参考配置，实际方案需结合项目确认。",
   "listed": true,
   "published": true,
-  "heroCaption": "灰度空间 / 外观效果图",
+  "heroCaption": "灰度空间 · 庭院外观 / 方案效果图",
   "designGallery": [
-    {
-      "base": "product-grayscale-design-front",
-      "caption": "正面外观 / 方案效果图",
-      "width": 1920,
-      "height": 1192,
-      "mobileWidth": 960
-    },
     {
       "base": "product-grayscale-design-side",
       "caption": "侧面外观 / 方案效果图",
@@ -94,6 +87,13 @@
       "width": 1920,
       "height": 1288,
       "mobileWidth": 960
+    },
+    {
+      "base": "v11-grayscale-space-1",
+      "caption": "灰度空间 · 住宅立面 / 方案效果图",
+      "width": 1920,
+      "height": 917,
+      "mobileWidth": 960
     }
   ],
   "designNote": "方案效果图，展示空间与布局参考；具体配置以项目确认资料为准。",
@@ -105,11 +105,19 @@
       "caption": "灰度空间 / 住宅与办公布局示意",
       "width": 1417,
       "height": 868
+    },
+    {
+      "src": "/assets/img/v11-grayscale-drawing-0.webp",
+      "viewerSrc": "/assets/img/v11-grayscale-drawing-0.webp",
+      "width": 3052,
+      "height": 2040,
+      "caption": "灰度空间 · 平面图 / 技术示意"
     }
   ],
-  "diagramTitle": "居住与办公，两种可能。",
-  "diagramLabel": "住宅与办公",
-  "diagramIntro": "两种使用方案，回应不同的空间需求。图中尺寸按原资料保留，具体布局以项目设计确认为准。"
+  "diagramTitle": "看见空间的组成。",
+  "diagramLabel": "技术图与装运",
+  "diagramIntro": "完整保留资料中的图示标注，仅供方案沟通；实际尺寸、配置及装运按项目确认。",
+  "featured": true,
+  "mobileImage": "/assets/img/v11-grayscale-portrait-m.webp"
 }
 ---
-简洁的混凝土建筑语言，在住宅与办公之间，为使用者保留想象。

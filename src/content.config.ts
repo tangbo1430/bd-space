@@ -25,6 +25,17 @@ const products = defineCollection({
     /** 产品详情主图（PRODUCT_HERO_ASSETS 键：4s/5s/6s/grayscale）；缺省=占位 */
     heroAsset: z.string().optional(),
     heroBase: z.string().optional(),
+    featured: z.boolean().default(false),
+    mobileImage: z.string().optional(),
+    video: z
+      .object({
+        src: z.string(),
+        poster: z.string(),
+        caption: z.string(),
+        width: z.number(),
+        height: z.number(),
+      })
+      .optional(),
     heroCaption: z.string().optional(),
     designNote: z.string().default(""),
     designGallery: z

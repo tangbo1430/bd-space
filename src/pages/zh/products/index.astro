@@ -3,39 +3,61 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EditorialImage from "../../../components/EditorialImage.astro";
 import ProjectCTA from "../../../components/ProjectCTA.astro";
 import BuildingSystems from "../../../components/BuildingSystems.astro";
-import PageVisual from "../../../components/PageVisual.astro";
+import HeroCarousel from "../../../components/HeroCarousel.astro";
 import { getListedProducts } from "../../../lib/catalog";
 const products = await getListedProducts();
+const slides = [
+  {
+    id: "4s",
+    caption: "半打 4S / 暮色实拍",
+    base: "product-4s-dusk",
+    mobileImage: "/assets/img/product-4s-dusk-m.webp",
+    name: "半打 4S",
+    note: "暮色中的居所。",
+  },
+  {
+    id: "4s",
+    caption: "半打 4S / 住宅外观实拍",
+    base: "v11-catalog-1",
+    mobileImage: "/assets/img/v11-catalog-1-m.webp",
+    name: "半打 4S",
+    note: "从构件，走向生活。",
+  },
+  {
+    id: "4s",
+    caption: "半打 4S / 屋顶与立面实拍",
+    base: "v11-catalog-2",
+    mobileImage: "/assets/img/v11-catalog-2-m.webp",
+    name: "半打 4S",
+    note: "让日常与自然相遇。",
+  },
+];
 ---
 
 <BaseLayout
   title="产品中心"
-  description="探索半打4S、5S、6S与灰度空间，了解户型、面积、结构与装运参考。"
+  description="探索半打4S、5S、6S、灰度空间、半打8与半打9，了解户型、面积、结构与装运参考。"
   current="products"
   headerStyle="overlay"
 >
   <div class="page-editorial">
-    <PageVisual
-      mode="cover"
-      base="product-4s-dusk"
-      alt="暮色中的半打4S住宅"
-      caption="半打 4S · 暮色中的居所"
-      meta="空间产品"
-    >
-      <h1 slot="title">
+    <HeroCarousel slides={slides} catalog>
+      <h1>
         空间，有更多
         <br />
         打开方式。
       </h1>
-      <p slot="description">
+      <p>
         从独立住宅到组合空间，
         <br />
         找到适合您项目的建造方式。
       </p>
-      <a slot="actions" class="action action-primary" href="#collection">
-        探索空间产品
-      </a>
-    </PageVisual>
+      <div class="cover-actions">
+        <a class="action action-primary" href="#collection">
+          探索空间产品
+        </a>
+      </div>
+    </HeroCarousel>
     <section
       class="product-catalog-section ed-section"
       id="collection"

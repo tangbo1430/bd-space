@@ -9,6 +9,7 @@ const tasks = [
   ["image references", "./audit-assets.mjs", []],
   ["material integrity", "./verify-materials.mjs", []],
   ["supplement integrity", "./verify-supplement.mjs", []],
+  ["English copy", "./audit-translations.mjs", []],
 ];
 for (const [label, path, args] of tasks) {
   console.log(`\nChecking ${label}…`);

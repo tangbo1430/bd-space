@@ -1,3 +1,4 @@
+import { ui, isEnglish } from "../lib/translate";
 import { validateInquiry, hasErrors } from "../lib/form";
 document.documentElement.classList.add("js-enabled");
 /** Progressive interactions for the architectural editorial pages. */
@@ -35,7 +36,7 @@ document.querySelectorAll<HTMLElement>("[data-collection]").forEach((root) => {
     if (description)
       description.textContent =
         descriptions.find((item) => item.id === id)?.desc ?? "";
-    if (link) link.href = `/zh/products/${id}/`;
+    if (link) link.href = `/${isEnglish() ? "en" : "zh"}/products/${id}/`;
     if (focus) selected.focus();
   };
   tabs.forEach((tab, index) => {
@@ -98,20 +99,9 @@ projectFilters.forEach((button) =>
       if (!project.hidden) count++;
     });
     const status = document.querySelector<HTMLElement>("[data-filter-status]");
-    if (status) status.textContent = `显示 ${count} 个项目`;
+    if (status) status.textContent = ui(`显示 ${count} 个项目`);
   }),
 );
-
-// Let keyboard users always reach language selection on smaller screens.
-const language =
-  document.querySelector<HTMLButtonElement>("[data-lang-toggle]");
-const drawerLanguage = language?.cloneNode(true) as
-  HTMLButtonElement | undefined;
-if (drawerLanguage) {
-  drawerLanguage.className = "drawer-language";
-  drawerLanguage.addEventListener("click", () => language?.click());
-  document.querySelector("[data-drawer]")?.append(drawerLanguage);
-}
 
 // A useful local draft remains available while the real submission service is unconfigured.
 document
@@ -126,7 +116,7 @@ document
     const message = form.querySelector<HTMLTextAreaElement>('[name="message"]');
     const selected = product ?? project;
     if (selected && names[selected] && message && !message.value)
-      message.value = `我想了解${names[selected]}，项目需求：`;
+      message.value = ui(`我想了解${names[selected]}，项目需求：`);
     const counter = form.querySelector<HTMLElement>("[data-message-count]");
     const updateCount = () => {
       if (counter && message)
@@ -136,7 +126,7 @@ document
     message?.addEventListener("input", updateCount);
     form.addEventListener("input", () => {
       const status = form.querySelector<HTMLElement>("[data-download-status]");
-      const modified = "内容已修改，请重新下载更新后的项目需求。";
+      const modified = ui("内容已修改，请重新下载更新后的项目需求。");
       if (status?.textContent && status.textContent !== modified)
         status.textContent = modified;
     });
@@ -151,7 +141,7 @@ document
           agree: true,
           honeypot: String(data.get("bd_website") ?? ""),
         };
-        const errors = validateInquiry(input);
+        const errors = validateInquiry(input, isEnglish());
         for (const field of ["name", "contact", "message"] as const) {
           const box = form.querySelector<HTMLElement>(
             `[data-field="${field}"]`,
@@ -160,7 +150,7 @@ document
           box?.classList.toggle("err", Boolean(error));
           const message = box?.querySelector<HTMLElement>("[data-msg]");
           const control = box?.querySelector<HTMLElement>("input, textarea");
-          if (message) message.textContent = error ?? "";
+          if (message) message.textContent = ui(error ?? "");
           control?.setAttribute("aria-invalid", String(Boolean(error)));
         }
         if (hasErrors(errors)) {
@@ -170,24 +160,26 @@ document
           return;
         }
         const text = [
-          "半打空间 / 项目需求",
+          ui("半打空间 / 项目需求"),
           "",
-          `称呼：${input.name.trim()}`,
-          `企业：${String(data.get("company") ?? "").trim() || "未填写"}`,
-          `联系方式：${input.contact.trim()}`,
-          `项目所在地：${String(data.get("location") ?? "").trim() || "未填写"}`,
+          `${ui("称呼")}：${input.name.trim()}`,
+          `${ui("企业：")}${String(data.get("company") ?? "").trim() || ui("未填写")}`,
+          `${ui("联系方式")}：${input.contact.trim()}`,
+          `${ui("项目所在地：")}${String(data.get("location") ?? "").trim() || ui("未填写")}`,
           "",
-          "项目需求：",
+          ui("项目需求："),
           input.message.trim(),
           "",
-          "此文件为本地需求草稿，尚未向半打空间发送。",
+          ui("此文件为本地需求草稿，尚未向半打空间发送。"),
         ].join("\n");
         const url = URL.createObjectURL(
           new Blob(["\ufeff", text], { type: "text/plain;charset=utf-8" }),
         );
         const anchor = document.createElement("a");
         anchor.href = url;
-        anchor.download = "半打空间-项目需求.txt";
+        anchor.download = isEnglish()
+          ? "semi-six-project-brief.txt"
+          : "半打空间-项目需求.txt";
         document.body.append(anchor);
         anchor.click();
         anchor.remove();
@@ -196,7 +188,8 @@ document
           "[data-download-status]",
         );
         if (status)
-          status.textContent =
-            "项目需求已下载到您的设备，尚未发送给我们。请通过下方邮箱或微信发送文件。";
+          status.textContent = ui(
+            "项目需求已下载到您的设备，尚未发送给我们。请通过下方邮箱或微信发送文件。",
+          );
       });
   });

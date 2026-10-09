@@ -35,6 +35,18 @@ const routes = [
   "/zh/privacy/",
   "/zh/cookies/",
   "/en/",
+  ...[
+    "products",
+    "products/4s",
+    "products/5s",
+    "products/6s",
+    "products/grayscale",
+    "products/bd8",
+    "products/bd9",
+    "about",
+    "contact",
+    "cases",
+  ].map((p) => `/en/${p}/`),
   "/404",
 ];
 const context = await browser.newContext({
@@ -154,15 +166,18 @@ assert.equal(await page.locator("[data-case-region]:visible").count(), 7);
 await page.locator('[data-case-filter="all"]').click();
 assert.equal(await page.locator("[data-case-region]:visible").count(), 10);
 report.interactions.push("Case filtering changes both visibility and status");
+const caymanCount = String(
+  await page.locator('[data-gallery="cayman"]').count(),
+).padStart(2, "0");
 await page.locator('[data-gallery="cayman"]').first().click();
 assert.equal(
   await page.locator("[data-viewer-count]").textContent(),
-  "01 / 05",
+  `01 / ${caymanCount}`,
 );
 await page.locator("[data-viewer-next]").click();
 assert.equal(
   await page.locator("[data-viewer-count]").textContent(),
-  "02 / 05",
+  `02 / ${caymanCount}`,
 );
 await page.keyboard.press("Escape");
 assert(await page.locator("[data-photo-viewer]").isHidden());
@@ -215,7 +230,7 @@ for (const viewport of [
   assert(
     (
       await page.locator("[data-viewer-original]").getAttribute("href")
-    ).endsWith("product-4s-hero.jpg"),
+    ).endsWith("v11-4s-hero.jpg"),
   );
   await page.locator("[data-viewer-zoom]").click();
   assert.equal(

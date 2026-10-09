@@ -15,8 +15,8 @@ import PageVisual from "../../../components/PageVisual.astro";
   <div class="page-editorial">
     <PageVisual
       mode="cover"
-      base="flow-factory-module"
-      alt="工厂中完成内装的模块化空间"
+      base="v11-about"
+      alt="灰度空间住宅外观效果图"
       caption="从工厂开始，让空间有序成形。"
       meta="关于半打空间"
     >
@@ -44,7 +44,7 @@ import PageVisual from "../../../components/PageVisual.astro";
             走进有序的产线。
           </h2>
           <p class="company-full-name">
-            {company.legalName}
+            {!Astro.url.pathname.startsWith("/en/") && company.legalName}
             <span lang="en">{company.legalNameEn}</span>
           </p>
           <p>{company.intro}</p>
@@ -149,12 +149,32 @@ import PageVisual from "../../../components/PageVisual.astro";
           </a>
         </div>
         <EditorialImage
-          base="case-cayman-install-crane"
-          alt="开曼项目的构件现场吊装"
+          base="v11-grayscale-hero"
+          alt="灰度空间的住宅与庭院效果图"
           sizes="(max-width: 767px) 100vw, 50vw"
           class="rv"
         />
       </div>
+    </section>
+    <section class="ed-wrap ed-section vision-mission">
+      <article>
+        <span class="eyebrow">愿景</span>
+        <h2>
+          让模块化建筑，
+          <br />
+          走进更多生活。
+        </h2>
+        <p>成为模块化低层建筑领域受认可的解决方案与服务提供者。</p>
+      </article>
+      <article>
+        <span class="eyebrow">使命</span>
+        <h2>
+          在工厂里，
+          <br />
+          实现空间的品质。
+        </h2>
+        <p>以设计、制造与装配的协作，提供高效、实用的建筑空间。</p>
+      </article>
     </section>
     <ProjectCTA />
   </div>

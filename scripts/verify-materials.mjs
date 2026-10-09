@@ -12,8 +12,8 @@ function check(name, test) {
   assert(test, name);
   results.push(name);
 }
-const listed = ["4s", "5s", "6s", "grayscale"];
-const legacy = ["bd8", "bd9", "slab", "wall", "stair"];
+const listed = ["4s", "5s", "6s", "grayscale", "bd8", "bd9"];
+const legacy = ["slab", "wall", "stair"];
 const sitemap = readdirSync(new URL("dist/", root))
   .filter((p) => /^sitemap.*\.xml$/.test(p))
   .map((p) => read(`dist/${p}`))

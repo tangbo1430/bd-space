@@ -12,6 +12,8 @@ const routes = [
   "products/6s/",
   "products/grayscale/",
   "about/",
+  "products/bd8/",
+  "products/bd9/",
 ];
 const layouts = [
   [320, 812],
@@ -75,7 +77,7 @@ for (const [width, height] of layouts) {
           overlaps(control, caption),
         headerOverlap: title.top < header.bottom,
         headingColor: getComputedStyle(heading).color,
-        transparentHeader: !document
+        solidHeader: document
           .querySelector("[data-gnb]")
           .classList.contains("gnb-solid"),
         targets: [
@@ -96,7 +98,7 @@ for (const [width, height] of layouts) {
       JSON.stringify(report.at(-1)),
     );
     assert.equal(geometry.headingColor, "rgb(255, 255, 255)");
-    assert(geometry.transparentHeader && geometry.targets);
+    assert(geometry.solidHeader && geometry.targets);
     await page.evaluate(() => window.scrollTo(0, 200));
     await page.waitForFunction(() =>
       document.querySelector("[data-gnb]").classList.contains("scrolled"),

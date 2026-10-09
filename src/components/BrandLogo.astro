@@ -1,26 +1,12 @@
 ---
-interface Props {
-  light?: boolean;
-}
-const { light = false } = Astro.props;
 ---
 
-<span
-  class:list={["official-brand", { "official-brand-light": light }]}
-  aria-hidden="true"
->
+<span class="official-brand" aria-hidden="true">
   <img
-    class="brand-dark"
-    src="/assets/brand/logo-dark.svg"
+    class="brand-original"
+    src="/assets/brand/logo-original.png"
     alt=""
-    width="1920"
-    height="542"
-  />
-  <img
-    class="brand-light"
-    src="/assets/brand/logo-light.svg"
-    alt=""
-    width="1920"
-    height="542"
+    width="1000"
+    height="282"
   />
 </span>

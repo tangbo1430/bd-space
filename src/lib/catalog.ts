@@ -8,6 +8,8 @@ export async function getListedProducts() {
     .map(({ id, data }) => ({
       id,
       name: data.name,
+      featured: data.featured,
+      mobileImage: data.mobileImage,
       en: data.enTag,
       desc: data.tagline,
       base: data.heroBase!,

@@ -10,6 +10,7 @@ interface Props {
   mobileWidth?: number;
   fit?: "cover" | "contain";
   zoomX?: number;
+  mobileImage?: string;
   alt: string;
   group: string;
   caption?: string;
@@ -18,6 +19,7 @@ interface Props {
 }
 const {
   base,
+  mobileImage,
   src,
   viewerSrc,
   width,
@@ -53,6 +55,7 @@ const {
 >
   <EditorialImage
     base={base}
+    mobileImage={mobileImage}
     src={src}
     previewSrc={viewerSrc}
     width={width}
