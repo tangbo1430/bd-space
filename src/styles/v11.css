@@ -72,8 +72,12 @@
     color: #fff;
     border-bottom-color: transparent;
   }
-  .gnb.gnb-overlay:not(.scrolled) .brand-original {
-    filter: brightness(0) invert(1);
+  .gnb.gnb-overlay:not(.scrolled) .official-brand::before {
+    content: "";
+    position: absolute;
+    inset: -10px -12px;
+    background: #fff;
+    border-radius: 2px;
   }
   .banda-editorial .editorial-hero,
   .banda-editorial .cover-visual {

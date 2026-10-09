@@ -171,7 +171,7 @@
       "eligible": true,
       "status": "identical-source",
       "web_resources": [
-        "/assets/brand/logo-original.png"
+        "/assets/brand/logo-official-v11.svg"
       ],
       "note": "与已采用文件逐字节相同，SHA-256 去重只计一次",
       "sha256": "320d031481a76dc36490d68ac8f99eb86cf1452a3f9692e4b99eae677d1bfcce"
@@ -565,7 +565,7 @@
       "eligible": true,
       "status": "direct",
       "web_resources": [
-        "/assets/brand/logo-original.png"
+        "/assets/brand/logo-official-v11.svg"
       ],
       "note": "已用于网页；网页资源地址见 web_resources",
       "sha256": "320d031481a76dc36490d68ac8f99eb86cf1452a3f9692e4b99eae677d1bfcce"

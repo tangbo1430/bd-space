@@ -23,6 +23,8 @@ for (const width of [375, 1024, 1280, 1920, 2560]) {
           top: hero.getBoundingClientRect().top,
           logo: logo.getAttribute("src"),
           filter: getComputedStyle(logo).filter,
+          backing: getComputedStyle(logo.parentElement, "::before")
+            .backgroundColor,
         };
       });
       assert.equal(
@@ -30,10 +32,11 @@ for (const width of [375, 1024, 1280, 1920, 2560]) {
         width >= 1280 ? "rgba(0, 0, 0, 0)" : "rgb(255, 255, 255)",
       );
       assert.equal(before.top, width >= 1280 ? 0 : width < 768 ? 76 : 96);
-      assert.equal(before.logo, "/assets/brand/logo-original.png");
+      assert.equal(before.logo, "/assets/brand/logo-official-v11.svg");
+      assert.equal(before.filter, "none");
       if (width >= 1280) {
         assert.equal(before.color, "rgb(255, 255, 255)");
-        assert.ok(before.filter.includes("invert(1)"));
+        assert.equal(before.backing, "rgb(255, 255, 255)");
       }
       if (width === 1920 && lang === "zh" && ["", "products/"].includes(route))
         await page.screenshot({

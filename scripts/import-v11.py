@@ -89,6 +89,8 @@ for stem in ['flow-step01-mold','product-4s-mold']:
 logo=Image.open(SOURCE/'B/Logo 完整文件/半打空间logo.png').convert('RGBA')
 logo=logo.crop(logo.getbbox());logo.thumbnail((1000,1000),Image.Resampling.LANCZOS)
 logo.save(ROOT/'public/assets/brand/logo-original.png',optimize=True)
+official_svg=(SOURCE/'B/Logo 完整文件/半打空间logo.svg').read_text(encoding='utf8')
+(ROOT/'public/assets/brand/logo-official-v11.svg').write_text(official_svg.replace('viewBox="0 0 1920 1080"','viewBox="-1 268 1922 544"'),encoding='utf8')
 share=Image.open(OUT/'v11-home-6s.jpg').convert('RGB');share=ImageOps.fit(share,(1200,490))
 card=Image.new('RGB',(1200,630),'#f5f6f4');card.paste(share,(0,140));logo.thumbnail((280,90));card.paste(logo,(64,25),logo);card.save(OUT/'share-banda.jpg',quality=90)
 (ROOT/'docs/v11-materials-manifest.json').write_text(json.dumps({'assets':manifest,'omissions':['No clean 6S interior was supplied in the 6S folder; exterior views used, no borrowing from other models.','Promotional posters, prices, authorizations and full reports are not published.','Withdrawn mold photos and thumbnails removed.'],'sources':{'parameters':'A/模块产品正式资料.xlsx','cases':'A/项目案例资料.xlsx','contact':'A/联系信息.xlsx','english':'A/英文全站资料.xlsx'}},ensure_ascii=False,indent=2),encoding='utf8')

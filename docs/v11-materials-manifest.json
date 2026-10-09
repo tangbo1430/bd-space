@@ -1050,5 +1050,14 @@
     ],
     "images": "Per-product heroBase and mobileImage from src/content/products; original material mapping retained.",
     "replaced": "The earlier three-image 4S-only catalog sequence."
+  },
+  "official_logo": {
+    "source": "素材清单需求-v1.1.rar / B/Logo 完整文件/半打空间logo.svg",
+    "source_sha256": "99fa015496e04b9e7dec58ad1129534557d02a4253d977e591c3b6fecd62f584",
+    "web_resource": "/assets/brand/logo-official-v11.svg",
+    "web_sha256": "1529c2d041a11f987469dd0b9631beec5e9a2b864c4c07818799ad3508f3467e",
+    "only_edit": "viewBox changed from 0 0 1920 1080 to -1 268 1922 544 to remove empty canvas, with a margin for strokes. All artwork, colors, shapes, typography and embedded source image remain verbatim.",
+    "css_filter": "none on every background",
+    "photo_header": "Transparent masthead retained; a small white backing is confined to the logo so its original dark blue and two gray colors remain legible."
   }
 }
