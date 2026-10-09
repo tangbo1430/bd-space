@@ -1,16 +1,16 @@
 {
   "project": "半打空间 / BANDA SPACE",
-  "release": "r23 / supplied official logo without recoloring",
-  "reviewed_at": "2026-10-09T17:49:55.486990+00:00",
+  "release": "r24 / complete selected project photographs",
+  "reviewed_at": "2026-10-09T17:55:56.737337+00:00",
   "build": {
-    "commit": "325c5ee",
-    "builtAt": "2026-10-09T17:47:45.587Z",
+    "commit": "368659c",
+    "builtAt": "2026-10-09T17:53:30.908Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
   "reviewed_dimensions": {
     "排版": "沿用本地可变字体；英文独立校订并检查断行；参数、图注和技术资料统一层级。",
-    "留白": "摄影恢复铺满既有容器，撤销产生黑边和灰色空带的 contain 规则；技术图按原始比例完整展示。",
+    "留白": "首页精选案例按原图 1920:1200 比例自适应高度，无裁切、无图片内部填充条，悬停不放大；摄影首屏保持满幅，技术图完整展示。",
     "视觉层级": "产品简介和参数摘要前置；照片、技术图、手动视频分别呈现；首页仍精选四款。",
     "色彩": "官方 SVG 标识保持原稿深蓝及两种灰色，无漂白滤镜；大屏摄影页保留透明导航，Logo 局部浅底保证可读性。",
     "动效": "自然滚动、轻微渐显；轮播支持暂停、离屏停止及减少动态效果偏好。",
@@ -217,8 +217,8 @@
     "errors": [],
     "missing": [],
     "build": {
-      "commit": "325c5ee",
-      "builtAt": "2026-10-09T17:47:45.587Z",
+      "commit": "368659c",
+      "builtAt": "2026-10-09T17:53:30.908Z",
       "site": "http://23.251.34.150:8080",
       "buildMode": "production"
     },
@@ -329,5 +329,32 @@
     "lint_errors": 0,
     "image_references": 349,
     "change": "Removed unintended white recoloring; source artwork preserved verbatim except viewBox."
+  },
+  "selected_case_images": {
+    "pages": [
+      "/zh/",
+      "/en/"
+    ],
+    "original_pixels": [
+      1920,
+      1200
+    ],
+    "container": "Natural image ratio and auto height, without fixed square frames",
+    "hover": "No image zoom or edge cropping",
+    "viewport_checks": 18,
+    "widths": [
+      320,
+      375,
+      768,
+      1024,
+      1440,
+      1920,
+      2560,
+      844,
+      720
+    ],
+    "lint_errors": 0,
+    "image_references": 349,
+    "report": "docs/verification/selected-case-images-audit.json"
   }
 }
