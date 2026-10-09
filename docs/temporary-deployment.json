@@ -1,0 +1,35 @@
+{
+  "deployed_at": "2026-10-02T13:20:03.545402+00:00",
+  "url": "http://23.251.34.150:8080/zh/",
+  "service": "banda-space-preview",
+  "release_directory": "/opt/banda-space-preview/releases/r17-20261002-131430",
+  "webroot": "/opt/banda-space-preview/releases/r17-20261002-131430/site",
+  "server_config": "/opt/banda-space-preview/releases/r17-20261002-131430/preview.Caddyfile",
+  "build": {
+    "commit": "unknown",
+    "builtAt": "2026-10-02T13:14:30.734Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "archive_sha256": "44376d9c752df696cf2ef01b4c113cc4b95059512aeea844c93bb35e846ec2ee",
+  "hosting": "独立 Caddy 容器；8080 HTTP；只读静态目录；非 root 进程；128 MB 内存上限；开机自动恢复；临时预览 noindex/nofollow。未修改现有 80/443 服务。",
+  "operations": {
+    "status": "ssh root@23.251.34.150 \"docker ps --filter name=banda-space-preview\"",
+    "logs": "ssh root@23.251.34.150 \"docker logs --tail 50 banda-space-preview\"",
+    "stop_preview": "ssh root@23.251.34.150 \"docker stop banda-space-preview\"",
+    "resume_preview": "ssh root@23.251.34.150 \"docker start banda-space-preview\""
+  },
+  "verification": {
+    "public_browser_scenarios": 8,
+    "browser_errors": 0,
+    "failed_requests": 0,
+    "missing_page_status": 404,
+    "source_and_server_sha256_match": true
+  },
+  "known_scope": [
+    "未绑定正式域名或配置 HTTPS。",
+    "咨询表单保留本地下载，不自动提交；电话、邮件和微信入口可用。",
+    "4S 资料版本差异尚待内容方确认，现有独立口径未修改。",
+    "隐私与 Cookie 内容仍为准备中；临时站不供搜索引擎收录。"
+  ]
+}

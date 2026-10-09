@@ -1,0 +1,32 @@
+{
+  "sourceCodes": 3,
+  "results": [
+    {
+      "contact": "wang",
+      "decoded": true,
+      "matchesOriginal": true,
+      "size": [
+        463,
+        463
+      ]
+    },
+    {
+      "contact": "huang",
+      "decoded": true,
+      "matchesOriginal": true,
+      "size": [
+        478,
+        478
+      ]
+    },
+    {
+      "contact": "tang",
+      "decoded": true,
+      "matchesOriginal": true,
+      "size": [
+        470,
+        470
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+/* Local, content-subset Noto Sans SC variable font. License: assets/fonts/OFL-NotoSansSC.txt. */
+@font-face {
+  font-family: "Banda Sans";
+  src: url("/assets/fonts/noto-sans-sc-site.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}

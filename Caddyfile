@@ -1,0 +1,15 @@
+# 本地预览容器（bd-space-preview）配置
+# 关键：HTML 与 version.json 必须 no-cache，否则浏览器启发式缓存会让用户拿到旧版本页面
+# （表现为「改了没生效」「轮播不动」等假象）；/_astro/ 带内容哈希可长缓存。
+:80 {
+	root * /usr/share/caddy
+	file_server
+
+	@fresh path *.html *.json /
+	@freshDir path_regexp dir /$
+	header @fresh Cache-Control "no-cache"
+	header @freshDir Cache-Control "no-cache"
+
+	@hashed path /_astro/*
+	header @hashed Cache-Control "public, max-age=2592000, immutable"
+}

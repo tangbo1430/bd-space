@@ -1,0 +1,56 @@
+---
+import EditorialImage from "./EditorialImage.astro";
+import GalleryImage from "./GalleryImage.astro";
+interface Props {
+  base: string;
+  alt: string;
+  caption: string;
+  meta: string;
+  galleryGroup?: string;
+  mode?: "cover" | "caption";
+}
+const {
+  base,
+  alt,
+  caption,
+  meta,
+  galleryGroup,
+  mode = "caption",
+} = Astro.props;
+---
+
+<figure
+  class:list={[
+    "page-visual",
+    { "product-detail-visual": galleryGroup, "cover-visual": mode === "cover" },
+  ]}
+>
+  <div class="page-visual-frame">
+    {galleryGroup ? (
+      <GalleryImage
+        base={base}
+        alt={alt}
+        caption={caption}
+        group={galleryGroup}
+        eager
+      />
+    ) : (
+      <EditorialImage base={base} alt={alt} eager />
+    )}
+  </div>
+  {mode === "cover" ? (
+    <figcaption class="cover-body ed-wrap">
+      <span class="eyebrow">{meta}</span>
+      <slot name="title" />
+      <slot name="description" />
+      <div class="cover-actions">
+        <slot name="actions" />
+      </div>
+    </figcaption>
+  ) : (
+    <figcaption class="page-visual-caption">
+      <span>{caption}</span>
+      <span class="page-visual-meta">{meta}</span>
+    </figcaption>
+  )}
+</figure>

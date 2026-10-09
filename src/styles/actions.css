@@ -1,0 +1,114 @@
+/* One action system. Context changes contrast, never geometry or behavior. */
+:root {
+  --action-radius: 2px;
+  --action-fill: #18221e;
+  --action-ink: #fff;
+  --action-hover: #30473b;
+  --action-pressed: #0b0f0e;
+  --action-text: #18221e;
+  --action-rule: #18221e60;
+  --action-focus: #007963;
+}
+:is(.editorial-hero, .cover-visual, .project-cta, .living-section, .drawer),
+.gnb:not(.gnb-solid):not(.scrolled) {
+  --action-fill: #f5f6f4;
+  --action-ink: #18221e;
+  --action-hover: #e1eee6;
+  --action-pressed: #cfdfd5;
+  --action-text: #fff;
+  --action-rule: #ffffff60;
+  --action-focus: #fff;
+}
+.banda-editorial .action {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 12px;
+  min-height: 52px;
+  min-width: 152px;
+  padding: 14px 30px;
+  border: 1px solid transparent;
+  border-radius: var(--action-radius);
+  background: var(--action-fill);
+  color: var(--action-ink);
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.banda-editorial .action-secondary {
+  min-width: 0;
+  padding-inline: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--action-text);
+  font-weight: 400;
+}
+.banda-editorial .action-secondary:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 8px;
+  height: 1px;
+  background: var(--action-rule);
+  transition: background-color 0.2s;
+}
+.banda-editorial .action-compact {
+  min-width: 0;
+  min-height: 46px;
+  padding: 10px 24px;
+  font-size: 13px;
+}
+.banda-editorial .action:focus-visible {
+  outline: 2px solid var(--action-focus);
+  outline-offset: 6px;
+}
+@media (hover: hover) and (pointer: fine) {
+  .banda-editorial .action-primary:not(:disabled):hover {
+    background: var(--action-hover);
+  }
+  .banda-editorial .action-secondary:hover:after {
+    background: var(--action-text);
+  }
+}
+.banda-editorial .action-primary:not(:disabled):active {
+  background: var(--action-pressed);
+}
+.banda-editorial .action-secondary:active:after {
+  background: var(--action-text);
+}
+.banda-editorial .action:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.cover-actions,
+.btns,
+.catalog-actions {
+  align-items: center;
+  gap: 32px;
+}
+@media (max-width: 767px) {
+  .banda-editorial .action-primary {
+    min-width: 144px;
+    padding-inline: 26px;
+  }
+  .cover-actions,
+  .btns,
+  .catalog-actions {
+    gap: 26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .banda-editorial .action,
+  .banda-editorial .action:after {
+    transition: none;
+  }
+}

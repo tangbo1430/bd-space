@@ -1,71 +1,336 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PhImg from '../../../components/PhImg.astro';
-import ProductArt from '../../../components/ProductArt.astro';
-import { getCollection, render } from 'astro:content';
-
+import Icon from "../../../components/Icon.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import GalleryImage from "../../../components/GalleryImage.astro";
+import PhotoViewer from "../../../components/PhotoViewer.astro";
+import ProjectCTA from "../../../components/ProjectCTA.astro";
+import PageVisual from "../../../components/PageVisual.astro";
+import { getCollection } from "astro:content";
 export async function getStaticPaths() {
-  const products = await getCollection('products', ({ data }) => data.published);
-  return products.map((p) => ({ params: { slug: p.id }, props: { product: p } }));
+  const products = await getCollection(
+    "products",
+    ({ data }) => data.published,
+  );
+  return products.map((product) => ({
+    params: { slug: product.id },
+    props: { product },
+  }));
 }
-
 const { product } = Astro.props;
-const { Content } = await render(product);
+const descriptions: Record<
+  string,
+  { title: string; en: string; intro: string; hero?: string }
+> = {
+  bd8: {
+    title: "探索空间的不同组合。",
+    en: "MODULAR SPACE / BD8",
+    intro: "装配式空间产品。具体布局、配置与交付方案，需要结合项目进一步确认。",
+  },
+  bd9: {
+    title: "为不同需求，组合空间。",
+    en: "MODULAR SPACE / BD9",
+    intro: "装配式空间产品。具体布局、配置与交付方案，需要结合项目进一步确认。",
+  },
+  slab: {
+    title: "构筑空间的水平边界。",
+    en: "PRECAST / FLOOR SLAB",
+    intro: "预制楼板构件。规格、荷载与连接方式，按项目设计要求确认。",
+  },
+  wall: {
+    title: "用构件，组织建筑。",
+    en: "PRECAST / WALL PANEL",
+    intro: "预制墙板构件。尺寸、开洞与连接方式，按项目设计要求确认。",
+  },
+  stair: {
+    title: "连接空间，也连接日常。",
+    en: "PRECAST / STAIRCASE",
+    intro: "预制楼梯构件。踏步、尺寸与安装方式，按项目设计要求确认。",
+  },
+};
+const copy = product.data.listed
+  ? {
+      title: product.data.tagline,
+      en: product.data.enTag,
+      intro: product.data.description,
+      hero: product.data.heroBase,
+    }
+  : descriptions[product.id];
+const knownParams = product.data.params.filter(
+  (p: { value: string }) => !p.value.includes("待"),
+);
+const summaryParams = knownParams.filter((p) =>
+  ["建筑面积", "户型", "装运参考"].includes(p.label),
+);
+const isSpace = ["4s", "5s", "6s", "grayscale", "bd8", "bd9"].includes(
+  product.id,
+);
+const next = { "4s": "5s", "5s": "6s", "6s": "grayscale", grayscale: "4s" }[
+  product.id as "4s" | "5s" | "6s" | "grayscale"
+];
 ---
 
 <BaseLayout
   title={product.data.name}
-  description={`${product.data.name}——${product.data.tagline} 半打空间装配式混凝土构件产品。`}
+  description={`${product.data.name} — ${copy.title} ${copy.intro}`}
+  noindex={!product.data.listed}
   current="products"
-  headerStyle="overlay"
+  headerStyle={copy.hero ? "overlay" : "solid"}
 >
-  <section class="page-hero" style="height:70vh;min-height:480px" aria-label={`${product.data.name}首屏`}>
-    <PhImg g="dark-2" tag={`${product.data.detailImageId} · 产品实拍/应用（占位）`} onDark />
-    <div class="hero-copy">
-      <div class="en" style="color:rgba(255,255,255,.6)">Product Detail</div>
-      <h1>{product.data.name}</h1>
-      <p>{product.data.tagline}</p>
-    </div>
-  </section>
-
-  <div class="wrap">
-    <p class="crumb" style="padding-left:0;padding-right:0">
-      <a href="/zh/">HOME</a> / <a href="/zh/products/">PRODUCTS</a> / {product.data.name}
-    </p>
-
-    <div class="pd-body">
-      <div>
-        <div class="en">Exploded View</div>
-        <h2 style="margin:12px 0 22px">分解示意</h2>
-        <ProductArt slug={product.id} variant="exploded" />
-        <p style="font-size:13px;color:var(--ink-muted);margin-top:18px">{product.data.description}</p>
-      </div>
-      <div>
-        <div class="en">Parameters</div>
-        <h2 style="margin:12px 0 22px">技术参数</h2>
-        <table class="param-table">
-          <tbody>
-            {product.data.params.map((row) => (
-              <tr><td>{row.label}</td><td>{row.value}</td></tr>
-            ))}
-          </tbody>
-        </table>
-        <a class="btn btn-primary" href="/zh/contact/" style="margin-top:30px" data-track="consult_click">咨询该产品 <span class="arr">→</span></a>
-      </div>
-    </div>
-
-    {product.data.scenes.length > 0 && (
-      <div style="padding-bottom:60px">
-        <div class="en">Applications</div>
-        <h2 style="margin:12px 0 22px">应用场景</h2>
-        <ul style="list-style:none;display:grid;gap:10px;font-size:15px">
-          {product.data.scenes.map((s) => <li style="border-bottom:1px solid var(--line);padding:10px 4px">{s}</li>)}
-        </ul>
+  <div class="page-editorial">
+    {!copy.hero && (
+      <section class="page-opening ed-wrap">
+        <a class="eyebrow" href="/zh/products/">
+          <Icon name="chevron-left" /> 产品中心
+        </a>
+        <div class="page-heading">
+          <h1>{product.data.name}</h1>
+          <div>
+            <span class="eyebrow">{copy.en}</span>
+            <p style="margin-top:18px">{copy.title}</p>
+          </div>
+        </div>
+      </section>
+    )}
+    {copy.hero ? (
+      <PageVisual
+        mode="cover"
+        base={copy.hero}
+        alt={product.data.heroCaption ?? `${product.data.name}外观`}
+        galleryGroup={product.id}
+        caption={product.data.heroCaption ?? `${product.data.name} / 外观`}
+        meta="空间产品"
+      >
+        <h1 slot="title">{product.data.name}</h1>
+        <p slot="description">{copy.title}</p>
+        <Fragment slot="actions">
+          <a
+            class="action action-primary"
+            href={`/zh/contact/?product=${product.id}`}
+          >
+            咨询该产品
+          </a>
+          <a class="action action-secondary" href="/zh/products/">
+            全部产品
+          </a>
+        </Fragment>
+      </PageVisual>
+    ) : (
+      <div class="ed-wrap">
+        <div class="product-drawing">
+          <svg viewBox="0 0 700 330" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M160 240 380 290 580 165 360 115zM160 240V100L360 25l220 55v85M160 100l220 50 200-70M380 150v140M260 72v191M460 109v131M190 132l50 12v82l-50-12zM405 158l53-32v72l-53 33zM494 105l54-21v70l-54 33z" />
+              <path
+                d="M80 285h530M120 50v210"
+                stroke-dasharray="4 6"
+                opacity=".3"
+              />
+            </g>
+          </svg>
+          <p>产品图与技术资料正在整理</p>
+          <span class="eyebrow">{copy.en}</span>
+        </div>
       </div>
     )}
-
-    <div class="legal" style="max-width:none;padding:0 0 110px">
-      <Content />
-    </div>
+    {product.data.listed && (
+      <nav class="product-jump ed-wrap" aria-label="产品详情章节">
+        {product.data.designGallery.length > 0 && (
+          <a href="#spaces">空间体验</a>
+        )}
+        <a href="#specifications">产品参数</a>
+        {product.data.gallery.length > 0 && (
+          <a href="#construction">实拍与构造</a>
+        )}
+        {product.data.diagrams.length > 0 && (
+          <a href="#diagrams">{product.data.diagramLabel}</a>
+        )}
+      </nav>
+    )}
+    <section class="ed-wrap ed-section">
+      <div class="about-statement">
+        <div class="rv">
+          <span class="eyebrow">01 / THE IDEA</span>
+          <h2 style="margin-top:25px">{copy.title}</h2>
+        </div>
+        <div class="rv">
+          <p style="margin-top:0">{copy.intro}</p>
+          {summaryParams.length > 0 && (
+            <dl class="product-summary">
+              {summaryParams.map((p) => (
+                <div>
+                  <dt>{p.label}</dt>
+                  <dd>{p.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+          <p>
+            {isSpace
+              ? "我们将空间与建造视为一个整体。模块、构件与现场连接，共同构成建筑的表达。每个项目的具体配置，都需要结合用途、场地与设计条件讨论。"
+              : "从工厂预制到现场安装，构件的设计与制造需要相互配合。我们根据实际项目讨论材料、尺寸、连接节点与交付方式。"}
+          </p>
+          <a
+            class="text-link action action-secondary"
+            style="margin-top:25px"
+            href={`/zh/contact/?product=${product.id}`}
+            data-track="consult_click"
+          >
+            咨询该产品
+          </a>
+        </div>
+      </div>
+    </section>
+    {product.data.designGallery.length > 0 && (
+      <section
+        class="ed-wrap ed-section product-design"
+        id="spaces"
+        aria-labelledby="design-heading"
+      >
+        <div class="section-label rv">
+          <span>空间体验</span>
+          <span>{product.data.name}</span>
+        </div>
+        <div class="section-heading rv">
+          <h2 id="design-heading">
+            <span>生活，</span>
+            <span>在空间中展开。</span>
+          </h2>
+          <p>{product.data.designNote}</p>
+        </div>
+        <div class="product-design-grid">
+          {product.data.designGallery.map((photo) => (
+            <figure class="rv">
+              <GalleryImage
+                {...photo}
+                alt={photo.caption}
+                group={product.id}
+                fit="contain"
+                sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1600px) 45vw, 700px"
+              />
+              <figcaption>{photo.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+    )}
+    <section class="product-section ed-section" id="specifications">
+      <div class="ed-wrap">
+        <div class="section-label rv">
+          <span>PROJECT SPECIFICATION</span>
+          <span>规格与项目配置</span>
+        </div>
+        <div class="specification-grid">
+          <div class="rv">
+            <h2>
+              从项目需求，
+              <br />
+              确定空间细节。
+            </h2>
+            <p>
+              规格尺寸、结构配置与交付方式，
+              <br />
+              以项目沟通后确认的技术资料为准。
+            </p>
+          </div>
+          <div class="specification-table rv">
+            {knownParams.length > 0
+              ? knownParams.map((p: { label: string; value: string }) => (
+                  <div>
+                    <span>{p.label}</span>
+                    <span>{p.value}</span>
+                  </div>
+                ))
+              : product.data.params.map((p: { label: string }) => (
+                  <div>
+                    <span>{p.label}</span>
+                    <span>按项目确认</span>
+                  </div>
+                ))}
+            <p class="specification-note">{product.data.specNote}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    {product.data.gallery.length > 0 && (
+      <section class="ed-wrap ed-section" id="construction">
+        <div class="section-label rv">
+          <span>实拍与构造</span>
+          <span>{product.data.name}</span>
+        </div>
+        <div class="section-heading rv">
+          <h2>{product.data.galleryTitle}</h2>
+          {product.data.galleryIntro && <p>{product.data.galleryIntro}</p>}
+        </div>
+        <div class="detail-gallery material-detail-gallery">
+          {product.data.gallery.map(
+            (photo: { base: string; caption: string }) => (
+              <figure class="rv">
+                <GalleryImage
+                  base={photo.base}
+                  alt={photo.caption}
+                  group={product.id}
+                  sizes="(max-width: 767px) 100vw, 50vw"
+                />
+                <figcaption>{photo.caption}</figcaption>
+              </figure>
+            ),
+          )}
+        </div>
+      </section>
+    )}
+    {product.data.diagrams.length > 0 && (
+      <section
+        class="ed-wrap ed-section product-diagrams"
+        id="diagrams"
+        aria-labelledby="diagram-heading"
+      >
+        <div class="section-label rv">
+          <span>{product.data.diagramLabel}</span>
+          <span>{product.data.name}</span>
+        </div>
+        <div class="section-heading rv">
+          <h2 id="diagram-heading">
+            {product.data.diagramTitle.split("，").map((part, index, parts) => (
+              <span>
+                {part}
+                {index < parts.length - 1 ? "，" : ""}
+              </span>
+            ))}
+          </h2>
+          <p>{product.data.diagramIntro}</p>
+        </div>
+        {product.data.diagrams.map((diagram) => (
+          <figure class="technical-figure rv">
+            <GalleryImage
+              {...diagram}
+              alt={diagram.caption}
+              group={`${product.id}-diagrams`}
+              fit="contain"
+              sizes="(max-width: 767px) calc(100vw - 48px), 1100px"
+            />
+            <figcaption>
+              {diagram.caption}
+              <span>点击放大，查看完整标注</span>
+            </figcaption>
+          </figure>
+        ))}
+      </section>
+    )}
+    {next && (
+      <div class="ed-wrap next-product">
+        <a
+          class="text-link action action-secondary"
+          href={`/zh/products/${next}/`}
+        >
+          下一款空间产品 /{" "}
+          {next === "grayscale" ? "灰度空间" : `半打 ${next.toUpperCase()}`}
+        </a>
+        <a class="text-link action action-secondary" href="/zh/products/">
+          返回产品中心
+        </a>
+      </div>
+    )}
+    <ProjectCTA />
+    {copy.hero && <PhotoViewer />}
   </div>
 </BaseLayout>

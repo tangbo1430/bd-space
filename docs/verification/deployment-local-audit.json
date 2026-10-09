@@ -1,0 +1,196 @@
+{
+  "base": "http://localhost:4322",
+  "checkedAt": "2026-10-02T13:15:13.001Z",
+  "errors": [],
+  "failedRequests": [],
+  "pages": [
+    {
+      "route": "/zh/",
+      "width": 375,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/"
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 375,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/products/4s/"
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 375,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/products/grayscale/"
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 375,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/contact/"
+    },
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/"
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/products/4s/"
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/products/grayscale/"
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1440,
+      "status": 200,
+      "canonical": "http://23.251.34.150:8080/zh/contact/"
+    }
+  ],
+  "gallery": {
+    "requests": [
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-hero.webp",
+        "bytes": 3270
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-design-front.webp",
+        "bytes": 3588
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-design-living.webp",
+        "bytes": 2738
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-design-loft.webp",
+        "bytes": 3788
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-design-kitchen.webp",
+        "bytes": 1698
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-design-bedroom.webp",
+        "bytes": 2894
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-design-bathroom.webp",
+        "bytes": 1808
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-dusk.webp",
+        "bytes": 2512
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-detail-wall.webp",
+        "bytes": 1690
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-module.webp",
+        "bytes": 3384
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-mold.webp",
+        "bytes": 2616
+      },
+      {
+        "url": "http://localhost:4322/assets/img/product-4s-hero.webp",
+        "bytes": 360700
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-panels.webp",
+        "bytes": 2230
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-roof.webp",
+        "bytes": 3702
+      },
+      {
+        "url": "http://localhost:4322/assets/thumbs/product-4s-interior.webp",
+        "bytes": 3468
+      }
+    ],
+    "thumbnails": [
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-hero.webp",
+        "width": 160,
+        "height": 90
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-design-front.webp",
+        "width": 160,
+        "height": 108
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-design-living.webp",
+        "width": 160,
+        "height": 106
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-design-loft.webp",
+        "width": 160,
+        "height": 107
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-design-bedroom.webp",
+        "width": 160,
+        "height": 107
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-design-kitchen.webp",
+        "width": 160,
+        "height": 108
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-design-bathroom.webp",
+        "width": 160,
+        "height": 109
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-dusk.webp",
+        "width": 160,
+        "height": 90
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-detail-wall.webp",
+        "width": 160,
+        "height": 90
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-module.webp",
+        "width": 160,
+        "height": 120
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-mold.webp",
+        "width": 160,
+        "height": 96
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-panels.webp",
+        "width": 109,
+        "height": 160
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-roof.webp",
+        "width": 160,
+        "height": 120
+      },
+      {
+        "src": "http://localhost:4322/assets/thumbs/product-4s-interior.webp",
+        "width": 160,
+        "height": 90
+      }
+    ],
+    "bytes": 400086
+  },
+  "diagram": {
+    "focalPoint": 0.23955296404275997
+  }
+}

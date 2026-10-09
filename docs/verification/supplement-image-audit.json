@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "renderings": 12,
+  "losslessDiagrams": 2,
+  "checks": [
+    {
+      "kind": "render",
+      "page": 4,
+      "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 8,
+      "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 7,
+      "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 9,
+      "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 10,
+      "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 12,
+      "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "diagram",
+      "page": 5,
+      "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+      "files": 2,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": true
+    },
+    {
+      "kind": "render",
+      "page": 2,
+      "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 4,
+      "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 8,
+      "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 9,
+      "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 10,
+      "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "render",
+      "page": 11,
+      "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+      "files": 3,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": false
+    },
+    {
+      "kind": "diagram",
+      "page": 5,
+      "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+      "files": 2,
+      "nativeOrSmaller": true,
+      "ratioPreserved": true,
+      "pixelsMatchOriginal": true
+    }
+  ]
+}

@@ -21,7 +21,11 @@ export type TrackEvent =
   | 'case_view'            // 案例详情访问
   | 'form_submit_attempt'
   | 'form_submit_success'  // 仅服务端确认后触发
-  | 'form_submit_error';
+  | 'form_submit_error'
+  // v0.4 FR-32 新增事件
+  | 'banner_prev' | 'banner_next' | 'banner_dot' | 'banner_cta'
+  | 'about_sub_click'
+  | 'job_filter' | 'job_expand' | 'apply_click';
 
 /** 客户端调用；未启用统计时静默 no-op。 */
 export function track(event: TrackEvent, props?: Record<string, string>): void {

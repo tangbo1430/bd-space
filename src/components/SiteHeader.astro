@@ -1,38 +1,220 @@
 ---
-import { NAV_ITEMS, EN_COMING_SOON } from '../lib/routes';
+import Icon from "./Icon.astro";
+import BrandLogo from "./BrandLogo.astro";
+import { NAV_ITEMS, ABOUT_SUB_ITEMS, EN_COMING_SOON } from "../lib/routes";
 
 interface Props {
   current: string;
-  style: 'overlay' | 'solid';
-  lang: 'zh-CN' | 'en';
+  style: "overlay" | "solid";
+  lang: "zh-CN" | "en";
+  /** 当前关于子项 key（about / investors / careers），来自 currentAboutSub() */
+  aboutSub?: string | null;
 }
-const { current, style, lang } = Astro.props;
+const { current, style, lang, aboutSub = null } = Astro.props;
+// 移动抽屉：当前路由属 about 组时子导航默认展开（AC-41）
+const aboutGroupActive = aboutSub !== null;
 ---
 
-<header class:list={['gnb', { 'gnb-solid': style === 'solid' }]} data-gnb>
-  <a class="logo" href="/zh/">半打<b>空间</b><span class="logo-en">BANDA SPACE</span></a>
+<header class:list={["gnb", { "gnb-solid": style === "solid" }]} data-gnb>
+  {/* v1.4 M2：原创统一线性图标（1.5px 描边、圆角接头、40×40 视框，symbol 复用） */}
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ic-about" viewBox="0 0 40 40">
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      >
+        <circle cx="20" cy="20" r="13"></circle>
+        <line x1="20" y1="17" x2="20" y2="27"></line>
+        <circle
+          cx="20"
+          cy="12.5"
+          r="1.1"
+          fill="currentColor"
+          stroke="none"
+        ></circle>
+      </g>
+    </symbol>
+    <symbol id="ic-ir" viewBox="0 0 40 40">
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="8,28 16,20 22,24 31,13"></polyline>
+        <polyline points="24,13 31,13 31,20"></polyline>
+        <line x1="8" y1="33" x2="32" y2="33"></line>
+      </g>
+    </symbol>
+    <symbol id="ic-career" viewBox="0 0 40 40">
+      <g
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+      >
+        <circle cx="20" cy="13" r="5.5"></circle>
+        <path d="M9,31 C9,24 14,21.5 20,21.5 C26,21.5 31,24 31,31"></path>
+        <line x1="13" y1="34.5" x2="27" y2="34.5"></line>
+      </g>
+    </symbol>
+  </svg>
+  <a class="logo" href="/zh/" aria-label="半打空间首页">
+    <BrandLogo />
+  </a>
   <nav aria-label="主导航">
-    {NAV_ITEMS.map((item) => (
-      <a href={item.href} class:list={[{ cur: item.key === current }]} aria-current={item.key === current ? 'page' : undefined}>{item.label}</a>
-    ))}
+    {NAV_ITEMS.map((item) =>
+      item.key === "about" ? (
+        <span class="has-sub" data-subnav>
+          {/* 一级为纯链接：点击/Enter 唯一行为=进入公司介绍，无展开语义（v0.4.1 N1） */}
+          <a
+            href={item.href}
+            class:list={["sub-trigger", { cur: item.key === current }]}
+            aria-current={item.key === current ? "page" : undefined}
+            data-sub-trigger
+          >
+            {item.label}
+          </a>
+          {/* v1.4 Mega Subnav：100vw 全宽面板内 1280 容器三列均布；普通链接集合，非 menu（N5） */}
+          <span class="sub-panel" data-sub-panel aria-label="关于我们子栏目">
+            <span class="sub-panel-card">
+              <span class="mega-in">
+                {ABOUT_SUB_ITEMS.map((sub) => (
+                  <a
+                    href={sub.href}
+                    class:list={["mega-col", { cur: sub.key === aboutSub }]}
+                    aria-current={sub.key === aboutSub ? "page" : undefined}
+                    data-track="about_sub_click"
+                  >
+                    <svg class="mega-ic" aria-hidden="true">
+                      <use href={`#${sub.icon}`} />
+                    </svg>
+                    <span class="mega-t">
+                      <b>{sub.label}</b>
+                      <span class="mega-en">{sub.en}</span>
+                    </span>
+                  </a>
+                ))}
+              </span>
+            </span>
+          </span>
+        </span>
+      ) : (
+        <a
+          href={item.href}
+          class:list={[{ cur: item.key === current }]}
+          aria-current={item.key === current ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      ),
+    )}
   </nav>
   <div class="right">
-    {lang === 'zh-CN' && (
-      <button type="button" class="lang" data-lang-toggle aria-label="切换语言（英文版筹备中）">中&nbsp;|&nbsp;EN</button>
+    {lang === "zh-CN" && (
+      <button
+        type="button"
+        class="lang"
+        data-lang-toggle
+        aria-label="切换语言（英文版筹备中）"
+      >
+        中&nbsp;|&nbsp;EN
+      </button>
     )}
-    <a class="cta-phone" href="/zh/contact/" data-track="consult_click">☎&nbsp;预约咨询</a>
   </div>
-  <button type="button" class="burger" data-drawer-open aria-label="打开导航菜单" aria-expanded="false">
-    <i></i><i></i>
+  <button
+    type="button"
+    class="burger"
+    data-drawer-open
+    aria-label="打开导航菜单"
+    aria-expanded="false"
+  >
+    <i></i>
+    <i></i>
   </button>
 </header>
 
-<div class="drawer" data-drawer aria-hidden="true">
-  <button type="button" class="p-close" data-drawer-close aria-label="关闭导航菜单">×</button>
-  {NAV_ITEMS.map((item) => (
-    <a class="drawer-link" href={item.href}>{item.label}</a>
-  ))}
-  <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">☎ 预约咨询</a>
+<div
+  class="drawer"
+  data-drawer
+  aria-hidden="true"
+  role="dialog"
+  aria-modal="true"
+  aria-label="导航菜单"
+  inert
+>
+  <button
+    type="button"
+    class="p-close"
+    data-drawer-close
+    aria-label="关闭导航菜单"
+  >
+    <Icon name="close" />
+  </button>
+  {NAV_ITEMS.map((item) =>
+    item.key === "about" ? (
+      /* 文字链接与展开按钮为两个独立控件（AC-40）；无 JS 时子项平铺直链 */
+      <div
+        class="p-sub"
+        data-subnav-mobile
+        data-default-open={String(aboutGroupActive)}
+      >
+        <div class="p-sub-row">
+          <a class="p-sub-link" href={item.href}>
+            {item.label}
+          </a>
+          <button
+            type="button"
+            class="p-sub-btn"
+            aria-expanded={
+              aboutGroupActive ? ("true" as const) : ("false" as const)
+            }
+            aria-controls="about-sub-items"
+            data-sub-trigger-mobile="true"
+            aria-label={
+              aboutGroupActive ? "收起关于我们子导航" : "展开关于我们子导航"
+            }
+          >
+            <span class="chev" aria-hidden="true">
+              <svg viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2.5 4.5 6 8l3.5-3.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div class="p-sub-items" id="about-sub-items">
+          {ABOUT_SUB_ITEMS.map((sub) => (
+            <a
+              href={sub.href}
+              class:list={[{ cur: sub.key === aboutSub }]}
+              aria-current={sub.key === aboutSub ? "page" : undefined}
+              data-track="about_sub_click"
+            >
+              <svg class="p-ic" aria-hidden="true">
+                <use href={`#${sub.icon}`} />
+              </svg>
+              {sub.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    ) : (
+      <a class="drawer-link" href={item.href}>
+        {item.label}
+      </a>
+    ),
+  )}
 </div>
 
-<div class="lang-toast" data-lang-toast role="status">{EN_COMING_SOON}</div>
+<div class="lang-toast" data-lang-toast role="status">
+  {EN_COMING_SOON}
+</div>

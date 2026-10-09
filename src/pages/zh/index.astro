@@ -1,243 +1,427 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import FloatRail from '../../components/FloatRail.astro';
-import PhImg from '../../components/PhImg.astro';
-import ConsultForm from '../../components/ConsultForm.astro';
-import ProductArt from '../../components/ProductArt.astro';
-import { site, PLACEHOLDER } from '../../lib/site';
-import { getCollection } from 'astro:content';
-
-const products = (await getCollection('products', ({ data }) => data.published))
-  .sort((a, b) => a.data.order - b.data.order);
-
-const stats = [
-  { num: '——', unit: '㎡', label: `年产能${PLACEHOLDER}` },
-  { num: '——', unit: '项', label: `服务项目${PLACEHOLDER}` },
-  { num: '——', unit: '个', label: `覆盖区域${PLACEHOLDER}` },
-  { num: '——', unit: '项', label: `专利与资质${PLACEHOLDER}` },
+import Icon from "../../components/Icon.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialImage from "../../components/EditorialImage.astro";
+import ProjectCTA from "../../components/ProjectCTA.astro";
+import BuildingSystems from "../../components/BuildingSystems.astro";
+import projects from "../../data/projects.json";
+import { company } from "../../data/company";
+const selectedProjects = ["cayman", "changzhou"].map((id) =>
+  projects.find((p) => p.id === id)!,
+);
+const slides = [
+  {
+    id: "6s",
+    base: "product-6s-hero",
+    name: "半打 6S",
+    note: "把生活，展开得更从容。",
+  },
+  {
+    id: "4s",
+    base: "product-4s-dusk",
+    name: "半打 4S",
+    note: "自然之中，安放日常。",
+  },
+  {
+    id: "5s",
+    base: "product-5s-hero",
+    name: "半打 5S",
+    note: "为相聚，留出更多空间。",
+  },
 ];
-
-const quals = [
-  { name: `${PLACEHOLDER}资质/认证名称 01`, no: 'CERT-NO.【待提供】' },
-  { name: `${PLACEHOLDER}资质/认证名称 02`, no: 'CERT-NO.【待提供】' },
-  { name: `${PLACEHOLDER}体系认证 03`, no: 'CERT-NO.【待提供】' },
-  { name: `${PLACEHOLDER}专利/荣誉 04`, no: 'NO.【待提供】' },
+import { getListedProducts } from "../../lib/catalog";
+const products = (await getListedProducts()).map((p) => ({
+  ...p,
+  desc: `${p.desc} ${p.area} · ${p.layout}`,
+}));
+const steps = [
+  {
+    title: "设计，把想法落到细节",
+    en: "DESIGN",
+    text: "从场地与使用需求出发，梳理空间、结构与模块之间的关系。",
+    base: "flow-step01-mold",
+    mobile: false,
+  },
+  {
+    title: "制造，让空间在工厂成形",
+    en: "MANUFACTURE",
+    text: "混凝土构件与空间模块在产线上制作，让建造过程有序展开。",
+    base: "flow-factory-module",
+    mobile: true,
+  },
+  {
+    title: "交付，让建筑抵达生活",
+    en: "DELIVER",
+    text: "通过运输、吊装与现场拼装，让完成的模块成为可以使用的空间。",
+    base: "flow-step06-crane-panel",
+    mobile: true,
+  },
 ];
 ---
 
 <BaseLayout
-  title="首页"
-  description="半打空间——装配式混凝土空间产品的研发、制造与交付。了解我们的工厂能力、产品中心、工程案例与资质。"
+  title="让空间，回归生活"
+  description="半打空间，装配式混凝土空间的设计与制造者。探索模块化住宅、真实项目与从工厂到现场的建造过程。"
   current="home"
   headerStyle="overlay"
 >
-  <FloatRail />
-
-  <!-- S1 首屏 Hero：100dvh 三帧轮播 -->
-  <section class="hero" data-carousel aria-label="首屏轮播">
-    <div class="slide on" data-slide>
-      <div class="ph ph-1">
-        <svg width="900" height="520" viewBox="0 0 900 520" fill="none" style="opacity:.55" aria-hidden="true">
-          <g stroke="rgba(255,255,255,.55)" stroke-width="1">
-            <path d="M180 400 L450 300 L720 400 L450 500 Z" />
-            <path d="M250 380 L450 305 L650 380 L650 250 L450 175 L250 250 Z" />
-            <path d="M250 250 L450 325 L650 250" />
-            <path d="M450 325 L450 175" />
-            <path d="M330 275 L330 220 M570 275 L570 220" />
-          </g>
-          <g fill="#1FA87A">
-            <circle cx="250" cy="250" r="3.5" /><circle cx="650" cy="250" r="3.5" />
-            <circle cx="450" cy="175" r="3.5" /><circle cx="450" cy="325" r="3.5" />
-          </g>
-          <g fill="rgba(31,168,122,.18)">
-            <circle cx="250" cy="250" r="12" /><circle cx="650" cy="250" r="12" />
-            <circle cx="450" cy="175" r="12" /><circle cx="450" cy="325" r="12" />
-          </g>
-        </svg>
-        <span class="tag">IMG-HERO-1 · 2560×1440 · 工厂全景（占位）</span>
-      </div>
-      <div class="hero-copy">
-        <div class="en" style="color:rgba(255,255,255,.6)">Prefabricated Concrete Space</div>
-        <h1>装配式混凝土<br />空间的制造者</h1>
-        <p>以工业化方式建造空间——从构件到建筑，半打空间提供装配式混凝土产品的研发、制造与交付。【示例文案，待确认】</p>
-        <div class="btns">
-          <a class="btn btn-primary" href="#contact" data-track="consult_click">预约咨询 <span class="arr">→</span></a>
-          <a class="btn btn-ghost on-dark" href="/zh/products/">了解产品 <span class="arr">→</span></a>
+  <div class="studio">
+    <section
+      class="hero editorial-hero"
+      data-carousel
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="半打空间产品展示"
+      tabindex="0"
+    >
+      <p class="sr-only" data-banner-live aria-live="polite">
+        第 1 张，共 3 张
+      </p>
+      {slides.map((s, i) => (
+        <div
+          class:list={["slide", { on: i === 0 }]}
+          data-slide
+          aria-roledescription="slide"
+          aria-label={`第 ${i + 1} 张，共 3 张`}
+        >
+          <EditorialImage
+            base={s.base}
+            alt={`${s.name}住宅外观 / ${s.id === "4s" ? "实拍" : "效果图"}`}
+            eager={i === 0}
+          />
+          <div class="hero-bottom">
+            <a
+              class="hero-explore"
+              href={`/zh/products/${s.id}/`}
+              tabindex={i === 0 ? 0 : -1}
+            >
+              <span class="hero-model">{s.name}</span>
+              <span class="hero-model-note">{s.note}</span>
+              <span class="hero-product-action">
+                查看产品
+                <Icon name="chevron-right" />
+              </span>
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="slide" data-slide>
-      <div class="ph ph-2"><span class="tag">IMG-HERO-2 · 2560×1440 · 构件堆场/吊装（占位）</span></div>
-      <div class="hero-copy">
-        <div class="en" style="color:rgba(255,255,255,.6)">Factory Capacity</div>
-        <h1>从产线，到工地</h1>
-        <p>标准化产线与严格品控，让每一个构件可追溯、可交付。【示例文案，待确认】</p>
-        <div class="btns"><a class="btn btn-primary" href="/zh/about/">走进工厂 <span class="arr">→</span></a></div>
-      </div>
-    </div>
-    <div class="slide" data-slide>
-      <div class="ph ph-3"><span class="tag">IMG-HERO-3 · 2560×1440 · 建成项目（占位）</span></div>
-      <div class="hero-copy">
-        <div class="en" style="color:rgba(255,255,255,.6)">Projects</div>
-        <h1>空间，已被使用</h1>
-        <p>服务多类工程场景的装配式解决方案。【示例文案，待确认】</p>
-        <div class="btns"><a class="btn btn-primary" href="/zh/cases/">查看案例 <span class="arr">→</span></a></div>
-      </div>
-    </div>
-    <div class="dots" role="tablist" aria-label="轮播切换">
-      <button class="on" data-dot aria-label="第 1 帧"></button>
-      <button data-dot aria-label="第 2 帧"></button>
-      <button data-dot aria-label="第 3 帧"></button>
-    </div>
-    <div class="scroll-hint">SCROLL</div>
-  </section>
-
-  <!-- S2 数据带 -->
-  <section class="stats" aria-label="关键数据">
-    <div class="wrap grid">
-      {stats.map((s) => (
-        <div class="stat rv"><div class="num">{s.num}<em>{s.unit}</em></div><p>{s.label}</p></div>
       ))}
-    </div>
-  </section>
-
-  <!-- S3 关于半打（分屏） -->
-  <section class="sec" style="padding-left:0;padding-right:0" aria-label="关于半打">
-    <div class="split">
-      <div class="imgbox rv">
-        <PhImg g="factory" tag="IMG-ABOUT-1 · 2000×1300 · 厂房/产线（占位）" />
-      </div>
-      <div class="txt rv">
-        <div class="en">About Banda</div>
-        <h2>把建造，<br />变成制造</h2>
-        <p>半打空间专注于装配式混凝土空间产品。我们相信建筑可以像工业产品一样被设计、制造与交付——更短的工期、更稳定的品质、更少的现场不确定性。【示例文案，待确认】</p>
-        <a class="btn btn-ghost" href="/zh/about/">走进半打 <span class="arr">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- S4 产品中心（深底叙事区 + 原创线稿分解） -->
-  <section class="dark-sec" aria-label="产品中心">
-    <div class="wrap">
-      <div class="dark-grid">
-        <div class="dark-copy rv">
-          <div class="en on-dark">Products</div>
-          <h2>模块，即空间</h2>
-          <p>每一类构件都是空间的一个可组合单元。分解它们，你会看到半打对结构与工艺的理解。【示例文案，待确认】</p>
-          <a class="btn btn-primary" href="/zh/products/">产品中心 <span class="arr">→</span></a>
-        </div>
-        <div class="rv">
-          <svg viewBox="0 0 640 420" width="100%" fill="none" role="img" aria-label="预制构件分解示意（原创线稿占位）">
-            <g stroke="#5a6660" stroke-width="1">
-              <path d="M170 96 L320 50 L470 96 L320 142 Z" />
-              <path d="M170 96 L170 108 L320 154 L320 142" />
-              <path d="M470 96 L470 108 L320 154" />
-              <path d="M196 176 L240 190 L240 300 L196 286 Z" />
-              <path d="M444 176 L400 190 L400 300 L444 286 Z" />
-              <path d="M262 200 L320 184 L378 200 L378 296 L320 312 L262 296 Z" />
-              <path d="M262 200 L320 216 L378 200" />
-              <path d="M320 216 L320 312" />
-              <path d="M190 336 L320 296 L450 336 L320 376 Z" />
-              <path d="M190 336 L190 348 L320 388 L320 376" />
-              <path d="M450 336 L450 348 L320 388" />
-              <g stroke-dasharray="3 5" stroke="#3a4540">
-                <path d="M320 154 L320 184" /><path d="M240 240 L262 240" />
-                <path d="M400 240 L378 240" /><path d="M320 312 L320 296" />
-              </g>
-            </g>
-            <g fill="#1FA87A">
-              <circle cx="320" cy="50" r="3" /><circle cx="196" cy="176" r="3" />
-              <circle cx="444" cy="176" r="3" /><circle cx="320" cy="216" r="3" /><circle cx="320" cy="388" r="3" />
-            </g>
-            <g fill="rgba(31,168,122,.16)">
-              <circle cx="320" cy="50" r="11" /><circle cx="196" cy="176" r="11" />
-              <circle cx="444" cy="176" r="11" /><circle cx="320" cy="216" r="11" /><circle cx="320" cy="388" r="11" />
-            </g>
-            <text x="320" y="418" text-anchor="middle" fill="#5a6660" font-size="10" letter-spacing="3" font-family="Arial">ORIGINAL LINE-ART PLACEHOLDER · 预制构件分解示意（原创）</text>
-          </svg>
+      <div class="hero-intro ed-wrap">
+        <span class="eyebrow">装配式混凝土空间</span>
+        <h1>
+          让空间，
+          <br />
+          回归生活。
+        </h1>
+        <p>
+          在工厂建造，为生活而生。
+          <br />
+          连接设计、制造与交付，让建筑融入日常。
+        </p>
+        <div class="cover-actions">
+          <a class="action action-primary" href="/zh/products/">
+            探索产品
+          </a>
+          <a class="action action-secondary" href="/zh/contact/">
+            项目咨询
+          </a>
         </div>
       </div>
-      <div class="prod-list">
-        {products.map((p) => (
-          <a class="prod-item rv" href={`/zh/products/${p.id}/`}>
-            <span class="go" aria-hidden="true">↗</span>
-            <ProductArt slug={p.id} variant="icon" />
-            <h3>{p.data.name}</h3>
-            <p>{p.data.tagline}</p>
+      <div class="hero-controls">
+        <span class="sr-only">
+          当前照片 <span data-hero-current>01</span> / 03
+        </span>
+        <div class="hero-scenes" role="group" aria-label="选择住宅照片">
+          {slides.map((slide, index) => (
+            <button
+              type="button"
+              class:list={["hero-scene", { on: index === 0 }]}
+              data-dot={index}
+              aria-current={index === 0 ? "true" : "false"}
+              aria-label={`切换到第${index + 1}张：${slide.name}`}
+            >
+              <span class="scene-track" aria-hidden="true">
+                <span class="scene-progress" data-scene-progress></span>
+              </span>
+            </button>
+          ))}
+        </div>
+        <button
+          type="button"
+          class="hero-control hero-pause"
+          data-carousel-pause
+          aria-label="暂停自动播放"
+          aria-pressed="false"
+        >
+          <Icon name="pause" class="pause-icon" />
+          <Icon name="play" class="play-icon" />
+        </button>
+      </div>
+    </section>
+
+    <section
+      class="product-section ed-section"
+      aria-labelledby="products-heading"
+    >
+      <div class="ed-wrap">
+        <div class="section-label rv">
+          <span>空间产品</span>
+          <a href="/zh/products/">全部产品</a>
+        </div>
+        <div class="section-heading rv">
+          <h2 id="products-heading">
+            一个模块。
+            <br />
+            更多可能。
+          </h2>
+          <p>
+            一组空间产品，
+            <br />
+            回应不同的生活想象。
+          </p>
+        </div>
+        <div class="collection-grid" data-collection>
+          <div class="collection-stage rv">
+            {products.map((p, i) => (
+              <div
+                class:list={["collection-frame", { active: i === 0 }]}
+                data-collection-image={p.id}
+                aria-hidden={i !== 0}
+              >
+                <EditorialImage
+                  base={p.base}
+                  alt={p.imageCaption}
+                  sizes="(max-width: 767px) 100vw, 65vw"
+                />
+              </div>
+            ))}
+          </div>
+          <div class="collection-list rv">
+            <div
+              class="collection-tabs"
+              role="tablist"
+              aria-label="选择空间产品"
+            >
+              {products.map((p, i) => (
+                <button
+                  type="button"
+                  class:list={["collection-tab", { active: i === 0 }]}
+                  role="tab"
+                  id={`tab-${p.id}`}
+                  aria-selected={i === 0}
+                  aria-controls="collection-info"
+                  tabindex={i === 0 ? 0 : -1}
+                  data-product-tab={p.id}
+                >
+                  <span>{p.name}</span>
+                  <span class="selection-mark" aria-hidden="true"></span>
+                </button>
+              ))}
+            </div>
+            <div
+              id="collection-info"
+              class="collection-info"
+              role="tabpanel"
+              aria-labelledby="tab-4s"
+              tabindex="0"
+            >
+              <p data-product-description>{products[0].desc}</p>
+              <a
+                class="text-link action action-secondary"
+                data-product-link
+                href="/zh/products/4s/"
+              >
+                探索产品
+              </a>
+            </div>
+            <script
+              type="application/json"
+              data-products-json
+              set:html={JSON.stringify(
+                products.map(({ id, desc }) => ({ id, desc })),
+              )}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-company ed-wrap" aria-label="关于半打空间">
+      <span class="eyebrow">设计与制造，在同一个系统里。</span>
+      <div>
+        <p>{company.intro}</p>
+        <a class="action action-secondary" href="/zh/about/">
+          认识半打空间
+        </a>
+      </div>
+    </section>
+
+    <section
+      class="systems-section ed-section"
+      aria-labelledby="systems-heading"
+    >
+      <div class="ed-wrap">
+        <div class="section-heading rv">
+          <div>
+            <span class="eyebrow">建造体系</span>
+            <h2 id="systems-heading">
+              构件有序，
+              <br />
+              空间自由。
+            </h2>
+          </div>
+          <p>
+            从一块混凝土，到一种生活方式。
+            <br />
+            以系统思考建筑，让设计在工厂中成形。
+          </p>
+        </div>
+        <BuildingSystems />
+      </div>
+    </section>
+
+    <section class="living-section" aria-labelledby="living-heading">
+      <EditorialImage
+        base="home-banner-60m-dining-02"
+        alt="木色屋顶与暖白墙面的模块住宅餐厅"
+        mobile={false}
+      />
+      <div class="living-copy ed-wrap">
+        <h2 class="rv" id="living-heading">
+          建筑有边界，
+          <br />
+          生活没有。
+        </h2>
+        <p class="rv">
+          光、空气、相聚的时刻。
+          <br />
+          空间的意义，始终在生活里。
+        </p>
+        <a
+          class="text-link light rv action action-secondary"
+          href="/zh/products/4s/"
+        >
+          走进半打空间
+        </a>
+      </div>
+    </section>
+
+    <section
+      class="cases-section ed-wrap ed-section"
+      aria-labelledby="cases-heading"
+    >
+      <div class="section-label rv">
+        <span>项目实践</span>
+        <a href="/zh/cases/">所有项目</a>
+      </div>
+      <div class="section-heading rv">
+        <h2 id="cases-heading">走向不同的风景。</h2>
+        <p>
+          从想象到现场，
+          <br />
+          让空间成为真实的日常。
+        </p>
+      </div>
+      <div class="selected-cases">
+        {selectedProjects.map((p, i) => (
+          <a
+            class:list={["case-card rv", { offset: i === 1 }]}
+            href={`/zh/cases/#${p.id}`}
+          >
+            <div class="case-image">
+              <EditorialImage
+                base={p.base}
+                alt={p.name}
+                sizes="(max-width: 767px) 100vw, 56vw"
+              />
+            </div>
+            <div class="case-caption">
+              <h3>{p.name}</h3>
+              <span>
+                {p.era} · {p.year} / {p.location}
+              </span>
+            </div>
           </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- S5 工程案例（错位双联，占位态不可点击——未获授权前不生成虚构详情） -->
-  <section class="sec" aria-label="工程案例">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <div><div class="en">Selected Projects</div><h2>被建造，也被使用</h2></div>
-        <a class="link-more" href="/zh/cases/">查看全部案例 <span class="arr">→</span></a>
+      <div class="cases-tail rv">
+        <a class="text-link action action-secondary" href="/zh/cases/">
+          查看项目实践
+        </a>
       </div>
-      <div class="cases">
-        <div class="case rv">
-          <div class="cimg"><PhImg g="yard" tag="IMG-CASE-1 · 2000×1250 · 项目实景（占位）" /></div>
-          <div class="meta"><h3>{PLACEHOLDER}项目名称 A</h3><span>{PLACEHOLDER}地点 · 年份</span><div class="kpis">构件用量 —— m³ · 工期 —— 天</div></div>
+    </section>
+
+    <section class="making-section ed-section" aria-labelledby="making-heading">
+      <div class="ed-wrap">
+        <div class="section-label rv">
+          <span>设计 · 制造 · 交付</span>
+          <a href="/zh/about/">走进制造体系</a>
         </div>
-        <div class="case rv">
-          <div class="cimg"><PhImg g="site" tag="IMG-CASE-2 · 2000×1250 · 项目实景（占位）" /></div>
-          <div class="meta"><h3>{PLACEHOLDER}项目名称 B</h3><span>{PLACEHOLDER}地点 · 年份</span><div class="kpis">建筑面积 —— ㎡ · 构件 —— 件</div></div>
+        <div class="section-heading rv">
+          <h2 id="making-heading">
+            把建造，
+            <br />
+            做成制造。
+          </h2>
+          <p>
+            让复杂的建造过程，
+            <br />
+            在有序的工序中展开。
+          </p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- S6 资质能力（横排细线表） -->
-  <section class="sec" style="background:#fff" aria-label="资质能力">
-    <div class="wrap">
-      <div class="sec-head rv"><div><div class="en">Qualifications</div><h2>资质与能力</h2></div>
-        <a class="link-more" href="/zh/qualifications/">全部资质 <span class="arr">→</span></a>
-      </div>
-      <div class="quals">
-        {quals.map((q) => (
-          <div class="qual rv"><b>{q.name}</b><span>{q.no}</span><span class="arr" aria-hidden="true">→</span></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- S7 新闻资讯（占位条目；无已发布内容时列表页展示空态） -->
-  <section class="sec news-sec" aria-label="新闻资讯">
-    <div class="wrap">
-      <div class="sec-head rv"><div><div class="en">Newsroom</div><h2>新闻资讯</h2></div></div>
-      <div class="news-grid">
-        <div>
-          {['01', '02', '03'].map((no) => (
-            <div class="news-item rv">
-              <div class="no" aria-hidden="true">{no}</div>
-              <div>
-                <time>{PLACEHOLDER}2025-00-00</time>
-                <h3>{PLACEHOLDER}新闻标题占位：公司动态 / 项目签约 / 行业观察</h3>
-                <p>{PLACEHOLDER}摘要两行以内。此处为版式占位文案，展示信息密度与行高节奏，不作为真实新闻内容。</p>
+        <div class="making-grid" data-making>
+          <div class="making-steps rv">
+            {steps.map((s, i) => (
+              <div
+                class:list={["making-step", { active: i === 0 }]}
+                data-making-step
+              >
+                <button
+                  type="button"
+                  data-making-toggle
+                  aria-expanded={i === 0}
+                  aria-controls={`making-text-${i}`}
+                >
+                  <span class="step-number">0{i + 1}</span>
+                  <span>
+                    {s.title}
+                    <small>{s.en}</small>
+                  </span>
+                  <span class="step-plus" aria-hidden="true">
+                    <Icon name="plus" />
+                  </span>
+                </button>
+                <div
+                  id={`making-text-${i}`}
+                  class="making-description"
+                  hidden={i !== 0}
+                >
+                  <p>{s.text}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div class="making-stage rv">
+            {steps.map((s, i) => (
+              <div
+                class:list={["making-frame", { active: i === 0 }]}
+                data-making-image
+                aria-hidden={i !== 0}
+              >
+                <EditorialImage
+                  base={s.base}
+                  alt={s.title}
+                  mobile={s.mobile}
+                  sizes="(max-width: 767px) 100vw, 50vw"
+                />
+                <span class="making-image-caption">
+                  0{i + 1} / {s.en}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="news-side rv"><a href="/zh/news/">全部资讯 →</a></div>
       </div>
-    </div>
-  </section>
-
-  <!-- S8 底部 CTA + 表单 -->
-  <section class="sec cta-sec" id="contact" aria-label="预约咨询">
-    <div class="wrap cta-grid">
-      <div class="rv">
-        <div class="en">Contact</div>
-        <h2>让我们谈谈<br />您的项目</h2>
-        <p style="margin-top:20px;max-width:380px">留下您的需求，我们将在 1 个工作日内回复。【示例文案，待确认】</p>
-        <p class="note">电话：{site.contact.phone}<br />邮箱：{site.contact.email}<br />地址：{site.contact.address}</p>
-      </div>
-      <div class="rv">
-        <ConsultForm id="home" />
-      </div>
-    </div>
-  </section>
+    </section>
+    <ProjectCTA />
+  </div>
 </BaseLayout>

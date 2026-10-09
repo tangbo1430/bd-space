@@ -1,0 +1,219 @@
+{
+  "layouts": [
+    {
+      "slug": "4s",
+      "width": 320,
+      "height": 568,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "4s",
+      "width": 375,
+      "height": 812,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "4s",
+      "width": 768,
+      "height": 1024,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "4s",
+      "width": 1024,
+      "height": 768,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "4s",
+      "width": 1440,
+      "height": 900,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "4s",
+      "width": 1920,
+      "height": 1080,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "4s",
+      "width": 844,
+      "height": 390,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "4s",
+      "width": 720,
+      "height": 450,
+      "images": 7,
+      "photoGroup": 14,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 320,
+      "height": 568,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 375,
+      "height": 812,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 768,
+      "height": 1024,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 1024,
+      "height": 768,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 1440,
+      "height": 900,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 1920,
+      "height": 1080,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 844,
+      "height": 390,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    },
+    {
+      "slug": "grayscale",
+      "width": 720,
+      "height": 450,
+      "images": 7,
+      "photoGroup": 7,
+      "diagramGroup": 1,
+      "overflow": false,
+      "proportions": true
+    }
+  ],
+  "accessibility": [
+    {
+      "slug": "4s",
+      "width": 375,
+      "state": "page",
+      "violations": []
+    },
+    {
+      "slug": "4s",
+      "width": 375,
+      "state": "diagram-zoom",
+      "violations": []
+    },
+    {
+      "slug": "4s",
+      "width": 1440,
+      "state": "page",
+      "violations": []
+    },
+    {
+      "slug": "4s",
+      "width": 1440,
+      "state": "diagram-zoom",
+      "violations": []
+    },
+    {
+      "slug": "grayscale",
+      "width": 375,
+      "state": "page",
+      "violations": []
+    },
+    {
+      "slug": "grayscale",
+      "width": 375,
+      "state": "diagram-zoom",
+      "violations": []
+    },
+    {
+      "slug": "grayscale",
+      "width": 1440,
+      "state": "page",
+      "violations": []
+    },
+    {
+      "slug": "grayscale",
+      "width": 1440,
+      "state": "diagram-zoom",
+      "violations": []
+    }
+  ],
+  "interactions": [
+    "4s: correct image counts; technical group isolated; native original; zoom, focus restoration and gallery wrapping across eight viewports",
+    "grayscale: correct image counts; technical group isolated; native original; zoom, focus restoration and gallery wrapping across eight viewports"
+  ],
+  "errors": []
+}
