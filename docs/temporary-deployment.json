@@ -1,25 +1,25 @@
 {
-  "deployed_at": "2026-10-09T17:21:43.522142+00:00",
+  "deployed_at": "2026-10-09T17:43:25.427225+00:00",
   "url": "http://23.251.34.150:8080/zh/",
   "english_url": "http://23.251.34.150:8080/en/",
   "service": "banda-space-preview",
-  "release_directory": "/opt/banda-space-preview/releases/r21-desktop-header-20261009",
-  "webroot": "/opt/banda-space-preview/releases/r21-desktop-header-20261009/site",
-  "server_config": "/opt/banda-space-preview/releases/r21-desktop-header-20261009/preview.Caddyfile",
+  "release_directory": "/opt/banda-space-preview/releases/r22-material-audit-20261009",
+  "webroot": "/opt/banda-space-preview/releases/r22-material-audit-20261009/site",
+  "server_config": "/opt/banda-space-preview/releases/r22-material-audit-20261009/preview.Caddyfile",
   "build": {
-    "commit": "d4876c5",
-    "builtAt": "2026-10-09T17:20:00.083Z",
+    "commit": "277d3dd",
+    "builtAt": "2026-10-09T17:40:41.831Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
-  "archive_sha256": "a765180d110bad6b80b4ee440339488ff19b3008a727d20a2631ad9331caff4d",
+  "archive_sha256": "9cb6c673edd85522967948bba16c957c3741a288d6da27d93dccdda854c6e668",
   "source_and_server_sha256_match": true,
-  "previous_release": "/opt/banda-space-preview/releases/r20-catalog-carousel-20261009",
-  "rollback_container": "banda-space-preview-r20-20261009",
+  "previous_release": "/opt/banda-space-preview/releases/r21-desktop-header-20261009",
+  "rollback_container": "banda-space-preview-r21-20261009",
   "rollback_commands": [
     "docker stop banda-space-preview",
-    "docker rename banda-space-preview banda-space-preview-r21-rollback",
-    "docker rename banda-space-preview-r20-20261009 banda-space-preview",
+    "docker rename banda-space-preview banda-space-preview-r22-rollback",
+    "docker rename banda-space-preview-r21-20261009 banda-space-preview",
     "docker start banda-space-preview"
   ],
   "hosting": "独立 Caddy 容器，8080 HTTP，只读静态目录，非 root 进程，128 MB 内存；临时站 noindex/nofollow；未修改 80/443/8090 服务。",
@@ -176,8 +176,8 @@
     "errors": [],
     "missing": [],
     "build": {
-      "commit": "d4876c5",
-      "builtAt": "2026-10-09T17:20:00.083Z",
+      "commit": "277d3dd",
+      "builtAt": "2026-10-09T17:40:41.831Z",
       "site": "http://23.251.34.150:8080",
       "buildMode": "production"
     },
@@ -189,6 +189,7 @@
     "GitHub 推送和 PR 等待写入凭证；本地独立分支已提交。"
   ],
   "deployment_notes": [
-    "r21 恢复大屏透明叠图导航，保留当前官方 Logo 图形及已补充内容。"
+    "r22 补齐素材核对发现的 4S 实拍、视频入口和联系坐标，保留既有整体视觉。",
+    "GitHub 按用户选择暂不推送，独立分支保留本地提交。"
   ]
 }

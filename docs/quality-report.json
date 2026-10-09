@@ -1,10 +1,10 @@
 {
   "project": "半打空间 / BANDA SPACE",
-  "release": "r21 / restore desktop overlay navigation",
-  "reviewed_at": "2026-10-09T16:54:10.179658+00:00",
+  "release": "r22 / material completion audit",
+  "reviewed_at": "2026-10-09T17:43:25.424806+00:00",
   "build": {
-    "commit": "d4876c5",
-    "builtAt": "2026-10-09T17:20:00.083Z",
+    "commit": "277d3dd",
+    "builtAt": "2026-10-09T17:40:41.831Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
@@ -217,8 +217,8 @@
     "errors": [],
     "missing": [],
     "build": {
-      "commit": "d4876c5",
-      "builtAt": "2026-10-09T17:20:00.083Z",
+      "commit": "277d3dd",
+      "builtAt": "2026-10-09T17:40:41.831Z",
       "site": "http://23.251.34.150:8080",
       "buildMode": "production"
     },
@@ -285,5 +285,41 @@
     "hero_layout_checks": 72,
     "mobile": "Existing light masthead retained.",
     "approval": "Latest user screenshot and instruction supersede v1.1 light desktop header preference."
+  },
+  "material_completion": {
+    "source_archive_files": 208,
+    "eligible_unique_visuals": 129,
+    "used_unique_visuals": 116,
+    "visual_use_percent": 89.9,
+    "product_source_images": "42 / 55",
+    "case_source_images": "61 / 61",
+    "new_technical_diagrams": "17 / 17",
+    "videos": "1 / 1",
+    "ledger": "docs/material-usage-audit.json",
+    "report": "docs/material-completion-report.html",
+    "changes": [
+      "4S video chapter anchor in both languages",
+      "Two specified 4S real photographs added",
+      "Near-duplicate render replaced by living-room perspective with responsive preview",
+      "Formal map coordinates added in both languages"
+    ],
+    "known_source_gap": "No verified 6S interior images in the supplied v1.1 folder. No other model imagery borrowed.",
+    "fresh_checks": {
+      "lint_errors": 0,
+      "type_errors": 0,
+      "unit_tests": 48,
+      "built_pages": 33,
+      "image_reference_checks": 349,
+      "material_checks": 46,
+      "supplement_checks": 18,
+      "untranslated_nodes": 0,
+      "supplement_layouts": 16,
+      "supplement_accessibility_scenarios": 8,
+      "bilingual_video_playback_and_contact_scenarios": 4,
+      "public_core_pages": 22,
+      "public_browser_scenarios": 7
+    },
+    "earlier_checks": "Existing broader desktop-header, full-site responsive and carousel reports remain previous-release evidence; this revision retested the affected layouts and public core routes.",
+    "git_delivery": "User chose local commits only; GitHub push deferred."
   }
 }
