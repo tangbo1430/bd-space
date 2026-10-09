@@ -1,35 +1,189 @@
 {
-  "deployed_at": "2026-10-02T13:20:03.545402+00:00",
+  "deployed_at": "2026-10-09T16:54:10.325757+00:00",
   "url": "http://23.251.34.150:8080/zh/",
+  "english_url": "http://23.251.34.150:8080/en/",
   "service": "banda-space-preview",
-  "release_directory": "/opt/banda-space-preview/releases/r17-20261002-131430",
-  "webroot": "/opt/banda-space-preview/releases/r17-20261002-131430/site",
-  "server_config": "/opt/banda-space-preview/releases/r17-20261002-131430/preview.Caddyfile",
+  "release_directory": "/opt/banda-space-preview/releases/r18-v11-20261009",
+  "webroot": "/opt/banda-space-preview/releases/r18-v11-20261009/site",
+  "server_config": "/opt/banda-space-preview/releases/r18-v11-20261009/preview.Caddyfile",
   "build": {
-    "commit": "unknown",
-    "builtAt": "2026-10-02T13:14:30.734Z",
+    "commit": "cee188c",
+    "builtAt": "2026-10-09T16:50:43.726Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
-  "archive_sha256": "44376d9c752df696cf2ef01b4c113cc4b95059512aeea844c93bb35e846ec2ee",
-  "hosting": "独立 Caddy 容器；8080 HTTP；只读静态目录；非 root 进程；128 MB 内存上限；开机自动恢复；临时预览 noindex/nofollow。未修改现有 80/443 服务。",
-  "operations": {
-    "status": "ssh root@23.251.34.150 \"docker ps --filter name=banda-space-preview\"",
-    "logs": "ssh root@23.251.34.150 \"docker logs --tail 50 banda-space-preview\"",
-    "stop_preview": "ssh root@23.251.34.150 \"docker stop banda-space-preview\"",
-    "resume_preview": "ssh root@23.251.34.150 \"docker start banda-space-preview\""
-  },
+  "archive_sha256": "c6bd9eee959f3b6f9a4c8f6af9e28674b6fe78b73b7444d23197d9cb5261f955",
+  "source_and_server_sha256_match": true,
+  "previous_release": "/opt/banda-space-preview/releases/r17-20261002-131430",
+  "rollback_container": "banda-space-preview-r17-20261009",
+  "rollback_commands": [
+    "docker stop banda-space-preview",
+    "docker rename banda-space-preview banda-space-preview-r18-rollback",
+    "docker rename banda-space-preview-r17-20261009 banda-space-preview",
+    "docker start banda-space-preview"
+  ],
+  "hosting": "独立 Caddy 容器，8080 HTTP，只读静态目录，非 root 进程，128 MB 内存；临时站 noindex/nofollow；未修改 80/443/8090 服务。",
   "verification": {
-    "public_browser_scenarios": 8,
-    "browser_errors": 0,
-    "failed_requests": 0,
-    "missing_page_status": 404,
-    "source_and_server_sha256_match": true
+    "pages": [
+      {
+        "url": "http://23.251.34.150:8080/zh/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/4s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/5s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/6s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/grayscale/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/bd8/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/bd9/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/cases/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/about/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/contact/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/4s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/5s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/6s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/grayscale/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/bd8/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/bd9/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/cases/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/about/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/contact/",
+        "status": 200,
+        "noindex": true
+      }
+    ],
+    "browser": [
+      {
+        "path": "/zh/",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/en/",
+        "width": 375,
+        "overflow": false
+      },
+      {
+        "path": "/en/products/",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/en/products/bd8/",
+        "width": 375,
+        "overflow": false
+      },
+      {
+        "path": "/en/contact/",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/zh/products/4s/",
+        "width": 375,
+        "overflow": false
+      }
+    ],
+    "errors": [],
+    "missing": [],
+    "build": {
+      "commit": "cee188c",
+      "builtAt": "2026-10-09T16:50:43.726Z",
+      "site": "http://23.251.34.150:8080",
+      "buildMode": "production"
+    },
+    "videoRequestsBeforePlay": 0
   },
   "known_scope": [
-    "未绑定正式域名或配置 HTTPS。",
-    "咨询表单保留本地下载，不自动提交；电话、邮件和微信入口可用。",
-    "4S 资料版本差异尚待内容方确认，现有独立口径未修改。",
-    "隐私与 Cookie 内容仍为准备中；临时站不供搜索引擎收录。"
+    "正式域名、HTTPS、表单发送服务不在本轮范围。",
+    "6S 尚无匹配室内照片。",
+    "GitHub 推送和 PR 等待写入凭证；本地独立分支已提交。"
+  ],
+  "deployment_notes": [
+    "首次启动健康检查未成功，脚本自动恢复 r17；将健康检查改为限时循环重试后成功，公网复核通过。"
   ]
 }
