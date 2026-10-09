@@ -1029,5 +1029,17 @@
     "cases": "A/项目案例资料.xlsx",
     "contact": "A/联系信息.xlsx",
     "english": "A/英文全站资料.xlsx"
+  },
+  "catalog_carousel": {
+    "order": [
+      "4s",
+      "5s",
+      "6s",
+      "grayscale",
+      "bd8",
+      "bd9"
+    ],
+    "images": "Per-product heroBase and mobileImage from src/content/products; original material mapping retained.",
+    "replaced": "The earlier three-image 4S-only catalog sequence."
   }
 }

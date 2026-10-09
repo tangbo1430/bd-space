@@ -1,0 +1,151 @@
+{
+  "layouts": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "height": 812,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "zh",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "zh",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "zh",
+      "width": 1024,
+      "height": 768,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "zh",
+      "width": 2560,
+      "height": 1080,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "zh",
+      "width": 812,
+      "height": 375,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "zh",
+      "width": 720,
+      "height": 450,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "height": 812,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 1024,
+      "height": 768,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 2560,
+      "height": 1080,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 812,
+      "height": 375,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "lang": "en",
+      "width": 720,
+      "height": 450,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "autoplay": true
+}

@@ -1,10 +1,10 @@
 {
   "project": "半打空间 / BANDA SPACE",
-  "release": "r19 / photography layout correction",
+  "release": "r20 / six-product catalog carousel",
   "reviewed_at": "2026-10-09T16:54:10.179658+00:00",
   "build": {
-    "commit": "eebe464",
-    "builtAt": "2026-10-09T17:05:29.453Z",
+    "commit": "f9b24ba",
+    "builtAt": "2026-10-09T17:14:26.218Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
@@ -40,7 +40,7 @@
     "accessibility_violations": 0,
     "browser_errors": 0,
     "missing_resources": 0,
-    "image_references": 352,
+    "image_references": 346,
     "material_integrity_checks": 46,
     "supplement_integrity_checks": 18,
     "untranslated_text_attributes": 0,
@@ -217,8 +217,8 @@
     "errors": [],
     "missing": [],
     "build": {
-      "commit": "eebe464",
-      "builtAt": "2026-10-09T17:05:29.453Z",
+      "commit": "f9b24ba",
+      "builtAt": "2026-10-09T17:14:26.218Z",
       "site": "http://23.251.34.150:8080",
       "buildMode": "production"
     },
@@ -252,5 +252,28 @@
       "保留新增素材、英文内容、按钮与字体体系"
     ],
     "note": "此前 r18 的视觉验收未充分识别 contain 导致的空带；本次增加计算图片实际绘制范围的专项检查，并截图复核。"
+  },
+  "catalog_carousel": {
+    "models": [
+      "4s",
+      "5s",
+      "6s",
+      "grayscale",
+      "bd8",
+      "bd9"
+    ],
+    "source": "Existing model-specific official product imagery and mobile variants; captions and links share product data.",
+    "layouts": 16,
+    "checks": [
+      "six distinct models",
+      "localized detail links",
+      "44px minimum controls",
+      "no text in selectors",
+      "wraparound keyboard navigation",
+      "touch swipe",
+      "reduced motion",
+      "real autoplay"
+    ],
+    "home_carousel": "unchanged; original three-slide navigation regression passed"
   }
 }
