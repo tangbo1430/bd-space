@@ -6,32 +6,14 @@ import BuildingSystems from "../../../components/BuildingSystems.astro";
 import HeroCarousel from "../../../components/HeroCarousel.astro";
 import { getListedProducts } from "../../../lib/catalog";
 const products = await getListedProducts();
-const slides = [
-  {
-    id: "4s",
-    caption: "半打 4S / 暮色实拍",
-    base: "product-4s-dusk",
-    mobileImage: "/assets/img/product-4s-dusk-m.webp",
-    name: "半打 4S",
-    note: "暮色中的居所。",
-  },
-  {
-    id: "4s",
-    caption: "半打 4S / 住宅外观实拍",
-    base: "v11-catalog-1",
-    mobileImage: "/assets/img/v11-catalog-1-m.webp",
-    name: "半打 4S",
-    note: "从构件，走向生活。",
-  },
-  {
-    id: "4s",
-    caption: "半打 4S / 屋顶与立面实拍",
-    base: "v11-catalog-2",
-    mobileImage: "/assets/img/v11-catalog-2-m.webp",
-    name: "半打 4S",
-    note: "让日常与自然相遇。",
-  },
-];
+const slides = products.map((product) => ({
+  id: product.id,
+  base: product.base,
+  mobileImage: product.mobileImage,
+  name: product.name,
+  note: product.desc,
+  caption: product.imageCaption,
+}));
 ---
 
 <BaseLayout

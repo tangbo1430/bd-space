@@ -84,7 +84,10 @@ await page.emulateMedia({ reducedMotion: "no-preference" });
 for (const route of ["/zh/", "/zh/products/", "/en/", "/en/products/"]) {
   await page.goto(base + route, { waitUntil: "networkidle" });
   const root = page.locator("[data-carousel]");
-  assert.equal(await root.locator("[data-slide]").count(), 3);
+  assert.equal(
+    await root.locator("[data-slide]").count(),
+    route.includes("products") ? 6 : 3,
+  );
   assert.equal((await root.locator(".hero-scenes").innerText()).trim(), "");
   await root.locator('[data-dot="2"]').click();
   assert.equal(await root.locator("[data-hero-current]").textContent(), "03");

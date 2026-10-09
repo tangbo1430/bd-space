@@ -24,7 +24,7 @@ const { slides, catalog = false } = Astro.props;
   tabindex="0"
 >
   <p class="sr-only" data-banner-live aria-live="polite">
-    第 1 张，共 3 张
+    第 1 张，共 {slides.length} 张
   </p>
   {slides.map((s, i) => (
     <div
@@ -32,7 +32,7 @@ const { slides, catalog = false } = Astro.props;
       data-slide
       data-product={s.id}
       aria-roledescription="slide"
-      aria-label={`第 ${i + 1} 张，共 3 张`}
+      aria-label={`第 ${i + 1} 张，共 ${slides.length} 张`}
     >
       <EditorialImage
         base={s.base}
@@ -61,9 +61,15 @@ const { slides, catalog = false } = Astro.props;
   </div>
   <div class="hero-controls">
     <span class="sr-only">
-      当前照片 <span data-hero-current>01</span> / 03
+      当前照片 <span data-hero-current>01</span> /{" "}
+      {String(slides.length).padStart(2, "0")}
     </span>
-    <div class="hero-scenes" role="group" aria-label="选择住宅照片">
+    <div
+      class="hero-scenes"
+      style={`--scene-count: ${slides.length}`}
+      role="group"
+      aria-label="选择住宅照片"
+    >
       {slides.map((slide, index) => (
         <button
           type="button"
