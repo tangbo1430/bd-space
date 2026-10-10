@@ -1,10 +1,10 @@
 {
   "project": "半打空间 / BANDA SPACE",
-  "release": "r24 / complete selected project photographs",
-  "reviewed_at": "2026-10-09T17:55:56.737337+00:00",
+  "release": "r25 / transparent official logo",
+  "reviewed_at": "2026-10-10T17:04:41.551198+00:00",
   "build": {
-    "commit": "368659c",
-    "builtAt": "2026-10-09T17:53:30.908Z",
+    "commit": "f4268f1",
+    "builtAt": "2026-10-10T17:02:55.953Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
@@ -12,7 +12,7 @@
     "排版": "沿用本地可变字体；英文独立校订并检查断行；参数、图注和技术资料统一层级。",
     "留白": "首页精选案例按原图 1920:1200 比例自适应高度，无裁切、无图片内部填充条，悬停不放大；摄影首屏保持满幅，技术图完整展示。",
     "视觉层级": "产品简介和参数摘要前置；照片、技术图、手动视频分别呈现；首页仍精选四款。",
-    "色彩": "官方 SVG 标识保持原稿深蓝及两种灰色，无漂白滤镜；大屏摄影页保留透明导航，Logo 局部浅底保证可读性。",
+    "色彩": "官方 SVG 保持原稿深蓝及两种灰色；取消 Logo 白色底板，不添加描边、阴影或改色滤镜。",
     "动效": "自然滚动、轻微渐显；轮播支持暂停、离屏停止及减少动态效果偏好。",
     "微交互": "无文字轮播控件、键盘与触摸阅图、缩放、焦点恢复；中英文表单验证及本地需求下载。",
     "响应式": "覆盖 320、375、768、1024、1440、1920px，另检手机横屏和 200% 等效视口。",
@@ -217,8 +217,8 @@
     "errors": [],
     "missing": [],
     "build": {
-      "commit": "368659c",
-      "builtAt": "2026-10-09T17:53:30.908Z",
+      "commit": "f4268f1",
+      "builtAt": "2026-10-10T17:02:55.953Z",
       "site": "http://23.251.34.150:8080",
       "buildMode": "production"
     },
@@ -279,7 +279,7 @@
   "desktop_header": {
     "minimum_width": 1280,
     "overlay_pages": "Home, catalog, photographic product details and about; both languages.",
-    "logo": "Supplied official SVG, original colors on every background; only empty canvas trimmed. A small white backing is confined to the logo on photographic desktop headers.",
+    "logo": "Official source artwork and colors retained. Transparent background without a backing plate, border, shadow or recoloring filter.",
     "checks": 40,
     "light_page_checks": 2,
     "hero_layout_checks": 72,
@@ -328,7 +328,7 @@
     "light_page_checks": 2,
     "lint_errors": 0,
     "image_references": 349,
-    "change": "Removed unintended white recoloring; source artwork preserved verbatim except viewBox."
+    "change": "Removed the logo-only white backing at user request; artwork itself unchanged."
   },
   "selected_case_images": {
     "pages": [

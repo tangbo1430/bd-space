@@ -1,25 +1,25 @@
 {
-  "deployed_at": "2026-10-09T17:55:56.741506+00:00",
+  "deployed_at": "2026-10-10T17:04:41.555345+00:00",
   "url": "http://23.251.34.150:8080/zh/",
   "english_url": "http://23.251.34.150:8080/en/",
   "service": "banda-space-preview",
-  "release_directory": "/opt/banda-space-preview/releases/r24-complete-case-images-20261009",
-  "webroot": "/opt/banda-space-preview/releases/r24-complete-case-images-20261009/site",
-  "server_config": "/opt/banda-space-preview/releases/r24-complete-case-images-20261009/preview.Caddyfile",
+  "release_directory": "/opt/banda-space-preview/releases/r25-transparent-logo-20261010",
+  "webroot": "/opt/banda-space-preview/releases/r25-transparent-logo-20261010/site",
+  "server_config": "/opt/banda-space-preview/releases/r25-transparent-logo-20261010/preview.Caddyfile",
   "build": {
-    "commit": "368659c",
-    "builtAt": "2026-10-09T17:53:30.908Z",
+    "commit": "f4268f1",
+    "builtAt": "2026-10-10T17:02:55.953Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
-  "archive_sha256": "377b885a9cc463c8ed17bc7b70c3e0dd5394195fdcc06fa29354a2d5a5113e37",
+  "archive_sha256": "7d909bf71868359695a25e7389647dc2dd383b70489dd92a9aaecd2943fbe6ca",
   "source_and_server_sha256_match": true,
-  "previous_release": "/opt/banda-space-preview/releases/r23-official-logo-20261009",
-  "rollback_container": "banda-space-preview-r23-20261009",
+  "previous_release": "/opt/banda-space-preview/releases/r24-complete-case-images-20261009",
+  "rollback_container": "banda-space-preview-r24-20261010",
   "rollback_commands": [
     "docker stop banda-space-preview",
-    "docker rename banda-space-preview banda-space-preview-r24-rollback",
-    "docker rename banda-space-preview-r23-20261009 banda-space-preview",
+    "docker rename banda-space-preview banda-space-preview-r25-rollback",
+    "docker rename banda-space-preview-r24-20261010 banda-space-preview",
     "docker start banda-space-preview"
   ],
   "hosting": "独立 Caddy 容器，8080 HTTP，只读静态目录，非 root 进程，128 MB 内存；临时站 noindex/nofollow；未修改 80/443/8090 服务。",
@@ -176,8 +176,8 @@
     "errors": [],
     "missing": [],
     "build": {
-      "commit": "368659c",
-      "builtAt": "2026-10-09T17:53:30.908Z",
+      "commit": "f4268f1",
+      "builtAt": "2026-10-10T17:02:55.953Z",
       "site": "http://23.251.34.150:8080",
       "buildMode": "production"
     },
@@ -189,7 +189,7 @@
     "GitHub 推送和 PR 等待写入凭证；本地独立分支已提交。"
   ],
   "deployment_notes": [
-    "r24 首页精选案例完整展示原图，容器跟随原始比例，无裁切或填充条。",
+    "r25 取消 Logo 白色底板，保持透明背景、官方图形与原色。",
     "继续保留本地提交，未推送 GitHub。"
   ]
 }
