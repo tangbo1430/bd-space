@@ -9,17 +9,19 @@ Astro 5、TypeScript 与原生 CSS/交互实现的双语建筑产品网站。v1.
 浏览器测试使用 Microsoft Edge。先运行 `pnpm build` 和 `pnpm preview --host 127.0.0.1 --port 4322`，另一个终端设置 `TEST_BASE_URL=http://127.0.0.1:4322`，再执行：
 
 - `pnpm test:browser`：32 条路由 × 6 种宽度与原有交互/可访问性覆盖。
-- `pnpm test:immersive`：首屏、浅色导航、触摸目标、横屏、200% 等效视口。
+- `pnpm test:immersive`：首屏、透明/实底导航、触摸目标、横屏、200% 等效视口。
 - `pnpm test:carousel`：无文字轮播控件、键盘焦点与同步进度。
 - `pnpm test:materials`：案例归组、旧锚点、二维码与资质摘要。
 - `pnpm test:supplement`：4S/灰度空间完整比例、独立技术图与阅图行为。
 - `pnpm test:v11`：11 个英文页面 × 8 种视口、22 组可访问性、两处轮播、六款技术图、视频和英文下载。
 
+- `pnpm test:delivery`：全部 33 个生成页面 × 9 种视口（含 2560px），原图比例、无填充条、Logo 切换、章节定位和键盘阅图。`SKIP_SCREENSHOTS=1` 可省略重复截图，保留全部断言。
+
 ## 内容范围
 
 产品目录为 4S、5S、6S、灰度空间、半打 8、半打 9；首页仍精选四款。slab、wall、stair 三个旧地址保留、不索引。英文发布首页、产品中心、六款详情、案例、关于、联系共 11 页，其他中文栏目提供明确的 English home 入口。
 
-官方 Logo 保留原色/比例，浅色导航与页脚，保留深色建造章节。首页 6S → 4S → 5S 与产品中心三张 4S 实拍共用 HeroCarousel；控件无文字，支持键盘、触摸、暂停、离屏停止和减少动态效果。建筑完整展示优先，手机独立选图；没有干净竖向外观的 4S 使用完整横图。
+官方 Logo 保留轮廓、比例及两块灰色。桌面摄影首屏使用透明导航与浅色 Logo，滚动后、手机导航和浅色页脚使用原色。首页保留 6S → 4S → 5S，产品中心为六款产品轮播；控件无文字，支持键盘、触摸、暂停、离屏停止和减少动态效果。首屏维持满幅摄影及独立手机选图；正文照片按真实比例完整展示，混合横竖图按原比例成组等高，手机单列。
 
 六款图片和技术图按型号分组，完整展示、缩放、原图、160px 缩略图和焦点恢复。5S 补充客厅图；6S 未提供可确认的室内图，不跨型号借图。4S 吊装视频为原始 544×960，视频帧封面、preload=none、手动播放。十个案例保留旧锚点与国内 7/海外 3 筛选，补齐各自施工图、交付范围和完工状态。
 
@@ -37,9 +39,13 @@ Astro 5、TypeScript 与原生 CSS/交互实现的双语建筑产品网站。v1.
 
 - `docs/v11-materials-manifest.json`：来源、用途、尺寸与取舍；原始资料不进入 public/。旧工艺照片和缩略图已撤下。
 - `python scripts/import-v11.py <解压目录>`：准备 v1.1 网页资源（Pillow）；人工审核后的说明与排序以提交内容为准。
+- `python scripts/prepare-official-logo.py <官方Logo目录>`：按原 PDF 曲线轮廓与 SVG 色块生成深浅两套 Logo（PyMuPDF），保留灰色，不使用整图漂白滤镜。
+- `python scripts/generate-image-dimensions.py`：新增/替换网页图片后更新真实尺寸清单（Pillow），再构建。
 - `python scripts/generate-gallery-thumbnails.py`：构建后更新 public/ 与 dist/ 缩略图。
 - `python scripts/subset-font.py <NotoSansSC.ttf>`：更新本地 OFL 字体子集（fonttools、brotli）。
 - `pnpm package:assets`：按生成页面/样式/脚本引用，移除 dist/ 未使用资源。
 - `PUBLIC_SITE_URL` 配置 canonical/站点地图；临时站 robots 禁止索引，Caddy 同时提供 X-Robots-Tag。
 
-实际验收与部署记录见 `docs/quality-report.json`、`docs/temporary-deployment.json`。代码在独立分支交付，不自动合并 main。正式域名、HTTPS、表单发送服务不在本轮范围。
+r26 可读验收报告见 `docs/quality-report-r26.html`，本轮实测、历史记录及未覆盖环境分开列示。素材映射更新见 `docs/delivery-r26-material-map.json`。
+
+实际验收与部署记录见 `docs/quality-report.json`、`docs/temporary-deployment.json`。代码仅在独立分支本地提交；本轮不推送 GitHub、不自动合并 main。正式域名、HTTPS、表单发送服务不在本轮范围。

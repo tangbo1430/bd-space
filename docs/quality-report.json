@@ -1,360 +1,75 @@
 {
   "project": "半打空间 / BANDA SPACE",
-  "release": "r25 / transparent official logo",
-  "reviewed_at": "2026-10-10T17:04:41.551198+00:00",
+  "release": "r26 / delivery polish",
+  "reviewed_at": "2026-10-10T17:33:40.851883+00:00",
   "build": {
-    "commit": "f4268f1",
-    "builtAt": "2026-10-10T17:02:55.953Z",
+    "commit": "a7ad9da",
+    "builtAt": "2026-10-10T17:30:59.035Z",
     "site": "http://23.251.34.150:8080",
     "buildMode": "production"
   },
-  "reviewed_dimensions": {
-    "排版": "沿用本地可变字体；英文独立校订并检查断行；参数、图注和技术资料统一层级。",
-    "留白": "首页精选案例按原图 1920:1200 比例自适应高度，无裁切、无图片内部填充条，悬停不放大；摄影首屏保持满幅，技术图完整展示。",
-    "视觉层级": "产品简介和参数摘要前置；照片、技术图、手动视频分别呈现；首页仍精选四款。",
-    "色彩": "官方 SVG 保持原稿深蓝及两种灰色；取消 Logo 白色底板，不添加描边、阴影或改色滤镜。",
-    "动效": "自然滚动、轻微渐显；轮播支持暂停、离屏停止及减少动态效果偏好。",
-    "微交互": "无文字轮播控件、键盘与触摸阅图、缩放、焦点恢复；中英文表单验证及本地需求下载。",
-    "响应式": "覆盖 320、375、768、1024、1440、1920px，另检手机横屏和 200% 等效视口。",
-    "原创性": "使用品牌自身素材；宣传资料重排为网页；技术标注未重绘，未跨型号借图。"
-  },
-  "verification": {
+  "scope": "保留 r25 整体视觉、内容和路由；六款产品、十项案例、十一个英文核心页面。",
+  "changes": [
+    "官方原色与浅色 Logo 保留原稿曲线及两块灰色；去除重复位图、导出线条，无底板、描边、阴影或整图漂白滤镜。",
+    "正文图片使用真实尺寸；横竖图按原比例成组等高，手机单列；撤掉固定裁切和悬停放大。摄影首屏继续满幅。",
+    "手机章节导航保持单行横向滑动与 44px 点击目标；跳转偏移与收缩导航共用 76px 高度。",
+    "保留原有 52px 主按钮、2px 圆角、字体和轻动效；建造示意辅助文字提高到 12px。",
+    "删除被替代的 Logo、图集与图片容器覆盖规则；加入真实图片尺寸清单及可复现的官方 Logo 整理脚本。"
+  ],
+  "current_turn_verification": {
     "unit_tests": 48,
     "type_errors": 0,
     "lint_errors": 0,
+    "type_hints": 2,
     "rendered_pages": 33,
-    "listed_products": 6,
-    "english_pages": 11,
-    "responsive_checks": 192,
+    "all_page_viewport_checks": 297,
+    "core_responsive_checks": 192,
     "english_layout_checks": 88,
-    "cover_layout_checks": 72,
-    "supplement_layout_checks": 16,
-    "materials_layout_checks": 32,
+    "cover_checks": 72,
+    "supplement_checks": 16,
+    "material_layout_checks": 32,
     "carousel_layout_checks": 8,
-    "accessibility_scenarios": {
-      "core": 24,
-      "english": 22,
-      "supplement": 8,
-      "materials": 4
-    },
+    "header_checks": 40,
+    "light_header_pages": 2,
+    "selected_case_checks": 18,
+    "final_logo_anchor_keyboard_states": 10,
+    "accessibility_scenarios": 58,
     "accessibility_violations": 0,
     "browser_errors": 0,
-    "missing_resources": 0,
-    "image_references": 346,
+    "image_references": 349,
     "material_integrity_checks": 46,
     "supplement_integrity_checks": 18,
-    "untranslated_text_attributes": 0,
-    "video_requests_before_play": 0,
-    "video_manual_playback": "passed"
+    "untranslated_text_attributes": 0
+  },
+  "evidence_stages": [
+    "本轮完整浏览器回归与截图对应本轮工作树；不是沿用 r25 的历史报告。",
+    "本轮完整回归后补齐锚点偏移、辅助字号和品牌资源缓存版本；待发布构建重新通过全部 297 组页面比例/溢出检查、40 组导航检查、10 组 Logo/锚点/键盘阅图状态及 349 个资源引用校验。",
+    "33 页 × 9 视口：320×568、375×812、768×1024、1024×768、1440×900、1920×1080、2560×1440、844×390、720×450。375/1440 截图覆盖全部生成页；逐页复核首屏、正文与页脚。",
+    "首页与产品中心共 9 张轮播，在 375、1920、2560px 逐张截图检查；混合图集另有 16 组截图。",
+    "材料用例首次发现双重锚点偏移并失败；修复后复测通过。键盘状态测试明确用 Tab 进入键盘模式，不以鼠标后的程序 focus 冒充键盘焦点。"
+  ],
+  "historical_evidence": {
+    "file": "verification/r25-historical.json",
+    "status": "仅作历史追溯，不计入本轮通过数量。"
   },
   "limits": [
-    "浏览器检查使用 Edge 自动化和模拟视口；200% 为等效 CSS 视口，不代表真实设备及原生浏览器缩放测试。",
-    "6S 未提供对应干净室内照片，本轮展示其自身外观与技术图，不借用其他型号。",
-    "4S 旧图册阁楼口径存在差异，新增参数以正式表为准；98㎡仍独立列示。",
-    "专利申请台账不等同于当前有效权利证明，历史证书保留原权利人和适用范围。",
-    "临时站继续 noindex；不含 HTTPS、正式域名或表单发送服务。"
+    "浏览器实测为 Windows Edge 自动化及模拟视口；未覆盖真实 iOS/Safari、Android 实机、其他浏览器内核、屏幕阅读器和原生 200% 浏览器缩放。200% 检查使用等效 CSS 视口。",
+    "自动可访问性扫描不能替代完整人工无障碍认证；手动/脚本另测键盘、焦点恢复、菜单、阅图和表单。",
+    "6S 仍缺少对应室内素材，不借用其他型号；新闻和招聘保留真实空态。",
+    "联系表单仅在本地下载需求，不自动发送；未接入邮件或后台服务。",
+    "继续使用 HTTP 临时站和 noindex；未增加正式域名、HTTPS 或未经确认的隐私、Cookie 政策。",
+    "报告与专利保留原主体和适用范围；未公开价格、内部表格、授权书或完整报告。"
   ],
-  "delivery": {
-    "branch": "feature/materials-v1-1-bilingual",
-    "baseline_commit": "dfaf081",
-    "implementation_commit": "cee188c",
-    "github": "HTTPS and SSH authentication unavailable; push and PR pending user credentials.",
-    "raw_materials_public": false,
-    "withdrawn_process_images_public": false,
-    "source": "bd-space-v1.1-source.zip",
-    "static": "bd-space-v1.1-static.zip"
-  },
+  "publication": "已部署到现有临时站，公网 22 个中英文核心页面、7 组浏览器检查及 10 组 Logo/锚点/键盘阅图状态通过。额外验证深浅 Logo 与本地文件逐字节一致、视频手动播放和英文需求本地下载；无脚本错误。r25 已保留用于回退。代码仅本地提交，未推送 GitHub。",
   "public_verification": {
-    "pages": [
-      {
-        "url": "http://23.251.34.150:8080/zh/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/products/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/products/4s/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/products/5s/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/products/6s/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/products/grayscale/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/products/bd8/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/products/bd9/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/cases/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/about/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/zh/contact/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/products/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/products/4s/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/products/5s/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/products/6s/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/products/grayscale/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/products/bd8/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/products/bd9/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/cases/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/about/",
-        "status": 200,
-        "noindex": true
-      },
-      {
-        "url": "http://23.251.34.150:8080/en/contact/",
-        "status": 200,
-        "noindex": true
-      }
-    ],
-    "browser": [
-      {
-        "path": "/zh/",
-        "width": 2560,
-        "overflow": false
-      },
-      {
-        "path": "/en/",
-        "width": 2393,
-        "overflow": false
-      },
-      {
-        "path": "/en/",
-        "width": 375,
-        "overflow": false
-      },
-      {
-        "path": "/en/products/",
-        "width": 1440,
-        "overflow": false
-      },
-      {
-        "path": "/en/products/bd8/",
-        "width": 375,
-        "overflow": false
-      },
-      {
-        "path": "/en/contact/",
-        "width": 768,
-        "overflow": false
-      },
-      {
-        "path": "/zh/products/4s/",
-        "width": 375,
-        "overflow": false
-      }
-    ],
-    "errors": [],
-    "missing": [],
-    "build": {
-      "commit": "f4268f1",
-      "builtAt": "2026-10-10T17:02:55.953Z",
-      "site": "http://23.251.34.150:8080",
-      "buildMode": "production"
-    },
-    "videoRequestsBeforePlay": 0
+    "core_pages": 22,
+    "browser_checks": 7,
+    "logo_anchor_keyboard_states": 10,
+    "manual_video_playback": true,
+    "video_requests_before_play": 0,
+    "english_local_download": true,
+    "errors": 0,
+    "missing": 0
   },
-  "photography_correction": {
-    "commit": "eebe464",
-    "whole_page_checks": 93,
-    "pages": 31,
-    "whole_page_widths": [
-      375,
-      1440,
-      2560
-    ],
-    "hero_coverage_checks": 108,
-    "hero_widths": [
-      375,
-      768,
-      1440,
-      1920,
-      2393,
-      3440
-    ],
-    "hero_layout_checks": 72,
-    "carousel_layouts": 8,
-    "unpainted_image_edges": 0,
-    "scope": [
-      "首页、产品中心与详情主视觉恢复满幅摄影",
-      "首页产品切换、精选案例、目录大图恢复原先裁切布局",
-      "修正 4S 实拍图集空带",
-      "保留新增素材、英文内容、按钮与字体体系"
-    ],
-    "note": "此前 r18 的视觉验收未充分识别 contain 导致的空带；本次增加计算图片实际绘制范围的专项检查，并截图复核。"
-  },
-  "catalog_carousel": {
-    "models": [
-      "4s",
-      "5s",
-      "6s",
-      "grayscale",
-      "bd8",
-      "bd9"
-    ],
-    "source": "Existing model-specific official product imagery and mobile variants; captions and links share product data.",
-    "layouts": 16,
-    "checks": [
-      "six distinct models",
-      "localized detail links",
-      "44px minimum controls",
-      "no text in selectors",
-      "wraparound keyboard navigation",
-      "touch swipe",
-      "reduced motion",
-      "real autoplay"
-    ],
-    "home_carousel": "unchanged; original three-slide navigation regression passed"
-  },
-  "desktop_header": {
-    "minimum_width": 1280,
-    "overlay_pages": "Home, catalog, photographic product details and about; both languages.",
-    "logo": "Official source artwork and colors retained. Transparent background without a backing plate, border, shadow or recoloring filter.",
-    "checks": 40,
-    "light_page_checks": 2,
-    "hero_layout_checks": 72,
-    "mobile": "Existing light masthead retained.",
-    "approval": "Latest user screenshot and instruction supersede v1.1 light desktop header preference."
-  },
-  "material_completion": {
-    "source_archive_files": 208,
-    "eligible_unique_visuals": 129,
-    "used_unique_visuals": 116,
-    "visual_use_percent": 89.9,
-    "product_source_images": "42 / 55",
-    "case_source_images": "61 / 61",
-    "new_technical_diagrams": "17 / 17",
-    "videos": "1 / 1",
-    "ledger": "docs/material-usage-audit.json",
-    "report": "docs/material-completion-report.html",
-    "changes": [
-      "4S video chapter anchor in both languages",
-      "Two specified 4S real photographs added",
-      "Near-duplicate render replaced by living-room perspective with responsive preview",
-      "Formal map coordinates added in both languages"
-    ],
-    "known_source_gap": "No verified 6S interior images in the supplied v1.1 folder. No other model imagery borrowed.",
-    "fresh_checks": {
-      "lint_errors": 0,
-      "type_errors": 0,
-      "unit_tests": 48,
-      "built_pages": 33,
-      "image_reference_checks": 349,
-      "material_checks": 46,
-      "supplement_checks": 18,
-      "untranslated_nodes": 0,
-      "supplement_layouts": 16,
-      "supplement_accessibility_scenarios": 8,
-      "bilingual_video_playback_and_contact_scenarios": 4,
-      "public_core_pages": 22,
-      "public_browser_scenarios": 7
-    },
-    "earlier_checks": "Existing broader desktop-header, full-site responsive and carousel reports remain previous-release evidence; this revision retested the affected layouts and public core routes.",
-    "git_delivery": "User chose local commits only; GitHub push deferred."
-  },
-  "logo_correction": {
-    "provenance": "docs/logo-provenance.json",
-    "checks": 40,
-    "light_page_checks": 2,
-    "lint_errors": 0,
-    "image_references": 349,
-    "change": "Removed the logo-only white backing at user request; artwork itself unchanged."
-  },
-  "selected_case_images": {
-    "pages": [
-      "/zh/",
-      "/en/"
-    ],
-    "original_pixels": [
-      1920,
-      1200
-    ],
-    "container": "Natural image ratio and auto height, without fixed square frames",
-    "hover": "No image zoom or edge cropping",
-    "viewport_checks": 18,
-    "widths": [
-      320,
-      375,
-      768,
-      1024,
-      1440,
-      1920,
-      2560,
-      844,
-      720
-    ],
-    "lint_errors": 0,
-    "image_references": 349,
-    "report": "docs/verification/selected-case-images-audit.json"
-  }
+  "deployment_assets": 466
 }

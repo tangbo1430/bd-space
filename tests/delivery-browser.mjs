@@ -92,7 +92,7 @@ for (const route of routes) {
       height,
       bodyImages: result.images.length,
     });
-    if ([375, 1440].includes(width)) {
+    if (!process.env.SKIP_SCREENSHOTS && [375, 1440].includes(width)) {
       // Reveal using the same scrolling path as a visitor before full-page capture.
       await page.evaluate(async () => {
         for (let y = 0; y < document.body.scrollHeight; y += 700) {
@@ -115,4 +115,5 @@ await browser.close();
 assert.deepEqual(report.failures, []);
 assert.deepEqual(report.errors, []);
 console.log(`${report.checks.length} delivery layout checks passed.`);
+
 

@@ -1,0 +1,20 @@
+{
+  "release": "r26",
+  "new_business_materials": false,
+  "existing_mapping": "v11-materials-manifest.json",
+  "brand_mapping": "logo-provenance.json",
+  "body_image_dimensions": "../src/data/image-dimensions.json",
+  "method": "仅更新官方 Logo 派生资源及现有素材的完整展示方式；图片归属、原图、技术标注与视频不变。",
+  "video": {
+    "page": "/zh/products/4s/#installation-video",
+    "english": "/en/products/4s/#installation-video",
+    "asset": "/assets/video/4s-installation.mp4",
+    "preload": "none",
+    "autoplay": false
+  },
+  "material_limits": [
+    "未提供 6S 对应室内图",
+    "新闻与招聘无新增正式内容"
+  ],
+  "privacy": "公开静态包只保留页面引用的网页资源。"
+}

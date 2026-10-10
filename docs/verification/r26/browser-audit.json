@@ -1,0 +1,1488 @@
+{
+  "responsive": [
+    {
+      "route": "/zh/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/news/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/about/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/cases/",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/404",
+      "width": 320,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/news/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/about/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/cases/",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/404",
+      "width": 375,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/news/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/about/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/cases/",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/404",
+      "width": 768,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/about/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/404",
+      "width": 1024,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/about/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/404",
+      "width": 1440,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/about/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/404",
+      "width": 1920,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    }
+  ],
+  "accessibility": [
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/zh/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/about/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/news/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 1440,
+      "height": 900,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 375,
+      "height": 812,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 812,
+      "height": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 320,
+      "height": 568,
+      "violations": []
+    }
+  ],
+  "interactions": [
+    "Manual carousel, reduced-motion controls, product tabs and arrow keys, manufacturing accordion, desktop navigation",
+    "Case filtering changes both visibility and status",
+    "Full-screen photographs: zoom and native panning, original image, project grouping, thumbnails, keyboard, touch, Escape and focus restoration; desktop, mobile and landscape layouts",
+    "Photograph loading failures give clear feedback; original photos remain accessible without JavaScript",
+    "Construction systems switch with pointer and native radio arrow keys, including without JavaScript",
+    "Mobile menu expansion, background inertness and Escape focus return",
+    "Mobile hero keeps its product link; resizing an open mobile menu to desktop restores scrolling and focus",
+    "Product inquiry prefill, field validation and local download without false submission",
+    "Real autoplay advances; explicit pause remains paused after pointer leaves",
+    "Offscreen carousel suspends its timer and resumes the remaining interval when visible",
+    "Changing reduced-motion preferences while browsing immediately stops autoplay while retaining manual controls"
+  ],
+  "errors": []
+}
