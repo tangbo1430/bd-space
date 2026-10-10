@@ -1,0 +1,96 @@
+{
+  "base": "http://127.0.0.1:4322",
+  "time": "2026-10-10T17:40:39.495Z",
+  "pages": [
+    "/en/about/",
+    "/en/cases/",
+    "/en/contact/",
+    "/en/",
+    "/en/products/4s/",
+    "/en/products/5s/",
+    "/en/products/6s/",
+    "/en/products/bd8/",
+    "/en/products/bd9/",
+    "/en/products/grayscale/",
+    "/en/products/",
+    "/zh/about/careers/",
+    "/zh/about/",
+    "/zh/about/investors/",
+    "/zh/cases/",
+    "/zh/contact/",
+    "/zh/cookies/",
+    "/zh/",
+    "/zh/news/",
+    "/zh/privacy/",
+    "/zh/products/4s/",
+    "/zh/products/5s/",
+    "/zh/products/6s/",
+    "/zh/products/bd8/",
+    "/zh/products/bd9/",
+    "/zh/products/grayscale/",
+    "/zh/products/",
+    "/zh/products/slab/",
+    "/zh/products/stair/",
+    "/zh/products/wall/",
+    "/zh/qualifications/"
+  ],
+  "browser": [
+    {
+      "width": 375,
+      "path": "/zh/products/",
+      "label": "EN",
+      "href": "/en/products/",
+      "passed": true
+    },
+    {
+      "width": 375,
+      "path": "/zh/qualifications/",
+      "label": "EN",
+      "href": "/en/",
+      "passed": true
+    },
+    {
+      "width": 375,
+      "path": "/zh/news/",
+      "label": "EN",
+      "href": "/en/",
+      "passed": true
+    },
+    {
+      "width": 375,
+      "path": "/en/products/",
+      "label": "中文",
+      "href": "/zh/products/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/zh/products/",
+      "label": "EN",
+      "href": "/en/products/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/zh/qualifications/",
+      "label": "EN",
+      "href": "/en/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/zh/news/",
+      "label": "EN",
+      "href": "/en/",
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "path": "/en/products/",
+      "label": "中文",
+      "href": "/zh/products/",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

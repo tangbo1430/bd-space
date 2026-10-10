@@ -1,0 +1,21 @@
+{
+  "scope": "r27: unify visible language switch labels in desktop and mobile navigation",
+  "build": {
+    "commit": "6a46c31",
+    "builtAt": "2026-10-10T17:40:12.539Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "checks": {
+    "eslint_changed_component": "passed",
+    "unit_tests": 48,
+    "build": "33 pages",
+    "image_references": 349,
+    "language_pages": 31,
+    "local_browser_checks": 8,
+    "public_browser_checks": 8
+  },
+  "behavior": "Chinese pages show EN; English pages show 中文. Corresponding routes are retained; pages without an English version link to /en/ with an accessible name and title explaining the destination.",
+  "limits": "Scoped regression only. Full r26 visual/accessibility results remain historical; not rerun or claimed as r27 results.",
+  "github": "Local commits only; no push."
+}
