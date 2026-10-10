@@ -73,6 +73,7 @@ for (const lang of ["zh", "en"])
       await photo.locator("img").evaluate((e) => getComputedStyle(e).transform),
       "none",
     );
+    await p.keyboard.press("Tab");
     await photo.focus();
     assert.notEqual(
       await photo.evaluate((e) => getComputedStyle(e).outlineStyle),

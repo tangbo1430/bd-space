@@ -1,10 +1,6 @@
+/* Anchor destinations use the compact, scrolled navigation height. */
 :root {
-  --header-height: 96px;
-}
-@media (max-width: 767px) {
-  :root {
-    --header-height: 76px;
-  }
+  --header-height: 76px;
 }
 /* Content additions inherit the approved typography, motion and action system. */
 .product-jump {

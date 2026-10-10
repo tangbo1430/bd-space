@@ -105,7 +105,7 @@ body.banda-editorial {
   color: var(--charcoal);
 }
 .banda-editorial .gnb.scrolled {
-  height: 76px;
+  height: var(--header-height);
   border-bottom: 1px solid var(--hairline);
 }
 .banda-editorial .gnb nav {
