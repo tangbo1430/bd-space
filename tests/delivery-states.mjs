@@ -3,11 +3,11 @@ import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 const original = await readFile(
-  "public/assets/brand/logo-official-v11.svg",
+  "public/assets/brand/logo-original-r26.svg",
   "utf8",
 );
 const reversed = await readFile(
-  "public/assets/brand/logo-reversed.svg",
+  "public/assets/brand/logo-reversed-r26.svg",
   "utf8",
 );
 assert.equal(original.replaceAll("#122e3b", "#ffffff"), reversed);

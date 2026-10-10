@@ -53,7 +53,7 @@ for e in old.iter():
   e.tag='rect';e.set('fill',colors[e.attrib.pop('class')]);blocks.append(ET.tostring(e,encoding='unicode'))
 art=''.join(blocks)+''.join('<path fill="#122e3b" fill-rule="evenodd" d="'+path(contours[i])+''.join(path(contours[j]) for j in children[i])+'"/>' for i in roots)
 svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 268 1922 544">'+art+'</svg>'
-(root/'public/assets/brand/logo-official-v11.svg').write_text(svg,encoding='utf8')
-(root/'public/assets/brand/logo-reversed.svg').write_text(svg.replace('#122e3b','#ffffff'),encoding='utf8')
+(root/'public/assets/brand/logo-original-r26.svg').write_text(svg,encoding='utf8')
+(root/'public/assets/brand/logo-reversed-r26.svg').write_text(svg.replace('#122e3b','#ffffff'),encoding='utf8')
 print('Original contours',len(contours),'curves',sum(k=='c' for c in contours for k,_ in c),'SVG bytes',len(svg))
 

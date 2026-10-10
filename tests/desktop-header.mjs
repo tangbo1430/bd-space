@@ -37,8 +37,8 @@ for (const width of [375, 1024, 1280, 1920, 2560]) {
       assert.equal(
         before.logo,
         width >= 1280
-          ? "/assets/brand/logo-reversed.svg"
-          : "/assets/brand/logo-official-v11.svg",
+          ? "/assets/brand/logo-reversed-r26.svg"
+          : "/assets/brand/logo-original-r26.svg",
       );
       assert.equal(before.filter, "none");
       if (width >= 1280) {
