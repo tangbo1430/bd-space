@@ -142,7 +142,7 @@ body.banda-editorial {
   font-size: 12px;
 }
 .brand-name small {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.13em;
 }
 .banda-editorial .sub-panel-card {
@@ -690,7 +690,7 @@ body.banda-editorial {
     padding-inline: 24px;
   }
   .brand-name small {
-    font-size: 10px;
+    font-size: 12px;
   }
   .cover-visual .cover-body {
     min-height: max(640px, 84svh);
