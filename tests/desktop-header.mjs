@@ -36,7 +36,7 @@ for (const width of [375, 1024, 1280, 1920, 2560]) {
       assert.equal(before.filter, "none");
       if (width >= 1280) {
         assert.equal(before.color, "rgb(255, 255, 255)");
-        assert.equal(before.backing, "rgb(255, 255, 255)");
+        assert.equal(before.backing, "rgba(0, 0, 0, 0)");
       }
       if (width === 1920 && lang === "zh" && ["", "products/"].includes(route))
         await page.screenshot({
