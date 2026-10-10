@@ -32,7 +32,7 @@ await mkdir("artifacts/delivery-r26", { recursive: true });
 for (const route of routes) {
   for (const [width, height] of sizes) {
     await page.setViewportSize({ width, height });
-    await page.goto(base + route, { waitUntil: "networkidle" });
+    await page.goto(base + route, { waitUntil: route === "/" ? "networkidle" : "load" });
     await page.evaluate(async () => {
       await document.fonts.ready;
       for (const img of document.images) img.loading = "eager";
@@ -115,3 +115,4 @@ await browser.close();
 assert.deepEqual(report.failures, []);
 assert.deepEqual(report.errors, []);
 console.log(`${report.checks.length} delivery layout checks passed.`);
+
