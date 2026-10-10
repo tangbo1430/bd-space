@@ -1,4 +1,5 @@
 ---
+import { imageDimensions } from "../lib/image-dimensions";
 interface Props {
   base?: string;
   src?: string;
@@ -24,11 +25,19 @@ const {
   mobile = true,
   src,
   previewSrc,
-  width = 1920,
-  height = 1080,
-  mobileWidth = 960,
+  width: suppliedWidth,
+  height: suppliedHeight,
+  mobileWidth: suppliedMobileWidth,
   fit = "cover",
 } = Astro.props;
+const intrinsic = imageDimensions(src ?? `/assets/img/${base}.jpg`);
+const width = suppliedWidth ?? intrinsic[0];
+const height = suppliedHeight ?? intrinsic[1];
+const mobileWidth =
+  suppliedMobileWidth ??
+  (base && mobile && !src
+    ? imageDimensions(`/assets/img/${base}-m.webp`)[0]
+    : width);
 ---
 
 <picture

@@ -1,9 +1,30 @@
 {
-  "source": "素材清单需求-v1.1.rar / B/Logo 完整文件/半打空间logo.svg",
-  "source_sha256": "99fa015496e04b9e7dec58ad1129534557d02a4253d977e591c3b6fecd62f584",
-  "web_resource": "/assets/brand/logo-official-v11.svg",
-  "web_sha256": "1529c2d041a11f987469dd0b9631beec5e9a2b864c4c07818799ad3508f3467e",
-  "only_edit": "viewBox changed from 0 0 1920 1080 to -1 268 1922 544 to remove empty canvas, with a margin for strokes. All artwork, colors, shapes, typography and embedded source image remain verbatim.",
-  "css_filter": "none on every background",
-  "photo_header": "Transparent masthead and transparent logo background; no backing plate, outline, shadow or recoloring filter."
+  "sources": [
+    {
+      "file": "半打空间logo.pdf",
+      "sha256": "3535a2c9b6ce392dc2bd6cc055fab0da182abedee4b275247c26d16a3a04e7df"
+    },
+    {
+      "file": "半打空间logo.svg",
+      "sha256": "99fa015496e04b9e7dec58ad1129534557d02a4253d977e591c3b6fecd62f584"
+    }
+  ],
+  "method": "Official PDF outline segments and original cubic curves joined into filled contours; original SVG filled rectangles retained. Duplicate bitmap, export strokes and dimensions removed. No raster tracing or lettering redesign.",
+  "source_components": "22 lettering contours including 10 original cubic segments, plus 7 filled rectangles (six brand blocks and one lettering bar). Two open components are closed beneath existing overlapping bars; no visible outline introduced.",
+  "resources": [
+    {
+      "file": "/assets/brand/logo-official-v11.svg",
+      "sha256": "cf04107885cac674f5d718c19c68e4c835eba04946d49372d3ea610ab051b109",
+      "bytes": 4483
+    },
+    {
+      "file": "/assets/brand/logo-reversed.svg",
+      "sha256": "358a6d773877b620ede426bb4d4c17a7fbafef9c1d288fadb9ae52001f0d00ac",
+      "bytes": 4483
+    }
+  ],
+  "reversed": "Only #122e3b becomes #ffffff; #c7c8ca and #636466 each retained exactly once. All geometry identical.",
+  "presentation": "Adaptive desktop overlay; original on mobile, solid/scrolled header and light footer. No CSS filters, backing, border, shadow.",
+  "visual_comparison": "Side-by-side enlarged source PNG / clean vector / reversed vector reviewed locally; original curved terminals retained.",
+  "generator": "scripts/prepare-official-logo.py <official-logo-source-directory>"
 }

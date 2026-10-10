@@ -81,11 +81,11 @@
   letter-spacing: -0.025em;
 }
 .system-figure figcaption small {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--soft-ink);
 }
 .system-study-note {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--soft-ink);
   margin-top: 10px;
 }
@@ -241,7 +241,7 @@
   }
   .system-study-note {
     margin-top: 15px;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.8;
   }
   .system-mobile-description {

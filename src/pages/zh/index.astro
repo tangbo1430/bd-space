@@ -120,7 +120,7 @@ const steps = [
                 data-collection-image={p.id}
                 aria-hidden={i !== 0}
               >
-                <EditorialImage
+                <EditorialImage fit="contain"
                   base={p.base}
                   alt={p.imageCaption}
                   sizes="(max-width: 767px) 100vw, 65vw"
@@ -343,7 +343,7 @@ const steps = [
                 data-making-image
                 aria-hidden={i !== 0}
               >
-                <EditorialImage
+                <EditorialImage fit="contain"
                   base={s.base}
                   alt={s.title}
                   mobile={s.mobile}

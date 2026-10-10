@@ -75,7 +75,7 @@ const slides = products.map((product) => ({
               href={`/zh/products/${p.id}/`}
               aria-label={`探索${p.name}`}
             >
-              <EditorialImage base={p.base} alt={p.imageCaption} />
+              <EditorialImage fit="contain" base={p.base} alt={p.imageCaption} />
             </a>
           </article>
         ))}

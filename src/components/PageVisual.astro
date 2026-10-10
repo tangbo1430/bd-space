@@ -31,6 +31,7 @@ const {
   <div class="page-visual-frame">
     {galleryGroup ? (
       <GalleryImage
+        fit={mode === "cover" ? "cover" : "contain"}
         base={base}
         mobileImage={mobileImage}
         alt={alt}
@@ -39,7 +40,13 @@ const {
         eager
       />
     ) : (
-      <EditorialImage base={base} mobileImage={mobileImage} alt={alt} eager />
+      <EditorialImage
+        fit={mode === "cover" ? "cover" : "contain"}
+        base={base}
+        mobileImage={mobileImage}
+        alt={alt}
+        eager
+      />
     )}
   </div>
   {mode === "cover" ? (
@@ -58,3 +65,10 @@ const {
     </figcaption>
   )}
 </figure>
+
+<style>
+  .page-visual:not(.cover-visual) .page-visual-frame {
+    height: auto;
+    aspect-ratio: auto;
+  }
+</style>

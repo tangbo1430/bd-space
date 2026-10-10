@@ -1,5 +1,5 @@
 /* v1.1: original brand colors and shared bilingual layouts.
-   Photography retains the immersive composition; only technical figures use contain. */
+   Hero photography retains its immersive composition; body photographs and technical figures use their intrinsic proportions. */
 .banda-editorial .gnb {
   background: #fff;
   color: #142b31;
@@ -9,12 +9,6 @@
   .banda-editorial .gnb:not(.gnb-solid):not(.scrolled) :focus-visible {
     outline-color: #007b68;
   }
-}
-.official-brand .brand-original {
-  display: block;
-  width: 100%;
-  height: auto;
-  filter: none;
 }
 .banda-editorial .editorial-footer {
   background: #f5f6f4;
@@ -155,14 +149,6 @@ html[lang="en"] .product-jump {
     grid-template-columns: minmax(0, 1fr);
     gap: 56px;
   }
-}
-#spaces,
-#specifications,
-#construction,
-#diagrams,
-#installation-video,
-#wechat {
-  scroll-margin-top: 90px;
 }
 @media (max-width: 767px) {
   .banda-editorial .editorial-hero {

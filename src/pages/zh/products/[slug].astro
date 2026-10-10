@@ -1,4 +1,5 @@
 ---
+import PhotoGrid from "../../../components/PhotoGrid.astro";
 import Icon from "../../../components/Icon.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import GalleryImage from "../../../components/GalleryImage.astro";
@@ -200,26 +201,7 @@ const next = product.data.listed
           </h2>
           <p>{product.data.designNote}</p>
         </div>
-        <div class="product-design-grid">
-          {product.data.designGallery.map((photo) => (
-            <figure
-              class:list={[
-                "rv",
-                { "design-portrait": photo.height > photo.width },
-              ]}
-              style={`--photo-ratio:${photo.width}/${photo.height}`}
-            >
-              <GalleryImage
-                {...photo}
-                alt={photo.caption}
-                group={product.id}
-                fit={photo.height > photo.width ? "cover" : "contain"}
-                sizes="(max-width: 767px) calc(100vw - 48px), (max-width: 1600px) 45vw, 700px"
-              />
-              <figcaption>{photo.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
+        <PhotoGrid photos={product.data.designGallery} group={product.id} class="product-design-grid" />
       </section>
     )}
     <section class="product-section ed-section" id="specifications">
@@ -270,21 +252,7 @@ const next = product.data.listed
           <h2>{product.data.galleryTitle}</h2>
           {product.data.galleryIntro && <p>{product.data.galleryIntro}</p>}
         </div>
-        <div class="detail-gallery material-detail-gallery">
-          {product.data.gallery.map(
-            (photo: { base: string; caption: string }) => (
-              <figure class="rv">
-                <GalleryImage
-                  base={photo.base}
-                  alt={photo.caption}
-                  group={product.id}
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                />
-                <figcaption>{photo.caption}</figcaption>
-              </figure>
-            ),
-          )}
-        </div>
+        <PhotoGrid photos={product.data.gallery} group={product.id} class="material-detail-gallery" />
       </section>
     )}
     {product.data.video && (

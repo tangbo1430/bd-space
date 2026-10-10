@@ -23,7 +23,8 @@
     "check": "node scripts/check.mjs",
     "test:v11": "node tests/v11-browser.mjs",
     "audit:translations": "node scripts/audit-translations.mjs",
-    "package:assets": "node scripts/prune-deployment-assets.mjs"
+    "package:assets": "node scripts/prune-deployment-assets.mjs",
+    "test:delivery": "node tests/delivery-browser.mjs && node tests/delivery-states.mjs"
   },
   "dependencies": {
     "astro": "^5.6.0"

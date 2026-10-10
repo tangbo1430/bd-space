@@ -1,12 +1,24 @@
+:root {
+  --header-height: 96px;
+}
+@media (max-width: 767px) {
+  :root {
+    --header-height: 76px;
+  }
+}
 /* Content additions inherit the approved typography, motion and action system. */
 .product-jump {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
   gap: 4px 28px;
   padding-block: 18px;
   border-bottom: 1px solid var(--line, #dde2de);
 }
 .product-jump a {
+  flex: none;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -37,13 +49,6 @@
 .product-summary dd {
   margin: 0;
 }
-#spaces,
-#specifications,
-#construction,
-#diagrams,
-#wechat {
-  scroll-margin-top: 0;
-}
 .contact-quick {
   display: flex;
   gap: 12px;
@@ -60,23 +65,10 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.product-design-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 48px 32px;
-  align-items: start;
-}
 .product-design-grid figure,
 .technical-figure {
   margin: 0;
   min-width: 0;
-}
-.design-portrait .gallery-link {
-  height: auto;
-  aspect-ratio: 3 / 2;
-}
-.design-portrait .editorial-image img {
-  object-position: center 65%;
 }
 .product-design .section-heading > p,
 .product-diagrams .section-heading > p {
@@ -128,13 +120,6 @@
   font-size: 12px;
 }
 @media (max-width: 767px) {
-  .design-portrait .gallery-link {
-    aspect-ratio: var(--photo-ratio);
-  }
-  .product-design-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
   .product-design .section-heading > p,
   .product-diagrams .section-heading > p {
     max-width: none;
@@ -146,35 +131,6 @@
     display: block;
     margin-top: 6px;
   }
-}
-.official-brand {
-  position: relative;
-  display: block;
-  width: 148px;
-  aspect-ratio: 1922 / 544;
-  flex: none;
-}
-.official-brand img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.official-brand .brand-light {
-  visibility: hidden;
-}
-.gnb:not(.gnb-solid):not(.scrolled) .brand-dark,
-.official-brand-light .brand-dark {
-  visibility: hidden;
-}
-.gnb:not(.gnb-solid):not(.scrolled) .brand-light,
-.official-brand-light .brand-light {
-  visibility: visible;
-}
-.footer-brand > .official-brand {
-  width: 180px;
-  margin: 0;
 }
 .footer-identity {
   max-width: 340px;
@@ -216,27 +172,6 @@
   font-size: 13px;
   color: var(--soft-ink);
 }
-.material-detail-gallery {
-  row-gap: 48px;
-}
-.material-detail-gallery .editorial-image {
-  aspect-ratio: 4 / 3;
-  background: var(--paper-deep);
-}
-.material-detail-gallery .editorial-image img {
-  object-fit: cover;
-}
-.material-detail-gallery figure:last-child {
-  grid-column: 1 / -1;
-}
-.material-detail-gallery figure:last-child .editorial-image {
-  aspect-ratio: 16 / 9;
-}
-.material-detail-gallery figcaption {
-  padding-top: 16px;
-  font-size: 13px;
-  color: var(--soft-ink);
-}
 .case-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -246,10 +181,6 @@
   padding: 0;
   border: 0;
   min-width: 0;
-}
-.case-grid .project-lead {
-  height: auto;
-  aspect-ratio: 16 / 10;
 }
 .case-grid .case-project-head {
   display: block;
@@ -303,8 +234,7 @@
   scrollbar-color: #bec8c1 transparent;
 }
 .project-photos .gallery-link {
-  flex: 0 0 calc((100% - 20px) / 3);
-  aspect-ratio: 4 / 3;
+  flex: 0 0 calc(var(--image-ratio) * 100px);
   height: auto;
 }
 .project-photos .gallery-open {
@@ -369,9 +299,6 @@
 .founder-photo {
   margin: 0;
   min-width: 0;
-}
-.founder-photo .editorial-image {
-  aspect-ratio: 8 / 5;
 }
 .founder-photo figcaption {
   font-size: 12px;
@@ -760,9 +687,6 @@
   }
 }
 @media (max-width: 767px) {
-  .official-brand {
-    width: 127px;
-  }
   .home-company,
   .founder-section,
   .evidence-heading,
@@ -802,12 +726,6 @@
   }
   .case-source-note {
     padding-block: 48px 64px;
-  }
-  .material-detail-gallery {
-    row-gap: 32px;
-  }
-  .material-detail-gallery figure:last-child {
-    grid-column: auto;
   }
   .strength-grid {
     grid-template-columns: 1fr;

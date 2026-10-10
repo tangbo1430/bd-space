@@ -60,7 +60,7 @@ const filters = [
       {projects.map((p, i) => (
         <article class="case-project" id={p.id} data-case-region={p.region}>
           <div class="project-lead">
-            <GalleryImage
+            <GalleryImage fit="contain"
               base={p.base}
               alt={`${p.name} · 项目外观`}
               group={p.id}
@@ -101,7 +101,7 @@ const filters = [
           </p>
           <div class="project-photos" aria-label={`${p.name}的现场照片`}>
             {p.gallery.map((photo) => (
-              <GalleryImage
+              <GalleryImage fit="contain"
                 base={photo.base}
                 alt={photo.caption}
                 group={p.id}

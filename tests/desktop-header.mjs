@@ -16,7 +16,9 @@ for (const width of [375, 1024, 1280, 1920, 2560]) {
       const before = await page.evaluate(() => {
         const header = document.querySelector("[data-gnb]"),
           hero = document.querySelector(".editorial-hero,.cover-visual"),
-          logo = header.querySelector("img");
+          logo = [...header.querySelectorAll("img")].find(
+            (i) => getComputedStyle(i).visibility === "visible",
+          );
         return {
           background: getComputedStyle(header).backgroundColor,
           color: getComputedStyle(header).color,
@@ -32,7 +34,12 @@ for (const width of [375, 1024, 1280, 1920, 2560]) {
         width >= 1280 ? "rgba(0, 0, 0, 0)" : "rgb(255, 255, 255)",
       );
       assert.equal(before.top, width >= 1280 ? 0 : width < 768 ? 76 : 96);
-      assert.equal(before.logo, "/assets/brand/logo-official-v11.svg");
+      assert.equal(
+        before.logo,
+        width >= 1280
+          ? "/assets/brand/logo-reversed.svg"
+          : "/assets/brand/logo-official-v11.svg",
+      );
       assert.equal(before.filter, "none");
       if (width >= 1280) {
         assert.equal(before.color, "rgb(255, 255, 255)");
@@ -51,7 +58,7 @@ for (const width of [375, 1024, 1280, 1920, 2560]) {
       );
       assert.equal(
         await page
-          .locator("[data-gnb] img")
+          .locator("[data-gnb] .brand-original")
           .evaluate((i) => getComputedStyle(i).filter),
         "none",
       );

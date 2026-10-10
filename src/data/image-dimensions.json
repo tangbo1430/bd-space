@@ -1,0 +1,1886 @@
+{
+  "/assets/brand/logo-original.png": [
+    1000,
+    282
+  ],
+  "/assets/img/case-cayman-install-crane-m.webp": [
+    960,
+    540
+  ],
+  "/assets/img/case-cayman-install-crane.jpg": [
+    1920,
+    1080
+  ],
+  "/assets/img/case-cayman-install-crane.webp": [
+    1920,
+    1080
+  ],
+  "/assets/img/contact-map.webp": [
+    1571,
+    740
+  ],
+  "/assets/img/flow-factory-module-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/flow-factory-module.jpg": [
+    1080,
+    810
+  ],
+  "/assets/img/flow-factory-module.webp": [
+    1080,
+    810
+  ],
+  "/assets/img/flow-factory-panels.jpg": [
+    1280,
+    960
+  ],
+  "/assets/img/flow-factory-panels.webp": [
+    1280,
+    960
+  ],
+  "/assets/img/flow-step06-crane-panel-m.webp": [
+    960,
+    540
+  ],
+  "/assets/img/flow-step06-crane-panel.jpg": [
+    1920,
+    1080
+  ],
+  "/assets/img/flow-step06-crane-panel.webp": [
+    1920,
+    1080
+  ],
+  "/assets/img/founder-huang-kun-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/founder-huang-kun.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/founder-huang-kun.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/home-banner-60m-dining-02.jpg": [
+    1920,
+    823
+  ],
+  "/assets/img/home-banner-60m-dining-02.webp": [
+    1920,
+    823
+  ],
+  "/assets/img/product-4s-design-kitchen-m.webp": [
+    960,
+    645
+  ],
+  "/assets/img/product-4s-design-kitchen.jpg": [
+    1920,
+    1291
+  ],
+  "/assets/img/product-4s-design-kitchen.webp": [
+    1920,
+    1291
+  ],
+  "/assets/img/product-4s-design-living-m.webp": [
+    960,
+    634
+  ],
+  "/assets/img/product-4s-design-living.jpg": [
+    1920,
+    1269
+  ],
+  "/assets/img/product-4s-design-living.webp": [
+    1920,
+    1269
+  ],
+  "/assets/img/product-4s-design-loft-m.webp": [
+    960,
+    639
+  ],
+  "/assets/img/product-4s-design-loft.jpg": [
+    1920,
+    1279
+  ],
+  "/assets/img/product-4s-design-loft.webp": [
+    1920,
+    1279
+  ],
+  "/assets/img/product-4s-detail-wall-m.webp": [
+    960,
+    540
+  ],
+  "/assets/img/product-4s-detail-wall.jpg": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-4s-detail-wall.webp": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-4s-dusk-m.webp": [
+    960,
+    540
+  ],
+  "/assets/img/product-4s-dusk.jpg": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-4s-dusk.webp": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-4s-hero.jpg": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-4s-interior-m.webp": [
+    960,
+    540
+  ],
+  "/assets/img/product-4s-interior.jpg": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-4s-interior.webp": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-4s-module-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/product-4s-module.jpg": [
+    1080,
+    810
+  ],
+  "/assets/img/product-4s-module.webp": [
+    1080,
+    810
+  ],
+  "/assets/img/product-4s-packing.png": [
+    1155,
+    739
+  ],
+  "/assets/img/product-4s-packing.webp": [
+    1155,
+    739
+  ],
+  "/assets/img/product-4s-panels-m.webp": [
+    653,
+    960
+  ],
+  "/assets/img/product-4s-panels.jpg": [
+    1280,
+    1881
+  ],
+  "/assets/img/product-4s-panels.webp": [
+    1280,
+    1881
+  ],
+  "/assets/img/product-4s-roof-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/product-4s-roof.jpg": [
+    1080,
+    810
+  ],
+  "/assets/img/product-4s-roof.webp": [
+    1080,
+    810
+  ],
+  "/assets/img/product-6s-hero-m.webp": [
+    960,
+    540
+  ],
+  "/assets/img/product-6s-hero.jpg": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-6s-hero.webp": [
+    1920,
+    1080
+  ],
+  "/assets/img/product-grayscale-design-bedroom-m.webp": [
+    960,
+    644
+  ],
+  "/assets/img/product-grayscale-design-bedroom.jpg": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-bedroom.webp": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-dining-m.webp": [
+    960,
+    644
+  ],
+  "/assets/img/product-grayscale-design-dining.jpg": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-dining.webp": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-kitchen-m.webp": [
+    960,
+    644
+  ],
+  "/assets/img/product-grayscale-design-kitchen.jpg": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-kitchen.webp": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-living-m.webp": [
+    960,
+    644
+  ],
+  "/assets/img/product-grayscale-design-living.jpg": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-living.webp": [
+    1920,
+    1288
+  ],
+  "/assets/img/product-grayscale-design-side-m.webp": [
+    960,
+    592
+  ],
+  "/assets/img/product-grayscale-design-side.jpg": [
+    1920,
+    1185
+  ],
+  "/assets/img/product-grayscale-design-side.webp": [
+    1920,
+    1185
+  ],
+  "/assets/img/product-grayscale-layouts.png": [
+    1417,
+    868
+  ],
+  "/assets/img/product-grayscale-layouts.webp": [
+    1417,
+    868
+  ],
+  "/assets/img/project-brisbane-01-m.webp": [
+    540,
+    960
+  ],
+  "/assets/img/project-brisbane-01.jpg": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-brisbane-01.webp": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-brisbane-02-m.webp": [
+    960,
+    717
+  ],
+  "/assets/img/project-brisbane-02.jpg": [
+    1920,
+    1434
+  ],
+  "/assets/img/project-brisbane-02.webp": [
+    1920,
+    1434
+  ],
+  "/assets/img/project-brisbane-03-m.webp": [
+    960,
+    706
+  ],
+  "/assets/img/project-brisbane-03.jpg": [
+    1920,
+    1412
+  ],
+  "/assets/img/project-brisbane-03.webp": [
+    1920,
+    1412
+  ],
+  "/assets/img/project-brisbane-04-m.webp": [
+    540,
+    960
+  ],
+  "/assets/img/project-brisbane-04.jpg": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-brisbane-04.webp": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-brisbane-05-m.webp": [
+    960,
+    632
+  ],
+  "/assets/img/project-brisbane-05.jpg": [
+    1920,
+    1263
+  ],
+  "/assets/img/project-brisbane-05.webp": [
+    1920,
+    1263
+  ],
+  "/assets/img/project-brisbane-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-brisbane-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-brisbane-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-cayman-01-m.webp": [
+    960,
+    540
+  ],
+  "/assets/img/project-cayman-01.jpg": [
+    1920,
+    1079
+  ],
+  "/assets/img/project-cayman-01.webp": [
+    1920,
+    1079
+  ],
+  "/assets/img/project-cayman-02-m.webp": [
+    960,
+    542
+  ],
+  "/assets/img/project-cayman-02.jpg": [
+    1920,
+    1083
+  ],
+  "/assets/img/project-cayman-02.webp": [
+    1920,
+    1083
+  ],
+  "/assets/img/project-cayman-03-m.webp": [
+    960,
+    719
+  ],
+  "/assets/img/project-cayman-03.jpg": [
+    1920,
+    1438
+  ],
+  "/assets/img/project-cayman-03.webp": [
+    1920,
+    1438
+  ],
+  "/assets/img/project-cayman-04-m.webp": [
+    960,
+    722
+  ],
+  "/assets/img/project-cayman-04.jpg": [
+    1920,
+    1444
+  ],
+  "/assets/img/project-cayman-04.webp": [
+    1920,
+    1444
+  ],
+  "/assets/img/project-cayman-05-m.webp": [
+    960,
+    633
+  ],
+  "/assets/img/project-cayman-05.jpg": [
+    1920,
+    1265
+  ],
+  "/assets/img/project-cayman-05.webp": [
+    1920,
+    1265
+  ],
+  "/assets/img/project-cayman-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-cayman-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-cayman-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-changzhou-01-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-changzhou-01.jpg": [
+    1920,
+    1439
+  ],
+  "/assets/img/project-changzhou-01.webp": [
+    1920,
+    1439
+  ],
+  "/assets/img/project-changzhou-02-m.webp": [
+    540,
+    960
+  ],
+  "/assets/img/project-changzhou-02.jpg": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-changzhou-02.webp": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-changzhou-03-m.webp": [
+    540,
+    960
+  ],
+  "/assets/img/project-changzhou-03.jpg": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-changzhou-03.webp": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-changzhou-04-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-changzhou-04.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-changzhou-04.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-changzhou-05-m.webp": [
+    960,
+    829
+  ],
+  "/assets/img/project-changzhou-05.jpg": [
+    1920,
+    1658
+  ],
+  "/assets/img/project-changzhou-05.webp": [
+    1920,
+    1658
+  ],
+  "/assets/img/project-changzhou-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-changzhou-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-changzhou-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-chengdu-01-m.webp": [
+    960,
+    696
+  ],
+  "/assets/img/project-chengdu-01.jpg": [
+    1920,
+    1391
+  ],
+  "/assets/img/project-chengdu-01.webp": [
+    1920,
+    1391
+  ],
+  "/assets/img/project-chengdu-02-m.webp": [
+    960,
+    561
+  ],
+  "/assets/img/project-chengdu-02.jpg": [
+    1920,
+    1122
+  ],
+  "/assets/img/project-chengdu-02.webp": [
+    1920,
+    1122
+  ],
+  "/assets/img/project-chengdu-03-m.webp": [
+    960,
+    721
+  ],
+  "/assets/img/project-chengdu-03.jpg": [
+    1920,
+    1442
+  ],
+  "/assets/img/project-chengdu-03.webp": [
+    1920,
+    1442
+  ],
+  "/assets/img/project-chengdu-04-m.webp": [
+    960,
+    637
+  ],
+  "/assets/img/project-chengdu-04.jpg": [
+    1920,
+    1274
+  ],
+  "/assets/img/project-chengdu-04.webp": [
+    1920,
+    1274
+  ],
+  "/assets/img/project-chengdu-05-m.webp": [
+    862,
+    960
+  ],
+  "/assets/img/project-chengdu-05.jpg": [
+    1725,
+    1920
+  ],
+  "/assets/img/project-chengdu-05.webp": [
+    1725,
+    1920
+  ],
+  "/assets/img/project-chengdu-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-chengdu-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-chengdu-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-fiji-01-m.webp": [
+    871,
+    960
+  ],
+  "/assets/img/project-fiji-01.jpg": [
+    1742,
+    1920
+  ],
+  "/assets/img/project-fiji-01.webp": [
+    1742,
+    1920
+  ],
+  "/assets/img/project-fiji-02-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-fiji-02.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-fiji-02.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-fiji-03-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/project-fiji-03.jpg": [
+    1439,
+    1920
+  ],
+  "/assets/img/project-fiji-03.webp": [
+    1439,
+    1920
+  ],
+  "/assets/img/project-fiji-04-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-fiji-04.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-fiji-04.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-fiji-05-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-fiji-05.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-fiji-05.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-fiji-06-m.webp": [
+    960,
+    547
+  ],
+  "/assets/img/project-fiji-06.jpg": [
+    1920,
+    1093
+  ],
+  "/assets/img/project-fiji-06.webp": [
+    1920,
+    1093
+  ],
+  "/assets/img/project-fiji-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-fiji-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-fiji-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-jiangmen-01-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-jiangmen-01.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-jiangmen-01.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-jiangmen-02-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-jiangmen-02.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-jiangmen-02.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-jiangmen-03-m.webp": [
+    960,
+    888
+  ],
+  "/assets/img/project-jiangmen-03.jpg": [
+    1920,
+    1775
+  ],
+  "/assets/img/project-jiangmen-03.webp": [
+    1920,
+    1775
+  ],
+  "/assets/img/project-jiangmen-04-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-jiangmen-04.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-jiangmen-04.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-jiangmen-05-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/project-jiangmen-05.jpg": [
+    1439,
+    1920
+  ],
+  "/assets/img/project-jiangmen-05.webp": [
+    1439,
+    1920
+  ],
+  "/assets/img/project-jiangmen-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-jiangmen-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-jiangmen-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-shenzhen-01-m.webp": [
+    960,
+    653
+  ],
+  "/assets/img/project-shenzhen-01.jpg": [
+    1920,
+    1305
+  ],
+  "/assets/img/project-shenzhen-01.webp": [
+    1920,
+    1305
+  ],
+  "/assets/img/project-shenzhen-02-m.webp": [
+    718,
+    960
+  ],
+  "/assets/img/project-shenzhen-02.jpg": [
+    1436,
+    1920
+  ],
+  "/assets/img/project-shenzhen-02.webp": [
+    1436,
+    1920
+  ],
+  "/assets/img/project-shenzhen-03-m.webp": [
+    960,
+    844
+  ],
+  "/assets/img/project-shenzhen-03.jpg": [
+    1920,
+    1687
+  ],
+  "/assets/img/project-shenzhen-03.webp": [
+    1920,
+    1687
+  ],
+  "/assets/img/project-shenzhen-04-m.webp": [
+    716,
+    960
+  ],
+  "/assets/img/project-shenzhen-04.jpg": [
+    1432,
+    1920
+  ],
+  "/assets/img/project-shenzhen-04.webp": [
+    1432,
+    1920
+  ],
+  "/assets/img/project-shenzhen-05-m.webp": [
+    960,
+    639
+  ],
+  "/assets/img/project-shenzhen-05.jpg": [
+    1920,
+    1278
+  ],
+  "/assets/img/project-shenzhen-05.webp": [
+    1920,
+    1278
+  ],
+  "/assets/img/project-shenzhen-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-shenzhen-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-shenzhen-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-zhongshan-cabins-01-m.webp": [
+    960,
+    394
+  ],
+  "/assets/img/project-zhongshan-cabins-01.jpg": [
+    1920,
+    788
+  ],
+  "/assets/img/project-zhongshan-cabins-01.webp": [
+    1920,
+    788
+  ],
+  "/assets/img/project-zhongshan-cabins-02-m.webp": [
+    960,
+    650
+  ],
+  "/assets/img/project-zhongshan-cabins-02.jpg": [
+    1920,
+    1299
+  ],
+  "/assets/img/project-zhongshan-cabins-02.webp": [
+    1920,
+    1299
+  ],
+  "/assets/img/project-zhongshan-cabins-03-m.webp": [
+    721,
+    960
+  ],
+  "/assets/img/project-zhongshan-cabins-03.jpg": [
+    1443,
+    1920
+  ],
+  "/assets/img/project-zhongshan-cabins-03.webp": [
+    1443,
+    1920
+  ],
+  "/assets/img/project-zhongshan-cabins-04-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-zhongshan-cabins-04.jpg": [
+    1920,
+    1439
+  ],
+  "/assets/img/project-zhongshan-cabins-04.webp": [
+    1920,
+    1439
+  ],
+  "/assets/img/project-zhongshan-cabins-05-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-zhongshan-cabins-05.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-zhongshan-cabins-05.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/project-zhongshan-cabins-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-zhongshan-cabins-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-zhongshan-cabins-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-zhongshan-fengdu-01-m.webp": [
+    960,
+    518
+  ],
+  "/assets/img/project-zhongshan-fengdu-01.jpg": [
+    1920,
+    1036
+  ],
+  "/assets/img/project-zhongshan-fengdu-01.webp": [
+    1920,
+    1036
+  ],
+  "/assets/img/project-zhongshan-fengdu-02-m.webp": [
+    540,
+    960
+  ],
+  "/assets/img/project-zhongshan-fengdu-02.jpg": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-zhongshan-fengdu-02.webp": [
+    1080,
+    1920
+  ],
+  "/assets/img/project-zhongshan-fengdu-03-m.webp": [
+    960,
+    693
+  ],
+  "/assets/img/project-zhongshan-fengdu-03.jpg": [
+    1920,
+    1386
+  ],
+  "/assets/img/project-zhongshan-fengdu-03.webp": [
+    1920,
+    1386
+  ],
+  "/assets/img/project-zhongshan-fengdu-04-m.webp": [
+    960,
+    875
+  ],
+  "/assets/img/project-zhongshan-fengdu-04.jpg": [
+    1920,
+    1749
+  ],
+  "/assets/img/project-zhongshan-fengdu-04.webp": [
+    1920,
+    1749
+  ],
+  "/assets/img/project-zhongshan-fengdu-05-m.webp": [
+    960,
+    563
+  ],
+  "/assets/img/project-zhongshan-fengdu-05.jpg": [
+    1920,
+    1126
+  ],
+  "/assets/img/project-zhongshan-fengdu-05.webp": [
+    1920,
+    1126
+  ],
+  "/assets/img/project-zhongshan-fengdu-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-zhongshan-fengdu-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-zhongshan-fengdu-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-zhongshan-mige-01-m.webp": [
+    960,
+    720
+  ],
+  "/assets/img/project-zhongshan-mige-01.jpg": [
+    1920,
+    1439
+  ],
+  "/assets/img/project-zhongshan-mige-01.webp": [
+    1920,
+    1439
+  ],
+  "/assets/img/project-zhongshan-mige-02-m.webp": [
+    960,
+    697
+  ],
+  "/assets/img/project-zhongshan-mige-02.jpg": [
+    1920,
+    1394
+  ],
+  "/assets/img/project-zhongshan-mige-02.webp": [
+    1920,
+    1394
+  ],
+  "/assets/img/project-zhongshan-mige-03-m.webp": [
+    960,
+    712
+  ],
+  "/assets/img/project-zhongshan-mige-03.jpg": [
+    1920,
+    1424
+  ],
+  "/assets/img/project-zhongshan-mige-03.webp": [
+    1920,
+    1424
+  ],
+  "/assets/img/project-zhongshan-mige-04-m.webp": [
+    960,
+    684
+  ],
+  "/assets/img/project-zhongshan-mige-04.jpg": [
+    1920,
+    1368
+  ],
+  "/assets/img/project-zhongshan-mige-04.webp": [
+    1920,
+    1368
+  ],
+  "/assets/img/project-zhongshan-mige-05-m.webp": [
+    960,
+    708
+  ],
+  "/assets/img/project-zhongshan-mige-05.jpg": [
+    1920,
+    1415
+  ],
+  "/assets/img/project-zhongshan-mige-05.webp": [
+    1920,
+    1415
+  ],
+  "/assets/img/project-zhongshan-mige-cover-m.webp": [
+    960,
+    600
+  ],
+  "/assets/img/project-zhongshan-mige-cover.jpg": [
+    1920,
+    1200
+  ],
+  "/assets/img/project-zhongshan-mige-cover.webp": [
+    1920,
+    1200
+  ],
+  "/assets/img/share-banda.jpg": [
+    1200,
+    630
+  ],
+  "/assets/img/v11-4s-drawing-0.webp": [
+    3052,
+    2040
+  ],
+  "/assets/img/v11-4s-hero-m.webp": [
+    960,
+    672
+  ],
+  "/assets/img/v11-4s-hero.jpg": [
+    1920,
+    1344
+  ],
+  "/assets/img/v11-4s-hero.webp": [
+    1920,
+    1344
+  ],
+  "/assets/img/v11-4s-living-perspective-m.webp": [
+    799,
+    960
+  ],
+  "/assets/img/v11-4s-living-perspective.jpg": [
+    1599,
+    1920
+  ],
+  "/assets/img/v11-4s-living-perspective.webp": [
+    1599,
+    1920
+  ],
+  "/assets/img/v11-4s-portrait-m.webp": [
+    960,
+    646
+  ],
+  "/assets/img/v11-4s-space-1-m.webp": [
+    960,
+    647
+  ],
+  "/assets/img/v11-4s-space-1.jpg": [
+    1920,
+    1293
+  ],
+  "/assets/img/v11-4s-space-1.webp": [
+    1920,
+    1293
+  ],
+  "/assets/img/v11-4s-space-2-m.webp": [
+    960,
+    646
+  ],
+  "/assets/img/v11-4s-space-2.jpg": [
+    1920,
+    1291
+  ],
+  "/assets/img/v11-4s-space-2.webp": [
+    1920,
+    1291
+  ],
+  "/assets/img/v11-4s-space-3-m.webp": [
+    960,
+    646
+  ],
+  "/assets/img/v11-4s-space-3.jpg": [
+    1920,
+    1291
+  ],
+  "/assets/img/v11-4s-space-3.webp": [
+    1920,
+    1291
+  ],
+  "/assets/img/v11-4s-video-poster.jpg": [
+    544,
+    960
+  ],
+  "/assets/img/v11-5s-drawing-0.webp": [
+    6338,
+    3511
+  ],
+  "/assets/img/v11-5s-drawing-1.webp": [
+    6338,
+    3511
+  ],
+  "/assets/img/v11-5s-drawing-2.webp": [
+    3052,
+    2040
+  ],
+  "/assets/img/v11-5s-hero-m.webp": [
+    960,
+    640
+  ],
+  "/assets/img/v11-5s-hero.jpg": [
+    1920,
+    1280
+  ],
+  "/assets/img/v11-5s-hero.webp": [
+    1920,
+    1280
+  ],
+  "/assets/img/v11-5s-portrait-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/v11-5s-space-1-m.webp": [
+    960,
+    640
+  ],
+  "/assets/img/v11-5s-space-1.jpg": [
+    1920,
+    1280
+  ],
+  "/assets/img/v11-5s-space-1.webp": [
+    1920,
+    1280
+  ],
+  "/assets/img/v11-5s-space-2-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/v11-5s-space-2.jpg": [
+    1440,
+    1920
+  ],
+  "/assets/img/v11-5s-space-2.webp": [
+    1440,
+    1920
+  ],
+  "/assets/img/v11-6s-drawing-0.webp": [
+    6338,
+    3511
+  ],
+  "/assets/img/v11-6s-drawing-1.webp": [
+    3052,
+    2040
+  ],
+  "/assets/img/v11-6s-hero-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-6s-hero.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-6s-hero.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-6s-portrait-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/v11-6s-space-1-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-6s-space-1.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-6s-space-1.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-6s-space-2-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-6s-space-2.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-6s-space-2.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-about-m.webp": [
+    960,
+    390
+  ],
+  "/assets/img/v11-about.jpg": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-about.webp": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-bd8-drawing-0.webp": [
+    3023,
+    2137
+  ],
+  "/assets/img/v11-bd8-drawing-1.webp": [
+    3023,
+    2137
+  ],
+  "/assets/img/v11-bd8-drawing-2.webp": [
+    3052,
+    2040
+  ],
+  "/assets/img/v11-bd8-drawing-3.webp": [
+    3023,
+    2137
+  ],
+  "/assets/img/v11-bd8-drawing-4.webp": [
+    3023,
+    2137
+  ],
+  "/assets/img/v11-bd8-drawing-5.webp": [
+    3023,
+    2137
+  ],
+  "/assets/img/v11-bd8-drawing-6.webp": [
+    3023,
+    2137
+  ],
+  "/assets/img/v11-bd8-hero-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-bd8-hero.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd8-hero.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd8-portrait-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/v11-bd8-space-1-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-bd8-space-1.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd8-space-1.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd8-space-2-m.webp": [
+    960,
+    593
+  ],
+  "/assets/img/v11-bd8-space-2.jpg": [
+    1920,
+    1186
+  ],
+  "/assets/img/v11-bd8-space-2.webp": [
+    1920,
+    1186
+  ],
+  "/assets/img/v11-bd9-drawing-0.webp": [
+    3508,
+    2158
+  ],
+  "/assets/img/v11-bd9-drawing-1.webp": [
+    3052,
+    2040
+  ],
+  "/assets/img/v11-bd9-drawing-2.webp": [
+    3508,
+    2158
+  ],
+  "/assets/img/v11-bd9-hero-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-bd9-hero.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd9-hero.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd9-portrait-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/v11-bd9-space-1-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-bd9-space-1.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd9-space-1.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd9-space-2-m.webp": [
+    960,
+    590
+  ],
+  "/assets/img/v11-bd9-space-2.jpg": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-bd9-space-2.webp": [
+    1920,
+    1180
+  ],
+  "/assets/img/v11-catalog-1-m.webp": [
+    960,
+    390
+  ],
+  "/assets/img/v11-catalog-1.jpg": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-catalog-1.webp": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-catalog-2-m.webp": [
+    960,
+    390
+  ],
+  "/assets/img/v11-catalog-2.jpg": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-catalog-2.webp": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-factory.jpg": [
+    1920,
+    1440
+  ],
+  "/assets/img/v11-factory.webp": [
+    1920,
+    1440
+  ],
+  "/assets/img/v11-grayscale-drawing-0.webp": [
+    3052,
+    2040
+  ],
+  "/assets/img/v11-grayscale-hero-m.webp": [
+    960,
+    459
+  ],
+  "/assets/img/v11-grayscale-hero.jpg": [
+    1920,
+    917
+  ],
+  "/assets/img/v11-grayscale-hero.webp": [
+    1920,
+    917
+  ],
+  "/assets/img/v11-grayscale-portrait-m.webp": [
+    720,
+    960
+  ],
+  "/assets/img/v11-grayscale-space-1-m.webp": [
+    960,
+    459
+  ],
+  "/assets/img/v11-grayscale-space-1.jpg": [
+    1920,
+    917
+  ],
+  "/assets/img/v11-grayscale-space-1.webp": [
+    1920,
+    917
+  ],
+  "/assets/img/v11-home-4s-m.webp": [
+    960,
+    390
+  ],
+  "/assets/img/v11-home-4s.jpg": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-home-4s.webp": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-home-5s-m.webp": [
+    960,
+    390
+  ],
+  "/assets/img/v11-home-5s.jpg": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-home-5s.webp": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-home-6s-m.webp": [
+    960,
+    390
+  ],
+  "/assets/img/v11-home-6s.jpg": [
+    1920,
+    780
+  ],
+  "/assets/img/v11-home-6s.webp": [
+    1920,
+    780
+  ],
+  "/assets/img/wechat-huang.png": [
+    1000,
+    1000
+  ],
+  "/assets/img/wechat-tang.png": [
+    1000,
+    1000
+  ],
+  "/assets/img/wechat-wang.png": [
+    1000,
+    1000
+  ],
+  "/assets/thumbs/product-4s-design-kitchen.webp": [
+    160,
+    108
+  ],
+  "/assets/thumbs/product-4s-design-living.webp": [
+    160,
+    106
+  ],
+  "/assets/thumbs/product-4s-design-loft.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/product-4s-detail-wall.webp": [
+    160,
+    90
+  ],
+  "/assets/thumbs/product-4s-dusk.webp": [
+    160,
+    90
+  ],
+  "/assets/thumbs/product-4s-interior.webp": [
+    160,
+    90
+  ],
+  "/assets/thumbs/product-4s-module.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/product-4s-packing.webp": [
+    160,
+    102
+  ],
+  "/assets/thumbs/product-4s-panels.webp": [
+    109,
+    160
+  ],
+  "/assets/thumbs/product-4s-roof.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/product-grayscale-design-bedroom.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/product-grayscale-design-dining.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/product-grayscale-design-kitchen.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/product-grayscale-design-living.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/product-grayscale-design-side.webp": [
+    160,
+    99
+  ],
+  "/assets/thumbs/product-grayscale-layouts.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/project-brisbane-01.webp": [
+    90,
+    160
+  ],
+  "/assets/thumbs/project-brisbane-02.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-brisbane-03.webp": [
+    160,
+    118
+  ],
+  "/assets/thumbs/project-brisbane-04.webp": [
+    90,
+    160
+  ],
+  "/assets/thumbs/project-brisbane-05.webp": [
+    160,
+    105
+  ],
+  "/assets/thumbs/project-brisbane-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-cayman-01.webp": [
+    160,
+    90
+  ],
+  "/assets/thumbs/project-cayman-02.webp": [
+    160,
+    90
+  ],
+  "/assets/thumbs/project-cayman-03.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-cayman-04.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-cayman-05.webp": [
+    160,
+    105
+  ],
+  "/assets/thumbs/project-cayman-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-changzhou-01.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-changzhou-02.webp": [
+    90,
+    160
+  ],
+  "/assets/thumbs/project-changzhou-03.webp": [
+    90,
+    160
+  ],
+  "/assets/thumbs/project-changzhou-04.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-changzhou-05.webp": [
+    160,
+    138
+  ],
+  "/assets/thumbs/project-changzhou-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-chengdu-01.webp": [
+    160,
+    116
+  ],
+  "/assets/thumbs/project-chengdu-02.webp": [
+    160,
+    94
+  ],
+  "/assets/thumbs/project-chengdu-03.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-chengdu-04.webp": [
+    160,
+    106
+  ],
+  "/assets/thumbs/project-chengdu-05.webp": [
+    144,
+    160
+  ],
+  "/assets/thumbs/project-chengdu-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-fiji-01.webp": [
+    145,
+    160
+  ],
+  "/assets/thumbs/project-fiji-02.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-fiji-03.webp": [
+    120,
+    160
+  ],
+  "/assets/thumbs/project-fiji-04.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-fiji-05.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-fiji-06.webp": [
+    160,
+    91
+  ],
+  "/assets/thumbs/project-fiji-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-jiangmen-01.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-jiangmen-02.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-jiangmen-03.webp": [
+    160,
+    148
+  ],
+  "/assets/thumbs/project-jiangmen-04.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-jiangmen-05.webp": [
+    120,
+    160
+  ],
+  "/assets/thumbs/project-jiangmen-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-shenzhen-01.webp": [
+    160,
+    109
+  ],
+  "/assets/thumbs/project-shenzhen-02.webp": [
+    120,
+    160
+  ],
+  "/assets/thumbs/project-shenzhen-03.webp": [
+    160,
+    141
+  ],
+  "/assets/thumbs/project-shenzhen-04.webp": [
+    119,
+    160
+  ],
+  "/assets/thumbs/project-shenzhen-05.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/project-shenzhen-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-zhongshan-cabins-01.webp": [
+    160,
+    66
+  ],
+  "/assets/thumbs/project-zhongshan-cabins-02.webp": [
+    160,
+    108
+  ],
+  "/assets/thumbs/project-zhongshan-cabins-03.webp": [
+    120,
+    160
+  ],
+  "/assets/thumbs/project-zhongshan-cabins-04.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-zhongshan-cabins-05.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-zhongshan-cabins-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-zhongshan-fengdu-01.webp": [
+    160,
+    86
+  ],
+  "/assets/thumbs/project-zhongshan-fengdu-02.webp": [
+    90,
+    160
+  ],
+  "/assets/thumbs/project-zhongshan-fengdu-03.webp": [
+    160,
+    116
+  ],
+  "/assets/thumbs/project-zhongshan-fengdu-04.webp": [
+    160,
+    146
+  ],
+  "/assets/thumbs/project-zhongshan-fengdu-05.webp": [
+    160,
+    94
+  ],
+  "/assets/thumbs/project-zhongshan-fengdu-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/project-zhongshan-mige-01.webp": [
+    160,
+    120
+  ],
+  "/assets/thumbs/project-zhongshan-mige-02.webp": [
+    160,
+    116
+  ],
+  "/assets/thumbs/project-zhongshan-mige-03.webp": [
+    160,
+    119
+  ],
+  "/assets/thumbs/project-zhongshan-mige-04.webp": [
+    160,
+    114
+  ],
+  "/assets/thumbs/project-zhongshan-mige-05.webp": [
+    160,
+    118
+  ],
+  "/assets/thumbs/project-zhongshan-mige-cover.webp": [
+    160,
+    100
+  ],
+  "/assets/thumbs/v11-4s-drawing-0.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-4s-hero.webp": [
+    160,
+    112
+  ],
+  "/assets/thumbs/v11-4s-living-perspective.webp": [
+    133,
+    160
+  ],
+  "/assets/thumbs/v11-4s-space-1.webp": [
+    160,
+    108
+  ],
+  "/assets/thumbs/v11-4s-space-2.webp": [
+    160,
+    108
+  ],
+  "/assets/thumbs/v11-4s-space-3.webp": [
+    160,
+    108
+  ],
+  "/assets/thumbs/v11-5s-drawing-0.webp": [
+    160,
+    89
+  ],
+  "/assets/thumbs/v11-5s-drawing-1.webp": [
+    160,
+    89
+  ],
+  "/assets/thumbs/v11-5s-drawing-2.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-5s-hero.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-5s-space-1.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-5s-space-2.webp": [
+    120,
+    160
+  ],
+  "/assets/thumbs/v11-6s-drawing-0.webp": [
+    160,
+    89
+  ],
+  "/assets/thumbs/v11-6s-drawing-1.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-6s-hero.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-6s-space-1.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-6s-space-2.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-bd8-drawing-0.webp": [
+    160,
+    113
+  ],
+  "/assets/thumbs/v11-bd8-drawing-1.webp": [
+    160,
+    113
+  ],
+  "/assets/thumbs/v11-bd8-drawing-2.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-bd8-drawing-3.webp": [
+    160,
+    113
+  ],
+  "/assets/thumbs/v11-bd8-drawing-4.webp": [
+    160,
+    113
+  ],
+  "/assets/thumbs/v11-bd8-drawing-5.webp": [
+    160,
+    113
+  ],
+  "/assets/thumbs/v11-bd8-drawing-6.webp": [
+    160,
+    113
+  ],
+  "/assets/thumbs/v11-bd8-hero.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-bd8-space-1.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-bd8-space-2.webp": [
+    160,
+    99
+  ],
+  "/assets/thumbs/v11-bd9-drawing-0.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-bd9-drawing-1.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-bd9-drawing-2.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-bd9-hero.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-bd9-space-1.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-bd9-space-2.webp": [
+    160,
+    98
+  ],
+  "/assets/thumbs/v11-catalog-1.webp": [
+    160,
+    65
+  ],
+  "/assets/thumbs/v11-catalog-2.webp": [
+    160,
+    65
+  ],
+  "/assets/thumbs/v11-grayscale-drawing-0.webp": [
+    160,
+    107
+  ],
+  "/assets/thumbs/v11-grayscale-hero.webp": [
+    160,
+    76
+  ],
+  "/assets/thumbs/v11-grayscale-space-1.webp": [
+    160,
+    76
+  ]
+}

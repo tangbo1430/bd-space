@@ -1,0 +1,79 @@
+---
+import GalleryImage from "./GalleryImage.astro";
+import { imageDimensions } from "../lib/image-dimensions";
+interface Photo {
+  base: string;
+  caption: string;
+  width?: number;
+  height?: number;
+  mobileWidth?: number;
+}
+interface Props {
+  photos: Photo[];
+  group: string;
+  class?: string;
+}
+const { photos, group, class: cls } = Astro.props;
+const rows: Photo[][] = [];
+for (let i = 0; i < photos.length;) {
+  const count = photos.length - i === 3 ? 3 : 2;
+  rows.push(photos.slice(i, i + count));
+  i += count;
+}
+---
+
+<div class:list={["photo-grid", cls]}>
+  {rows.map((row) => (
+    <div class="photo-row">
+      {row.map((photo) => {
+        const [width, height] = imageDimensions(
+          `/assets/img/${photo.base}.jpg`,
+        );
+        return (
+          <figure class="rv" style={`--photo-ratio:${width / height}`}>
+            <GalleryImage
+              {...photo}
+              width={width}
+              height={height}
+              fit="contain"
+              alt={photo.caption}
+              group={group}
+              sizes="(max-width: 767px) calc(100vw - 48px), 60vw"
+            />
+            <figcaption>{photo.caption}</figcaption>
+          </figure>
+        );
+      })}
+    </div>
+  ))}
+</div>
+<style>
+  .photo-grid {
+    display: grid;
+    gap: 48px;
+  }
+  .photo-row {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  figure {
+    flex: var(--photo-ratio) 1 0;
+    min-width: 0;
+    margin: 0;
+  }
+  figcaption {
+    padding-top: 16px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--soft-ink);
+    text-wrap: pretty;
+  }
+  @media (max-width: 767px) {
+    .photo-grid,
+    .photo-row {
+      display: grid;
+      gap: 32px;
+    }
+  }
+</style>

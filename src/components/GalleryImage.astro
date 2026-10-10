@@ -1,4 +1,5 @@
 ---
+import { imageDimensions } from "../lib/image-dimensions";
 import Icon from "./Icon.astro";
 import EditorialImage from "./EditorialImage.astro";
 interface Props {
@@ -22,8 +23,8 @@ const {
   mobileImage,
   src,
   viewerSrc,
-  width,
-  height,
+  width: suppliedWidth,
+  height: suppliedHeight,
   mobileWidth,
   fit,
   zoomX,
@@ -33,10 +34,14 @@ const {
   eager = false,
   sizes,
 } = Astro.props;
+const intrinsic = imageDimensions(src ?? `/assets/img/${base}.jpg`);
+const width = suppliedWidth ?? intrinsic[0];
+const height = suppliedHeight ?? intrinsic[1];
 ---
 
 <a
   class:list={["gallery-link", { "gallery-complete": fit === "contain" }]}
+  style={`--image-ratio:${width / height}`}
   href={src ?? `/assets/img/${base}.jpg`}
   data-gallery={group}
   data-gallery-source={viewerSrc ?? src ?? `/assets/img/${base}.webp`}
