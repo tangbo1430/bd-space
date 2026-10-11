@@ -134,20 +134,12 @@ const names = Object.fromEntries([
           </p>
         </div>
         <div class="wechat-grid contact-people">
-          {people.map((p, i) => (
-            <details
-              class="contact-person"
-              name="wechat-contact"
-              open={i === 0}
-            >
-              <summary>
-                <h3>{p.name}</h3>
-                <span class="person-channel">微信二维码</span>
-                <span class="contact-toggle" aria-hidden="true"></span>
-              </summary>
+          {people.map((p) => (
+            <article class="contact-person">
               <div class="person-body">
                 <div class="person-info">
-                  <p>沟通时可告诉我们项目所在地、用途与空间需求。</p>
+                  <h3>{p.name}</h3>
+                  <span class="person-channel">微信二维码</span>
                   <a
                     class="contact-phone"
                     href={`tel:${en ? "+86" : ""}${p.phone}`}
@@ -172,7 +164,7 @@ const names = Object.fromEntries([
                   />
                 </a>
               </div>
-            </details>
+            </article>
           ))}
         </div>
       </div>
@@ -202,11 +194,7 @@ const names = Object.fromEntries([
             <dd>{company.contact.hours}</dd>
           </div>
         </dl>
-        <details class="contact-map-disclosure">
-          <summary>
-            <span>查看位置图</span>
-            <span class="contact-toggle" aria-hidden="true"></span>
-          </summary>
+        <div class="contact-location-map">
           <a
             class="contact-map"
             href="/assets/img/contact-map.webp"
@@ -222,7 +210,7 @@ const names = Object.fromEntries([
               loading="lazy"
             />
           </a>
-        </details>
+        </div>
         <p class="contact-coordinates">{company.contact.coordinates}</p>
       </div>
     </section>

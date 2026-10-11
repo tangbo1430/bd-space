@@ -1,4 +1,4 @@
-/* Contact: an interior portrait, a compact contact sheet and quiet disclosure rows. */
+/* Contact: an interior portrait, a compact contact sheet and visible contact rows. */
 .direct-contact {
   padding-top: 96px;
 }
@@ -103,9 +103,7 @@
 .contact-copy:active {
   color: var(--accent);
 }
-.contact-copy:focus-visible,
-.contact-person summary:focus-visible,
-.contact-map-disclosure summary:focus-visible {
+.contact-copy:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 5px;
 }
@@ -150,67 +148,26 @@
 .contact-person:last-child {
   border-bottom: 1px solid #ced6d0;
 }
-.contact-person summary,
-.contact-map-disclosure summary {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding-block: 24px;
-  cursor: pointer;
-  list-style: none;
-  min-height: 72px;
-}
-.contact-person summary::-webkit-details-marker,
-.contact-map-disclosure summary::-webkit-details-marker {
-  display: none;
-}
 .direct-contact .contact-person h3 {
   font-size: 20px;
   font-weight: 400;
   margin: 0;
 }
 .person-channel {
-  margin-left: auto;
+  display: block;
+  margin-top: 8px;
   color: var(--soft-ink);
   font-size: 12px;
 }
-.contact-toggle {
-  position: relative;
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-.contact-toggle::before,
-.contact-toggle::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 3px;
-  width: 10px;
-  height: 1px;
-  background: currentColor;
-}
-.contact-toggle::after {
-  transform: rotate(90deg);
-  transition: transform 180ms;
-}
-.contact-person[open] .contact-toggle::after,
-.contact-map-disclosure[open] .contact-toggle::after {
-  transform: rotate(0);
+.person-info {
+  text-align: left;
 }
 .person-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 184px;
   gap: 24px;
   align-items: center;
-  padding: 0 0 28px;
-}
-.person-info p {
-  font-size: 14px;
-  color: var(--soft-ink);
-  line-height: 1.9;
-  max-width: 250px;
-  margin: 0 0 14px;
+  padding: 24px 0;
 }
 .direct-contact .contact-phone {
   font-size: 14px;
@@ -245,14 +202,8 @@
   line-height: 1.9;
   overflow-wrap: anywhere;
 }
-.contact-map-disclosure {
-  border-top: 1px solid var(--hairline);
-  border-bottom: 1px solid var(--hairline);
+.contact-location-map {
   margin-top: 32px;
-}
-.contact-map-disclosure summary {
-  justify-content: space-between;
-  font-size: 14px;
 }
 .contact-map {
   display: block;
@@ -346,9 +297,6 @@
   .direct-contact .wechat-code {
     width: 136px;
   }
-  .person-info p {
-    display: none;
-  }
   .qr-instruction {
     margin-top: 6px;
   }
@@ -361,8 +309,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .channel-value,
-  .contact-copy,
-  .contact-toggle::after {
+  .contact-copy {
     transition: none;
   }
 }

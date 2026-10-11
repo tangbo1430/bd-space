@@ -70,9 +70,10 @@ for (const lang of ["zh", "en"]) {
     await page.locator(".wechat-grid").scrollIntoViewIfNeeded();
     for (let i = 0; i < 3; i++) {
       const person = page.locator(".contact-person").nth(i);
-      if (!(await person.evaluate((el) => el.open)))
-        await person.locator("summary").click();
+      assert(await person.isVisible());
       const image = person.locator("img");
+      assert(await image.isVisible());
+      await image.scrollIntoViewIfNeeded();
       await image.evaluate((i) => i.decode());
       assert(
         await image.evaluate(
@@ -84,8 +85,8 @@ for (const lang of ["zh", "en"]) {
         ),
       );
     }
-    await page.locator(".contact-person summary").first().click();
-    assert.equal(await page.locator(".contact-person[open]").count(), 1);
+    assert.equal(await page.locator(".direct-contact details").count(), 0);
+    assert(await page.locator(".contact-map").isVisible());
     await page.locator(".contact-portrait img").evaluate((i) => i.decode());
     assert(
       await page
@@ -118,6 +119,8 @@ for (const lang of ["zh", "en"]) {
       height,
       overflow: false,
       qrUncropped: true,
+      allContactsVisible: true,
+      mapVisible: true,
     });
   }
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -157,7 +160,7 @@ for (const lang of ["zh", "en"]) {
     .locator("#wechat")
     .evaluate((el) => el.getBoundingClientRect().top);
   assert(top >= 76 && top < 200);
-  await page.locator(".contact-map-disclosure summary").click();
+  assert(await page.locator(".contact-map").isVisible());
   await page.locator(".contact-map").click();
   assert(
     (
