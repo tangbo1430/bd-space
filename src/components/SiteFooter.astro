@@ -4,7 +4,6 @@ import BrandLogo from "./BrandLogo.astro";
 import { company } from "../data/company";
 import { site, PLACEHOLDER } from "../lib/site";
 const en = Astro.url.pathname.startsWith("/en/");
-import { LEGAL_LINKS } from "../lib/routes";
 ---
 
 <footer class="editorial-footer">
@@ -38,9 +37,6 @@ import { LEGAL_LINKS } from "../lib/routes";
             <span class="eyebrow">更多信息</span>
             <a href="/zh/qualifications/">资质能力</a>
             <a href="/zh/about/investors/">投资者关系</a>
-            {LEGAL_LINKS.map((l) => (
-              <a href={l.href}>{l.label}</a>
-            ))}
           </div>
         )}
       </div>
@@ -48,9 +44,7 @@ import { LEGAL_LINKS } from "../lib/routes";
     <div class="footer-bottom">
       <span>© {site.year} 半打空间</span>
       <span>ARCHITECTURE. MANUFACTURED.</span>
-      {!en && (
-        <span>{site.icp !== PLACEHOLDER ? site.icp : "备案信息待完善"}</span>
-      )}
+      {!en && site.icp !== PLACEHOLDER && site.icp && <span>{site.icp}</span>}
       <a href="#main" class="back-top" aria-label="返回页面顶部">
         回到顶部 <Icon name="chevron-up" />
       </a>

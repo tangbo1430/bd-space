@@ -186,7 +186,7 @@ document
           ui("项目需求："),
           input.message.trim(),
           "",
-          ui("此文件为本地需求草稿，尚未向半打空间发送。"),
+          ui("此需求尚未发送，请通过邮件或微信发送给半打空间。"),
         ].join("\n");
         const url = URL.createObjectURL(
           new Blob(["\ufeff", text], { type: "text/plain;charset=utf-8" }),
@@ -205,7 +205,7 @@ document
         );
         if (status)
           status.textContent = ui(
-            "项目需求已下载到您的设备，尚未发送给我们。请通过下方邮箱或微信发送文件。",
+            "需求文件已下载，尚未发送。请通过下方邮箱或微信发给我们。",
           );
       });
   });

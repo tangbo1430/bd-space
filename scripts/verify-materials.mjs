@@ -60,7 +60,8 @@ for (const p of projects) {
 check(
   "4S area scopes kept separate",
   html("products/4s").includes("首层63㎡＋阁楼36㎡") &&
-    html("products/4s").includes("98㎡（资料独立口径）"),
+    html("products/4s").includes("98㎡") &&
+    html("products/4s").includes("两类面积采用不同计算口径，不相加或换算"),
 );
 check(
   "24-hour assembly qualifier preserved",
@@ -76,7 +77,8 @@ check(
   "Reports and patents preserve ownership and limits",
   html("qualifications").includes("广东草根民墅房屋制造有限公司") &&
     html("qualifications").includes("不代表半打整屋认证") &&
-    html("qualifications").includes("不据此判断当前有效状态"),
+    html("qualifications").includes("当前法律状态需另行核实") &&
+    html("qualifications").includes("非均由半打空间持有"),
 );
 check(
   "Phone, email and three QR codes linked",
@@ -87,7 +89,7 @@ check(
 check(
   "Inquiry still provides a local download",
   html("contact").includes("data-download-inquiry") &&
-    html("contact").includes("填写内容不会发送给我们"),
+    html("contact").includes("下载不会自动发送"),
 );
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((p) =>

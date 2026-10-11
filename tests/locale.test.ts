@@ -24,8 +24,8 @@ describe("published bilingual pages", () => {
     }
   });
   it("preserves separate numeric area definitions", () => {
-    expect(translate("首层123.9㎡＋二层113.9㎡；资料列总面积238㎡")).toBe(
-      "Ground floor 123.9 m² + Upper floor 113.9 m²; source total 238 m²",
+    expect(translate("首层123.9㎡＋二层113.9㎡；总建筑面积238㎡")).toBe(
+      "Ground floor 123.9 m² + Upper floor 113.9 m²; total gross floor area 238 m²",
     );
   });
   it("localizes dynamic image announcements", () => {

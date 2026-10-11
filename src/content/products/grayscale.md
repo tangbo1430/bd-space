@@ -48,7 +48,7 @@
   "heroAsset": "grayscale",
   "heroBase": "v11-grayscale-hero",
   "gallery": [],
-  "specNote": "建筑面积含外墙，不含户外平台；各项面积按提供资料分别列示，不相加。装运为资料参考配置，实际方案需结合项目确认。",
+  "specNote": "建筑面积含外墙，不含户外平台；各类面积分别计算，不相加。装运配置供参考，实际方案以项目约定为准。",
   "listed": true,
   "published": true,
   "heroCaption": "灰度空间 · 庭院外观 / 方案效果图",
@@ -116,7 +116,7 @@
   ],
   "diagramTitle": "看见空间的组成。",
   "diagramLabel": "技术图与装运",
-  "diagramIntro": "完整保留资料中的图示标注，仅供方案沟通；实际尺寸、配置及装运按项目确认。",
+  "diagramIntro": "图示供方案参考，实际尺寸、配置与装运方式以项目约定为准。",
   "featured": true,
   "mobileImage": "/assets/img/v11-grayscale-portrait-m.webp"
 }

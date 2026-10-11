@@ -38,7 +38,7 @@ const enabled = isFormEnabled(endpoint, accessKey);
   >
     {!enabled && (
       <p class="form-banner info show" role="note">
-        在线提交暂未开通。填写并下载项目需求后，可通过微信或邮件发送给我们。
+        填写项目需求，下载后通过邮件或微信发给我们。
       </p>
     )}
     <p class="form-banner" data-form-banner role="alert"></p>
@@ -149,10 +149,7 @@ const enabled = isFormEnabled(endpoint, accessKey);
     )}
     {!enabled && (
       <p class="local-save-note">
-        下载文件仅保存到您的设备，填写内容不会发送给我们。
-        {!Astro.url.pathname.startsWith("/en/") && (
-          <a href="/zh/privacy/">隐私政策（准备中）</a>
-        )}
+        下载不会自动发送，填写内容仅保存到您的设备。
       </p>
     )}
 
