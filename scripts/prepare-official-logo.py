@@ -1,6 +1,6 @@
 """Recover the supplied curved lettering from its original outline paths (no tracing)."""
 from pathlib import Path
-import pymupdf, xml.etree.ElementTree as ET, sys
+import pymupdf, xml.etree.ElementTree as ET, sys, re
 folder=Path(sys.argv[1])
 root=Path(__file__).resolve().parents[1]
 doc=pymupdf.open(folder/'半打空间logo.pdf')
@@ -54,6 +54,8 @@ for e in old.iter():
 art=''.join(blocks)+''.join('<path fill="#122e3b" fill-rule="evenodd" d="'+path(contours[i])+''.join(path(contours[j]) for j in children[i])+'"/>' for i in roots)
 svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 268 1922 544">'+art+'</svg>'
 (root/'public/assets/brand/logo-original-r26.svg').write_text(svg,encoding='utf8')
-(root/'public/assets/brand/logo-reversed-r26.svg').write_text(svg.replace('#122e3b','#ffffff'),encoding='utf8')
+# Preserve all six official symbol blocks; only the wordmark is white on photography.
+overlay=re.sub(r'<(?:path|rect)\b[^>]*>',lambda m: m[0].replace('#122e3b','#ffffff') if m[0].startswith('<path') or float(re.search(r'x="([^"]+)"',m[0])[1])>600 else m[0],svg)
+(root/'public/assets/brand/logo-overlay-r28.svg').write_text(overlay,encoding='utf8')
 print('Original contours',len(contours),'curves',sum(k=='c' for c in contours for k,_ in c),'SVG bytes',len(svg))
 

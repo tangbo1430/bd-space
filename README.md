@@ -21,7 +21,7 @@ Astro 5、TypeScript 与原生 CSS/交互实现的双语建筑产品网站。v1.
 
 产品目录为 4S、5S、6S、灰度空间、半打 8、半打 9；首页仍精选四款。slab、wall、stair 三个旧地址保留、不索引。英文发布首页、产品中心、六款详情、案例、关于、联系共 11 页。中文页面的桌面与手机语言入口统一显示 EN；没有对应英文页时跳转英文首页，通过悬停提示和无障碍名称说明目标。
 
-官方 Logo 保留轮廓、比例及两块灰色。桌面摄影首屏使用透明导航与浅色 Logo，滚动后、手机导航和浅色页脚使用原色。首页保留 6S → 4S → 5S，产品中心为六款产品轮播；控件无文字，支持键盘、触摸、暂停、离屏停止和减少动态效果。首屏维持满幅摄影及独立手机选图；正文照片按真实比例完整展示，混合横竖图按原比例成组等高，手机单列。
+官方 Logo 保留轮廓、比例及两块灰色。桌面摄影首屏使用透明导航，方块图形保持官方原色、文字保持白色；滚动后、手机导航和浅色页脚使用完整原色版。首页保留 6S → 4S → 5S，产品中心为六款产品轮播；控件无文字，支持键盘、触摸、暂停、离屏停止和减少动态效果。首屏维持满幅摄影及独立手机选图；正文照片按真实比例完整展示，混合横竖图按原比例成组等高，手机单列。
 
 六款图片和技术图按型号分组，完整展示、缩放、原图、160px 缩略图和焦点恢复。5S 补充客厅图；6S 未提供可确认的室内图，不跨型号借图。4S 吊装视频为原始 544×960，视频帧封面、preload=none、手动播放。十个案例保留旧锚点与国内 7/海外 3 筛选，补齐各自施工图、交付范围和完工状态。
 
@@ -39,7 +39,7 @@ Astro 5、TypeScript 与原生 CSS/交互实现的双语建筑产品网站。v1.
 
 - `docs/v11-materials-manifest.json`：来源、用途、尺寸与取舍；原始资料不进入 public/。旧工艺照片和缩略图已撤下。
 - `python scripts/import-v11.py <解压目录>`：准备 v1.1 网页资源（Pillow）；人工审核后的说明与排序以提交内容为准。
-- `python scripts/prepare-official-logo.py <官方Logo目录>`：按原 PDF 曲线轮廓与 SVG 色块生成深浅两套 Logo（PyMuPDF），保留灰色，不使用整图漂白滤镜。
+- `python scripts/prepare-official-logo.py <官方Logo目录>`：按原 PDF 曲线轮廓与 SVG 色块生成原色版及白字原色图形版 Logo（PyMuPDF），不使用整图漂白滤镜。
 - `python scripts/generate-image-dimensions.py`：新增/替换网页图片后更新真实尺寸清单（Pillow），再构建。
 - `python scripts/generate-gallery-thumbnails.py`：构建后更新 public/ 与 dist/ 缩略图。
 - `python scripts/subset-font.py <NotoSansSC.ttf>`：更新本地 OFL 字体子集（fonttools、brotli）。

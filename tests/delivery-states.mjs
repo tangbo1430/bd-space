@@ -7,10 +7,18 @@ const original = await readFile(
   "utf8",
 );
 const reversed = await readFile(
-  "public/assets/brand/logo-reversed-r26.svg",
+  "public/assets/brand/logo-overlay-r28.svg",
   "utf8",
 );
-assert.equal(original.replaceAll("#122e3b", "#ffffff"), reversed);
+assert.equal(
+  original.replace(/<(?:path|rect)\b[^>]*>/g, (tag) =>
+    tag.startsWith("<path") || Number(tag.match(/x="([^"]+)"/)?.[1]) > 600
+      ? tag.replace("#122e3b", "#ffffff")
+      : tag,
+  ),
+  reversed,
+);
+assert.equal((reversed.match(/#122e3b/g) || []).length, 4);
 for (const svg of [original, reversed]) {
   assert(!/<image|stroke=|filter=|data:image/.test(svg));
   assert.equal((svg.match(/#c7c8ca/g) || []).length, 1);
