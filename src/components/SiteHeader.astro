@@ -23,7 +23,7 @@ const languageHref = alternateLanguage(Astro.url.pathname);
 const languageLabel = lang === "en" ? "中文" : "EN";
 const languageDescription =
   lang === "en"
-    ? "中文 — 切换到对应中文页面"
+    ? "Switch to Chinese"
     : hasEnglish(Astro.url.pathname)
       ? "EN — Switch to English"
       : "EN — English homepage (this page is available in Chinese only)";
@@ -139,7 +139,8 @@ const aboutGroupActive = aboutSub !== null;
       class="lang"
       href={languageHref}
       data-language-link
-      aria-label={languageDescription}
+      aria-label={languageLabel}
+      aria-description={languageDescription}
       title={languageDescription}
       hreflang={lang === "en" ? "zh-CN" : "en"}
     >
@@ -238,7 +239,8 @@ const aboutGroupActive = aboutSub !== null;
     class="drawer-language"
     href={languageHref}
     data-language-link
-    aria-label={languageDescription}
+    aria-label={languageLabel}
+    aria-description={languageDescription}
     title={languageDescription}
     hreflang={lang === "en" ? "zh-CN" : "en"}
   >

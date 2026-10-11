@@ -11,12 +11,27 @@ document.querySelectorAll<HTMLElement>("[data-collection]").forEach((root) => {
   );
   const descriptions = JSON.parse(
     root.querySelector("[data-products-json]")?.textContent ?? "[]",
-  ) as Array<{ id: string; desc: string }>;
+  ) as Array<{ id: string; desc: string; area: string; layout: string }>;
   const info = root.querySelector<HTMLElement>('[role="tabpanel"]');
   const description = root.querySelector<HTMLElement>(
     "[data-product-description]",
   );
   const link = root.querySelector<HTMLAnchorElement>("[data-product-link]");
+  const area = root.querySelector<HTMLElement>("[data-product-area]");
+  const layout = root.querySelector<HTMLElement>("[data-product-layout]");
+  const setParts = (target: HTMLElement | null, value: string) => {
+    if (!target) return;
+    target.replaceChildren(
+      ...value
+        .split(/(?<=[房厅厨卫])|(?=[＋+])|(?<=,)\s*/u)
+        .filter(Boolean)
+        .map((text) => {
+          const part = document.createElement("span");
+          part.textContent = text;
+          return part;
+        }),
+    );
+  };
   const select = (index: number, focus = false) => {
     const selected = tabs[index];
     if (!selected) return;
@@ -33,9 +48,10 @@ document.querySelectorAll<HTMLElement>("[data-collection]").forEach((root) => {
       panel.setAttribute("aria-hidden", String(!active));
     });
     if (info) info.setAttribute("aria-labelledby", selected.id);
-    if (description)
-      description.textContent =
-        descriptions.find((item) => item.id === id)?.desc ?? "";
+    const content = descriptions.find((item) => item.id === id);
+    if (description) description.textContent = content?.desc ?? "";
+    setParts(area, content?.area ?? "");
+    setParts(layout, content?.layout ?? "");
     if (link) link.href = `/${isEnglish() ? "en" : "zh"}/products/${id}/`;
     if (focus) selected.focus();
   };

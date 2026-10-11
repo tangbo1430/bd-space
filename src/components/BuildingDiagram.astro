@@ -1,0 +1,101 @@
+---
+interface Props {
+  systemId: string;
+  label: string;
+}
+const { systemId, label } = Astro.props;
+type Point = [number, number, number];
+const point = ([x, y, z]: Point) =>
+  `${160 + x * 0.92 + y * 0.9},${310 + x * 0.43 - y * 0.46 - z}`;
+const face = (points: Point[]) => points.map(point).join(" ");
+const box = (
+  x: number,
+  y: number,
+  z: number,
+  w: number,
+  d: number,
+  h: number,
+) => ({
+  front: face([
+    [x, y, z],
+    [x + w, y, z],
+    [x + w, y, z + h],
+    [x, y, z + h],
+  ]),
+  side: face([
+    [x + w, y, z],
+    [x + w, y + d, z],
+    [x + w, y + d, z + h],
+    [x + w, y, z + h],
+  ]),
+  top: face([
+    [x, y, z + h],
+    [x + w, y, z + h],
+    [x + w, y + d, z + h],
+    [x, y + d, z + h],
+  ]),
+});
+const foundation = box(-12, -12, -13, 294, 224, 13);
+const parts: Record<
+  string,
+  Array<{ geometry: ReturnType<typeof box>; class: string }>
+> = {
+  panels: [
+    { geometry: box(0, 0, 0, 270, 200, 8), class: "slab" },
+    { geometry: box(-30, 0, 28, 8, 200, 130), class: "wall wall-one" },
+    { geometry: box(0, 220, 28, 270, 8, 130), class: "wall wall-two" },
+    { geometry: box(0, 0, 194, 270, 200, 8), class: "roof" },
+  ],
+  modules: [
+    { geometry: box(0, 0, 0, 125, 200, 130), class: "module" },
+    { geometry: box(147, 0, 50, 125, 200, 130), class: "module lifted-module" },
+  ],
+  hybrid: [
+    { geometry: box(0, 0, 0, 125, 200, 130), class: "module" },
+    { geometry: box(144, 0, 0, 126, 200, 8), class: "slab" },
+    { geometry: box(270, 0, 0, 8, 200, 130), class: "wall" },
+    { geometry: box(144, 0, 170, 126, 200, 8), class: "roof" },
+  ],
+};
+---
+
+<svg
+  class="assembly-drawing"
+  viewBox="0 0 780 530"
+  role="img"
+  aria-label={label}
+>
+  <g class="assembly-base">
+    <polygon class="face-front" points={foundation.front} />
+    <polygon class="face-side" points={foundation.side} />
+    <polygon class="face-top" points={foundation.top} />
+  </g>
+  <g
+    class="assembly-guides"
+    fill="none"
+    stroke="currentColor"
+    stroke-dasharray="4 6"
+    stroke-width="1"
+  >
+    {[
+      [0, 0],
+      [270, 0],
+      [270, 200],
+      [0, 200],
+    ].map(([x, y]) => (
+      <polyline
+        points={face([
+          [x, y, 0],
+          [x, y, 215],
+        ])}
+      />
+    ))}
+  </g>
+  {parts[systemId].map((part, i) => (
+    <g class={`assembly-part ${part.class}`} style={`--part-order:${i}`}>
+      <polygon class="face-front" points={part.geometry.front} />
+      <polygon class="face-side" points={part.geometry.side} />
+      <polygon class="face-top" points={part.geometry.top} />
+    </g>
+  ))}
+</svg>

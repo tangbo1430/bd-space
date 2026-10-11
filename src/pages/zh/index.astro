@@ -5,8 +5,10 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import EditorialImage from "../../components/EditorialImage.astro";
 import ProjectCTA from "../../components/ProjectCTA.astro";
 import BuildingSystems from "../../components/BuildingSystems.astro";
+import BuildingDiagram from "../../components/BuildingDiagram.astro";
 import projects from "../../data/projects.json";
 import { company } from "../../data/company";
+import { translate } from "../../lib/translate";
 const selectedProjects = ["cayman", "changzhou"].map((id) =>
   projects.find((p) => p.id === id)!,
 );
@@ -31,26 +33,25 @@ const slides = [
   },
 ];
 import { getListedProducts } from "../../lib/catalog";
-const products = (await getListedProducts())
-  .filter((p) => p.featured)
-  .map((p) => ({
-    ...p,
-    desc: `${p.desc} ${p.area} · ${p.layout}`,
-  }));
+const products = (await getListedProducts()).filter((p) => p.featured);
+const summaryParts = (value: string) =>
+  (Astro.url.pathname.startsWith("/en/") ? translate(value) : value)
+    .split(/(?<=[房厅厨卫])|(?=[＋+])|(?<=,)\s*/u)
+    .filter(Boolean);
 const steps = [
   {
     title: "设计，把想法落到细节",
     en: "DESIGN",
     text: "从场地与使用需求出发，梳理空间、结构与模块之间的关系。",
-    base: "v11-factory",
+    base: "",
     mobile: false,
   },
   {
     title: "制造，让空间在工厂成形",
     en: "MANUFACTURE",
     text: "混凝土构件与空间模块在产线上制作，让建造过程有序展开。",
-    base: "flow-factory-module",
-    mobile: true,
+    base: "v11-factory",
+    mobile: false,
   },
   {
     title: "交付，让建筑抵达生活",
@@ -120,7 +121,8 @@ const steps = [
                 data-collection-image={p.id}
                 aria-hidden={i !== 0}
               >
-                <EditorialImage fit="contain"
+                <EditorialImage
+                  fit="contain"
                   base={p.base}
                   alt={p.imageCaption}
                   sizes="(max-width: 767px) 100vw, 65vw"
@@ -158,6 +160,24 @@ const steps = [
               tabindex="0"
             >
               <p data-product-description>{products[0].desc}</p>
+              <dl class="collection-specs">
+                <div>
+                  <dt>建筑面积</dt>
+                  <dd data-product-area>
+                    {summaryParts(products[0].area).map((part) => (
+                      <span>{part}</span>
+                    ))}
+                  </dd>
+                </div>
+                <div>
+                  <dt>户型</dt>
+                  <dd data-product-layout>
+                    {summaryParts(products[0].layout).map((part) => (
+                      <span>{part}</span>
+                    ))}
+                  </dd>
+                </div>
+              </dl>
               <a
                 class="text-link action action-secondary"
                 data-product-link
@@ -170,7 +190,12 @@ const steps = [
               type="application/json"
               data-products-json
               set:html={JSON.stringify(
-                products.map(({ id, desc }) => ({ id, desc })),
+                products.map(({ id, desc, area, layout }) => ({
+                  id,
+                  desc,
+                  area,
+                  layout,
+                })),
               )}
             />
           </div>
@@ -339,16 +364,27 @@ const steps = [
           <div class="making-stage rv">
             {steps.map((s, i) => (
               <div
-                class:list={["making-frame", { active: i === 0 }]}
+                class:list={[
+                  "making-frame",
+                  { active: i === 0, "making-frame--diagram": i === 0 },
+                ]}
                 data-making-image
                 aria-hidden={i !== 0}
               >
-                <EditorialImage fit="contain"
-                  base={s.base}
-                  alt={s.title}
-                  mobile={s.mobile}
-                  sizes="(max-width: 767px) 100vw, 50vw"
-                />
+                {i === 0 ? (
+                  <div class="making-design">
+                    <BuildingDiagram systemId="hybrid" label="建造逻辑示意" />
+                    <p>建造逻辑示意，具体结构与连接方式以项目设计为准。</p>
+                  </div>
+                ) : (
+                  <EditorialImage
+                    fit="contain"
+                    base={s.base}
+                    alt={s.title}
+                    mobile={s.mobile}
+                    sizes="(max-width: 767px) 100vw, 50vw"
+                  />
+                )}
                 <span class="making-image-caption">
                   0{i + 1} / {s.en}
                 </span>

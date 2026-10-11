@@ -417,6 +417,31 @@ html {
 .collection-info .text-link {
   margin-top: 20px;
 }
+.collection-specs {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.collection-specs > div {
+  display: grid;
+  grid-template-columns: minmax(70px, 28%) minmax(0, 1fr);
+  gap: 16px;
+}
+.collection-specs dt {
+  font-size: 12px;
+}
+.collection-specs dd {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.3em;
+  color: var(--ink-strong);
+}
+.collection-specs dd span {
+  display: inline-block;
+}
 .living-section {
   position: relative;
   height: clamp(540px, 56vw, 850px);
@@ -592,6 +617,18 @@ html {
   padding: 16px 20px;
   font-size: 12px;
   letter-spacing: 0.14em;
+}
+.making-design {
+  color: var(--on-dark-muted);
+}
+.making-design p {
+  margin: 8px 20px 20px;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.making-frame--diagram .making-image-caption {
+  position: static;
+  display: block;
 }
 /* Inner-page components. */
 .page-opening {
@@ -1179,7 +1216,6 @@ html {
   }
   .collection-info > p {
     font-size: 16px;
-    min-height: 4em;
   }
   .collection-info .text-link {
     margin-top: 16px;

@@ -315,13 +315,14 @@
 }
 .founder-copy li {
   display: grid;
-  grid-template-columns: 52px 1fr;
+  grid-template-columns: 10ch minmax(0, 1fr);
   gap: 20px;
   padding-block: 16px;
   border-top: 1px solid var(--hairline);
   font-size: 13px;
 }
 .founder-copy time {
+  white-space: nowrap;
   font-variant-numeric: tabular-nums;
   color: var(--soft-ink);
 }

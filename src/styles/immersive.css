@@ -274,6 +274,7 @@ body.banda-editorial {
   line-height: 2;
 }
 .systems-section {
+  --soft-ink: var(--on-dark-muted);
   background:
     radial-gradient(ellipse at 90% 100%, #12392e 0, transparent 45%),
     var(--dark);
@@ -332,7 +333,7 @@ body.banda-editorial {
 .systems-section .system-study-note,
 .systems-section figcaption small,
 .systems-section .system-mobile-description {
-  color: #c3ccc8;
+  color: var(--soft-ink);
   font-size: 12px;
 }
 .systems-section .selection-mark {
