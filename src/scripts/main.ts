@@ -120,6 +120,8 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
   );
   const live = hero.querySelector<HTMLElement>("[data-banner-live]");
   let i = 0;
+  let pendingIndex: number | null = null;
+  let pendingImage: AbortController | undefined;
   let timer: number | undefined;
   let progressAnimation: Animation | undefined;
   let remaining = BANNER_INTERVAL_MS;
@@ -159,7 +161,8 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
   };
   const play = () => {
     stop();
-    const playing = shouldAutoplay(state) && !userPaused;
+    const playing =
+      shouldAutoplay(state) && !userPaused && pendingIndex === null;
     hero.classList.toggle("paused", !playing);
     // The visual timeline shares the carousel timer, including its remaining interval.
     progressAnimation?.cancel();
@@ -205,13 +208,16 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     if (live) live.textContent = ui(`第 ${i + 1} 张，共 ${slides.length} 张`);
   };
 
-  const show = (n: number, manual: boolean, kind?: "prev" | "next" | "dot") => {
-    if (manual && !controlsEnabled(state)) return;
+  const activate = (
+    next: number,
+    manual: boolean,
+    kind?: "prev" | "next" | "dot",
+  ) => {
     slides[i]?.classList.remove("on");
     slides[i]?.removeAttribute("aria-current");
     dots[i]?.classList.remove("on");
     dots[i]?.setAttribute("aria-current", "false");
-    i = (n + slides.length) % slides.length;
+    i = next;
     slides[i]?.classList.add("on");
     slides[i]?.setAttribute("aria-current", "true");
     dots[i]?.classList.add("on");
@@ -233,9 +239,65 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     play();
   };
 
+  const show = (n: number, manual: boolean, kind?: "prev" | "next" | "dot") => {
+    if (manual && !controlsEnabled(state)) return;
+    pendingImage?.abort();
+    pendingImage = undefined;
+    pendingIndex = null;
+    hero.removeAttribute("aria-busy");
+    const next = (n + slides.length) % slides.length;
+    const image = slides[next]?.querySelector<HTMLImageElement>("img");
+    // Preserve the current photograph until the requested image is ready.
+    if (next === i || !image || (image.complete && image.naturalWidth > 0)) {
+      activate(next, manual, kind);
+      return;
+    }
+    const request = new AbortController();
+    pendingImage = request;
+    pendingIndex = next;
+    hero.setAttribute("aria-busy", "true");
+    play();
+    image.loading = "eager";
+    void new Promise<boolean>((resolve) => {
+      const finish = (ready: boolean) => {
+        window.clearTimeout(timeout);
+        image.removeEventListener("load", loaded);
+        image.removeEventListener("error", failed);
+        request.signal.removeEventListener("abort", failed);
+        resolve(ready);
+      };
+      const loaded = () => finish(true);
+      const failed = () => finish(false);
+      const timeout = window.setTimeout(failed, 15000);
+      image.addEventListener("load", loaded);
+      image.addEventListener("error", failed);
+      request.signal.addEventListener("abort", failed, { once: true });
+      if (image.complete) finish(image.naturalWidth > 0);
+    }).then(async (ready) => {
+      if (ready) {
+        try {
+          await image.decode();
+        } catch {
+          ready = false;
+        }
+      }
+      if (request.signal.aborted) return;
+      pendingImage = undefined;
+      pendingIndex = null;
+      hero.removeAttribute("aria-busy");
+      if (ready) activate(next, manual, kind);
+      else {
+        if (manual && live)
+          live.textContent = ui("图片暂时无法加载，请切换其他图片。");
+        stop(true);
+        play();
+      }
+    });
+  };
+
   dots.forEach((d, k) =>
     d.addEventListener("click", () => {
-      if (k !== i) show(k, true, "dot");
+      if (k !== i || pendingIndex !== null) show(k, true, "dot");
     }),
   );
 
@@ -295,7 +357,8 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
       const dx = (e.changedTouches[0]?.clientX ?? touchX) - touchX;
       const dy = (e.changedTouches[0]?.clientY ?? touchY) - touchY;
       const dir = resolveSwipe(dx, dy);
-      if (dir !== 0) show(i + dir, true, dir < 0 ? "prev" : "next");
+      if (dir !== 0)
+        show((pendingIndex ?? i) + dir, true, dir < 0 ? "prev" : "next");
       touchX = null;
       touchY = null;
     },
@@ -320,12 +383,18 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
       event.target instanceof Element && event.target.closest("[data-dot]");
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
-      show(i + (event.key === "ArrowRight" ? 1 : -1), true);
-      if (fromScene) dots[i]?.focus({ preventScroll: true });
+      const next =
+        ((pendingIndex ?? i) +
+          (event.key === "ArrowRight" ? 1 : -1) +
+          slides.length) %
+        slides.length;
+      show(next, true);
+      if (fromScene) dots[next]?.focus({ preventScroll: true });
     } else if (fromScene && (event.key === "Home" || event.key === "End")) {
       event.preventDefault();
-      show(event.key === "Home" ? 0 : slides.length - 1, true);
-      dots[i]?.focus({ preventScroll: true });
+      const next = event.key === "Home" ? 0 : slides.length - 1;
+      show(next, true);
+      dots[next]?.focus({ preventScroll: true });
     }
   });
   slides.forEach((slide, index) => {
