@@ -1,8 +1,8 @@
+import { assertDirectContact } from "./contact-helpers.mjs";
 import { chromium } from "playwright";
 import AxeBuilder from "@axe-core/playwright";
 import assert from "node:assert/strict";
 import { mkdir, writeFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
 const base = process.env.TEST_BASE_URL ?? "http://localhost:4321";
 const browser = await chromium.launch({ channel: "msedge", headless: true });
 const report = {
@@ -387,41 +387,9 @@ report.interactions.push(
   "Mobile hero keeps its product link; resizing an open mobile menu to desktop restores scrolling and focus",
 );
 await page.goto(base + "/zh/contact/?product=5s", { waitUntil: "networkidle" });
-assert(
-  (await page.locator('[name="message"]').inputValue()).includes("半打 5S"),
-);
-await page.locator("[data-download-inquiry]").click();
-assert(
-  await page
-    .locator('[data-field="name"]')
-    .evaluate((e) => e.classList.contains("err")),
-);
-await page.locator('[name="name"]').fill("测试用户");
-await page.locator('[name="contact"]').fill("test@example.com");
-await page.locator('[name="message"]').fill("测试项目需求：住宅空间");
-const pendingDownload = page.waitForEvent("download");
-await page.locator("[data-download-inquiry]").click();
-const download = await pendingDownload;
-assert.equal(download.suggestedFilename(), "半打空间-项目需求.txt");
-await download.saveAs(fileURLToPath(new URL("inquiry-test.txt", output)));
-assert(
-  (await page.locator("[data-download-status]").textContent()).includes(
-    "尚未发送",
-  ),
-);
-assert(await page.locator("[data-form-success]").isHidden());
-await page.locator('[name="message"]').fill("更新后的项目需求");
-assert(
-  (await page.locator("[data-download-status]").textContent()).includes(
-    "内容已修改",
-  ),
-);
-assert.equal(
-  await page.locator("[data-message-count]").textContent(),
-  "8 / 1000",
-);
+await assertDirectContact(page, "半打 5S");
 report.interactions.push(
-  "Product inquiry prefill, field validation and local download without false submission",
+  "Direct contact: product context, email draft, copy and QR focus restoration",
 );
 const motionPage = await browser.newPage({
   viewport: { width: 1440, height: 900 },

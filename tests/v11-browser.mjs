@@ -1,7 +1,8 @@
+import { assertDirectContact } from "./contact-helpers.mjs";
 import { chromium } from "playwright";
 import AxeBuilder from "@axe-core/playwright";
 import assert from "node:assert/strict";
-import { mkdir, writeFile, readFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 const base = process.env.TEST_BASE_URL ?? "http://127.0.0.1:4322";
 const routes = [
   "",
@@ -145,26 +146,9 @@ report.interactions.push(
 await page.goto(`${base}/en/contact/?product=bd9`, {
   waitUntil: "networkidle",
 });
-assert((await page.locator("textarea").inputValue()).includes("BD-9"));
-await page.locator("[data-download-inquiry]").click();
-assert(
-  (await page.locator("[data-msg]").allTextContents())
-    .join(" ")
-    .includes("Please enter your name"),
-);
-await page.locator('[name="name"]').fill("Alex 王先生");
-await page.locator('[name="contact"]').fill("+61 412 345 678");
-const download = page.waitForEvent("download");
-await page.locator("[data-download-inquiry]").click();
-const file = await download;
-const text = await readFile(await file.path(), "utf8");
-assert(
-  text.includes("Alex 王先生"),
-  "authored user input must remain unchanged",
-);
-assert(text.includes("has not been sent"));
+await assertDirectContact(page, "BD-9");
 report.interactions.push(
-  "English enquiry: product prefill, validation, international phone and local download",
+  "Direct contact: product context, email draft, copy and QR focus restoration",
 );
 await writeFile(
   "artifacts/v11-browser-audit.json",

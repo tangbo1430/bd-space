@@ -1,0 +1,113 @@
+.contact-welcome {
+  max-width: 360px;
+  align-self: end;
+}
+.contact-welcome p {
+  margin: 0 0 24px;
+  color: var(--soft-ink);
+  font-size: 16px;
+  line-height: 1.9;
+}
+.direct-channels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 6vw, 96px);
+  margin-top: clamp(40px, 5vw, 72px);
+}
+.direct-channel {
+  min-width: 0;
+  border-top: 1px solid var(--hairline);
+  padding-top: 24px;
+}
+.channel-value {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 16px 0 12px;
+  font-size: clamp(24px, 2.7vw, 38px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
+  transition: color 180ms ease;
+}
+.channel-value:hover {
+  color: var(--accent-ink, #007965);
+}
+.channel-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 20px;
+}
+.channel-bottom > span {
+  font-size: 13px;
+  color: var(--soft-ink);
+}
+.channel-bottom .action {
+  min-height: 44px;
+}
+.contact-copy-status {
+  min-height: 24px;
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--soft-ink);
+}
+.contact-context {
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: var(--soft-ink);
+}
+.contact-visit-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(32px, 6vw, 88px);
+  align-items: start;
+}
+.visit-information {
+  margin: 0;
+  display: grid;
+  gap: 28px;
+}
+.visit-information dt {
+  font-size: 13px;
+  color: var(--soft-ink);
+  margin-bottom: 8px;
+}
+.visit-information dd {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+.contact-map {
+  display: block;
+}
+.direct-contact #wechat,
+.direct-contact #visit {
+  scroll-margin-top: 0;
+}
+@media (max-width: 767px) {
+  .contact-welcome {
+    max-width: 100%;
+  }
+  .direct-channels {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    margin-top: 36px;
+  }
+  .channel-value {
+    font-size: clamp(24px, 7vw, 32px);
+  }
+  .contact-visit-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .channel-value {
+    transition: none;
+  }
+}

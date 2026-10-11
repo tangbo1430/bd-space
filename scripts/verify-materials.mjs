@@ -87,9 +87,10 @@ check(
     (html("contact").match(/class="wechat-code"/g) ?? []).length === 3,
 );
 check(
-  "Inquiry still provides a local download",
-  html("contact").includes("data-download-inquiry") &&
-    html("contact").includes("下载不会自动发送"),
+  "Contact offers direct channels without a form",
+  html("contact").includes("data-direct-contact") &&
+    !html("contact").includes("data-consult-form") &&
+    !html("contact").includes("data-download-inquiry"),
 );
 function walk(dir) {
   return readdirSync(dir, { withFileTypes: true }).flatMap((p) =>

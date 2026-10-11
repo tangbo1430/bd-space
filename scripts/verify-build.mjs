@@ -92,13 +92,15 @@ ok(
 ok(page("en").includes('<html lang="en"'), "English home is localized");
 const contact = page("zh/contact");
 ok(
-  contact.includes('name="bd_website"') && contact.includes('name="source"'),
-  "inquiry form has anti-abuse and source fields",
+  contact.includes("data-direct-contact") &&
+    !contact.includes("data-consult-form"),
+  "contact offers direct communication without a form",
 );
 ok(
-  contact.includes("data-download-inquiry") ||
-    contact.includes('type="submit"'),
-  "inquiry has a usable local-draft or submission action",
+  contact.includes('href="tel:18503005860"') &&
+    contact.includes('href="mailto:411547750@qq.com"') &&
+    contact.includes('id="wechat"'),
+  "contact includes phone, email and WeChat",
 );
 ok(
   !page("zh/about/careers").includes("【待提供】") &&
