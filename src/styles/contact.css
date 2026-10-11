@@ -139,14 +139,33 @@
   line-height: 1.9;
   color: var(--soft-ink);
 }
+.contact-conversation .contact-section-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+.contact-conversation .contact-section-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  align-items: end;
+}
+.contact-conversation .contact-section-heading > .eyebrow {
+  grid-column: 1 / -1;
+}
+.contact-conversation .contact-section-heading h2 {
+  margin-bottom: 0;
+}
+.contact-conversation .contact-section-heading p {
+  margin: 0;
+  justify-self: end;
+}
 .direct-contact .wechat-grid {
-  display: block;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
 }
 .contact-person {
   border-top: 1px solid #ced6d0;
-}
-.contact-person:last-child {
-  border-bottom: 1px solid #ced6d0;
 }
 .direct-contact .contact-person h3 {
   font-size: 20px;
@@ -164,7 +183,7 @@
 }
 .person-body {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 184px;
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
   align-items: center;
   padding: 24px 0;
@@ -181,7 +200,7 @@
   margin-top: 10px;
 }
 .direct-contact .wechat-code {
-  width: 184px;
+  width: 160px;
   max-width: 100%;
   margin: 0;
 }
@@ -204,6 +223,7 @@
 }
 .contact-location-map {
   margin-top: 32px;
+  max-width: 480px;
 }
 .contact-map {
   display: block;
@@ -230,7 +250,6 @@
     grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
   }
   .person-body {
-    grid-template-columns: minmax(0, 1fr) 148px;
     gap: 20px;
   }
   .direct-contact .wechat-code {
@@ -240,17 +259,34 @@
 @media (max-width: 767px) {
   .direct-contact {
     padding-top: 76px;
-  }
-  .direct-contact .contact-intro {
     display: flex;
     flex-direction: column;
-    gap: 36px;
-    padding-top: 32px;
-    padding-bottom: 56px;
+  }
+  .contact-conversation {
+    order: 1;
+    width: 100%;
+  }
+  .contact-location {
+    order: 3;
+  }
+  .contact-conversation .contact-section-heading {
+    display: block;
+  }
+  .contact-conversation .contact-section-heading p {
+    margin-top: 16px;
+    justify-self: start;
+  }
+  .direct-contact .wechat-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .direct-contact .contact-intro {
+    display: contents;
   }
   .contact-sheet {
-    order: -1;
-    width: 100%;
+    order: 0;
+    width: calc(100% - 48px);
+    margin: 32px auto 40px;
     padding: 0;
   }
   .contact-sheet h1 {
@@ -276,7 +312,9 @@
     font-size: 12px;
   }
   .contact-portrait {
-    width: 100%;
+    order: 2;
+    width: calc(100% - 48px);
+    margin: 48px auto 0;
   }
   .contact-section-grid {
     grid-template-columns: minmax(0, 1fr);

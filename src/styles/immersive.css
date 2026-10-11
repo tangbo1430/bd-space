@@ -63,6 +63,26 @@ body.banda-editorial {
   font-size: 16px;
   line-height: 2;
 }
+.product-idea {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 8%;
+}
+.page-editorial .product-idea-title {
+  margin-top: 25px;
+  font-size: clamp(28px, 3vw, 44px);
+}
+.product-idea-title span {
+  display: block;
+  white-space: nowrap;
+}
+@media (max-width: 767px) {
+  .product-idea {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .page-editorial .product-idea-title {
+    font-size: clamp(28px, 7.6vw, 36px);
+  }
+}
 .page-editorial .page-heading h1 {
   font-size: clamp(48px, 4.5vw, 64px);
   font-weight: 350;

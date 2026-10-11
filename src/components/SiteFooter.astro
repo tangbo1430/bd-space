@@ -29,8 +29,6 @@ const en = Astro.url.pathname.startsWith("/en/");
         <div>
           <span class="eyebrow">保持联系</span>
           <a href="/zh/contact/">项目咨询</a>
-          {!en && <a href="/zh/about/careers/">加入我们</a>}
-          {!en && <a href="/zh/news/">新闻资讯</a>}
         </div>
         {!en && (
           <div class="footer-more">

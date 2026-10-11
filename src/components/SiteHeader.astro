@@ -18,7 +18,8 @@ const navItems =
     ? NAV_ITEMS.filter((i) =>
         ["home", "products", "cases", "about", "contact"].includes(i.key),
       )
-    : NAV_ITEMS;
+    : NAV_ITEMS.filter((i) => i.key !== "news");
+const visibleAboutItems = ABOUT_SUB_ITEMS.filter((i) => i.key !== "careers");
 const languageHref = alternateLanguage(Astro.url.pathname);
 const languageLabel = lang === "en" ? "中文" : "EN";
 const languageDescription =
@@ -103,7 +104,7 @@ const aboutGroupActive = aboutSub !== null;
           <span class="sub-panel" data-sub-panel aria-label="关于我们子栏目">
             <span class="sub-panel-card">
               <span class="mega-in">
-                {ABOUT_SUB_ITEMS.map((sub) => (
+                {visibleAboutItems.map((sub) => (
                   <a
                     href={sub.href}
                     class:list={["mega-col", { cur: sub.key === aboutSub }]}
@@ -214,7 +215,7 @@ const aboutGroupActive = aboutSub !== null;
           </button>
         </div>
         <div class="p-sub-items" id="about-sub-items">
-          {ABOUT_SUB_ITEMS.map((sub) => (
+          {visibleAboutItems.map((sub) => (
             <a
               href={sub.href}
               class:list={[{ cur: sub.key === aboutSub }]}

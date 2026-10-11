@@ -1,5 +1,4 @@
 ---
-import register from "../../data/patent-register.json";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import {
   reports,
@@ -166,31 +165,6 @@ import {
         <a class="action action-primary" href="/zh/contact/">
           咨询相关资料
         </a>
-      </div>
-    </section>
-    <section class="ed-wrap ed-section patent-register">
-      <div class="section-heading">
-        <h2>研发台账摘要</h2>
-        <p>
-          共17项申请记录，申请人及申请日期见下表。记录中的授权状态为历史信息，当前法律状态需另行核实；申请人与半打空间不是同一主体。
-        </p>
-      </div>
-      <div class="register-list">
-        {register.map((p) => (
-          <article>
-            <div>
-              <span class="eyebrow">
-                {p.type} · {p.number}
-              </span>
-              <h3>{p.title}</h3>
-            </div>
-            <p>
-              申请人：{p.applicant}
-              <br />
-              申请日：{p.applicationDate}
-            </p>
-          </article>
-        ))}
       </div>
     </section>
   </div>

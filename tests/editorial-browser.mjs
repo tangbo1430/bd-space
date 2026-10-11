@@ -152,7 +152,7 @@ await page.locator("[data-sub-trigger]").hover();
 await page.locator("[data-sub-panel]").waitFor({ state: "visible" });
 assert(
   await page
-    .locator('[data-sub-panel] a[href="/zh/about/careers/"]')
+    .locator('[data-sub-panel] a[href="/zh/about/investors/"]')
     .isVisible(),
 );
 report.interactions.push(

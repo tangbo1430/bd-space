@@ -71,4 +71,33 @@ const {
     height: auto;
     aspect-ratio: auto;
   }
+  @media (max-width: 767px) {
+    .page-visual.product-detail-visual.cover-visual {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .product-detail-visual.cover-visual .cover-body {
+      min-height: 0;
+      padding-block: 36px;
+      width: 100%;
+    }
+    .product-detail-visual.cover-visual .page-visual-frame {
+      position: relative;
+      inset: auto;
+      height: auto;
+    }
+    .product-detail-visual.cover-visual .page-visual-frame:after {
+      display: none;
+    }
+    .product-detail-visual :global(.page-visual-frame .gallery-link),
+    .product-detail-visual :global(.page-visual-frame picture),
+    .product-detail-visual :global(.page-visual-frame img) {
+      display: block;
+      position: relative;
+      height: auto;
+      width: 100%;
+      aspect-ratio: auto;
+      transform: none;
+    }
+  }
 </style>

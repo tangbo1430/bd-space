@@ -18,6 +18,7 @@ export async function getStaticPaths() {
   }));
 }
 const { product } = Astro.props;
+const english = Astro.url.pathname.startsWith("/en/");
 const descriptions: Record<
   string,
   { title: string; en: string; intro: string; hero?: string }
@@ -151,10 +152,14 @@ const next = product.data.listed
       </nav>
     )}
     <section class="ed-wrap ed-section">
-      <div class="about-statement">
+      <div class="about-statement product-idea">
         <div class="rv">
           <span class="eyebrow">01 / THE IDEA</span>
-          <h2 style="margin-top:25px">{copy.title}</h2>
+          <h2 class="product-idea-title">
+            {english
+              ? copy.title
+              : copy.title.split(/(?<=，)/u).map((line) => <span>{line}</span>)}
+          </h2>
         </div>
         <div class="rv">
           <p style="margin-top:0">{copy.intro}</p>
@@ -201,7 +206,11 @@ const next = product.data.listed
           </h2>
           <p>{product.data.designNote}</p>
         </div>
-        <PhotoGrid photos={product.data.designGallery} group={product.id} class="product-design-grid" />
+        <PhotoGrid
+          photos={product.data.designGallery}
+          group={product.id}
+          class="product-design-grid"
+        />
       </section>
     )}
     <section class="product-section ed-section" id="specifications">
@@ -252,7 +261,11 @@ const next = product.data.listed
           <h2>{product.data.galleryTitle}</h2>
           {product.data.galleryIntro && <p>{product.data.galleryIntro}</p>}
         </div>
-        <PhotoGrid photos={product.data.gallery} group={product.id} class="material-detail-gallery" />
+        <PhotoGrid
+          photos={product.data.gallery}
+          group={product.id}
+          class="material-detail-gallery"
+        />
       </section>
     )}
     {product.data.video && (
