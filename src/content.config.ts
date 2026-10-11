@@ -1,5 +1,5 @@
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 /**
  * 内容管理（内容模型见 docs/technical-design.md §3）。
@@ -7,7 +7,7 @@ import { glob } from 'astro/loaders';
  * 事实字段一律允许「【待提供】」占位，禁止虚构（BR-5/BR-15）。
  */
 const products = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/products' }),
+  loader: glob({ pattern: "**/*.md", base: "./src/content/products" }),
   schema: z.object({
     name: z.string(),
     enTag: z.string(),
@@ -15,11 +15,84 @@ const products = defineCollection({
     tagline: z.string(),
     description: z.string(),
     scenes: z.array(z.string()).default([]),
-    params: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
+    params: z
+      .array(z.object({ label: z.string(), value: z.string() }))
+      .default([]),
     listImageId: z.string(),
     detailImageId: z.string(),
+    /** 已批准真实辅图（public/assets/img/ 名前缀）；缺省=占位。含第三方车辆的图不得配置 */
+    approvedImages: z.array(z.string()).default([]),
+    /** 产品详情主图（PRODUCT_HERO_ASSETS 键：4s/5s/6s/grayscale）；缺省=占位 */
+    heroAsset: z.string().optional(),
+    heroBase: z.string().optional(),
+    featured: z.boolean().default(false),
+    mobileImage: z.string().optional(),
+    video: z
+      .object({
+        src: z.string(),
+        poster: z.string(),
+        caption: z.string(),
+        width: z.number(),
+        height: z.number(),
+      })
+      .optional(),
+    heroCaption: z.string().optional(),
+    designNote: z.string().default(""),
+    designGallery: z
+      .array(
+        z.object({
+          base: z.string(),
+          caption: z.string(),
+          width: z.number().int().positive(),
+          height: z.number().int().positive(),
+          mobileWidth: z.number().int().positive(),
+        }),
+      )
+      .default([]),
+    galleryTitle: z.string().default("空间与构造的细节。"),
+    galleryIntro: z.string().default(""),
+    diagramLabel: z.string().default("技术示意"),
+    diagramTitle: z.string().default("空间与建造参考。"),
+    diagramIntro: z.string().default(""),
+    diagrams: z
+      .array(
+        z.object({
+          src: z.string(),
+          viewerSrc: z.string(),
+          zoomX: z.number().min(0).max(1).optional(),
+          caption: z.string(),
+          width: z.number().int().positive(),
+          height: z.number().int().positive(),
+        }),
+      )
+      .default([]),
+    gallery: z
+      .array(z.object({ base: z.string(), caption: z.string() }))
+      .default([]),
+    specNote: z.string().default("具体参数以项目确认资料为准。"),
+    listed: z.boolean().default(true),
     published: z.boolean().default(true),
   }),
 });
 
-export const collections = { products };
+/**
+ * 招聘职位（PRD v0.4 FR-29~31 / BR-26）。
+ * 职位须由 HR 确认后发布；占位职位显式 placeholder:true。
+ */
+const jobs = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/jobs" }),
+  schema: z.object({
+    title: z.string(),
+    department: z.string(),
+    location: z.string(),
+    type: z.string(),
+    summary: z.string().default(""),
+    responsibilities: z.array(z.string()).default([]),
+    requirements: z.array(z.string()).default([]),
+    placeholder: z.boolean().default(false),
+    published: z.boolean().default(true),
+    order: z.number().int().default(0),
+  }),
+});
+
+export const collections = { products, jobs };

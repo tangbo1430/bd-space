@@ -1,0 +1,660 @@
+{
+  "layouts": [
+    {
+      "route": "",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 320,
+      "height": 568,
+      "overflow": false
+    },
+    {
+      "route": "",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 375,
+      "height": 812,
+      "overflow": false
+    },
+    {
+      "route": "",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 768,
+      "height": 1024,
+      "overflow": false
+    },
+    {
+      "route": "",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 1024,
+      "height": 768,
+      "overflow": false
+    },
+    {
+      "route": "",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 1440,
+      "height": 900,
+      "overflow": false
+    },
+    {
+      "route": "",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 1920,
+      "height": 1080,
+      "overflow": false
+    },
+    {
+      "route": "",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 844,
+      "height": 390,
+      "overflow": false
+    },
+    {
+      "route": "",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "products/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "products/4s/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "products/5s/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "products/6s/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "products/bd8/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "products/bd9/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "cases/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "about/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    },
+    {
+      "route": "contact/",
+      "width": 720,
+      "height": 450,
+      "overflow": false
+    }
+  ],
+  "accessibility": [
+    {
+      "route": "",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "products/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "products/4s/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "products/5s/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "products/6s/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "products/bd8/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "products/bd9/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "cases/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "about/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "contact/",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "route": "",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "products/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "products/4s/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "products/5s/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "products/6s/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "products/grayscale/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "products/bd8/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "products/bd9/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "cases/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "about/",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "contact/",
+      "width": 1440,
+      "violations": []
+    }
+  ],
+  "interactions": [
+    "/zh/: no-text controls, keyboard, selection and pause",
+    "/zh/products/: no-text controls, keyboard, selection and pause",
+    "/en/: no-text controls, keyboard, selection and pause",
+    "/en/products/: no-text controls, keyboard, selection and pause",
+    "4s: separate technical group, zoom, focus restoration",
+    "5s: separate technical group, zoom, focus restoration",
+    "6s: separate technical group, zoom, focus restoration",
+    "grayscale: separate technical group, zoom, focus restoration",
+    "bd8: separate technical group, zoom, focus restoration",
+    "bd9: separate technical group, zoom, focus restoration",
+    "4S video: zero pre-play requests; manual playback works",
+    "English enquiry: product prefill, validation, international phone and local download"
+  ],
+  "errors": [],
+  "missing": []
+}

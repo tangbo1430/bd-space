@@ -1,58 +1,171 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import { PLACEHOLDER } from '../../lib/site';
-
-// 资质事实纪律（FR-7 / AC-6）：仅展示经审核、适用目标市场且有效的资质；
-// 全部名称为占位，过期/未授权记录不得呈现为有效背书。国内与海外资质分组展示。
-const groups = [
-  {
-    title: '国内资质',
-    en: 'Domestic Certifications',
-    items: [
-      { name: `${PLACEHOLDER}营业执照/建筑业企业资质`, no: 'CERT-NO.【待提供】' },
-      { name: `${PLACEHOLDER}安全生产许可证`, no: 'CERT-NO.【待提供】' },
-      { name: `${PLACEHOLDER}体系认证（质量/环境/职业健康）`, no: 'CERT-NO.【待提供】' },
-    ],
-  },
-  {
-    title: '海外认证（面向目标市场发布）',
-    en: 'Overseas Certifications',
-    items: [
-      { name: `${PLACEHOLDER}出口相关认证/检测报告`, no: 'CERT-NO.【待提供】' },
-      { name: `${PLACEHOLDER}专利/荣誉`, no: 'NO.【待提供】' },
-    ],
-  },
-];
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  reports,
+  reportOwner,
+  patents,
+  awards,
+  awardProject,
+} from "../../data/credentials";
 ---
 
 <BaseLayout
   title="资质能力"
-  description="半打空间资质能力：国内资质、体系认证与海外认证按适用市场展示（名称与编号以企业提供的有效文件为准）。"
+  description="查阅团队技术实践相关的材料检测、代表性历史授权与技术荣誉摘要，了解原送检主体、样品范围和权利归属。"
   current="qualifications"
   headerStyle="solid"
 >
-  <p class="crumb"><a href="/zh/">HOME</a> / QUALIFICATIONS</p>
-  <div class="wrap" style="padding-top:40px;padding-bottom:30px">
-    <div class="en">Qualifications</div>
-    <h2 style="font-size:52px;margin-top:10px">资质能力</h2>
-    <p style="max-width:560px;margin-top:18px;font-size:15px;color:var(--ink-muted)">
-      以下资质条目均为{PLACEHOLDER}占位。正式内容须由企业提供有效文件并注明适用范围与有效状态后发布；过期、无授权或不适用目标市场的资质不予展示。
-    </p>
-  </div>
-
-  {groups.map((g) => (
-    <div class="wrap" style="padding-bottom:70px">
-      <div class="en">{g.en}</div>
-      <h3 style="margin:10px 0 0;font-weight:300;font-size:26px">{g.title}</h3>
-      <div class="quals" style="margin-top:30px">
-        {g.items.map((q) => (
-          <div class="qual"><b>{q.name}</b><span>{q.no}</span><span class="arr" aria-hidden="true">→</span></div>
+  <div class="page-editorial credentials-page">
+    <section class="page-opening ed-wrap">
+      <span class="eyebrow">资料与依据</span>
+      <div class="page-heading">
+        <h1>
+          让每一份信任，
+          <br />
+          都有据可循。
+        </h1>
+        <p>
+          材料检测、研发成果与技术荣誉。
+          <br />
+          记录团队的技术积累。
+        </p>
+      </div>
+      <nav class="content-index" aria-label="资质资料目录">
+        <a href="#reports">
+          检测资料 <span>10</span>
+        </a>
+        <a href="#research">研发成果</a>
+        <a href="#awards">技术荣誉</a>
+      </nav>
+    </section>
+    <section class="ed-wrap credential-section" id="reports">
+      <div class="evidence-heading">
+        <div>
+          <span class="eyebrow">01 / 材料与构件</span>
+          <h2>检测资料</h2>
+        </div>
+        <p>
+          原送检主体：{reportOwner}
+          。以下为2018年送检样品的检测摘要，仅适用于相应样品，不代表半打整屋认证，也不直接替代当前180mm外墙的项目验证。
+        </p>
+      </div>
+      <div class="report-list">
+        {reports.map((r) => (
+          <details class="evidence-item">
+            <summary>
+              <span class="evidence-agency">{r.institution}</span>
+              <span class="evidence-title">
+                {r.title}
+                <small>{r.number}</small>
+              </span>
+              <time datetime={r.date}>{r.date}</time>
+              <span class="detail-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="evidence-body">
+              <dl>
+                <div>
+                  <dt>检测机构</dt>
+                  <dd>
+                    {r.institution === "Intertek"
+                      ? "天祥质量技术服务有限公司上海奉贤分公司"
+                      : "通标标准技术服务有限公司广州分公司"}
+                  </dd>
+                </div>
+                <div>
+                  <dt>原送检主体</dt>
+                  <dd>{reportOwner}</dd>
+                </div>
+                <div>
+                  <dt>受检对象</dt>
+                  <dd>{r.sample}</dd>
+                </div>
+                <div>
+                  <dt>测试范围</dt>
+                  <dd>{r.scope}</dd>
+                </div>
+              </dl>
+              <p class="evidence-note">
+                结果仅对送检样品负责；具体构造与适用条件需结合原报告核对。
+              </p>
+            </div>
+          </details>
         ))}
       </div>
-    </div>
-  ))}
-
-  <div class="wrap" style="padding-bottom:110px">
-    <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">索取资质文件 <span class="arr">→</span></a>
+    </section>
+    <section class="evidence-band" id="research">
+      <div class="ed-wrap ed-section">
+        <div class="evidence-heading">
+          <div>
+            <span class="eyebrow">02 / 研发积累</span>
+            <h2>代表性历史授权</h2>
+          </div>
+          <p>
+            以下为历史授权记录，权利人为证书所载主体，非均由半打空间持有；当前法律状态需另行核实。
+          </p>
+        </div>
+        <div class="patent-grid">
+          {patents.map((p) => (
+            <article>
+              <span class="eyebrow">{p.type}</span>
+              <h3>{p.title}</h3>
+              <dl>
+                <div>
+                  <dt>专利号</dt>
+                  <dd>{p.number}</dd>
+                </div>
+                <div>
+                  <dt>授权公告日</dt>
+                  <dd>{p.date}</dd>
+                </div>
+                <div>
+                  <dt>证书权利人</dt>
+                  <dd>{p.owner}</dd>
+                </div>
+              </dl>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section class="ed-wrap ed-section" id="awards">
+      <div class="evidence-heading">
+        <div>
+          <span class="eyebrow">03 / 技术实践</span>
+          <h2>技术荣誉</h2>
+        </div>
+        <p>
+          相关成果：{awardProject}
+          。奖项归属以下单位与个人，属于团队历年技术实践。
+        </p>
+      </div>
+      <div class="award-list">
+        {awards.map((a) => (
+          <article>
+            <span class="eyebrow">{a.year}</span>
+            <h3>{a.title}</h3>
+            <dl>
+              <div>
+                <dt>颁发机构</dt>
+                <dd>{a.institution}</dd>
+              </div>
+              <div>
+                <dt>获奖主体</dt>
+                <dd>{a.owner}</dd>
+              </div>
+              <div>
+                <dt>证书编号</dt>
+                <dd>{a.number}</dd>
+              </div>
+            </dl>
+          </article>
+        ))}
+      </div>
+      <div class="evidence-contact">
+        <p>需要了解资料与您的项目是否适用？</p>
+        <a class="action action-primary" href="/zh/contact/">
+          咨询相关资料
+        </a>
+      </div>
+    </section>
   </div>
 </BaseLayout>

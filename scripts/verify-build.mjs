@@ -1,67 +1,128 @@
-/**
- * 构建产物验证（在 `astro build` 之后运行）：
- *  - 关键路由均产出静态 HTML（7 栏目 + 产品详情 + 法务模板 + /en/ 预留态 + 404）；
- *  - SEO：/zh/ 页含自引用 canonical 与 zh-CN hreflang；/en/ 为 noindex 且不进入 sitemap；
- *  - 表单：含 honeypot 与来源字段。
- */
-import { readFileSync, existsSync } from 'node:fs';
-import { join } from 'node:path';
-
-const dist = new URL('../dist', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
-let failures = 0;
-
-function ok(cond, label) {
-  if (cond) console.log(`  PASS  ${label}`);
-  else { console.error(`  FAIL  ${label}`); failures++; }
-}
-
-function page(path) {
-  const file = join(dist, path, 'index.html');
-  return existsSync(file) ? readFileSync(file, 'utf8') : null;
-}
-
-console.log('== 路由产物 ==');
+/** Static release checks: routes, navigation, SEO and honest content states. */
+import { readFileSync, existsSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+import { fileURLToPath } from "node:url";
+const dist = fileURLToPath(new URL("../dist/", import.meta.url));
 const routes = [
-  'zh', 'zh/about', 'zh/products', 'zh/products/slab', 'zh/products/wall', 'zh/products/stair',
-  'zh/cases', 'zh/news', 'zh/qualifications', 'zh/contact', 'zh/privacy', 'zh/cookies', 'en',
+  "zh",
+  "zh/about",
+  "zh/about/investors",
+  "zh/about/careers",
+  "zh/products",
+  "zh/products/4s",
+  "zh/products/5s",
+  "zh/products/6s",
+  "zh/products/grayscale",
+  "zh/products/bd8",
+  "zh/products/bd9",
+  "zh/products/slab",
+  "zh/products/wall",
+  "zh/products/stair",
+  "zh/cases",
+  "zh/news",
+  "zh/qualifications",
+  "zh/contact",
+  "zh/privacy",
+  "zh/cookies",
+  "en",
+  ...[
+    "products",
+    "products/4s",
+    "products/5s",
+    "products/6s",
+    "products/grayscale",
+    "products/bd8",
+    "products/bd9",
+    "cases",
+    "about",
+    "contact",
+  ].map((p) => `en/${p}`),
 ];
-for (const r of routes) ok(page(r) !== null, `/${r}/ 已生成`);
-ok(existsSync(join(dist, '404.html')), '/404.html 已生成');
-ok(existsSync(join(dist, 'robots.txt')), 'robots.txt 已生成');
-
-console.log('== SEO ==');
-const home = page('zh');
-ok(home?.includes('rel="canonical"'), '/zh/ 含 canonical');
-ok(home?.includes('hreflang="zh-CN"'), '/zh/ 含 zh-CN hreflang 自引用');
-ok(home?.includes('hreflang="x-default"'), '/zh/ 含 x-default');
-ok(!home?.includes('/en/'), '/zh/ 未引用未发布的 /en/ 页面');
-ok(home?.includes('lang="zh-CN"'), '/zh/ lang=zh-CN');
-
-const en = page('en');
-ok(en?.includes('noindex'), '/en/ 为 noindex（未发布预留态）');
-
-const sitemapFiles = ['sitemap-index.xml', 'sitemap-0.xml']
-  .map((f) => join(dist, f))
-  .filter((f) => existsSync(f));
-ok(sitemapFiles.length > 0, 'sitemap 已生成');
-if (sitemapFiles.length > 0) {
-  const sitemap = sitemapFiles.map((f) => readFileSync(f, 'utf8')).join('\n');
-  ok(!sitemap.includes('/en/'), 'sitemap 不含 /en/ 页面');
-  ok(!sitemap.includes('/404'), 'sitemap 不含 404');
-  ok(sitemap.includes('/zh/'), 'sitemap 含 /zh/ 页面');
+let failures = 0;
+const ok = (condition, label) => {
+  if (condition) console.log(`PASS ${label}`);
+  else {
+    failures++;
+    console.error(`FAIL ${label}`);
+  }
+};
+const page = (route) => {
+  const path = join(dist, route, "index.html");
+  return existsSync(path) ? readFileSync(path, "utf8") : "";
+};
+const links = new Set();
+for (const route of routes) {
+  const html = page(route);
+  ok(Boolean(html), `/${route}/ is generated`);
+  ok(
+    (html.match(/<h1(?:\s|>)/g) ?? []).length === 1,
+    `/${route}/ has one main heading`,
+  );
+  ok(
+    html.includes('rel="canonical"') && html.includes('name="description"'),
+    `/${route}/ has canonical and description`,
+  );
+  for (const [, url] of html.matchAll(
+    /href="(\/zh\/[^"#?]*)(?:[?#][^"]*)?"/g,
+  )) {
+    links.add(url);
+  }
 }
-
-console.log('== 表单 ==');
-const contact = page('zh/contact');
-ok(contact?.includes('name="bd_website"'), '表单含 honeypot 防滥用字段');
-ok(contact?.includes('name="source"'), '表单含来源页面字段');
-ok(contact?.includes('隐私政策'), '表单含隐私同意');
-
-const notFound = existsSync(join(dist, '404.html')) ? readFileSync(join(dist, '404.html'), 'utf8') : '';
-ok(notFound.includes('noindex'), '404 为 noindex');
-
-if (failures > 0) {
-  console.error(`\n${failures} 项验证失败`);
-  process.exit(1);
-}
-console.log('\n全部验证通过');
+for (const url of links)
+  ok(
+    existsSync(join(dist, url.replace(/^\//, ""), "index.html")),
+    `navigation resolves: ${url}`,
+  );
+const home = page("zh");
+ok(
+  home.includes('hreflang="zh-CN"') && home.includes('hreflang="x-default"'),
+  "Chinese locale and x-default are declared",
+);
+ok(home.includes('href="/en/"'), "English counterpart is linked");
+ok(
+  home.includes('aria-roledescription="carousel"') &&
+    home.includes("data-carousel-pause"),
+  "carousel has a pause control",
+);
+ok(
+  (home.match(/data-dot=/g) ?? []).length === 3 &&
+    home.includes('aria-label="选择住宅照片"'),
+  "three direct carousel selectors are available",
+);
+ok(page("en").includes('<html lang="en"'), "English home is localized");
+const contact = page("zh/contact");
+ok(
+  contact.includes("data-direct-contact") &&
+    !contact.includes("data-consult-form"),
+  "contact offers direct communication without a form",
+);
+ok(
+  contact.includes('href="tel:18503005860"') &&
+    contact.includes('href="mailto:411547750@qq.com"') &&
+    contact.includes('id="wechat"'),
+  "contact includes phone, email and WeChat",
+);
+ok(
+  !page("zh/about/careers").includes("【待提供】") &&
+    !page("zh/about/careers").includes("【待确认】"),
+  "placeholder jobs are not offered as vacancies",
+);
+const sitemapFiles = readdirSync(dist).filter((f) =>
+  /^sitemap.*\.xml$/.test(f),
+);
+const sitemap = sitemapFiles
+  .map((f) => readFileSync(join(dist, f), "utf8"))
+  .join("");
+ok(sitemapFiles.length > 0 && sitemap.includes("/zh/"), "sitemap is generated");
+ok(
+  sitemap.includes("/en/") && !sitemap.includes("/404"),
+  "sitemap excludes unavailable routes",
+);
+ok(
+  existsSync(join(dist, "robots.txt")) && existsSync(join(dist, "404.html")),
+  "robots and 404 output exist",
+);
+console.log(
+  `\n${failures ? `${failures} release checks failed` : "All release checks passed"}`,
+);
+process.exitCode = failures ? 1 : 0;

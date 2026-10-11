@@ -1,0 +1,2081 @@
+{
+  "total": 118,
+  "policy": "资料原件不进入公开目录；产品无公开价格；新摄影只做缩放压缩、不修改建筑内容",
+  "files": [
+    {
+      "id": 0,
+      "source": "2/产品/产品-{半打4S}-结构图-01.png",
+      "bytes": 812216,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "4S 工厂完成的厨卫模块",
+          "webResources": [
+            "/assets/img/product-4s-module.webp",
+            "/assets/img/product-4s-module-m.webp",
+            "/assets/img/product-4s-module.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 1,
+      "source": "2/产品/产品-{半打4S}-结构图-02.jpg",
+      "bytes": 667293,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "4S 墙板与构件模具",
+          "webResources": [
+            "/assets/img/product-4s-mold.webp",
+            "/assets/img/product-4s-mold-m.webp",
+            "/assets/img/product-4s-mold.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 2,
+      "source": "2/产品/产品-{半打4S}-结构图-03.jpg",
+      "bytes": 159073,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "4S 预制墙板",
+          "webResources": [
+            "/assets/img/product-4s-panels.webp",
+            "/assets/img/product-4s-panels-m.webp",
+            "/assets/img/product-4s-panels.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 3,
+      "source": "2/产品/产品-{半打4S}-结构图-04.png",
+      "bytes": 894052,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "4S 木结构屋顶安装",
+          "webResources": [
+            "/assets/img/product-4s-roof.webp",
+            "/assets/img/product-4s-roof-m.webp",
+            "/assets/img/product-4s-roof.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 4,
+      "source": "2/产品/产品-{半打4S}-详情-01.png",
+      "bytes": 3707065,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "保留已认可的同源产品摄影",
+          "webResources": [
+            "/assets/img/product-4s-dusk.jpg",
+            "/assets/img/product-4s-dusk.webp",
+            "/assets/img/product-4s-dusk-m.webp"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 5,
+      "source": "2/产品/产品-{半打4S}-详情-02.png",
+      "bytes": 1338176,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "保留已认可的同源产品摄影",
+          "webResources": [
+            "/assets/img/product-4s-detail-wall.jpg",
+            "/assets/img/product-4s-detail-wall.webp",
+            "/assets/img/product-4s-detail-wall-m.webp"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 6,
+      "source": "2/产品/产品-{半打4S}-详情-03.png",
+      "bytes": 4375711,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "4S 室内与阁楼",
+          "webResources": [
+            "/assets/img/product-4s-interior.webp",
+            "/assets/img/product-4s-interior-m.webp",
+            "/assets/img/product-4s-interior.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 7,
+      "source": "2/产品/产品-{半打4S}-详情-04.png",
+      "bytes": 788139,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 8,
+      "source": "2/产品/产品-{半打4S}-详情首图.png",
+      "bytes": 5616839,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "保留已认可的同源产品摄影",
+          "webResources": [
+            "/assets/img/product-4s-hero.jpg",
+            "/assets/img/product-4s-hero.webp",
+            "/assets/img/product-4s-hero-m.webp"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 9,
+      "source": "2/产品/产品-{半打4S}-资料.xlsx",
+      "bytes": 845003,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/content/products/4s.md",
+      "factPolicy": "建筑面积、套内/可使用面积、阁楼和平台分别保留；不提取任何价格；低清户型不展示"
+    },
+    {
+      "id": 10,
+      "source": "2/产品/产品-{半打5S}-详情首图.png",
+      "bytes": 4408068,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "保留已认可的同源产品摄影",
+          "webResources": [
+            "/assets/img/product-5s-hero.jpg",
+            "/assets/img/product-5s-hero.webp",
+            "/assets/img/product-5s-hero-m.webp"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 11,
+      "source": "2/产品/产品-{半打5S}-资料.xlsx",
+      "bytes": 686095,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/content/products/5s.md",
+      "factPolicy": "建筑面积、套内/可使用面积、阁楼和平台分别保留；不提取任何价格；低清户型不展示"
+    },
+    {
+      "id": 12,
+      "source": "2/产品/产品-{半打6S}-详情首图.png",
+      "bytes": 3557261,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "分享图摄影，与正式 Logo 重新排版，不含报价",
+          "webResources": [
+            "/assets/img/share-banda.jpg"
+          ]
+        },
+        {
+          "purpose": "保留已认可的同源产品摄影",
+          "webResources": [
+            "/assets/img/product-6s-hero.jpg",
+            "/assets/img/product-6s-hero.webp",
+            "/assets/img/product-6s-hero-m.webp"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 13,
+      "source": "2/产品/产品-{半打6S}-资料.xlsx",
+      "bytes": 658953,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/content/products/6s.md",
+      "factPolicy": "建筑面积、套内/可使用面积、阁楼和平台分别保留；不提取任何价格；低清户型不展示"
+    },
+    {
+      "id": 14,
+      "source": "2/产品/产品-{灰度空间}-详情首图.png",
+      "bytes": 5658620,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "保留已认可的同源产品摄影",
+          "webResources": [
+            "/assets/img/product-grayscale-hero.jpg",
+            "/assets/img/product-grayscale-hero.webp",
+            "/assets/img/product-grayscale-hero-m.webp"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 15,
+      "source": "2/产品/产品-{灰度空间}-资料.xlsx",
+      "bytes": 900580,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/content/products/grayscale.md",
+      "factPolicy": "建筑面积、套内/可使用面积、阁楼和平台分别保留；不提取任何价格；低清户型不展示"
+    },
+    {
+      "id": 16,
+      "source": "2/产品/产品-总清单.xlsx",
+      "bytes": 10606,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 17,
+      "source": "2/产品/清晰实拍图；每张附30字内说明.docx",
+      "bytes": 34818,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 18,
+      "source": "2/全站公共素材/logo/半打空间logo.ai",
+      "bytes": 741075,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "正式矢量标识；AI 内嵌 PDF 路径导出，保持原始比例；深浅背景版本",
+          "webResources": [
+            "/assets/brand/logo-dark.svg",
+            "/assets/brand/logo-light.svg"
+          ]
+        },
+        {
+          "purpose": "从原标识截取图形符号作为 favicon；分享图复用正式标识",
+          "webResources": [
+            "/favicon.svg",
+            "/assets/img/share-banda.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 19,
+      "source": "2/全站公共素材/logo/半打空间logo.dwg",
+      "bytes": 87062,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 20,
+      "source": "2/全站公共素材/logo/半打空间logo.png",
+      "bytes": 187911,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 21,
+      "source": "2/全站公共素材/公共-SEO文案.xlsx",
+      "bytes": 10943,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 22,
+      "source": "2/全站公共素材/公共-主体备案信息.xlsx",
+      "bytes": 10347,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 23,
+      "source": "2/全站公共素材/公共-分享图.png",
+      "bytes": 639282,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 24,
+      "source": "2/全站公共素材/公共-隐私政策.docx",
+      "bytes": 45658,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": "隐私政策含残留文字且与本地下载行为不一致，待核对"
+    },
+    {
+      "id": 25,
+      "source": "2/全站公共素材/海报1.png",
+      "bytes": 10124251,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 26,
+      "source": "2/全站公共素材/海报2.png",
+      "bytes": 3700480,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 27,
+      "source": "2/关于我们/关于我们-公司简介.docx",
+      "bytes": 11246,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 28,
+      "source": "2/关于我们/关于我们-创始人介绍.docx",
+      "bytes": 12641,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 29,
+      "source": "2/关于我们/关于我们-创始人介绍.jpg",
+      "bytes": 925862,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "关于页：创始人黄昆肖像",
+          "webResources": [
+            "/assets/img/founder-huang-kun.webp",
+            "/assets/img/founder-huang-kun-m.webp",
+            "/assets/img/founder-huang-kun.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 30,
+      "source": "2/关于我们/关于我们-核心优势.docx",
+      "bytes": 11877,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 31,
+      "source": "2/关于我们/关于我们-首图.png",
+      "bytes": 3304693,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 32,
+      "source": "2/关于我们/生产线照片20字内说明.docx",
+      "bytes": 35490,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 33,
+      "source": "2/待提交素材清单.docx",
+      "bytes": 71846,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 34,
+      "source": "2/投资者关系/投资者关系-股权结构.xlsx",
+      "bytes": 9712,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 35,
+      "source": "2/投资者关系/投资者关系-首图.png",
+      "bytes": 167764,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 36,
+      "source": "2/案例/案例-10{半打4S-江苏省常州}-安装-01.jpg",
+      "bytes": 270614,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 changzhou：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-changzhou-01.webp",
+            "/assets/img/project-changzhou-01-m.webp",
+            "/assets/img/project-changzhou-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 37,
+      "source": "2/案例/案例-10{半打4S-江苏省常州}-安装-02.JPG",
+      "bytes": 3461120,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 changzhou：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-changzhou-02.webp",
+            "/assets/img/project-changzhou-02-m.webp",
+            "/assets/img/project-changzhou-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 38,
+      "source": "2/案例/案例-10{半打4S-江苏省常州}-安装-03.JPG",
+      "bytes": 3497984,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 changzhou：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-changzhou-03.webp",
+            "/assets/img/project-changzhou-03-m.webp",
+            "/assets/img/project-changzhou-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 39,
+      "source": "2/案例/案例-10{半打4S-江苏省常州}-封面.png",
+      "bytes": 2897965,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 changzhou：项目封面",
+          "webResources": [
+            "/assets/img/project-changzhou-cover.webp",
+            "/assets/img/project-changzhou-cover-m.webp",
+            "/assets/img/project-changzhou-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 40,
+      "source": "2/案例/案例-1{开曼群岛独栋民宅“乡愁”}-安装-01.png",
+      "bytes": 3131637,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 cayman：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-cayman-01.webp",
+            "/assets/img/project-cayman-01-m.webp",
+            "/assets/img/project-cayman-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 41,
+      "source": "2/案例/案例-1{开曼群岛独栋民宅“乡愁”}-安装-02.png",
+      "bytes": 2951285,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 cayman：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-cayman-02.webp",
+            "/assets/img/project-cayman-02-m.webp",
+            "/assets/img/project-cayman-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 42,
+      "source": "2/案例/案例-1{开曼群岛独栋民宅“乡愁”}-安装-03.png",
+      "bytes": 1667788,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 cayman：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-cayman-03.webp",
+            "/assets/img/project-cayman-03-m.webp",
+            "/assets/img/project-cayman-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 43,
+      "source": "2/案例/案例-1{开曼群岛独栋民宅“乡愁”}-安装-04.png",
+      "bytes": 1781644,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 cayman：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-cayman-04.webp",
+            "/assets/img/project-cayman-04-m.webp",
+            "/assets/img/project-cayman-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 44,
+      "source": "2/案例/案例-1{开曼群岛独栋民宅“乡愁”}-封面.png",
+      "bytes": 3501592,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 cayman：项目封面",
+          "webResources": [
+            "/assets/img/project-cayman-cover.webp",
+            "/assets/img/project-cayman-cover-m.webp",
+            "/assets/img/project-cayman-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 45,
+      "source": "2/案例/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-01.jpg",
+      "bytes": 505089,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 brisbane：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-brisbane-01.webp",
+            "/assets/img/project-brisbane-01-m.webp",
+            "/assets/img/project-brisbane-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 46,
+      "source": "2/案例/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-02.png",
+      "bytes": 1796054,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 brisbane：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-brisbane-02.webp",
+            "/assets/img/project-brisbane-02-m.webp",
+            "/assets/img/project-brisbane-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 47,
+      "source": "2/案例/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-03.png",
+      "bytes": 2060959,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 brisbane：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-brisbane-03.webp",
+            "/assets/img/project-brisbane-03-m.webp",
+            "/assets/img/project-brisbane-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 48,
+      "source": "2/案例/案例-2{澳洲布里斯班独栋民宅“本真”}--安装-04.jpg",
+      "bytes": 541008,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 brisbane：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-brisbane-04.webp",
+            "/assets/img/project-brisbane-04-m.webp",
+            "/assets/img/project-brisbane-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 49,
+      "source": "2/案例/案例-2{澳洲布里斯班独栋民宅“本真”}-封面.png",
+      "bytes": 2843465,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 brisbane：项目封面",
+          "webResources": [
+            "/assets/img/project-brisbane-cover.webp",
+            "/assets/img/project-brisbane-cover-m.webp",
+            "/assets/img/project-brisbane-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 50,
+      "source": "2/案例/案例-3{广东中山独栋民宅“风度”}-安装-01.png",
+      "bytes": 2050518,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-fengdu：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-fengdu-01.webp",
+            "/assets/img/project-zhongshan-fengdu-01-m.webp",
+            "/assets/img/project-zhongshan-fengdu-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 51,
+      "source": "2/案例/案例-3{广东中山独栋民宅“风度”}-安装-02.jpg",
+      "bytes": 729535,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-fengdu：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-fengdu-02.webp",
+            "/assets/img/project-zhongshan-fengdu-02-m.webp",
+            "/assets/img/project-zhongshan-fengdu-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 52,
+      "source": "2/案例/案例-3{广东中山独栋民宅“风度”}-安装-03.png",
+      "bytes": 1778604,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-fengdu：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-fengdu-03.webp",
+            "/assets/img/project-zhongshan-fengdu-03-m.webp",
+            "/assets/img/project-zhongshan-fengdu-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 53,
+      "source": "2/案例/案例-3{广东中山独栋民宅“风度”}-安装-04.png",
+      "bytes": 1751617,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-fengdu：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-fengdu-04.webp",
+            "/assets/img/project-zhongshan-fengdu-04-m.webp",
+            "/assets/img/project-zhongshan-fengdu-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 54,
+      "source": "2/案例/案例-3{广东中山独栋民宅“风度”}-封面.png",
+      "bytes": 3262722,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-fengdu：项目封面",
+          "webResources": [
+            "/assets/img/project-zhongshan-fengdu-cover.webp",
+            "/assets/img/project-zhongshan-fengdu-cover-m.webp",
+            "/assets/img/project-zhongshan-fengdu-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 55,
+      "source": "2/案例/案例-4{广东中山独栋民宅“米阁”}-安装-01.jpg",
+      "bytes": 641087,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-mige：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-mige-01.webp",
+            "/assets/img/project-zhongshan-mige-01-m.webp",
+            "/assets/img/project-zhongshan-mige-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 56,
+      "source": "2/案例/案例-4{广东中山独栋民宅“米阁”}-安装-02.png",
+      "bytes": 1931991,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-mige：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-mige-02.webp",
+            "/assets/img/project-zhongshan-mige-02-m.webp",
+            "/assets/img/project-zhongshan-mige-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 57,
+      "source": "2/案例/案例-4{广东中山独栋民宅“米阁”}-安装-03.png",
+      "bytes": 2632583,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-mige：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-mige-03.webp",
+            "/assets/img/project-zhongshan-mige-03-m.webp",
+            "/assets/img/project-zhongshan-mige-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 58,
+      "source": "2/案例/案例-4{广东中山独栋民宅“米阁”}-安装-04.png",
+      "bytes": 1946421,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-mige：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-mige-04.webp",
+            "/assets/img/project-zhongshan-mige-04-m.webp",
+            "/assets/img/project-zhongshan-mige-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 59,
+      "source": "2/案例/案例-4{广东中山独栋民宅“米阁”}-安装-05.png",
+      "bytes": 1723356,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-mige：现场记录 05，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-mige-05.webp",
+            "/assets/img/project-zhongshan-mige-05-m.webp",
+            "/assets/img/project-zhongshan-mige-05.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 60,
+      "source": "2/案例/案例-4{广东中山独栋民宅“米阁”}-封面.png",
+      "bytes": 2674936,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-mige：项目封面",
+          "webResources": [
+            "/assets/img/project-zhongshan-mige-cover.webp",
+            "/assets/img/project-zhongshan-mige-cover-m.webp",
+            "/assets/img/project-zhongshan-mige-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 61,
+      "source": "2/案例/案例-5{中山隔离方舱}-安装-01.png",
+      "bytes": 7545155,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-cabins：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-cabins-01.webp",
+            "/assets/img/project-zhongshan-cabins-01-m.webp",
+            "/assets/img/project-zhongshan-cabins-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 62,
+      "source": "2/案例/案例-5{中山隔离方舱}-安装-02.png",
+      "bytes": 2287362,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-cabins：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-cabins-02.webp",
+            "/assets/img/project-zhongshan-cabins-02-m.webp",
+            "/assets/img/project-zhongshan-cabins-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 63,
+      "source": "2/案例/案例-5{中山隔离方舱}-安装-03.png",
+      "bytes": 976004,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-cabins：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-cabins-03.webp",
+            "/assets/img/project-zhongshan-cabins-03-m.webp",
+            "/assets/img/project-zhongshan-cabins-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 64,
+      "source": "2/案例/案例-5{中山隔离方舱}-安装-04.png",
+      "bytes": 2628402,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-cabins：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-zhongshan-cabins-04.webp",
+            "/assets/img/project-zhongshan-cabins-04-m.webp",
+            "/assets/img/project-zhongshan-cabins-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 65,
+      "source": "2/案例/案例-5{中山隔离方舱}-封面.png",
+      "bytes": 3119346,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 zhongshan-cabins：项目封面",
+          "webResources": [
+            "/assets/img/project-zhongshan-cabins-cover.webp",
+            "/assets/img/project-zhongshan-cabins-cover-m.webp",
+            "/assets/img/project-zhongshan-cabins-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 66,
+      "source": "2/案例/案例-6{成都航空学院宿舍}-安装-01.png",
+      "bytes": 1918175,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 chengdu：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-chengdu-01.webp",
+            "/assets/img/project-chengdu-01-m.webp",
+            "/assets/img/project-chengdu-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 67,
+      "source": "2/案例/案例-6{成都航空学院宿舍}-安装-02.png",
+      "bytes": 5757180,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 chengdu：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-chengdu-02.webp",
+            "/assets/img/project-chengdu-02-m.webp",
+            "/assets/img/project-chengdu-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 68,
+      "source": "2/案例/案例-6{成都航空学院宿舍}-安装-03.png",
+      "bytes": 2154031,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 chengdu：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-chengdu-03.webp",
+            "/assets/img/project-chengdu-03-m.webp",
+            "/assets/img/project-chengdu-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 69,
+      "source": "2/案例/案例-6{成都航空学院宿舍}-安装-04.png",
+      "bytes": 3491065,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 chengdu：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-chengdu-04.webp",
+            "/assets/img/project-chengdu-04-m.webp",
+            "/assets/img/project-chengdu-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 70,
+      "source": "2/案例/案例-6{成都航空学院宿舍}-封面.png",
+      "bytes": 3171516,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 chengdu：项目封面",
+          "webResources": [
+            "/assets/img/project-chengdu-cover.webp",
+            "/assets/img/project-chengdu-cover-m.webp",
+            "/assets/img/project-chengdu-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 71,
+      "source": "2/案例/案例-7{中建三局深圳营房}-安装-01.png",
+      "bytes": 2458675,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 shenzhen：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-shenzhen-01.webp",
+            "/assets/img/project-shenzhen-01-m.webp",
+            "/assets/img/project-shenzhen-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 72,
+      "source": "2/案例/案例-7{中建三局深圳营房}-安装-02.png",
+      "bytes": 875451,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 shenzhen：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-shenzhen-02.webp",
+            "/assets/img/project-shenzhen-02-m.webp",
+            "/assets/img/project-shenzhen-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 73,
+      "source": "2/案例/案例-7{中建三局深圳营房}-安装-03.png",
+      "bytes": 1076363,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 shenzhen：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-shenzhen-03.webp",
+            "/assets/img/project-shenzhen-03-m.webp",
+            "/assets/img/project-shenzhen-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 74,
+      "source": "2/案例/案例-7{中建三局深圳营房}-安装-04.png",
+      "bytes": 1309524,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 shenzhen：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-shenzhen-04.webp",
+            "/assets/img/project-shenzhen-04-m.webp",
+            "/assets/img/project-shenzhen-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 75,
+      "source": "2/案例/案例-7{中建三局深圳营房}-安装-05.png",
+      "bytes": 3155636,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 shenzhen：现场记录 05，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-shenzhen-05.webp",
+            "/assets/img/project-shenzhen-05-m.webp",
+            "/assets/img/project-shenzhen-05.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 76,
+      "source": "2/案例/案例-7{中建三局深圳营房}-封面.png",
+      "bytes": 3662639,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 shenzhen：项目封面",
+          "webResources": [
+            "/assets/img/project-shenzhen-cover.webp",
+            "/assets/img/project-shenzhen-cover-m.webp",
+            "/assets/img/project-shenzhen-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 77,
+      "source": "2/案例/案例-8{斐济样箱}-安装-01.png",
+      "bytes": 1274318,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 fiji：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-fiji-01.webp",
+            "/assets/img/project-fiji-01-m.webp",
+            "/assets/img/project-fiji-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 78,
+      "source": "2/案例/案例-8{斐济样箱}-安装-02.jpg",
+      "bytes": 160726,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 fiji：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-fiji-02.webp",
+            "/assets/img/project-fiji-02-m.webp",
+            "/assets/img/project-fiji-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 79,
+      "source": "2/案例/案例-8{斐济样箱}-安装-03.png",
+      "bytes": 375729,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 fiji：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-fiji-03.webp",
+            "/assets/img/project-fiji-03-m.webp",
+            "/assets/img/project-fiji-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 80,
+      "source": "2/案例/案例-8{斐济样箱}-安装-04.png",
+      "bytes": 3214919,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 fiji：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-fiji-04.webp",
+            "/assets/img/project-fiji-04-m.webp",
+            "/assets/img/project-fiji-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 81,
+      "source": "2/案例/案例-8{斐济样箱}-安装-05.jpg",
+      "bytes": 177095,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 fiji：现场记录 05，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-fiji-05.webp",
+            "/assets/img/project-fiji-05-m.webp",
+            "/assets/img/project-fiji-05.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 82,
+      "source": "2/案例/案例-8{斐济样箱}-安装-06.png",
+      "bytes": 953790,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 fiji：现场记录 06，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-fiji-06.webp",
+            "/assets/img/project-fiji-06-m.webp",
+            "/assets/img/project-fiji-06.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 83,
+      "source": "2/案例/案例-8{斐济样箱}-封面.png",
+      "bytes": 4749573,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 fiji：项目封面",
+          "webResources": [
+            "/assets/img/project-fiji-cover.webp",
+            "/assets/img/project-fiji-cover-m.webp",
+            "/assets/img/project-fiji-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 84,
+      "source": "2/案例/案例-9{半打4S-广东江门志特}-安装-01.JPG",
+      "bytes": 4911264,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 jiangmen：现场记录 01，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-jiangmen-01.webp",
+            "/assets/img/project-jiangmen-01-m.webp",
+            "/assets/img/project-jiangmen-01.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 85,
+      "source": "2/案例/案例-9{半打4S-广东江门志特}-安装-02.JPG",
+      "bytes": 3903944,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 jiangmen：现场记录 02，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-jiangmen-02.webp",
+            "/assets/img/project-jiangmen-02-m.webp",
+            "/assets/img/project-jiangmen-02.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 86,
+      "source": "2/案例/案例-9{半打4S-广东江门志特}-安装-03.JPG",
+      "bytes": 2827613,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 jiangmen：现场记录 03，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-jiangmen-03.webp",
+            "/assets/img/project-jiangmen-03-m.webp",
+            "/assets/img/project-jiangmen-03.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 87,
+      "source": "2/案例/案例-9{半打4S-广东江门志特}-安装-04.png",
+      "bytes": 894052,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 jiangmen：现场记录 04，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-jiangmen-04.webp",
+            "/assets/img/project-jiangmen-04-m.webp",
+            "/assets/img/project-jiangmen-04.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 88,
+      "source": "2/案例/案例-9{半打4S-广东江门志特}-安装-05.jpg",
+      "bytes": 177269,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 jiangmen：现场记录 05，仅归属本项目",
+          "webResources": [
+            "/assets/img/project-jiangmen-05.webp",
+            "/assets/img/project-jiangmen-05-m.webp",
+            "/assets/img/project-jiangmen-05.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 89,
+      "source": "2/案例/案例-9{半打4S-广东江门志特}-封面.png",
+      "bytes": 2893744,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "案例 jiangmen：项目封面",
+          "webResources": [
+            "/assets/img/project-jiangmen-cover.webp",
+            "/assets/img/project-jiangmen-cover-m.webp",
+            "/assets/img/project-jiangmen-cover.jpg"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 90,
+      "source": "2/案例/案例-总清单.xlsx",
+      "bytes": 10787,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/projects.json",
+      "factPolicy": "2026半打项目与2016—2024团队实践分开；24小时限定主体安装且不含室内装修"
+    },
+    {
+      "id": 91,
+      "source": "2/联系我们/联系我们-企业微信.png",
+      "bytes": 381167,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "wang 联系人微信二维码：原像素无损裁切，四周至少 48px 留白",
+          "webResources": [
+            "/assets/img/wechat-wang.png"
+          ]
+        },
+        {
+          "purpose": "huang 联系人微信二维码：原像素无损裁切，四周至少 48px 留白",
+          "webResources": [
+            "/assets/img/wechat-huang.png"
+          ]
+        },
+        {
+          "purpose": "tang 联系人微信二维码：原像素无损裁切，四周至少 48px 留白",
+          "webResources": [
+            "/assets/img/wechat-tang.png"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 92,
+      "source": "2/联系我们/联系我们-地图.png",
+      "bytes": 724043,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "联系页静态地图，完整保留地图图像及归属信息",
+          "webResources": [
+            "/assets/img/contact-map.webp"
+          ]
+        }
+      ],
+      "note": ""
+    },
+    {
+      "id": 93,
+      "source": "2/资质/INTEREK 180727006SHF-导热系数.pdf",
+      "bytes": 930341,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 94,
+      "source": "2/资质/INTEREK 180727006SHF-无石棉.pdf",
+      "bytes": 938461,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 95,
+      "source": "2/资质/INTEREK 180727006SHF-水密性.pdf",
+      "bytes": 969916,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 96,
+      "source": "2/资质/INTEREK 180727006SHF-耐火测试.pdf",
+      "bytes": 2322642,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 97,
+      "source": "2/资质/INTEREK 180727006SHF-隔音测试.pdf",
+      "bytes": 1253216,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 98,
+      "source": "2/资质/SGS抗压强度GZIN1810052770CM.PDF",
+      "bytes": 180628,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 99,
+      "source": "2/资质/SGS水渗性GZIN1808044546CM.PDF",
+      "bytes": 141901,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 100,
+      "source": "2/资质/SGS石棉CAN18-195254-01_MLC_GZIN1808044547CM_F.PDF",
+      "bytes": 328663,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 101,
+      "source": "2/资质/SGS防火GZIN1808044545CM.PDF",
+      "bytes": 454037,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 102,
+      "source": "2/资质/SGS隔音GZIN1808044544CM.PDF",
+      "bytes": 293224,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 103,
+      "source": "2/资质/发明专利证书.pdf",
+      "bytes": 7069965,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts",
+      "factPolicy": "仅选录第1页与第17页能核对的历史授权；没有公开全部有效或当前持有声明"
+    },
+    {
+      "id": 104,
+      "source": "2/资质/广东省土木建筑学会科学技术奖励-草根民墅.png",
+      "bytes": 181423,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 105,
+      "source": "2/资质/广东省土木建筑学会科学技术奖励-黄昆.png",
+      "bytes": 301463,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 106,
+      "source": "2/资质/广东省科技创新专项 二等奖.png",
+      "bytes": 524137,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅网页摘要：送检主体、样品、报告编号；历史授权/获奖主体；原文件不公开",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 107,
+      "source": "2/资质/资质-{专利汇编}.xlsx",
+      "bytes": 10667,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": "专利清单状态与证书存在差异，仅采用证书支持的历史授权事实"
+    },
+    {
+      "id": 108,
+      "source": "2/资质/资质-检测报告清单.xlsx",
+      "bytes": 11621,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 109,
+      "source": "2/资质/资质-获奖证书.xlsx",
+      "bytes": 10098,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/credentials.ts"
+    },
+    {
+      "id": 110,
+      "source": "2/首页/首页-企业短介绍.docx",
+      "bytes": 11200,
+      "decision": "使用或事实来源",
+      "uses": [
+        {
+          "purpose": "仅提取已核对事实，重排为网页；不发布原表、海报、报价或嵌入式户型截图",
+          "webResources": []
+        }
+      ],
+      "note": "",
+      "contentTarget": "src/data/company.ts"
+    },
+    {
+      "id": 111,
+      "source": "2/首页/首页-轮播图1.png",
+      "bytes": 5634414,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 112,
+      "source": "2/首页/首页-轮播图2.png",
+      "bytes": 2892707,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 113,
+      "source": "2/首页/首页-轮播图3.png",
+      "bytes": 3250956,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    },
+    {
+      "id": 114,
+      "source": "2/首页/首页-轮播文案.docx",
+      "bytes": 11664,
+      "decision": "保留内部，未部署",
+      "uses": [],
+      "note": ""
+    }
+  ],
+  "retainedExistingResources": [
+    "/assets/img/case-cayman-install-crane-m.webp",
+    "/assets/img/case-cayman-install-crane.jpg",
+    "/assets/img/case-cayman-install-crane.webp",
+    "/assets/img/flow-factory-module-m.webp",
+    "/assets/img/flow-factory-module.jpg",
+    "/assets/img/flow-factory-module.webp",
+    "/assets/img/flow-factory-panels.jpg",
+    "/assets/img/flow-factory-panels.webp",
+    "/assets/img/flow-step01-mold.jpg",
+    "/assets/img/flow-step01-mold.webp",
+    "/assets/img/flow-step06-crane-panel-m.webp",
+    "/assets/img/flow-step06-crane-panel.jpg",
+    "/assets/img/flow-step06-crane-panel.webp",
+    "/assets/img/home-banner-60m-dining-02.jpg",
+    "/assets/img/home-banner-60m-dining-02.webp"
+  ],
+  "cleanup": {
+    "archivedUnusedFiles": 182,
+    "archiveDirectory": "artifacts/materials/unused-assets",
+    "archiveIncludedInDelivery": false,
+    "publicImageFiles": 218,
+    "originalDocumentsDeployed": false
+  },
+  "notes": [
+    "以已核对的115份缓存原文件实施，原始资料不进入源码包或静态包。",
+    "新闻与招聘保留真实空态，隐私草稿等待核对；联系邮箱不表示表单服务已接通。"
+  ],
+  "supplement": {
+    "archive": "资料2.zip",
+    "documents": [
+      {
+        "source": "资料2/半打4S~One House in Two 40'HC-宣传册（标准版）.pdf",
+        "sha256": "936779f6ff2ab9d8c0693dec85f811ce733afb0fa4c2a806eb35421db7235e53",
+        "pages": 18,
+        "uses": [
+          {
+            "page": 4,
+            "imageObject": 42,
+            "sourcePixels": [
+              6427,
+              4321
+            ],
+            "sourceImageSha256": "f2d71a9ac41be3798859c6bb87d736c3876b8afb87bf51333d34b2e669409091",
+            "kind": "render",
+            "purpose": "正面外观 / 标准版方案效果图",
+            "webResources": [
+              "/assets/img/product-4s-design-front.jpg",
+              "/assets/img/product-4s-design-front.webp",
+              "/assets/img/product-4s-design-front-m.webp"
+            ]
+          },
+          {
+            "page": 8,
+            "imageObject": 54,
+            "sourcePixels": [
+              6534,
+              4317
+            ],
+            "sourceImageSha256": "6a0c49aa88bb1c90137ea2ad21bdac1964db88bd76b54d6978dd0786ae4ece9f",
+            "kind": "render",
+            "purpose": "客餐厅 / 标准版方案效果图",
+            "webResources": [
+              "/assets/img/product-4s-design-living.jpg",
+              "/assets/img/product-4s-design-living.webp",
+              "/assets/img/product-4s-design-living-m.webp"
+            ]
+          },
+          {
+            "page": 7,
+            "imageObject": 51,
+            "sourcePixels": [
+              3840,
+              2557
+            ],
+            "sourceImageSha256": "681a203cdcf9c7e4e495ba7fd7f2344529b56f70f3fa5f276e654ef25d28856e",
+            "kind": "render",
+            "purpose": "阁楼空间 / 标准版方案效果图",
+            "webResources": [
+              "/assets/img/product-4s-design-loft.jpg",
+              "/assets/img/product-4s-design-loft.webp",
+              "/assets/img/product-4s-design-loft-m.webp"
+            ]
+          },
+          {
+            "page": 9,
+            "imageObject": 57,
+            "sourcePixels": [
+              2560,
+              1705
+            ],
+            "sourceImageSha256": "14df258eb0d1bcb4d17817cdb4230abc9501fb251cb273d59186fb9c5ca59d23",
+            "kind": "render",
+            "purpose": "卧室 / 标准版方案效果图",
+            "webResources": [
+              "/assets/img/product-4s-design-bedroom.jpg",
+              "/assets/img/product-4s-design-bedroom.webp",
+              "/assets/img/product-4s-design-bedroom-m.webp"
+            ]
+          },
+          {
+            "page": 10,
+            "imageObject": 60,
+            "sourcePixels": [
+              3840,
+              2581
+            ],
+            "sourceImageSha256": "a1d34c411254c968f42d9b1a8887cf22b27118729f15af0c4d4d6f17d60f8e70",
+            "kind": "render",
+            "purpose": "厨房 / 标准版方案效果图",
+            "webResources": [
+              "/assets/img/product-4s-design-kitchen.jpg",
+              "/assets/img/product-4s-design-kitchen.webp",
+              "/assets/img/product-4s-design-kitchen-m.webp"
+            ]
+          },
+          {
+            "page": 12,
+            "imageObject": 66,
+            "sourcePixels": [
+              2529,
+              1721
+            ],
+            "sourceImageSha256": "c02ae1ae9273630a53f3f68847140346987897f8d278795e2c15efa9284ba548",
+            "kind": "render",
+            "purpose": "卫浴 / 标准版方案效果图",
+            "webResources": [
+              "/assets/img/product-4s-design-bathroom.jpg",
+              "/assets/img/product-4s-design-bathroom.webp",
+              "/assets/img/product-4s-design-bathroom-m.webp"
+            ]
+          },
+          {
+            "page": 5,
+            "imageObject": 45,
+            "sourcePixels": [
+              1155,
+              739
+            ],
+            "sourceImageSha256": "df49060c44f452d032fbaf7cf1a185f6f98439100a3b628e842f2afaa542b92e",
+            "kind": "diagram",
+            "purpose": "半打 4S / 双集装箱装运示意",
+            "webResources": [
+              "/assets/img/product-4s-packing.png",
+              "/assets/img/product-4s-packing.webp"
+            ]
+          }
+        ],
+        "deferred": [
+          {
+            "pages": [
+              3,
+              14,
+              15,
+              16,
+              17
+            ],
+            "reason": "同册阁楼36㎡与38㎡并存，首层62.88㎡与现有63㎡口径待核对；暂缓户型、立面及尺寸图，保留现有参数。"
+          }
+        ]
+      },
+      {
+        "source": "资料2/半打60m²(灰度空间)方案-0914.pdf",
+        "sha256": "d18041b21aca3411c5971ef5d8bd0d27024b6a03283eff789664a5eb8f203fb8",
+        "pages": 12,
+        "uses": [
+          {
+            "page": 2,
+            "imageObject": 24,
+            "sourcePixels": [
+              2217,
+              1376
+            ],
+            "sourceImageSha256": "a5d770fad983cd38b6844db93a8d50d0eb43a9a2b8c177609fe2f14d1a017938",
+            "kind": "render",
+            "purpose": "正面外观 / 方案效果图",
+            "webResources": [
+              "/assets/img/product-grayscale-design-front.jpg",
+              "/assets/img/product-grayscale-design-front.webp",
+              "/assets/img/product-grayscale-design-front-m.webp"
+            ]
+          },
+          {
+            "page": 4,
+            "imageObject": 37,
+            "sourcePixels": [
+              2230,
+              1376
+            ],
+            "sourceImageSha256": "87660b504110e9f183705c960202b2199145a7f2a3318070e61170000496392f",
+            "kind": "render",
+            "purpose": "侧面外观 / 方案效果图",
+            "webResources": [
+              "/assets/img/product-grayscale-design-side.jpg",
+              "/assets/img/product-grayscale-design-side.webp",
+              "/assets/img/product-grayscale-design-side-m.webp"
+            ]
+          },
+          {
+            "page": 8,
+            "imageObject": 57,
+            "sourcePixels": [
+              2432,
+              1632
+            ],
+            "sourceImageSha256": "fcaf614352bbefe1150127e6793766ade835d7ddf4c243a0fd782feff3f881ba",
+            "kind": "render",
+            "purpose": "客厅 / 方案效果图",
+            "webResources": [
+              "/assets/img/product-grayscale-design-living.jpg",
+              "/assets/img/product-grayscale-design-living.webp",
+              "/assets/img/product-grayscale-design-living-m.webp"
+            ]
+          },
+          {
+            "page": 9,
+            "imageObject": 60,
+            "sourcePixels": [
+              2432,
+              1632
+            ],
+            "sourceImageSha256": "19efa366e6c5eb65393387052205bb79ba01192f7f11651a781add487f0dc9b5",
+            "kind": "render",
+            "purpose": "餐厅 / 方案效果图",
+            "webResources": [
+              "/assets/img/product-grayscale-design-dining.jpg",
+              "/assets/img/product-grayscale-design-dining.webp",
+              "/assets/img/product-grayscale-design-dining-m.webp"
+            ]
+          },
+          {
+            "page": 10,
+            "imageObject": 63,
+            "sourcePixels": [
+              2432,
+              1632
+            ],
+            "sourceImageSha256": "96795d819b1243f2602902680f21c78380a9f12f5b03fd56c1d449b8bc63059d",
+            "kind": "render",
+            "purpose": "厨房 / 方案效果图",
+            "webResources": [
+              "/assets/img/product-grayscale-design-kitchen.jpg",
+              "/assets/img/product-grayscale-design-kitchen.webp",
+              "/assets/img/product-grayscale-design-kitchen-m.webp"
+            ]
+          },
+          {
+            "page": 11,
+            "imageObject": 66,
+            "sourcePixels": [
+              2432,
+              1632
+            ],
+            "sourceImageSha256": "5ed41c66f8456973ef290a59d3c6366c134607c479dfefd5d1d7149cea922b5c",
+            "kind": "render",
+            "purpose": "卧室 / 方案效果图",
+            "webResources": [
+              "/assets/img/product-grayscale-design-bedroom.jpg",
+              "/assets/img/product-grayscale-design-bedroom.webp",
+              "/assets/img/product-grayscale-design-bedroom-m.webp"
+            ]
+          },
+          {
+            "page": 5,
+            "imageObject": 45,
+            "sourcePixels": [
+              1417,
+              868
+            ],
+            "sourceImageSha256": "e584f84e9c5bb49f04cf2defe26e9accd20b1f1c08c2a9f9f2cae5d4dd593359",
+            "kind": "diagram",
+            "purpose": "灰度空间 / 住宅与办公布局示意",
+            "webResources": [
+              "/assets/img/product-grayscale-layouts.png",
+              "/assets/img/product-grayscale-layouts.webp"
+            ]
+          }
+        ],
+        "deferred": [
+          {
+            "pages": [
+              3,
+              7
+            ],
+            "reason": "同源外观与室内画面已在网站使用，本轮不重复增加。"
+          },
+          {
+            "pages": [
+              6
+            ],
+            "reason": "立面图保留为内部参考，本轮只展示已选布局示意。"
+          }
+        ]
+      },
+      {
+        "source": "资料2/“半打风系列”产品图册（轻奢款） .pdf",
+        "sha256": "9834ed59727728369d8570ff70795afbb63115ec512b7416846f377f0f632086",
+        "pages": 18,
+        "uses": [
+          {
+            "pages": [
+              3,
+              7,
+              11,
+              12,
+              17
+            ],
+            "purpose": "核对四款产品参数、效果图归属及版本差异；无新增公开资源。",
+            "webResources": []
+          }
+        ],
+        "deferred": [
+          {
+            "reason": "价格、额外型号及轻奢配置不公开；不用于替换标准版配置。"
+          }
+        ]
+      }
+    ]
+  }
+}

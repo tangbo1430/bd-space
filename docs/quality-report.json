@@ -1,0 +1,75 @@
+{
+  "project": "半打空间 / BANDA SPACE",
+  "release": "r26 / delivery polish",
+  "reviewed_at": "2026-10-10T17:33:40.851883+00:00",
+  "build": {
+    "commit": "a7ad9da",
+    "builtAt": "2026-10-10T17:30:59.035Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "scope": "保留 r25 整体视觉、内容和路由；六款产品、十项案例、十一个英文核心页面。",
+  "changes": [
+    "官方原色与浅色 Logo 保留原稿曲线及两块灰色；去除重复位图、导出线条，无底板、描边、阴影或整图漂白滤镜。",
+    "正文图片使用真实尺寸；横竖图按原比例成组等高，手机单列；撤掉固定裁切和悬停放大。摄影首屏继续满幅。",
+    "手机章节导航保持单行横向滑动与 44px 点击目标；跳转偏移与收缩导航共用 76px 高度。",
+    "保留原有 52px 主按钮、2px 圆角、字体和轻动效；建造示意辅助文字提高到 12px。",
+    "删除被替代的 Logo、图集与图片容器覆盖规则；加入真实图片尺寸清单及可复现的官方 Logo 整理脚本。"
+  ],
+  "current_turn_verification": {
+    "unit_tests": 48,
+    "type_errors": 0,
+    "lint_errors": 0,
+    "type_hints": 2,
+    "rendered_pages": 33,
+    "all_page_viewport_checks": 297,
+    "core_responsive_checks": 192,
+    "english_layout_checks": 88,
+    "cover_checks": 72,
+    "supplement_checks": 16,
+    "material_layout_checks": 32,
+    "carousel_layout_checks": 8,
+    "header_checks": 40,
+    "light_header_pages": 2,
+    "selected_case_checks": 18,
+    "final_logo_anchor_keyboard_states": 10,
+    "accessibility_scenarios": 58,
+    "accessibility_violations": 0,
+    "browser_errors": 0,
+    "image_references": 349,
+    "material_integrity_checks": 46,
+    "supplement_integrity_checks": 18,
+    "untranslated_text_attributes": 0
+  },
+  "evidence_stages": [
+    "本轮完整浏览器回归与截图对应本轮工作树；不是沿用 r25 的历史报告。",
+    "本轮完整回归后补齐锚点偏移、辅助字号和品牌资源缓存版本；待发布构建重新通过全部 297 组页面比例/溢出检查、40 组导航检查、10 组 Logo/锚点/键盘阅图状态及 349 个资源引用校验。",
+    "33 页 × 9 视口：320×568、375×812、768×1024、1024×768、1440×900、1920×1080、2560×1440、844×390、720×450。375/1440 截图覆盖全部生成页；逐页复核首屏、正文与页脚。",
+    "首页与产品中心共 9 张轮播，在 375、1920、2560px 逐张截图检查；混合图集另有 16 组截图。",
+    "材料用例首次发现双重锚点偏移并失败；修复后复测通过。键盘状态测试明确用 Tab 进入键盘模式，不以鼠标后的程序 focus 冒充键盘焦点。"
+  ],
+  "historical_evidence": {
+    "file": "verification/r25-historical.json",
+    "status": "仅作历史追溯，不计入本轮通过数量。"
+  },
+  "limits": [
+    "浏览器实测为 Windows Edge 自动化及模拟视口；未覆盖真实 iOS/Safari、Android 实机、其他浏览器内核、屏幕阅读器和原生 200% 浏览器缩放。200% 检查使用等效 CSS 视口。",
+    "自动可访问性扫描不能替代完整人工无障碍认证；手动/脚本另测键盘、焦点恢复、菜单、阅图和表单。",
+    "6S 仍缺少对应室内素材，不借用其他型号；新闻和招聘保留真实空态。",
+    "联系表单仅在本地下载需求，不自动发送；未接入邮件或后台服务。",
+    "继续使用 HTTP 临时站和 noindex；未增加正式域名、HTTPS 或未经确认的隐私、Cookie 政策。",
+    "报告与专利保留原主体和适用范围；未公开价格、内部表格、授权书或完整报告。"
+  ],
+  "publication": "已部署到现有临时站，公网 22 个中英文核心页面、7 组浏览器检查及 10 组 Logo/锚点/键盘阅图状态通过。额外验证深浅 Logo 与本地文件逐字节一致、视频手动播放和英文需求本地下载；无脚本错误。r25 已保留用于回退。代码仅本地提交，未推送 GitHub。",
+  "public_verification": {
+    "core_pages": 22,
+    "browser_checks": 7,
+    "logo_anchor_keyboard_states": 10,
+    "manual_video_playback": true,
+    "video_requests_before_play": 0,
+    "english_local_download": true,
+    "errors": 0,
+    "missing": 0
+  },
+  "deployment_assets": 466
+}

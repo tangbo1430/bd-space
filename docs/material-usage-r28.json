@@ -1,0 +1,45 @@
+{
+  "release": "r28",
+  "runtime_commit": "9c0de5c",
+  "review_date": "2026-10-10",
+  "inventory_source": "material-usage-audit.json",
+  "scope": "v1.1 archive only, 208 files; earlier material batches excluded. Current dist HTML references and deployed runtime version rechecked.",
+  "media_usage": {
+    "eligible_unique_non_logo_media": 128,
+    "referenced_unique_non_logo_media": 115,
+    "percent": 89.8,
+    "counting": "Unique source files, excluding the superseded PNG logo, its duplicate, logo source-format variants, annotation screenshots, promotional posters, documents, tables and full evidence reports. Desktop/mobile formats and thumbnails do not inflate counts. Logo is audited separately against official vector sources.",
+    "product_photos": { "used": 25, "provided": 38 },
+    "product_technical_drawings": { "used": 17, "provided": 17 },
+    "case_images": { "used": 61, "provided": 61 },
+    "contact_qr": { "used": 3, "provided": 3 },
+    "other_photos": { "used": 8, "provided": 8 },
+    "video": { "used": 1, "provided": 1 },
+    "unused": "13 alternative product photographs, retained as options rather than repeated on pages."
+  },
+  "content": {
+    "listed_products": 6,
+    "projects": 10,
+    "english_core_pages": 11,
+    "logo": "Official PDF and SVG used to generate current vectors; see logo-provenance.json. Old PNG logo use count is obsolete.",
+    "documents": "Company, parameter, project, contact and English copy incorporated as web content; evidence summarized and authorizations kept internal. Not counted as direct media utilization."
+  },
+  "verification": {
+    "material_regression_checks": 46,
+    "public_version_matches": true,
+    "video_zh_en_embeds": true,
+    "video_http_status": 200,
+    "video_bytes": 23446100,
+    "video_preload": "none",
+    "video_autoplay": false,
+    "video_playback": "Prior r26 playback verified. This audit rechecked current embeds, HTTP availability and range support; did not repeat playback."
+  },
+  "remaining_limits": [
+    "No confirmed 6S interior photographs supplied; no cross-model substitution.",
+    "News and recruitment lack formal content; remain genuine empty states.",
+    "Three component placeholders remain unlisted and noindex.",
+    "4S source area scopes remain separate; historical brochure discrepancies are not new confirmed specifications.",
+    "Contact form provides local file download only; sending service, domain and HTTPS remain outside current scope."
+  ],
+  "previous_rate": "Historical 89.9% was 116/129 and included the old PNG logo. Current non-logo media rate is 115/128; this is a accounting correction following vector replacement, not missing page content."
+}

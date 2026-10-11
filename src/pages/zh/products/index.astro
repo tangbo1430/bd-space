@@ -1,37 +1,103 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import PhImg from '../../../components/PhImg.astro';
-import { getCollection } from 'astro:content';
-
-const products = (await getCollection('products', ({ data }) => data.published))
-  .sort((a, b) => a.data.order - b.data.order);
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EditorialImage from "../../../components/EditorialImage.astro";
+import ProjectCTA from "../../../components/ProjectCTA.astro";
+import BuildingSystems from "../../../components/BuildingSystems.astro";
+import HeroCarousel from "../../../components/HeroCarousel.astro";
+import { getListedProducts } from "../../../lib/catalog";
+const products = await getListedProducts();
+const slides = products.map((product) => ({
+  id: product.id,
+  base: product.base,
+  mobileImage: product.mobileImage,
+  name: product.name,
+  note: product.desc,
+  caption: product.imageCaption,
+}));
 ---
 
 <BaseLayout
   title="产品中心"
-  description="半打空间产品中心：预应力叠合板、预制夹心墙板、预制楼梯等装配式混凝土构件（名称与参数以客户确认为准）。"
+  description="探索半打4S、5S、6S、灰度空间、半打8与半打9，了解户型、面积、结构与装运参考。"
   current="products"
-  headerStyle="solid"
+  headerStyle="overlay"
 >
-  <p class="crumb"><a href="/zh/">HOME</a> / PRODUCTS</p>
-  <div class="wrap" style="padding-top:40px;padding-bottom:60px">
-    <div class="en">Products</div>
-    <h2 style="font-size:52px;margin-top:10px">产品中心</h2>
-  </div>
-
-  <div style="border-top:1px solid var(--line)">
-    {products.map((p, i) => (
-      <article class:list={['plist-item', { rev: i % 2 === 1 }]}>
-        <div class="p-img">
-          <PhImg g={i % 3 === 0 ? 'factory' : i % 3 === 1 ? 'yard' : 'site'} tag={`${p.data.listImageId} · 替换整图（占位=原创线稿版式位）`} />
+  <div class="page-editorial">
+    <HeroCarousel slides={slides} catalog>
+      <h1>
+        空间，有更多
+        <br />
+        打开方式。
+      </h1>
+      <p>
+        从独立住宅到组合空间，
+        <br />
+        找到适合您项目的建造方式。
+      </p>
+      <div class="cover-actions">
+        <a class="action action-primary" href="#collection">
+          探索空间产品
+        </a>
+      </div>
+    </HeroCarousel>
+    <section
+      class="product-catalog-section ed-section"
+      id="collection"
+      aria-label="模块化空间产品"
+    >
+      <div class="catalog-intro ed-wrap rv">
+        <span class="eyebrow">模块化空间系列</span>
+        <h2>与生活，恰好相遇。</h2>
+      </div>
+      <div class="collection-catalog">
+        {products.map((p) => (
+          <article class="catalog-feature">
+            <div class="catalog-feature-copy ed-wrap rv">
+              <h2>{p.name}</h2>
+              <p>{p.desc}</p>
+              <p class="catalog-facts">
+                {p.area} · {p.layout}
+              </p>
+              <div class="catalog-actions">
+                <a class="action action-primary" href={`/zh/products/${p.id}/`}>
+                  探索详情
+                </a>
+                <a
+                  class="text-link action action-secondary"
+                  href={`/zh/contact/?product=${p.id}`}
+                >
+                  咨询该产品
+                </a>
+              </div>
+            </div>
+            <a
+              class="catalog-feature-image"
+              href={`/zh/products/${p.id}/`}
+              aria-label={`探索${p.name}`}
+            >
+              <EditorialImage fit="contain" base={p.base} alt={p.imageCaption} />
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+    <section class="systems-section ed-section">
+      <div class="ed-wrap">
+        <div class="section-label rv">
+          <span>02 / BUILDING SYSTEMS</span>
+          <span>建造体系</span>
         </div>
-        <div class="p-txt">
-          <div class="en">{p.data.enTag}</div>
-          <h2>{p.data.name}</h2>
-          <p>{p.data.tagline}</p>
-          <a class="btn btn-primary" href={`/zh/products/${p.id}/`}>查看详情 <span class="arr">→</span></a>
+        <div class="section-heading rv">
+          <h2>以系统思考建筑。</h2>
+          <p>
+            构件、模块与组合，
+            <br />
+            组成空间的不同语法。
+          </p>
         </div>
-      </article>
-    ))}
+        <BuildingSystems />
+      </div>
+    </section>
+    <ProjectCTA />
   </div>
 </BaseLayout>

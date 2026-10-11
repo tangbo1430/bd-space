@@ -1,0 +1,142 @@
+{
+  "generatedAt": "2026-10-11T03:04:54.954Z",
+  "totalHtml": 33,
+  "pages": [
+    {
+      "route": "/404.html",
+      "hits": []
+    },
+    {
+      "route": "/",
+      "hits": []
+    },
+    {
+      "route": "/en/",
+      "hits": []
+    },
+    {
+      "route": "/zh/",
+      "hits": []
+    },
+    {
+      "route": "/en/about/",
+      "hits": []
+    },
+    {
+      "route": "/en/cases/",
+      "hits": []
+    },
+    {
+      "route": "/en/contact/",
+      "hits": []
+    },
+    {
+      "route": "/en/products/",
+      "hits": []
+    },
+    {
+      "route": "/zh/about/",
+      "hits": []
+    },
+    {
+      "route": "/zh/cases/",
+      "hits": []
+    },
+    {
+      "route": "/zh/contact/",
+      "hits": []
+    },
+    {
+      "route": "/zh/cookies/",
+      "hits": [
+        "政策尚未发布。"
+      ]
+    },
+    {
+      "route": "/zh/news/",
+      "hits": []
+    },
+    {
+      "route": "/zh/privacy/",
+      "hits": [
+        "政策尚未发布。"
+      ]
+    },
+    {
+      "route": "/zh/products/",
+      "hits": []
+    },
+    {
+      "route": "/zh/qualifications/",
+      "hits": []
+    },
+    {
+      "route": "/en/products/4s/",
+      "hits": []
+    },
+    {
+      "route": "/en/products/5s/",
+      "hits": []
+    },
+    {
+      "route": "/en/products/6s/",
+      "hits": []
+    },
+    {
+      "route": "/en/products/bd8/",
+      "hits": []
+    },
+    {
+      "route": "/en/products/bd9/",
+      "hits": []
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "hits": []
+    },
+    {
+      "route": "/zh/about/careers/",
+      "hits": []
+    },
+    {
+      "route": "/zh/about/investors/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/4s/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/5s/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/6s/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/slab/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/stair/",
+      "hits": []
+    },
+    {
+      "route": "/zh/products/wall/",
+      "hits": []
+    }
+  ]
+}

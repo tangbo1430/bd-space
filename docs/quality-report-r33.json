@@ -1,0 +1,44 @@
+{
+  "release": "r33",
+  "build": {
+    "commit": "a6210c9",
+    "builtAt": "2026-10-11T03:53:21.692Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "scope": "联系页信息直接展示",
+  "changes": [
+    "三位联系人姓名、电话、微信二维码全部直接展示，移除折叠入口",
+    "位置图直接显示于地址及工作时间下方",
+    "保留首屏空间图片、字体、按钮和既有联系方式；二维码及地图仍可放大，关闭后恢复焦点",
+    "联系人采用紧凑的左文右图排版，减少重复说明"
+  ],
+  "checks": {
+    "lint": "passed",
+    "types": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 6
+    },
+    "build_pages": 33,
+    "asset_references": 346,
+    "material_checks": 46,
+    "translation_residue": 0,
+    "release_verification": "passed",
+    "contact_layouts_local": 18,
+    "contact_layouts_public": 18,
+    "axe_groups_local": 4,
+    "axe_groups_public": 4,
+    "public_html_parity": 33,
+    "interactions": "电话邮件链接、复制成功与失败、产品与案例咨询参数、三张二维码及地图放大、关闭后焦点恢复、章节锚点偏移",
+    "script_errors": 0,
+    "resource_errors": 0
+  },
+  "limits": [
+    "本轮为联系页可见性调整，未重跑历史单元测试及全站完整视觉、轮播、视频回归；历史结果不计入本轮",
+    "本轮视口为中英文320/375/768/1024/1440/1920/2560px、844×390横屏和800×450缩放等效视口",
+    "使用Windows Edge/Chromium；未覆盖实机Safari/iOS/Android；自动无障碍检查不等于完整认证",
+    "未实际拨打电话、发送邮件或添加微信；表单发送服务仍未接入",
+    "保留上一临时站版本用于回退；仅本地提交，未推送GitHub"
+  ]
+}

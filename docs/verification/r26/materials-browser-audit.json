@@ -1,0 +1,193 @@
+{
+  "layouts": [
+    {
+      "route": "cases",
+      "width": 320,
+      "height": 812
+    },
+    {
+      "route": "qualifications",
+      "width": 320,
+      "height": 812
+    },
+    {
+      "route": "contact",
+      "width": 320,
+      "height": 812
+    },
+    {
+      "route": "about/investors",
+      "width": 320,
+      "height": 812
+    },
+    {
+      "route": "cases",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "route": "qualifications",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "route": "contact",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "route": "about/investors",
+      "width": 375,
+      "height": 812
+    },
+    {
+      "route": "cases",
+      "width": 768,
+      "height": 900
+    },
+    {
+      "route": "qualifications",
+      "width": 768,
+      "height": 900
+    },
+    {
+      "route": "contact",
+      "width": 768,
+      "height": 900
+    },
+    {
+      "route": "about/investors",
+      "width": 768,
+      "height": 900
+    },
+    {
+      "route": "cases",
+      "width": 1024,
+      "height": 900
+    },
+    {
+      "route": "qualifications",
+      "width": 1024,
+      "height": 900
+    },
+    {
+      "route": "contact",
+      "width": 1024,
+      "height": 900
+    },
+    {
+      "route": "about/investors",
+      "width": 1024,
+      "height": 900
+    },
+    {
+      "route": "cases",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "route": "qualifications",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "route": "contact",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "route": "about/investors",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "route": "cases",
+      "width": 1920,
+      "height": 900
+    },
+    {
+      "route": "qualifications",
+      "width": 1920,
+      "height": 900
+    },
+    {
+      "route": "contact",
+      "width": 1920,
+      "height": 900
+    },
+    {
+      "route": "about/investors",
+      "width": 1920,
+      "height": 900
+    },
+    {
+      "route": "cases",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "route": "qualifications",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "route": "contact",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "route": "about/investors",
+      "width": 844,
+      "height": 390
+    },
+    {
+      "route": "cases",
+      "width": 720,
+      "height": 450
+    },
+    {
+      "route": "qualifications",
+      "width": 720,
+      "height": 450
+    },
+    {
+      "route": "contact",
+      "width": 720,
+      "height": 450
+    },
+    {
+      "route": "about/investors",
+      "width": 720,
+      "height": 450
+    }
+  ],
+  "checks": [
+    "Ten project galleries preserve source grouping and captions",
+    "Four legacy project anchors land below the fixed navigation",
+    "Product gallery wraps, scrolls selected thumbnails into view; QR viewers work in portrait and landscape",
+    "New project inquiry parameters and direct telephone/email links"
+  ],
+  "accessibility": [
+    {
+      "page": "expanded-report",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "qr-viewer",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "page": "expanded-report",
+      "width": 375,
+      "violations": []
+    },
+    {
+      "page": "qr-viewer",
+      "width": 375,
+      "violations": []
+    }
+  ],
+  "errors": []
+}

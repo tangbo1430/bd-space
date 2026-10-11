@@ -1,0 +1,20 @@
+{
+  "scope": "r28: official symbol colors with unchanged white wordmark on desktop photography",
+  "build": {
+    "commit": "9c0de5c",
+    "builtAt": "2026-10-11T02:03:54.289Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "checks": {
+    "lint_changed_files": "passed",
+    "build_pages": 33,
+    "image_references": 349,
+    "local_header_states": 8,
+    "public_header_states": 8,
+    "geometry_and_symbol_colors": "passed",
+    "public_svg_byte_parity": "passed"
+  },
+  "limits": "Scoped logo checks; previous full-suite results are historical and not rerun for this color-only change.",
+  "github": "Local commits only; no push."
+}

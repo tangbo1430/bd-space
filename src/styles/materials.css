@@ -1,0 +1,867 @@
+/* Anchor destinations use the compact, scrolled navigation height. */
+:root {
+  --header-height: 76px;
+}
+/* Content additions inherit the approved typography, motion and action system. */
+.product-jump {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  gap: 4px 28px;
+  padding-block: 18px;
+  border-bottom: 1px solid var(--line, #dde2de);
+}
+.product-jump a {
+  flex: none;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 13px;
+  color: var(--soft-ink);
+  text-underline-offset: 6px;
+}
+.product-jump a:hover,
+.product-jump a:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+}
+.product-summary {
+  margin: 24px 0;
+}
+.product-summary > div {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 16px;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--line, #dde2de);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.product-summary dt {
+  color: var(--soft-ink);
+}
+.product-summary dd {
+  margin: 0;
+}
+.contact-quick {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+.inquiry-next-step {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--soft-ink);
+  overflow-wrap: anywhere;
+}
+.inquiry-next-step a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.product-design-grid figure,
+.technical-figure {
+  margin: 0;
+  min-width: 0;
+}
+.product-design .section-heading > p,
+.product-diagrams .section-heading > p {
+  max-width: 330px;
+  min-width: 0;
+  text-wrap: pretty;
+}
+.product-design .section-heading h2,
+.product-diagrams .section-heading h2 {
+  text-wrap: balance;
+}
+.product-diagrams .section-heading h2 > span,
+.product-design .section-heading h2 > span {
+  display: inline-block;
+}
+.product-design-grid figcaption,
+.technical-figure figcaption {
+  padding-top: 16px;
+  font-size: 13px;
+  color: var(--soft-ink);
+  line-height: 1.8;
+}
+.gallery-link.gallery-complete {
+  height: auto;
+}
+.gallery-complete:hover .editorial-image img {
+  transform: none;
+}
+.gallery-complete:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.technical-figure {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+.technical-figure .editorial-image {
+  background: #fff;
+}
+.technical-figure .gallery-open {
+  display: none;
+}
+.technical-figure figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.technical-figure figcaption > span {
+  font-size: 12px;
+}
+@media (max-width: 767px) {
+  .product-design .section-heading > p,
+  .product-diagrams .section-heading > p {
+    max-width: none;
+  }
+  .technical-figure figcaption {
+    display: block;
+  }
+  .technical-figure figcaption > span {
+    display: block;
+    margin-top: 6px;
+  }
+}
+.footer-identity {
+  max-width: 340px;
+}
+.footer-tagline {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #c3ccc8;
+}
+.footer-legal {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #aebbb3;
+  line-height: 1.9;
+}
+.footer-legal span {
+  display: block;
+  margin-top: 8px;
+  letter-spacing: 0.01em;
+}
+.home-company {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 10%;
+  padding-block: 68px 90px;
+}
+.home-company > .eyebrow {
+  align-items: flex-start;
+  padding-top: 8px;
+}
+.home-company p {
+  font-size: 18px;
+  line-height: 2;
+  margin-bottom: 24px;
+  max-width: 760px;
+}
+.catalog-feature-copy .catalog-facts {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--soft-ink);
+}
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 90px 40px;
+}
+.case-grid .case-project {
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.case-grid .case-project-head {
+  display: block;
+  margin: 26px 0 22px;
+}
+.case-grid .case-project-head h2 {
+  font-size: clamp(23px, 2.1vw, 30px);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.case-grid .case-project-head .eyebrow {
+  margin-bottom: 10px;
+}
+.project-location {
+  color: var(--soft-ink);
+  font-size: 13px;
+  margin-top: 9px;
+}
+.project-facts {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  border-block: 1px solid var(--hairline);
+  gap: 16px 24px;
+  padding-block: 20px;
+}
+.project-facts > div:last-child {
+  grid-column: 1 / -1;
+}
+.project-facts dt {
+  font-size: 12px;
+  color: var(--soft-ink);
+  margin-bottom: 5px;
+}
+.project-facts dd {
+  font-size: 15px;
+  margin: 0;
+}
+.project-description {
+  font-size: 14px;
+  line-height: 1.95;
+  margin-top: 22px;
+  min-height: 5.8em;
+}
+.project-photos {
+  display: flex;
+  gap: 10px;
+  margin: 22px 0 18px;
+  padding-bottom: 8px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #bec8c1 transparent;
+}
+.project-photos .gallery-link {
+  flex: 0 0 calc(var(--image-ratio) * 100px);
+  height: auto;
+}
+.project-photos .gallery-open {
+  display: none;
+}
+.project-photos .gallery-link:focus-visible {
+  outline-offset: -4px;
+}
+.case-source-note {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--soft-ink);
+  padding-block: 64px 80px;
+}
+.material-note,
+.evidence-note {
+  color: var(--soft-ink);
+  font-size: 12px;
+  line-height: 1.9;
+}
+.company-full-name {
+  font-size: 16px;
+  color: var(--charcoal);
+}
+.company-full-name span {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+  color: var(--soft-ink);
+}
+.strength-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 60px;
+}
+.strength-grid article {
+  border-top: 1px solid #ffffff40;
+  padding-top: 25px;
+}
+.strength-grid .eyebrow {
+  color: #b9cec1;
+}
+.strength-grid h3 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+  margin: 24px 0 18px;
+  line-height: 1.6;
+}
+.strength-grid p {
+  font-size: 14px;
+  color: #c3ccc8;
+  line-height: 2;
+}
+.founder-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: center;
+}
+.founder-photo {
+  margin: 0;
+  min-width: 0;
+}
+.founder-photo figcaption {
+  font-size: 12px;
+  color: var(--soft-ink);
+  margin-top: 16px;
+}
+.founder-copy h2 {
+  margin: 20px 0 26px;
+}
+.founder-copy > p:not(.material-note) {
+  font-size: 15px;
+  line-height: 2;
+}
+.founder-copy ol {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 22px;
+}
+.founder-copy li {
+  display: grid;
+  grid-template-columns: 10ch minmax(0, 1fr);
+  gap: 20px;
+  padding-block: 16px;
+  border-top: 1px solid var(--hairline);
+  font-size: 13px;
+}
+.founder-copy time {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--soft-ink);
+}
+.content-index {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 22px;
+  margin-top: 56px;
+}
+.content-index a {
+  font-size: 14px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.content-index span {
+  color: var(--soft-ink);
+  font-size: 12px;
+}
+.credential-section {
+  padding-bottom: 100px;
+}
+.evidence-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+  align-items: start;
+  margin-bottom: 48px;
+}
+.evidence-heading h2 {
+  margin-top: 20px;
+}
+.evidence-heading > p,
+.evidence-heading > div > p {
+  font-size: 15px;
+  line-height: 2;
+}
+.evidence-heading > .material-note {
+  font-size: 12px;
+}
+.report-list {
+  border-top: 1px solid var(--hairline);
+}
+.evidence-item {
+  border-bottom: 1px solid var(--hairline);
+}
+.evidence-item summary {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px 20px;
+  gap: 24px;
+  align-items: center;
+  padding: 26px 0;
+  cursor: pointer;
+  list-style: none;
+}
+.evidence-item summary::-webkit-details-marker {
+  display: none;
+}
+.evidence-item summary:hover .evidence-title {
+  color: var(--accent);
+}
+.evidence-item summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.evidence-agency {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.evidence-title {
+  font-size: 18px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+.evidence-title small {
+  display: block;
+  color: var(--soft-ink);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  margin-top: 6px;
+  overflow-wrap: anywhere;
+}
+.evidence-item time {
+  font-size: 12px;
+  color: var(--soft-ink);
+  font-variant-numeric: tabular-nums;
+}
+.detail-toggle {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.detail-toggle::before,
+.detail-toggle::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  width: 12px;
+  height: 1px;
+  top: 7px;
+  left: 2px;
+}
+.detail-toggle::after {
+  transform: rotate(90deg);
+}
+.evidence-item[open] .detail-toggle::after {
+  display: none;
+}
+.evidence-body {
+  padding: 0 44px 28px 124px;
+}
+.evidence-body dl,
+.patent-grid dl,
+.award-list dl,
+.company-record dl {
+  margin: 0;
+}
+.evidence-body dl > div,
+.patent-grid dl > div,
+.award-list dl > div,
+.company-record dl > div {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 18px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.evidence-body dt,
+.patent-grid dt,
+.award-list dt,
+.company-record dt {
+  color: var(--soft-ink);
+}
+.evidence-body dd,
+.patent-grid dd,
+.award-list dd,
+.company-record dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.evidence-note {
+  margin-top: 20px;
+}
+.evidence-band {
+  background: var(--paper-deep);
+}
+.patent-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7%;
+}
+.patent-grid article {
+  padding-top: 28px;
+  border-top: 1px solid var(--hairline);
+}
+.patent-grid h3 {
+  font-size: 24px;
+  line-height: 1.65;
+  font-weight: 400;
+  min-height: 3.3em;
+  margin: 20px 0 28px;
+}
+.award-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+.award-list article {
+  border-top: 1px solid var(--hairline);
+  padding-top: 25px;
+}
+.award-list h3 {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.65;
+  min-height: 3.3em;
+  margin: 18px 0 25px;
+}
+.award-list dl > div {
+  display: block;
+  margin-bottom: 16px;
+}
+.award-list dt {
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+.evidence-contact {
+  border-top: 1px solid var(--hairline);
+  margin-top: 64px;
+  padding-top: 36px;
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+.equity-section {
+  padding-bottom: 110px;
+}
+.equity-bar {
+  display: flex;
+  height: 32px;
+  gap: 3px;
+  margin: 55px 0 38px;
+}
+.equity-segment {
+  flex-basis: 0;
+}
+.equity-0 {
+  background: #1d3830;
+}
+.equity-1 {
+  background: #00b99a;
+}
+.equity-2 {
+  background: #8d9e91;
+}
+.equity-3 {
+  background: #d1dad4;
+}
+.equity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+}
+.equity-list li {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  gap: 22px;
+  align-items: center;
+  border-bottom: 1px solid var(--hairline);
+  padding-block: 22px;
+  font-size: 18px;
+}
+.equity-key {
+  width: 10px;
+  height: 10px;
+}
+.equity-list strong {
+  font-size: 38px;
+  line-height: 1.3;
+  font-weight: 350;
+  font-variant-numeric: tabular-nums;
+}
+.equity-list small {
+  font-size: 16px;
+  padding-left: 5px;
+}
+.company-record,
+.investor-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9%;
+}
+.company-record h2,
+.investor-contact h2 {
+  margin-top: 24px;
+}
+.company-record dl > div {
+  grid-template-columns: 130px 1fr;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+.investor-people {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.investor-people h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.investor-people > a {
+  justify-self: start;
+}
+.investor-people > div a {
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+.contact-information {
+  font-size: 14px;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 15px;
+}
+.contact-information dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.contact-information a,
+.contact-phone,
+.investor-people > div a {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: #aab8ae;
+}
+.wechat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8%;
+}
+.wechat-grid article {
+  text-align: center;
+}
+.wechat-code {
+  display: block;
+  background: #fff;
+  max-width: 270px;
+  margin: 0 auto 24px;
+}
+.wechat-code img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.wechat-grid h3 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.contact-phone {
+  display: inline-block;
+  padding-block: 7px;
+  font-size: 15px;
+}
+.contact-location > a {
+  display: block;
+}
+.contact-location img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 1023px) {
+  .strength-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .case-grid {
+    gap: 70px 28px;
+  }
+  .award-list {
+    gap: 24px;
+  }
+  .award-list h3 {
+    font-size: 19px;
+  }
+  .founder-section {
+    gap: 6%;
+  }
+  .evidence-body {
+    padding-left: 0;
+  }
+  .footer-identity {
+    max-width: 280px;
+  }
+}
+@media (max-width: 767px) {
+  .home-company,
+  .founder-section,
+  .evidence-heading,
+  .patent-grid,
+  .company-record,
+  .investor-contact {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .home-company {
+    padding-block: 48px 64px;
+  }
+  .home-company p {
+    font-size: 16px;
+  }
+  .home-company > .eyebrow {
+    padding-top: 0;
+  }
+  .case-grid {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+  .case-grid .case-project-head {
+    margin-top: 22px;
+  }
+  .case-grid .case-project-head h2 {
+    font-size: 25px;
+  }
+  .project-description {
+    min-height: 0;
+  }
+  .project-photos {
+    margin-top: 20px;
+  }
+  .project-facts {
+    gap: 16px;
+  }
+  .case-source-note {
+    padding-block: 48px 64px;
+  }
+  .strength-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 36px;
+  }
+  .strength-grid h3 {
+    font-size: 20px;
+  }
+  .founder-section {
+    gap: 40px;
+  }
+  .content-index {
+    gap: 24px;
+    margin-top: 36px;
+    padding-bottom: 12px;
+  }
+  .content-index a {
+    font-size: 13px;
+    gap: 6px;
+  }
+  .evidence-heading {
+    margin-bottom: 32px;
+    gap: 24px;
+  }
+  .evidence-heading h2 {
+    margin-top: 14px;
+  }
+  .credential-section {
+    padding-bottom: 64px;
+  }
+  .evidence-item summary {
+    grid-template-columns: 1fr 20px;
+    gap: 8px 16px;
+    padding-block: 22px;
+  }
+  .evidence-agency {
+    grid-column: 1;
+    font-size: 12px;
+  }
+  .evidence-title {
+    grid-row: 2;
+    grid-column: 1;
+    font-size: 18px;
+  }
+  .evidence-item time {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  .detail-toggle {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .evidence-body {
+    padding: 4px 0 24px;
+  }
+  .evidence-body dl > div,
+  .patent-grid dl > div {
+    grid-template-columns: 78px 1fr;
+    gap: 12px;
+  }
+  .patent-grid h3 {
+    min-height: 0;
+    font-size: 22px;
+  }
+  .award-list {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .award-list h3 {
+    min-height: 0;
+    font-size: 21px;
+  }
+  .evidence-contact {
+    display: block;
+    margin-top: 40px;
+  }
+  .evidence-contact .action {
+    margin-top: 24px;
+  }
+  .equity-section {
+    padding-bottom: 64px;
+  }
+  .equity-bar {
+    margin: 36px 0 20px;
+    height: 26px;
+    gap: 2px;
+  }
+  .equity-list li {
+    gap: 14px;
+    font-size: 15px;
+    padding-block: 20px;
+  }
+  .equity-list strong {
+    font-size: 30px;
+  }
+  .equity-list small {
+    font-size: 13px;
+  }
+  .company-record dl > div {
+    display: block;
+  }
+  .company-record dt {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+  .investor-people > div a {
+    font-size: 17px;
+  }
+  .contact-information {
+    font-size: 13px;
+    gap: 14px;
+  }
+  .wechat-grid {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+  .wechat-code {
+    width: min(230px, 100%);
+    margin-bottom: 18px;
+  }
+  .footer-identity {
+    max-width: 100%;
+  }
+  .footer-legal {
+    max-width: 320px;
+    margin-top: 24px;
+  }
+}
+@media (max-width: 359px) {
+  .content-index {
+    gap: 18px;
+  }
+  .investor-people {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .evidence-title {
+    transition: none;
+  }
+}

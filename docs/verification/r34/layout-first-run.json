@@ -1,0 +1,2184 @@
+{
+  "startedAt": "2026-10-11T04:23:26.256Z",
+  "version": {
+    "commit": "7224488",
+    "builtAt": "2026-10-11T04:23:06.665Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "checks": [
+    {
+      "route": "/404.html",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/404.html",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 3
+    },
+    {
+      "route": "/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 6
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 8
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 9
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 4
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 5
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 15
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/news/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 1
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/about/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 3
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 0
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 0
+    },
+    {
+      "route": "/en/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/products/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 6
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 8
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 9
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 4
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 5
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 15
+    },
+    {
+      "route": "/en/contact/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/contact/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 1
+    },
+    {
+      "route": "/en/cases/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/about/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 3
+    },
+    {
+      "route": "/en/about/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 3
+    }
+  ],
+  "errors": [],
+  "failures": [
+    {
+      "route": "/zh/cases/",
+      "width": 320,
+      "issues": [
+        "broken images",
+        "body image proportions/gap/transform"
+      ],
+      "overflow": false,
+      "broken": [
+        "http://127.0.0.1:4322/assets/img/project-cayman-03-m.webp",
+        "http://127.0.0.1:4322/assets/img/project-cayman-05-m.webp",
+        "http://127.0.0.1:4322/assets/img/project-brisbane-cover-m.webp",
+        "http://127.0.0.1:4322/assets/img/project-brisbane-01-m.webp",
+        "http://127.0.0.1:4322/assets/img/project-brisbane-05-m.webp",
+        "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-cover-m.webp",
+        "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-01-m.webp"
+      ],
+      "images": [
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-jiangmen-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-jiangmen-01-m.webp",
+          "ratioError": 0.00011720581340846081,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-jiangmen-02-m.webp",
+          "ratioError": 0.00011720581340846081,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-jiangmen-03-m.webp",
+          "ratioError": 0.00043036681245423036,
+          "gap": 0.046875,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-jiangmen-04-m.webp",
+          "ratioError": 0.00011720581340846081,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-jiangmen-05-m.webp",
+          "ratioError": 0.0007992639033771454,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-changzhou-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-changzhou-01-m.webp",
+          "ratioError": 0.0006554334530500805,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-changzhou-02-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-changzhou-03-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-changzhou-04-m.webp",
+          "ratioError": 0.00011720581340846081,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-changzhou-05-m.webp",
+          "ratioError": 0.00011053159347795827,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-cayman-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-cayman-01-m.webp",
+          "ratioError": 0.0008089383294300756,
+          "gap": 0.09375,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-cayman-02-m.webp",
+          "ratioError": 0.000803571428571459,
+          "gap": 0.09375,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-cayman-03-m.webp",
+          "ratioError": 0.000132670469344065,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-cayman-04-m.webp",
+          "ratioError": 0.00007455592019578461,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-cayman-05-m.webp",
+          "ratioError": 0.00007040488097098674,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-brisbane-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-brisbane-01-m.webp",
+          "ratioError": 0.5886889460154241,
+          "gap": 143.125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-brisbane-02-m.webp",
+          "ratioError": 0.00015187919987491583,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-brisbane-03-m.webp",
+          "ratioError": 0.0000931135073187761,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-brisbane-04-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-brisbane-05-m.webp",
+          "ratioError": 0.00013405414908573832,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-01-m.webp",
+          "ratioError": 0.00015594884617398108,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-02-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-03-m.webp",
+          "ratioError": 0.00006592827004214818,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-04-m.webp",
+          "ratioError": 0.00041612972508597856,
+          "gap": 0.046875,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-fengdu-05-m.webp",
+          "ratioError": 0.00006771891441381683,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-mige-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-mige-01-m.webp",
+          "ratioError": 0.0006554334530500805,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-mige-02-m.webp",
+          "ratioError": 0.00005176590092181854,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-mige-03-m.webp",
+          "ratioError": 0.00013153096838047773,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-mige-04-m.webp",
+          "ratioError": 0.00010548523206765914,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-mige-05-m.webp",
+          "ratioError": 0.0006359957318343712,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-cabins-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-cabins-01-m.webp",
+          "ratioError": 0.00009799708287738795,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-cabins-02-m.webp",
+          "ratioError": 0.0006863386164898122,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-cabins-03-m.webp",
+          "ratioError": 0.0006246096189882477,
+          "gap": 0.0625,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-cabins-04-m.webp",
+          "ratioError": 0.0006554334530500805,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-zhongshan-cabins-05-m.webp",
+          "ratioError": 0.00011720581340846081,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-chengdu-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-chengdu-01-m.webp",
+          "ratioError": 0.0005740310531521242,
+          "gap": 0.0625,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-chengdu-02-m.webp",
+          "ratioError": 0.0000766721362712719,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-chengdu-03-m.webp",
+          "ratioError": 0.00009783429702547863,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-chengdu-04-m.webp",
+          "ratioError": 0.0001342983278636023,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-chengdu-05-m.webp",
+          "ratioError": 0.000468530376386056,
+          "gap": 0.046875,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-shenzhen-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-shenzhen-01-m.webp",
+          "ratioError": 0.0006343691442848298,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-shenzhen-02-m.webp",
+          "ratioError": 0.000016976886621833387,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-shenzhen-03-m.webp",
+          "ratioError": 0.00044086157971467976,
+          "gap": 0.046875,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-shenzhen-04-m.webp",
+          "ratioError": 0.00008643110262496201,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-shenzhen-05-m.webp",
+          "ratioError": 0.0001538326300984938,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-fiji-cover-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-fiji-01-m.webp",
+          "ratioError": 0.00004144591335220049,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-fiji-02-m.webp",
+          "ratioError": 0.00011720581340846081,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-fiji-03-m.webp",
+          "ratioError": 0.0007992639033771454,
+          "gap": 0.078125,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-fiji-04-m.webp",
+          "ratioError": 0,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-fiji-05-m.webp",
+          "ratioError": 0.00011720581340846081,
+          "gap": 0,
+          "transform": "none"
+        },
+        {
+          "src": "http://127.0.0.1:4322/assets/img/project-fiji-06-m.webp",
+          "ratioError": 0.0008208105646628772,
+          "gap": 0.09375,
+          "transform": "none"
+        }
+      ],
+      "nav": []
+    }
+  ],
+  "finishedAt": "2026-10-11T04:26:07.555Z"
+}

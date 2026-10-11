@@ -1,27 +1,127 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import GalleryImage from "../../components/GalleryImage.astro";
+import PhotoViewer from "../../components/PhotoViewer.astro";
+import ProjectCTA from "../../components/ProjectCTA.astro";
+import projects from "../../data/projects.json";
+const filters = [
+  { id: "all", name: "全部项目" },
+  { id: "domestic", name: "中国项目" },
+  { id: "overseas", name: "海外项目" },
+];
 ---
 
 <BaseLayout
   title="工程案例"
-  description="半打空间工程案例：国内/海外项目实录。案例资料经授权后发布，当前正在整理中。"
+  description="半打空间项目与团队历年实践：10个国内外建筑案例，展示项目地点、年份、面积、建造方式与现场记录。"
   current="cases"
   headerStyle="solid"
 >
-  <p class="crumb"><a href="/zh/">HOME</a> / PROJECTS</p>
-  <div class="wrap" style="padding-top:40px">
-    <div class="en">Selected Projects</div>
-    <h2 style="font-size:52px;margin-top:10px">工程案例</h2>
-  </div>
-
-  <!-- 空态（PRD §9 / 规范 §3.3）：无已授权发布案例时展示，禁止虚构案例 -->
-  <div class="wrap empty-state">
-    <div class="ic" aria-hidden="true">▦</div>
-    <h2>案例整理中</h2>
-    <p>我们正在整理经客户授权的项目案例（BR-8）。欢迎致电或留言，了解我们的项目经验与交付能力。</p>
-    <div class="btns">
-      <a class="btn btn-primary" href="/zh/contact/" data-track="consult_click">联系我们 <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="/zh/">返回首页 <span class="arr">→</span></a>
+  <div class="page-editorial">
+    <section class="page-opening ed-wrap">
+      <span class="eyebrow">项目与实践</span>
+      <div class="page-heading">
+        <h1>
+          空间，
+          <br />
+          在世界发生。
+        </h1>
+        <p>
+          2026年的半打项目，
+          <br />
+          与2016—2024年的团队历年实践。
+          <br />
+          记录从工厂到现场的探索。
+        </p>
+      </div>
+      <div class="case-filter" role="group" aria-label="按项目地区筛选">
+        {filters.map((f) => (
+          <button
+            type="button"
+            class:list={{ active: f.id === "all" }}
+            data-case-filter={f.id}
+            aria-pressed={f.id === "all"}
+          >
+            {f.name}
+            <span class="filter-count">
+              {String(
+                projects.filter((p) => f.id === "all" || p.region === f.id)
+                  .length,
+              ).padStart(2, "0")}
+            </span>
+          </button>
+        ))}
+      </div>
+      <p class="sr-only" data-filter-status role="status">
+        显示 {projects.length} 个项目
+      </p>
+    </section>
+    <div class="case-grid ed-wrap">
+      {projects.map((p, i) => (
+        <article class="case-project" id={p.id} data-case-region={p.region}>
+          <div class="project-lead">
+            <GalleryImage fit="contain"
+              base={p.base}
+              alt={`${p.name} · 项目外观`}
+              group={p.id}
+              caption={`${p.name} / ${p.year} / ${p.era}`}
+              eager={i < 2}
+              sizes="(max-width: 767px) 100vw, 50vw"
+            />
+          </div>
+          <div class="case-project-head">
+            <span class="eyebrow">
+              {p.era} · {p.year}
+            </span>
+            <h2>{p.name}</h2>
+            <p class="project-location">{p.location}</p>
+          </div>
+          <dl class="project-facts">
+            <div>
+              <dt>项目面积</dt>
+              <dd>{p.area}</dd>
+            </div>
+            <div>
+              <dt>工期</dt>
+              <dd>{p.duration}</dd>
+            </div>
+            <div>
+              <dt>完工状态</dt>
+              <dd>{p.status}</dd>
+            </div>
+            <div>
+              <dt>建造方式</dt>
+              <dd>{p.method}</dd>
+            </div>
+          </dl>
+          <p class="project-description">
+            <span class="eyebrow">交付范围</span>
+            <br />
+            {p.scope}
+          </p>
+          <div class="project-photos" aria-label={`${p.name}的现场照片`}>
+            {p.gallery.map((photo) => (
+              <GalleryImage fit="contain"
+                base={photo.base}
+                alt={photo.caption}
+                group={p.id}
+                sizes="(max-width: 767px) 25vw, 12vw"
+              />
+            ))}
+          </div>
+          <a
+            class="action action-secondary"
+            href={`/zh/contact/?project=${p.id}`}
+          >
+            咨询类似项目
+          </a>
+        </article>
+      ))}
     </div>
+    <p class="ed-wrap case-source-note">
+      安装工期不等同于整屋交付周期，具体范围以各项目说明与约定为准。
+    </p>
+    <ProjectCTA />
+    <PhotoViewer />
   </div>
 </BaseLayout>

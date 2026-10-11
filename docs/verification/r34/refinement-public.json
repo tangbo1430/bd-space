@@ -1,0 +1,487 @@
+{
+  "products": [
+    {
+      "lang": "zh",
+      "id": "4s",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "5s",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "6s",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "grayscale",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd8",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd9",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "4s",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "5s",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "6s",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "grayscale",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd8",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd9",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "4s",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "5s",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "6s",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "grayscale",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd8",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd9",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "4s",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "5s",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "6s",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "grayscale",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd8",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd9",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "4s",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "5s",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "6s",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "grayscale",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd8",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "zh",
+      "id": "bd9",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "4s",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "5s",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "6s",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "grayscale",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd8",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd9",
+      "width": 320,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "4s",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "5s",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "6s",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "grayscale",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd8",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd9",
+      "width": 375,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "4s",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "5s",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "6s",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "grayscale",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd8",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd9",
+      "width": 768,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "4s",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "5s",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "6s",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "grayscale",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd8",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd9",
+      "width": 1440,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "4s",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "5s",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "6s",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "grayscale",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd8",
+      "width": 2560,
+      "passed": true
+    },
+    {
+      "lang": "en",
+      "id": "bd9",
+      "width": 2560,
+      "passed": true
+    }
+  ],
+  "contacts": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "qrTop": 1037.703125,
+      "portraitTop": 1671.703125,
+      "sectionHeight": 908.390625,
+      "cardTops": [
+        1012.703125,
+        1197.703125,
+        1382.703125
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 375,
+      "qrTop": 1043.328125,
+      "portraitTop": 1677.328125,
+      "sectionHeight": 908.390625,
+      "cardTops": [
+        1018.328125,
+        1203.328125,
+        1388.328125
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 768,
+      "qrTop": 1268.09375,
+      "portraitTop": 269.375,
+      "sectionHeight": 640.375,
+      "cardTops": [
+        1084.90625,
+        1084.90625,
+        1084.90625
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "qrTop": 1431.328125,
+      "portraitTop": 162.484375,
+      "sectionHeight": 765.96875,
+      "cardTops": [
+        1244.140625,
+        1244.140625,
+        1244.140625
+      ]
+    },
+    {
+      "lang": "zh",
+      "width": 2560,
+      "qrTop": 1454.6875,
+      "portraitTop": 182.203125,
+      "sectionHeight": 772.375,
+      "cardTops": [
+        1267.5,
+        1267.5,
+        1267.5
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "qrTop": 1106.578125,
+      "portraitTop": 1786.5625,
+      "sectionHeight": 992.0625,
+      "cardTops": [
+        1072.390625,
+        1275.78125,
+        1479.171875
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 375,
+      "qrTop": 1071.828125,
+      "portraitTop": 1705.828125,
+      "sectionHeight": 936.890625,
+      "cardTops": [
+        1046.828125,
+        1231.828125,
+        1416.828125
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 768,
+      "qrTop": 1268.09375,
+      "portraitTop": 269.375,
+      "sectionHeight": 640.375,
+      "cardTops": [
+        1084.90625,
+        1084.90625,
+        1084.90625
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "qrTop": 1431.328125,
+      "portraitTop": 162.484375,
+      "sectionHeight": 765.96875,
+      "cardTops": [
+        1244.140625,
+        1244.140625,
+        1244.140625
+      ]
+    },
+    {
+      "lang": "en",
+      "width": 2560,
+      "qrTop": 1454.6875,
+      "portraitTop": 182.203125,
+      "sectionHeight": 772.375,
+      "cardTops": [
+        1267.5,
+        1267.5,
+        1267.5
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,64 @@
+---
+interface Props {
+  tone?: "original" | "adaptive";
+}
+const { tone = "original" } = Astro.props;
+---
+
+<span
+  class:list={["official-brand", { "brand-adaptive": tone === "adaptive" }]}
+  aria-hidden="true"
+>
+  <img
+    class="brand-original"
+    src="/assets/brand/logo-original-r26.svg"
+    alt=""
+    width="1922"
+    height="544"
+  />
+  {tone === "adaptive" && (
+    <img
+      class="brand-reversed"
+      src="/assets/brand/logo-overlay-r28.svg"
+      alt=""
+      width="1922"
+      height="544"
+    />
+  )}
+</span>
+<style>
+  .official-brand {
+    position: relative;
+    display: block;
+    width: 148px;
+    aspect-ratio: 1922 / 544;
+    flex: none;
+  }
+  .official-brand img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .brand-reversed {
+    visibility: hidden;
+  }
+  :global(.footer-brand) > .official-brand {
+    width: 180px;
+    margin: 0;
+  }
+  @media (min-width: 1280px) {
+    :global(.gnb-overlay:not(.scrolled)) .brand-adaptive .brand-original {
+      visibility: hidden;
+    }
+    :global(.gnb-overlay:not(.scrolled)) .brand-adaptive .brand-reversed {
+      visibility: visible;
+    }
+  }
+  @media (max-width: 767px) {
+    .official-brand {
+      width: 127px;
+    }
+  }
+</style>

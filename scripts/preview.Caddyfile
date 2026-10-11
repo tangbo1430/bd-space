@@ -1,0 +1,26 @@
+{
+    admin off
+    auto_https off
+}
+
+:8080 {
+    root * /srv
+    encode zstd gzip
+    header {
+        X-Robots-Tag "noindex, nofollow"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        -Server
+    }
+    @pages not path /assets/* /_astro/*
+    header @pages Cache-Control "no-cache"
+    @assets path /assets/*
+    header @assets Cache-Control "public, max-age=3600"
+    @hashed path /_astro/*
+    header @hashed Cache-Control "public, max-age=31536000, immutable"
+    file_server
+    handle_errors {
+        rewrite * /404.html
+        file_server
+    }
+}

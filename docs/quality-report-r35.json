@@ -1,0 +1,50 @@
+{
+  "release": "r35",
+  "build": {
+    "commit": "3f1cfa3",
+    "builtAt": "2026-10-11T04:44:14.230Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "verdict": "本轮发现的慢网轮播空画面问题已修复，相关操作复验通过；当前可用于甲方视觉确认。",
+  "changes": [
+    "下一张照片就绪前保留当前照片、产品名称及入口；就绪后沿用既有淡入。",
+    "连续点击、键盘切换及触摸切换按最新目标处理；取消旧请求不会被迟到图片覆盖。",
+    "等待图片时暂停轮播计时，加载失败保留原画面，仍可选择其他图片；错误提示沿用中英文辅助说明。"
+  ],
+  "current_checks": {
+    "unit_tests": 48,
+    "lint": "passed",
+    "types": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 6
+    },
+    "build_pages": 33,
+    "image_references": 346,
+    "material_checks": 46,
+    "supplement_checks": 18,
+    "translation_residue": 0,
+    "slow_image_local": 32,
+    "slow_image_public": 32,
+    "final_build_interaction_groups": 11,
+    "final_build_carousel_layouts": 8,
+    "public_html_matches": 33
+  },
+  "baseline_checked_this_turn_before_fix": {
+    "release": "r34",
+    "english_layouts": 88,
+    "english_accessibility": 22,
+    "bilingual_interaction_groups": 12,
+    "video": "4S 手动播放通过，播放前无完整视频请求。"
+  },
+  "scope": [
+    "本轮仅修改轮播状态处理，未更换Logo、字体、按钮、图片或页面布局；无需变更素材映射。",
+    "本轮88项英文布局、22组英文自动无障碍和12组中英文交互为修改前r34基线。r35最终构建另执行11组通用交互和8项轮播布局；线上另执行32组慢网及错误场景。",
+    "本地32组专项针对提交前同一源码构建；最终提交构建及公网版本的主脚本均为BaseLayout.astro_astro_type_script_index_0_lang.C6ooIv7u.js。",
+    "Edge/Chromium Windows 自动化与截图复核；未覆盖实机Safari/iOS/Android。",
+    "r34全站297项布局的首轮加载异常及复测记录继续保留在上一版报告，没有将旧结果冒充本轮全量通过。",
+    "缺失素材、域名、HTTPS、表单发送服务仍属于后续范围。",
+    "源码保留独立分支本地提交，不推送GitHub。"
+  ]
+}

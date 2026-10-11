@@ -1,0 +1,24 @@
+---
+import EditorialImage from "./EditorialImage.astro";
+const { compact = false } = Astro.props;
+---
+
+<section class:list={["project-cta", { compact }]} aria-label="项目咨询">
+  <EditorialImage base="product-6s-hero" alt="夕阳下的半打6S住宅" />
+  <div class="cta-content ed-wrap">
+    <span class="eyebrow">让想法，成为日常。</span>
+    <h2>
+      下一处空间，
+      <br />
+      从您的想法开始。
+    </h2>
+    <p>住宅 · 文旅 · 公共空间 · 模块化建造</p>
+    <a
+      class="action action-primary"
+      href="/zh/contact/"
+      data-track="consult_click"
+    >
+      聊聊您的项目
+    </a>
+  </div>
+</section>

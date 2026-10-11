@@ -1,67 +1,58 @@
-# 半打空间企业官网（bd-space）
+# 半打空间 · Semi-Six Modular
 
-装配式混凝土工厂企业官网，Web + 移动端响应式同站，多语言单站点（`/zh/` 默认，`/en/` 预留）。
+Astro 5、TypeScript 与原生 CSS/交互实现的双语建筑产品网站。v1.1 保留已确认的简约视觉、统一按钮和轻动效。
 
-- 基线：`prd-SUNM3245-2-v0.3`、`ui-design-spec-SUNM3245-2-v1.1`、`prototype-SUNM3245-2-v1.1`、T1 用例（Issue SUNM3245-2 附件）
-- 交付分支：`release/SUNM3245-2-corporate-website`（单一发布单元，BR-12）
+## 运行与验收
 
-## 技术栈
+要求 Node.js 24、pnpm 11.19+。运行 `pnpm install --frozen-lockfile`、`pnpm dev`；`pnpm check` 执行代码、类型、48 项单元测试、构建和内容/资源/英文文案检查。
 
-- [Astro 5](https://astro.build)（静态站点生成 + Content Collections 内容管理）
-- TypeScript（strict）、原生 CSS（设计令牌 = UI 规范 v1.1 §1）、无框架 vanilla JS 交互
-- `@astrojs/sitemap`（语言化站点地图）、ESLint 9 + eslint-plugin-astro、`astro check`、Vitest
+浏览器测试使用 Microsoft Edge。先运行 `pnpm build` 和 `pnpm preview --host 127.0.0.1 --port 4322`，另一个终端设置 `TEST_BASE_URL=http://127.0.0.1:4322`，再执行：
 
-## 本地运行
+- `pnpm test:browser`：32 条路由 × 6 种宽度与原有交互/可访问性覆盖。
+- `pnpm test:immersive`：首屏、透明/实底导航、触摸目标、横屏、200% 等效视口。
+- `pnpm test:carousel`：无文字轮播控件、键盘焦点与同步进度。
+- `pnpm test:materials`：案例归组、旧锚点、二维码与资质摘要。
+- `pnpm test:supplement`：4S/灰度空间完整比例、独立技术图与阅图行为。
+- `pnpm test:v11`：11 个英文页面 × 8 种视口、22 组可访问性、两处轮播、六款技术图、视频和英文联系交互。
 
-```bash
-npm install
-npm run dev        # http://localhost:4321（/ 自动进入 /zh/）
-```
+- `pnpm test:delivery`：全部 33 个生成页面 × 9 种视口（含 2560px），原图比例、无填充条、Logo 切换、章节定位和键盘阅图。`SKIP_SCREENSHOTS=1` 可省略重复截图，保留全部断言。
+- `node tests/acceptance-polish.mjs`：产品摘要切换、深色说明对比度、设计/制造配图与年份区间的双语专项检查。
 
-## 自动化检查
+最新联系页设计验收见 `docs/quality-report-r35.html` 和对应 JSON。首屏采用完整空间效果图与紧凑联系信息；三位联系人桌面三列、手机单列；手机微信区位于空间图片之前。二维码和地图直接展示，可点击放大。当前联系页以微信、电话与邮件沟通为主，不展示表单和本地需求下载；产品及案例咨询参数会带入邮件草稿。运行 `node tests/contact-browser.mjs` 可复核中英文联系交互，`node tests/copy-browser.mjs` 检查全站文字与基本排版。历史报告保留各自结论与测试边界，不作为本轮通过依据。
 
-```bash
-npm run lint        # ESLint
-npm run type-check  # astro check（TS 严格）
-npm run test        # Vitest：表单校验 + 路由/SEO 规则
-npm run build       # 静态构建到 dist/
-npm run verify      # 构建产物验证：关键路由 / canonical / hreflang / sitemap / 表单字段
-npm run check       # 以上全部串联
-```
+## 内容范围
 
-## 部署
+产品目录为 4S、5S、6S、灰度空间、半打 8、半打 9；首页仍精选四款。slab、wall、stair 三个旧地址保留、不索引。英文发布首页、产品中心、六款详情、案例、关于、联系共 11 页。中文页面的桌面与手机语言入口统一显示 EN；没有对应英文页时跳转英文首页，通过悬停提示和无障碍名称说明目标。
 
-静态产物在 `dist/`，可部署到任意静态托管（Nginx / OSS+CDN / Vercel / Netlify）。部署前配置环境变量（见 `.env.example` 与 `docs/technical-design.md`）：
+官方 Logo 保留轮廓、比例及两块灰色。桌面摄影首屏使用透明导航，方块图形保持官方原色、文字保持白色；滚动后、手机导航和浅色页脚使用完整原色版。首页保留 6S → 4S → 5S，产品中心为六款产品轮播；控件无文字，支持键盘、触摸、暂停、离屏停止和减少动态效果。首屏维持满幅摄影及独立手机选图；正文照片按真实比例完整展示，混合横竖图按原比例成组等高，手机单列。
 
-| 变量 | 用途 | 未配置时行为 |
-| --- | --- | --- |
-| `PUBLIC_SITE_URL` | canonical / sitemap / robots 的绝对地址 | 退回 `http://localhost:4321`（仅本地） |
-| `PUBLIC_FORM_ENDPOINT` | 咨询表单提交端点（Web3Forms 兼容） | 表单展示“暂未开通”并禁用提交（BR-16） |
-| `PUBLIC_FORM_ACCESS_KEY` | 表单服务访问密钥 | 不附加 |
-| `PUBLIC_ANALYTICS_SCRIPT_URL` / `PUBLIC_ANALYTICS_DOMAIN` | Plausible 兼容统计 | 不注入任何统计脚本 |
+六款图片和技术图按型号分组，完整展示、缩放、原图、160px 缩略图和焦点恢复。5S 补充客厅图；6S 未提供可确认的室内图，不跨型号借图。4S 吊装视频为原始 544×960，视频帧封面、preload=none、手动播放。十个案例保留旧锚点与国内 7/海外 3 筛选，补齐各自施工图、交付范围和完工状态。
 
-**密钥纪律**：密钥仅通过部署平台环境变量注入，仓库不提交任何密钥；`.env` 已 gitignore。
+关于页增加愿景、使命、三项优势与时间线；联系页区分办公、工厂、工作时间，使用新版三个微信二维码。资质页保留检测主体和样品范围、两项扫描证书支持的历史授权，17项研发台账保留为内部来源，网页精选两项代表性授权；不宣称当前全部有效或由半打持有。
 
-## 内容管理
+4S 保留首层 63㎡＋阁楼 36㎡与独立可使用面积 98㎡；半打 8 保留分层 123.9㎡、113.9㎡与资料列示总面积 238㎡的各自口径。咨询通过微信、电话或邮件沟通；联系页不提供表单和本地需求下载。价格、内部表格、授权书和完整报告不公开。
 
-内容由 `src/content/products/*.md`（产品）与 `src/lib/site.ts`（企业联系事实）维护，经 Content Collections Zod 校验；`published: false` 为草稿态不上线。数据模型与扩展（新闻/案例/资质集合、后续可接入 Headless CMS）见 `docs/technical-design.md`。
+## 共用数据与本地化
 
-## 目录结构
+产品数据在 `src/content/products/`，共享型号、数值、图组、首页精选、手机图片、视频配置。企业、案例与资质在 `src/data/`。
 
-```
-src/
-  layouts/BaseLayout.astro     # SEO head + 导航 + 页脚 + 统计注入
-  components/                  # GNB/抽屉、浮动联系条、占位图、原创线稿、咨询表单
-  pages/                       # / 重定向、/zh/ 七栏目与详情、/en/ 预留态、404、robots.txt
-  content/products/            # 产品内容（Zod schema 校验）
-  lib/                         # 路由清单、表单校验、SEO、统计、事实占位
-  scripts/main.ts              # 轮播/抽屉/动效降级/表单状态机（vanilla）
-  styles/global.css            # v1.1 设计令牌与组件样式
-tests/                         # Vitest 单元测试
-scripts/verify-build.mjs       # 构建产物验证
-docs/technical-design.md       # 选型、环境变量、数据模型、SEO、统计、部署
-```
+英文页面复用同一组件及事实数据。`src/middleware.ts` 在构建英文 HTML 时使用 parse5 遍历文本与辅助属性，应用 `src/data/en.json` 的校订文案，保留脚本、样式、数值和用户输入。客户端交互使用同一术语表。`src/lib/locale.ts` 维护已发布英文路由。`pnpm audit:translations` 检查遗漏，“中文”切换入口除外。技术图保留原始标注，英文页已说明图中可能含中文。
 
-## 占位与事实纪律
+## 素材与部署
 
-全部缺失素材以 `IMG-*` 几何/线稿占位呈现，事实数据统一 `【待提供】`，示例文案标注【示例文案，待确认】；隐私/Cookie 页面仅有模板与路由。替换清单见 UI 规范 §6，占位素材 ID 已在页面内标注。
+- `docs/v11-materials-manifest.json`：来源、用途、尺寸与取舍；原始资料不进入 public/。旧工艺照片和缩略图已撤下。
+- `python scripts/import-v11.py <解压目录>`：准备 v1.1 网页资源（Pillow）；人工审核后的说明与排序以提交内容为准。
+- `python scripts/prepare-official-logo.py <官方Logo目录>`：按原 PDF 曲线轮廓与 SVG 色块生成原色版及白字原色图形版 Logo（PyMuPDF），不使用整图漂白滤镜。
+- `python scripts/generate-image-dimensions.py`：新增/替换网页图片后更新真实尺寸清单（Pillow），再构建。
+- `python scripts/generate-gallery-thumbnails.py`：构建后更新 public/ 与 dist/ 缩略图。
+- `python scripts/subset-font.py <NotoSansSC.ttf>`：更新本地 OFL 字体子集（fonttools、brotli）。
+- `pnpm package:assets`：按生成页面/样式/脚本引用，移除 dist/ 未使用资源。
+- `PUBLIC_SITE_URL` 配置 canonical/站点地图；临时站 robots 禁止索引，Caddy 同时提供 X-Robots-Tag。
+
+r26 可读验收报告见 `docs/quality-report-r26.html`，本轮实测、历史记录及未覆盖环境分开列示。素材映射更新见 `docs/delivery-r26-material-map.json`。
+
+实际验收与部署记录见 `docs/quality-report.json`、`docs/temporary-deployment.json`。代码仅在独立分支本地提交；本轮不推送 GitHub、不自动合并 main。正式域名、HTTPS、表单发送服务不在本轮范围。
+
+视觉 r34：六款手机产品详情采用文字与完整照片上下分区，桌面保持满幅摄影。新闻、招聘的常规入口隐藏，旧地址保留。专项复验运行 `node tests/visual-refinement-browser.mjs`。
+
+交互 r35：轮播等待照片就绪再切换，保留当前画面并处理取消及加载失败。专项复验：node tests/carousel-readiness.mjs；沿用 r34 图片与视觉体系。

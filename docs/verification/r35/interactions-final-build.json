@@ -1,0 +1,43 @@
+{
+  "responsive": [],
+  "accessibility": [
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 1440,
+      "height": 900,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 375,
+      "height": 812,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 812,
+      "height": 375,
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/#viewer",
+      "width": 320,
+      "height": 568,
+      "violations": []
+    }
+  ],
+  "interactions": [
+    "Manual carousel, reduced-motion controls, product tabs and arrow keys, manufacturing accordion, desktop navigation",
+    "Case filtering changes both visibility and status",
+    "Full-screen photographs: zoom and native panning, original image, project grouping, thumbnails, keyboard, touch, Escape and focus restoration; desktop, mobile and landscape layouts",
+    "Photograph loading failures give clear feedback; original photos remain accessible without JavaScript",
+    "Construction systems switch with pointer and native radio arrow keys, including without JavaScript",
+    "Mobile menu expansion, background inertness and Escape focus return",
+    "Mobile hero keeps its product link; resizing an open mobile menu to desktop restores scrolling and focus",
+    "Direct contact: product context, email draft, copy and QR focus restoration",
+    "Real autoplay advances; explicit pause remains paused after pointer leaves",
+    "Offscreen carousel suspends its timer and resumes the remaining interval when visible",
+    "Changing reduced-motion preferences while browsing immediately stops autoplay while retaining manual controls"
+  ],
+  "errors": []
+}

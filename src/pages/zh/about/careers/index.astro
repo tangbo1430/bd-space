@@ -1,0 +1,191 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import EditorialImage from "../../../../components/EditorialImage.astro";
+import { site } from "../../../../lib/site";
+import { buildJobApplyMailto } from "../../../../lib/mailto";
+import { getCollection } from "astro:content";
+const jobs = (
+  await getCollection("jobs", ({ data }) => data.published && !data.placeholder)
+).sort((a, b) => a.data.order - b.data.order);
+const departments = [...new Set(jobs.map((j) => j.data.department))];
+const locations = [...new Set(jobs.map((j) => j.data.location))];
+---
+
+<BaseLayout
+  title="加入半打"
+  description="与半打空间一起探索模块化建筑的未来，关注最新招聘机会。"
+  current="about"
+  headerStyle="solid"
+>
+  <div class="page-editorial">
+    <section class="page-opening ed-wrap">
+      <span class="eyebrow">CAREERS / 加入半打</span>
+      <div class="page-heading">
+        <h1>
+          一起，把想法
+          <br />
+          建成空间。
+        </h1>
+        <p>
+          我们关注材料，也关注生活。
+          <br />
+          期待与拥有不同视角的人，
+          <br />
+          一起探索建筑的可能。
+        </p>
+      </div>
+    </section>
+    <div class="page-visual">
+      <EditorialImage
+        base="case-cayman-install-crane"
+        alt="模块化建筑现场吊装"
+        eager
+      />
+      <span class="page-visual-caption">DESIGN. MAKE. BUILD. / TOGETHER.</span>
+    </div>
+    <section class="ed-wrap ed-section" data-jobs>
+      <div class="section-label">
+        <span>OPEN POSITIONS / 开放职位</span>
+        <span>{String(jobs.length).padStart(2, "0")} 个职位</span>
+      </div>
+      {jobs.length > 0 ? (
+        <>
+          <div class="filters" role="group" aria-label="职位筛选">
+            <div class="grp">
+              <span>部门</span>
+              <button
+                type="button"
+                class="chip on"
+                data-chip-group="department"
+                data-chip-value="all"
+                aria-pressed="true"
+              >
+                全部
+              </button>
+              {departments.map((d) => (
+                <button
+                  type="button"
+                  class="chip"
+                  data-chip-group="department"
+                  data-chip-value={d}
+                  aria-pressed="false"
+                >
+                  {d}
+                </button>
+              ))}
+            </div>
+            <div class="grp">
+              <span>地点</span>
+              <button
+                type="button"
+                class="chip on"
+                data-chip-group="location"
+                data-chip-value="all"
+                aria-pressed="true"
+              >
+                全部
+              </button>
+              {locations.map((l) => (
+                <button
+                  type="button"
+                  class="chip"
+                  data-chip-group="location"
+                  data-chip-value={l}
+                  aria-pressed="false"
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
+            <button type="button" class="clear-f" data-clear-filters>
+              清空筛选
+            </button>
+          </div>
+          <div class="empty-box" data-no-result hidden>
+            <h3>暂无匹配职位</h3>
+            <p>您可以清空筛选查看全部职位。</p>
+          </div>
+          {jobs.map((j) => {
+            const mailto = buildJobApplyMailto(
+              site.careersEmail,
+              j.data.title,
+              "/zh/about/careers/",
+            );
+            return (
+              <article
+                class="job"
+                data-job={j.id}
+                data-department={j.data.department}
+                data-location={j.data.location}
+              >
+                <button
+                  type="button"
+                  class="job-row"
+                  data-job-toggle
+                  aria-expanded="false"
+                  aria-controls={`job-${j.id}`}
+                >
+                  <h3>{j.data.title}</h3>
+                  <span class="tags">
+                    {j.data.department} / {j.data.location} / {j.data.type}
+                  </span>
+                  <span aria-hidden="true">+</span>
+                </button>
+                <div class="job-detail" id={`job-${j.id}`}>
+                  <div class="job-detail-in">
+                    <div>
+                      <h4>职责</h4>
+                      <ul>
+                        {j.data.responsibilities.map((r) => (
+                          <li>{r}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4>任职要求</h4>
+                      <ul>
+                        {j.data.requirements.map((r) => (
+                          <li>{r}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div class="job-apply">
+                      {mailto ? (
+                        <a
+                          class="text-link action action-secondary"
+                          href={mailto}
+                          data-apply={j.data.title}
+                        >
+                          通过邮件申请
+                        </a>
+                      ) : (
+                        <p>招聘邮箱尚未公布，请通过联系页面了解后续信息。</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </>
+      ) : (
+        <div class="editorial-empty">
+          <h2>
+            新的合作，
+            <br />
+            值得期待。
+          </h2>
+          <div>
+            <p>暂无开放职位，欢迎关注后续招聘信息。</p>
+            <a class="text-link action action-secondary" href="/zh/contact/">
+              与我们联系
+            </a>
+          </div>
+        </div>
+      )}
+    </section>
+  </div>
+  <div class="lang-toast" data-mail-toast role="status">
+    将打开您的邮件客户端
+  </div>
+</BaseLayout>

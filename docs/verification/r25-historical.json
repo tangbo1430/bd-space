@@ -1,0 +1,361 @@
+{
+  "project": "半打空间 / BANDA SPACE",
+  "release": "r25 / transparent official logo",
+  "reviewed_at": "2026-10-10T17:04:41.551198+00:00",
+  "build": {
+    "commit": "f4268f1",
+    "builtAt": "2026-10-10T17:02:55.953Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "reviewed_dimensions": {
+    "排版": "沿用本地可变字体；英文独立校订并检查断行；参数、图注和技术资料统一层级。",
+    "留白": "首页精选案例按原图 1920:1200 比例自适应高度，无裁切、无图片内部填充条，悬停不放大；摄影首屏保持满幅，技术图完整展示。",
+    "视觉层级": "产品简介和参数摘要前置；照片、技术图、手动视频分别呈现；首页仍精选四款。",
+    "色彩": "官方 SVG 保持原稿深蓝及两种灰色；取消 Logo 白色底板，不添加描边、阴影或改色滤镜。",
+    "动效": "自然滚动、轻微渐显；轮播支持暂停、离屏停止及减少动态效果偏好。",
+    "微交互": "无文字轮播控件、键盘与触摸阅图、缩放、焦点恢复；中英文表单验证及本地需求下载。",
+    "响应式": "覆盖 320、375、768、1024、1440、1920px，另检手机横屏和 200% 等效视口。",
+    "原创性": "使用品牌自身素材；宣传资料重排为网页；技术标注未重绘，未跨型号借图。"
+  },
+  "verification": {
+    "unit_tests": 48,
+    "type_errors": 0,
+    "lint_errors": 0,
+    "rendered_pages": 33,
+    "listed_products": 6,
+    "english_pages": 11,
+    "responsive_checks": 192,
+    "english_layout_checks": 88,
+    "cover_layout_checks": 72,
+    "supplement_layout_checks": 16,
+    "materials_layout_checks": 32,
+    "carousel_layout_checks": 8,
+    "accessibility_scenarios": {
+      "core": 24,
+      "english": 22,
+      "supplement": 8,
+      "materials": 4
+    },
+    "accessibility_violations": 0,
+    "browser_errors": 0,
+    "missing_resources": 0,
+    "image_references": 346,
+    "material_integrity_checks": 46,
+    "supplement_integrity_checks": 18,
+    "untranslated_text_attributes": 0,
+    "video_requests_before_play": 0,
+    "video_manual_playback": "passed"
+  },
+  "limits": [
+    "浏览器检查使用 Edge 自动化和模拟视口；200% 为等效 CSS 视口，不代表真实设备及原生浏览器缩放测试。",
+    "6S 未提供对应干净室内照片，本轮展示其自身外观与技术图，不借用其他型号。",
+    "4S 旧图册阁楼口径存在差异，新增参数以正式表为准；98㎡仍独立列示。",
+    "专利申请台账不等同于当前有效权利证明，历史证书保留原权利人和适用范围。",
+    "临时站继续 noindex；不含 HTTPS、正式域名或表单发送服务。"
+  ],
+  "delivery": {
+    "branch": "feature/materials-v1-1-bilingual",
+    "baseline_commit": "dfaf081",
+    "implementation_commit": "cee188c",
+    "github": "HTTPS and SSH authentication unavailable; push and PR pending user credentials.",
+    "raw_materials_public": false,
+    "withdrawn_process_images_public": false,
+    "source": "bd-space-v1.1-source.zip",
+    "static": "bd-space-v1.1-static.zip"
+  },
+  "public_verification": {
+    "pages": [
+      {
+        "url": "http://23.251.34.150:8080/zh/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/4s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/5s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/6s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/grayscale/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/bd8/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/products/bd9/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/cases/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/about/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/zh/contact/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/4s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/5s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/6s/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/grayscale/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/bd8/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/products/bd9/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/cases/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/about/",
+        "status": 200,
+        "noindex": true
+      },
+      {
+        "url": "http://23.251.34.150:8080/en/contact/",
+        "status": 200,
+        "noindex": true
+      }
+    ],
+    "browser": [
+      {
+        "path": "/zh/",
+        "width": 2560,
+        "overflow": false
+      },
+      {
+        "path": "/en/",
+        "width": 2393,
+        "overflow": false
+      },
+      {
+        "path": "/en/",
+        "width": 375,
+        "overflow": false
+      },
+      {
+        "path": "/en/products/",
+        "width": 1440,
+        "overflow": false
+      },
+      {
+        "path": "/en/products/bd8/",
+        "width": 375,
+        "overflow": false
+      },
+      {
+        "path": "/en/contact/",
+        "width": 768,
+        "overflow": false
+      },
+      {
+        "path": "/zh/products/4s/",
+        "width": 375,
+        "overflow": false
+      }
+    ],
+    "errors": [],
+    "missing": [],
+    "build": {
+      "commit": "f4268f1",
+      "builtAt": "2026-10-10T17:02:55.953Z",
+      "site": "http://23.251.34.150:8080",
+      "buildMode": "production"
+    },
+    "videoRequestsBeforePlay": 0
+  },
+  "photography_correction": {
+    "commit": "eebe464",
+    "whole_page_checks": 93,
+    "pages": 31,
+    "whole_page_widths": [
+      375,
+      1440,
+      2560
+    ],
+    "hero_coverage_checks": 108,
+    "hero_widths": [
+      375,
+      768,
+      1440,
+      1920,
+      2393,
+      3440
+    ],
+    "hero_layout_checks": 72,
+    "carousel_layouts": 8,
+    "unpainted_image_edges": 0,
+    "scope": [
+      "首页、产品中心与详情主视觉恢复满幅摄影",
+      "首页产品切换、精选案例、目录大图恢复原先裁切布局",
+      "修正 4S 实拍图集空带",
+      "保留新增素材、英文内容、按钮与字体体系"
+    ],
+    "note": "此前 r18 的视觉验收未充分识别 contain 导致的空带；本次增加计算图片实际绘制范围的专项检查，并截图复核。"
+  },
+  "catalog_carousel": {
+    "models": [
+      "4s",
+      "5s",
+      "6s",
+      "grayscale",
+      "bd8",
+      "bd9"
+    ],
+    "source": "Existing model-specific official product imagery and mobile variants; captions and links share product data.",
+    "layouts": 16,
+    "checks": [
+      "six distinct models",
+      "localized detail links",
+      "44px minimum controls",
+      "no text in selectors",
+      "wraparound keyboard navigation",
+      "touch swipe",
+      "reduced motion",
+      "real autoplay"
+    ],
+    "home_carousel": "unchanged; original three-slide navigation regression passed"
+  },
+  "desktop_header": {
+    "minimum_width": 1280,
+    "overlay_pages": "Home, catalog, photographic product details and about; both languages.",
+    "logo": "Official source artwork and colors retained. Transparent background without a backing plate, border, shadow or recoloring filter.",
+    "checks": 40,
+    "light_page_checks": 2,
+    "hero_layout_checks": 72,
+    "mobile": "Existing light masthead retained.",
+    "approval": "Latest user screenshot and instruction supersede v1.1 light desktop header preference."
+  },
+  "material_completion": {
+    "source_archive_files": 208,
+    "eligible_unique_visuals": 129,
+    "used_unique_visuals": 116,
+    "visual_use_percent": 89.9,
+    "product_source_images": "42 / 55",
+    "case_source_images": "61 / 61",
+    "new_technical_diagrams": "17 / 17",
+    "videos": "1 / 1",
+    "ledger": "docs/material-usage-audit.json",
+    "report": "docs/material-completion-report.html",
+    "changes": [
+      "4S video chapter anchor in both languages",
+      "Two specified 4S real photographs added",
+      "Near-duplicate render replaced by living-room perspective with responsive preview",
+      "Formal map coordinates added in both languages"
+    ],
+    "known_source_gap": "No verified 6S interior images in the supplied v1.1 folder. No other model imagery borrowed.",
+    "fresh_checks": {
+      "lint_errors": 0,
+      "type_errors": 0,
+      "unit_tests": 48,
+      "built_pages": 33,
+      "image_reference_checks": 349,
+      "material_checks": 46,
+      "supplement_checks": 18,
+      "untranslated_nodes": 0,
+      "supplement_layouts": 16,
+      "supplement_accessibility_scenarios": 8,
+      "bilingual_video_playback_and_contact_scenarios": 4,
+      "public_core_pages": 22,
+      "public_browser_scenarios": 7
+    },
+    "earlier_checks": "Existing broader desktop-header, full-site responsive and carousel reports remain previous-release evidence; this revision retested the affected layouts and public core routes.",
+    "git_delivery": "User chose local commits only; GitHub push deferred."
+  },
+  "logo_correction": {
+    "provenance": "docs/logo-provenance.json",
+    "checks": 40,
+    "light_page_checks": 2,
+    "lint_errors": 0,
+    "image_references": 349,
+    "change": "Removed the logo-only white backing at user request; artwork itself unchanged."
+  },
+  "selected_case_images": {
+    "pages": [
+      "/zh/",
+      "/en/"
+    ],
+    "original_pixels": [
+      1920,
+      1200
+    ],
+    "container": "Natural image ratio and auto height, without fixed square frames",
+    "hover": "No image zoom or edge cropping",
+    "viewport_checks": 18,
+    "widths": [
+      320,
+      375,
+      768,
+      1024,
+      1440,
+      1920,
+      2560,
+      844,
+      720
+    ],
+    "lint_errors": 0,
+    "image_references": 349,
+    "report": "docs/verification/selected-case-images-audit.json"
+  },
+  "evidence_status": "Historical r25 report preserved for traceability; not evidence of r26 passes."
+}

@@ -1,0 +1,20 @@
+{
+  "layouts": [],
+  "accessibility": [],
+  "interactions": [
+    "/zh/: no-text controls, keyboard, selection and pause",
+    "/zh/products/: no-text controls, keyboard, selection and pause",
+    "/en/: no-text controls, keyboard, selection and pause",
+    "/en/products/: no-text controls, keyboard, selection and pause",
+    "4s: separate technical group, zoom, focus restoration",
+    "5s: separate technical group, zoom, focus restoration",
+    "6s: separate technical group, zoom, focus restoration",
+    "grayscale: separate technical group, zoom, focus restoration",
+    "bd8: separate technical group, zoom, focus restoration",
+    "bd9: separate technical group, zoom, focus restoration",
+    "4S video: zero pre-play requests; manual playback works",
+    "English enquiry: product prefill, validation, international phone and local download"
+  ],
+  "errors": [],
+  "missing": []
+}

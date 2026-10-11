@@ -1,0 +1,71 @@
+{
+  "layouts": [
+    {
+      "width": 320,
+      "height": 812,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "width": 812,
+      "height": 375,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    },
+    {
+      "width": 720,
+      "height": 450,
+      "overflow": false,
+      "overlap": false,
+      "clipped": false,
+      "targets": true
+    }
+  ],
+  "progress": [
+    "Timeline advances, pauses, resumes and stops offscreen with the carousel; current selection does not reset; reduced motion shows a static selected rail."
+  ]
+}

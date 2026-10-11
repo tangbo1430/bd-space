@@ -1,0 +1,535 @@
+[
+  {
+    "width": 375,
+    "route": "/zh/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": [
+          [
+            "div[data-product=\"6s\"]"
+          ]
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "a[href$=\"6s/\"] > .hero-model"
+          ],
+          [
+            "a[href$=\"6s/\"] > .hero-product-action"
+          ],
+          [
+            ".hero-intro > .eyebrow"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".hero-intro > p"
+          ],
+          [
+            ".action-secondary.action[href$=\"contact/\"]"
+          ],
+          [
+            ".section-heading.rv.in > div > .eyebrow"
+          ],
+          [
+            "#systems-heading"
+          ],
+          [
+            ".systems-section > .ed-wrap > .section-heading.rv.in > p"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-copy > strong"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > span"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > small"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > .system-mobile-description"
+          ],
+          [
+            ".system-study-note"
+          ],
+          [
+            "#living-heading"
+          ],
+          [
+            ".living-copy > .rv.in:nth-child(2)"
+          ],
+          [
+            ".light"
+          ],
+          [
+            ".cta-content > .eyebrow"
+          ],
+          [
+            ".cta-content > h2"
+          ],
+          [
+            ".cta-content > p"
+          ],
+          [
+            "a[data-track=\"consult_click\"]"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "route": "/zh/products/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": [
+          [
+            "div[data-product=\"4s\"]"
+          ]
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".hero-explore[href$=\"4s/\"] > .hero-model"
+          ],
+          [
+            ".hero-explore[href$=\"4s/\"] > .hero-product-action"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".hero-intro > p"
+          ],
+          [
+            ".section-label > span:nth-child(1)"
+          ],
+          [
+            ".section-label > span:nth-child(2)"
+          ],
+          [
+            ".section-heading > h2"
+          ],
+          [
+            ".section-heading > p"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-copy > strong"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > span"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > small"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > .system-mobile-description"
+          ],
+          [
+            ".system-study-note"
+          ],
+          [
+            ".cta-content > .eyebrow"
+          ],
+          [
+            ".cta-content > h2"
+          ],
+          [
+            ".cta-content > p"
+          ],
+          [
+            "a[data-track=\"consult_click\"]"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "route": "/zh/about/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".eyebrow[data-astro-cid-72nwwtaq=\"\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".cover-body > p"
+          ],
+          [
+            ".cta-content > .eyebrow"
+          ],
+          [
+            ".cta-content > h2"
+          ],
+          [
+            ".cta-content > p"
+          ],
+          [
+            "a[data-track=\"consult_click\"]"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "route": "/zh/contact/",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "width": 1440,
+    "route": "/zh/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": [
+          [
+            "div[data-product=\"6s\"]"
+          ]
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            ".cur"
+          ],
+          [
+            "nav > a[href$=\"products/\"]"
+          ],
+          [
+            "nav > a[href$=\"cases/\"]"
+          ],
+          [
+            "nav > a[href$=\"qualifications/\"]"
+          ],
+          [
+            "nav > a[href$=\"news/\"]"
+          ],
+          [
+            ".sub-trigger"
+          ],
+          [
+            "nav > a[href$=\"contact/\"]"
+          ],
+          [
+            ".lang"
+          ],
+          [
+            "a[href$=\"6s/\"] > .hero-model"
+          ],
+          [
+            "a[href$=\"6s/\"] > .hero-model-note"
+          ],
+          [
+            "a[href$=\"6s/\"] > .hero-product-action"
+          ],
+          [
+            ".hero-intro > .eyebrow"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".hero-intro > p"
+          ],
+          [
+            ".action-secondary.action[href$=\"contact/\"]"
+          ],
+          [
+            ".section-heading.rv.in > div > .eyebrow"
+          ],
+          [
+            "#systems-heading"
+          ],
+          [
+            ".systems-section > .ed-wrap > .section-heading.rv.in > p"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-copy > small"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-copy > small"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-copy > small"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > span"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > small"
+          ],
+          [
+            ".system-study-note"
+          ],
+          [
+            "#living-heading"
+          ],
+          [
+            ".living-copy > .rv.in:nth-child(2)"
+          ],
+          [
+            ".light"
+          ],
+          [
+            ".cta-content > .eyebrow"
+          ],
+          [
+            ".cta-content > h2"
+          ],
+          [
+            ".cta-content > p"
+          ],
+          [
+            "a[data-track=\"consult_click\"]"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/zh/products/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "aria-prohibited-attr",
+        "nodes": [
+          [
+            "div[data-product=\"4s\"]"
+          ]
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "nav > a[href$=\"zh/\"]"
+          ],
+          [
+            ".cur"
+          ],
+          [
+            "nav > a[href$=\"cases/\"]"
+          ],
+          [
+            "nav > a[href$=\"qualifications/\"]"
+          ],
+          [
+            "nav > a[href$=\"news/\"]"
+          ],
+          [
+            ".sub-trigger"
+          ],
+          [
+            "nav > a[href$=\"contact/\"]"
+          ],
+          [
+            ".lang"
+          ],
+          [
+            ".hero-explore[href$=\"4s/\"] > .hero-model"
+          ],
+          [
+            ".hero-explore[href$=\"4s/\"] > .hero-product-action"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".hero-intro > p"
+          ],
+          [
+            ".section-label > span:nth-child(1)"
+          ],
+          [
+            ".section-label > span:nth-child(2)"
+          ],
+          [
+            ".section-heading > h2"
+          ],
+          [
+            ".section-heading > p"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-panels\"] > .system-choice-copy > small"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-modules\"] > .system-choice-copy > small"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-number"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-copy > strong"
+          ],
+          [
+            "label[for=\"system-hybrid\"] > .system-choice-copy > small"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > span"
+          ],
+          [
+            "figure[data-system-figure=\"panels\"] > figcaption > small"
+          ],
+          [
+            ".system-study-note"
+          ],
+          [
+            ".cta-content > .eyebrow"
+          ],
+          [
+            ".cta-content > h2"
+          ],
+          [
+            ".cta-content > p"
+          ],
+          [
+            "a[data-track=\"consult_click\"]"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/zh/about/",
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "nodes": [
+          [
+            "nav > a[href$=\"zh/\"]"
+          ],
+          [
+            "nav > a[href$=\"products/\"]"
+          ],
+          [
+            "nav > a[href$=\"cases/\"]"
+          ],
+          [
+            "nav > a[href$=\"qualifications/\"]"
+          ],
+          [
+            "nav > a[href$=\"news/\"]"
+          ],
+          [
+            ".sub-trigger"
+          ],
+          [
+            "nav > a[href$=\"contact/\"]"
+          ],
+          [
+            ".lang"
+          ],
+          [
+            ".eyebrow[data-astro-cid-72nwwtaq=\"\"]"
+          ],
+          [
+            "h1"
+          ],
+          [
+            ".cover-body > p"
+          ],
+          [
+            ".cta-content > .eyebrow"
+          ],
+          [
+            ".cta-content > h2"
+          ],
+          [
+            ".cta-content > p"
+          ],
+          [
+            "a[data-track=\"consult_click\"]"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "route": "/zh/contact/",
+    "violations": [],
+    "incomplete": []
+  }
+]

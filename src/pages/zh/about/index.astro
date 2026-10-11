@@ -1,0 +1,181 @@
+---
+import { company, strengths, founder } from "../../../data/company";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import EditorialImage from "../../../components/EditorialImage.astro";
+import ProjectCTA from "../../../components/ProjectCTA.astro";
+import PageVisual from "../../../components/PageVisual.astro";
+---
+
+<BaseLayout
+  title="关于半打"
+  description="半打空间，以模块化的方式连接设计、工厂制造与现场交付。了解我们的建造理念与制造过程。"
+  current="about"
+  headerStyle="overlay"
+>
+  <div class="page-editorial">
+    <PageVisual
+      mode="cover"
+      base="v11-about"
+      alt="灰度空间住宅外观效果图"
+      caption="从工厂开始，让空间有序成形。"
+      meta="关于半打空间"
+    >
+      <h1 slot="title">
+        把建造，
+        <br />
+        做成制造。
+      </h1>
+      <p slot="description">
+        装配式混凝土空间的设计与制造者。
+        <br />
+        在工厂里，思考建筑的未来。
+      </p>
+      <a slot="actions" class="action action-primary" href="#about-idea">
+        认识半打
+      </a>
+    </PageVisual>
+    <section class="ed-wrap ed-section" id="about-idea">
+      <div class="about-statement">
+        <span class="eyebrow rv">01 / A DIFFERENT WAY TO BUILD</span>
+        <div class="rv">
+          <h2>
+            让建筑从现场，
+            <br />
+            走进有序的产线。
+          </h2>
+          <p class="company-full-name">
+            {!Astro.url.pathname.startsWith("/en/") && company.legalName}
+            <span lang="en">{company.legalNameEn}</span>
+          </p>
+          <p>{company.intro}</p>
+          <p>{company.background}</p>
+        </div>
+      </div>
+    </section>
+    <section class="product-section ed-section">
+      <div class="ed-wrap about-feature">
+        <EditorialImage fit="contain"
+          base="flow-factory-panels"
+          alt="工厂中的混凝土构件"
+          mobile={false}
+          sizes="(max-width: 767px) 100vw, 55vw"
+          class="rv"
+        />
+        <div class="about-feature-copy rv">
+          <span class="eyebrow">02 / FROM MATERIAL TO SPACE</span>
+          <h2 style="margin-top:26px">
+            不止于构件，
+            <br />
+            更关乎空间。
+          </h2>
+          <p>
+            从一片预制墙板，到一个完整的空间模块，我们关注材料、结构和使用之间的连接。建筑的细节，在工厂中逐步成形。
+          </p>
+          <a href="/zh/products/" class="text-link action action-secondary">
+            探索产品体系
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="making-section ed-section">
+      <div class="ed-wrap">
+        <div class="section-label rv">
+          <span>03 / THE MAKING PROCESS</span>
+          <span>从设计到交付</span>
+        </div>
+        <div class="section-heading rv">
+          <h2>
+            每一步，
+            <br />
+            都为最后的生活。
+          </h2>
+          <p>设计 · 制造 · 装配 · 运输</p>
+        </div>
+        <div class="strength-grid">
+          {strengths.map((s) => (
+            <article class="rv">
+              <span class="eyebrow">{s.title}</span>
+              <h3>{s.subtitle}</h3>
+              <p>{s.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section class="ed-wrap ed-section founder-section">
+      <figure class="founder-photo rv">
+        <EditorialImage fit="contain"
+          base="founder-huang-kun"
+          alt="半打空间创始人黄昆"
+          sizes="(max-width: 767px) 100vw, 45vw"
+        />
+        <figcaption>黄昆 / 创始人</figcaption>
+      </figure>
+      <div class="founder-copy rv">
+        <span class="eyebrow">人与建造</span>
+        <h2>
+          从构件出发，
+          <br />
+          始终关心空间。
+        </h2>
+        <p>{founder.intro}</p>
+        <ol>
+          {founder.milestones.map((m) => (
+            <li>
+              <time>{m.year}</time>
+              <span>{m.text}</span>
+            </li>
+          ))}
+        </ol>
+        <p class="material-note">
+          以上为创始人历年经历；半打空间成立于2025年。
+        </p>
+      </div>
+    </section>
+    <section class="ed-wrap ed-section">
+      <div class="about-feature">
+        <div class="about-feature-copy rv">
+          <span class="eyebrow">04 / REAL PLACES, REAL POSSIBILITIES</span>
+          <h2 style="margin-top:26px">
+            一套方法，
+            <br />
+            走向不同的地方。
+          </h2>
+          <p>
+            从国内住宅，到海外项目，再到集宿建筑。不同的场景，为模块化建造提出不同的问题，也让我们持续探索空间的可能。
+          </p>
+          <a href="/zh/cases/" class="text-link action action-secondary">
+            查看工程案例
+          </a>
+        </div>
+        <EditorialImage fit="contain"
+          base="v11-grayscale-hero"
+          alt="灰度空间的住宅与庭院效果图"
+          sizes="(max-width: 767px) 100vw, 50vw"
+          class="rv"
+        />
+      </div>
+    </section>
+    <section class="ed-wrap ed-section vision-mission">
+      <article>
+        <span class="eyebrow">愿景</span>
+        <h2>
+          让模块化建筑，
+          <br />
+          走进更多生活。
+        </h2>
+        <p>成为模块化低层建筑领域受认可的解决方案与服务提供者。</p>
+      </article>
+      <article>
+        <span class="eyebrow">使命</span>
+        <h2>
+          在工厂里，
+          <br />
+          实现空间的品质。
+        </h2>
+        <p>以设计、制造与装配的协作，提供高效、实用的建筑空间。</p>
+      </article>
+    </section>
+    <ProjectCTA />
+  </div>
+</BaseLayout>

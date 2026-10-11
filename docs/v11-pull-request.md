@@ -1,0 +1,11 @@
+# Deliver the bilingual BANDA website and r35 visual refinements
+
+The repository contained an early version of the website. This branch preserves its history and brings the source, selected web assets and acceptance records up to the reviewed r35 preview.
+
+The site includes six products, ten projects and eleven core English pages. Desktop photographic headers retain transparent navigation, with solid navigation after scrolling; the official logo keeps its original symbol colors and uses a white wordmark on dark photography. Body images and technical drawings preserve their proportions. Mobile product details separate the text from the complete photograph. Contact pages directly display phone, email, three WeChat contacts and location information. The 4S installation video plays manually.
+
+No-text carousels retain the current photograph until the next image is ready, including during slow loading or failed requests. Keyboard/touch viewing, reduced-motion behavior, bilingual links and three unlisted legacy component routes remain available. Navigation omits empty news and recruitment sections. Public assets exclude prices, source spreadsheets, authorizations and complete reports. Matching 6S interior material remains unavailable; contact uses direct communication rather than an online submission form.
+
+Validation for r35: 48 unit tests, lint/type/build checks, 346 image references, 46 material checks and 18 supplement checks passed. The final build passed 11 interaction groups and eight carousel layouts. Delayed-image, cancellation, keyboard-race and failure scenarios passed 32 local and 32 public checks; all 33 public HTML pages match the deployment package. Before the carousel fix, the r34 baseline was also checked across 88 English layouts, 22 English accessibility scenarios and 12 bilingual interaction groups, including manual video playback. These baseline results are not presented as a full r35 rerun. Details and earlier limitations are preserved in `docs/quality-report-r35.html` and `docs/quality-report-r34.html`; real-device Safari/iOS/Android coverage is not claimed.
+
+Preview: http://23.251.34.150:8080/zh/?v=r35 (temporary HTTP, noindex). The r34 release is retained for rollback. A production domain, HTTPS and a form delivery service are outside this delivery. Do not automatically merge this PR.

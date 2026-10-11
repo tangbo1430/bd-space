@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import { company, investors, contacts } from "../../../../data/company";
+---
+
+<BaseLayout
+  title="投资者关系"
+  description="了解半打空间集成房屋（江门）有限公司的企业信息、股权结构与投资者联系方式。"
+  current="about"
+  headerStyle="solid"
+>
+  <div class="page-editorial">
+    <section class="page-opening ed-wrap">
+      <span class="eyebrow">投资者关系</span>
+      <div class="page-heading">
+        <h1>
+          与制造者，
+          <br />
+          共同向前。
+        </h1>
+        <p>
+          关注空间的未来，
+          <br />
+          也关注创造空间的企业。
+        </p>
+      </div>
+    </section>
+    <section class="equity-section ed-wrap">
+      <div class="evidence-heading">
+        <div>
+          <span class="eyebrow">企业与治理</span>
+          <h2>股权结构</h2>
+        </div>
+        <div>
+          <p>{company.legalName}</p>
+        </div>
+      </div>
+      <div
+        class="equity-bar"
+        role="img"
+        aria-label={investors
+          .map((s) => `${s.name}持股${s.percent}%`)
+          .join("，")}
+      >
+        {investors.map((s, i) => (
+          <span
+            class={`equity-segment equity-${i}`}
+            style={`flex-grow:${s.percent}`}
+          ></span>
+        ))}
+      </div>
+      <ol class="equity-list">
+        {investors.map((s, i) => (
+          <li>
+            <span class={`equity-key equity-${i}`} aria-hidden="true"></span>
+            <span>{s.name}</span>
+            <strong>
+              {s.percent}
+              <small>%</small>
+            </strong>
+          </li>
+        ))}
+      </ol>
+      <p class="material-note">
+        广东志特装配科技有限公司为志特新材（300986.SZ）控股子公司。
+      </p>
+    </section>
+    <section class="evidence-band">
+      <div class="ed-wrap ed-section company-record">
+        <div>
+          <span class="eyebrow">企业主体</span>
+          <h2>
+            在江门，
+            <br />
+            连接设计与制造。
+          </h2>
+        </div>
+        <dl>
+          <div>
+            <dt>企业名称</dt>
+            <dd>{company.legalName}</dd>
+          </div>
+          <div>
+            <dt>成立日期</dt>
+            <dd>{company.founded}</dd>
+          </div>
+          <div>
+            <dt>统一社会信用代码</dt>
+            <dd>{company.creditCode}</dd>
+          </div>
+          <div>
+            <dt>注册地址</dt>
+            <dd>{company.contact.address}</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+    <section class="ed-wrap ed-section investor-contact">
+      <div>
+        <span class="eyebrow">投资者联系</span>
+        <h2>开启一次对话。</h2>
+      </div>
+      <div class="investor-people">
+        {contacts
+          .filter((p) => p.id !== "wang")
+          .map((p) => (
+            <div>
+              <h3>{p.name}</h3>
+              <a href={`tel:${p.phone}`}>{p.phone}</a>
+            </div>
+          ))}
+        <a class="action action-secondary" href="/zh/contact/">
+          更多联系方式
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

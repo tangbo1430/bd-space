@@ -1,0 +1,98 @@
+---
+import Icon from "./Icon.astro";
+import EditorialImage from "./EditorialImage.astro";
+interface Props {
+  slides: {
+    id: string;
+    base: string;
+    name: string;
+    note: string;
+    mobileImage?: string;
+    caption?: string;
+  }[];
+  catalog?: boolean;
+}
+const { slides, catalog = false } = Astro.props;
+---
+
+<section
+  class:list={["hero editorial-hero", { "catalog-hero": catalog }]}
+  data-carousel
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="半打空间产品展示"
+  tabindex="0"
+>
+  <p class="sr-only" data-banner-live aria-live="polite">
+    第 1 张，共 {slides.length} 张
+  </p>
+  {slides.map((s, i) => (
+    <div
+      class:list={["slide", { on: i === 0 }]}
+      data-slide
+      data-product={s.id}
+      aria-roledescription="slide"
+      aria-label={`第 ${i + 1} 张，共 ${slides.length} 张`}
+    >
+      <EditorialImage
+        base={s.base}
+        alt={s.caption ?? `${s.name}住宅外观 / 效果图`}
+        mobileImage={s.mobileImage ?? `/assets/img/v11-${s.id}-portrait-m.webp`}
+        eager={i === 0}
+      />
+      <div class="hero-bottom">
+        <a
+          class="hero-explore"
+          href={`/zh/products/${s.id}/`}
+          tabindex={i === 0 ? 0 : -1}
+        >
+          <span class="hero-model">{s.name}</span>
+          <span class="hero-model-note">{s.note}</span>
+          <span class="hero-product-action">
+            查看产品
+            <Icon name="chevron-right" />
+          </span>
+        </a>
+      </div>
+    </div>
+  ))}
+  <div class="hero-intro ed-wrap">
+    <slot />
+  </div>
+  <div class="hero-controls">
+    <span class="sr-only">
+      当前照片 <span data-hero-current>01</span> /{" "}
+      {String(slides.length).padStart(2, "0")}
+    </span>
+    <div
+      class="hero-scenes"
+      style={`--scene-count: ${slides.length}`}
+      role="group"
+      aria-label="选择住宅照片"
+    >
+      {slides.map((slide, index) => (
+        <button
+          type="button"
+          class:list={["hero-scene", { on: index === 0 }]}
+          data-dot={index}
+          aria-current={index === 0 ? "true" : "false"}
+          aria-label={`切换到第${index + 1}张：${slide.name}`}
+        >
+          <span class="scene-track" aria-hidden="true">
+            <span class="scene-progress" data-scene-progress></span>
+          </span>
+        </button>
+      ))}
+    </div>
+    <button
+      type="button"
+      class="hero-control hero-pause"
+      data-carousel-pause
+      aria-label="暂停自动播放"
+      aria-pressed="false"
+    >
+      <Icon name="pause" class="pause-icon" />
+      <Icon name="play" class="play-icon" />
+    </button>
+  </div>
+</section>

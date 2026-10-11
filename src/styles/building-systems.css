@@ -1,0 +1,254 @@
+.systems-explorer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(260px, 1fr);
+  gap: 6%;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 52px 0 0;
+  color: var(--forest);
+}
+.system-study {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  background: var(--paper);
+  padding: 24px 24px 18px;
+}
+
+.system-figure {
+  display: none;
+  margin: 0;
+}
+.systems-explorer:has(#system-panels:checked) [data-system-figure="panels"],
+.systems-explorer:has(#system-modules:checked) [data-system-figure="modules"],
+.systems-explorer:has(#system-hybrid:checked) [data-system-figure="hybrid"] {
+  display: block;
+}
+.assembly-drawing {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.assembly-base,
+.assembly-part {
+  stroke: #63765f;
+  stroke-width: 1.25;
+  stroke-linejoin: round;
+}
+.face-top {
+  fill: #e8e9e1;
+}
+.face-front {
+  fill: #d7ddcf;
+}
+.face-side {
+  fill: #bdc9b5;
+}
+.assembly-base {
+  opacity: 0.7;
+}
+.assembly-base .face-top {
+  fill: #d8dfcf;
+}
+.assembly-guides {
+  opacity: 0.18;
+}
+.module .face-front {
+  fill: #647e68;
+}
+.module .face-side {
+  fill: #3b5b49;
+}
+.module .face-top {
+  fill: #b6c8ad;
+}
+.roof .face-top {
+  fill: #e7e7d7;
+}
+
+.system-figure figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #d4d7cc;
+  padding-top: 18px;
+}
+.system-figure figcaption > span {
+  font-size: 17px;
+  letter-spacing: -0.025em;
+}
+.system-figure figcaption small {
+  font-size: 12px;
+  color: var(--soft-ink);
+}
+.system-study-note {
+  font-size: 12px;
+  color: var(--soft-ink);
+  margin-top: 10px;
+}
+.system-mobile-description {
+  display: none;
+}
+.system-choices {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  min-width: 0;
+}
+.system-choice {
+  position: relative;
+  border-top: 1px solid #bbc5b4;
+}
+.system-choice:nth-child(3) {
+  border-bottom: 1px solid #bbc5b4;
+}
+.system-choice label {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 27px 0;
+  cursor: pointer;
+  min-height: 44px;
+}
+.system-choice-number {
+  font-size: 12px;
+  color: #586b50;
+}
+.system-choice-copy {
+  flex: 1;
+}
+.system-choice-copy strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+}
+.system-choice-copy small {
+  display: block;
+  font-size: 12px;
+  line-height: 1.95;
+  margin-top: 12px;
+  max-width: 285px;
+  color: var(--soft-ink);
+}
+.system-choice .selection-mark {
+  align-self: center;
+}
+.system-choice input:focus-visible + label {
+  outline: 2px solid var(--forest);
+  outline-offset: 5px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-motion="off"]) .system-figure .assembly-part {
+    animation: assemble-in 0.65s cubic-bezier(0.2, 0.65, 0.2, 1) both;
+    animation-delay: calc(var(--part-order) * 65ms);
+  }
+}
+@keyframes assemble-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1023px) {
+  .systems-explorer {
+    gap: 28px;
+    grid-template-columns: minmax(0, 1.4fr) minmax(230px, 1fr);
+  }
+  .system-study {
+    padding: 20px 16px 18px;
+    align-self: center;
+  }
+  .system-choice label {
+    padding: 22px 0;
+    gap: 12px;
+  }
+  .system-choice-copy strong {
+    font-size: 20px;
+  }
+  .system-figure figcaption {
+    display: block;
+  }
+  .system-figure figcaption small {
+    display: block;
+    margin-top: 6px;
+  }
+}
+@media (max-width: 767px) {
+  .systems-explorer {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 30px;
+  }
+  .system-choices {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+  }
+  .system-choice {
+    border-bottom: 1px solid #bbc5b4;
+  }
+  .system-choice label {
+    min-height: 78px;
+    display: block;
+    padding: 12px 0;
+  }
+  .system-choice-number {
+    font-size: 12px;
+  }
+  .system-choice-copy strong {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .system-choice-copy small {
+    display: none;
+  }
+  .system-choice .selection-mark {
+    position: absolute;
+    right: 0;
+    top: 22px;
+  }
+  .system-choice:has(input:checked) {
+    border-bottom-color: var(--forest);
+  }
+  .system-choice input:checked + label strong {
+    text-decoration: none;
+  }
+  .system-study {
+    width: 100%;
+    padding: 18px 12px;
+  }
+
+  .assembly-drawing {
+    width: calc(100% + 20px);
+    max-width: none;
+    margin-inline: -10px;
+  }
+  .system-figure figcaption > span {
+    font-size: 19px;
+  }
+  .system-figure figcaption small {
+    font-size: 12px;
+  }
+  .system-study-note {
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .system-mobile-description {
+    display: block;
+    font-size: 13px;
+    line-height: 1.9;
+    margin-top: 15px;
+    color: var(--soft-ink);
+  }
+}

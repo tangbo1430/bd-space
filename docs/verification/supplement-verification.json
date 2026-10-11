@@ -1,0 +1,23 @@
+{
+  "passed": 18,
+  "checks": [
+    "Original 115-file ledger and 3 supplement PDFs retained",
+    "4s: six selected renderings; original PDF provenance retained",
+    "4s: source image objects and hashes recorded",
+    "4s: real imagery retained separately",
+    "4s: accurate render labels",
+    "4s: original proportions and responsive widths",
+    "4s: separately grouped lossless diagrams",
+    "4s: technical section after specifications",
+    "grayscale: six selected renderings; original PDF provenance retained",
+    "grayscale: source image objects and hashes recorded",
+    "grayscale: real imagery retained separately",
+    "grayscale: accurate render labels",
+    "grayscale: original proportions and responsive widths",
+    "grayscale: separately grouped lossless diagrams",
+    "grayscale: technical section after specifications",
+    "4S conflicting loft and elevation pages deferred",
+    "5s: own hero remains, correct render label, no borrowed gallery",
+    "6s: own hero remains, correct render label, no borrowed gallery"
+  ]
+}

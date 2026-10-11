@@ -1,0 +1,73 @@
+{
+  "release": "r28",
+  "runtime_commit": "9c0de5c",
+  "review_date": "2026-10-10",
+  "verdict": "阶段验收有条件通过；建议完成四项收口后再作终验。未发现阻断浏览或核心咨询路径的问题。",
+  "verification": {
+    "generated_routes": 33,
+    "viewport_checks": 297,
+    "viewport_failures": 0,
+    "script_errors": 0,
+    "unit_tests": 48,
+    "material_checks": 46,
+    "visual_page_viewport_samples": 22,
+    "initial_axe_scenarios": 22,
+    "initial_axe_violations": 0,
+    "dark_section_followups": 6,
+    "core_interaction_groups": 12,
+    "filters": [
+      7,
+      3,
+      10
+    ],
+    "qr_viewers": 3,
+    "menu_escape_focus_restored": true,
+    "translation_audit_untranslated_unique_strings": 1
+  },
+  "findings": [
+    {
+      "id": "R28-01",
+      "priority": "终验前修正",
+      "title": "深色建造示意辅助文字对比度不足",
+      "evidence": "12px #59645e on #0b0f0e base gives 3.1309:1; gradient area can be lower. Home and catalog, shared bilingual component. Axe reports gradient contrast as incomplete, not passed.",
+      "source": "src/styles/building-systems.css:83",
+      "recommendation": "将深色章节的辅助文字颜色归并为明确的浅色 token，复核三种示意状态。保持整体深色设计。"
+    },
+    {
+      "id": "R28-02",
+      "priority": "终验前修正",
+      "title": "英文页语言切换的 title 与无障碍名称仍含中文说明",
+      "evidence": "中文 — 切换到对应中文页面。可见“中文”应保留，中文说明应本地化。全站为一个共享字符串，非正文大面积漏译。",
+      "source": "src/components/SiteHeader.astro:26",
+      "recommendation": "保留中文入口文字，将英文页的提示和辅助说明改为英文。"
+    },
+    {
+      "id": "R28-03",
+      "priority": "精修",
+      "title": "参数摘要和时间线存在不自然换行",
+      "evidence": "1440px 首页 4S 摘要的“1阁楼”单独落行；关于页“2018–2021”被拆为两行。",
+      "source": "src/pages/zh/index.astro:38",
+      "recommendation": "将产品主张、面积、户型拆成语义完整的行；为年份区间保留足够宽度，不改变整站字体与节奏。"
+    },
+    {
+      "id": "R28-04",
+      "priority": "精修",
+      "title": "制造流程“设计”步骤配图语义较弱",
+      "evidence": "设计步骤显示工厂预制板生产照片，图片本身真实，但更对应制造步骤。",
+      "source": "src/pages/zh/index.astro:45",
+      "recommendation": "设计步骤采用已有技术示意或明确标为建造体系示意，生产实拍用于制造步骤。不新增未经提供的设计团队照片。"
+    }
+  ],
+  "optional": [
+    "当前官方原色 Logo 图形在深色摄影上辨识度偏弱，这是已确认颜色方案的取舍；保留颜色，不擅自加底板、白边或改白。可通过选图/焦点调整改善。",
+    "创始人生活照与地图截图的专业感受原始素材限制；以后可提供正式人像与更清晰的局部位置图。"
+  ],
+  "limits": [
+    "Windows Edge Chromium 实测；没有实机 iOS/Safari/Android 或读屏测试。",
+    "720×450 为 200% 等效 CSS 视口，不等于原生浏览器缩放全环境验证。",
+    "本轮图片视觉人工抽样为 375px/1440px；320–2560px、横屏由自动布局检查覆盖。",
+    "无真实用户性能或弱网性能验收，不能凭本轮判断获奖或所有设备表现。",
+    "6S 室内素材、新闻招聘内容、域名 HTTPS 与发送服务缺口沿用已确认范围，不计作本次回归缺陷。"
+  ],
+  "site_changes": "Review only; no website implementation changes or deployment in this review."
+}

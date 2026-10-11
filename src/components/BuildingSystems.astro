@@ -1,0 +1,74 @@
+---
+import "../styles/building-systems.css";
+import BuildingDiagram from "./BuildingDiagram.astro";
+const systems = [
+  {
+    id: "panels",
+    number: "01",
+    short: "2D / 板式",
+    name: "从构件，到空间。",
+    description: "楼板与墙板在工厂预制，运抵现场后，逐一连接为完整空间。",
+    note: "楼板 · 墙板 · 现场连接",
+  },
+  {
+    id: "modules",
+    number: "02",
+    short: "3D / 模块",
+    name: "让空间，整体抵达。",
+    description: "空间以整体模块的形式在工厂制造，再通过运输与吊装落位。",
+    note: "整体模块 · 吊装 · 连接",
+  },
+  {
+    id: "hybrid",
+    number: "03",
+    short: "组合建造",
+    name: "不同单元，一起成形。",
+    description: "板式构件与空间模块相互配合，回应不同的场地与使用需求。",
+    note: "板式构件 + 空间模块",
+  },
+];
+---
+
+<fieldset class="systems-explorer" id="building-systems" data-systems-explorer>
+  <legend class="sr-only">选择建造体系，查看构造示意</legend>
+  <div class="system-choices">
+    {systems.map((system, i) => (
+      <div class="system-choice">
+        <input
+          class="sr-only"
+          type="radio"
+          name="building-system"
+          id={`system-${system.id}`}
+          value={system.id}
+          checked={i === 0}
+        />
+        <label for={`system-${system.id}`}>
+          <span class="system-choice-number">{system.number}</span>
+          <span class="system-choice-copy">
+            <strong>{system.short}</strong>
+            <small>{system.description}</small>
+          </span>
+          <span class="selection-mark" aria-hidden="true"></span>
+        </label>
+      </div>
+    ))}
+  </div>
+  <div class="system-study">
+    {systems.map((system) => (
+      <figure class="system-figure" data-system-figure={system.id}>
+        <BuildingDiagram
+          systemId={system.id}
+          label={`${system.short}：${system.note}，建造逻辑示意`}
+        />
+        <figcaption>
+          <span>{system.name}</span>
+          <small>{system.note}</small>
+        </figcaption>
+        <p class="system-mobile-description">{system.description}</p>
+      </figure>
+    ))}
+    <p class="system-study-note">
+      建造逻辑示意，具体结构与连接方式以项目设计为准。
+    </p>
+  </div>
+</fieldset>

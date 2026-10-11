@@ -1,0 +1,30 @@
+{
+  "sources": [
+    {
+      "file": "半打空间logo.pdf",
+      "sha256": "3535a2c9b6ce392dc2bd6cc055fab0da182abedee4b275247c26d16a3a04e7df"
+    },
+    {
+      "file": "半打空间logo.svg",
+      "sha256": "99fa015496e04b9e7dec58ad1129534557d02a4253d977e591c3b6fecd62f584"
+    }
+  ],
+  "method": "Official PDF outline segments and original cubic curves joined into filled contours; original SVG filled rectangles retained. Duplicate bitmap, export strokes and dimensions removed. No raster tracing or lettering redesign.",
+  "source_components": "22 lettering contours including 10 original cubic segments, plus 7 filled rectangles (six brand blocks and one lettering bar). Two open components are closed beneath existing overlapping bars; no visible outline introduced.",
+  "resources": [
+    {
+      "file": "/assets/brand/logo-original-r26.svg",
+      "sha256": "cf04107885cac674f5d718c19c68e4c835eba04946d49372d3ea610ab051b109",
+      "bytes": 4483
+    },
+    {
+      "file": "/assets/brand/logo-overlay-r28.svg",
+      "sha256": "6861a700cbf4a75c4083700af3184ca7ce4ac1441fd2245c6d706744cbce1c1a",
+      "bytes": 4483
+    }
+  ],
+  "reversed": "r28: six symbol rectangles retain official navy and two grays; only lettering paths and lettering bar change to white. Geometry is identical.",
+  "presentation": "Adaptive desktop overlay; original on mobile, solid/scrolled header and light footer. No CSS filters, backing, border, shadow.",
+  "visual_comparison": "r26 source outline comparison retained; r28 changes color assignment only, with original-color symbol and white wordmark on desktop photography.",
+  "generator": "scripts/prepare-official-logo.py <official-logo-source-directory>"
+}

@@ -1,0 +1,63 @@
+{
+  "release": "r34",
+  "build": {
+    "commit": "508bde6",
+    "builtAt": "2026-10-11T04:26:43.956Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "verdict": "本轮已识别的视觉问题已处理并复验；可作为甲方视觉确认版本，不代表甲方已签收。",
+  "closed": {
+    "V01": "产品主张按语义分行，适配标题宽度及字号，中英文数值和正文保持。",
+    "V02": "六款手机产品详情统一图文分区：上方简洁深色文字区，下方完整原比例照片；桌面满幅摄影保持。",
+    "V03": "手机微信区提前至空间图片之前；桌面联系人改为三列，全部二维码直接展示。",
+    "V04": "隐藏新闻、招聘的主导航、子导航和页脚入口，旧地址保留。",
+    "V05": "移除资质页17项重复研发台账展示，保留检测摘要、代表性历史授权及技术荣誉和适用边界；源数据仍保留。",
+    "V06": "到访区以地址为主，桌面地图宽度收至480px，保持点击放大及手机完整展示。"
+  },
+  "checks": {
+    "units": 48,
+    "types": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 6
+    },
+    "lint": "passed",
+    "build": "passed",
+    "materials": 46,
+    "supplement": 18,
+    "translation_residue": 0,
+    "image_references": 346,
+    "layout_first_run": {
+      "total": 297,
+      "passed": 296,
+      "failed": 1
+    },
+    "local_cases_recheck": 18,
+    "public_cases_recheck": 18,
+    "local_product_layouts": 60,
+    "public_product_layouts": 60,
+    "local_contact_structure_checks": 10,
+    "public_contact_structure_checks": 10,
+    "contact_layouts_local": 18,
+    "contact_layouts_public": 18,
+    "contact_axe_local": 4,
+    "contact_axe_public": 4,
+    "logo_anchor_hover_viewer_states": 10,
+    "interaction_groups": 11,
+    "public_html_parity": 33
+  },
+  "iteration_record": [
+    "新专项测试最初将资质章节ID误写为patents；核对现有research锚点后修正测试，保留三个章节的数量断言。",
+    "手机微信说明初次继承桌面对齐，截图复核后改回左对齐并复验。",
+    "297项首轮中中文案例320px出现7张图片加载异常，导致比例检查连带失败。图片引用与资源存在；未更改或忽略图片断言，中英文案例18项单独本地复测及18项公网复测通过。首次异常原因未确认，保留首次失败原始记录。",
+    "全量布局在提交前的同一代码工作树构建执行；最终提交构建仅版本SHA与时间meta变化，归一化这两个字段后33页HTML一致。"
+  ],
+  "limits": [
+    "Windows Edge/Chromium；320–2560px、横屏及200%等效视口，未覆盖实机Safari/iOS/Android或所有原生缩放环境。",
+    "本轮自动无障碍为联系页中英文375/1440px，共本地4组及公网4组；不据此宣称全站无障碍认证。",
+    "轮播自动播放/暂停/离屏/减少动态、案例筛选、菜单、阅图和联系操作已回归；未重测未改动的视频实际播放。",
+    "域名、HTTPS、缺失素材和表单服务不作为本轮视觉阻塞。",
+    "源码仅在独立分支本地提交，没有推送GitHub。"
+  ]
+}

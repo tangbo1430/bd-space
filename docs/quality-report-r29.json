@@ -1,0 +1,87 @@
+{
+  "release": "r29",
+  "build": {
+    "commit": "e81fc94",
+    "builtAt": "2026-10-11T02:43:52.668Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "review_date": "2026-10-10",
+  "verdict": "在本轮验证环境和已约定的临时站范围内通过；r28 四项验收问题已关闭。",
+  "closed_findings": {
+    "R28-01": "深色组件局部定义辅助文字变量，三种构造状态均按最亮背景校核；保守对比度 7.75:1。",
+    "R28-02": "可见 EN/中文不变；英文 title 和 aria-description 已本地化，翻译残留为 0。",
+    "R28-03": "产品主张、建筑面积和户型分组显示，切换时数据同步更新；2018–2021 保持同一行。",
+    "R28-04": "设计步骤复用站内组合建造示意，明确注明概念示意；工厂预制照片用于制造步骤。"
+  },
+  "current_checks": {
+    "unit_tests": 48,
+    "material_checks": 46,
+    "lint": "passed",
+    "types": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 4
+    },
+    "generated_pages": 33,
+    "image_references": 346,
+    "deployment_assets": 463,
+    "layout_checks": 297,
+    "layout_failures": 0,
+    "english_layout_checks": 88,
+    "axe_scenarios": 30,
+    "axe_definite_violations": 0,
+    "dark_contrast_states": 30,
+    "product_selection_states": 40,
+    "timeline_states": 10,
+    "interaction_groups": 12,
+    "language_route_pages": 31,
+    "language_browser_checks": 8,
+    "case_filters": [
+      7,
+      3,
+      10
+    ],
+    "qr_viewers": 3,
+    "translation_missing_strings": 0,
+    "public_product_states": 40,
+    "public_system_states": 30,
+    "public_timeline_states": 10
+  },
+  "retest_note": "首次布局检查在 4S/320px 记录部分响应式图片 complete=false，文件存在。decode() 可能因响应式源更新而拒绝；测试改为等待最终图片请求结束后再查 naturalWidth。保留原始失败记录，全量 297 项重跑通过，不忽略真正的破图。",
+  "manual_review": "桌面和手机截图复核参数、年份、示意说明和设计配图；原图比例、Logo 配色、首屏与章节顺序保持。",
+  "limitations": [
+    "Windows Edge/Chromium 实测，未覆盖实机 Safari/iOS/Android 或读屏。",
+    "720×450 为 200% 等效视口，不等同所有原生缩放环境。",
+    "Axe 无确定违规不等于全面无障碍认证；渐变及摄影背景仍需人工判断，深色说明已单独校核。",
+    "6S 室内素材、新闻招聘内容仍缺；正式域名、HTTPS、表单发送服务不属于本轮范围。"
+  ],
+  "publication": {
+    "deployed_at": "2026-10-11T02:53:40.784916+00:00",
+    "url": "http://23.251.34.150:8080/zh/?v=r29",
+    "english_url": "http://23.251.34.150:8080/en/?v=r29",
+    "service": "banda-space-preview",
+    "release_directory": "/opt/banda-space-preview/releases/r29-acceptance-polish-20261010",
+    "webroot": "/opt/banda-space-preview/releases/r29-acceptance-polish-20261010/site",
+    "server_config": "/opt/banda-space-preview/releases/r29-acceptance-polish-20261010/preview.Caddyfile",
+    "build": {
+      "commit": "e81fc94",
+      "builtAt": "2026-10-11T02:43:52.668Z",
+      "site": "http://23.251.34.150:8080",
+      "buildMode": "production"
+    },
+    "archive_sha256": "8b677d9e0745be2cf1736f238a93357f0e20dc2c202d09b49577fc8cda305260",
+    "source_and_server_sha256_match": true,
+    "previous_release": "/opt/banda-space-preview/releases/r28-logo-colors-20261010",
+    "rollback_container": "banda-space-preview-r28-20261010",
+    "rollback_commands": [
+      "docker stop banda-space-preview",
+      "docker rename banda-space-preview banda-space-preview-r29-rollback",
+      "docker rename banda-space-preview-r28-20261010 banda-space-preview",
+      "docker start banda-space-preview"
+    ],
+    "hosting": "独立 Caddy 容器，8080 HTTP，只读静态目录，非 root 进程，128 MB 内存；临时站 noindex/nofollow；未修改 80/443/8090 服务。",
+    "verification": "docs/verification/r29/focused-public.json"
+  },
+  "git": "独立分支本地提交；未推送 GitHub。"
+}

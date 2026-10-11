@@ -1,0 +1,81 @@
+---
+import { imageDimensions } from "../lib/image-dimensions";
+interface Props {
+  base?: string;
+  src?: string;
+  previewSrc?: string;
+  width?: number;
+  height?: number;
+  mobileWidth?: number;
+  fit?: "cover" | "contain";
+  mobileImage?: string;
+  alt: string;
+  eager?: boolean;
+  class?: string;
+  sizes?: string;
+  mobile?: boolean;
+}
+const {
+  base,
+  mobileImage,
+  alt,
+  eager = false,
+  class: cls = "",
+  sizes = "100vw",
+  mobile = true,
+  src,
+  previewSrc,
+  width: suppliedWidth,
+  height: suppliedHeight,
+  mobileWidth: suppliedMobileWidth,
+  fit = "cover",
+} = Astro.props;
+const intrinsic = imageDimensions(src ?? `/assets/img/${base}.jpg`);
+const width = suppliedWidth ?? intrinsic[0];
+const height = suppliedHeight ?? intrinsic[1];
+const mobileWidth =
+  suppliedMobileWidth ??
+  (base && mobile && !src
+    ? imageDimensions(`/assets/img/${base}-m.webp`)[0]
+    : width);
+---
+
+<picture
+  class:list={["editorial-image", cls, { "image-complete": fit === "contain" }]}
+  style={fit === "contain" ? `aspect-ratio:${width}/${height}` : undefined}
+>
+  {mobileImage && (
+    <source media="(max-width: 767px)" type="image/webp" srcset={mobileImage} />
+  )}
+  {previewSrc && <source type="image/webp" srcset={previewSrc} />}
+  {!src && mobile && (
+    <source
+      type="image/webp"
+      srcset={`/assets/img/${base}-m.webp ${mobileWidth}w, /assets/img/${base}.webp ${width}w`}
+      sizes={sizes}
+    />
+  )}
+  {!src && !mobile && (
+    <source type="image/webp" srcset={`/assets/img/${base}.webp`} />
+  )}
+  <img
+    src={src ?? `/assets/img/${base}.jpg`}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={eager ? "eager" : "lazy"}
+    fetchpriority={eager ? "high" : "auto"}
+    decoding="async"
+  />
+</picture>
+
+<style>
+  .editorial-image.image-complete {
+    height: auto;
+  }
+  .editorial-image.image-complete img {
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }
+</style>

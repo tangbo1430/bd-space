@@ -1,0 +1,90 @@
+---
+import Icon from "./Icon.astro";
+import "../styles/photo-viewer.css";
+---
+
+<dialog class="photo-viewer" data-photo-viewer aria-label="建筑图片浏览器">
+  <div class="photo-viewer-layout">
+    <div class="photo-viewer-top">
+      <span class="eyebrow">
+        SEMI-SIX MODULAR <span class="viewer-edition">/ A CLOSER LOOK</span>
+      </span>
+      <div class="viewer-actions">
+        <a
+          class="viewer-original"
+          data-viewer-original
+          href="/assets/img/product-4s-hero.jpg"
+          target="_blank"
+          rel="noopener"
+          aria-label="在新标签页查看原图"
+        >
+          原图
+          <Icon name="expand" />
+        </a>
+        <button
+          class="viewer-button viewer-zoom"
+          type="button"
+          data-viewer-zoom
+          aria-label="放大图片"
+          aria-pressed="false"
+        >
+          <Icon name="zoom" />
+        </button>
+        <button
+          class="viewer-button viewer-close"
+          type="button"
+          data-viewer-close
+          aria-label="关闭图片浏览器"
+        >
+          <Icon name="close" />
+        </button>
+      </div>
+    </div>
+    <div class="photo-viewer-stage" data-viewer-stage>
+      <div
+        class="viewer-image-mount"
+        data-viewer-image
+        role="region"
+        aria-label="图片画面"
+        tabindex="-1"
+      ></div>
+      <span class="viewer-loading" data-viewer-loading role="status">
+        正在加载图片…
+      </span>
+      <button
+        class="viewer-button viewer-prev"
+        type="button"
+        data-viewer-prev
+        aria-label="上一张图片"
+      >
+        <Icon name="chevron-left" />
+      </button>
+      <button
+        class="viewer-button viewer-next"
+        type="button"
+        data-viewer-next
+        aria-label="下一张图片"
+      >
+        <Icon name="chevron-right" />
+      </button>
+    </div>
+    <div class="photo-viewer-bottom">
+      <div class="viewer-details" aria-live="polite" aria-atomic="true">
+        <span class="viewer-count eyebrow" data-viewer-count></span>
+        <p data-viewer-caption></p>
+      </div>
+      <div
+        class="viewer-thumbnails"
+        data-viewer-thumbnails
+        role="group"
+        aria-label="选择图片"
+      ></div>
+    </div>
+    <span class="viewer-hint" aria-hidden="true">
+      方向键切换图片 · Esc 关闭
+    </span>
+  </div>
+</dialog>
+<script>
+  import "../scripts/photo-viewer.ts";
+</script>

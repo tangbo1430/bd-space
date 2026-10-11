@@ -1,0 +1,1063 @@
+{
+  "assets": [
+    {
+      "source": "已上传网页图片修改建议\\替换的图片\\首页-2-轮播图需要换.jpeg",
+      "base": "v11-home-4s",
+      "purpose": "半打 4S / 外观效果图",
+      "dimensions": [
+        1920,
+        780
+      ]
+    },
+    {
+      "source": "已上传网页图片修改建议\\替换的图片\\首页-3-轮播图需要换.jpeg",
+      "base": "v11-home-5s",
+      "purpose": "半打 5S / 外观效果图",
+      "dimensions": [
+        1920,
+        780
+      ]
+    },
+    {
+      "source": "已上传网页图片修改建议\\替换的图片\\首页-4-轮播图需要换.jpeg",
+      "base": "v11-home-6s",
+      "purpose": "半打 6S / 外观效果图",
+      "dimensions": [
+        1920,
+        780
+      ]
+    },
+    {
+      "source": "已上传网页图片修改建议\\替换的图片\\产品中心-首页增加轮播图1.jpeg",
+      "base": "v11-catalog-1",
+      "purpose": "半打 4S 详情页实拍图集 / 暮色住宅外观",
+      "dimensions": [
+        1920,
+        780
+      ]
+    },
+    {
+      "source": "已上传网页图片修改建议\\替换的图片\\产品中心-首页增加轮播图2.jpeg",
+      "base": "v11-catalog-2",
+      "purpose": "半打 4S 详情页实拍图集 / 屋顶与立面",
+      "dimensions": [
+        1920,
+        780
+      ]
+    },
+    {
+      "source": "已上传网页图片修改建议\\替换的图片\\关于我们-1-需换图.jpeg",
+      "base": "v11-about",
+      "purpose": "灰度空间 / 外观效果图",
+      "dimensions": [
+        1920,
+        780
+      ]
+    },
+    {
+      "source": "已上传网页图片修改建议\\替换的图片\\首页-8-需换图.png",
+      "base": "v11-factory",
+      "purpose": "工厂制造 / 实拍",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD4S\\BD4S横图 (1).png",
+      "base": "v11-4s-hero",
+      "purpose": "半打 4S · 外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        1344
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD4S\\BD4S横图 (3).png",
+      "base": "v11-4s-space-1",
+      "purpose": "半打 4S · 客厅与阁楼 / 方案效果图",
+      "dimensions": [
+        1920,
+        1293
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD4S\\BD4S横图 (4).png",
+      "base": "v11-4s-space-2",
+      "purpose": "半打 4S · 卫浴 / 方案效果图",
+      "dimensions": [
+        1920,
+        1291
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD4S\\BD4S横图 (5).png",
+      "base": "v11-4s-space-3",
+      "purpose": "半打 4S · 卧室 / 方案效果图",
+      "dimensions": [
+        1920,
+        1291
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD4S\\BD4S横图 (2).png",
+      "base": "v11-4s-portrait",
+      "purpose": "半打 4S / 手机端外观效果图",
+      "dimensions": [
+        1920,
+        1291
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD4S\\BD4S 平面图.png",
+      "base": "v11-4s-drawing-0",
+      "purpose": "平面图",
+      "dimensions": [
+        3052,
+        2040
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD5S\\BD5S横图 (1).png",
+      "base": "v11-5s-hero",
+      "purpose": "半打 5S · 日间外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD5S\\BD5S横图 (2).png",
+      "base": "v11-5s-space-1",
+      "purpose": "半打 5S · 暮色外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        1280
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD5S\\BD5S 竖图1.jpeg",
+      "base": "v11-5s-space-2",
+      "purpose": "半打 5S · 客厅 / 方案效果图",
+      "dimensions": [
+        1440,
+        1920
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD5S\\BD5S 竖图2.png",
+      "base": "v11-5s-portrait",
+      "purpose": "半打 5S / 手机端外观效果图",
+      "dimensions": [
+        1440,
+        1920
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD5S\\BD5S 剖面图.png",
+      "base": "v11-5s-drawing-0",
+      "purpose": "剖面图",
+      "dimensions": [
+        6338,
+        3511
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD5S\\BD5S 外面图.png",
+      "base": "v11-5s-drawing-1",
+      "purpose": "立面图",
+      "dimensions": [
+        6338,
+        3511
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD5S\\BD5S 平面图.png",
+      "base": "v11-5s-drawing-2",
+      "purpose": "平面图",
+      "dimensions": [
+        3052,
+        2040
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD6S\\BD6S横图 (1).png",
+      "base": "v11-6s-hero",
+      "purpose": "半打 6S · 住宅外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD6S\\BD6S横图 (4).png",
+      "base": "v11-6s-space-1",
+      "purpose": "半打 6S · 庭院立面 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD6S\\BD6S横图 (3).png",
+      "base": "v11-6s-space-2",
+      "purpose": "半打 6S · 住宅组合 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD6S\\BD6S竖图 (1).png",
+      "base": "v11-6s-portrait",
+      "purpose": "半打 6S / 手机端外观效果图",
+      "dimensions": [
+        1440,
+        1920
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD6S\\BD6S 外面图.png",
+      "base": "v11-6s-drawing-0",
+      "purpose": "立面图",
+      "dimensions": [
+        6338,
+        3511
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD6S\\BD6S 平面图.png",
+      "base": "v11-6s-drawing-1",
+      "purpose": "平面图",
+      "dimensions": [
+        3052,
+        2040
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\灰度空间\\灰度空间 横图 (1).png",
+      "base": "v11-grayscale-hero",
+      "purpose": "灰度空间 · 庭院外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        917
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\灰度空间\\灰度空间 横图 (3).png",
+      "base": "v11-grayscale-space-1",
+      "purpose": "灰度空间 · 住宅立面 / 方案效果图",
+      "dimensions": [
+        1920,
+        917
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\灰度空间\\灰度空间 竖图3.png",
+      "base": "v11-grayscale-portrait",
+      "purpose": "灰度空间 / 手机端外观效果图",
+      "dimensions": [
+        1440,
+        1920
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\灰度空间\\灰度空间 平面图.png",
+      "base": "v11-grayscale-drawing-0",
+      "purpose": "平面图",
+      "dimensions": [
+        3052,
+        2040
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8横图 (1).png",
+      "base": "v11-bd8-hero",
+      "purpose": "半打 8 · 住宅外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8横图 (2).png",
+      "base": "v11-bd8-space-1",
+      "purpose": "半打 8 · 双层空间 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8横图 (3).png",
+      "base": "v11-bd8-space-2",
+      "purpose": "半打 8 · 暮色外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        1186
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8竖图 (1).png",
+      "base": "v11-bd8-portrait",
+      "purpose": "半打 8 / 手机端外观效果图",
+      "dimensions": [
+        1440,
+        1920
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8 剖面图 (1).png",
+      "base": "v11-bd8-drawing-0",
+      "purpose": "剖面图",
+      "dimensions": [
+        3023,
+        2137
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8 剖面图 (2).png",
+      "base": "v11-bd8-drawing-1",
+      "purpose": "剖面图",
+      "dimensions": [
+        3023,
+        2137
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8 平面图.png",
+      "base": "v11-bd8-drawing-2",
+      "purpose": "平面图",
+      "dimensions": [
+        3052,
+        2040
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8 立面图 (1).png",
+      "base": "v11-bd8-drawing-3",
+      "purpose": "立面图",
+      "dimensions": [
+        3023,
+        2137
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8 立面图 (2).png",
+      "base": "v11-bd8-drawing-4",
+      "purpose": "立面图",
+      "dimensions": [
+        3023,
+        2137
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8 立面图 (3).png",
+      "base": "v11-bd8-drawing-5",
+      "purpose": "立面图",
+      "dimensions": [
+        3023,
+        2137
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD8\\BD8 立面图 (4).png",
+      "base": "v11-bd8-drawing-6",
+      "purpose": "立面图",
+      "dimensions": [
+        3023,
+        2137
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD9\\BD9横图 (1).png",
+      "base": "v11-bd9-hero",
+      "purpose": "半打 9 · 住宅外观 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD9\\BD9横图 (2).png",
+      "base": "v11-bd9-space-1",
+      "purpose": "半打 9 · 正面立面 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD9\\BD9横图 (3).png",
+      "base": "v11-bd9-space-2",
+      "purpose": "半打 9 · 侧面立面 / 方案效果图",
+      "dimensions": [
+        1920,
+        1180
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD9\\BD9竖图 (1).png",
+      "base": "v11-bd9-portrait",
+      "purpose": "半打 9 / 手机端外观效果图",
+      "dimensions": [
+        1440,
+        1920
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD9\\BD9 剖面图.png",
+      "base": "v11-bd9-drawing-0",
+      "purpose": "侧立面图；原文件名为剖面图，按图内 Side elevation 标注说明",
+      "dimensions": [
+        3508,
+        2158
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD9\\BD9 平面图.png",
+      "base": "v11-bd9-drawing-1",
+      "purpose": "平面图",
+      "dimensions": [
+        3052,
+        2040
+      ]
+    },
+    {
+      "source": "B\\模块产品完整图组\\BD9\\BD9 立面图.png",
+      "base": "v11-bd9-drawing-2",
+      "purpose": "立面图",
+      "dimensions": [
+        3508,
+        2158
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-1开曼群岛独栋民宅“乡愁”\\案例-1{开曼群岛独栋民宅“乡愁”}-封面.png",
+      "base": "project-cayman-cover",
+      "purpose": "开曼群岛独栋民宅“乡愁” / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-1开曼群岛独栋民宅“乡愁”\\案例-1{开曼群岛独栋民宅“乡愁”}-安装-01.png",
+      "base": "project-cayman-01",
+      "purpose": "开曼群岛独栋民宅“乡愁” / 施工记录 01",
+      "dimensions": [
+        1920,
+        1079
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-1开曼群岛独栋民宅“乡愁”\\案例-1{开曼群岛独栋民宅“乡愁”}-安装-02.png",
+      "base": "project-cayman-02",
+      "purpose": "开曼群岛独栋民宅“乡愁” / 施工记录 02",
+      "dimensions": [
+        1920,
+        1083
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-1开曼群岛独栋民宅“乡愁”\\案例-1{开曼群岛独栋民宅“乡愁”}-安装-03.png",
+      "base": "project-cayman-03",
+      "purpose": "开曼群岛独栋民宅“乡愁” / 施工记录 03",
+      "dimensions": [
+        1920,
+        1438
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-1开曼群岛独栋民宅“乡愁”\\案例-1{开曼群岛独栋民宅“乡愁”}-安装-04.png",
+      "base": "project-cayman-04",
+      "purpose": "开曼群岛独栋民宅“乡愁” / 施工记录 04",
+      "dimensions": [
+        1920,
+        1444
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-1开曼群岛独栋民宅“乡愁”\\案例-1{开曼群岛独栋民宅“乡愁”}-安装-05.png",
+      "base": "project-cayman-05",
+      "purpose": "开曼群岛独栋民宅“乡愁” / 施工记录 05",
+      "dimensions": [
+        1920,
+        1265
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-2澳洲布里斯班独栋民宅“本真”\\案例-2{澳洲布里斯班独栋民宅“本真”}-封面.png",
+      "base": "project-brisbane-cover",
+      "purpose": "澳洲布里斯班独栋民宅“本真” / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-2澳洲布里斯班独栋民宅“本真”\\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-01.jpg",
+      "base": "project-brisbane-01",
+      "purpose": "澳洲布里斯班独栋民宅“本真” / 施工记录 01",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-2澳洲布里斯班独栋民宅“本真”\\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-02.png",
+      "base": "project-brisbane-02",
+      "purpose": "澳洲布里斯班独栋民宅“本真” / 施工记录 02",
+      "dimensions": [
+        1920,
+        1434
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-2澳洲布里斯班独栋民宅“本真”\\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-03.png",
+      "base": "project-brisbane-03",
+      "purpose": "澳洲布里斯班独栋民宅“本真” / 施工记录 03",
+      "dimensions": [
+        1920,
+        1412
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-2澳洲布里斯班独栋民宅“本真”\\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-04.jpg",
+      "base": "project-brisbane-04",
+      "purpose": "澳洲布里斯班独栋民宅“本真” / 施工记录 04",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-2澳洲布里斯班独栋民宅“本真”\\案例-2{澳洲布里斯班独栋民宅“本真”}--安装-05.png",
+      "base": "project-brisbane-05",
+      "purpose": "澳洲布里斯班独栋民宅“本真” / 施工记录 05",
+      "dimensions": [
+        1920,
+        1263
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-3广东中山独栋民宅“风度”\\案例-3{广东中山独栋民宅“风度”}-封面.png",
+      "base": "project-zhongshan-fengdu-cover",
+      "purpose": "广东中山独栋民宅“风度” / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-3广东中山独栋民宅“风度”\\案例-3{广东中山独栋民宅“风度”}-安装-01.png",
+      "base": "project-zhongshan-fengdu-01",
+      "purpose": "广东中山独栋民宅“风度” / 施工记录 01",
+      "dimensions": [
+        1920,
+        1036
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-3广东中山独栋民宅“风度”\\案例-3{广东中山独栋民宅“风度”}-安装-02.jpg",
+      "base": "project-zhongshan-fengdu-02",
+      "purpose": "广东中山独栋民宅“风度” / 施工记录 02",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-3广东中山独栋民宅“风度”\\案例-3{广东中山独栋民宅“风度”}-安装-03.png",
+      "base": "project-zhongshan-fengdu-03",
+      "purpose": "广东中山独栋民宅“风度” / 施工记录 03",
+      "dimensions": [
+        1920,
+        1386
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-3广东中山独栋民宅“风度”\\案例-3{广东中山独栋民宅“风度”}-安装-04.png",
+      "base": "project-zhongshan-fengdu-04",
+      "purpose": "广东中山独栋民宅“风度” / 施工记录 04",
+      "dimensions": [
+        1920,
+        1749
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-3广东中山独栋民宅“风度”\\案例-3{广东中山独栋民宅“风度”}-安装-05.png",
+      "base": "project-zhongshan-fengdu-05",
+      "purpose": "广东中山独栋民宅“风度” / 施工记录 05",
+      "dimensions": [
+        1920,
+        1126
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-4广东中山独栋民宅“米阁”\\案例-4{广东中山独栋民宅“米阁”}-封面.png",
+      "base": "project-zhongshan-mige-cover",
+      "purpose": "广东中山独栋民宅“米阁” / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-4广东中山独栋民宅“米阁”\\案例-4{广东中山独栋民宅“米阁”}-安装-01.jpg",
+      "base": "project-zhongshan-mige-01",
+      "purpose": "广东中山独栋民宅“米阁” / 施工记录 01",
+      "dimensions": [
+        1920,
+        1439
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-4广东中山独栋民宅“米阁”\\案例-4{广东中山独栋民宅“米阁”}-安装-02.png",
+      "base": "project-zhongshan-mige-02",
+      "purpose": "广东中山独栋民宅“米阁” / 施工记录 02",
+      "dimensions": [
+        1920,
+        1394
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-4广东中山独栋民宅“米阁”\\案例-4{广东中山独栋民宅“米阁”}-安装-03.png",
+      "base": "project-zhongshan-mige-03",
+      "purpose": "广东中山独栋民宅“米阁” / 施工记录 03",
+      "dimensions": [
+        1920,
+        1424
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-4广东中山独栋民宅“米阁”\\案例-4{广东中山独栋民宅“米阁”}-安装-04.png",
+      "base": "project-zhongshan-mige-04",
+      "purpose": "广东中山独栋民宅“米阁” / 施工记录 04",
+      "dimensions": [
+        1920,
+        1368
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-4广东中山独栋民宅“米阁”\\案例-4{广东中山独栋民宅“米阁”}-安装-05.png",
+      "base": "project-zhongshan-mige-05",
+      "purpose": "广东中山独栋民宅“米阁” / 施工记录 05",
+      "dimensions": [
+        1920,
+        1415
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-5中山隔离方舱\\案例-5{中山隔离方舱}-封面.png",
+      "base": "project-zhongshan-cabins-cover",
+      "purpose": "中山隔离方舱 / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-5中山隔离方舱\\案例-5{中山隔离方舱}-安装-01.png",
+      "base": "project-zhongshan-cabins-01",
+      "purpose": "中山隔离方舱 / 施工记录 01",
+      "dimensions": [
+        1920,
+        788
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-5中山隔离方舱\\案例-5{中山隔离方舱}-安装-02.png",
+      "base": "project-zhongshan-cabins-02",
+      "purpose": "中山隔离方舱 / 施工记录 02",
+      "dimensions": [
+        1920,
+        1299
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-5中山隔离方舱\\案例-5{中山隔离方舱}-安装-03.png",
+      "base": "project-zhongshan-cabins-03",
+      "purpose": "中山隔离方舱 / 施工记录 03",
+      "dimensions": [
+        1443,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-5中山隔离方舱\\案例-5{中山隔离方舱}-安装-04.png",
+      "base": "project-zhongshan-cabins-04",
+      "purpose": "中山隔离方舱 / 施工记录 04",
+      "dimensions": [
+        1920,
+        1439
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-5中山隔离方舱\\案例-5{中山隔离方舱}-安装-05.png",
+      "base": "project-zhongshan-cabins-05",
+      "purpose": "中山隔离方舱 / 施工记录 05",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-6成都航空学院宿舍\\案例-6{成都航空学院宿舍}-封面.png",
+      "base": "project-chengdu-cover",
+      "purpose": "成都航空学院宿舍 / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-6成都航空学院宿舍\\案例-6{成都航空学院宿舍}-安装-01.png",
+      "base": "project-chengdu-01",
+      "purpose": "成都航空学院宿舍 / 施工记录 01",
+      "dimensions": [
+        1920,
+        1391
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-6成都航空学院宿舍\\案例-6{成都航空学院宿舍}-安装-02.png",
+      "base": "project-chengdu-02",
+      "purpose": "成都航空学院宿舍 / 施工记录 02",
+      "dimensions": [
+        1920,
+        1122
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-6成都航空学院宿舍\\案例-6{成都航空学院宿舍}-安装-03.png",
+      "base": "project-chengdu-03",
+      "purpose": "成都航空学院宿舍 / 施工记录 03",
+      "dimensions": [
+        1920,
+        1442
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-6成都航空学院宿舍\\案例-6{成都航空学院宿舍}-安装-04.png",
+      "base": "project-chengdu-04",
+      "purpose": "成都航空学院宿舍 / 施工记录 04",
+      "dimensions": [
+        1920,
+        1274
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-6成都航空学院宿舍\\案例-6{成都航空学院宿舍}-安装-05.png",
+      "base": "project-chengdu-05",
+      "purpose": "成都航空学院宿舍 / 施工记录 05",
+      "dimensions": [
+        1725,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-7中建三局深圳营房\\案例-7{中建三局深圳营房}-封面.png",
+      "base": "project-shenzhen-cover",
+      "purpose": "中建三局深圳营房 / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-7中建三局深圳营房\\案例-7{中建三局深圳营房}-安装-01.png",
+      "base": "project-shenzhen-01",
+      "purpose": "中建三局深圳营房 / 施工记录 01",
+      "dimensions": [
+        1920,
+        1305
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-7中建三局深圳营房\\案例-7{中建三局深圳营房}-安装-02.png",
+      "base": "project-shenzhen-02",
+      "purpose": "中建三局深圳营房 / 施工记录 02",
+      "dimensions": [
+        1436,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-7中建三局深圳营房\\案例-7{中建三局深圳营房}-安装-03.png",
+      "base": "project-shenzhen-03",
+      "purpose": "中建三局深圳营房 / 施工记录 03",
+      "dimensions": [
+        1920,
+        1687
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-7中建三局深圳营房\\案例-7{中建三局深圳营房}-安装-04.png",
+      "base": "project-shenzhen-04",
+      "purpose": "中建三局深圳营房 / 施工记录 04",
+      "dimensions": [
+        1432,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-7中建三局深圳营房\\案例-7{中建三局深圳营房}-安装-05.png",
+      "base": "project-shenzhen-05",
+      "purpose": "中建三局深圳营房 / 施工记录 05",
+      "dimensions": [
+        1920,
+        1278
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-8斐济样箱\\案例-8{斐济样箱}-封面.png",
+      "base": "project-fiji-cover",
+      "purpose": "斐济样箱 / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-8斐济样箱\\案例-8{斐济样箱}-安装-01.png",
+      "base": "project-fiji-01",
+      "purpose": "斐济样箱 / 施工记录 01",
+      "dimensions": [
+        1742,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-8斐济样箱\\案例-8{斐济样箱}-安装-02.jpg",
+      "base": "project-fiji-02",
+      "purpose": "斐济样箱 / 施工记录 02",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-8斐济样箱\\案例-8{斐济样箱}-安装-03.png",
+      "base": "project-fiji-03",
+      "purpose": "斐济样箱 / 施工记录 03",
+      "dimensions": [
+        1439,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-8斐济样箱\\案例-8{斐济样箱}-安装-04.png",
+      "base": "project-fiji-04",
+      "purpose": "斐济样箱 / 施工记录 04",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-8斐济样箱\\案例-8{斐济样箱}-安装-05.jpg",
+      "base": "project-fiji-05",
+      "purpose": "斐济样箱 / 施工记录 05",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-8斐济样箱\\案例-8{斐济样箱}-安装-06.png",
+      "base": "project-fiji-06",
+      "purpose": "斐济样箱 / 施工记录 06",
+      "dimensions": [
+        1920,
+        1093
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-9半打4S-广东江门志特\\案例-9{半打4S-广东江门志特}-封面.png",
+      "base": "project-jiangmen-cover",
+      "purpose": "半打4S · 广东江门志特工厂样板 / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-9半打4S-广东江门志特\\案例-9{半打4S-广东江门志特}-安装-01.JPG",
+      "base": "project-jiangmen-01",
+      "purpose": "半打4S · 广东江门志特工厂样板 / 施工记录 01",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-9半打4S-广东江门志特\\案例-9{半打4S-广东江门志特}-安装-02.JPG",
+      "base": "project-jiangmen-02",
+      "purpose": "半打4S · 广东江门志特工厂样板 / 施工记录 02",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-9半打4S-广东江门志特\\案例-9{半打4S-广东江门志特}-安装-03.JPG",
+      "base": "project-jiangmen-03",
+      "purpose": "半打4S · 广东江门志特工厂样板 / 施工记录 03",
+      "dimensions": [
+        1920,
+        1775
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-9半打4S-广东江门志特\\案例-9{半打4S-广东江门志特}-安装-04.png",
+      "base": "project-jiangmen-04",
+      "purpose": "半打4S · 广东江门志特工厂样板 / 施工记录 04",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-9半打4S-广东江门志特\\案例-9{半打4S-广东江门志特}-安装-05.jpg",
+      "base": "project-jiangmen-05",
+      "purpose": "半打4S · 广东江门志特工厂样板 / 施工记录 05",
+      "dimensions": [
+        1439,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-10半打4S-江苏省常州\\案例-10{半打4S-江苏省常州}-封面.png",
+      "base": "project-changzhou-cover",
+      "purpose": "半打4S · 江苏常州星星充电样板 / 项目照片",
+      "dimensions": [
+        1920,
+        1200
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-10半打4S-江苏省常州\\案例-10{半打4S-江苏省常州}-安装-01.jpg",
+      "base": "project-changzhou-01",
+      "purpose": "半打4S · 江苏常州星星充电样板 / 施工记录 01",
+      "dimensions": [
+        1920,
+        1439
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-10半打4S-江苏省常州\\案例-10{半打4S-江苏省常州}-安装-02.JPG",
+      "base": "project-changzhou-02",
+      "purpose": "半打4S · 江苏常州星星充电样板 / 施工记录 02",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-10半打4S-江苏省常州\\案例-10{半打4S-江苏省常州}-安装-03.JPG",
+      "base": "project-changzhou-03",
+      "purpose": "半打4S · 江苏常州星星充电样板 / 施工记录 03",
+      "dimensions": [
+        1080,
+        1920
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-10半打4S-江苏省常州\\案例-10{半打4S-江苏省常州}-安装-04.jpg",
+      "base": "project-changzhou-04",
+      "purpose": "半打4S · 江苏常州星星充电样板 / 施工记录 04",
+      "dimensions": [
+        1920,
+        1440
+      ]
+    },
+    {
+      "source": "B\\案例完整图组\\案例-10半打4S-江苏省常州\\案例-10{半打4S-江苏省常州}-安装-05.png",
+      "base": "project-changzhou-05",
+      "purpose": "半打4S · 江苏常州星星充电样板 / 施工记录 05",
+      "dimensions": [
+        1920,
+        1658
+      ]
+    },
+    {
+      "source": "B\\地图与社媒资料\\唐小姐 18503005860.png",
+      "base": "wechat-tang",
+      "purpose": "联系人微信二维码，保留原始像素与完整白边",
+      "dimensions": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "source": "B\\地图与社媒资料\\王先生 18073804567.png",
+      "base": "wechat-wang",
+      "purpose": "联系人微信二维码，保留原始像素与完整白边",
+      "dimensions": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "source": "B\\地图与社媒资料\\黄先生 13702363540.png",
+      "base": "wechat-huang",
+      "purpose": "联系人微信二维码，保留原始像素与完整白边",
+      "dimensions": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "source": "B/工厂与施工视频/附件视频-半打4S吊装全记录.mp4",
+      "base": "v11-4s-video-poster",
+      "purpose": "原视频 00:01 帧，原始 544×960 尺寸；手动播放封面",
+      "dimensions": [
+        544,
+        960
+      ]
+    },
+    {
+      "source": "B/模块产品完整图组/BD4S/BD4S 竖图 (1).png",
+      "base": "v11-4s-living-perspective",
+      "purpose": "4S 客厅纵向视角，替换重复阁楼画面；标准版方案效果图",
+      "dimensions": [
+        1599,
+        1920
+      ]
+    }
+  ],
+  "omissions": [
+    "No clean 6S interior was supplied in the 6S folder; exterior views used, no borrowing from other models.",
+    "Promotional posters, prices, authorizations and full reports are not published.",
+    "Withdrawn mold photos and thumbnails removed.",
+    "The 4S mobile exterior uses a cover crop of its landscape image because the clean portrait files show interiors. Original drawing annotations are preserved, including Chinese text in English pages."
+  ],
+  "sources": {
+    "parameters": "A/模块产品正式资料.xlsx",
+    "cases": "A/项目案例资料.xlsx",
+    "contact": "A/联系信息.xlsx",
+    "english": "A/英文全站资料.xlsx"
+  },
+  "catalog_carousel": {
+    "order": [
+      "4s",
+      "5s",
+      "6s",
+      "grayscale",
+      "bd8",
+      "bd9"
+    ],
+    "images": "Per-product heroBase and mobileImage from src/content/products; original material mapping retained.",
+    "replaced": "The earlier three-image 4S-only catalog sequence."
+  },
+  "official_logo": {
+    "source": "素材清单需求-v1.1.rar / B/Logo 完整文件/半打空间logo.svg",
+    "source_sha256": "99fa015496e04b9e7dec58ad1129534557d02a4253d977e591c3b6fecd62f584",
+    "web_resource": "/assets/brand/logo-official-v11.svg",
+    "web_sha256": "1529c2d041a11f987469dd0b9631beec5e9a2b864c4c07818799ad3508f3467e",
+    "only_edit": "viewBox changed from 0 0 1920 1080 to -1 268 1922 544 to remove empty canvas, with a margin for strokes. All artwork, colors, shapes, typography and embedded source image remain verbatim.",
+    "css_filter": "none on every background",
+    "photo_header": "Transparent masthead and transparent logo background; no backing plate, outline, shadow or recoloring filter."
+  }
+}

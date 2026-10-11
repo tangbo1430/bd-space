@@ -1,0 +1,834 @@
+{
+  "base": "http://23.251.34.150:8080",
+  "version": {
+    "commit": "9c0de5c",
+    "builtAt": "2026-10-11T02:03:54.289Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "pages": [
+    {
+      "route": "/zh/",
+      "width": 375,
+      "height": 7151,
+      "headings": [
+        {
+          "text": "让空间，\n\n回归生活。",
+          "size": "38px"
+        },
+        {
+          "text": "一个模块。\n\n更多可能。",
+          "size": "32px"
+        },
+        {
+          "text": "构件有序，\n\n空间自由。",
+          "size": "32px"
+        },
+        {
+          "text": "建筑有边界，\n\n生活没有。",
+          "size": "32px"
+        },
+        {
+          "text": "走向不同的风景。",
+          "size": "32px"
+        },
+        {
+          "text": "把建造，\n\n做成制造。",
+          "size": "32px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 375,
+      "height": 6338,
+      "headings": [
+        {
+          "text": "空间，有更多\n\n打开方式。",
+          "size": "38px"
+        },
+        {
+          "text": "与生活，恰好相遇。",
+          "size": "32px"
+        },
+        {
+          "text": "半打 4S",
+          "size": "32px"
+        },
+        {
+          "text": "半打 5S",
+          "size": "32px"
+        },
+        {
+          "text": "半打 6S",
+          "size": "32px"
+        },
+        {
+          "text": "灰度空间",
+          "size": "32px"
+        },
+        {
+          "text": "半打 8",
+          "size": "32px"
+        },
+        {
+          "text": "半打 9",
+          "size": "32px"
+        },
+        {
+          "text": "以系统思考建筑。",
+          "size": "32px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 375,
+      "height": 10573,
+      "headings": [
+        {
+          "text": "半打 4S",
+          "size": "36px"
+        },
+        {
+          "text": "自然之中，安放日常。",
+          "size": "32px"
+        },
+        {
+          "text": "生活， 在空间中展开。",
+          "size": "32px"
+        },
+        {
+          "text": "从项目需求，\n\n确定空间细节。",
+          "size": "32px"
+        },
+        {
+          "text": "从构件，到生活的细节。",
+          "size": "32px"
+        },
+        {
+          "text": "从工厂，到场地。",
+          "size": "32px"
+        },
+        {
+          "text": "看见空间的组成。",
+          "size": "32px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 375,
+      "height": 5837,
+      "headings": [
+        {
+          "text": "半打 6S",
+          "size": "36px"
+        },
+        {
+          "text": "把生活，展开得更从容。",
+          "size": "32px"
+        },
+        {
+          "text": "生活， 在空间中展开。",
+          "size": "32px"
+        },
+        {
+          "text": "从项目需求，\n\n确定空间细节。",
+          "size": "32px"
+        },
+        {
+          "text": "看见空间的组成。",
+          "size": "32px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 375,
+      "height": 6161,
+      "headings": [
+        {
+          "text": "半打 9",
+          "size": "36px"
+        },
+        {
+          "text": "为日常，留出从容的尺度。",
+          "size": "32px"
+        },
+        {
+          "text": "生活， 在空间中展开。",
+          "size": "32px"
+        },
+        {
+          "text": "从项目需求，\n\n确定空间细节。",
+          "size": "32px"
+        },
+        {
+          "text": "看见空间的组成。",
+          "size": "32px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 375,
+      "height": 11605,
+      "headings": [
+        {
+          "text": "空间，\n\n在世界发生。",
+          "size": "36px"
+        },
+        {
+          "text": "半打4S · 广东江门志特工厂样板",
+          "size": "25px"
+        },
+        {
+          "text": "半打4S · 江苏常州星星充电样板",
+          "size": "25px"
+        },
+        {
+          "text": "开曼群岛独栋民宅“乡愁”",
+          "size": "25px"
+        },
+        {
+          "text": "澳洲布里斯班独栋民宅“本真”",
+          "size": "25px"
+        },
+        {
+          "text": "广东中山独栋民宅“风度”",
+          "size": "25px"
+        },
+        {
+          "text": "广东中山独栋民宅“米阁”",
+          "size": "25px"
+        },
+        {
+          "text": "中山隔离方舱",
+          "size": "25px"
+        },
+        {
+          "text": "成都航空学院宿舍",
+          "size": "25px"
+        },
+        {
+          "text": "中建三局深圳营房",
+          "size": "25px"
+        },
+        {
+          "text": "斐济样箱",
+          "size": "25px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/about/",
+      "width": 375,
+      "height": 6894,
+      "headings": [
+        {
+          "text": "把建造，\n\n做成制造。",
+          "size": "36px"
+        },
+        {
+          "text": "让建筑从现场，\n\n走进有序的产线。",
+          "size": "32px"
+        },
+        {
+          "text": "不止于构件，\n\n更关乎空间。",
+          "size": "32px"
+        },
+        {
+          "text": "每一步，\n\n都为最后的生活。",
+          "size": "32px"
+        },
+        {
+          "text": "从构件出发，\n\n始终关心空间。",
+          "size": "32px"
+        },
+        {
+          "text": "一套方法，\n\n走向不同的地方。",
+          "size": "32px"
+        },
+        {
+          "text": "让模块化建筑，\n\n走进更多生活。",
+          "size": "32px"
+        },
+        {
+          "text": "在工厂里，\n\n实现空间的品质。",
+          "size": "32px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 375,
+      "height": 4941,
+      "headings": [
+        {
+          "text": "一个想法，\n\n一处新空间。",
+          "size": "36px"
+        },
+        {
+          "text": "从这里开始对话。",
+          "size": "32px"
+        },
+        {
+          "text": "把想法，聊得更具体。",
+          "size": "32px"
+        },
+        {
+          "text": "广东 · 江门",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 375,
+      "height": 9538,
+      "headings": [
+        {
+          "text": "让每一份信任，\n\n都有据可循。",
+          "size": "36px"
+        },
+        {
+          "text": "检测资料",
+          "size": "32px"
+        },
+        {
+          "text": "代表性历史授权",
+          "size": "32px"
+        },
+        {
+          "text": "技术荣誉",
+          "size": "32px"
+        },
+        {
+          "text": "研发台账摘要",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/en/",
+      "width": 375,
+      "height": 7550,
+      "headings": [
+        {
+          "text": "Where Space\n\nMeets Life.",
+          "size": "38px"
+        },
+        {
+          "text": "One module.\n\nMore possibilities.",
+          "size": "32px"
+        },
+        {
+          "text": "Considered components.\n\nFreedom in space.",
+          "size": "32px"
+        },
+        {
+          "text": "Buildings have boundaries.\n\nLife goes beyond them.",
+          "size": "32px"
+        },
+        {
+          "text": "At home in different landscapes.",
+          "size": "32px"
+        },
+        {
+          "text": "Building,\n\nreimagined in the factory.",
+          "size": "32px"
+        },
+        {
+          "text": "Your next space\n\nstarts with an idea.",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/en/contact/",
+      "width": 375,
+      "height": 4998,
+      "headings": [
+        {
+          "text": "An idea,\n\na new space.",
+          "size": "36px"
+        },
+        {
+          "text": "Start a conversation.",
+          "size": "32px"
+        },
+        {
+          "text": "Let's explore the details.",
+          "size": "32px"
+        },
+        {
+          "text": "Jiangmen, Guangdong",
+          "size": "32px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "height": 7141,
+      "headings": [
+        {
+          "text": "让空间，\n\n回归生活。",
+          "size": "64px"
+        },
+        {
+          "text": "一个模块。\n\n更多可能。",
+          "size": "48px"
+        },
+        {
+          "text": "构件有序，\n\n空间自由。",
+          "size": "48px"
+        },
+        {
+          "text": "建筑有边界，\n\n生活没有。",
+          "size": "48px"
+        },
+        {
+          "text": "走向不同的风景。",
+          "size": "48px"
+        },
+        {
+          "text": "把建造，\n\n做成制造。",
+          "size": "48px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1440,
+      "height": 10652,
+      "headings": [
+        {
+          "text": "空间，有更多\n\n打开方式。",
+          "size": "64px"
+        },
+        {
+          "text": "与生活，恰好相遇。",
+          "size": "48px"
+        },
+        {
+          "text": "半打 4S",
+          "size": "40px"
+        },
+        {
+          "text": "半打 5S",
+          "size": "40px"
+        },
+        {
+          "text": "半打 6S",
+          "size": "40px"
+        },
+        {
+          "text": "灰度空间",
+          "size": "40px"
+        },
+        {
+          "text": "半打 8",
+          "size": "40px"
+        },
+        {
+          "text": "半打 9",
+          "size": "40px"
+        },
+        {
+          "text": "以系统思考建筑。",
+          "size": "48px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1440,
+      "height": 10018,
+      "headings": [
+        {
+          "text": "半打 4S",
+          "size": "64px"
+        },
+        {
+          "text": "自然之中，安放日常。",
+          "size": "48px"
+        },
+        {
+          "text": "生活， 在空间中展开。",
+          "size": "48px"
+        },
+        {
+          "text": "从项目需求，\n\n确定空间细节。",
+          "size": "48px"
+        },
+        {
+          "text": "从构件，到生活的细节。",
+          "size": "48px"
+        },
+        {
+          "text": "从工厂，到场地。",
+          "size": "48px"
+        },
+        {
+          "text": "看见空间的组成。",
+          "size": "48px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1440,
+      "height": 6204,
+      "headings": [
+        {
+          "text": "半打 6S",
+          "size": "64px"
+        },
+        {
+          "text": "把生活，展开得更从容。",
+          "size": "48px"
+        },
+        {
+          "text": "生活， 在空间中展开。",
+          "size": "48px"
+        },
+        {
+          "text": "从项目需求，\n\n确定空间细节。",
+          "size": "48px"
+        },
+        {
+          "text": "看见空间的组成。",
+          "size": "48px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1440,
+      "height": 5956,
+      "headings": [
+        {
+          "text": "半打 9",
+          "size": "64px"
+        },
+        {
+          "text": "为日常，留出从容的尺度。",
+          "size": "48px"
+        },
+        {
+          "text": "生活， 在空间中展开。",
+          "size": "48px"
+        },
+        {
+          "text": "从项目需求，\n\n确定空间细节。",
+          "size": "48px"
+        },
+        {
+          "text": "看见空间的组成。",
+          "size": "48px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1440,
+      "height": 7663,
+      "headings": [
+        {
+          "text": "空间，\n\n在世界发生。",
+          "size": "64px"
+        },
+        {
+          "text": "半打4S · 广东江门志特工厂样板",
+          "size": "30px"
+        },
+        {
+          "text": "半打4S · 江苏常州星星充电样板",
+          "size": "30px"
+        },
+        {
+          "text": "开曼群岛独栋民宅“乡愁”",
+          "size": "30px"
+        },
+        {
+          "text": "澳洲布里斯班独栋民宅“本真”",
+          "size": "30px"
+        },
+        {
+          "text": "广东中山独栋民宅“风度”",
+          "size": "30px"
+        },
+        {
+          "text": "广东中山独栋民宅“米阁”",
+          "size": "30px"
+        },
+        {
+          "text": "中山隔离方舱",
+          "size": "30px"
+        },
+        {
+          "text": "成都航空学院宿舍",
+          "size": "30px"
+        },
+        {
+          "text": "中建三局深圳营房",
+          "size": "30px"
+        },
+        {
+          "text": "斐济样箱",
+          "size": "30px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1440,
+      "height": 5815,
+      "headings": [
+        {
+          "text": "把建造，\n\n做成制造。",
+          "size": "64px"
+        },
+        {
+          "text": "让建筑从现场，\n\n走进有序的产线。",
+          "size": "48px"
+        },
+        {
+          "text": "不止于构件，\n\n更关乎空间。",
+          "size": "48px"
+        },
+        {
+          "text": "每一步，\n\n都为最后的生活。",
+          "size": "48px"
+        },
+        {
+          "text": "从构件出发，\n\n始终关心空间。",
+          "size": "48px"
+        },
+        {
+          "text": "一套方法，\n\n走向不同的地方。",
+          "size": "48px"
+        },
+        {
+          "text": "让模块化建筑，\n\n走进更多生活。",
+          "size": "48px"
+        },
+        {
+          "text": "在工厂里，\n\n实现空间的品质。",
+          "size": "48px"
+        },
+        {
+          "text": "下一处空间，\n\n从您的想法开始。",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1440,
+      "height": 3658,
+      "headings": [
+        {
+          "text": "一个想法，\n\n一处新空间。",
+          "size": "64px"
+        },
+        {
+          "text": "从这里开始对话。",
+          "size": "48px"
+        },
+        {
+          "text": "把想法，聊得更具体。",
+          "size": "48px"
+        },
+        {
+          "text": "广东 · 江门",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1440,
+      "height": 6350,
+      "headings": [
+        {
+          "text": "让每一份信任，\n\n都有据可循。",
+          "size": "64px"
+        },
+        {
+          "text": "检测资料",
+          "size": "48px"
+        },
+        {
+          "text": "代表性历史授权",
+          "size": "48px"
+        },
+        {
+          "text": "技术荣誉",
+          "size": "48px"
+        },
+        {
+          "text": "研发台账摘要",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/en/",
+      "width": 1440,
+      "height": 7164,
+      "headings": [
+        {
+          "text": "Where Space\n\nMeets Life.",
+          "size": "63.36px"
+        },
+        {
+          "text": "One module.\n\nMore possibilities.",
+          "size": "48px"
+        },
+        {
+          "text": "Considered components.\n\nFreedom in space.",
+          "size": "48px"
+        },
+        {
+          "text": "Buildings have boundaries.\n\nLife goes beyond them.",
+          "size": "48px"
+        },
+        {
+          "text": "At home in different landscapes.",
+          "size": "48px"
+        },
+        {
+          "text": "Building,\n\nreimagined in the factory.",
+          "size": "48px"
+        },
+        {
+          "text": "Your next space\n\nstarts with an idea.",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1440,
+      "height": 3651,
+      "headings": [
+        {
+          "text": "An idea,\n\na new space.",
+          "size": "64px"
+        },
+        {
+          "text": "Start a conversation.",
+          "size": "48px"
+        },
+        {
+          "text": "Let's explore the details.",
+          "size": "48px"
+        },
+        {
+          "text": "Jiangmen, Guangdong",
+          "size": "48px"
+        }
+      ],
+      "smallText": [],
+      "violations": []
+    }
+  ],
+  "errors": []
+}

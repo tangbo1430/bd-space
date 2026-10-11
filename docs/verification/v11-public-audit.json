@@ -1,0 +1,160 @@
+{
+  "pages": [
+    {
+      "url": "http://23.251.34.150:8080/zh/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/products/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/products/4s/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/products/5s/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/products/6s/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/products/grayscale/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/products/bd8/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/products/bd9/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/cases/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/about/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/zh/contact/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/products/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/products/4s/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/products/5s/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/products/6s/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/products/grayscale/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/products/bd8/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/products/bd9/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/cases/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/about/",
+      "status": 200,
+      "noindex": true
+    },
+    {
+      "url": "http://23.251.34.150:8080/en/contact/",
+      "status": 200,
+      "noindex": true
+    }
+  ],
+  "browser": [
+    {
+      "path": "/zh/",
+      "width": 2560,
+      "overflow": false
+    },
+    {
+      "path": "/en/",
+      "width": 2393,
+      "overflow": false
+    },
+    {
+      "path": "/en/",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "path": "/en/products/",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "path": "/en/products/bd8/",
+      "width": 375,
+      "overflow": false
+    },
+    {
+      "path": "/en/contact/",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "path": "/zh/products/4s/",
+      "width": 375,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "build": {
+    "commit": "f4268f1",
+    "builtAt": "2026-10-10T17:02:55.953Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "videoRequestsBeforePlay": 0
+}

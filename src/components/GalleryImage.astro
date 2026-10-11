@@ -1,0 +1,78 @@
+---
+import { imageDimensions } from "../lib/image-dimensions";
+import Icon from "./Icon.astro";
+import EditorialImage from "./EditorialImage.astro";
+interface Props {
+  base?: string;
+  src?: string;
+  viewerSrc?: string;
+  width?: number;
+  height?: number;
+  mobileWidth?: number;
+  fit?: "cover" | "contain";
+  zoomX?: number;
+  mobileImage?: string;
+  alt: string;
+  group: string;
+  caption?: string;
+  eager?: boolean;
+  sizes?: string;
+}
+const {
+  base,
+  mobileImage,
+  src,
+  viewerSrc,
+  width: suppliedWidth,
+  height: suppliedHeight,
+  mobileWidth,
+  fit,
+  zoomX,
+  alt,
+  group,
+  caption = alt,
+  eager = false,
+  sizes,
+} = Astro.props;
+const intrinsic = imageDimensions(src ?? `/assets/img/${base}.jpg`);
+const width = suppliedWidth ?? intrinsic[0];
+const height = suppliedHeight ?? intrinsic[1];
+---
+
+<a
+  class:list={["gallery-link", { "gallery-complete": fit === "contain" }]}
+  style={`--image-ratio:${width / height}`}
+  href={src ?? `/assets/img/${base}.jpg`}
+  data-gallery={group}
+  data-gallery-source={viewerSrc ?? src ?? `/assets/img/${base}.webp`}
+  data-gallery-thumb={`/assets/thumbs/${
+    base ??
+    src
+      ?.split("/")
+      .pop()
+      ?.replace(/\.[^.]+$/, "")
+  }.webp`}
+  data-gallery-zoom-x={zoomX}
+  data-gallery-width={width}
+  data-gallery-height={height}
+  data-gallery-caption={caption}
+  aria-label={`查看大图：${caption}`}
+>
+  <EditorialImage
+    base={base}
+    mobileImage={mobileImage}
+    src={src}
+    previewSrc={viewerSrc}
+    width={width}
+    height={height}
+    mobileWidth={mobileWidth}
+    fit={fit}
+    alt={alt}
+    eager={eager}
+    sizes={sizes}
+  />
+  <span class="gallery-open" aria-hidden="true">
+    <span>查看大图</span>
+    <Icon name="expand" />
+  </span>
+</a>

@@ -1,0 +1,12 @@
+---
+import Page from "../../zh/products/[slug].astro";
+import { getCollection } from "astro:content";
+export async function getStaticPaths() {
+  return (
+    await getCollection("products", ({ data }) => data.published && data.listed)
+  ).map((product) => ({ params: { slug: product.id }, props: { product } }));
+}
+const { product } = Astro.props;
+---
+
+<Page product={product} />

@@ -1,0 +1,103 @@
+---
+import EditorialImage from "./EditorialImage.astro";
+import GalleryImage from "./GalleryImage.astro";
+interface Props {
+  base: string;
+  mobileImage?: string;
+  alt: string;
+  caption: string;
+  meta: string;
+  galleryGroup?: string;
+  mode?: "cover" | "caption";
+}
+const {
+  base,
+  mobileImage,
+  alt,
+  caption,
+  meta,
+  galleryGroup,
+  mode = "caption",
+} = Astro.props;
+---
+
+<figure
+  data-product={galleryGroup}
+  class:list={[
+    "page-visual",
+    { "product-detail-visual": galleryGroup, "cover-visual": mode === "cover" },
+  ]}
+>
+  <div class="page-visual-frame">
+    {galleryGroup ? (
+      <GalleryImage
+        fit={mode === "cover" ? "cover" : "contain"}
+        base={base}
+        mobileImage={mobileImage}
+        alt={alt}
+        caption={caption}
+        group={galleryGroup}
+        eager
+      />
+    ) : (
+      <EditorialImage
+        fit={mode === "cover" ? "cover" : "contain"}
+        base={base}
+        mobileImage={mobileImage}
+        alt={alt}
+        eager
+      />
+    )}
+  </div>
+  {mode === "cover" ? (
+    <figcaption class="cover-body ed-wrap">
+      <span class="eyebrow">{meta}</span>
+      <slot name="title" />
+      <slot name="description" />
+      <div class="cover-actions">
+        <slot name="actions" />
+      </div>
+    </figcaption>
+  ) : (
+    <figcaption class="page-visual-caption">
+      <span>{caption}</span>
+      <span class="page-visual-meta">{meta}</span>
+    </figcaption>
+  )}
+</figure>
+
+<style>
+  .page-visual:not(.cover-visual) .page-visual-frame {
+    height: auto;
+    aspect-ratio: auto;
+  }
+  @media (max-width: 767px) {
+    .page-visual.product-detail-visual.cover-visual {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .product-detail-visual.cover-visual .cover-body {
+      min-height: 0;
+      padding-block: 36px;
+      width: 100%;
+    }
+    .product-detail-visual.cover-visual .page-visual-frame {
+      position: relative;
+      inset: auto;
+      height: auto;
+    }
+    .product-detail-visual.cover-visual .page-visual-frame:after {
+      display: none;
+    }
+    .product-detail-visual :global(.page-visual-frame .gallery-link),
+    .product-detail-visual :global(.page-visual-frame picture),
+    .product-detail-visual :global(.page-visual-frame img) {
+      display: block;
+      position: relative;
+      height: auto;
+      width: 100%;
+      aspect-ratio: auto;
+      transform: none;
+    }
+  }
+</style>
