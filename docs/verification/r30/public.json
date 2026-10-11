@@ -1,0 +1,530 @@
+{
+  "base": "http://23.251.34.150:8080",
+  "layouts": [
+    {
+      "route": "/404.html",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/news/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/about/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/cases/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/about/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/404.html",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/qualifications/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/wall/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/stair/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/slab/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/6s/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/5s/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/products/4s/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/privacy/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/news/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/cookies/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/about/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/about/investors/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/about/careers/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/bd9/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/bd8/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/6s/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/5s/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/products/4s/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/about/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 320,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 768,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1024,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 1920,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/zh/contact/",
+      "width": 2560,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 320,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 375,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 768,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1024,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1440,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 1920,
+      "copy": "passed",
+      "overflow": false
+    },
+    {
+      "route": "/en/contact/",
+      "width": 2560,
+      "copy": "passed",
+      "overflow": false
+    }
+  ],
+  "downloads": [
+    {
+      "lang": "zh",
+      "filename": "半打空间-项目需求.txt",
+      "validation": true,
+      "notSent": true,
+      "modifiedReminder": true
+    },
+    {
+      "lang": "en",
+      "filename": "semi-six-project-brief.txt",
+      "validation": true,
+      "notSent": true,
+      "modifiedReminder": true
+    }
+  ],
+  "accessibility": [
+    {
+      "lang": "zh",
+      "width": 375,
+      "violations": 0,
+      "incomplete": []
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "violations": 0,
+      "incomplete": []
+    },
+    {
+      "lang": "en",
+      "width": 375,
+      "violations": 0,
+      "incomplete": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "violations": 0,
+      "incomplete": []
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "posts": []
+}

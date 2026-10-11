@@ -1,3 +1,4 @@
+/* global document, innerWidth */
 import fs from "node:fs/promises";
 import path from "node:path";
 import assert from "node:assert/strict";
@@ -40,6 +41,7 @@ for (const width of [375, 1440]) {
   for (const file of files) {
     const route = "/" + file.replaceAll("\\", "/").replace(/index.html$/, "");
     await page.goto(base + route);
+    if (route === "/") await page.waitForURL("**/zh/");
     await page.evaluate(() => document.fonts.ready);
     assert.doesNotMatch(await page.locator("body").innerText(), banned, route);
     assert(
