@@ -1,0 +1,62 @@
+{
+  "release": "r32",
+  "date": "2026-10-10",
+  "build": {
+    "commit": "d8f2204",
+    "builtAt": "2026-10-11T03:33:51.304Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "verdict": "本轮联系页视觉修订与交互验收通过。视觉采用现有素材与品牌语言，不作奖项品质认证。",
+  "changes": [
+    "首屏以完整室内效果图和紧凑联系方式组成双栏；手机优先显示联系信息",
+    "降低电话、邮箱字号，统一细分隔线、复制操作和主次按钮的层级",
+    "微信改为原生可展开的联系人列表，默认唐小姐，其余两位可切换；二维码均可放大",
+    "地图按需展开，保留地址、工作时间与坐标",
+    "沿用中英文咨询参数、邮件草稿、电话与复制功能；不引入表单和下载流程",
+    "手机、桌面首屏为固定导航预留空间，正文图片无裁切；减少动态效果时关闭轻反馈过渡"
+  ],
+  "materials": {
+    "hero": "v11-4s-living-perspective",
+    "type": "半打4S标准版方案效果图",
+    "usage": "原有产品素材复用于联系页，标明效果图，不作为公司办公室实拍",
+    "ratio": "1599:1920",
+    "new_external_assets": 0
+  },
+  "checks": {
+    "units": 48,
+    "materials": 46,
+    "generated_pages": 33,
+    "asset_references": 346,
+    "translation_residue": 0,
+    "types": {
+      "errors": 0,
+      "warnings": 0,
+      "hints": 6
+    },
+    "lint": "passed",
+    "build": "passed",
+    "whole_site_copy_layouts": 66,
+    "contact_layouts_local": 18,
+    "contact_layouts_public": 18,
+    "contact_axe_local": 4,
+    "contact_axe_public": 4,
+    "interactions": "六款产品及案例参数、未知参数、电话邮件、复制成功与失败、联系人展开与二维码原图、地图展开及阅图焦点恢复",
+    "public_html_parity": 33,
+    "script_errors": 0,
+    "resource_errors": 0,
+    "post_requests": 0
+  },
+  "repairs": [
+    "初次视觉检查发现固定导航覆盖图片顶部及手机栏目文字，增加导航空间并加入跨视口断言；复测通过",
+    "英文标题拆行后有两段未匹配整句翻译，补齐对应词条后翻译残留为0"
+  ],
+  "limits": [
+    "Windows Edge/Chromium；320至2560宽度、844×390横屏、800×450缩放等效视口；未覆盖实机Safari/iOS/Android",
+    "本轮无障碍仅联系页375/1440宽度的中英文自动检查，不等于全面无障碍认证",
+    "未真实拨号、发送邮件或添加微信；未确认微信账户状态",
+    "HTTP复制后备API保留两项弃用提示；复制受限时有手动指引",
+    "未重跑历史297项全站完整视觉测试或未变化的视频、轮播交互",
+    "上一版本保留回退，仅本地独立分支提交，未推送GitHub"
+  ]
+}
