@@ -1,0 +1,27 @@
+{
+  "deployed_at": "2026-10-11T04:31:17.601572+00:00",
+  "url": "http://23.251.34.150:8080/zh/?v=r34",
+  "english_url": "http://23.251.34.150:8080/en/?v=r34",
+  "service": "banda-space-preview",
+  "release_directory": "/opt/banda-space-preview/releases/r34-visual-refinement-20261010",
+  "webroot": "/opt/banda-space-preview/releases/r34-visual-refinement-20261010/site",
+  "server_config": "/opt/banda-space-preview/releases/r34-visual-refinement-20261010/preview.Caddyfile",
+  "build": {
+    "commit": "508bde6",
+    "builtAt": "2026-10-11T04:26:43.956Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "archive_sha256": "414ccb942cfe45c4c9b350969aedad3f070238557e3936aefca70022ac101e6a",
+  "source_and_server_sha256_match": true,
+  "previous_release": "/opt/banda-space-preview/releases/r33-contact-visible-20261010",
+  "rollback_container": "banda-space-preview-r33-20261010",
+  "rollback_commands": [
+    "docker stop banda-space-preview",
+    "docker rename banda-space-preview banda-space-preview-r34-rollback",
+    "docker rename banda-space-preview-r33-20261010 banda-space-preview",
+    "docker start banda-space-preview"
+  ],
+  "hosting": "独立 Caddy 容器，8080 HTTP，只读静态目录，非 root 进程，128 MB 内存；临时站 noindex/nofollow；未修改 80/443/8090 服务。",
+  "verification": "docs/verification/r34/public-parity.json"
+}

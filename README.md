@@ -18,7 +18,7 @@ Astro 5、TypeScript 与原生 CSS/交互实现的双语建筑产品网站。v1.
 - `pnpm test:delivery`：全部 33 个生成页面 × 9 种视口（含 2560px），原图比例、无填充条、Logo 切换、章节定位和键盘阅图。`SKIP_SCREENSHOTS=1` 可省略重复截图，保留全部断言。
 - `node tests/acceptance-polish.mjs`：产品摘要切换、深色说明对比度、设计/制造配图与年份区间的双语专项检查。
 
-最新联系页设计验收见 `docs/quality-report-r34.html` 和对应 JSON。首屏采用完整空间效果图与紧凑联系信息；三位联系人桌面三列、手机单列；手机微信区位于空间图片之前。二维码和地图直接展示，可点击放大。当前联系页以微信、电话与邮件沟通为主，不展示表单和本地需求下载；产品及案例咨询参数会带入邮件草稿。运行 `node tests/contact-browser.mjs` 可复核中英文联系交互，`node tests/copy-browser.mjs` 检查全站文字与基本排版。历史报告保留各自结论与测试边界，不作为本轮通过依据。
+最新联系页设计验收见 `docs/quality-report-r35.html` 和对应 JSON。首屏采用完整空间效果图与紧凑联系信息；三位联系人桌面三列、手机单列；手机微信区位于空间图片之前。二维码和地图直接展示，可点击放大。当前联系页以微信、电话与邮件沟通为主，不展示表单和本地需求下载；产品及案例咨询参数会带入邮件草稿。运行 `node tests/contact-browser.mjs` 可复核中英文联系交互，`node tests/copy-browser.mjs` 检查全站文字与基本排版。历史报告保留各自结论与测试边界，不作为本轮通过依据。
 
 ## 内容范围
 
@@ -54,3 +54,5 @@ r26 可读验收报告见 `docs/quality-report-r26.html`，本轮实测、历史
 实际验收与部署记录见 `docs/quality-report.json`、`docs/temporary-deployment.json`。代码仅在独立分支本地提交；本轮不推送 GitHub、不自动合并 main。正式域名、HTTPS、表单发送服务不在本轮范围。
 
 视觉 r34：六款手机产品详情采用文字与完整照片上下分区，桌面保持满幅摄影。新闻、招聘的常规入口隐藏，旧地址保留。专项复验运行 `node tests/visual-refinement-browser.mjs`。
+
+交互 r35：轮播等待照片就绪再切换，保留当前画面并处理取消及加载失败。专项复验：node tests/carousel-readiness.mjs；沿用 r34 图片与视觉体系。
