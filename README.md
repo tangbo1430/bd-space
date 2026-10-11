@@ -18,7 +18,7 @@ Astro 5、TypeScript 与原生 CSS/交互实现的双语建筑产品网站。v1.
 - `pnpm test:delivery`：全部 33 个生成页面 × 9 种视口（含 2560px），原图比例、无填充条、Logo 切换、章节定位和键盘阅图。`SKIP_SCREENSHOTS=1` 可省略重复截图，保留全部断言。
 - `node tests/acceptance-polish.mjs`：产品摘要切换、深色说明对比度、设计/制造配图与年份区间的双语专项检查。
 
-最新对外文案修订验收见 `docs/quality-report-r30.html` 和对应 JSON；文字评审基线见 `docs/copy-review-r29.html`。此前视觉优化记录保留在 `docs/quality-report-r29.html`，历史报告保留原始结论和测试边界。运行 `node tests/copy-browser.mjs` 可复核本轮文字、响应式排版及中英文下载流程。
+最新联系页重构验收见 `docs/quality-report-r31.html` 和对应 JSON。当前联系页以微信、电话与邮件沟通为主，不展示表单和本地需求下载；产品及案例咨询参数会带入邮件草稿。运行 `node tests/contact-browser.mjs` 可复核中英文联系交互，`node tests/copy-browser.mjs` 检查全站文字与基本排版。此前文案、视觉验收分别保留在 r30、r29 报告，历史结果不作为本轮通过依据。
 
 ## 内容范围
 
