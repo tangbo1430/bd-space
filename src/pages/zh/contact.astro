@@ -1,11 +1,16 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialImage from "../../components/EditorialImage.astro";
 import PhotoViewer from "../../components/PhotoViewer.astro";
 import { company, contacts } from "../../data/company";
 import { getCollection } from "astro:content";
 import projects from "../../data/projects.json";
 import { translate } from "../../lib/translate";
 import "../../styles/contact.css";
+const people = [
+  contacts.find((p) => p.id === "tang")!,
+  ...contacts.filter((p) => p.id !== "tang"),
+];
 const en = Astro.url.pathname.startsWith("/en/");
 const names = Object.fromEntries([
   ...(await getCollection("products")).map((p) => [
@@ -27,124 +32,162 @@ const names = Object.fromEntries([
     data-direct-contact
     data-contact-names={JSON.stringify(names)}
   >
-    <section class="page-opening ed-wrap">
-      <span class="eyebrow">项目咨询</span>
-      <div class="page-heading">
-        <h1>
+    <section class="contact-intro ed-wrap" aria-labelledby="contact-title">
+      <figure class="contact-portrait">
+        <EditorialImage
+          base="v11-4s-living-perspective"
+          fit="contain"
+          alt="半打4S客厅与阁楼，标准版方案效果图"
+          eager
+          sizes="(max-width: 767px) calc(100vw - 48px), 46vw"
+        />
+        <figcaption>
+          <span>半打 4S</span>
+          <span>标准版方案效果图</span>
+        </figcaption>
+      </figure>
+      <div class="contact-sheet">
+        <span class="eyebrow">联系我们</span>
+        <h1 id="contact-title">
           一个想法，
           <br />
           一处新空间。
         </h1>
-        <div class="contact-welcome">
-          <p>无论您的项目刚刚起步，还是已有清晰的计划，欢迎与我们直接沟通。</p>
+        <p class="contact-lead">
+          无论是一个初步想法，
+          <br />
+          还是一份清晰的计划，
+          <br />
+          我们都愿意与您细谈。
+        </p>
+        <p class="contact-context" data-contact-context hidden></p>
+        <div class="contact-primary-actions">
           <a class="action action-primary" href="#wechat">
-            添加微信
+            微信联系
+          </a>
+          <a class="action action-secondary" href="#visit">
+            到访信息
           </a>
         </div>
-      </div>
-      <p class="contact-context" data-contact-context hidden></p>
-      <div class="direct-channels" aria-label="快捷联系">
-        <article class="direct-channel">
-          <span class="eyebrow">电话联系 · 唐小姐</span>
-          <a
-            class="channel-value"
-            href={`tel:${en ? "+86" : ""}${company.contact.phone}`}
-          >
-            {en ? `+86 ${company.contact.phone}` : company.contact.phone}
-          </a>
-          <div class="channel-bottom">
-            <span>点击号码拨打电话</span>
+        <div class="direct-channels" aria-label="快捷联系">
+          <article class="direct-channel">
+            <div class="channel-detail">
+              <span class="eyebrow">电话联系 · 唐小姐</span>
+              <a
+                class="channel-value"
+                href={`tel:${en ? "+86" : ""}${company.contact.phone}`}
+              >
+                {en ? `+86 ${company.contact.phone}` : company.contact.phone}
+              </a>
+            </div>
             <button
-              class="action action-secondary"
+              class="contact-copy"
               type="button"
               data-copy-contact={`${en ? "+86" : ""}${company.contact.phone}`}
               aria-label="复制电话号码"
             >
               复制号码
             </button>
-          </div>
-        </article>
-        <article class="direct-channel">
-          <span class="eyebrow">邮件联系</span>
-          <a
-            class="channel-value"
-            data-contact-email
-            href={`mailto:${company.contact.email}`}
-          >
-            {company.contact.email}
-          </a>
-          <div class="channel-bottom">
-            <span>点击邮箱撰写邮件</span>
+          </article>
+          <article class="direct-channel">
+            <div class="channel-detail">
+              <span class="eyebrow">邮件联系</span>
+              <a
+                class="channel-value"
+                data-contact-email
+                href={`mailto:${company.contact.email}`}
+              >
+                {company.contact.email}
+              </a>
+            </div>
             <button
-              class="action action-secondary"
+              class="contact-copy"
               type="button"
               data-copy-contact={company.contact.email}
               aria-label="复制邮箱地址"
             >
               复制邮箱
             </button>
-          </div>
-        </article>
+          </article>
+        </div>
+        <p
+          class="contact-copy-status"
+          data-contact-copy-status
+          role="status"
+          aria-live="polite"
+        ></p>
       </div>
-      <p
-        class="contact-copy-status"
-        data-contact-copy-status
-        role="status"
-        aria-live="polite"
-      ></p>
     </section>
-    <section class="wechat-section evidence-band" id="wechat">
-      <div class="ed-wrap ed-section">
-        <div class="evidence-heading">
-          <div>
-            <span class="eyebrow">微信联系</span>
-            <h2>把想法，聊得更具体。</h2>
-          </div>
-          <p>
-            扫码添加微信，或点击二维码查看大图。
+    <section class="contact-conversation" id="wechat">
+      <div class="ed-wrap contact-section-grid">
+        <div class="contact-section-heading">
+          <span class="eyebrow">微信联系</span>
+          <h2>
+            把想法，
             <br />
-            沟通时可告诉我们项目所在地、用途与空间需求。
+            聊得更具体。
+          </h2>
+          <p>
+            选择一位联系人，
+            <br />
+            扫码添加微信，开启对话。
           </p>
         </div>
-        <div class="wechat-grid">
-          {contacts.map((p) => (
-            <article>
-              <a
-                class="wechat-code"
-                href={`/assets/img/wechat-${p.id}.png`}
-                data-gallery="wechat"
-                data-gallery-caption={`${p.name} · 微信联系`}
-                aria-label={`放大${p.name}的微信二维码`}
-              >
-                <img
-                  src={`/assets/img/wechat-${p.id}.png`}
-                  alt={`${p.name}微信二维码`}
-                  width="1000"
-                  height="1000"
-                  loading="lazy"
-                />
-              </a>
-              <h3>{p.name}</h3>
-              <a
-                class="contact-phone"
-                href={`tel:${en ? "+86" : ""}${p.phone}`}
-              >
-                {en ? `+86 ${p.phone}` : p.phone}
-              </a>
-            </article>
+        <div class="wechat-grid contact-people">
+          {people.map((p, i) => (
+            <details
+              class="contact-person"
+              name="wechat-contact"
+              open={i === 0}
+            >
+              <summary>
+                <h3>{p.name}</h3>
+                <span class="person-channel">微信二维码</span>
+                <span class="contact-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="person-body">
+                <div class="person-info">
+                  <p>沟通时可告诉我们项目所在地、用途与空间需求。</p>
+                  <a
+                    class="contact-phone"
+                    href={`tel:${en ? "+86" : ""}${p.phone}`}
+                  >
+                    {en ? `+86 ${p.phone}` : p.phone}
+                  </a>
+                  <span class="qr-instruction">点击二维码查看大图</span>
+                </div>
+                <a
+                  class="wechat-code"
+                  href={`/assets/img/wechat-${p.id}.png`}
+                  data-gallery="wechat"
+                  data-gallery-caption={`${p.name} · 微信联系`}
+                  aria-label={`放大${p.name}的微信二维码`}
+                >
+                  <img
+                    src={`/assets/img/wechat-${p.id}.png`}
+                    alt={`${p.name}微信二维码`}
+                    width="1000"
+                    height="1000"
+                    loading="lazy"
+                  />
+                </a>
+              </div>
+            </details>
           ))}
         </div>
       </div>
     </section>
-    <section class="ed-wrap ed-section contact-location" id="visit">
-      <div class="evidence-heading">
-        <div>
-          <span class="eyebrow">到访位置</span>
-          <h2>广东 · 江门</h2>
-        </div>
+    <section class="ed-wrap contact-section-grid contact-location" id="visit">
+      <div class="contact-section-heading">
+        <span class="eyebrow">到访半打</span>
+        <h2>
+          广东，江门。
+          <br />
+          期待与您见面。
+        </h2>
         <p>到访前可通过电话确认安排。</p>
       </div>
-      <div class="contact-visit-layout">
+      <div class="contact-visit-details">
         <dl class="visit-information">
           <div>
             <dt>办公地址</dt>
@@ -158,26 +201,29 @@ const names = Object.fromEntries([
             <dt>工作时间</dt>
             <dd>{company.contact.hours}</dd>
           </div>
-          <div>
-            <dt>地图坐标</dt>
-            <dd>{company.contact.coordinates}</dd>
-          </div>
         </dl>
-        <a
-          class="contact-map"
-          href="/assets/img/contact-map.webp"
-          data-gallery="map"
-          data-gallery-caption="广东江门 · 位置参考"
-          aria-label="放大查看位置图"
-        >
-          <img
-            src="/assets/img/contact-map.webp"
-            alt="广东江门位置参考图"
-            width="1571"
-            height="740"
-            loading="lazy"
-          />
-        </a>
+        <details class="contact-map-disclosure">
+          <summary>
+            <span>查看位置图</span>
+            <span class="contact-toggle" aria-hidden="true"></span>
+          </summary>
+          <a
+            class="contact-map"
+            href="/assets/img/contact-map.webp"
+            data-gallery="map"
+            data-gallery-caption="广东江门 · 位置参考"
+            aria-label="放大查看位置图"
+          >
+            <img
+              src="/assets/img/contact-map.webp"
+              alt="广东江门位置参考图"
+              width="1571"
+              height="740"
+              loading="lazy"
+            />
+          </a>
+        </details>
+        <p class="contact-coordinates">{company.contact.coordinates}</p>
       </div>
     </section>
     <PhotoViewer />

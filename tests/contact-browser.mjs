@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import { assertDirectContact } from "./contact-helpers.mjs";
 const base = process.env.TEST_BASE_URL ?? "http://127.0.0.1:4322";
-const output = process.env.REVIEW_OUTPUT ?? "artifacts/contact-r31";
+const output = process.env.REVIEW_OUTPUT ?? "artifacts/contact-design";
 await fs.mkdir(output, { recursive: true });
 const browser = await chromium.launch({ channel: "msedge", headless: true });
 const context = await browser.newContext({ reducedMotion: "reduce" });
@@ -41,6 +41,21 @@ for (const lang of ["zh", "en"]) {
     await page.setViewportSize({ width, height });
     await page.goto(`${base}/${lang}/contact/`);
     await page.evaluate(() => document.fonts.ready);
+    assert(
+      await page.evaluate(() => {
+        const header = document
+          .querySelector(".gnb")
+          .getBoundingClientRect().bottom;
+        return (
+          document
+            .querySelector(".contact-sheet > .eyebrow")
+            .getBoundingClientRect().top >= header &&
+          document.querySelector(".contact-portrait").getBoundingClientRect()
+            .top >= header
+        );
+      }),
+      `${lang} ${width}: hero must clear navigation`,
+    );
     assert.equal(
       await page.locator("form, [data-download-inquiry]").count(),
       0,
@@ -53,21 +68,33 @@ for (const lang of ["zh", "en"]) {
     );
     await page.locator(".contact-location").scrollIntoViewIfNeeded();
     await page.locator(".wechat-grid").scrollIntoViewIfNeeded();
-    await page
-      .locator(".wechat-code img")
-      .evaluateAll((images) => Promise.all(images.map((i) => i.decode())));
+    for (let i = 0; i < 3; i++) {
+      const person = page.locator(".contact-person").nth(i);
+      if (!(await person.evaluate((el) => el.open)))
+        await person.locator("summary").click();
+      const image = person.locator("img");
+      await image.evaluate((i) => i.decode());
+      assert(
+        await image.evaluate(
+          (i) =>
+            i.naturalWidth > 0 &&
+            Math.abs(
+              i.clientWidth / i.clientHeight - i.naturalWidth / i.naturalHeight,
+            ) < 0.01,
+        ),
+      );
+    }
+    await page.locator(".contact-person summary").first().click();
+    assert.equal(await page.locator(".contact-person[open]").count(), 1);
+    await page.locator(".contact-portrait img").evaluate((i) => i.decode());
     assert(
       await page
-        .locator(".wechat-code img")
-        .evaluateAll((images) =>
-          images.every(
-            (i) =>
-              i.naturalWidth > 0 &&
-              Math.abs(
-                i.clientWidth / i.clientHeight -
-                  i.naturalWidth / i.naturalHeight,
-              ) < 0.01,
-          ),
+        .locator(".contact-portrait img")
+        .evaluate(
+          (i) =>
+            Math.abs(
+              i.clientWidth / i.clientHeight - i.naturalWidth / i.naturalHeight,
+            ) < 0.01,
         ),
     );
     await page.evaluate(() => window.scrollTo(0, 0));
@@ -130,6 +157,7 @@ for (const lang of ["zh", "en"]) {
     .locator("#wechat")
     .evaluate((el) => el.getBoundingClientRect().top);
   assert(top >= 76 && top < 200);
+  await page.locator(".contact-map-disclosure summary").click();
   await page.locator(".contact-map").click();
   assert(
     (

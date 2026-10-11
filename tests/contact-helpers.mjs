@@ -34,6 +34,9 @@ export async function assertDirectContact(page, expected) {
   }
   for (let i = 0; i < 3; i++) {
     const code = page.locator(".wechat-code").nth(i);
+    const person = code.locator("xpath=ancestor::details");
+    if (!(await person.evaluate((el) => el.open)))
+      await person.locator("summary").click();
     await code.click();
     await page.waitForFunction(
       () => document.querySelector("[data-photo-viewer]").open,
