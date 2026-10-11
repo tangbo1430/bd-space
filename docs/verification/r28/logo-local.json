@@ -1,0 +1,36 @@
+{
+  "base": "http://127.0.0.1:4322",
+  "build": {
+    "commit": "9c0de5c",
+    "builtAt": "2026-10-11T02:03:54.289Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "checks": [
+    {
+      "width": 375,
+      "lang": "zh",
+      "initial": true,
+      "scrolled": true
+    },
+    {
+      "width": 375,
+      "lang": "en",
+      "initial": true,
+      "scrolled": true
+    },
+    {
+      "width": 1440,
+      "lang": "zh",
+      "initial": true,
+      "scrolled": true
+    },
+    {
+      "width": 1440,
+      "lang": "en",
+      "initial": true,
+      "scrolled": true
+    }
+  ],
+  "errors": []
+}
