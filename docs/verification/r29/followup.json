@@ -1,0 +1,29 @@
+{
+  "filters": [
+    {
+      "filter": "domestic",
+      "count": 7
+    },
+    {
+      "filter": "overseas",
+      "count": 3
+    },
+    {
+      "filter": "all",
+      "count": 10
+    }
+  ],
+  "qr": [
+    "wang",
+    "huang",
+    "tang"
+  ],
+  "contrast": [],
+  "caption": {
+    "text": "楼板 · 墙板 · 现场连接",
+    "color": "rgb(195, 204, 200)",
+    "background": "radial-gradient(at 90% 100%, rgb(18, 57, 46) 0px, rgba(0, 0, 0, 0) 45%) repeat scroll 0% 0% / auto padding-box border-box, rgb(11, 15, 14) none repeat scroll 0% 0% / auto padding-box border-box",
+    "font": "12px",
+    "contrastAgainstBase": 11.747258541331707
+  }
+}

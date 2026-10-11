@@ -41,6 +41,9 @@ for (const route of routes) {
       );
       for (const el of document.querySelectorAll(".rv")) el.classList.add("in");
     });
+    // A responsive source can change after decode() starts. Wait for the final
+    // request to settle; failed images still fail the naturalWidth check below.
+    await page.waitForFunction(() => [...document.images].every((i) => i.complete));
     const result = await page.evaluate(() => ({
       overflow: document.documentElement.scrollWidth > innerWidth,
       broken: [...document.images]
