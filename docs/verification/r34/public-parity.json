@@ -1,0 +1,175 @@
+{
+  "version": {
+    "commit": "508bde6",
+    "builtAt": "2026-10-11T04:26:43.956Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "pages": [
+    {
+      "route": "/404.html",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/about/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/cases/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/contact/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/products/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/about/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/cases/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/contact/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/cookies/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/news/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/privacy/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/qualifications/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/products/4s/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/products/5s/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/products/6s/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/products/bd8/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/products/bd9/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/en/products/grayscale/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/about/careers/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/about/investors/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/4s/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/5s/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/6s/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/bd8/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/bd9/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/grayscale/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/slab/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/stair/",
+      "status": 200,
+      "match": true
+    },
+    {
+      "route": "/zh/products/wall/",
+      "status": 200,
+      "match": true
+    }
+  ]
+}

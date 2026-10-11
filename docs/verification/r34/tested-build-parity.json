@@ -1,0 +1,149 @@
+{
+  "tested": {
+    "commit": "7224488",
+    "builtAt": "2026-10-11T04:23:06.665Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "final": {
+    "commit": "508bde6",
+    "builtAt": "2026-10-11T04:26:43.956Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "normalization": "Only build commit and timestamp replaced for comparison",
+  "results": [
+    {
+      "file": "404.html",
+      "match": true
+    },
+    {
+      "file": "index.html",
+      "match": true
+    },
+    {
+      "file": "en\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\about\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\cases\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\contact\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\products\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\about\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\cases\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\contact\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\cookies\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\news\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\privacy\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\qualifications\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\products\\4s\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\products\\5s\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\products\\6s\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\products\\bd8\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\products\\bd9\\index.html",
+      "match": true
+    },
+    {
+      "file": "en\\products\\grayscale\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\about\\careers\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\about\\investors\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\4s\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\5s\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\6s\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\bd8\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\bd9\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\grayscale\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\slab\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\stair\\index.html",
+      "match": true
+    },
+    {
+      "file": "zh\\products\\wall\\index.html",
+      "match": true
+    }
+  ]
+}

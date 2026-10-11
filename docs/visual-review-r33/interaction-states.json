@@ -1,0 +1,75 @@
+{
+  "checks": [
+    {
+      "lang": "zh",
+      "width": 320,
+      "anchorOffset": 99.734375,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "zh",
+      "width": 375,
+      "anchorOffset": 100.34375,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "zh",
+      "width": 768,
+      "anchorOffset": 99.5625,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "zh",
+      "width": 1440,
+      "anchorOffset": 99.5625,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "zh",
+      "width": 2560,
+      "anchorOffset": 99.5625,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "anchorOffset": 99.671875,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "en",
+      "width": 375,
+      "anchorOffset": 100.484375,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "en",
+      "width": 768,
+      "anchorOffset": 99.9375,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "anchorOffset": 99.75,
+      "logoStable": true,
+      "keyboardViewer": true
+    },
+    {
+      "lang": "en",
+      "width": 2560,
+      "anchorOffset": 99.75,
+      "logoStable": true,
+      "keyboardViewer": true
+    }
+  ],
+  "errors": []
+}

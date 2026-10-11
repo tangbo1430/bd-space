@@ -1,0 +1,122 @@
+{
+  "startedAt": "2026-10-11T04:27:17.747Z",
+  "version": {
+    "commit": "508bde6",
+    "builtAt": "2026-10-11T04:26:43.956Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production"
+  },
+  "checks": [
+    {
+      "route": "/zh/cases/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 61
+    },
+    {
+      "route": "/zh/cases/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 320,
+      "height": 568,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 375,
+      "height": 812,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 768,
+      "height": 1024,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1024,
+      "height": 768,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1440,
+      "height": 900,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 1920,
+      "height": 1080,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 2560,
+      "height": 1440,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 844,
+      "height": 390,
+      "bodyImages": 61
+    },
+    {
+      "route": "/en/cases/",
+      "width": 720,
+      "height": 450,
+      "bodyImages": 61
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "finishedAt": "2026-10-11T04:27:39.422Z"
+}
