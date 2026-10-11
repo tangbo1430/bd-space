@@ -16,7 +16,13 @@ export async function assertDirectContact(page, expected) {
   assert(mail.searchParams.get("subject").includes(expected));
   assert(mail.searchParams.get("body").includes(expected));
   assert.equal(await page.locator(".wechat-code").count(), 3);
-  for (const value of ["18503005860", "411547750@qq.com"]) {
+  const en = (await page.locator("html").getAttribute("lang")) === "en";
+  const phone = `${en ? "+86" : ""}18503005860`;
+  assert.equal(
+    await page.locator(".channel-value").first().getAttribute("href"),
+    `tel:${phone}`,
+  );
+  for (const value of [phone, "411547750@qq.com"]) {
     await page.locator(`[data-copy-contact="${value}"]`).click();
     await page.waitForFunction(
       (v) =>

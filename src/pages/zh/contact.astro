@@ -46,15 +46,18 @@ const names = Object.fromEntries([
       <div class="direct-channels" aria-label="快捷联系">
         <article class="direct-channel">
           <span class="eyebrow">电话联系 · 唐小姐</span>
-          <a class="channel-value" href={`tel:${company.contact.phone}`}>
-            {company.contact.phone}
+          <a
+            class="channel-value"
+            href={`tel:${en ? "+86" : ""}${company.contact.phone}`}
+          >
+            {en ? `+86 ${company.contact.phone}` : company.contact.phone}
           </a>
           <div class="channel-bottom">
             <span>点击号码拨打电话</span>
             <button
               class="action action-secondary"
               type="button"
-              data-copy-contact={company.contact.phone}
+              data-copy-contact={`${en ? "+86" : ""}${company.contact.phone}`}
               aria-label="复制电话号码"
             >
               复制号码
@@ -122,8 +125,11 @@ const names = Object.fromEntries([
                 />
               </a>
               <h3>{p.name}</h3>
-              <a class="contact-phone" href={`tel:${p.phone}`}>
-                {p.phone}
+              <a
+                class="contact-phone"
+                href={`tel:${en ? "+86" : ""}${p.phone}`}
+              >
+                {en ? `+86 ${p.phone}` : p.phone}
               </a>
             </article>
           ))}
