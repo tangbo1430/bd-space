@@ -1,0 +1,372 @@
+{
+  "checkedAt": "2026-10-17T14:15:56.323Z",
+  "version": {
+    "commit": "10505db",
+    "builtAt": "2026-10-17T14:10:18.336Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production",
+    "release": "r46",
+    "sourceSha256": "a8384fdebf81d51ea743630d9d1bddbec142de9b1b84cb45090511035f4973be",
+    "gitBase": "10505db206891e5c63c91fdaffc3009bea3dfd0a",
+    "workingTreeSnapshot": true
+  },
+  "parity": [
+    {
+      "file": "404.html",
+      "sha256": "8569c6e231a122ecc20c3d3fddec16524974999bf5d11fc8c54b2e867d74138b",
+      "status": 200
+    },
+    {
+      "file": "_astro\\banner.UE8ryv6H.js",
+      "sha256": "afcafcec28172f8ce3e965e54a57a491d2aaa0672bd901a02ec890fd04dd7b36",
+      "status": 200
+    },
+    {
+      "file": "index.html",
+      "sha256": "0181854502fc6c9e2779a342922393c7d1fd2f45051a4b767cdcc0af41842402",
+      "status": 200
+    },
+    {
+      "file": "_astro\\BaseLayout.astro_astro_type_script_index_0_lang.CS9svBx5.js",
+      "sha256": "8517656772f031c06939e2e7223c834eda2549822c095162ba7eb15a8aa5fcfe",
+      "status": 200
+    },
+    {
+      "file": "_astro\\contact.CG9gIpw1.css",
+      "sha256": "9b2c78a07692cc4262ac7806c9df75e586a549f935ef020e7eb2350acb26d3f0",
+      "status": 200
+    },
+    {
+      "file": "_astro\\contact.astro_astro_type_script_index_0_lang.wTV74njc.js",
+      "sha256": "3dacfbcef5f97068420d8af31832844fc915caa0a19722a258d0e8b36e91b647",
+      "status": 200
+    },
+    {
+      "file": "_astro\\cases.D0J7PTOe.css",
+      "sha256": "839310786231c469b32ce90406e92dcc260ed0087ea54b6112a8b498df3870e3",
+      "status": 200
+    },
+    {
+      "file": "_astro\\index.astro_astro_type_script_index_0_lang.BAgecsZU.js",
+      "sha256": "a494e2e4fb4cc977846c0d2bc23e4ed9bb3004f4fc6ce712dd2d6f656dac42a8",
+      "status": 200
+    },
+    {
+      "file": "_astro\\PhotoViewer.astro_astro_type_script_index_0_lang.9EJ621ax.js",
+      "sha256": "3ac18a8f78c40ecb64ba204a1b774a250defc84488c1678c3785b506c17a8146",
+      "status": 200
+    },
+    {
+      "file": "_astro\\index.astro_astro_type_script_index_0_lang.bpLCJK5P.js",
+      "sha256": "aa29a6ea7cdd38a73fbf9496e0ec7eedf15fd878d0262ada8e6bd153a572a005",
+      "status": 200
+    },
+    {
+      "file": "_astro\\index.D_Wu--bG.css",
+      "sha256": "7445f749b6bf73c02a238610e351c328fb1bb12484bc0d4b7983651de6797cea",
+      "status": 200
+    },
+    {
+      "file": "_astro\\translate.pz48rob7.js",
+      "sha256": "e900051b0ca91c21beab4fad983c3e83f24b53564530c89a083bbee2b97b0d99",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\index.html",
+      "sha256": "c5aacba969d748a4680c4b3297b2c7fa6cf712ef70769017fdb2212d6c4030ce",
+      "status": 200
+    },
+    {
+      "file": "zh\\index.html",
+      "sha256": "3798dc1a4b475202a2007465f96c50f0fb2f3add91ace7b698b5000595d3d5b3",
+      "status": 200
+    },
+    {
+      "file": "zh\\qualifications\\index.html",
+      "sha256": "d49ba733ee235900ddfba23d984454a4c6340d3e7bdbef9d8e8d5e467820176f",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\wall\\index.html",
+      "sha256": "43a1da2dfa8faac90a74504b196dcaf6fa41ecdc9fc5935b4905196d49bf07da",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\grayscale-eco\\index.html",
+      "sha256": "af7964f8d1ceb98b262c36f12c47efd76953c2cdb7978d51c1d9075684351e8d",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\stair\\index.html",
+      "sha256": "41b0a8219d6b430f4b9698ab9774dd9b9e080d06a9f2ed657f0d2b82016faf21",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\slab\\index.html",
+      "sha256": "f518573ea4a1b68ab7e9704a3232011ca31603c28210f4cb06348d62fcd8e5e4",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\grayscale\\index.html",
+      "sha256": "71ba2de220e905a1c253f910440c6a3999c9728c9cba8da39e7321cbd1b5498b",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\6s\\index.html",
+      "sha256": "1ce8b8aa601f55b1106c7e1aaf7512ef347f971dff0e9165fc726c0e953409d5",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\bd8\\index.html",
+      "sha256": "1abfeec6b37b3d2a821ff29740fa131f66f14f0104fe0bb7eda623c379e526c0",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\bd9\\index.html",
+      "sha256": "7a9173089428f308c567afd291735c2186d85285868aeeb45ad71bd82952bbb7",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\5s\\index.html",
+      "sha256": "b6369c2e96d9ae9dc3f657c474bad1666a46d83a348ba2309dff2892bd2edb26",
+      "status": 200
+    },
+    {
+      "file": "zh\\news\\index.html",
+      "sha256": "fb23c120a6041c87a178c99bfa3621c1b9d6dd203a15c282d8108ddc141f206f",
+      "status": 200
+    },
+    {
+      "file": "zh\\privacy\\index.html",
+      "sha256": "e695f0240e82846961edb45b4db388605bbf0964a039ce1670557bc17304161d",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\4s\\index.html",
+      "sha256": "adb181ec73a1b0c8ed9688e45a9635ee2846d7f1c1cc75a27d365fbce39af9c6",
+      "status": 200
+    },
+    {
+      "file": "zh\\cookies\\index.html",
+      "sha256": "d4b9f2ece20cb29409a5d70f61a68d73c66ad615cc1f1d62b2c796c0abb6f229",
+      "status": 200
+    },
+    {
+      "file": "zh\\about\\index.html",
+      "sha256": "a141d989baadbfd6ef21da487333e0d8c58aaa4025e6baf25071612c62ce3489",
+      "status": 200
+    },
+    {
+      "file": "zh\\contact\\index.html",
+      "sha256": "8f8b14230824cfd6adc0039eb168c241f4d3982dbf589dbe47d0990c9e23904f",
+      "status": 200
+    },
+    {
+      "file": "zh\\cases\\index.html",
+      "sha256": "4d7695d3774ef703dc4e5ffdd21e660f389e88892d86258dc1ff8eee1fd59cdb",
+      "status": 200
+    },
+    {
+      "file": "zh\\about\\investors\\index.html",
+      "sha256": "2cba35a92455858a854e6ed2c507cc4552a0e5b31569bb6e4e49c315e1edbe8d",
+      "status": 200
+    },
+    {
+      "file": "zh\\about\\careers\\index.html",
+      "sha256": "814ca5e4aceba85f007c9b882d6d2d3f3b28b8e385cbeef5f871f6e4c5c60070",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\grayscale-eco\\index.html",
+      "sha256": "83080c20caca7abdcd63934c6565ace8be935ad9a9e49cabca0b0af32cb65ee8",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\index.html",
+      "sha256": "8e30f8693b0e1a99840b175926872a2e8eca5e7f5ee3627690eaa4e80c2282d5",
+      "status": 200
+    },
+    {
+      "file": "en\\index.html",
+      "sha256": "6ddbf0de09cfc5026ff12b1347a67f549976f4163e5bcb1d0bad670ba4186a4c",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\bd8\\index.html",
+      "sha256": "afc40b901470836c3f51008ad677e01d420467133aa23b94d0c64a5b29fad13a",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\bd9\\index.html",
+      "sha256": "458d78caed2bf2218b6048cb34e173e7e6bec8722c3d9029a2863bef034059a9",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\grayscale\\index.html",
+      "sha256": "0e8ebdac61b286bb55290e62bb67c9e88e51228db71f055a60bdc7ba77a53fab",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\6s\\index.html",
+      "sha256": "9a86501cd1cc674d6921b43a3e611e1d914c7c9473f53fd263a4610495a152a1",
+      "status": 200
+    },
+    {
+      "file": "en\\contact\\index.html",
+      "sha256": "e4f3dfedca2fb3e271ca6dc6d067f7f10772e90aeb77114b9ceb9c42b94879c1",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\4s\\index.html",
+      "sha256": "d8c67aceebcdef000cfab3674a2ad6aafad8767e450992ee7222b1af6ddef0d2",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\5s\\index.html",
+      "sha256": "d6e78e1ab06d7136d8939164767bea08789320ac107d9010e572a1771b4282c5",
+      "status": 200
+    },
+    {
+      "file": "en\\cases\\index.html",
+      "sha256": "f820543c00e0e0943e354f8d4ed95ac92c2c233a881b28378763e702404d68a2",
+      "status": 200
+    },
+    {
+      "file": "assets\\brand\\logo-overlay-r28.svg",
+      "sha256": "6861a700cbf4a75c4083700af3184ca7ce4ac1441fd2245c6d706744cbce1c1a",
+      "status": 200
+    },
+    {
+      "file": "assets\\brand\\logo-original-r26.svg",
+      "sha256": "cf04107885cac674f5d718c19c68e4c835eba04946d49372d3ea610ab051b109",
+      "status": 200
+    },
+    {
+      "file": "en\\about\\index.html",
+      "sha256": "d28bd38d97988e13b0dbbd3414a2f2b51d5fd4cc2c9e21e036a93455ec7a8086",
+      "status": 200
+    }
+  ],
+  "pages": [
+    {
+      "route": "/zh/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "light",
+      "copy": "  让空间， 回归生活。  ",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "light",
+      "copy": "  让空间， 回归生活。  ",
+      "broken": [],
+      "navColors": [
+        "rgb(255, 255, 255)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": "  空间，有更多 打开方式。  ",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": "  空间，有更多 打开方式。  ",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "light",
+      "copy": " Where Space Meets Life. ",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "light",
+      "copy": " Where Space Meets Life. ",
+      "broken": [],
+      "navColors": [
+        "rgb(255, 255, 255)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/products/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": " Space, Open to Possibility. ",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/products/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": " Space, Open to Possibility. ",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    }
+  ]
+}

@@ -7,11 +7,20 @@ import { alternateLanguage, hasEnglish } from "../lib/locale";
 interface Props {
   current: string;
   style: "overlay" | "solid";
+  tone?: "light" | "dark";
+  brandTone?: "light" | "dark";
   lang: "zh-CN" | "en";
   /** 当前关于子项 key（about / investors / careers），来自 currentAboutSub() */
   aboutSub?: string | null;
 }
-const { current, style, lang, aboutSub = null } = Astro.props;
+const {
+  current,
+  style,
+  lang,
+  tone = "light",
+  brandTone = tone,
+  aboutSub = null,
+} = Astro.props;
 // 移动抽屉：当前路由属 about 组时子导航默认展开（AC-41）
 const navItems =
   lang === "en"
@@ -37,9 +46,27 @@ const aboutGroupActive = aboutSub !== null;
     { "gnb-solid": style === "solid", "gnb-overlay": style === "overlay" },
   ]}
   data-gnb
+  data-tone={tone}
+  data-brand-tone={brandTone}
 >
   {/* v1.4 M2：原创统一线性图标（1.5px 描边、圆角接头、40×40 视框，symbol 复用） */}
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <!-- Foreground ink only: the photograph and official logo are never filtered. -->
+    <filter
+      id="navigation-photo-ink"
+      x="0"
+      y="0"
+      width="100%"
+      height="100%"
+      color-interpolation-filters="linearRGB"
+    >
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer>
+        <feFuncR type="linear" slope="-1000" intercept="179.1" />
+        <feFuncG type="linear" slope="-1000" intercept="179.1" />
+        <feFuncB type="linear" slope="-1000" intercept="179.1" />
+      </feComponentTransfer>
+    </filter>
     <symbol id="ic-about" viewBox="0 0 40 40">
       <g
         fill="none"
@@ -85,69 +112,82 @@ const aboutGroupActive = aboutSub !== null;
     </symbol>
   </svg>
   <a class="logo" href="/zh/" aria-label="半打空间首页">
-    <BrandLogo tone="adaptive" />
+    <BrandLogo tone={style === "overlay" ? "adaptive" : "original"} />
   </a>
-  <nav aria-label="主导航">
-    {navItems.map((item) =>
-      item.key === "about" && lang !== "en" ? (
-        <span class="has-sub" data-subnav>
-          {/* 一级为纯链接：点击/Enter 唯一行为=进入公司介绍，无展开语义（v0.4.1 N1） */}
-          <a
-            href={item.href}
-            class:list={["sub-trigger", { cur: item.key === current }]}
-            aria-current={item.key === current ? "page" : undefined}
-            data-sub-trigger
-          >
-            {item.label}
-          </a>
-          {/* v1.4 Mega Subnav：100vw 全宽面板内 1280 容器三列均布；普通链接集合，非 menu（N5） */}
-          <span class="sub-panel" data-sub-panel aria-label="关于我们子栏目">
-            <span class="sub-panel-card">
-              <span class="mega-in">
-                {visibleAboutItems.map((sub) => (
-                  <a
-                    href={sub.href}
-                    class:list={["mega-col", { cur: sub.key === aboutSub }]}
-                    aria-current={sub.key === aboutSub ? "page" : undefined}
-                    data-track="about_sub_click"
-                  >
-                    <svg class="mega-ic" aria-hidden="true">
-                      <use href={`#${sub.icon}`} />
-                    </svg>
-                    <span class="mega-t">
-                      <b>{sub.label}</b>
-                      <span class="mega-en">{sub.en}</span>
-                    </span>
-                  </a>
-                ))}
+  <div class="desktop-navigation">
+    <nav aria-label="主导航">
+      {navItems.map((item) =>
+        item.key === "about" && lang !== "en" ? (
+          <span class="has-sub" data-subnav>
+            {/* 一级为纯链接：点击/Enter 唯一行为=进入公司介绍，无展开语义（v0.4.1 N1） */}
+            <a
+              href={item.href}
+              class:list={["sub-trigger", { cur: item.key === current }]}
+              aria-current={item.key === current ? "page" : undefined}
+              data-sub-trigger
+            >
+              <span class="nav-ink">{item.label}</span>
+            </a>
+            {/* v1.4 Mega Subnav：100vw 全宽面板内 1280 容器三列均布；普通链接集合，非 menu（N5） */}
+            <span class="sub-panel" data-sub-panel aria-label="关于我们子栏目">
+              <span class="sub-panel-card">
+                <span class="mega-in">
+                  {visibleAboutItems.map((sub) => (
+                    <a
+                      href={sub.href}
+                      class:list={["mega-col", { cur: sub.key === aboutSub }]}
+                      aria-current={sub.key === aboutSub ? "page" : undefined}
+                      data-track="about_sub_click"
+                    >
+                      <svg class="mega-ic" aria-hidden="true">
+                        <use href={`#${sub.icon}`} />
+                      </svg>
+                      <span class="mega-t">
+                        <b>{sub.label}</b>
+                        <span class="mega-en">{sub.en}</span>
+                      </span>
+                    </a>
+                  ))}
+                </span>
               </span>
             </span>
           </span>
-        </span>
-      ) : (
-        <a
-          href={item.href}
-          class:list={[{ cur: item.key === current }]}
-          aria-current={item.key === current ? "page" : undefined}
-        >
-          {item.label}
-        </a>
-      ),
-    )}
-  </nav>
-  <div class="right">
-    <a
-      class="lang"
-      href={languageHref}
-      data-language-link
-      aria-label={languageLabel}
-      aria-description={languageDescription}
-      title={languageDescription}
-      hreflang={lang === "en" ? "zh-CN" : "en"}
-    >
-      {languageLabel}
-    </a>
+        ) : (
+          <a
+            href={item.href}
+            class:list={[{ cur: item.key === current }]}
+            aria-current={item.key === current ? "page" : undefined}
+          >
+            <span class="nav-ink">{item.label}</span>
+          </a>
+        ),
+      )}
+    </nav>
+    <div class="right">
+      <a
+        class="lang"
+        href={languageHref}
+        data-language-link
+        aria-label={languageLabel}
+        aria-description={languageDescription}
+        title={languageDescription}
+        hreflang={lang === "en" ? "zh-CN" : "en"}
+      >
+        <span class="nav-ink">{languageLabel}</span>
+      </a>
+    </div>
   </div>
+  <a
+    class="lang mobile-language"
+    href={languageHref}
+    data-language-link
+    aria-label={languageLabel}
+    aria-description={languageDescription}
+    title={languageDescription}
+    hreflang={lang === "en" ? "zh-CN" : "en"}
+  >
+    {languageLabel}
+  </a>
   <button
     type="button"
     class="burger"
@@ -161,7 +201,7 @@ const aboutGroupActive = aboutSub !== null;
 </header>
 
 <div
-  class="drawer"
+  class="drawer drawer-gallery"
   data-drawer
   aria-hidden="true"
   role="dialog"
@@ -169,6 +209,13 @@ const aboutGroupActive = aboutSub !== null;
   aria-label="导航菜单"
   inert
 >
+  <a
+    class="drawer-brand"
+    href={lang === "en" ? "/en/" : "/zh/"}
+    aria-label={lang === "en" ? "Banda Space home" : "半打空间首页"}
+  >
+    <BrandLogo />
+  </a>
   <button
     type="button"
     class="p-close"

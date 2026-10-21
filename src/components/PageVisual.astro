@@ -31,7 +31,7 @@ const {
   <div class="page-visual-frame">
     {galleryGroup ? (
       <GalleryImage
-        fit={mode === "cover" ? "cover" : "contain"}
+        fit="contain"
         base={base}
         mobileImage={mobileImage}
         alt={alt}
@@ -41,7 +41,7 @@ const {
       />
     ) : (
       <EditorialImage
-        fit={mode === "cover" ? "cover" : "contain"}
+        fit="contain"
         base={base}
         mobileImage={mobileImage}
         alt={alt}
@@ -72,10 +72,6 @@ const {
     aspect-ratio: auto;
   }
   @media (max-width: 767px) {
-    .page-visual.product-detail-visual.cover-visual {
-      display: flex;
-      flex-direction: column-reverse;
-    }
     .product-detail-visual.cover-visual .cover-body {
       min-height: 0;
       padding-block: 36px;

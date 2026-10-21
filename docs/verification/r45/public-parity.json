@@ -1,0 +1,372 @@
+{
+  "checkedAt": "2026-10-17T13:05:28.867Z",
+  "version": {
+    "commit": "10505db",
+    "builtAt": "2026-10-17T13:00:24.401Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production",
+    "release": "r45",
+    "sourceSha256": "54e5194316301137118ce151f75c276036c57b343279f71e4bf11b612e4e5a01",
+    "gitBase": "10505db206891e5c63c91fdaffc3009bea3dfd0a",
+    "workingTreeSnapshot": true
+  },
+  "parity": [
+    {
+      "file": "404.html",
+      "sha256": "4f469c444df3f21803b0ff6379b78796a42ef71e6287199cb91bb70811836217",
+      "status": 200
+    },
+    {
+      "file": "_astro\\BaseLayout.astro_astro_type_script_index_0_lang.CS9svBx5.js",
+      "sha256": "8517656772f031c06939e2e7223c834eda2549822c095162ba7eb15a8aa5fcfe",
+      "status": 200
+    },
+    {
+      "file": "index.html",
+      "sha256": "0181854502fc6c9e2779a342922393c7d1fd2f45051a4b767cdcc0af41842402",
+      "status": 200
+    },
+    {
+      "file": "_astro\\banner.UE8ryv6H.js",
+      "sha256": "afcafcec28172f8ce3e965e54a57a491d2aaa0672bd901a02ec890fd04dd7b36",
+      "status": 200
+    },
+    {
+      "file": "_astro\\index.astro_astro_type_script_index_0_lang.BAgecsZU.js",
+      "sha256": "a494e2e4fb4cc977846c0d2bc23e4ed9bb3004f4fc6ce712dd2d6f656dac42a8",
+      "status": 200
+    },
+    {
+      "file": "_astro\\contact.astro_astro_type_script_index_0_lang.wTV74njc.js",
+      "sha256": "3dacfbcef5f97068420d8af31832844fc915caa0a19722a258d0e8b36e91b647",
+      "status": 200
+    },
+    {
+      "file": "_astro\\contact.CG9gIpw1.css",
+      "sha256": "9b2c78a07692cc4262ac7806c9df75e586a549f935ef020e7eb2350acb26d3f0",
+      "status": 200
+    },
+    {
+      "file": "_astro\\cases.D0J7PTOe.css",
+      "sha256": "839310786231c469b32ce90406e92dcc260ed0087ea54b6112a8b498df3870e3",
+      "status": 200
+    },
+    {
+      "file": "_astro\\PhotoViewer.astro_astro_type_script_index_0_lang.9EJ621ax.js",
+      "sha256": "3ac18a8f78c40ecb64ba204a1b774a250defc84488c1678c3785b506c17a8146",
+      "status": 200
+    },
+    {
+      "file": "_astro\\index.astro_astro_type_script_index_0_lang.bpLCJK5P.js",
+      "sha256": "aa29a6ea7cdd38a73fbf9496e0ec7eedf15fd878d0262ada8e6bd153a572a005",
+      "status": 200
+    },
+    {
+      "file": "_astro\\translate.pz48rob7.js",
+      "sha256": "e900051b0ca91c21beab4fad983c3e83f24b53564530c89a083bbee2b97b0d99",
+      "status": 200
+    },
+    {
+      "file": "_astro\\index.CGhDBLXG.css",
+      "sha256": "3f6f592882de144812f38f5d2507cc632313055ac80ac90072948f42fa9d7d73",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\wall\\index.html",
+      "sha256": "e1f993da08cc61eb4d8554ee85df183251baf233ebba884738d1d56a01a374cc",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\index.html",
+      "sha256": "9f0a3471da69639ab208162347131e5fa0960147634d749b4403d471a63b23a8",
+      "status": 200
+    },
+    {
+      "file": "zh\\qualifications\\index.html",
+      "sha256": "5be44b9e609ced11a359aedb65701e88b72b13aa5c0989cf42116f0ce437b496",
+      "status": 200
+    },
+    {
+      "file": "zh\\index.html",
+      "sha256": "94b44a369ac18cd4887a1bcb301eafd7a7053935de2721741ff41b1f966d3051",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\grayscale\\index.html",
+      "sha256": "0e3e52da4076db25dab169ae76b6b352285a435a0ed27919589ecdec62917d97",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\slab\\index.html",
+      "sha256": "b210b80c39714fcf0e6a1692295d067994e820e3dd462685960e3d3fe4b2b2eb",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\stair\\index.html",
+      "sha256": "b0be0248f0ce9738825937c4d2b26d6875f9ddf13b2da781867e76b6e527ad83",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\grayscale-eco\\index.html",
+      "sha256": "8f5ac63c2fab90777fc5aafb96c4a7524682c75e199621786c32cda9e519309e",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\5s\\index.html",
+      "sha256": "5dcbef63a963543a66b481bfcba9f5fc35b11f4860c5124fa6056501f235e1bb",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\6s\\index.html",
+      "sha256": "966cb1843151a53dfdd0cd49bf72674afbdb7066dd5f4d6594bfb5b859cd263d",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\bd8\\index.html",
+      "sha256": "b6d6b0f7bbc788a485510c949315c66fd178370fdf95631026af2a5c954acd38",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\bd9\\index.html",
+      "sha256": "9ce2fcf9e24625dd4c02b4b8f8637b8e6d7b97634ce1a204fa84d62f7f04e7df",
+      "status": 200
+    },
+    {
+      "file": "zh\\cookies\\index.html",
+      "sha256": "8930a987ae423a3a92982bc7cb1632e9d90bd3614e47c01c0ebb894314fe4058",
+      "status": 200
+    },
+    {
+      "file": "zh\\privacy\\index.html",
+      "sha256": "4e67cfac1a4aa86d717c4799fa945679c30f95aa0a9dd2278168632e8e8b80c5",
+      "status": 200
+    },
+    {
+      "file": "zh\\news\\index.html",
+      "sha256": "8c401c837188f76a4ba84dba0b57a38df17d6e19dcd720fa089e4a641323428d",
+      "status": 200
+    },
+    {
+      "file": "zh\\products\\4s\\index.html",
+      "sha256": "f028be563c9854d70a31710c5e5c321555dc22d0f66eebbb4ec9e65c9c2a81f1",
+      "status": 200
+    },
+    {
+      "file": "zh\\about\\investors\\index.html",
+      "sha256": "513b824e1cf674ce5a85789f855a7bad3a1b7f0604f7de3ced036bb91dfb44db",
+      "status": 200
+    },
+    {
+      "file": "zh\\about\\index.html",
+      "sha256": "90698585625d36d9c1984dcf3ae5b615e203407ca6cbbe64e16a2a50f05f0914",
+      "status": 200
+    },
+    {
+      "file": "zh\\contact\\index.html",
+      "sha256": "08f0be31d99dc4d80448ce1c0e5f2c5b6c7ed2bab5b2a435318bf00e4c2921bd",
+      "status": 200
+    },
+    {
+      "file": "zh\\cases\\index.html",
+      "sha256": "3f7f9797b7c3804c341655bb23c5c12c4f7ce14fdabfb3cf415f5f1e1f372586",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\grayscale-eco\\index.html",
+      "sha256": "bd0f5a22026035ebb7029921ac19575cee9c9dd995ea3f637669205469a16977",
+      "status": 200
+    },
+    {
+      "file": "zh\\about\\careers\\index.html",
+      "sha256": "731d8e6ba635c35c2e5aa203989b71d00f31ed696f6a898d33feb197e1c5c8a6",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\index.html",
+      "sha256": "8d8a656ddfbb7b3d600fba901fa7924a4f5a18cd04f6df9a8f8257b03988cb75",
+      "status": 200
+    },
+    {
+      "file": "en\\index.html",
+      "sha256": "575bbb5bf7c8e2696704715883c2124970cfee722d958a6d2422479d3f5e453e",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\6s\\index.html",
+      "sha256": "f2a3e1b39b6d716347f4045ed482d9d60a9d887d56899505de67f07f808286f6",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\bd8\\index.html",
+      "sha256": "fcd4fbde3a82eb7b4fcd8b3cb04dd7db52e2560f4ab485bdda5e37f90a1a889b",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\bd9\\index.html",
+      "sha256": "73b43d1dbab19c6679ce7aa0d3393a25c446366a65ca86dde858f3043a69abb0",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\grayscale\\index.html",
+      "sha256": "951b1103db8a5cf546d0fc133f5cfb97725cf00ff1a97a80fba3ae10dfbc8297",
+      "status": 200
+    },
+    {
+      "file": "en\\cases\\index.html",
+      "sha256": "f741ca7c21788dc15c154dc4c57f6002b4c74e6a99f2c849fa6c1a55e78a3d1f",
+      "status": 200
+    },
+    {
+      "file": "en\\contact\\index.html",
+      "sha256": "ce0c61f8d202561bf3dbbb77b5da6f794cbe3c3741834df9630ab692db7139a4",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\5s\\index.html",
+      "sha256": "f8016a55e46460f4da5dce8d4f91277d3cfb3ce609cd23517b99bf43b707483d",
+      "status": 200
+    },
+    {
+      "file": "en\\products\\4s\\index.html",
+      "sha256": "5d8f3513f72bfabb54ad19beb45882e37538c0040eb38ebe0fe12c643151d3fe",
+      "status": 200
+    },
+    {
+      "file": "assets\\brand\\logo-original-r26.svg",
+      "sha256": "cf04107885cac674f5d718c19c68e4c835eba04946d49372d3ea610ab051b109",
+      "status": 200
+    },
+    {
+      "file": "assets\\brand\\logo-overlay-r28.svg",
+      "sha256": "6861a700cbf4a75c4083700af3184ca7ce4ac1441fd2245c6d706744cbce1c1a",
+      "status": 200
+    },
+    {
+      "file": "en\\about\\index.html",
+      "sha256": "1b240db718fdf018291980cb8d120fd9e3640c6529f87a011c2428eb8fede8b3",
+      "status": 200
+    }
+  ],
+  "pages": [
+    {
+      "route": "/zh/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "light",
+      "copy": "让空间，回归生活。",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/zh/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "light",
+      "copy": "让空间，回归生活。",
+      "broken": [],
+      "navColors": [
+        "rgb(255, 255, 255)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": "空间，有更多打开方式。",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": "空间，有更多打开方式。",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "light",
+      "copy": "Where Space Meets Life.",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "light",
+      "copy": "Where Space Meets Life.",
+      "broken": [],
+      "navColors": [
+        "rgb(255, 255, 255)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/products/",
+      "width": 375,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": "Space, Open to Possibility.",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    },
+    {
+      "route": "/en/products/",
+      "width": 1440,
+      "overflow": 0,
+      "tone": "dark",
+      "copy": "Space, Open to Possibility.",
+      "broken": [],
+      "navColors": [
+        "rgb(24, 34, 30)"
+      ],
+      "paused": true,
+      "slideSwitch": true,
+      "scrolledLogo": true,
+      "errors": []
+    }
+  ]
+}

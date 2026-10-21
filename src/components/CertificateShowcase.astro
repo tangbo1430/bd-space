@@ -1,0 +1,74 @@
+---
+/**
+ * 证书展示：居中放大的横向轮播（参考微宿官网的荣誉展示）。
+ * 支持触摸滑动、左右按钮、键盘；点击证书查看大图。
+ */
+import GalleryImage from "./GalleryImage.astro";
+import Icon from "./Icon.astro";
+interface Cert {
+  base: string;
+  caption: string;
+}
+interface Props {
+  items: Cert[];
+  group: string;
+  label: string;
+  orientation?: "portrait" | "landscape";
+}
+const { items, group, label, orientation = "portrait" } = Astro.props;
+---
+
+<div
+  class:list={["cert-show", `cert-show--${orientation}`]}
+  data-cert-show
+  role="region"
+  aria-roledescription="carousel"
+  aria-label={label}
+>
+  <div class="cert-track" data-cert-track tabindex="0">
+    {items.map((item, i) => (
+      <figure
+        class:list={["cert-item", { "is-active": i === 0 }]}
+        data-cert-item
+      >
+        <div class="cert-paper">
+          <GalleryImage
+            base={item.base}
+            alt={item.caption}
+            caption={item.caption}
+            group={group}
+            fit="contain"
+            sizes={orientation === "portrait" ? "300px" : "520px"}
+          />
+        </div>
+        <figcaption>{item.caption}</figcaption>
+      </figure>
+    ))}
+  </div>
+  <div class="cert-controls">
+    <button
+      type="button"
+      class="cert-arrow"
+      data-cert-prev
+      aria-label="上一张证书"
+    >
+      <Icon name="chevron-left" />
+    </button>
+    <span class="cert-count" aria-live="polite">
+      <span data-cert-current>01</span> /{" "}
+      {String(items.length).padStart(2, "0")}
+    </span>
+    <button
+      type="button"
+      class="cert-arrow"
+      data-cert-next
+      aria-label="下一张证书"
+    >
+      <Icon name="chevron-right" />
+    </button>
+  </div>
+</div>
+
+<script>
+  import "../scripts/certificates.ts";
+</script>

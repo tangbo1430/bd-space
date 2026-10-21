@@ -1,0 +1,1166 @@
+/* 首页 r39：「半打 · 六块模块」视觉系统
+ * 设计原则
+ * - 图像说话：所有产品图原比例、无蒙版；文字永远在图外，保证可读。
+ * - 秩序感：统一的左右边线（与导航对齐）、统一的 12 栏比例、统一的字号阶梯。
+ * - 唯一的记忆点：图片以「六块模块（半打）依次落位」的方式出现，呼应品牌名与 Logo 方块。
+ * - 色彩克制：纸白、混凝土灰、墨色、夜色（与构造图背景一致），品牌绿只做极小的信号。
+ */
+.h39 {
+  --c-paper: #ffffff;
+  --c-concrete: #ecebe7;
+  --c-ink: #161a19;
+  --c-body: #3d4441;
+  --c-mute: #5d6561;
+  --c-line: #161a1924;
+  --c-night: #0c1310;
+  --c-on-night: #eef2f0;
+  --c-on-night-body: #c3ccc8;
+  --c-on-night-mute: #8e9b95;
+  --c-night-line: #ffffff26;
+  --c-signal: #00a586;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --fs-display: clamp(44px, 7.2vw, 116px);
+  --fs-h2: clamp(34px, 4.1vw, 64px);
+  --fs-h3: clamp(22px, 1.9vw, 28px);
+  --fs-lead: clamp(17px, 1.25vw, 19px);
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --sec-pad: clamp(96px, 10.5vw, 168px);
+  color: var(--c-ink);
+  background: var(--c-paper);
+}
+.h39 .h-wrap {
+  width: 100%;
+  padding-inline: var(--content-inset);
+}
+.h39 .h-sec {
+  padding-block: var(--sec-pad);
+}
+
+/* ---------- 共用：标签、标题、按钮 ---------- */
+.h39 .h-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--c-mute);
+}
+/* 标签前的小方块：取自 Logo 的模块方块 */
+.h39 .h-kicker:before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: none;
+  background: var(--c-ink);
+}
+.h39 .h-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "kicker kicker"
+    "title more"
+    "note note";
+  align-items: end;
+  column-gap: 40px;
+  margin-bottom: clamp(48px, 5.5vw, 88px);
+}
+.h39 .h-head .h-kicker {
+  grid-area: kicker;
+  margin-bottom: 28px;
+}
+.h39 .h-head h2,
+.h39 .h-making-head h2,
+.h39 .h-living-copy h2 {
+  margin: 0;
+  font-size: var(--fs-h2);
+  font-weight: 300;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  color: inherit;
+}
+.h39 .h-head h2 {
+  grid-area: title;
+}
+.h39 .h-head .h-more {
+  grid-area: more;
+}
+.h39 .h-head-note {
+  grid-area: note;
+  max-width: 34em;
+  margin: 24px 0 0;
+  font-size: var(--fs-lead);
+  line-height: 1.8;
+  color: var(--c-body);
+}
+.h39 .h-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+  font-size: 15px;
+  color: inherit;
+  white-space: nowrap;
+}
+.h39 .h-more .ui-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.35s var(--ease-out);
+}
+.h39 .h-more:hover .ui-icon {
+  transform: translateX(4px);
+}
+
+.h39 .h-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+.h39 .h-btn .ui-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.35s var(--ease-out);
+}
+.h39 .h-btn:hover .ui-icon {
+  transform: translateX(4px);
+}
+.h39 .h-btn--solid {
+  padding: 0 28px 0 30px;
+  background: var(--c-ink);
+  color: #fff;
+}
+.h39 .h-btn--solid:hover {
+  background: #2c3532;
+}
+.h39 .h-btn--line {
+  min-height: 44px;
+  padding: 0;
+  color: inherit;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px
+    no-repeat;
+}
+.h39 .h-btn--line:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--c-signal);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s var(--ease-out);
+}
+.h39 .h-btn--line:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.h39 :focus-visible {
+  outline: 2px solid var(--c-signal);
+  outline-offset: 4px;
+}
+
+/* ---------- 1. 首屏 ---------- */
+.banda-editorial .h39 .editorial-hero {
+  background: var(--c-paper);
+}
+.banda-editorial .h39 .editorial-hero .hero-intro {
+  display: block;
+  padding-top: calc(var(--hero-row) + clamp(40px, 4.5vw, 72px));
+  padding-bottom: clamp(88px, 9vw, 140px);
+}
+.banda-editorial .h39 .editorial-hero .hero-intro h1.h-title {
+  display: block;
+  margin: 0;
+  font-size: var(--fs-display);
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+  color: var(--c-ink);
+  white-space: nowrap;
+}
+.h39 .h-title .h-line {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+  vertical-align: top;
+}
+.h39 .h-title .h-line > span {
+  display: inline-block;
+}
+.h39 .h-lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 40px;
+  margin-top: clamp(28px, 3vw, 48px);
+}
+.banda-editorial .h39 .editorial-hero .hero-intro .h-lead p {
+  margin: 0;
+  max-width: none;
+  font-size: var(--fs-lead);
+  line-height: 1.8;
+  color: var(--c-body);
+}
+.h39 .h-actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* 轮播索引行 */
+.banda-editorial .h39 .editorial-hero .hero-controls {
+  gap: 36px;
+}
+.h39 .editorial-hero .scene-name {
+  font-size: 15px;
+}
+.h39 .editorial-hero .hero-counter {
+  font-size: 14px;
+}
+.h39 .editorial-hero .scene-progress {
+  background: var(--c-ink);
+}
+.h39 .editorial-hero .hero-stage {
+  background: var(--c-concrete);
+}
+
+/* 轮播切换：新图以六块模块依次落位覆盖旧图；旧图保持到落位完成 */
+.banda-editorial .h39 .editorial-hero .slide {
+  transition:
+    opacity 0s linear 1.2s,
+    visibility 0s linear 1.2s;
+}
+.banda-editorial .h39 .editorial-hero .slide.on {
+  z-index: 2;
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+
+/* ---------- 2. 空间产品 ---------- */
+.h39 .h-products {
+  background: var(--c-concrete);
+}
+.h39 .h-show {
+  display: grid;
+  grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+  grid-template-areas:
+    "stage info"
+    "picker picker";
+  column-gap: clamp(32px, 4vw, 72px);
+  row-gap: clamp(40px, 4vw, 64px);
+}
+.h39 .h-show-stage {
+  grid-area: stage;
+  display: grid;
+  align-self: start;
+}
+.h39 .h-show-frame {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0s linear 0.9s,
+    visibility 0s linear 0.9s;
+}
+.h39 .h-show-frame.on {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: none;
+}
+.h39 .h-show-frame .editorial-image,
+.h39 .h-show-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.h39 .h-show-info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+.h39 .h-show-index {
+  margin: 0 0 20px;
+  font-size: var(--fs-small);
+  color: var(--c-mute);
+  font-variant-numeric: tabular-nums;
+}
+.h39 .h-show-index span {
+  color: var(--c-ink);
+}
+.h39 .h-show-info h3 {
+  margin: 0;
+  font-size: clamp(30px, 2.8vw, 44px);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.h39 .h-show-desc {
+  margin: 14px 0 0;
+  font-size: var(--fs-body);
+  line-height: 1.8;
+  color: var(--c-body);
+}
+.h39 .h-show-specs {
+  width: 100%;
+  margin: auto 0 32px;
+  padding-top: 32px;
+}
+.h39 .h-show-specs > div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid var(--c-line);
+}
+.h39 .h-show-specs dt {
+  font-size: 13px;
+  color: var(--c-mute);
+}
+.h39 .h-show-specs dd {
+  margin: 0;
+  font-size: var(--fs-body);
+  color: var(--c-ink);
+}
+.h39 .h-show-area dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 6px;
+}
+.h39 .h-show-area strong {
+  font-size: clamp(48px, 4.6vw, 76px);
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.h39 .h-show-area dd > span {
+  font-size: 18px;
+}
+.h39 .h-show-area em {
+  flex-basis: 100%;
+  margin-top: 6px;
+  font-style: normal;
+  font-size: var(--fs-small);
+  color: var(--c-mute);
+}
+.h39 .h-show-area em:empty {
+  display: none;
+}
+.h39 .h-show-picker {
+  grid-area: picker;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 24px);
+}
+.h39 .h-pick {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 0 0;
+  border: 0;
+  border-top: 1px solid var(--c-line);
+  background: none;
+  color: var(--c-mute);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.h39 .h-pick:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 2px;
+  background: var(--c-ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--ease-out);
+}
+.h39 .h-pick.on:before {
+  transform: scaleX(1);
+}
+.h39 .h-pick-img {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 2.09;
+  background: #dcdad5;
+}
+.h39 .h-pick-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: saturate(0.4);
+  transition:
+    opacity 0.4s,
+    filter 0.4s,
+    transform 0.9s var(--ease-out);
+}
+.h39 .h-pick:hover .h-pick-img img {
+  opacity: 0.9;
+  filter: none;
+  transform: scale(1.04);
+}
+.h39 .h-pick.on .h-pick-img img {
+  opacity: 1;
+  filter: none;
+}
+.h39 .h-pick-name {
+  font-size: 15px;
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+.h39 .h-pick.on .h-pick-name,
+.h39 .h-pick:hover .h-pick-name {
+  color: var(--c-ink);
+}
+
+/* ---------- 3. 宣言 ---------- */
+.h39 .h-statement .h-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 9fr);
+  column-gap: clamp(32px, 4vw, 72px);
+  row-gap: 40px;
+}
+.h39 .h-statement .h-kicker {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  padding-top: 0.75em;
+}
+.h39 .h-statement-text {
+  grid-column: 2;
+  margin: 0;
+  max-width: 24em;
+  font-size: clamp(26px, 2.7vw, 42px);
+  font-weight: 300;
+  line-height: 1.55;
+  letter-spacing: -0.02em;
+  color: var(--c-ink);
+}
+.h39 .h-statement .h-btn {
+  grid-column: 2;
+  justify-self: start;
+}
+
+/* ---------- 4. 建造体系 ---------- */
+.h39 .h-systems,
+.h39 .h-making {
+  background: var(--c-night);
+  color: var(--c-on-night);
+}
+.h39 .h-systems .h-kicker,
+.h39 .h-making .h-kicker {
+  color: var(--c-on-night-mute);
+}
+.h39 .h-systems .h-kicker:before,
+.h39 .h-making .h-kicker:before {
+  background: var(--c-signal);
+}
+.h39 .h-systems .h-head-note,
+.h39 .h-making .h-head-note {
+  color: var(--c-on-night-body);
+}
+.h39 .h-systems-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.h39 .h-system {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "img img"
+    "no title"
+    ". text";
+  column-gap: 16px;
+  border-bottom: 1px solid var(--c-night-line);
+  padding-bottom: 32px;
+}
+.h39 .h-system-img {
+  grid-area: img;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 28px;
+  padding: 4%;
+  border-bottom: 1px solid var(--c-night-line);
+}
+.h39 .h-system-img .editorial-image {
+  width: 100%;
+  max-height: 100%;
+  background: transparent;
+}
+.h39 .h-system-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 1.2s var(--ease-out);
+}
+.h39 .h-system:hover .h-system-img img {
+  transform: scale(1.04);
+}
+.h39 .h-system-no {
+  grid-area: no;
+  padding-top: 0.55em;
+  font-size: 13px;
+  color: var(--c-signal);
+  font-variant-numeric: tabular-nums;
+}
+.h39 .h-system h3 {
+  grid-area: title;
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--c-on-night);
+}
+.h39 .h-system p {
+  grid-area: text;
+  margin: 12px 0 0;
+  max-width: 24em;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--c-on-night-body);
+}
+.h39 .h-systems-note {
+  margin: 28px 0 0;
+  font-size: 13px;
+  color: var(--c-on-night-mute);
+}
+
+/* ---------- 5. 生活 ---------- */
+.h39 .h-living {
+  background: var(--c-paper);
+}
+.h39 .h-living-img .editorial-image,
+.h39 .h-living-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.h39 .h-living-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: end;
+  column-gap: clamp(32px, 4vw, 72px);
+  padding-block: clamp(48px, 5vw, 80px) 0;
+}
+.h39 .h-living-copy p {
+  margin: 0 0 20px;
+  font-size: var(--fs-lead);
+  line-height: 1.8;
+  color: var(--c-body);
+}
+
+/* ---------- 6. 项目 ---------- */
+.h39 .h-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(48px, 5vw, 80px) clamp(16px, 2vw, 32px);
+}
+.h39 .h-cases .case-card {
+  display: block;
+  color: var(--c-ink);
+}
+.h39 .h-cases .case-image {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--c-concrete);
+}
+.h39 .h-cases .case-image .editorial-image,
+.h39 .h-cases .case-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.h39 .h-cases .case-image img {
+  transition: transform 1.4s var(--ease-out);
+}
+.h39 .h-cases .case-card:hover .case-image img {
+  transform: scale(1.045);
+}
+.h39 .h-cases .case-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding-top: 20px;
+}
+.h39 .h-cases .case-caption h3 {
+  margin: 0;
+  font-size: clamp(19px, 1.5vw, 22px);
+  font-weight: 400;
+  line-height: 1.45;
+}
+.h39 .h-cases .case-caption > span {
+  flex: none;
+  margin: 0;
+  font-size: var(--fs-small);
+  color: var(--c-mute);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 7. 设计 · 制造 · 交付 ---------- */
+.h39 .h-making-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  column-gap: clamp(32px, 5vw, 96px);
+  align-items: start;
+}
+.h39 .h-making-head {
+  position: sticky;
+  top: 128px;
+}
+.h39 .h-making-head .h-kicker {
+  margin-bottom: 28px;
+}
+.h39 .h-making-head .h-more {
+  margin-top: 28px;
+}
+.h39 .h-steps {
+  display: grid;
+  gap: clamp(64px, 7vw, 112px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.h39 .h-step-img {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #0a0e0d;
+}
+.h39 .h-step-img .editorial-image,
+.h39 .h-step-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.h39 .h-step-img .editorial-image.image-complete img {
+  object-fit: contain;
+}
+.h39 .h-step-text {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  column-gap: 16px;
+  padding-top: 24px;
+}
+.h39 .h-step-no {
+  grid-row: 1 / span 3;
+  padding-top: 0.5em;
+  font-size: 13px;
+  color: var(--c-signal);
+  font-variant-numeric: tabular-nums;
+}
+.h39 .h-step h3 {
+  margin: 0;
+  font-size: var(--fs-h3);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--c-on-night);
+}
+.h39 .h-step p {
+  margin: 10px 0 0;
+  max-width: 34em;
+  font-size: var(--fs-body);
+  line-height: 1.85;
+  color: var(--c-on-night-body);
+}
+.h39 .h-step p.h-step-caption {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--c-on-night-mute);
+}
+
+/* ---------- 8. 底部咨询（首页内） ---------- */
+.h39 .project-cta {
+  background: var(--c-night);
+}
+.h39 .project-cta .cta-content h2 {
+  font-size: var(--fs-h2);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.16;
+}
+
+/* ---------- 动效（仅一次的载入编排 + 模块落位），尊重减少动态偏好 ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html:not([data-motion="off"]) .h39 .editorial-hero .slide.on .editorial-image {
+    -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+    mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: 0% 0%, 0% 100%, 50% 0%, 50% 100%, 100% 0%, 100% 100%;
+    mask-position: 0% 0%, 0% 100%, 50% 0%, 50% 100%, 100% 0%, 100% 100%;
+    animation: h39-assemble 1.15s linear backwards;
+  }
+  html:not([data-motion="off"]) .h39 .editorial-hero .slide.on img {
+    animation: h39-settle 1.8s var(--ease-out) backwards;
+  }
+  html:not([data-motion="off"]) .h39 .h-show-frame.on .editorial-image {
+    -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+    mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0),
+      linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: 0% 0%, 0% 100%, 50% 0%, 50% 100%, 100% 0%, 100% 100%;
+    mask-position: 0% 0%, 0% 100%, 50% 0%, 50% 100%, 100% 0%, 100% 100%;
+    animation: h39-assemble-quick 0.85s linear backwards;
+  }
+  /* 首屏标题：逐行从模块缝中升起 */
+  html.js-enabled:not([data-motion="off"]) .h39 .h-title .h-line > span {
+    animation: h39-line 1.1s var(--ease-out) backwards;
+    animation-delay: 0.45s;
+  }
+  html.js-enabled:not([data-motion="off"]) .h39 .h-title .h-line + .h-line > span {
+    animation-delay: 0.56s;
+  }
+  html.js-enabled:not([data-motion="off"]) .h39 .h-lead {
+    animation: h39-fade 1s var(--ease-out) 0.75s backwards;
+  }
+}
+@keyframes h39-settle {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes h39-line {
+  from {
+    transform: translateY(105%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes h39-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 1279px) {
+  .h39 .h-show {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+}
+@media (max-width: 1023px) {
+  .h39 .h-show {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "stage" "picker" "info";
+    row-gap: 28px;
+  }
+  .h39 .h-show-picker {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--content-inset);
+    margin-inline: calc(-1 * var(--content-inset));
+    padding-inline: var(--content-inset);
+    scrollbar-width: none;
+  }
+  .h39 .h-show-picker::-webkit-scrollbar {
+    display: none;
+  }
+  .h39 .h-pick {
+    flex: 0 0 min(40vw, 220px);
+    scroll-snap-align: start;
+  }
+  .h39 .h-show-specs {
+    margin-top: 28px;
+    padding-top: 0;
+  }
+  .h39 .h-statement .h-wrap,
+  .h39 .h-living-copy,
+  .h39 .h-making-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .h39 .h-statement .h-kicker,
+  .h39 .h-statement-text,
+  .h39 .h-statement .h-btn {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .h39 .h-statement .h-kicker {
+    padding-top: 0;
+  }
+  .h39 .h-living-copy {
+    row-gap: 24px;
+  }
+  .h39 .h-making-head {
+    position: static;
+    margin-bottom: 56px;
+  }
+  .h39 .h-systems-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+  .h39 .h-system-img {
+    aspect-ratio: 16 / 10;
+  }
+}
+@media (max-width: 767px) {
+  .h39 {
+    --fs-display: clamp(40px, 12vw, 56px);
+    --fs-h2: clamp(30px, 8.4vw, 40px);
+    --sec-pad: 88px;
+  }
+  .banda-editorial .h39 .editorial-hero .hero-intro {
+    padding: calc(var(--hero-row) + 32px) 24px 72px;
+  }
+  .banda-editorial .h39 .editorial-hero .hero-intro h1.h-title {
+    white-space: normal;
+    line-height: 1.12;
+  }
+  .h39 .h-title .h-line {
+    display: block;
+  }
+  .h39 .h-lead {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .h39 .h-actions {
+    gap: 24px;
+  }
+  .h39 .h-head {
+    grid-template-areas: "kicker" "title" "note" "more";
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .h39 .h-head .h-more {
+    justify-self: start;
+    margin-top: 16px;
+  }
+  .h39 .h-cases-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .h39 .h-cases .case-caption {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .h39 .h-statement-text {
+    font-size: 24px;
+  }
+}
+/* 由 scripts 生成：六块（半打）模块依次落位的显现动效 */
+.h39 .h-assemble-base {}
+@keyframes h39-assemble {
+  0.00% {
+    -webkit-mask-size: 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  3.33% {
+    -webkit-mask-size: 33.34% 11.29%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 11.29%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  6.67% {
+    -webkit-mask-size: 33.34% 20.55%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 20.55%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  10.00% {
+    -webkit-mask-size: 33.34% 28.05%, 33.34% 3.15%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 28.05%, 33.34% 3.15%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  13.33% {
+    -webkit-mask-size: 33.34% 34.02%, 33.34% 13.89%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 34.02%, 33.34% 13.89%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  16.67% {
+    -webkit-mask-size: 33.34% 38.69%, 33.34% 22.67%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 38.69%, 33.34% 22.67%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  20.00% {
+    -webkit-mask-size: 33.34% 42.26%, 33.34% 29.74%, 33.34% 6.16%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 42.26%, 33.34% 29.74%, 33.34% 6.16%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  23.33% {
+    -webkit-mask-size: 33.34% 44.91%, 33.34% 35.35%, 33.34% 16.36%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 44.91%, 33.34% 35.35%, 33.34% 16.36%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  26.67% {
+    -webkit-mask-size: 33.34% 46.83%, 33.34% 39.72%, 33.34% 24.67%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 46.83%, 33.34% 39.72%, 33.34% 24.67%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  30.00% {
+    -webkit-mask-size: 33.34% 48.16%, 33.34% 43.03%, 33.34% 31.34%, 33.34% 9.02%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 48.16%, 33.34% 43.03%, 33.34% 31.34%, 33.34% 9.02%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  33.33% {
+    -webkit-mask-size: 33.34% 49.04%, 33.34% 45.48%, 33.34% 36.60%, 33.34% 18.70%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 49.04%, 33.34% 45.48%, 33.34% 36.60%, 33.34% 18.70%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  36.67% {
+    -webkit-mask-size: 33.34% 49.58%, 33.34% 47.23%, 33.34% 40.67%, 33.34% 26.56%, 33.34% 0.54%, 33.34% 0.00%;
+    mask-size: 33.34% 49.58%, 33.34% 47.23%, 33.34% 40.67%, 33.34% 26.56%, 33.34% 0.54%, 33.34% 0.00%;
+  }
+  40.00% {
+    -webkit-mask-size: 33.34% 49.88%, 33.34% 48.43%, 33.34% 43.75%, 33.34% 32.84%, 33.34% 11.73%, 33.34% 0.00%;
+    mask-size: 33.34% 49.88%, 33.34% 48.43%, 33.34% 43.75%, 33.34% 32.84%, 33.34% 11.73%, 33.34% 0.00%;
+  }
+  43.33% {
+    -webkit-mask-size: 33.34% 50.03%, 33.34% 49.21%, 33.34% 46.00%, 33.34% 37.77%, 33.34% 20.91%, 33.34% 0.00%;
+    mask-size: 33.34% 50.03%, 33.34% 49.21%, 33.34% 46.00%, 33.34% 37.77%, 33.34% 20.91%, 33.34% 0.00%;
+  }
+  46.67% {
+    -webkit-mask-size: 33.34% 50.08%, 33.34% 49.67%, 33.34% 47.59%, 33.34% 41.56%, 33.34% 28.34%, 33.34% 3.67%;
+    mask-size: 33.34% 50.08%, 33.34% 49.67%, 33.34% 47.59%, 33.34% 41.56%, 33.34% 28.34%, 33.34% 3.67%;
+  }
+  50.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 49.93%, 33.34% 48.67%, 33.34% 44.41%, 33.34% 34.25%, 33.34% 14.31%;
+    mask-size: 33.34% 50.10%, 33.34% 49.93%, 33.34% 48.67%, 33.34% 44.41%, 33.34% 34.25%, 33.34% 14.31%;
+  }
+  53.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.05%, 33.34% 49.35%, 33.34% 46.47%, 33.34% 38.86%, 33.34% 23.01%;
+    mask-size: 33.34% 50.10%, 33.34% 50.05%, 33.34% 49.35%, 33.34% 46.47%, 33.34% 38.86%, 33.34% 23.01%;
+  }
+  56.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.76%, 33.34% 47.91%, 33.34% 42.39%, 33.34% 30.02%;
+    mask-size: 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.76%, 33.34% 47.91%, 33.34% 42.39%, 33.34% 30.02%;
+  }
+  60.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.97%, 33.34% 48.88%, 33.34% 45.01%, 33.34% 35.57%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.97%, 33.34% 48.88%, 33.34% 45.01%, 33.34% 35.57%;
+  }
+  63.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.06%, 33.34% 49.48%, 33.34% 46.90%, 33.34% 39.88%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.06%, 33.34% 49.48%, 33.34% 46.90%, 33.34% 39.88%;
+  }
+  66.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.83%, 33.34% 48.21%, 33.34% 43.15%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.83%, 33.34% 48.21%, 33.34% 43.15%;
+  }
+  70.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.00%, 33.34% 49.07%, 33.34% 45.57%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.00%, 33.34% 49.07%, 33.34% 45.57%;
+  }
+  73.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.59%, 33.34% 47.29%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.59%, 33.34% 47.29%;
+  }
+  76.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.89%, 33.34% 48.47%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.89%, 33.34% 48.47%;
+  }
+  80.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.03%, 33.34% 49.23%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.03%, 33.34% 49.23%;
+  }
+  83.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.69%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.69%;
+  }
+  86.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.94%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.94%;
+  }
+  90.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.05%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.05%;
+  }
+  93.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%;
+  }
+  96.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+  }
+  100.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+  }
+}
+@keyframes h39-assemble-quick {
+  0.00% {
+    -webkit-mask-size: 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  3.33% {
+    -webkit-mask-size: 33.34% 10.43%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 10.43%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  6.67% {
+    -webkit-mask-size: 33.34% 19.13%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 19.13%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  10.00% {
+    -webkit-mask-size: 33.34% 26.32%, 33.34% 5.75%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 26.32%, 33.34% 5.75%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  13.33% {
+    -webkit-mask-size: 33.34% 32.18%, 33.34% 15.24%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 32.18%, 33.34% 15.24%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  16.67% {
+    -webkit-mask-size: 33.34% 36.88%, 33.34% 23.12%, 33.34% 0.66%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 36.88%, 33.34% 23.12%, 33.34% 0.66%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  20.00% {
+    -webkit-mask-size: 33.34% 40.59%, 33.34% 29.58%, 33.34% 10.98%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 40.59%, 33.34% 29.58%, 33.34% 10.98%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  23.33% {
+    -webkit-mask-size: 33.34% 43.46%, 33.34% 34.80%, 33.34% 19.60%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 43.46%, 33.34% 34.80%, 33.34% 19.60%, 33.34% 0.00%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  26.67% {
+    -webkit-mask-size: 33.34% 45.63%, 33.34% 38.96%, 33.34% 26.70%, 33.34% 6.35%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 45.63%, 33.34% 38.96%, 33.34% 26.70%, 33.34% 6.35%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  30.00% {
+    -webkit-mask-size: 33.34% 47.21%, 33.34% 42.21%, 33.34% 32.49%, 33.34% 15.74%, 33.34% 0.00%, 33.34% 0.00%;
+    mask-size: 33.34% 47.21%, 33.34% 42.21%, 33.34% 32.49%, 33.34% 15.74%, 33.34% 0.00%, 33.34% 0.00%;
+  }
+  33.33% {
+    -webkit-mask-size: 33.34% 48.33%, 33.34% 44.69%, 33.34% 37.13%, 33.34% 23.53%, 33.34% 1.32%, 33.34% 0.00%;
+    mask-size: 33.34% 48.33%, 33.34% 44.69%, 33.34% 37.13%, 33.34% 23.53%, 33.34% 1.32%, 33.34% 0.00%;
+  }
+  36.67% {
+    -webkit-mask-size: 33.34% 49.09%, 33.34% 46.53%, 33.34% 40.78%, 33.34% 29.92%, 33.34% 11.54%, 33.34% 0.00%;
+    mask-size: 33.34% 49.09%, 33.34% 46.53%, 33.34% 40.78%, 33.34% 29.92%, 33.34% 11.54%, 33.34% 0.00%;
+  }
+  40.00% {
+    -webkit-mask-size: 33.34% 49.57%, 33.34% 47.86%, 33.34% 43.61%, 33.34% 35.08%, 33.34% 20.06%, 33.34% 0.00%;
+    mask-size: 33.34% 49.57%, 33.34% 47.86%, 33.34% 43.61%, 33.34% 35.08%, 33.34% 20.06%, 33.34% 0.00%;
+  }
+  43.33% {
+    -webkit-mask-size: 33.34% 49.86%, 33.34% 48.77%, 33.34% 45.73%, 33.34% 39.18%, 33.34% 27.08%, 33.34% 6.95%;
+    mask-size: 33.34% 49.86%, 33.34% 48.77%, 33.34% 45.73%, 33.34% 39.18%, 33.34% 27.08%, 33.34% 6.95%;
+  }
+  46.67% {
+    -webkit-mask-size: 33.34% 50.01%, 33.34% 49.38%, 33.34% 47.29%, 33.34% 42.37%, 33.34% 32.79%, 33.34% 16.24%;
+    mask-size: 33.34% 50.01%, 33.34% 49.38%, 33.34% 47.29%, 33.34% 42.37%, 33.34% 32.79%, 33.34% 16.24%;
+  }
+  50.00% {
+    -webkit-mask-size: 33.34% 50.07%, 33.34% 49.75%, 33.34% 48.39%, 33.34% 44.81%, 33.34% 37.37%, 33.34% 23.95%;
+    mask-size: 33.34% 50.07%, 33.34% 49.75%, 33.34% 48.39%, 33.34% 44.81%, 33.34% 37.37%, 33.34% 23.95%;
+  }
+  53.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 49.95%, 33.34% 49.13%, 33.34% 46.62%, 33.34% 40.97%, 33.34% 30.25%;
+    mask-size: 33.34% 50.10%, 33.34% 49.95%, 33.34% 49.13%, 33.34% 46.62%, 33.34% 40.97%, 33.34% 30.25%;
+  }
+  56.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.05%, 33.34% 49.60%, 33.34% 47.92%, 33.34% 43.75%, 33.34% 35.35%;
+    mask-size: 33.34% 50.10%, 33.34% 50.05%, 33.34% 49.60%, 33.34% 47.92%, 33.34% 43.75%, 33.34% 35.35%;
+  }
+  60.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.87%, 33.34% 48.82%, 33.34% 45.84%, 33.34% 39.39%;
+    mask-size: 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.87%, 33.34% 48.82%, 33.34% 45.84%, 33.34% 39.39%;
+  }
+  63.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.01%, 33.34% 49.40%, 33.34% 47.37%, 33.34% 42.54%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.01%, 33.34% 49.40%, 33.34% 47.37%, 33.34% 42.54%;
+  }
+  66.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.76%, 33.34% 48.44%, 33.34% 44.93%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.76%, 33.34% 48.44%, 33.34% 44.93%;
+  }
+  70.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.96%, 33.34% 49.16%, 33.34% 46.71%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.96%, 33.34% 49.16%, 33.34% 46.71%;
+  }
+  73.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.05%, 33.34% 49.62%, 33.34% 47.98%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.05%, 33.34% 49.62%, 33.34% 47.98%;
+  }
+  76.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.88%, 33.34% 48.86%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%, 33.34% 49.88%, 33.34% 48.86%;
+  }
+  80.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.02%, 33.34% 49.43%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.02%, 33.34% 49.43%;
+  }
+  83.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.78%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.08%, 33.34% 49.78%;
+  }
+  86.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.97%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 49.97%;
+  }
+  90.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.06%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.06%;
+  }
+  93.33% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.09%;
+  }
+  96.67% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+  }
+  100.00% {
+    -webkit-mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+    mask-size: 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%, 33.34% 50.10%;
+  }
+}
+
+/* 首屏在一屏内同时看到图片与大标题：图片高度按视口收拢（仅上下少量裁切，不加蒙版） */
+@media (min-width: 768px) {
+  .banda-editorial .h39 .editorial-hero .hero-stage {
+    max-height: max(380px, calc(100svh - 96px - var(--hero-row) - clamp(170px, 14vw, 230px)));
+  }
+}
+
+/* 英文页：两行标题之间补字间距 */
+html[lang="en"] .h39 .h-title .h-line + .h-line {
+  margin-left: 0.24em;
+}
+@media (max-width: 767px) {
+  html[lang="en"] .h39 .h-title .h-line + .h-line {
+    margin-left: 0;
+  }
+}
+
+/* 手机：首屏图片用更高的画幅（居中裁切两侧），第一眼更有分量 */
+@media (max-width: 767px) {
+  .banda-editorial .h39 .editorial-hero .hero-stage {
+    aspect-ratio: 4 / 3;
+  }
+}

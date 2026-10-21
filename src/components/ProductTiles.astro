@@ -1,0 +1,70 @@
+---
+import GalleryImage from "./GalleryImage.astro";
+import { imageDimensions } from "../lib/image-dimensions";
+interface Photo {
+  base: string;
+  caption: string;
+  width?: number;
+  height?: number;
+}
+interface Props {
+  photos: Photo[];
+  group: string;
+  complete?: boolean;
+}
+const { photos, group, complete = true } = Astro.props;
+const count = photos.length;
+// 2 列为主；数量为奇数（≥5）时，最后 3 张以 3 列收尾，保证每一行外框对齐。
+const tail = count >= 5 && count % 2 === 1 ? 3 : 0;
+const single = count === 1;
+const sized = photos.map((photo) => {
+  const intrinsic = imageDimensions(`/assets/img/${photo.base}.jpg`);
+  const width = photo.width ?? intrinsic[0];
+  const height = photo.height ?? intrinsic[1];
+  return { ...photo, width, height, ratio: width / height };
+});
+const rows: (typeof sized)[] = [];
+for (let i = 0; i < count;) {
+  const size = count - i === 3 ? 3 : Math.min(2, count - i);
+  rows.push(sized.slice(i, i + size));
+  i += size;
+}
+---
+
+<div
+  class:list={[
+    "pd-tiles",
+    { "pd-tiles--single": single, "pd-tiles--complete": complete },
+  ]}
+>
+  {rows.map((row, rowIndex) => (
+    <div
+      class="pd-tile-row"
+      style={`--row-columns:${row.map((p) => `minmax(0, ${p.ratio}fr)`).join(" ")}`}
+    >
+      {row.map((photo) => (
+        <figure
+          class:list={[
+            "pd-tile rv",
+            { "pd-tile--third": tail > 0 && rowIndex === rows.length - 1 },
+          ]}
+          style={`--photo-ratio:${photo.ratio}`}
+        >
+          <div class="pd-tile-frame">
+            <GalleryImage
+              base={photo.base}
+              alt={photo.caption}
+              caption={photo.caption}
+              group={group}
+              fit={complete ? "contain" : "cover"}
+              width={photo.width}
+              height={photo.height}
+              sizes="(max-width: 767px) calc(100vw - 48px), 640px"
+            />
+          </div>
+          <figcaption>{photo.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+  ))}
+</div>

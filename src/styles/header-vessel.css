@@ -1,0 +1,322 @@
+/* Shared masthead: transparent over photography, solid after scrolling. */
+:root {
+  --gnb-h: 72px;
+  --header-height: 72px;
+}
+.banda-editorial .gnb {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 2.5vw, 40px);
+  height: var(--gnb-h);
+  padding: 0 clamp(24px, 4.2vw, 80px);
+  background: #fff;
+  color: #18221e;
+  border-bottom: 1px solid #18221e12;
+  box-shadow: none;
+  text-shadow: none;
+  transition: background-color 200ms;
+}
+.banda-editorial .gnb .logo {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+.nav-ink {
+  transition: none;
+}
+.banda-editorial .gnb .official-brand {
+  width: clamp(136px, 10.28vw, 148px);
+}
+.banda-editorial .gnb nav {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  height: 100%;
+  gap: clamp(22px, 1.8vw, 32px);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.banda-editorial .gnb nav > a,
+.banda-editorial .gnb .sub-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  color: inherit;
+  opacity: 1;
+  white-space: nowrap;
+  transition: none;
+}
+.banda-editorial .gnb nav > a:after,
+.banda-editorial .gnb .sub-trigger:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 3px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms;
+}
+.banda-editorial .gnb nav > a:is(.cur, :hover, :focus-visible):after,
+.banda-editorial .gnb .sub-trigger:is(.cur, :hover, :focus-visible):after {
+  transform: scaleX(1);
+}
+.banda-editorial .gnb .right {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+.banda-editorial .gnb .lang {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  transition: none;
+}
+.banda-editorial .gnb .lang:hover {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+.banda-editorial .gnb .mobile-language {
+  display: none;
+}
+.banda-editorial .gnb :focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+.banda-editorial .gnb .burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 44px;
+  min-height: 44px;
+  margin-left: auto;
+  gap: 7px;
+  border: 0;
+  background: none;
+  color: inherit;
+}
+.banda-editorial .gnb .burger i {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+.banda-editorial .gnb .has-sub {
+  position: relative;
+  height: 100%;
+  align-items: center;
+}
+.banda-editorial .gnb .sub-panel {
+  top: 100%;
+  left: auto;
+  right: -80px;
+  width: 360px;
+  min-width: 0;
+}
+.banda-editorial .gnb .sub-panel-card {
+  color: #18221e;
+  background: #fff;
+  border: 1px solid #18221e14;
+  box-shadow: 0 12px 30px #18221e0d;
+}
+.banda-editorial .gnb .mega-in {
+  padding: 20px 12px;
+}
+.banda-editorial .product-jump {
+  top: var(--gnb-h);
+}
+.banda-editorial .direct-contact {
+  padding-top: var(--gnb-h);
+}
+.banda-editorial .page-visual.cover-visual {
+  margin-top: var(--gnb-h);
+}
+@media (min-width: 1280px) {
+  :root {
+    --gnb-h: 80px;
+    --header-height: 80px;
+  }
+  .banda-editorial .gnb .desktop-navigation {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 2.5vw, 40px);
+    height: 48px;
+    padding-inline: 0;
+    margin-left: auto;
+    border-radius: 2px;
+  }
+  /* The supplied catalog close-ups leave clear sky at the far-left edge. */
+  .banda-editorial:has(.catalog-hero) .gnb {
+    padding-left: clamp(20px, 1.6vw, 40px);
+  }
+  .banda-editorial:has(.catalog-hero) .gnb .official-brand {
+    width: min(148px, 6.8vw);
+  }
+  .banda-editorial .gnb.gnb-overlay:not(.scrolled) {
+    background: transparent;
+    border-color: transparent;
+    color: #fff;
+  }
+  /* Move with the photograph before the solid sticky state. This keeps the
+     compact sky headline clear of the logo during the first 80px of scrolling. */
+  .banda-editorial:has(.editorial-hero) .gnb.gnb-overlay:not(.scrolled) {
+    position: absolute;
+  }
+  .banda-editorial .gnb.gnb-overlay[data-tone="dark"]:not(.scrolled) {
+    color: #18221e;
+  }
+  /* Keep one masthead baseline and solid lettering throughout both carousels.
+     A tight text shadow separates the white strokes from photographic detail. */
+  .banda-editorial:has(.editorial-hero)
+    .gnb.gnb-overlay:not(.scrolled):not([data-tone="dark"])
+    .desktop-navigation
+    .nav-ink {
+    text-shadow: 0 1px 2px rgb(0 0 0 / 75%);
+  }
+  /* Existing subtitle treatment remains independent from navigation. */
+  @supports (background-clip: text) {
+    .editorial-hero .h-hero-sub[data-photo-ink] {
+      display: block;
+      background-image: var(--ink-photo);
+      background-size: var(--ink-size);
+      background-position: var(--ink-offset);
+      background-repeat: no-repeat;
+      background-clip: text;
+      color: transparent;
+      filter: url(#navigation-photo-ink);
+    }
+  }
+  .banda-editorial
+    .gnb.gnb-overlay:not(.scrolled):is(
+      [data-brand-tone="light"],
+      :not([data-brand-tone]):not([data-tone="dark"])
+    )
+    .brand-adaptive
+    .brand-original {
+    visibility: hidden;
+  }
+  .banda-editorial
+    .gnb.gnb-overlay:not(.scrolled):is(
+      [data-brand-tone="light"],
+      :not([data-brand-tone]):not([data-tone="dark"])
+    )
+    .brand-adaptive
+    .brand-reversed {
+    visibility: visible;
+  }
+}
+@media (forced-colors: active) {
+  .nav-ink,
+  .editorial-hero .h-hero-sub[data-photo-ink] {
+    background: none !important;
+    filter: none !important;
+    color: CanvasText !important;
+    text-shadow: none !important;
+  }
+}
+.banda-editorial .drawer-gallery {
+  display: flex;
+  padding: 120px clamp(24px, 4vw, 80px) 40px;
+  background: #fff;
+  color: #18221e;
+}
+.banda-editorial .drawer-gallery .drawer-brand {
+  position: absolute;
+  top: 19px;
+  left: clamp(24px, 4vw, 80px);
+  border: 0;
+}
+.banda-editorial .drawer-gallery .p-close {
+  top: 18px;
+  right: clamp(24px, 4vw, 80px);
+  color: #18221e;
+}
+.banda-editorial
+  .drawer-gallery
+  :is(
+    .drawer-link,
+    .p-sub-link,
+    .p-sub-btn,
+    .drawer-language,
+    .p-sub-items a,
+    .p-ic
+  ) {
+  color: #18221e;
+}
+.banda-editorial .drawer-gallery :is(.drawer-link, .p-sub-row, .p-sub) {
+  border: 0;
+  max-width: 640px;
+}
+.banda-editorial .drawer-gallery .drawer-language {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-width: 44px;
+  border: 0;
+  padding: 0;
+  font-size: 14px;
+  margin-top: 24px;
+}
+@media (min-width: 1280px) {
+  .banda-editorial .drawer-gallery a.drawer-link,
+  .banda-editorial .drawer-gallery .p-sub-link {
+    font-size: 40px;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+}
+@media (max-width: 1279px) {
+  .banda-editorial .gnb .mobile-language {
+    display: inline-flex;
+    margin-left: auto;
+  }
+  .banda-editorial .gnb .desktop-navigation {
+    display: none;
+  }
+  .banda-editorial .gnb nav,
+  .banda-editorial .gnb .right {
+    display: none;
+  }
+  .banda-editorial .gnb .burger {
+    display: flex;
+    margin-left: 0;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --gnb-h: 64px;
+    --header-height: 64px;
+  }
+  .banda-editorial .gnb {
+    padding-inline: 24px;
+    gap: 12px;
+  }
+  .banda-editorial .gnb .official-brand {
+    width: 127px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .banda-editorial .gnb,
+  .banda-editorial .gnb nav > a:after,
+  .banda-editorial .gnb .sub-trigger:after {
+    transition: none;
+  }
+}

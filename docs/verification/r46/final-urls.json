@@ -1,0 +1,145 @@
+{
+  "site": "http://23.251.34.150:8080",
+  "pages": [
+    {
+      "page": "404.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\about\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\cases\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\contact\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\4s\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\5s\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\6s\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\bd8\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\bd9\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\grayscale\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "en\\products\\grayscale-eco\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\about\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\cases\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\contact\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\cookies\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\news\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\privacy\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\qualifications\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\about\\careers\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\about\\investors\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\4s\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\5s\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\6s\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\bd8\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\bd9\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\grayscale\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\grayscale-eco\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\slab\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\stair\\index.html",
+      "noLocalUrls": true
+    },
+    {
+      "page": "zh\\products\\wall\\index.html",
+      "noLocalUrls": true
+    }
+  ]
+}

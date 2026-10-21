@@ -1,0 +1,12 @@
+{
+  "source": "C:/Users/Administrator/Downloads/网页调整4/4/1首页/首页轮播图/5半打6S.jpeg",
+  "target": "public/assets/img/r67-original-6s.webp",
+  "width": 3072,
+  "height": 1248,
+  "decodedPixelsIdentical": true,
+  "extension": false,
+  "resize": false,
+  "status": "已发布r67-a",
+  "replaces": "r66-layered-6s.webp",
+  "scope": "中英文首页桌面第三张，其他图片不变"
+}

@@ -9,6 +9,7 @@ interface Props {
   mobileWidth?: number;
   fit?: "cover" | "contain";
   mobileImage?: string;
+  desktopImage?: string;
   alt: string;
   eager?: boolean;
   class?: string;
@@ -18,6 +19,7 @@ interface Props {
 const {
   base,
   mobileImage,
+  desktopImage,
   alt,
   eager = false,
   class: cls = "",
@@ -44,6 +46,13 @@ const mobileWidth =
   class:list={["editorial-image", cls, { "image-complete": fit === "contain" }]}
   style={fit === "contain" ? `aspect-ratio:${width}/${height}` : undefined}
 >
+  {desktopImage && (
+    <source
+      media="(min-width: 1280px)"
+      type="image/webp"
+      srcset={desktopImage}
+    />
+  )}
   {mobileImage && (
     <source media="(max-width: 767px)" type="image/webp" srcset={mobileImage} />
   )}

@@ -13,6 +13,7 @@ const routes = [
   "zh/products/5s",
   "zh/products/6s",
   "zh/products/grayscale",
+  "zh/products/grayscale-eco",
   "zh/products/bd8",
   "zh/products/bd9",
   "zh/products/slab",
@@ -31,6 +32,7 @@ const routes = [
     "products/5s",
     "products/6s",
     "products/grayscale",
+    "products/grayscale-eco",
     "products/bd8",
     "products/bd9",
     "cases",
@@ -85,9 +87,9 @@ ok(
   "carousel has a pause control",
 );
 ok(
-  (home.match(/data-dot=/g) ?? []).length === 3 &&
+  (home.match(/data-dot=/g) ?? []).length === 5 &&
     home.includes('aria-label="选择住宅照片"'),
-  "three direct carousel selectors are available",
+  "five direct carousel selectors are available",
 );
 ok(page("en").includes('<html lang="en"'), "English home is localized");
 const contact = page("zh/contact");

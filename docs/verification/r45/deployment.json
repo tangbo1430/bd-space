@@ -1,0 +1,26 @@
+{
+  "deployed_at": "2026-10-17T13:05:28.867Z",
+  "url": "http://23.251.34.150:8080/zh/?v=r45",
+  "english_url": "http://23.251.34.150:8080/en/?v=r45",
+  "service": "banda-space-preview",
+  "release_directory": "/opt/banda-space-preview/releases/r45-visual-202610172104",
+  "webroot": "/opt/banda-space-preview/releases/r45-visual-202610172104/site",
+  "server_config": "/opt/banda-space-preview/releases/r45-visual-202610172104/preview.Caddyfile",
+  "build": {
+    "commit": "10505db",
+    "builtAt": "2026-10-17T13:00:24.401Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production",
+    "release": "r45",
+    "sourceSha256": "54e5194316301137118ce151f75c276036c57b343279f71e4bf11b612e4e5a01",
+    "gitBase": "10505db206891e5c63c91fdaffc3009bea3dfd0a",
+    "workingTreeSnapshot": true
+  },
+  "archive_sha256": "76628a18d24a6068429cc014ea20235f906f3cd8a37e4c5c30376c1d2cfca720",
+  "source_and_server_sha256_match": true,
+  "previous_release": "/opt/banda-space-preview/releases/r44-nav-202610172024",
+  "rollback_container": "banda-space-preview-prev-202610172104",
+  "rollback_command": "bash /opt/banda-space-preview/releases/r45-visual-202610172104/rollback.sh",
+  "hosting": "Caddy 8080 HTTP; read-only filesystem; user 1000:1000; 128 MB; 0.5 CPU; noindex/nofollow",
+  "verification": "docs/verification/r45/public-parity.json"
+}

@@ -80,6 +80,9 @@ for (const route of ["/zh/", "/zh/products/", "/en/", "/en/products/"]) {
           route.startsWith("/en/") ? /load/i : /无法加载/,
         );
         await dots.nth(2).click();
+        await page.waitForFunction(() =>
+          document.querySelector('[data-dot="2"]').classList.contains("on"),
+        );
         assert.equal(
           await active(),
           "2",

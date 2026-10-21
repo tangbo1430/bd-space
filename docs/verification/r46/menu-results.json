@@ -1,0 +1,66 @@
+[
+  {
+    "route": "/zh/",
+    "width": 375,
+    "menuFontSizes": [
+      "27px"
+    ],
+    "violations": []
+  },
+  {
+    "route": "/zh/",
+    "width": 1440,
+    "menuFontSizes": [
+      "40px"
+    ],
+    "violations": []
+  },
+  {
+    "route": "/zh/products/",
+    "width": 375,
+    "menuFontSizes": [
+      "27px"
+    ],
+    "violations": []
+  },
+  {
+    "route": "/zh/products/",
+    "width": 1440,
+    "menuFontSizes": [
+      "40px"
+    ],
+    "violations": []
+  },
+  {
+    "route": "/en/",
+    "width": 375,
+    "menuFontSizes": [
+      "27px"
+    ],
+    "violations": []
+  },
+  {
+    "route": "/en/",
+    "width": 1440,
+    "menuFontSizes": [
+      "40px"
+    ],
+    "violations": []
+  },
+  {
+    "route": "/en/products/",
+    "width": 375,
+    "menuFontSizes": [
+      "27px"
+    ],
+    "violations": []
+  },
+  {
+    "route": "/en/products/",
+    "width": 1440,
+    "menuFontSizes": [
+      "40px"
+    ],
+    "violations": []
+  }
+]

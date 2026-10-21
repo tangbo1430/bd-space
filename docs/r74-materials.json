@@ -1,0 +1,97 @@
+{
+  "release": "r74-a",
+  "economyGallery": {
+    "added": [
+      {
+        "source": "C:\\Users\\Administrator\\Downloads\\网页调整4\\4\\2产品中心\\产品详情\\详情-灰度空间经济款\\效果图 (2).jpeg",
+        "base": "r74-eco-dining",
+        "nature": "方案效果图",
+        "size": [
+          1920,
+          1072
+        ],
+        "use": "经济款空间体验"
+      },
+      {
+        "source": "C:\\Users\\Administrator\\Downloads\\网页调整4\\4\\2产品中心\\产品详情\\详情-灰度空间经济款\\效果图 (1).jpeg",
+        "base": "r74-eco-living",
+        "nature": "方案效果图",
+        "size": [
+          1920,
+          1072
+        ],
+        "use": "经济款空间体验"
+      },
+      {
+        "source": "C:\\Users\\Administrator\\Downloads\\网页调整4\\4\\2产品中心\\产品详情\\详情-灰度空间经济款\\效果图 (3).jpeg",
+        "base": "r74-eco-bedroom",
+        "nature": "方案效果图",
+        "size": [
+          1920,
+          1545
+        ],
+        "use": "经济款空间体验"
+      }
+    ],
+    "ordered": [
+      {
+        "base": "r4-grayscale-eco-space-1",
+        "caption": "灰度空间经济款 · 庭院外观 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r74-eco-dining",
+        "caption": "灰度空间经济款 · 餐厨正视 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r74-eco-living",
+        "caption": "灰度空间经济款 · 客厅视角 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-eco-space-2",
+        "caption": "灰度空间经济款 · 厨房视角 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r74-eco-bedroom",
+        "caption": "灰度空间经济款 · 卧室 / 方案效果图",
+        "width": 1920,
+        "height": 1545,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-eco-space-4",
+        "caption": "灰度空间经济款 · 完整客餐厅 / 方案效果图",
+        "width": 1920,
+        "height": 957,
+        "mobileWidth": 960
+      }
+    ],
+    "retired": "r4-grayscale-eco-space-3"
+  },
+  "about": {
+    "source": "网页调整4/4/4关于我们/量产房子 全球卖房商业计划书_01–13.png",
+    "implementation": "中文桌面保留全部13张原稿及顺序；中文手机增加可读摘要及放大；英文按同一主题和公司资料重排为网页正文。",
+    "facts": "创始人经历采用已交叉核对的公司简介，不重复原图中有歧义的2019年疫情时间线。商业目标与融资数据明确标为规划，不写作实际业绩。",
+    "imagesReused": [
+      "v11-factory",
+      "founder-huang-kun",
+      "r4-system-panels",
+      "r4-system-modules",
+      "r4-system-hybrid"
+    ],
+    "copySource": "src/data/about-story.ts"
+  },
+  "gallerySizing": "39组正文图片，原图/桌面WebP/手机版共117个资源实际宽高交叉校验；未重画建筑或技术图。",
+  "publicResources": "不含原始表格、完整报告或产品价格；融资章节仅允许原稿列明的四笔预算金额。"
+}

@@ -1,0 +1,21 @@
+{
+  "version": {
+    "commit": "10505db",
+    "builtAt": "2026-10-17T13:00:24.401Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production",
+    "release": "r45",
+    "sourceSha256": "54e5194316301137118ce151f75c276036c57b343279f71e4bf11b612e4e5a01",
+    "gitBase": "10505db206891e5c63c91fdaffc3009bea3dfd0a",
+    "workingTreeSnapshot": true
+  },
+  "tarSha256": "76628a18d24a6068429cc014ea20235f906f3cd8a37e4c5c30376c1d2cfca720",
+  "sourceFiles": 1091,
+  "layoutChecks": 36,
+  "slideChecks": 162,
+  "a11yGroups": 8,
+  "readinessChecks": 32,
+  "interactionRoutes": 4,
+  "unitTests": 48,
+  "sharedHeaderPages": 12
+}

@@ -124,57 +124,6 @@ h3 {
   margin-top: 30px;
 }
 /* Navigation state and keyboard fallbacks. */
-.gnb {
-  position: absolute;
-  inset: 0 0 auto;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 96px;
-  padding: 0 64px;
-}
-.gnb nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 13px;
-}
-.gnb nav a {
-  position: relative;
-  padding: 8px 0;
-}
-.gnb .right {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-.gnb .lang {
-  border: 0;
-  background: none;
-  color: inherit;
-  cursor: pointer;
-  padding: 4px;
-}
-.gnb .burger {
-  display: none;
-}
-.gnb .burger i {
-  display: block;
-  width: 24px;
-  height: 1.5px;
-  background: currentColor;
-}
-.gnb nav > a.cur:after,
-.gnb .sub-trigger.cur:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  bottom: 0;
-  background: currentColor;
-}
 .has-sub {
   position: relative;
   display: inline-flex;
@@ -621,9 +570,6 @@ html[data-motion="off"] .rv {
 @media (max-width: 1279px) {
   .drawer {
     display: flex;
-  }
-  .gnb nav {
-    display: none;
   }
 }
 @media (max-width: 767px) {

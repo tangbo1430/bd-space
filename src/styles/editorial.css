@@ -171,39 +171,6 @@ html {
   transform: none;
 }
 /* Shared masthead. */
-.banda-editorial .gnb {
-  position: fixed;
-  height: 96px;
-  padding: 0 var(--ed-gutter);
-  gap: 24px;
-  box-shadow: none;
-  transition:
-    background 0.25s,
-    height 0.25s;
-  color: var(--paper);
-}
-.banda-editorial .gnb.gnb-solid {
-  background: var(--paper);
-  color: var(--charcoal);
-  border-bottom: 0;
-}
-.banda-editorial .gnb.scrolled {
-  position: fixed;
-  height: 72px;
-  background: var(--paper);
-  color: var(--charcoal);
-  border-bottom: 1px solid var(--hairline);
-  box-shadow: none;
-  padding: 0 var(--ed-gutter);
-}
-.banda-editorial .gnb .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  letter-spacing: 0;
-  font-size: 20px;
-  flex: 0 0 auto;
-}
 .brand-symbol {
   width: 34px;
   height: 38px;
@@ -220,28 +187,6 @@ html {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.19em;
-}
-.banda-editorial .gnb nav {
-  gap: clamp(16px, 1.9vw, 34px);
-  font-size: 12px;
-  margin-left: auto;
-}
-.banda-editorial .gnb nav a {
-  opacity: 1;
-}
-.banda-editorial .gnb nav > a.cur:after,
-.banda-editorial .gnb nav .sub-trigger.cur:after {
-  height: 1px;
-  bottom: 1px;
-  background: currentColor;
-}
-.banda-editorial .gnb .right {
-  flex: 0 0 auto;
-  gap: 25px;
-}
-.banda-editorial .gnb .lang {
-  font-size: 12px;
-  min-height: 44px;
 }
 .banda-editorial .sub-panel {
   width: 420px;
@@ -301,16 +246,6 @@ html {
 }
 .banda-editorial .p-sub-items a {
   color: var(--forest-light);
-}
-.banda-editorial .burger {
-  min-height: 44px;
-  width: 44px;
-  border: 0;
-  background: transparent;
-}
-.banda-editorial .burger i {
-  width: 24px;
-  background: currentColor;
 }
 .banda-editorial .lang-toast {
   background: var(--forest);
@@ -1057,25 +992,12 @@ html {
 }
 
 @media (min-width: 1800px) {
-  .banda-editorial .gnb {
-    padding-inline: max(var(--ed-gutter), calc((100vw - 1640px) / 2));
-  }
   .page-visual {
     max-width: 1640px;
     margin-inline: auto;
   }
 }
 @media (max-width: 1200px) {
-  .banda-editorial .gnb {
-    gap: 18px;
-  }
-  .banda-editorial .gnb nav {
-    gap: 17px;
-    font-size: 12px;
-  }
-  .banda-editorial .gnb .right {
-    gap: 16px;
-  }
   .brand-name {
     font-size: 18px;
   }
@@ -1094,19 +1016,6 @@ html {
   }
 }
 @media (max-width: 1023px) {
-  .banda-editorial .gnb nav,
-  .banda-editorial .gnb .right {
-    display: none;
-  }
-  .banda-editorial .gnb .burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    margin-left: auto;
-    color: inherit;
-  }
   .banda-editorial .drawer {
     display: flex;
   }
@@ -1140,12 +1049,6 @@ html {
 @media (max-width: 767px) {
   :root {
     --ed-gutter: clamp(24px, 4.5vw, 80px);
-  }
-  .banda-editorial .gnb {
-    height: 80px;
-  }
-  .banda-editorial .gnb.scrolled {
-    height: 65px;
   }
   .brand-name {
     font-size: 18px;
@@ -1550,7 +1453,7 @@ html {
   .banda-editorial *:after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: 0s !important;
   }
 }
 
@@ -1564,17 +1467,6 @@ html {
   font-size: 12px;
   padding: 10px 14px;
   min-height: 44px;
-}
-
-.banda-editorial .gnb .has-sub {
-  position: relative;
-}
-.banda-editorial .gnb .sub-panel {
-  right: -100px;
-  left: auto;
-  top: 100%;
-  width: 420px;
-  min-width: 0;
 }
 .banda-editorial .mega-in {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1592,11 +1484,6 @@ html.js-enabled:not([data-motion="off"]) .rv:not(.in) {
 }
 .banda-editorial .form-banner {
   border-radius: 0;
-}
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .banda-editorial .gnb .sub-panel {
-    display: block;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   html.js-enabled .rv:not(.in) {
@@ -1694,19 +1581,6 @@ html.js-enabled:not([data-motion="off"]) .rv:not(.in) {
   padding-bottom: 80px;
 }
 @media (max-width: 1279px) {
-  .banda-editorial .gnb nav,
-  .banda-editorial .gnb .right {
-    display: none;
-  }
-  .banda-editorial .gnb .burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    margin-left: auto;
-    color: inherit;
-  }
   .banda-editorial .drawer {
     display: flex;
   }

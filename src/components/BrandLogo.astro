@@ -48,14 +48,6 @@ const { tone = "original" } = Astro.props;
     width: 180px;
     margin: 0;
   }
-  @media (min-width: 1280px) {
-    :global(.gnb-overlay:not(.scrolled)) .brand-adaptive .brand-original {
-      visibility: hidden;
-    }
-    :global(.gnb-overlay:not(.scrolled)) .brand-adaptive .brand-reversed {
-      visibility: visible;
-    }
-  }
   @media (max-width: 767px) {
     .official-brand {
       width: 127px;

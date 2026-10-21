@@ -1,0 +1,150 @@
+/* Shared detail rhythm for all published models. */
+.product-detail[data-layout="complete"] {
+  --r4-section: clamp(48px, 4vw, 72px);
+  --r4-band: #f5f6f4;
+  --r4-caption-bg: #f5f6f4;
+}
+.product-detail[data-layout="complete"] .pd-head {
+  margin-bottom: 24px;
+}
+.product-detail[data-layout="complete"] .pd-eyebrow,
+.product-detail[data-layout="complete"] .cover-body > .eyebrow {
+  display: none;
+}
+.product-detail[data-layout="complete"] .pd-head h2 {
+  margin-top: 0;
+  line-height: 1.3;
+}
+.product-detail[data-layout="complete"] .heading-phrase {
+  display: inline-block;
+}
+.product-detail[data-layout="complete"] .pd-head p {
+  text-align: left;
+  max-width: 38em;
+  margin-inline: auto;
+}
+.product-detail[data-layout="complete"] .pd-table dl > div {
+  font-size: 16px;
+}
+.product-detail[data-layout="complete"] .pd-note {
+  color: #555;
+}
+.product-detail[data-layout="complete"] .pd-highlights li span {
+  color: #00785f;
+}
+.product-detail[data-layout="complete"] .pd-plan,
+.product-detail[data-layout="complete"] .pd-drawing {
+  border: 0;
+}
+.product-detail[data-layout="complete"]
+  :is(.pd-plan, .pd-drawing)
+  .gallery-link {
+  padding: 0;
+  aspect-ratio: auto;
+}
+.product-detail[data-layout="complete"]
+  :is(.pd-plan, .pd-drawing)
+  .editorial-image,
+.product-detail[data-layout="complete"] :is(.pd-plan, .pd-drawing) img {
+  height: auto !important;
+  aspect-ratio: auto !important;
+}
+.product-detail[data-layout="complete"] .pd-film {
+  align-items: start;
+}
+.product-detail[data-layout="complete"] .pd-film-photo > .gallery-link {
+  aspect-ratio: auto;
+  flex: none;
+}
+.product-detail[data-layout="complete"] .pd-film-photo .editorial-image,
+.product-detail[data-layout="complete"] .pd-film-photo img {
+  height: auto;
+  object-fit: contain;
+}
+.product-detail[data-layout="complete"] .pd-tile figcaption {
+  font-size: 16px;
+  color: #555;
+}
+.banda-editorial .product-detail[data-layout="complete"] .cover-body h1 {
+  font-weight: 400;
+  font-size: 32px;
+}
+.banda-editorial .product-detail[data-layout="complete"] .cover-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 32px;
+  align-items: center;
+  max-width: none;
+  padding: 24px clamp(24px, 4.2vw, 80px);
+  text-align: left;
+}
+.banda-editorial .product-detail[data-layout="complete"] .cover-body > p {
+  font-size: 16px;
+  margin-top: 6px;
+}
+.banda-editorial
+  .product-detail[data-layout="complete"]
+  .cover-body
+  .cover-actions {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  align-self: center;
+}
+.banda-editorial .product-detail[data-layout="complete"] .product-jump {
+  background: #fff;
+  backdrop-filter: none;
+}
+@media (max-width: 767px) {
+  .product-detail[data-layout="complete"] {
+    --r4-section: 40px;
+  }
+  .product-detail[data-layout="complete"] .pd-head {
+    margin-bottom: 24px;
+  }
+  .product-detail[data-layout="complete"] .pd-head h2 {
+    font-size: 28px;
+  }
+  .banda-editorial .product-detail[data-layout="complete"] .cover-visual {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .banda-editorial .product-detail[data-layout="complete"] .cover-body {
+    display: contents;
+  }
+  .banda-editorial .product-detail[data-layout="complete"] .cover-body h1 {
+    grid-row: 1;
+    padding: 16px 24px 0;
+    font-size: 30px;
+  }
+  .banda-editorial .product-detail[data-layout="complete"] .cover-body > p {
+    grid-row: 2;
+    padding: 8px 24px 22px;
+    margin: 0;
+  }
+  .product-detail[data-layout="complete"] .cover-visual .page-visual-frame {
+    grid-row: 3;
+  }
+  .banda-editorial
+    .product-detail[data-layout="complete"]
+    .cover-body
+    .cover-actions {
+    grid-row: 4;
+    grid-column: 1;
+    justify-content: flex-start;
+    padding: 16px 24px;
+    gap: 4px 20px;
+  }
+  .product-detail[data-layout="complete"] .cover-actions .action {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+  .product-detail[data-layout="complete"] .cover-actions .action-secondary {
+    padding-inline: 0;
+  }
+}

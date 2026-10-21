@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import CertificateShowcase from "../../components/CertificateShowcase.astro";
+import PhotoViewer from "../../components/PhotoViewer.astro";
+import GalleryImage from "../../components/GalleryImage.astro";
 import {
   reports,
   reportOwner,
@@ -7,6 +10,15 @@ import {
   awards,
   awardProject,
 } from "../../data/credentials";
+const patentCerts = Array.from({ length: 17 }, (_, i) => ({
+  base: `r4-patent-${String(i + 1).padStart(2, "0")}`,
+  caption: i < 6 ? "发明专利证书" : "实用新型专利证书",
+}));
+const awardCerts = [
+  { base: "r4-award-1", caption: "广东省土木建筑学会科学技术奖励 · 二等奖" },
+  { base: "r4-award-2", caption: "广东省土木建筑学会科学技术奖励 · 个人" },
+  { base: "r4-award-3", caption: "广东省科技创新专项 · 二等奖" },
+];
 ---
 
 <BaseLayout
@@ -125,6 +137,17 @@ import {
             </article>
           ))}
         </div>
+        <div class="cert-block">
+          <div class="cert-block-head">
+            <span class="eyebrow">专利证书展示</span>
+            <p>共 17 项：发明专利 6 项、实用新型专利 11 项。点击证书可查看大图。</p>
+          </div>
+          <CertificateShowcase
+            items={patentCerts}
+            group="patent-certificates"
+            label="专利证书展示"
+          />
+        </div>
       </div>
     </section>
     <section class="ed-wrap ed-section" id="awards">
@@ -160,6 +183,29 @@ import {
           </article>
         ))}
       </div>
+      <div class="cert-block cert-block--awards">
+        <div class="cert-block-head">
+          <span class="eyebrow">荣誉证书展示</span>
+          <p>点击证书可查看大图。</p>
+        </div>
+        <div class="award-wall">
+          {awardCerts.map((c) => (
+            <figure class="award-cert rv">
+              <div class="cert-paper">
+                <GalleryImage
+                  base={c.base}
+                  alt={c.caption}
+                  caption={c.caption}
+                  group="award-certificates"
+                  fit="contain"
+                  sizes="(max-width: 767px) calc(100vw - 48px), 420px"
+                />
+              </div>
+              <figcaption>{c.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
       <div class="evidence-contact">
         <p>需要了解资料与您的项目是否适用？</p>
         <a class="action action-primary" href="/zh/contact/">
@@ -167,5 +213,6 @@ import {
         </a>
       </div>
     </section>
+    <PhotoViewer />
   </div>
 </BaseLayout>

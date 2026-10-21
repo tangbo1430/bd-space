@@ -7,6 +7,10 @@ import "../styles/immersive.css";
 import "../styles/actions.css";
 import "../styles/materials.css";
 import "../styles/v11.css";
+import "../styles/r4.css";
+import "../styles/home40.css";
+import "../styles/header-vessel.css";
+import "../styles/pages40.css";
 import { hasEnglish } from "../lib/locale";
 import { site } from "../lib/site";
 import { hreflangLinks } from "../lib/seo";
@@ -28,6 +32,8 @@ interface Props {
   current?: string;
   /** 导航样式：overlay=透明叠加于深色首屏；solid=白底实底 */
   headerStyle?: "overlay" | "solid";
+  headerTone?: "light" | "dark";
+  headerBrandTone?: "light" | "dark";
   /** 未发布/错误页不索引 */
   noindex?: boolean;
 }
@@ -38,6 +44,8 @@ const {
   lang: explicitLang,
   current = "",
   headerStyle: requestedHeaderStyle,
+  headerTone = "light",
+  headerBrandTone = headerTone,
   noindex = false,
 } = Astro.props;
 const lang = Astro.url.pathname.startsWith("/en/")
@@ -110,6 +118,8 @@ const aboutSub = currentAboutSub(Astro.url.pathname);
     <SiteHeader
       current={current}
       style={headerStyle}
+      tone={headerTone}
+      brandTone={headerBrandTone}
       lang={lang}
       aboutSub={aboutSub}
     />

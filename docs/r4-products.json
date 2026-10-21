@@ -1,0 +1,521 @@
+{
+  "4s": {
+    "design": [
+      {
+        "base": "r4-4s-space-1",
+        "caption": "半打 4S · 客厅与阁楼 / 方案效果图",
+        "width": 1920,
+        "height": 1293,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-4s-space-2",
+        "caption": "半打 4S · 客厅纵向视角 / 方案效果图",
+        "width": 1599,
+        "height": 1920,
+        "mobileWidth": 799
+      },
+      {
+        "base": "r4-4s-space-3",
+        "caption": "半打 4S · 厨房 / 方案效果图",
+        "width": 1600,
+        "height": 1920,
+        "mobileWidth": 800
+      },
+      {
+        "base": "r4-4s-space-4",
+        "caption": "半打 4S · 模块化厨房 / 方案效果图",
+        "width": 1600,
+        "height": 1920,
+        "mobileWidth": 800
+      },
+      {
+        "base": "r4-4s-space-5",
+        "caption": "半打 4S · 卫浴 / 方案效果图",
+        "width": 1920,
+        "height": 1291,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-4s-space-6",
+        "caption": "半打 4S · 卧室 / 方案效果图",
+        "width": 1920,
+        "height": 1291,
+        "mobileWidth": 960
+      }
+    ],
+    "plan": {
+      "src": "/assets/img/r4-4s-plan.webp",
+      "viewerSrc": "/assets/img/r4-4s-plan.webp",
+      "caption": "半打 4S · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
+    },
+    "drawings": [
+      {
+        "src": "/assets/img/r4-4s-drawing-1.webp",
+        "viewerSrc": "/assets/img/r4-4s-drawing-1.webp",
+        "caption": "半打 4S · 双集装箱装运示意 / 技术示意",
+        "width": 1114,
+        "height": 720
+      }
+    ],
+    "site": [
+      {
+        "base": "r4-4s-site-1",
+        "caption": "半打 4S · 住宅外观实拍",
+        "width": 1920,
+        "height": 780,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-4s-site-2",
+        "caption": "半打 4S · 屋顶与立面实拍",
+        "width": 1920,
+        "height": 780,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-4s-site-3",
+        "caption": "外墙与门窗交接 / 实拍",
+        "width": 1920,
+        "height": 1080,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-4s-site-4",
+        "caption": "工厂中的厨卫模块 / 实拍",
+        "width": 1080,
+        "height": 810,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-4s-site-5",
+        "caption": "预制混凝土墙板 / 实拍",
+        "width": 1280,
+        "height": 1881,
+        "mobileWidth": 653
+      },
+      {
+        "base": "r4-4s-site-6",
+        "caption": "木结构屋顶安装 / 实拍",
+        "width": 1080,
+        "height": 810,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-4s-site-7",
+        "caption": "室内与阁楼空间 / 实拍",
+        "width": 1920,
+        "height": 1080,
+        "mobileWidth": 960
+      }
+    ]
+  },
+  "5s": {
+    "design": [
+      {
+        "base": "r4-5s-space-1",
+        "caption": "半打 5S · 暮色外观 / 方案效果图",
+        "width": 1920,
+        "height": 1285,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-5s-space-2",
+        "caption": "半打 5S · 庭院外观 / 方案效果图",
+        "width": 1079,
+        "height": 1920,
+        "mobileWidth": 540
+      },
+      {
+        "base": "r4-5s-space-3",
+        "caption": "半打 5S · 夜景外观 / 方案效果图",
+        "width": 1920,
+        "height": 1280,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-5s-space-4",
+        "caption": "半打 5S · 客厅 / 方案效果图",
+        "width": 1440,
+        "height": 1920,
+        "mobileWidth": 720
+      }
+    ],
+    "plan": {
+      "src": "/assets/img/r4-5s-plan.webp",
+      "viewerSrc": "/assets/img/r4-5s-plan.webp",
+      "caption": "半打 5S · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
+    },
+    "drawings": [
+      {
+        "src": "/assets/img/r4-5s-drawing-1.webp",
+        "viewerSrc": "/assets/img/r4-5s-drawing-1.webp",
+        "caption": "半打 5S · 剖面图 / 技术示意",
+        "width": 2080,
+        "height": 1152
+      },
+      {
+        "src": "/assets/img/r4-5s-drawing-2.webp",
+        "viewerSrc": "/assets/img/r4-5s-drawing-2.webp",
+        "caption": "半打 5S · 立面图 / 技术示意",
+        "width": 2080,
+        "height": 1152
+      }
+    ],
+    "site": []
+  },
+  "6s": {
+    "design": [
+      {
+        "base": "r4-6s-space-1",
+        "caption": "半打 6S · 住宅外观 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-6s-space-2",
+        "caption": "半打 6S · 庭院立面 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-6s-space-3",
+        "caption": "半打 6S · 住宅组合 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-6s-space-4",
+        "caption": "半打 6S · 社区组合 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      }
+    ],
+    "plan": {
+      "src": "/assets/img/r4-6s-plan.webp",
+      "viewerSrc": "/assets/img/r4-6s-plan.webp",
+      "caption": "半打 6S · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
+    },
+    "drawings": [
+      {
+        "src": "/assets/img/r4-6s-drawing-1.webp",
+        "viewerSrc": "/assets/img/r4-6s-drawing-1.webp",
+        "caption": "半打 6S · 立面图 / 技术示意",
+        "width": 1520,
+        "height": 819
+      }
+    ],
+    "site": []
+  },
+  "bd8": {
+    "design": [
+      {
+        "base": "r4-bd8-space-1",
+        "caption": "半打 8 · 住宅外观 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-bd8-space-2",
+        "caption": "半打 8 · 暮色外观 / 方案效果图",
+        "width": 1920,
+        "height": 1186,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-bd8-space-3",
+        "caption": "半打 8 · 入户立面 / 方案效果图",
+        "width": 1440,
+        "height": 1920,
+        "mobileWidth": 720
+      },
+      {
+        "base": "r4-bd8-space-4",
+        "caption": "半打 8 · 车库立面 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      }
+    ],
+    "plan": {
+      "src": "/assets/img/r4-bd8-plan.webp",
+      "viewerSrc": "/assets/img/r4-bd8-plan.webp",
+      "caption": "半打 8 · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
+    },
+    "drawings": [
+      {
+        "src": "/assets/img/r4-bd8-drawing-1.webp",
+        "viewerSrc": "/assets/img/r4-bd8-drawing-1.webp",
+        "caption": "半打 8 · 1-1 剖面图 / 技术示意",
+        "width": 2400,
+        "height": 1697
+      },
+      {
+        "src": "/assets/img/r4-bd8-drawing-2.webp",
+        "viewerSrc": "/assets/img/r4-bd8-drawing-2.webp",
+        "caption": "半打 8 · 2-2 剖面图 / 技术示意",
+        "width": 2400,
+        "height": 1697
+      },
+      {
+        "src": "/assets/img/r4-bd8-drawing-3.webp",
+        "viewerSrc": "/assets/img/r4-bd8-drawing-3.webp",
+        "caption": "半打 8 · 南立面图 / 技术示意",
+        "width": 2400,
+        "height": 1697
+      },
+      {
+        "src": "/assets/img/r4-bd8-drawing-4.webp",
+        "viewerSrc": "/assets/img/r4-bd8-drawing-4.webp",
+        "caption": "半打 8 · 西立面图 / 技术示意",
+        "width": 2400,
+        "height": 1697
+      },
+      {
+        "src": "/assets/img/r4-bd8-drawing-5.webp",
+        "viewerSrc": "/assets/img/r4-bd8-drawing-5.webp",
+        "caption": "半打 8 · 北立面图 / 技术示意",
+        "width": 2400,
+        "height": 1697
+      },
+      {
+        "src": "/assets/img/r4-bd8-drawing-6.webp",
+        "viewerSrc": "/assets/img/r4-bd8-drawing-6.webp",
+        "caption": "半打 8 · 东立面图 / 技术示意",
+        "width": 2400,
+        "height": 1697
+      }
+    ],
+    "site": []
+  },
+  "bd9": {
+    "design": [
+      {
+        "base": "r4-bd9-space-1",
+        "caption": "半打 9 · 雪景外观 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-bd9-space-2",
+        "caption": "半打 9 · 组合外观 / 方案效果图",
+        "width": 1920,
+        "height": 1180,
+        "mobileWidth": 960
+      }
+    ],
+    "plan": {
+      "src": "/assets/img/r4-bd9-plan.webp",
+      "viewerSrc": "/assets/img/r4-bd9-plan.webp",
+      "caption": "半打 9 · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
+    },
+    "drawings": [
+      {
+        "src": "/assets/img/r4-bd9-drawing-1.webp",
+        "viewerSrc": "/assets/img/r4-bd9-drawing-1.webp",
+        "caption": "半打 9 · 侧立面图 / 技术示意",
+        "width": 2400,
+        "height": 1476
+      },
+      {
+        "src": "/assets/img/r4-bd9-drawing-2.webp",
+        "viewerSrc": "/assets/img/r4-bd9-drawing-2.webp",
+        "caption": "半打 9 · 正立面图 / 技术示意",
+        "width": 2400,
+        "height": 1476
+      }
+    ],
+    "site": []
+  },
+  "grayscale": {
+    "design": [
+      {
+        "base": "r4-grayscale-space-1",
+        "caption": "灰度空间 · 庭院外观 / 方案效果图",
+        "width": 1920,
+        "height": 917,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-space-2",
+        "caption": "灰度空间 · 客厅 / 方案效果图",
+        "width": 1920,
+        "height": 1290,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-space-3",
+        "caption": "灰度空间 · 餐厨 / 方案效果图",
+        "width": 1920,
+        "height": 1290,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-space-4",
+        "caption": "灰度空间 · 卧室 / 方案效果图",
+        "width": 1920,
+        "height": 1290,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-space-5",
+        "caption": "灰度空间 · 客餐厅 / 方案效果图",
+        "width": 1920,
+        "height": 1290,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-space-6",
+        "caption": "灰度空间 · 住宅立面 / 方案效果图",
+        "width": 1920,
+        "height": 917,
+        "mobileWidth": 960
+      }
+    ],
+    "plan": {
+      "src": "/assets/img/r4-grayscale-plan.webp",
+      "viewerSrc": "/assets/img/r4-grayscale-plan.webp",
+      "caption": "灰度空间 · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
+    },
+    "drawings": [
+      {
+        "src": "/assets/img/r4-grayscale-drawing-1.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-drawing-1.webp",
+        "caption": "灰度空间 · A 立面 / 技术示意",
+        "width": 832,
+        "height": 430
+      },
+      {
+        "src": "/assets/img/r4-grayscale-drawing-2.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-drawing-2.webp",
+        "caption": "灰度空间 · B 立面 / 技术示意",
+        "width": 799,
+        "height": 430
+      },
+      {
+        "src": "/assets/img/r4-grayscale-drawing-3.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-drawing-3.webp",
+        "caption": "灰度空间 · C 立面 / 技术示意",
+        "width": 974,
+        "height": 438
+      },
+      {
+        "src": "/assets/img/r4-grayscale-drawing-4.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-drawing-4.webp",
+        "caption": "灰度空间 · D 立面 / 技术示意",
+        "width": 975,
+        "height": 438
+      }
+    ],
+    "site": []
+  },
+  "grayscale-eco": {
+    "design": [
+      {
+        "base": "r4-grayscale-eco-space-1",
+        "caption": "灰度空间经济款 · 庭院外观 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r74-eco-dining",
+        "caption": "灰度空间经济款 · 餐厨正视 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r74-eco-living",
+        "caption": "灰度空间经济款 · 客厅视角 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-eco-space-2",
+        "caption": "灰度空间经济款 · 厨房视角 / 方案效果图",
+        "width": 1920,
+        "height": 1072,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r74-eco-bedroom",
+        "caption": "灰度空间经济款 · 卧室 / 方案效果图",
+        "width": 1920,
+        "height": 1545,
+        "mobileWidth": 960
+      },
+      {
+        "base": "r4-grayscale-eco-space-4",
+        "caption": "灰度空间经济款 · 完整客餐厅 / 方案效果图",
+        "width": 1920,
+        "height": 957,
+        "mobileWidth": 960
+      }
+    ],
+    "plan": {
+      "src": "/assets/img/r4-grayscale-eco-plan.webp",
+      "viewerSrc": "/assets/img/r4-grayscale-eco-plan.webp",
+      "caption": "灰度空间经济款 · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
+    },
+    "drawings": [
+      {
+        "src": "/assets/img/r4-grayscale-eco-drawing-1.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-eco-drawing-1.webp",
+        "caption": "灰度空间经济款 · A 立面 / 技术示意",
+        "width": 2400,
+        "height": 1627
+      },
+      {
+        "src": "/assets/img/r4-grayscale-eco-drawing-2.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-eco-drawing-2.webp",
+        "caption": "灰度空间经济款 · B 立面 / 技术示意",
+        "width": 2400,
+        "height": 1627
+      },
+      {
+        "src": "/assets/img/r4-grayscale-eco-drawing-3.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-eco-drawing-3.webp",
+        "caption": "灰度空间经济款 · C 立面 / 技术示意",
+        "width": 2400,
+        "height": 1628
+      },
+      {
+        "src": "/assets/img/r4-grayscale-eco-drawing-4.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-eco-drawing-4.webp",
+        "caption": "灰度空间经济款 · D 立面 / 技术示意",
+        "width": 2400,
+        "height": 1673
+      },
+      {
+        "src": "/assets/img/r4-grayscale-eco-drawing-5.webp",
+        "viewerSrc": "/assets/img/r4-grayscale-eco-drawing-5.webp",
+        "caption": "灰度空间经济款 · 构造爆炸图 / 技术示意",
+        "width": 2400,
+        "height": 1350
+      }
+    ],
+    "site": []
+  }
+}

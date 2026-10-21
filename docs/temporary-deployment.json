@@ -1,27 +1,35 @@
 {
-  "deployed_at": "2026-10-11T04:48:57.207481+00:00",
-  "url": "http://23.251.34.150:8080/zh/?v=r35",
-  "english_url": "http://23.251.34.150:8080/en/?v=r35",
+  "deployed_at": "2026-10-20T17:48:10.157480+00:00",
+  "url": "http://23.251.34.150:8080/zh/?v=r74-a",
+  "english_url": "http://23.251.34.150:8080/en/?v=r74-a",
   "service": "banda-space-preview",
-  "release_directory": "/opt/banda-space-preview/releases/r35-carousel-refinement-20261010",
-  "webroot": "/opt/banda-space-preview/releases/r35-carousel-refinement-20261010/site",
-  "server_config": "/opt/banda-space-preview/releases/r35-carousel-refinement-20261010/preview.Caddyfile",
+  "release_directory": "/opt/banda-space-preview/releases/r74-visual-202610210142",
+  "webroot": "/opt/banda-space-preview/releases/r74-visual-202610210142/site",
+  "server_config": "/opt/banda-space-preview/releases/r74-visual-202610210142/preview.Caddyfile",
   "build": {
-    "commit": "3f1cfa3",
-    "builtAt": "2026-10-11T04:44:14.230Z",
+    "commit": "10505db",
+    "builtAt": "2026-10-20T17:36:52.488Z",
     "site": "http://23.251.34.150:8080",
-    "buildMode": "production"
+    "buildMode": "production",
+    "release": "r74-a",
+    "sourceSha256": "afe86d57bf7371c0ee977f703298aa92873ace30e1d57c65d392475fd718760d",
+    "gitBase": "10505db206891e5c63c91fdaffc3009bea3dfd0a",
+    "workingTreeSnapshot": true
   },
-  "archive_sha256": "fad09bd5fdbfa548c06f0684761dfa628d318bfdc1c31c30e2786b2198d4a942",
+  "archive_sha256": "abb81f83550389df44f2b66e197e29ad1e99e27fdb2ccf9a26b2147b853d005e",
   "source_and_server_sha256_match": true,
-  "previous_release": "/opt/banda-space-preview/releases/r34-visual-refinement-20261010",
-  "rollback_container": "banda-space-preview-r34-20261010",
-  "rollback_commands": [
-    "docker stop banda-space-preview",
-    "docker rename banda-space-preview banda-space-preview-r35-rollback",
-    "docker rename banda-space-preview-r34-20261010 banda-space-preview",
-    "docker start banda-space-preview"
-  ],
-  "hosting": "独立 Caddy 容器，8080 HTTP，只读静态目录，非 root 进程，128 MB 内存；临时站 noindex/nofollow；未修改 80/443/8090 服务。",
-  "verification": "docs/verification/r35/public-parity.json"
+  "previous_release": "/opt/banda-space-preview/releases/r73-visual-202610210112",
+  "rollback_container": "banda-space-preview-prev-202610210142",
+  "rollback_command": "bash /opt/banda-space-preview/releases/r74-visual-202610210142/rollback.sh",
+  "hosting": "Caddy 8080 HTTP; read-only filesystem; user 1000:1000; 128 MB; 0.5 CPU; noindex/nofollow",
+  "verification": "artifacts/r74-acceptance-fix/parity.json",
+  "publicChecks": {
+    "identicalFiles": 73,
+    "pageViewportChecks": 50,
+    "accessibilityGroups": 24,
+    "scriptOrHttpErrors": 0
+  },
+  "retained_baseline": "/opt/banda-space-preview/releases/r53-visual-202610182039",
+  "product_url": "http://23.251.34.150:8080/zh/products/?v=r74-a#collection",
+  "fullStaticArchive": "/opt/banda-space-preview/releases/r74-visual-202610210142/delivery/banda-r74-static.zip"
 }

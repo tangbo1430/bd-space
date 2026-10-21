@@ -1,26 +1,25 @@
 ---
 {
   "name": "半打 9",
-  "order": 6,
+  "order": 7,
   "listed": true,
   "published": true,
   "featured": false,
   "listImageId": "v11-bd9-hero",
   "detailImageId": "v11-bd9-hero",
-  "heroBase": "v11-bd9-hero",
-  "heroCaption": "半打 9 · 住宅外观 / 方案效果图",
-  "mobileImage": "/assets/img/v11-bd9-portrait-m.webp",
+  "heroBase": "r4-bd9-hero",
+  "heroCaption": "半打 9 · 外观 / 方案效果图",
   "designGallery": [
     {
-      "base": "v11-bd9-space-1",
-      "caption": "半打 9 · 正面立面 / 方案效果图",
+      "base": "r4-bd9-space-1",
+      "caption": "半打 9 · 雪景外观 / 方案效果图",
       "width": 1920,
       "height": 1180,
       "mobileWidth": 960
     },
     {
-      "base": "v11-bd9-space-2",
-      "caption": "半打 9 · 侧面立面 / 方案效果图",
+      "base": "r4-bd9-space-2",
+      "caption": "半打 9 · 组合外观 / 方案效果图",
       "width": 1920,
       "height": 1180,
       "mobileWidth": 960
@@ -30,28 +29,28 @@
   "gallery": [],
   "diagrams": [
     {
-      "src": "/assets/img/v11-bd9-drawing-1.webp",
-      "viewerSrc": "/assets/img/v11-bd9-drawing-1.webp",
-      "width": 3052,
-      "height": 2040,
-      "caption": "半打 9 · 平面图 / 技术示意"
+      "src": "/assets/img/r4-bd9-plan.webp",
+      "viewerSrc": "/assets/img/r4-bd9-plan.webp",
+      "caption": "半打 9 · 平面图 / 技术示意",
+      "width": 2400,
+      "height": 1604
     },
     {
-      "src": "/assets/img/v11-bd9-drawing-0.webp",
-      "viewerSrc": "/assets/img/v11-bd9-drawing-0.webp",
-      "width": 3508,
-      "height": 2158,
-      "caption": "半打 9 · 侧立面图 / 技术示意"
+      "src": "/assets/img/r4-bd9-drawing-1.webp",
+      "viewerSrc": "/assets/img/r4-bd9-drawing-1.webp",
+      "caption": "半打 9 · 侧立面图 / 技术示意",
+      "width": 2400,
+      "height": 1476
     },
     {
-      "src": "/assets/img/v11-bd9-drawing-2.webp",
-      "viewerSrc": "/assets/img/v11-bd9-drawing-2.webp",
-      "width": 3508,
-      "height": 2158,
-      "caption": "半打 9 · 立面图 / 技术示意"
+      "src": "/assets/img/r4-bd9-drawing-2.webp",
+      "viewerSrc": "/assets/img/r4-bd9-drawing-2.webp",
+      "caption": "半打 9 · 正立面图 / 技术示意",
+      "width": 2400,
+      "height": 1476
     }
   ],
-  "diagramLabel": "技术图与装运",
+  "diagramLabel": "技术图",
   "diagramTitle": "看见空间的组成。",
   "diagramIntro": "图示供方案参考，实际尺寸、配置与装运方式以项目约定为准。",
   "enTag": "A home across two levels",
@@ -90,6 +89,14 @@
       "label": "装运参考",
       "value": "3个40尺HC集装箱／套"
     }
-  ]
+  ],
+  "mainBase": "r4-main-bd9",
+  "highlights": [
+    "双层四房，增设独立洗衣房",
+    "装箱数量可控，运输成本更具优势",
+    "混凝土墙体＋模块化厨卫＋木结构屋顶成熟体系",
+    "支持跨境海运与批量供货"
+  ],
+  "scenesText": "乡村改善型住宅、海外家庭别墅、中小型度假民宿、社区批量住宅"
 }
 ---

@@ -1,23 +1,51 @@
 ---
 import Icon from "./Icon.astro";
 import EditorialImage from "./EditorialImage.astro";
+import { imageDimensions } from "../lib/image-dimensions";
 interface Props {
   slides: {
     id: string;
     base: string;
     name: string;
     note: string;
+    heading?: string;
     mobileImage?: string;
+    desktopImage?: string;
     caption?: string;
+    label?: string;
+    controlsTone?: "light" | "dark";
+    headerTone?: "light" | "dark";
+    brandTone?: "light" | "dark";
+    coverBrandTone?: "light" | "dark";
+    coverHeaderTone?: "light" | "dark";
+    coverCopyTone?: "light" | "dark";
+    coverCopyLayout?: "stack" | "sky" | "low";
+    coverCopyTop?: string;
+    copyTone?: "light" | "dark";
+    copySide?: "left" | "right";
+    copyTop?: string;
+    copyLayout?: "stack" | "sky" | "low";
+    copyInk?: "solid" | "photo";
   }[];
   catalog?: boolean;
 }
 const { slides, catalog = false } = Astro.props;
+const first = slides[0];
+const dimensions = imageDimensions(`/assets/img/${first.base}.jpg`);
 ---
 
 <section
-  class:list={["hero editorial-hero", { "catalog-hero": catalog }]}
+  class:list={[
+    "hero editorial-hero",
+    { "catalog-hero": catalog, "home-hero": !catalog },
+  ]}
   data-carousel
+  data-controls-tone={first.controlsTone ?? "light"}
+  data-copy-tone={first.copyTone ?? "light"}
+  data-copy-side={first.copySide ?? "left"}
+  data-copy-layout={first.copyLayout ?? "stack"}
+  data-copy-ink={first.copyInk ?? "solid"}
+  style={`--hero-ratio:${dimensions[0]}/${dimensions[1]};--hero-copy-top:${first.copyTop ?? "25%"}`}
   role="region"
   aria-roledescription="carousel"
   aria-label="半打空间产品展示"
@@ -26,47 +54,57 @@ const { slides, catalog = false } = Astro.props;
   <p class="sr-only" data-banner-live aria-live="polite">
     第 1 张，共 {slides.length} 张
   </p>
-  {slides.map((s, i) => (
-    <div
-      class:list={["slide", { on: i === 0 }]}
-      data-slide
-      data-product={s.id}
-      aria-roledescription="slide"
-      aria-label={`第 ${i + 1} 张，共 ${slides.length} 张`}
-    >
-      <EditorialImage
-        base={s.base}
-        alt={s.caption ?? `${s.name}住宅外观 / 效果图`}
-        mobileImage={s.mobileImage ?? `/assets/img/v11-${s.id}-portrait-m.webp`}
-        eager={i === 0}
-      />
-      <div class="hero-bottom">
-        <a
-          class="hero-explore"
-          href={`/zh/products/${s.id}/`}
-          tabindex={i === 0 ? 0 : -1}
-        >
-          <span class="hero-model">{s.name}</span>
-          <span class="hero-model-note">{s.note}</span>
-          <span class="hero-product-action">
-            查看产品
-            <Icon name="chevron-right" />
-          </span>
-        </a>
-      </div>
+  <div class="hero-content">
+    <div class="hero-intro">
+      <slot />
     </div>
-  ))}
-  <div class="hero-intro ed-wrap">
-    <slot />
+    {Astro.slots.has("action") && (
+      <div class="hero-action">
+        <slot name="action" />
+      </div>
+    )}
+  </div>
+  <div class="hero-stage">
+    {slides.map((s, i) => (
+      <div
+        class:list={["slide", { on: i === 0 }]}
+        data-slide
+        data-product={s.id}
+        data-controls-tone={s.controlsTone ?? "light"}
+        data-header-tone={s.headerTone ?? "light"}
+        data-brand-tone={s.brandTone ?? s.headerTone ?? "light"}
+        data-cover-brand-tone={s.coverBrandTone}
+        data-cover-header-tone={s.coverHeaderTone}
+        data-cover-copy-tone={s.coverCopyTone}
+        data-cover-copy-layout={s.coverCopyLayout}
+        data-cover-copy-top={s.coverCopyTop}
+        data-copy-tone={s.copyTone ?? "light"}
+        data-copy-heading={s.heading}
+        data-copy-side={s.copySide ?? "left"}
+        data-copy-top={s.copyTop ?? "25%"}
+        data-copy-layout={s.copyLayout ?? "stack"}
+        data-copy-ink={s.copyInk ?? "solid"}
+        data-image-ratio={imageDimensions(`/assets/img/${s.base}.jpg`).join(
+          "/",
+        )}
+        aria-roledescription="slide"
+        aria-label={`第 ${i + 1} 张，共 ${slides.length} 张`}
+      >
+        <EditorialImage
+          base={s.base}
+          alt={s.caption ?? `${s.name}住宅外观 / 效果图`}
+          mobileImage={s.mobileImage}
+          desktopImage={s.desktopImage}
+          fit="contain"
+          eager={i === 0}
+        />
+      </div>
+    ))}
   </div>
   <div class="hero-controls">
-    <span class="sr-only">
-      当前照片 <span data-hero-current>01</span> /{" "}
-      {String(slides.length).padStart(2, "0")}
-    </span>
     <div
       class="hero-scenes"
-      style={`--scene-count: ${slides.length}`}
+      style={`--scene-count:${slides.length}`}
       role="group"
       aria-label="选择住宅照片"
     >
@@ -76,7 +114,7 @@ const { slides, catalog = false } = Astro.props;
           class:list={["hero-scene", { on: index === 0 }]}
           data-dot={index}
           aria-current={index === 0 ? "true" : "false"}
-          aria-label={`切换到第${index + 1}张：${slide.name}`}
+          aria-label={`切换到第${index + 1}张：${slide.label ?? slide.name}`}
         >
           <span class="scene-track" aria-hidden="true">
             <span class="scene-progress" data-scene-progress></span>

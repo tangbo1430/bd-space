@@ -6,6 +6,7 @@ export const corePaths = [
   "products/5s/",
   "products/6s/",
   "products/grayscale/",
+  "products/grayscale-eco/",
   "products/bd8/",
   "products/bd9/",
   "cases/",

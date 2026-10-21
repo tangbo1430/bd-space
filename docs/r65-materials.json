@@ -1,0 +1,12 @@
+{
+  "asset": "/assets/img/r65-layered-4s.webp",
+  "source": "artifacts/r65-layered/4s-layered-preview.webp",
+  "original": "C:/Users/Administrator/Downloads/网页调整4/4/1首页/首页轮播图/3半打4S.jpeg",
+  "dimensions": [3456, 1404],
+  "use": "中英文首页第一张桌面轮播",
+  "approval": "用户已确认本地样稿并要求发布",
+  "nature": "产品效果图；顶部与侧边环境由生成背景补充，建筑主体保留原图像素",
+  "provenance": "artifacts/r65-layered/selected.json",
+  "mobile": "沿用原图",
+  "limitations": "非整幅原生4K；合成环境不作为建造实景证据"
+}

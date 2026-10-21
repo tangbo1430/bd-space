@@ -1,0 +1,307 @@
+{
+  "files": [
+    {
+      "url": "/404.html",
+      "sha256": "14e633257fa70a12f7a90b67e4c8d1fa4f018ecdf36c06112bf0f38159aa6c3e"
+    },
+    {
+      "url": "/assets/brand/logo-original-r26.svg",
+      "sha256": "cf04107885cac674f5d718c19c68e4c835eba04946d49372d3ea610ab051b109"
+    },
+    {
+      "url": "/assets/brand/logo-overlay-r28.svg",
+      "sha256": "6861a700cbf4a75c4083700af3184ca7ce4ac1441fd2245c6d706744cbce1c1a"
+    },
+    {
+      "url": "/assets/img/r74-eco-bedroom-m.webp",
+      "sha256": "35c17e6172d4ca61a4dfa65c1fd817263ef0977f67950335d748fc0b7acb7f27"
+    },
+    {
+      "url": "/assets/img/r74-eco-bedroom.webp",
+      "sha256": "1d304c4f1a4cc580e3f89c0ef8c69b6ca8ff6b8ba5b4fc1af3e584ebccef1899"
+    },
+    {
+      "url": "/assets/img/r74-eco-dining-m.webp",
+      "sha256": "25df43a41700dd059b66d6abee3d23648f559573e162ab4809457460c1e5aad4"
+    },
+    {
+      "url": "/assets/img/r74-eco-dining.jpg",
+      "sha256": "f27a8cad5d5e0bc8d33574ccc9eb501a4746caef828b825c4172eda0cabe9acd"
+    },
+    {
+      "url": "/assets/img/r74-eco-bedroom.jpg",
+      "sha256": "89ee71627e89fcab8cf03bf80722e98ac4d4c09b5549e12565f91fb2974b6244"
+    },
+    {
+      "url": "/assets/img/r74-eco-living-m.webp",
+      "sha256": "ddfc4e1b0206232f86494457585ba685e227b97ce6543953abe9a8274b1f739c"
+    },
+    {
+      "url": "/assets/img/r74-eco-living.jpg",
+      "sha256": "8eacf81c433baa345f1ebdfe99857d3585b2dd8db7b843a958339f4bd2d6cf97"
+    },
+    {
+      "url": "/assets/img/r74-eco-dining.webp",
+      "sha256": "bfa459a331abcfe8ee1033395409df09e36a209bc70bf0443e43d06e0caa2fc7"
+    },
+    {
+      "url": "/assets/img/r74-eco-living.webp",
+      "sha256": "12f08c88005b98f844c19639c002c953bb61a2c786cae16e09eadc4a69db37a4"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-04.webp",
+      "sha256": "60dc8005a695734c02c24f4d6a3f7ae6bca4574dcf16211a2abebc96aec8a690"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-02.webp",
+      "sha256": "476433bae3e3cf113161dc4cb41df667925879975cfe34a4a9041c0bbde3578a"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-03.webp",
+      "sha256": "b137de658f01ce6544ea88f84d0fb9290911f068dd2d299841c75074778646c8"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-01.webp",
+      "sha256": "5e4bb0c5237aab026e7b5b06d106f7d80f00ec65b15d622cf4e2f318e56d85ae"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-08.webp",
+      "sha256": "28e6ce0ecb259c7d70c7120d8db1e73a3ffbaf179577bfaa5614ae9cbe06900b"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-07.webp",
+      "sha256": "39bb3aa50dd6a355717e9642de18397cae7fcd10875e7c819a94a43bc647623c"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-05.webp",
+      "sha256": "3ff4cca31164b83209ffb9de3e99d70aa99b54420db80b86561e639b7a2758ef"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-06.webp",
+      "sha256": "d03ecd3ecbb8aa4d586b81bf3e3ae2552615aac97bb88672eea889ca8f8c1438"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-12.webp",
+      "sha256": "3233b5d6dbeceb7165963cae8800954849491583ec84d790293ac6047cc11d73"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-11.webp",
+      "sha256": "d2b49a15588101a69bff951ed1313d88dd5502200aa17a6be84237563a21b499"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-10.webp",
+      "sha256": "02acf7a98be0541cbc48d05847a87372a5a50bb56816c88bd790532af8591b51"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-09.webp",
+      "sha256": "9839d329e2678ee1b28f8954088ffb37732371a275eb3bf32fcc6129b22090a4"
+    },
+    {
+      "url": "/assets/thumbs/r74-eco-living.webp",
+      "sha256": "d25b8d8e495ad8020cb9064dcb1e0b32f4563aab43502ec692729c09dd18d013"
+    },
+    {
+      "url": "/assets/thumbs/r74-eco-bedroom.webp",
+      "sha256": "9c873317b9b746448a6dc01f61b062ab2b0dba0dcbc40b227c8179c8a51a2b96"
+    },
+    {
+      "url": "/assets/thumbs/r4-about-13.webp",
+      "sha256": "bfaf2fed4dca1300df8bd8d896233991dce843c911daf54e34a0bf24304bcb3c"
+    },
+    {
+      "url": "/assets/thumbs/r74-eco-dining.webp",
+      "sha256": "8f0906872389306a837897263378d3579057a364f974de030d1b90f8708607d1"
+    },
+    {
+      "url": "/en/contact/",
+      "sha256": "5dd67543570a7a9e01b21a6f4803131d77d8e69d43a56a48315f9577d2ef1b35"
+    },
+    {
+      "url": "/en/about/",
+      "sha256": "cc6661f9ea568b2c657965c048e58c042391104645b8c96f57a31b73498ecd0b"
+    },
+    {
+      "url": "/en/",
+      "sha256": "ccc7cd63639c5c3aac102c2337cfea3e058f0170b1d8e5fd61c5a6a9f1e1e8e6"
+    },
+    {
+      "url": "/en/cases/",
+      "sha256": "9853e7f719019ad0caed3d9a57b217632169bb5b8945d3bd14bd4199917b3c69"
+    },
+    {
+      "url": "/en/products/5s/",
+      "sha256": "fd6d77789596793da8154d1a5d608135454cca00b2d2ea889b3be8dbb8931afb"
+    },
+    {
+      "url": "/en/products/6s/",
+      "sha256": "0ae68504c9656f55e933c4f8b12bf3ca66926c8cc7d05e4e0f4fb7e33dc0c356"
+    },
+    {
+      "url": "/en/products/bd8/",
+      "sha256": "4eeb3446e106c3936c0f161fc9f612300fd646f1dfc8721448cf8ba548e88217"
+    },
+    {
+      "url": "/en/products/4s/",
+      "sha256": "4cb06f06e3b9a38dafe469dc40ec5aaab187b5ba15a770381827fd2d843cec93"
+    },
+    {
+      "url": "/en/products/",
+      "sha256": "a4113511e4eb45c70222866cc104467eed1b62322acdc2b52b3c9ff2f6e26e54"
+    },
+    {
+      "url": "/en/products/grayscale/",
+      "sha256": "4ffbbbcef06876639c5a40a518a691b81e6949f764624f51d02e24815384963a"
+    },
+    {
+      "url": "/en/products/bd9/",
+      "sha256": "d2af396fe58b4a5b31db33023881a145b2e099d3e5e432440a058fd02d6197db"
+    },
+    {
+      "url": "/en/products/grayscale-eco/",
+      "sha256": "de8b43c18f669fd2d7b13fc559a900f3f72aef2a6a7321cd0a6bf960b466788f"
+    },
+    {
+      "url": "/zh/about/investors/",
+      "sha256": "1e27479fc2bc8513b7b875d608c4be887b343446010a2f4c222a3f2a52c47328"
+    },
+    {
+      "url": "/zh/about/careers/",
+      "sha256": "55baf64524a1f39c441d37c1c4be9dde510486c151fa23237976617cc2707466"
+    },
+    {
+      "url": "/",
+      "sha256": "0181854502fc6c9e2779a342922393c7d1fd2f45051a4b767cdcc0af41842402"
+    },
+    {
+      "url": "/zh/about/",
+      "sha256": "e0c66fb559b3554021f666b556056760cb01e9d66c42b07cb37137beb3f8b989"
+    },
+    {
+      "url": "/zh/",
+      "sha256": "f77c7e9e6fa916d5181b415049499274f27613553af159533959c7d1e849e8f9"
+    },
+    {
+      "url": "/zh/cookies/",
+      "sha256": "bd839dde6206c93744e82f9b4e9bf890772aded244612a0bbff2c22eadd20ba5"
+    },
+    {
+      "url": "/zh/contact/",
+      "sha256": "dfc0e1733e7e78c37f8e87e911375b84e8f5afa4cb3baced62a8c41bf3218df2"
+    },
+    {
+      "url": "/zh/cases/",
+      "sha256": "4fb0b9f6e1e15cf4a22ccd1e2561c832f91409eab78e5527e18951feb26600df"
+    },
+    {
+      "url": "/zh/privacy/",
+      "sha256": "a7b2fcb2f88ad9a9133cf9aec8d4344953bbb7389d6ede47237c76ced7d0a92c"
+    },
+    {
+      "url": "/zh/news/",
+      "sha256": "be74686bee7cd852e53a1aa553f55c0607a828751169b50b8a843ab160904121"
+    },
+    {
+      "url": "/zh/products/5s/",
+      "sha256": "75054d34e1b60fa99201296a018262bfe6d12f1858787c543338b0a97838bb28"
+    },
+    {
+      "url": "/zh/products/4s/",
+      "sha256": "3d7159286ffafe575259bfba87f27e333577649564da2386f40a72ddd6670382"
+    },
+    {
+      "url": "/zh/products/grayscale/",
+      "sha256": "40226762beb211e1654828d8f39b1e02dac78a82818db45c43276187b59349bf"
+    },
+    {
+      "url": "/zh/products/6s/",
+      "sha256": "0c3d09b9693114ea8ebac1208320d214138f7612153106fa57d8059e78f9d866"
+    },
+    {
+      "url": "/zh/products/bd8/",
+      "sha256": "919e4b367c9356a7b4e3f9440635cb2416c81c09e87f592b02906d58a2b13750"
+    },
+    {
+      "url": "/zh/products/bd9/",
+      "sha256": "ad64126980ee2922d2431b9a9c355a3bfac547b37231c9aeac7db330129a6a99"
+    },
+    {
+      "url": "/zh/products/stair/",
+      "sha256": "48b92afeadc18ffec2da6c70dcd938ff261e1407c2785a6ad74177e2b3bca9f4"
+    },
+    {
+      "url": "/zh/products/slab/",
+      "sha256": "0f6deac5945b6db4ea5aa24f784bde3557a076e112be299ed6d9e14c9a728de5"
+    },
+    {
+      "url": "/zh/products/",
+      "sha256": "02e60c0ef152977e9b03cab66cd3585961c483a6dd9956585e901ba1ef3c306e"
+    },
+    {
+      "url": "/zh/products/grayscale-eco/",
+      "sha256": "d08ef9f4d29cf61ca85799251ece5944b067007500beb8089f8a00cec518f35a"
+    },
+    {
+      "url": "/_astro/BaseLayout.astro_astro_type_script_index_0_lang.CJKECpio.js",
+      "sha256": "dff8925217b968f2ca634029297f8e177ca733e5f9037d430a3ca152bfd5ed5d"
+    },
+    {
+      "url": "/zh/products/wall/",
+      "sha256": "0196adb03409d184cf2a7ae2b3d7f894d0cdffcc207f52e22ea8289cff63c641"
+    },
+    {
+      "url": "/_astro/banner.UE8ryv6H.js",
+      "sha256": "afcafcec28172f8ce3e965e54a57a491d2aaa0672bd901a02ec890fd04dd7b36"
+    },
+    {
+      "url": "/zh/qualifications/",
+      "sha256": "03840e9307506669b236903d85bd5378770897195435c04dee8d5ffae8b56e7a"
+    },
+    {
+      "url": "/_astro/contact.CG9gIpw1.css",
+      "sha256": "9b2c78a07692cc4262ac7806c9df75e586a549f935ef020e7eb2350acb26d3f0"
+    },
+    {
+      "url": "/_astro/index.astro_astro_type_script_index_0_lang.DG9O5n94.js",
+      "sha256": "3d59ee7cb9008bc6ef6be6e23a3a84b43b82525f9a1481d71217b2d3674990a9"
+    },
+    {
+      "url": "/_astro/index.astro_astro_type_script_index_0_lang.BAgecsZU.js",
+      "sha256": "a494e2e4fb4cc977846c0d2bc23e4ed9bb3004f4fc6ce712dd2d6f656dac42a8"
+    },
+    {
+      "url": "/_astro/contact.astro_astro_type_script_index_0_lang.DfnINBaT.js",
+      "sha256": "9d2aa4482479629e0a3d2fad5d0633ffe7a41781582401c2afc490430caa6e2c"
+    },
+    {
+      "url": "/_astro/PhotoViewer.astro_astro_type_script_index_0_lang.BsOUNdD8.js",
+      "sha256": "52fc39584a2ea462e638aff46cd66e889426db51b8500418e32ba819e4961c8f"
+    },
+    {
+      "url": "/_astro/index.DIXswHKE.css",
+      "sha256": "fa593f38dde22f8ff06be17f21e2eed25877b0bde4e8c4b1799b8a8261da41ad"
+    },
+    {
+      "url": "/_astro/index.D0J7PTOe.css",
+      "sha256": "839310786231c469b32ce90406e92dcc260ed0087ea54b6112a8b498df3870e3"
+    },
+    {
+      "url": "/_astro/index.HlbHoglS.css",
+      "sha256": "631980766327947f29a610a282c261f1a699bb45f379252a7db9db0492ffdf65"
+    },
+    {
+      "url": "/_astro/translate.DPEFNIbh.js",
+      "sha256": "0ec6fbb2cc46acdb8c5c5e89b20a4175a922ba79b1fdd00b9499d9bd67ef8917"
+    }
+  ],
+  "version": {
+    "commit": "10505db",
+    "builtAt": "2026-10-20T17:36:52.488Z",
+    "site": "http://23.251.34.150:8080",
+    "buildMode": "production",
+    "release": "r74-a",
+    "sourceSha256": "afe86d57bf7371c0ee977f703298aa92873ace30e1d57c65d392475fd718760d",
+    "gitBase": "10505db206891e5c63c91fdaffc3009bea3dfd0a",
+    "workingTreeSnapshot": true
+  },
+  "errors": []
+}

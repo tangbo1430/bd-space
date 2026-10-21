@@ -4,11 +4,12 @@ import assert from "node:assert/strict";
 import { mkdir, writeFile } from "node:fs/promises";
 
 const base = process.env.TEST_BASE_URL ?? "http://127.0.0.1:4322";
+const output = process.env.REVIEW_OUTPUT ?? "artifacts/selected-cases";
 const browser = await chromium.launch({ channel: "msedge", headless: true });
 const page = await browser.newPage({ reducedMotion: "reduce" });
 const report = { base, checks: [], errors: [] };
 page.on("pageerror", (error) => report.errors.push(error.message));
-await mkdir("artifacts/selected-cases", { recursive: true });
+await mkdir(output, { recursive: true });
 for (const lang of ["zh", "en"]) {
   for (const [width, height] of [
     [320, 568],
@@ -23,8 +24,8 @@ for (const lang of ["zh", "en"]) {
   ]) {
     await page.setViewportSize({ width, height });
     await page.goto(`${base}/${lang}/`, { waitUntil: "networkidle" });
-    const cards = page.locator(".selected-cases .case-card");
-    assert.equal(await cards.count(), 2);
+    const cards = page.locator(".h-cases .case-card");
+    assert.equal(await cards.count(), 4);
     for (const card of await cards.all()) {
       await card.scrollIntoViewIfNeeded();
       await card.locator("img").evaluate((img) => img.decode());
@@ -74,13 +75,13 @@ for (const lang of ["zh", "en"]) {
     );
     if ([375, 1920].includes(width))
       await page
-        .locator(".selected-cases")
-        .screenshot({ path: `artifacts/selected-cases/${lang}-${width}.png` });
+        .locator(".h-cases")
+        .screenshot({ path: `${output}/${lang}-${width}.jpg`, quality: 80 });
     report.checks.push({
       lang,
       width,
       height,
-      cards: 2,
+      cards: 4,
       originalRatio: true,
       noBands: true,
       noHoverCrop: true,
@@ -89,10 +90,7 @@ for (const lang of ["zh", "en"]) {
 }
 await browser.close();
 assert.deepEqual(report.errors, []);
-await writeFile(
-  "artifacts/selected-case-images-audit.json",
-  JSON.stringify(report, null, 2),
-);
+await writeFile(`${output}/report.json`, JSON.stringify(report, null, 2));
 console.log(
   `${report.checks.length} bilingual viewport checks passed: original images, no cropping or image-frame gaps.`,
 );

@@ -1,4 +1,5 @@
 import { ui, isEnglish } from "../lib/translate";
+import { createPhotoInkSync } from "./photo-ink";
 /**
  * 全站交互脚本（无框架 vanilla JS）。
  * 动效降级（UI 规范 §5）：满足其一即进入静态模式——
@@ -114,6 +115,7 @@ drawer
 
 /* ---------- 首屏 Banner 轮播：七态状态机（PRD v0.4 §5 / UI v1.2 D1，固定参数 BR-19） ---------- */
 document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
+  const syncPhotoInk = createPhotoInkSync(hero, gnb);
   const slides = Array.from(hero.querySelectorAll<HTMLElement>("[data-slide]"));
   const dots = Array.from(
     hero.querySelectorAll<HTMLButtonElement>("[data-dot]"),
@@ -205,7 +207,8 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
   carouselMotionUpdates.push(() => setState());
 
   const announce = () => {
-    if (live) live.textContent = ui(`第 ${i + 1} 张，共 ${slides.length} 张`);
+    if (live)
+      live.textContent = `${ui(`第 ${i + 1} 张，共 ${slides.length} 张`)} — ${slides[i]?.querySelector("img")?.alt ?? ""}`;
   };
 
   const activate = (
@@ -222,8 +225,23 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     slides[i]?.setAttribute("aria-current", "true");
     dots[i]?.classList.add("on");
     dots[i]?.setAttribute("aria-current", "true");
-    const count = hero.querySelector<HTMLElement>("[data-hero-current]");
-    if (count) count.textContent = String(i + 1).padStart(2, "0");
+    const active = slides[i];
+    const heading = hero.querySelector<HTMLHeadingElement>("h1");
+    if (heading && active?.dataset.copyHeading)
+      heading.textContent = active.dataset.copyHeading;
+    if (active?.dataset.imageRatio)
+      hero.style.setProperty("--hero-ratio", active.dataset.imageRatio);
+    hero.dataset.controlsTone = active?.dataset.controlsTone ?? "light";
+    hero.dataset.copyTone = active?.dataset.copyTone ?? "light";
+    hero.dataset.copySide = active?.dataset.copySide ?? "left";
+    hero.dataset.copyLayout = active?.dataset.copyLayout ?? "stack";
+    hero.dataset.copyInk = active?.dataset.copyInk ?? "solid";
+    hero.style.setProperty("--hero-copy-top", active?.dataset.copyTop ?? "25%");
+    if (gnb?.classList.contains("gnb-overlay")) {
+      gnb.dataset.tone = active?.dataset.headerTone ?? "light";
+      gnb.dataset.brandTone = active?.dataset.brandTone ?? gnb.dataset.tone;
+    }
+    syncPhotoInk();
     slides.forEach((slide, index) => {
       slide.inert = index !== i;
       slide.setAttribute("aria-hidden", String(index !== i));
@@ -248,7 +266,7 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     const next = (n + slides.length) % slides.length;
     const image = slides[next]?.querySelector<HTMLImageElement>("img");
     // Preserve the current photograph until the requested image is ready.
-    if (next === i || !image || (image.complete && image.naturalWidth > 0)) {
+    if (next === i || !image) {
       activate(next, manual, kind);
       return;
     }

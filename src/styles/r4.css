@@ -1,0 +1,1426 @@
+:root {
+  --r4-band: #f4f3ef;
+  --r4-band-deep: #ecebe6;
+  --r4-caption-bg: #f1f0eb;
+  --r4-text: #1d2521;
+  --r4-body: #4a514d;
+  --r4-note: #555;
+  --r4-gap: 24px;
+  --r4-section: clamp(72px, 8vw, 112px);
+  --r4-shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 2px 18px rgb(0 0 0 / 0.28);
+}
+
+/* ---------- 2. 详情页 / 关于页首图：原图比例，无蒙版、不模糊、不裁切；标题放在图片下方 ---------- */
+.banda-editorial .page-visual.cover-visual {
+  --action-fill: #18221e;
+  --action-ink: #fff;
+  --action-hover: #30473b;
+  --action-pressed: #0b0f0e;
+  --action-text: #18221e;
+  --action-rule: #18221e60;
+  --action-focus: #007963;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--r4-text);
+}
+.cover-visual .page-visual-frame {
+  position: relative;
+  inset: auto;
+  height: auto;
+}
+.cover-visual .page-visual-frame:after {
+  content: none;
+  display: none;
+}
+.cover-visual .page-visual-frame .editorial-image,
+.cover-visual .page-visual-frame img,
+.cover-visual .page-visual-frame .gallery-link {
+  height: auto;
+  width: 100%;
+  transform: none;
+}
+.cover-visual .page-visual-frame img {
+  object-fit: contain;
+}
+.banda-editorial .cover-visual .cover-body {
+  position: relative;
+  inset: auto;
+  min-height: 0;
+  padding-top: 48px;
+  padding-bottom: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 48px;
+  align-items: end;
+  justify-content: initial;
+  pointer-events: auto;
+}
+.cover-visual .cover-body > * {
+  grid-column: 1;
+}
+.banda-editorial .cover-visual .cover-body .eyebrow {
+  margin-bottom: 14px;
+  color: #6b736e;
+  text-shadow: none;
+}
+.banda-editorial .cover-visual .cover-body h1 {
+  color: var(--r4-text);
+  font-size: clamp(34px, 3.2vw, 50px);
+  font-weight: 400;
+  line-height: 1.3;
+  text-shadow: none;
+}
+.banda-editorial .cover-visual .cover-body > p {
+  margin-top: 12px;
+  color: var(--r4-body);
+  font-size: 16px;
+  line-height: 1.9;
+  text-shadow: none;
+}
+.banda-editorial .cover-visual .cover-body .cover-actions {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: end;
+  margin: 0;
+}
+.cover-visual .gallery-open {
+  z-index: 2;
+}
+@media (max-width: 767px) {
+  .banda-editorial .cover-visual .cover-body {
+    grid-template-columns: 1fr;
+    padding: 32px 24px 40px;
+  }
+  .banda-editorial .cover-visual .cover-body .cover-actions {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 24px;
+  }
+}
+
+/* ---------- 3. 底部咨询大图：完整原图、无蒙版 ---------- */
+.project-cta {
+  background: #1b211d;
+}
+.project-cta:after {
+  content: none;
+  display: none;
+}
+.project-cta > .editorial-image {
+  position: relative;
+  inset: auto;
+  display: block;
+  height: auto;
+}
+.project-cta > .editorial-image img {
+  height: auto;
+  object-fit: contain;
+}
+.project-cta .cta-content {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  padding-block: clamp(40px, 5vw, 90px);
+  justify-content: flex-start;
+  pointer-events: none;
+}
+.project-cta .cta-content a {
+  pointer-events: auto;
+}
+.project-cta .cta-content h2,
+.project-cta .cta-content p,
+.project-cta .cta-content .eyebrow {
+  color: #fff;
+  text-shadow: var(--r4-shadow);
+}
+.project-cta .cta-content h2 {
+  font-size: clamp(30px, 2.8vw, 46px);
+}
+@media (max-width: 1023px) {
+  .project-cta {
+    display: flex;
+    flex-direction: column;
+  }
+  .project-cta .cta-content {
+    position: relative;
+    inset: auto;
+    padding: 40px 24px 48px;
+    order: 2;
+  }
+  .project-cta .cta-content h2,
+  .project-cta .cta-content p,
+  .project-cta .cta-content .eyebrow {
+    text-shadow: none;
+  }
+}
+
+/* ---------- 4. 首页「建筑有边界」：图片完整原色 + 文字面板 ---------- */
+.living-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  background: #14201a;
+}
+.living-section:after {
+  content: none;
+  display: none;
+}
+.living-section > .editorial-image {
+  position: relative;
+  inset: auto;
+  aspect-ratio: 3 / 2;
+  height: auto;
+}
+.living-section > .editorial-image img {
+  height: 100%;
+  object-fit: cover;
+}
+.living-copy {
+  position: relative;
+  height: auto;
+  padding: clamp(40px, 5vw, 80px);
+  justify-content: center;
+}
+.living-copy h2 {
+  margin-top: 0;
+}
+@media (max-width: 767px) {
+  .living-section {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .living-copy {
+    padding: 40px 24px 48px;
+    justify-content: flex-start;
+  }
+}
+
+/* ---------- 5. 首页产品模块（统一主图比例） ---------- */
+.collection-stage .editorial-image {
+  aspect-ratio: 2880 / 1376;
+}
+.collection-tabs .collection-tab span:first-child {
+  white-space: nowrap;
+}
+
+/* ---------- 6. 构件有序：真实构造示意图 ---------- */
+.systems-section .system-study,
+.system-study {
+  background: transparent;
+  padding: 0;
+}
+.system-visual {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+}
+.system-visual .editorial-image {
+  background: transparent;
+  width: 82%;
+  height: auto;
+  max-height: 100%;
+}
+.system-visual .editorial-image img {
+  object-fit: contain;
+  filter: drop-shadow(0 24px 40px rgb(0 0 0 / 0.35));
+}
+.system-figure {
+  animation: r4-fade 0.5s ease both;
+}
+@keyframes r4-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .system-figure {
+    animation: none;
+  }
+}
+
+/* ---------- 7. 把建造做成制造：01 设计图例 ---------- */
+.making-design .editorial-image {
+  background: transparent;
+}
+.making-design p {
+  margin: 14px 20px 18px;
+  font-size: 14px;
+  color: #d8e0dc;
+}
+
+/* ---------- 8. 走向不同的风景：2×2 对齐 ---------- */
+.selected-cases {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px var(--r4-gap);
+}
+.selected-cases .case-card {
+  padding-top: 0;
+  margin-top: 0;
+  transform: none;
+}
+.selected-cases .case-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.selected-cases .case-image .editorial-image,
+.selected-cases .case-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.selected-cases .case-caption {
+  padding-top: 16px;
+}
+.selected-cases .case-caption h3 {
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .selected-cases {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ---------- 10. 产品详情 ---------- */
+.product-detail .product-jump {
+  justify-content: center;
+}
+.pd-band {
+  padding-block: var(--r4-section);
+  background: #fff;
+}
+.pd-band--tint {
+  background: var(--r4-band);
+}
+.pd-head {
+  max-width: 760px;
+  margin: 0 auto clamp(36px, 4vw, 56px);
+  text-align: center;
+}
+.pd-eyebrow {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: #6b736e;
+  text-transform: uppercase;
+}
+.page-editorial .pd-head h2 {
+  margin-top: 14px;
+  font-size: clamp(28px, 2.6vw, 38px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  color: var(--r4-text);
+}
+.pd-head p {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--r4-body);
+}
+.pd-spec {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+}
+.pd-spec--solo {
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+}
+.pd-plan,
+.pd-drawing {
+  margin: 0;
+  background: #fff;
+  border: 1px solid #e3e2dc;
+}
+.pd-plan .gallery-link,
+.pd-drawing .gallery-link {
+  display: block;
+  aspect-ratio: 3 / 2;
+  padding: 16px;
+  background: #fff;
+}
+.pd-plan .editorial-image,
+.pd-drawing .editorial-image {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto !important;
+}
+.pd-plan img,
+.pd-drawing img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.pd-plan figcaption,
+.pd-drawing figcaption,
+.pd-tile figcaption,
+.pd-video figcaption,
+.pd-film-photo figcaption {
+  padding: 12px 16px;
+  background: var(--r4-caption-bg);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--r4-note);
+  text-align: center;
+}
+.pd-band--tint .pd-tile figcaption,
+.pd-band--tint .pd-video figcaption,
+.pd-band--tint .pd-film-photo figcaption {
+  background: #fff;
+}
+.pd-table dl > div {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 20px;
+  padding: 15px 0;
+  border-bottom: 1px solid #dcdbd4;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.pd-table dl > div:first-child {
+  border-top: 1px solid #dcdbd4;
+}
+.pd-table dt {
+  color: #6b736e;
+}
+.pd-table dd {
+  color: var(--r4-text);
+  text-align: right;
+}
+.pd-note {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #7a807c;
+}
+.pd-actions {
+  margin-top: 24px;
+}
+.pd-highlights {
+  margin-top: clamp(40px, 4vw, 56px);
+  padding-top: clamp(32px, 3vw, 44px);
+  border-top: 1px solid #dcdbd4;
+}
+.pd-highlights ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--r4-gap);
+}
+.pd-highlights li {
+  padding: 22px 20px;
+  background: #fff;
+  text-align: center;
+}
+.pd-band:not(.pd-band--tint) .pd-highlights li {
+  background: var(--r4-band);
+}
+.pd-highlights li span {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: #00a586;
+}
+.pd-highlights li p {
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--r4-text);
+}
+.pd-scenes {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--r4-body);
+}
+.pd-scenes strong {
+  font-weight: 400;
+  color: var(--r4-text);
+  margin-right: 12px;
+}
+/* 图片网格：同框同距 */
+.pd-tiles {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--r4-gap);
+}
+.pd-tile-row {
+  display: contents;
+}
+.pd-tiles--complete {
+  grid-template-columns: minmax(0, 1fr);
+}
+.pd-tiles--complete .pd-tile-row {
+  display: grid;
+  grid-template-columns: var(--row-columns);
+  gap: var(--r4-gap);
+}
+.pd-tiles--complete .pd-tile {
+  grid-column: auto;
+}
+.pd-tiles--complete .pd-tile-frame {
+  aspect-ratio: var(--photo-ratio);
+  background: transparent;
+}
+.pd-tiles--complete .pd-tile-frame img {
+  object-fit: contain;
+  transform: none;
+  transition: none;
+}
+.pd-tile {
+  grid-column: span 3;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.pd-tile--third {
+  grid-column: span 2;
+}
+.pd-tiles--single:not(.pd-tiles--complete) .pd-tile {
+  grid-column: 2 / span 4;
+}
+.pd-tile-frame {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #e9e8e3;
+}
+.pd-tile-frame .gallery-link,
+.pd-tile-frame .editorial-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.pd-tile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pd-tile figcaption {
+  flex: 1;
+}
+/* 施工记录 */
+.pd-film {
+  display: grid;
+  grid-template-columns: repeat(var(--film-count), minmax(0, 300px));
+  justify-content: center;
+  gap: var(--r4-gap);
+  align-items: stretch;
+}
+.pd-film--photo {
+  grid-template-columns: minmax(0, 1.6fr) repeat(
+      var(--film-count),
+      minmax(0, 0.6fr)
+    );
+}
+.pd-film figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.pd-film-photo .gallery-link {
+  display: block;
+  flex: 1;
+  min-height: 0;
+}
+.pd-film-photo .editorial-image,
+.pd-film-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pd-film-photo {
+  min-height: 0;
+}
+.pd-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  object-fit: cover;
+  background: #0b0f0e;
+}
+.pd-film-photo > .gallery-link {
+  aspect-ratio: auto;
+}
+/* 技术图 */
+.pd-drawings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--r4-gap);
+}
+.pd-drawings--single {
+  grid-template-columns: minmax(0, 960px);
+  justify-content: center;
+}
+.pd-drawings--single .pd-drawing .gallery-link {
+  aspect-ratio: 16 / 10;
+}
+.pd-drawings--odd .pd-drawing:last-child {
+  grid-column: 1 / -1;
+}
+.pd-drawings--odd .pd-drawing:last-child .gallery-link {
+  aspect-ratio: 16 / 7;
+}
+/* 下一款 */
+.pd-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 56px;
+}
+.pd-next-card {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 18px;
+  color: var(--r4-text);
+}
+.pd-next-card strong {
+  font-size: 24px;
+  font-weight: 400;
+}
+.pd-next-card .ui-icon {
+  width: 18px;
+  height: 18px;
+  align-self: center;
+  transition: transform 0.2s;
+}
+.pd-next-card:hover .ui-icon {
+  transform: translateX(3px);
+}
+@media (max-width: 1023px) {
+  .pd-highlights ol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .pd-film--photo {
+    grid-template-columns: repeat(var(--film-count), minmax(0, 1fr));
+  }
+  .pd-film--photo .pd-film-photo {
+    grid-column: 1 / -1;
+  }
+  .pd-film-photo .gallery-link {
+    aspect-ratio: 4 / 3;
+  }
+}
+@media (max-width: 767px) {
+  :root {
+    --r4-gap: 16px;
+  }
+  .pd-spec {
+    grid-template-columns: 1fr;
+  }
+  .pd-table dl > div {
+    grid-template-columns: 96px minmax(0, 1fr);
+    font-size: 14px;
+  }
+  .pd-tiles {
+    grid-template-columns: 1fr;
+  }
+  .pd-tiles--complete .pd-tile-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pd-tile,
+  .pd-tile--third,
+  .pd-tiles--single:not(.pd-tiles--complete) .pd-tile {
+    grid-column: auto;
+  }
+  .pd-tile figcaption,
+  .pd-plan figcaption,
+  .pd-drawing figcaption,
+  .pd-video figcaption,
+  .pd-film-photo figcaption {
+    font-size: 15px;
+  }
+  .pd-drawings {
+    grid-template-columns: 1fr;
+  }
+  .pd-drawings--odd .pd-drawing:last-child .gallery-link {
+    aspect-ratio: 3 / 2;
+  }
+  .pd-highlights ol {
+    grid-template-columns: 1fr;
+  }
+  .pd-next {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- 11. 资质能力：证书展示 ---------- */
+.cert-block {
+  margin-top: clamp(48px, 5vw, 72px);
+}
+.cert-block-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #dcdbd4;
+}
+.cert-block-head p {
+  font-size: 14px;
+  color: #6b736e;
+}
+.cert-show {
+  position: relative;
+  margin-top: 28px;
+}
+.cert-track {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 36px max(24px, calc(50% - 150px)) 24px;
+  outline: none;
+}
+.cert-track::-webkit-scrollbar {
+  display: none;
+}
+.cert-item {
+  flex: 0 0 300px;
+  margin: 0;
+  scroll-snap-align: center;
+  transform: scale(0.84);
+  opacity: 0.55;
+  transition:
+    transform 0.45s ease,
+    opacity 0.45s ease;
+}
+.cert-item.is-active {
+  transform: scale(1);
+  opacity: 1;
+}
+.cert-paper {
+  background: #fff;
+  padding: 10px;
+  box-shadow:
+    0 18px 40px rgb(23 33 28 / 0.16),
+    0 2px 6px rgb(23 33 28 / 0.08);
+}
+.cert-paper .gallery-link,
+.cert-paper .editorial-image {
+  display: block;
+  background: #fff;
+}
+.cert-item figcaption,
+.award-cert figcaption {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--r4-note);
+}
+.cert-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+.cert-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #cfd3cf;
+  background: #fff;
+  color: var(--r4-text);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.cert-arrow:hover {
+  border-color: #00a586;
+  color: #00a586;
+}
+.cert-arrow .ui-icon {
+  width: 18px;
+  height: 18px;
+}
+.cert-count {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #6b736e;
+  min-width: 64px;
+  text-align: center;
+}
+.award-wall {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+  padding: clamp(28px, 4vw, 56px);
+  background: var(--r4-band);
+}
+.award-cert {
+  margin: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cert-item {
+    transition: none;
+  }
+}
+@media (max-width: 767px) {
+  .cert-block-head {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cert-item {
+    flex-basis: 220px;
+  }
+  .cert-track {
+    padding-inline: calc(50% - 110px);
+    gap: 16px;
+  }
+  .award-wall {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}
+
+/* ---------- 12. Company story: supplied Chinese panels and readable copy ---------- */
+.about-story {
+  background: #fff;
+  padding-block: clamp(40px, 5vw, 72px);
+}
+.about-story-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+.about-story .editorial-image {
+  background: #fff;
+}
+.about-panel-source .gallery-link {
+  display: block;
+}
+.about-panel-source .gallery-open {
+  top: auto;
+  right: 12px;
+  bottom: 12px;
+  width: auto;
+  padding-inline: 8px;
+  opacity: 1;
+  background: #fff;
+}
+.about-panel-source .gallery-open > span {
+  display: inline;
+}
+.about-copy {
+  display: none;
+}
+.about-story--english .about-panel {
+  padding-block: 40px;
+  border-top: 1px solid #d9dfda;
+}
+.about-story--english .about-panel:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.about-story--english .about-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr);
+  gap: 48px;
+}
+.about-copy h2 {
+  margin: 0;
+  font-size: clamp(24px, 2.3vw, 32px);
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.about-copy-body {
+  min-width: 0;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #46524b;
+}
+.about-copy-body p {
+  margin: 0 0 16px;
+}
+.about-copy-body p:last-child {
+  margin-bottom: 0;
+}
+.about-copy dl {
+  margin: 24px 0 0;
+}
+.about-copy dl > div {
+  display: grid;
+  grid-template-columns: minmax(80px, 0.45fr) minmax(0, 1fr);
+  gap: 20px;
+  padding-block: 12px;
+  border-top: 1px solid #dde2dd;
+}
+.about-copy dt {
+  color: #18271f;
+  font-weight: 400;
+}
+.about-copy dd {
+  margin: 0;
+}
+.about-copy-body .action {
+  margin-top: 20px;
+}
+.about-story-media {
+  margin-top: 28px;
+}
+.about-story-media figure {
+  margin: 0;
+}
+.about-story-media .editorial-image,
+.about-story-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.about-story-media figcaption {
+  margin-top: 8px;
+  color: #555;
+  font-size: 14px;
+}
+.about-story-media--portrait {
+  margin-top: 0;
+}
+.about-story--english .about-panel--founder {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.3fr);
+  gap: 24px 48px;
+}
+.about-story--english .about-panel--founder .about-copy {
+  display: contents;
+}
+.about-panel--founder .about-copy-body {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+.about-panel--founder .about-story-media {
+  grid-column: 1;
+  grid-row: 2;
+}
+.about-story-media--systems {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 767px) {
+  .about-panel {
+    padding-block: 28px;
+    border-bottom: 1px solid #d9dfda;
+  }
+  .about-panel:first-child {
+    padding-top: 0;
+  }
+  .about-copy,
+  .about-story--english .about-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .about-panel-source {
+    margin-bottom: 20px;
+  }
+  .about-story--english .about-panel {
+    padding-block: 28px;
+    border-bottom: 0;
+  }
+  .about-copy dl > div {
+    grid-template-columns: minmax(76px, 0.4fr) minmax(0, 1fr);
+    gap: 12px;
+  }
+  .about-copy dt,
+  .about-copy dd {
+    overflow-wrap: anywhere;
+  }
+  .about-story-media--systems {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .about-story--english .about-panel--founder {
+    display: block;
+  }
+  .about-story--english .about-panel--founder .about-copy {
+    display: grid;
+  }
+  .about-panel--founder .about-copy-body {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .about-story-media--portrait {
+    margin-top: 24px;
+  }
+}
+
+/* ---------- 13. 白色实底导航：横幅不被导航遮挡，Logo 与菜单清晰可读 ---------- */
+@media (min-width: 768px) {
+  .banda-editorial .cover-visual {
+    margin-top: 96px;
+  }
+}
+
+/* ---------- 14. 手机端：详情首图先展示图片，章节导航可横向滑动 ---------- */
+@media (max-width: 767px) {
+  .banda-editorial .page-visual.cover-visual {
+    flex-direction: column !important;
+  }
+  .product-detail .product-jump {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .product-detail .product-jump::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ---------- 15. 产品详情：章节导航吸顶，跳转定位不被导航遮挡 ---------- */
+.banda-editorial .product-detail .product-jump {
+  position: sticky;
+  top: var(--gnb-h);
+  z-index: 20;
+  max-width: none;
+  margin: 0;
+  padding-block: 10px;
+  padding-inline: var(--content-inset, 48px);
+  background: rgb(255 255 255 / 0.96);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  backdrop-filter: saturate(1.4) blur(10px);
+}
+.product-detail .pd-band {
+  scroll-margin-top: 136px;
+}
+@media (max-width: 767px) {
+  .banda-editorial .product-detail .product-jump {
+    top: var(--gnb-h);
+    padding-inline: 24px;
+  }
+  .product-detail .pd-band {
+    scroll-margin-top: 120px;
+  }
+}
+
+/* ---------- 16. 首页细节（r38）：产品索引、统一字号层级、留白节奏、克制的动效 ---------- */
+:root {
+  --r4-forest: #101915;
+  --r4-mint: #00a586;
+  --r4-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+/* 当前产品的「查看产品」放在暂停按钮左侧 */
+/* 首屏载入：图片轻微收拢，标题逐行出现；只发生一次，尊重减少动态偏好 */
+@keyframes r4-rise {
+  from {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* 统一章节标签与标题层级：标签 13px、标题 clamp(34–52px)、说明 16px */
+.studio .section-label {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.studio .section-label a {
+  color: var(--r4-text);
+}
+.studio .section-heading h2,
+.studio .systems-section h2,
+.studio .making-section h2 {
+  font-size: clamp(34px, 3.4vw, 52px);
+  font-weight: 350;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+.studio .section-heading > p {
+  font-size: 16px;
+  line-height: 1.9;
+}
+.studio .ed-section {
+  padding-block: clamp(88px, 9vw, 136px);
+}
+
+/* 产品模块：主图更大、与列表等高对齐，消除空白 */
+.studio .collection-grid {
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+  gap: 5%;
+  align-items: center;
+}
+.studio .collection-stage {
+  align-self: center;
+}
+.studio .collection-tab {
+  padding: 20px 0;
+  font-size: 22px;
+  transition:
+    color 0.3s var(--r4-ease),
+    padding-left 0.35s var(--r4-ease),
+    border-color 0.3s;
+}
+.studio .collection-tab.active {
+  padding-left: 14px;
+  border-bottom-color: var(--r4-text);
+}
+.studio .collection-tab:hover:not(.active) {
+  padding-left: 6px;
+}
+.studio .collection-tab .selection-mark {
+  display: none;
+}
+.studio .collection-tab.active:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  margin-top: -2px;
+  background: var(--r4-mint);
+}
+.studio .collection-tab {
+  position: relative;
+}
+.studio .collection-info {
+  padding-top: 28px;
+  font-size: 15px;
+  color: var(--r4-body);
+}
+.studio .collection-specs dt {
+  color: #8a918d;
+}
+.studio .collection-frame {
+  transition:
+    opacity 0.7s var(--r4-ease),
+    visibility 0.7s;
+}
+
+/* 公司介绍：作为一段排版宣言，而不是小字说明 */
+.studio .home-company {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+  padding-block: clamp(96px, 10vw, 152px);
+}
+.studio .home-company > .eyebrow {
+  padding: 0;
+  font-size: 13px;
+  color: #8a918d;
+}
+.studio .home-company p {
+  max-width: 26em;
+  margin-bottom: 36px;
+  font-size: clamp(22px, 2.1vw, 32px);
+  font-weight: 350;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  color: var(--r4-text);
+}
+
+/* 构件有序：说明文字可读 */
+.studio .systems-section .system-choice-copy small,
+.systems-section .system-choice-copy small {
+  font-size: 14px;
+  line-height: 1.85;
+  max-width: 300px;
+}
+.systems-section .system-choice-copy strong {
+  font-size: 22px;
+}
+.systems-section .system-figure figcaption > span {
+  font-size: 18px;
+}
+.systems-section .system-figure figcaption small,
+.systems-section .system-study-note {
+  font-size: 13px;
+}
+.systems-section .system-figure {
+  animation-duration: 0.7s;
+  animation-timing-function: var(--r4-ease);
+}
+
+/* 项目卡片：保留完整照片，链接反馈由标题颜色承担。 */
+.selected-cases .case-card {
+  display: block;
+  color: var(--r4-text);
+}
+.selected-cases .case-caption h3 {
+  font-size: 20px;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+.selected-cases .case-caption > span {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #8a918d;
+}
+
+/* 把建造做成制造：图注改为细线说明，去掉色块 */
+.making-section .making-image-caption,
+.making-section .making-frame--diagram .making-image-caption {
+  position: static;
+  display: block;
+  margin-top: 12px;
+  padding: 12px 0 0;
+  background: transparent;
+  border-top: 1px solid #ffffff22;
+  color: #9aa49f;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+.making-section .making-design p {
+  margin: 16px 0 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #d5ddd9;
+}
+.making-section .making-step button {
+  font-size: 19px;
+}
+.making-section .making-step small {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+/* 底部咨询：标题更有分量 */
+.project-cta .cta-content h2 {
+  font-size: clamp(32px, 3.2vw, 50px);
+  font-weight: 350;
+  letter-spacing: -0.03em;
+}
+@media (max-width: 767px) {
+  .studio .collection-grid {
+    display: flex;
+  }
+  .studio .home-company p {
+    font-size: 20px;
+  }
+  .studio .collection-tab {
+    font-size: 18px;
+  }
+}
+
+/* ---------- 17. 首页细节二轮（r38）：对齐、深色区可读性、底部咨询文字移到图片下方 ---------- */
+/* 产品模块：主图与列表顶部对齐 */
+.studio .collection-grid {
+  align-items: start;
+}
+.studio .collection-stage {
+  align-self: start;
+  margin-top: 1px;
+}
+
+/* 深色章节的标签链接保持可读 */
+.studio .making-section .section-label a,
+.studio .systems-section .section-label a {
+  color: #e6ece8;
+}
+.studio .making-section .section-label a:is(:hover, :focus-visible),
+.studio .systems-section .section-label a:is(:hover, :focus-visible) {
+  color: #fff;
+}
+
+/* 构件有序：当前选项高亮、其余减弱，去掉右侧悬空小点 */
+.systems-section .system-choice .selection-mark {
+  display: none;
+}
+.systems-section .system-choice label {
+  transition: opacity 0.35s var(--r4-ease);
+}
+.systems-section .system-choice:not(:has(input:checked)) label {
+  opacity: 0.52;
+}
+.systems-section .system-choice:not(:has(input:checked)) label:hover {
+  opacity: 0.85;
+}
+.systems-section .system-choice:has(input:checked)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 48px;
+  height: 2px;
+  background: var(--r4-mint);
+}
+
+/* 公司介绍：左侧标签、右侧宣言，形成非对称的编辑式版面 */
+@media (min-width: 1024px) {
+  .studio .home-company {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    column-gap: 5%;
+    align-items: start;
+  }
+  .studio .home-company > .eyebrow {
+    padding-top: 0.9em;
+  }
+  .studio .home-company p {
+    max-width: 26.4em;
+    font-size: clamp(24px, 2.05vw, 31px);
+  }
+}
+
+/* 底部咨询：图片完整展示，文字放在图片下方的深色区域，不压在画面上 */
+.project-cta .cta-content {
+  position: relative;
+  inset: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "eyebrow eyebrow"
+    "title action"
+    "note action";
+  column-gap: 48px;
+  align-items: end;
+  padding-block: clamp(56px, 6vw, 96px);
+  pointer-events: auto;
+}
+.project-cta .cta-content .eyebrow {
+  grid-area: eyebrow;
+  margin-bottom: 20px;
+  color: #9fb0a7;
+}
+.project-cta .cta-content h2 {
+  grid-area: title;
+  margin: 0;
+}
+.project-cta .cta-content p {
+  grid-area: note;
+  margin: 18px 0 0;
+  color: #b7c3bd;
+}
+.project-cta .cta-content > .action {
+  grid-area: action;
+  align-self: end;
+  justify-self: end;
+}
+.project-cta .cta-content h2,
+.project-cta .cta-content p,
+.project-cta .cta-content .eyebrow {
+  text-shadow: none;
+}
+@media (max-width: 767px) {
+  .project-cta .cta-content {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "eyebrow" "title" "note" "action";
+    padding: 40px 24px 48px;
+  }
+  .project-cta .cta-content > .action {
+    justify-self: start;
+    margin-top: 28px;
+  }
+}
+
+/* 手机端：构件有序三个选项不折行 */
+@media (max-width: 767px) {
+  .systems-section .system-choice-copy strong {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+}
+
+/* 产品模块（桌面）：主图 + 下方参数在左，产品名列表在右，两列底部齐平、不留空洞 */
+@media (min-width: 1024px) {
+  .studio .collection-grid {
+    grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 5%;
+    row-gap: 0;
+  }
+  .studio .collection-list {
+    display: contents;
+  }
+  .studio .collection-stage {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .studio .collection-tabs {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: start;
+  }
+  .studio .collection-info {
+    grid-column: 1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) auto;
+    column-gap: 40px;
+    align-items: start;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid #1d25211f;
+  }
+  .studio .collection-info > p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--r4-text);
+  }
+  .studio .collection-info .collection-specs {
+    margin: 0;
+    gap: 6px;
+  }
+  .studio .collection-info .collection-specs > div {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+  .studio .collection-info .text-link {
+    margin-top: 0;
+    align-self: start;
+    white-space: nowrap;
+  }
+}
+
+/* 章节标题区：说明文字对齐到下方内容的右列起点，形成统一的纵向对齐线 */
+@media (min-width: 1024px) {
+  .studio .section-heading {
+    display: grid;
+    align-items: end;
+    justify-content: stretch;
+  }
+  .studio .section-heading > p {
+    justify-self: start;
+    margin: 0;
+    max-width: 24em;
+  }
+  .studio .product-section .section-heading {
+    grid-template-columns: minmax(0, 1.8fr) minmax(260px, 1fr);
+    column-gap: 5%;
+  }
+  .studio .systems-section .section-heading {
+    grid-template-columns: minmax(0, 1.65fr) minmax(260px, 1fr);
+    column-gap: 6%;
+  }
+  .studio .making-section .section-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    column-gap: 8%;
+  }
+  .studio .cases-section .section-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: var(--r4-gap);
+  }
+}
+/* 中文标题与宣言避免末行孤字 */
+.studio h2,
+.studio .home-company p,
+.project-cta h2 {
+  text-wrap: pretty;
+}
+
+/* 导航与内容使用同一条左右边线（宽屏下不再贴边） */

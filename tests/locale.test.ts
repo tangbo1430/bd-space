@@ -3,8 +3,8 @@ import { hasEnglish, alternateLanguage, corePaths } from "../src/lib/locale";
 import { translate } from "../src/lib/translate";
 import { validateInquiry } from "../src/lib/form";
 describe("published bilingual pages", () => {
-  it("has exactly eleven reciprocal counterparts", () => {
-    expect(corePaths).toHaveLength(11);
+  it("has exactly twelve reciprocal counterparts", () => {
+    expect(corePaths).toHaveLength(12);
     for (const path of corePaths) {
       expect(hasEnglish(`/zh/${path}`)).toBe(true);
       expect(alternateLanguage(alternateLanguage(`/zh/${path}`))).toBe(
@@ -30,6 +30,20 @@ describe("published bilingual pages", () => {
   });
   it("localizes dynamic image announcements", () => {
     expect(translate("第 2 张，共 13 张")).toBe("Slide 2 of 13");
+  });
+  it("translates full gallery phrases without joining English words", () => {
+    expect(translate("生活，在空间中展开。")).toBe("Life, unfolding in space.");
+    expect(translate("半打 4S · 住宅外观实拍")).toBe(
+      "BD-4S · Home exterior / Photograph",
+    );
+  });
+  it("uses the singular container only for a single-container shipment", () => {
+    expect(translate("1个40尺HC集装箱／套")).toBe(
+      "1 × 40 ft HC container per unit",
+    );
+    expect(translate("2个40尺HC集装箱／套")).toBe(
+      "2 × 40 ft HC containers per unit",
+    );
   });
   it("accepts international contact numbers without accepting punctuation as digits", () => {
     const input = {

@@ -1,21 +1,21 @@
 ---
 import "../styles/building-systems.css";
-import BuildingDiagram from "./BuildingDiagram.astro";
+import EditorialImage from "./EditorialImage.astro";
 const systems = [
   {
     id: "panels",
     number: "01",
-    short: "2D / 板式",
+    short: "2D / 板拼",
     name: "从构件，到空间。",
-    description: "楼板与墙板在工厂预制，运抵现场后，逐一连接为完整空间。",
+    description: "楼板与墙板在工厂预制，运抵现场后，像拼板一样逐一连接为完整空间。",
     note: "楼板 · 墙板 · 现场连接",
   },
   {
     id: "modules",
     number: "02",
-    short: "3D / 模块",
+    short: "3D / 模块拼",
     name: "让空间，整体抵达。",
-    description: "空间以整体模块的形式在工厂制造，再通过运输与吊装落位。",
+    description: "空间以整体模块的形式在工厂制造，通过运输与吊装上下、左右拼合落位。",
     note: "整体模块 · 吊装 · 连接",
   },
   {
@@ -23,7 +23,7 @@ const systems = [
     number: "03",
     short: "组合建造",
     name: "不同单元，一起成形。",
-    description: "板式构件与空间模块相互配合，回应不同的场地与使用需求。",
+    description: "墙板围合空间，厨卫等功能模块嵌入其中，板与模块组合成完整的房屋。",
     note: "板式构件 + 空间模块",
   },
 ];
@@ -56,10 +56,14 @@ const systems = [
   <div class="system-study">
     {systems.map((system) => (
       <figure class="system-figure" data-system-figure={system.id}>
-        <BuildingDiagram
-          systemId={system.id}
-          label={`${system.short}：${system.note}，建造逻辑示意`}
-        />
+        <div class="system-visual">
+          <EditorialImage
+            fit="contain"
+            base={`r4-system-${system.id}`}
+            alt={`${system.short}：${system.note}，建造逻辑示意`}
+            sizes="(max-width: 767px) 100vw, 55vw"
+          />
+        </div>
         <figcaption>
           <span>{system.name}</span>
           <small>{system.note}</small>

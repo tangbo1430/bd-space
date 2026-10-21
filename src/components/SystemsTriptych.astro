@@ -1,0 +1,75 @@
+---
+/** 建造体系：2D 板拼 / 3D 模块拼 / 组合建造 三栏并列（首页与产品中心共用） */
+import EditorialImage from "./EditorialImage.astro";
+import Icon from "./Icon.astro";
+interface Props {
+  heading?: string;
+  headingLines?: string[];
+  note?: string;
+  aboutLink?: boolean;
+}
+const {
+  heading = "构件有序，空间自由",
+  headingLines,
+  note = "从一块混凝土，到一种生活方式。以系统思考建筑，让设计在工厂中成形。",
+  aboutLink = false,
+} = Astro.props;
+const systems = [
+  {
+    id: "panels",
+    title: "2D / 板拼",
+    text: "楼板与墙板在工厂预制，运抵现场后，像拼板一样逐一连接为完整空间。",
+  },
+  {
+    id: "modules",
+    title: "3D / 模块拼",
+    text: "空间以整体模块的形式在工厂制造，通过运输与吊装上下、左右拼合落位。",
+  },
+  {
+    id: "hybrid",
+    title: "组合建造",
+    text: "墙板围合空间，厨卫等功能模块嵌入其中，板与模块组合成完整的房屋。",
+  },
+];
+---
+
+<section class="h-sec h-systems" aria-labelledby="systems-heading">
+  <div class="h-wrap">
+    <header class="h-center-head rv">
+      <h2 id="systems-heading">
+        {headingLines
+          ? headingLines.map((line) => <span>{line}</span>)
+          : heading}
+      </h2>
+      <p>{note}</p>
+    </header>
+    <ol class="h-systems-list">
+      {systems.map((s, i) => (
+        <li class="h-system rv">
+          <div class="h-system-img">
+            <EditorialImage
+              fit="contain"
+              base={`r4-system-${s.id}`}
+              alt={`${s.title}建造方式示意`}
+              mobile={false}
+              sizes="(max-width: 767px) 100vw, 33vw"
+            />
+          </div>
+          <span class="h-system-no">0{i + 1}</span>
+          <h3>{s.title}</h3>
+          <p>{s.text}</p>
+        </li>
+      ))}
+    </ol>
+    <div class="h-systems-footer rv">
+      <p class="h-systems-note">
+        建造逻辑示意，具体结构与连接方式以项目设计为准。
+      </p>
+      {aboutLink && (
+        <a class="h-more" href="/zh/about/">
+          认识半打空间 <Icon name="chevron-right" />
+        </a>
+      )}
+    </div>
+  </div>
+</section>

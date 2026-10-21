@@ -1,0 +1,342 @@
+---
+import { translate } from "../lib/translate";
+interface Model {
+  id: string;
+  name: string;
+  selectionFacts: { label: string; value: string }[];
+}
+interface Props {
+  products: Model[];
+}
+const { products } = Astro.props;
+const english = Astro.url.pathname.startsWith("/en/");
+const local = (value: string) =>
+  english ? translate(value).replace(/(\d) m²/g, "$1\u00a0m²") : value;
+const prefix = english ? "/en" : "/zh";
+const models = products.map((p) => ({
+  id: p.id,
+  name: local(p.name),
+  href: `${prefix}/products/${p.id}/`,
+  facts: p.selectionFacts.map((f) => ({
+    label: local(f.label),
+    value: local(f.value),
+  })),
+}));
+const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
+---
+
+<section
+  class="product-comparison"
+  id="product-comparison"
+  data-product-comparison
+  aria-labelledby="comparison-heading"
+>
+  <header class="comparison-heading">
+    <h2 id="comparison-heading">{english ? "Compare Spaces" : "比较型号"}</h2>
+    <p>比较面积、户型与使用场景，找到适合自己的居住方式。</p>
+    <a class="action action-primary" href={`${prefix}/contact/`}>
+      咨询产品选型
+    </a>
+  </header>
+  <div class="comparison-content">
+    <table>
+      <caption class="sr-only">产品参数比较</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="comparison-label">
+            型号
+          </th>
+          {initial.map((model, side) => (
+            <th scope="col">
+              <div class="comparison-model-heading">
+                <span class="comparison-name" data-comparison-name={side}>
+                  {model.name}
+                </span>
+                <label class="comparison-picker">
+                  <span aria-hidden="true">更换型号</span>
+                  <select
+                    data-comparison-select={side}
+                    aria-label={
+                      side === 0 ? "选择左侧比较型号" : "选择右侧比较型号"
+                    }
+                    disabled
+                  >
+                    {models.map((p) => (
+                      <option value={p.id} selected={p.id === model.id}>
+                        {p.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {models[0].facts.map((fact, row) => (
+          <tr>
+            <th scope="row">{fact.label}</th>
+            {initial.map((model, side) => (
+              <td data-comparison-value={`${side}-${row}`}>
+                {model.facts[row].value
+                  .split(/(?=[＋+])/u)
+                  .map((part, _, parts) => (
+                    <span class:list={{ "comparison-part": parts.length > 1 }}>
+                      {part}
+                    </span>
+                  ))}
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
+      <tfoot>
+        <tr>
+          <td></td>
+          {initial.map((model, side) => (
+            <td>
+              <a
+                class="text-link action action-secondary"
+                data-comparison-link={side}
+                href={model.href}
+              >
+                查看产品详情
+              </a>
+            </td>
+          ))}
+        </tr>
+      </tfoot>
+    </table>
+    <p class="comparison-note">
+      各类面积按产品所列口径分别展示，阁楼与平台不合并计算。完整参数及技术图见产品详情。
+    </p>
+    <p class="comparison-note">装运配置供参考，实际方案以项目约定为准。</p>
+  </div>
+  <p
+    class="sr-only"
+    role="status"
+    data-comparison-status
+    data-prefix={local("正在比较：")}
+  ></p>
+  <script
+    type="application/json"
+    data-comparison-models
+    set:html={JSON.stringify(models).replace(/</g, "\\u003c")}
+  />
+</section>
+
+<style>
+  .product-comparison {
+    background: var(--c-soft);
+    padding: 32px 24px;
+    scroll-margin-top: 96px;
+  }
+  .comparison-heading {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr) auto;
+    gap: 24px;
+    align-items: center;
+    min-width: 0;
+    margin-bottom: 24px;
+  }
+  .product-comparison .comparison-heading h2 {
+    margin: 0;
+    font-size: clamp(28px, 2vw, 36px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+  .comparison-heading p {
+    margin: 0;
+    max-width: 36em;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--c-body);
+  }
+  .comparison-content {
+    min-width: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: left;
+  }
+  th,
+  td {
+    font-weight: 400;
+    vertical-align: top;
+    padding: 14px 24px 14px 0;
+    line-height: 1.7;
+  }
+  th:first-child,
+  td:first-child {
+    width: 18%;
+  }
+  thead th {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+  .comparison-label,
+  tbody th {
+    font-size: 14px;
+    color: var(--c-mute);
+  }
+  .comparison-label {
+    vertical-align: bottom;
+  }
+  .comparison-name {
+    display: block;
+    font-size: clamp(24px, 1.65vw, 32px);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  .comparison-model-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+  .comparison-picker {
+    display: none;
+    position: relative;
+    width: max-content;
+    min-height: 44px;
+    align-items: center;
+    margin-top: 0;
+    font-size: 14px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    cursor: pointer;
+  }
+  [data-ready] .comparison-picker {
+    display: flex;
+  }
+  .comparison-picker select {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .comparison-picker:focus-within {
+    outline: 2px solid var(--action-focus);
+    outline-offset: 4px;
+  }
+  tbody tr {
+    border-top: 1px solid var(--c-line);
+  }
+  tbody td {
+    font-size: 18px;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: break-word;
+  }
+  .product-comparison :global(.comparison-part) {
+    display: inline-block;
+    max-width: 100%;
+  }
+  tfoot td {
+    padding-top: 12px;
+  }
+  .comparison-note {
+    max-width: 68em;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--c-mute);
+    margin: 12px 0 0;
+  }
+  @media (max-width: 1279px) {
+    .product-comparison {
+      padding-block: 32px;
+    }
+    .comparison-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px 24px;
+      align-items: center;
+    }
+    .comparison-heading p {
+      grid-row: 2;
+      max-width: none;
+      margin: 0;
+    }
+    .comparison-heading .action {
+      grid-row: 1 / 3;
+      grid-column: 2;
+    }
+  }
+  @media (max-width: 767px) {
+    .product-comparison {
+      padding: 32px 24px;
+      scroll-margin-top: 80px;
+    }
+    .comparison-heading {
+      display: block;
+    }
+    .product-comparison .comparison-heading h2 {
+      font-size: 28px;
+      line-height: 1.3;
+    }
+    .comparison-heading p {
+      margin: 12px 0 20px;
+    }
+    table,
+    thead,
+    tbody,
+    tfoot {
+      display: block;
+    }
+    tr {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12px 20px;
+      padding: 20px 0;
+    }
+    th,
+    td,
+    th:first-child,
+    td:first-child {
+      width: auto;
+      padding: 0;
+    }
+    thead tr {
+      padding-top: 0;
+    }
+    thead th {
+      padding: 0;
+    }
+    .comparison-label,
+    tfoot td:first-child {
+      display: none;
+    }
+    .comparison-name {
+      font-size: 24px;
+      line-height: 1.4;
+      overflow-wrap: break-word;
+    }
+    .comparison-model-heading {
+      display: block;
+    }
+    .comparison-picker {
+      margin-top: 8px;
+    }
+    tbody th {
+      grid-column: 1 / -1;
+      font-size: 13px;
+    }
+    tbody td {
+      font-size: 16px;
+    }
+    tfoot tr {
+      padding: 8px 0;
+    }
+    tfoot .action {
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+  }
+</style>

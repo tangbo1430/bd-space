@@ -1,0 +1,58 @@
+[
+  {
+    "route": "/zh/",
+    "width": 375,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "light"
+  },
+  {
+    "route": "/zh/",
+    "width": 1440,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "light"
+  },
+  {
+    "route": "/zh/products/",
+    "width": 375,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "dark"
+  },
+  {
+    "route": "/zh/products/",
+    "width": 1440,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "dark"
+  },
+  {
+    "route": "/en/",
+    "width": 375,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "light"
+  },
+  {
+    "route": "/en/",
+    "width": 1440,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "light"
+  },
+  {
+    "route": "/en/products/",
+    "width": 375,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "dark"
+  },
+  {
+    "route": "/en/products/",
+    "width": 1440,
+    "ssr": true,
+    "overflow": 0,
+    "tone": "dark"
+  }
+]

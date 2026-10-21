@@ -1,0 +1,19 @@
+{
+  "source": "C:/Users/Administrator/Downloads/网页调整4/4/1首页/首页轮播图/3半打4S.jpeg",
+  "use": "Chinese and English homepage first desktop carousel image",
+  "asset": "/assets/img/r64-banner-4s-original.webp",
+  "dimensions": [3072, 1248],
+  "bytes": 5186552,
+  "conversion": "Lossless WebP serialization; decoded RGB pixel comparison exactly matches supplied JPEG",
+  "artwork": "Original supplied architectural render, no AI edits or synthetic sharpening",
+  "is4K": false,
+  "mobile": "Existing responsive original image retained below 1280px",
+  "replaced": "/assets/img/r63-banner-4s-sky.webp",
+  "rejectedGeneration": {
+    "tool": "built-in image_gen",
+    "prompt": "artifacts/r64-clarity/builtin-retry-prompt.txt",
+    "output": "artifacts/r64-clarity/builtin-retry-rejected.png",
+    "dimensions": [1969, 799],
+    "reason": "Lower resolution and less faithful architectural detail than original; user authorized original fallback"
+  }
+}

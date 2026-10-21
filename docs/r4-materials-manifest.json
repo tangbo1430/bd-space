@@ -1,0 +1,1050 @@
+[
+  {
+    "source": "1首页/首页轮播图/1灰度空间.jpeg",
+    "base": "r4-banner-grayscale",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "1首页/首页轮播图/2灰度空间经济款.jpeg",
+    "base": "r4-banner-grayscale-eco",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "1首页/首页轮播图/3半打4S.jpeg",
+    "base": "r4-banner-4s",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "1首页/首页轮播图/4半打5S.jpeg",
+    "base": "r4-banner-5s",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "1首页/首页轮播图/5半打6S.jpeg",
+    "base": "r4-banner-6s",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "1首页/2D.png",
+    "base": "r4-system-panels",
+    "dimensions": [
+      919,
+      739
+    ]
+  },
+  {
+    "source": "1首页/3D.png",
+    "base": "r4-system-modules",
+    "dimensions": [
+      1400,
+      1062
+    ]
+  },
+  {
+    "source": "1首页/组合.png",
+    "base": "r4-system-hybrid",
+    "dimensions": [
+      863,
+      716
+    ]
+  },
+  {
+    "source": "1首页/图例2.png",
+    "base": "r4-making-design",
+    "dimensions": [
+      1632,
+      1312
+    ]
+  },
+  {
+    "source": "1首页/8、底部背景图.png",
+    "base": "r4-cta",
+    "dimensions": [
+      2880,
+      940
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图1.jpeg",
+    "base": "r4-catalog-photo-1",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图2.jpeg",
+    "base": "r4-catalog-photo-2",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图3.png",
+    "base": "r4-catalog-photo-3",
+    "dimensions": [
+      2368,
+      960
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图4.jpeg",
+    "base": "r4-catalog-photo-4",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/主图-半打4S.png",
+    "base": "r4-main-4s",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/主图-半打5S.png",
+    "base": "r4-main-5s",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/主图-半打6S本.png",
+    "base": "r4-main-6s",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/主图-半打8.png",
+    "base": "r4-main-bd8",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/主图-半打9.png",
+    "base": "r4-main-bd9",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/主图-灰度空间.png",
+    "base": "r4-main-grayscale",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/主图-灰度空间经济款.png",
+    "base": "r4-main-grayscale-eco",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/首图.jpeg",
+    "base": "r4-4s-hero",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/首图-半打5S.jpeg",
+    "base": "r4-5s-hero",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD6S/首图-半打6S.jpeg",
+    "base": "r4-6s-hero",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/首图-BD8.jpeg",
+    "base": "r4-bd8-hero",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD9/首图-BD9.jpeg",
+    "base": "r4-bd9-hero",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/首图-灰度空间.jpeg",
+    "base": "r4-grayscale-hero",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/首图-灰度空间经济款.jpeg",
+    "base": "r4-grayscale-eco-hero",
+    "dimensions": [
+      2560,
+      1040
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/室内效果图 (1).png",
+    "base": "r4-4s-space-1",
+    "dimensions": [
+      1920,
+      1293
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/室内效果图 (4).png",
+    "base": "r4-4s-space-2",
+    "dimensions": [
+      1599,
+      1920
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/室内效果图 (5).png",
+    "base": "r4-4s-space-3",
+    "dimensions": [
+      1600,
+      1920
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/室内效果图 (6).png",
+    "base": "r4-4s-space-4",
+    "dimensions": [
+      1600,
+      1920
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/室内效果图 (2).png",
+    "base": "r4-4s-space-5",
+    "dimensions": [
+      1920,
+      1291
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/室内效果图 (3).png",
+    "base": "r4-4s-space-6",
+    "dimensions": [
+      1920,
+      1291
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/BD4S 平面图.png",
+    "base": "r4-4s-plan",
+    "dimensions": [
+      2400,
+      1604
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/装箱方案-透明背景.png",
+    "base": "r4-4s-drawing-1",
+    "dimensions": [
+      1114,
+      720
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/实拍 (1).jpeg",
+    "base": "r4-4s-site-1",
+    "dimensions": [
+      1920,
+      780
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/实拍 (2).jpeg",
+    "base": "r4-4s-site-2",
+    "dimensions": [
+      1920,
+      780
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/实拍 (3).png",
+    "base": "r4-4s-site-3",
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/实拍 (1).png",
+    "base": "r4-4s-site-4",
+    "dimensions": [
+      1080,
+      810
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/实拍 (1).jpg",
+    "base": "r4-4s-site-5",
+    "dimensions": [
+      1280,
+      1881
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/实拍 (2).png",
+    "base": "r4-4s-site-6",
+    "dimensions": [
+      1080,
+      810
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/实拍 (4).png",
+    "base": "r4-4s-site-7",
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/效果图 (1).png",
+    "base": "r4-5s-space-1",
+    "dimensions": [
+      1920,
+      1285
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/效果图 (2).png",
+    "base": "r4-5s-space-2",
+    "dimensions": [
+      1079,
+      1920
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/效果图 (3).png",
+    "base": "r4-5s-space-3",
+    "dimensions": [
+      1920,
+      1280
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/效果图 (1).jpeg",
+    "base": "r4-5s-space-4",
+    "dimensions": [
+      1440,
+      1920
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/BD5S 平面图.png",
+    "base": "r4-5s-plan",
+    "dimensions": [
+      2400,
+      1604
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/BD5S 剖面图.jpeg",
+    "base": "r4-5s-drawing-1",
+    "dimensions": [
+      2080,
+      1152
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD5S/BD5S 外面图.png",
+    "base": "r4-5s-drawing-2",
+    "dimensions": [
+      2080,
+      1152
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD6S/效果图 (1).png",
+    "base": "r4-6s-space-1",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD6S/效果图 (2).png",
+    "base": "r4-6s-space-2",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD6S/效果图 (3).png",
+    "base": "r4-6s-space-3",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD6S/效果图 (4).png",
+    "base": "r4-6s-space-4",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD6S/BD6S 平面图.png",
+    "base": "r4-6s-plan",
+    "dimensions": [
+      2400,
+      1604
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD6S/BD6S 外面图.png",
+    "base": "r4-6s-drawing-1",
+    "dimensions": [
+      1520,
+      819
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/效果图 (1).png",
+    "base": "r4-bd8-space-1",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/效果图 (2).png",
+    "base": "r4-bd8-space-2",
+    "dimensions": [
+      1920,
+      1186
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/效果图 (3).png",
+    "base": "r4-bd8-space-3",
+    "dimensions": [
+      1440,
+      1920
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/效果图 (4).png",
+    "base": "r4-bd8-space-4",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/BD8 平面图.png",
+    "base": "r4-bd8-plan",
+    "dimensions": [
+      2400,
+      1604
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/BD8 剖面图 (1).png",
+    "base": "r4-bd8-drawing-1",
+    "dimensions": [
+      2400,
+      1697
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/BD8 剖面图 (2).png",
+    "base": "r4-bd8-drawing-2",
+    "dimensions": [
+      2400,
+      1697
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/BD8 立面图 (1).png",
+    "base": "r4-bd8-drawing-3",
+    "dimensions": [
+      2400,
+      1697
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/BD8 立面图 (2).png",
+    "base": "r4-bd8-drawing-4",
+    "dimensions": [
+      2400,
+      1697
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/BD8 立面图 (3).png",
+    "base": "r4-bd8-drawing-5",
+    "dimensions": [
+      2400,
+      1697
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD8/BD8 立面图 (4).png",
+    "base": "r4-bd8-drawing-6",
+    "dimensions": [
+      2400,
+      1697
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD9/BD9横图 (2).png",
+    "base": "r4-bd9-space-1",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD9/BD9横图 (3).png",
+    "base": "r4-bd9-space-2",
+    "dimensions": [
+      1920,
+      1180
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD9/BD9 平面图.png",
+    "base": "r4-bd9-plan",
+    "dimensions": [
+      2400,
+      1604
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD9/BD9 剖面图.png",
+    "base": "r4-bd9-drawing-1",
+    "dimensions": [
+      2400,
+      1476
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD9/BD9 立面图.png",
+    "base": "r4-bd9-drawing-2",
+    "dimensions": [
+      2400,
+      1476
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/效果图 (1).png",
+    "base": "r4-grayscale-space-1",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/效果图 (2).png",
+    "base": "r4-grayscale-space-2",
+    "dimensions": [
+      1920,
+      1290
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/效果图 (3).png",
+    "base": "r4-grayscale-space-3",
+    "dimensions": [
+      1920,
+      1290
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/效果图 (4).png",
+    "base": "r4-grayscale-space-4",
+    "dimensions": [
+      1920,
+      1290
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/效果图 (5).png",
+    "base": "r4-grayscale-space-5",
+    "dimensions": [
+      1920,
+      1290
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/效果图 (6).png",
+    "base": "r4-grayscale-space-6",
+    "dimensions": [
+      1920,
+      917
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/灰度空间 平面图.png",
+    "base": "r4-grayscale-plan",
+    "dimensions": [
+      2400,
+      1604
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/立面图A.png",
+    "base": "r4-grayscale-drawing-1",
+    "dimensions": [
+      832,
+      430
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/立面图B.png",
+    "base": "r4-grayscale-drawing-2",
+    "dimensions": [
+      799,
+      430
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/立面图C.png",
+    "base": "r4-grayscale-drawing-3",
+    "dimensions": [
+      974,
+      438
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/立面图D.png",
+    "base": "r4-grayscale-drawing-4",
+    "dimensions": [
+      975,
+      438
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/效果图 (1).png",
+    "base": "r4-grayscale-eco-space-1",
+    "dimensions": [
+      1920,
+      1072
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/效果图 (2).png",
+    "base": "r4-grayscale-eco-space-2",
+    "dimensions": [
+      1920,
+      1072
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/效果图 (3).png",
+    "base": "r4-grayscale-eco-space-3",
+    "dimensions": [
+      1920,
+      1072
+    ],
+    "status": "retired-r74",
+    "reason": "参考排版未采用的重复外观；不进入静态部署资源"
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/效果图 (4).png",
+    "base": "r4-grayscale-eco-space-4",
+    "dimensions": [
+      1920,
+      957
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间/灰度空间 平面图.png",
+    "base": "r4-grayscale-eco-plan",
+    "dimensions": [
+      2400,
+      1604
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/立面图A.jpeg",
+    "base": "r4-grayscale-eco-drawing-1",
+    "dimensions": [
+      2400,
+      1627
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/立面图B.jpeg",
+    "base": "r4-grayscale-eco-drawing-2",
+    "dimensions": [
+      2400,
+      1627
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/立面图C.jpeg",
+    "base": "r4-grayscale-eco-drawing-3",
+    "dimensions": [
+      2400,
+      1628
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/立面图D.jpeg",
+    "base": "r4-grayscale-eco-drawing-4",
+    "dimensions": [
+      2400,
+      1673
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/爆炸图.jpeg",
+    "base": "r4-grayscale-eco-drawing-5",
+    "dimensions": [
+      2400,
+      1350
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-BD4S/半打4S-江苏省常州}.jpg",
+    "base": "r4-4s-transport",
+    "dimensions": [
+      1920,
+      1439
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_01.png",
+    "base": "r4-patent-01",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_02.png",
+    "base": "r4-patent-02",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_03.png",
+    "base": "r4-patent-03",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_04.png",
+    "base": "r4-patent-04",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_05.png",
+    "base": "r4-patent-05",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_06.png",
+    "base": "r4-patent-06",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_07.png",
+    "base": "r4-patent-07",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_08.png",
+    "base": "r4-patent-08",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_09.png",
+    "base": "r4-patent-09",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_10.png",
+    "base": "r4-patent-10",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_11.png",
+    "base": "r4-patent-11",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_12.png",
+    "base": "r4-patent-12",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_13.png",
+    "base": "r4-patent-13",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_14.png",
+    "base": "r4-patent-14",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_15.png",
+    "base": "r4-patent-15",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_16.png",
+    "base": "r4-patent-16",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/专利证书/发明专利证书_17.png",
+    "base": "r4-patent-17",
+    "dimensions": [
+      778,
+      1100
+    ]
+  },
+  {
+    "source": "3资质能力/技术荣誉/广东省土木建筑学会科学技术奖励-草根民墅 拷贝.png",
+    "base": "r4-award-1",
+    "dimensions": [
+      735,
+      520
+    ]
+  },
+  {
+    "source": "3资质能力/技术荣誉/广东省土木建筑学会科学技术奖励-黄昆 拷贝.png",
+    "base": "r4-award-2",
+    "dimensions": [
+      735,
+      520
+    ]
+  },
+  {
+    "source": "3资质能力/技术荣誉/广东省科技创新专项 二等奖.png",
+    "base": "r4-award-3",
+    "dimensions": [
+      735,
+      520
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_01.png",
+    "base": "r4-about-01",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_02.png",
+    "base": "r4-about-02",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_03.png",
+    "base": "r4-about-03",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_04.png",
+    "base": "r4-about-04",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_05.png",
+    "base": "r4-about-05",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_06.png",
+    "base": "r4-about-06",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_07.png",
+    "base": "r4-about-07",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_08.png",
+    "base": "r4-about-08",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_09.png",
+    "base": "r4-about-09",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_10.png",
+    "base": "r4-about-10",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_11.png",
+    "base": "r4-about-11",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_12.png",
+    "base": "r4-about-12",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "4关于我们/量产房子 全球卖房商业计划书_13.png",
+    "base": "r4-about-13",
+    "dimensions": [
+      1754,
+      1079
+    ]
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/效果图 (2).jpeg",
+    "base": "r74-eco-dining",
+    "dimensions": [
+      1920,
+      1072
+    ],
+    "nature": "方案效果图",
+    "use": "经济款空间体验"
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/效果图 (1).jpeg",
+    "base": "r74-eco-living",
+    "dimensions": [
+      1920,
+      1072
+    ],
+    "nature": "方案效果图",
+    "use": "经济款空间体验"
+  },
+  {
+    "source": "2产品中心/产品详情/详情-灰度空间经济款/效果图 (3).jpeg",
+    "base": "r74-eco-bedroom",
+    "dimensions": [
+      1920,
+      1545
+    ],
+    "nature": "方案效果图",
+    "use": "经济款空间体验"
+  }
+]

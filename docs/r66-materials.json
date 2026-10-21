@@ -1,0 +1,52 @@
+{
+  "status": "已发布 r66-a；公网中英文验证通过，r65 保留供回退",
+  "scope": "中英文首页其余四张桌面轮播；产品中心不变",
+  "generation": "内置 image_gen 生成环境，Sharp 按原始像素尺寸回填建筑与前景",
+  "assets": [
+    {
+      "id": "5s",
+      "file": "public/assets/img/r66-layered-5s.webp",
+      "source": "4半打5S.jpeg",
+      "proof": "artifacts/r66-navigation/5s-proof.json"
+    },
+    {
+      "id": "6s",
+      "file": "public/assets/img/r66-layered-6s.webp",
+      "source": "5半打6S.jpeg",
+      "proof": "artifacts/r66-navigation/6s-proof.json"
+    },
+    {
+      "id": "grayscale",
+      "file": "public/assets/img/r66-layered-grayscale.webp",
+      "source": "1灰度空间.jpeg",
+      "proof": "artifacts/r66-navigation/grayscale-proof.json"
+    },
+    {
+      "id": "grayscale-eco",
+      "file": "public/assets/img/r66-layered-grayscale-eco.webp",
+      "source": "2灰度空间经济款.jpeg",
+      "proof": "artifacts/r66-navigation/grayscale-eco-proof.json"
+    }
+  ],
+  "sourceDirectory": "C:/Users/Administrator/Downloads/网页调整4/4/1首页/首页轮播图",
+  "canvas": [
+    3456,
+    1404
+  ],
+  "originalPlacement": [
+    192,
+    156
+  ],
+  "originalSize": [
+    3072,
+    1248
+  ],
+  "protectedPixels": "边界与核对记录见各 proof.json；建筑和前景保护区 RGB 像素一致，不将背景生成分辨率当作原生4K",
+  "prompts": [
+    "artifacts/r66-navigation/prompts.json",
+    "artifacts/r66-navigation/refinement-prompts.json"
+  ],
+  "unchanged": "已确认4S首图、手机素材、轮播顺序、A方向布局、正文和产品中心",
+  "navigation": "首页五张桌面图均为深色导航和原色Logo字标；无逐图黑白交替",
+  "limitations": "新增环境为生成内容，不能作为实景证据；没有整幅原生4K声明；本轮尚未发布"
+}

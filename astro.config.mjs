@@ -71,6 +71,9 @@ export default defineConfig({
     versionEvidence(),
   ],
   vite: {
+    server: {
+      watch: { ignored: ["**/artifacts/**", "**/dist/**"] },
+    },
     define: {
       __BUILD_COMMIT__: JSON.stringify(commit),
       __BUILD_TIME__: JSON.stringify(builtAt),

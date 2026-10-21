@@ -1,0 +1,23 @@
+{
+  "release": "r74-a",
+  "at": "2026-10-20T17:50:38.632603+00:00",
+  "decision": "本轮五项修正及复验通过，供甲方验收",
+  "closedFindings": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "F5"
+  ],
+  "localViews": 148,
+  "publicViews": 50,
+  "localAxeGroups": 24,
+  "publicAxeGroups": 24,
+  "publicGalleryGroups": 29,
+  "publicCarouselFrames": 36,
+  "sourceArchiveCrc": "passed",
+  "staticArchiveCrc": "passed (775 files)",
+  "publicParityFiles": 73,
+  "unresolvedBlockingFindings": [],
+  "coverageLimitations": "Windows Edge/Chromium；手机为模拟视口及触摸；960px为200%等效宽度。业务原稿真实性、正式域名和发送服务不在本轮视觉验收范围。"
+}

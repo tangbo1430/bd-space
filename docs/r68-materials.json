@@ -1,0 +1,54 @@
+{
+  "pdf": "C:/Users/Administrator/Downloads/半打空间网站调整(1).pdf",
+  "page": 7,
+  "finding": "原站已使用指定四张4S实拍且顺序正确；第三和第四张在PDF中就是入口及屋檐近景，非网站误裁完整住宅。",
+  "assets": [
+    {
+      "order": 1,
+      "source": "C:/Users/Administrator/Downloads/网页调整4/4/2产品中心/轮播图/产品中心-轮播图1.jpeg",
+      "asset": "/assets/img/r68-catalog-original-1.webp",
+      "dimensions": [
+        3072,
+        1248
+      ],
+      "originalPixels": true,
+      "sourceSHA256": "cf0c96a4824966d948b219a07bb291e006df55be05051084e355f16a58809867"
+    },
+    {
+      "order": 2,
+      "source": "C:/Users/Administrator/Downloads/网页调整4/4/2产品中心/轮播图/产品中心-轮播图2.jpeg",
+      "asset": "/assets/img/r68-catalog-original-2.webp",
+      "dimensions": [
+        3072,
+        1248
+      ],
+      "originalPixels": true,
+      "sourceSHA256": "472d54caa59af3be8be92caff94a41716e861bf32ed9c934940b1c4457fbe077"
+    },
+    {
+      "order": 3,
+      "source": "C:/Users/Administrator/Downloads/网页调整4/4/2产品中心/轮播图/产品中心-轮播图3.png",
+      "asset": "/assets/img/r68-catalog-original-3.webp",
+      "dimensions": [
+        2368,
+        960
+      ],
+      "originalPixels": true,
+      "sourceSHA256": "2378eb7d329889d2d0f6bffee746e4310c251b0aabfb24d0e8b573efcd9a95c4"
+    },
+    {
+      "order": 4,
+      "source": "C:/Users/Administrator/Downloads/网页调整4/4/2产品中心/轮播图/产品中心-轮播图4.jpeg",
+      "asset": "/assets/img/r68-catalog-original-4.webp",
+      "dimensions": [
+        3072,
+        1248
+      ],
+      "originalPixels": true,
+      "sourceSHA256": "52da17bb658402a8504503b01dcbb0fe79cdfe83ee0ad427792f5eaa0672a596"
+    }
+  ],
+  "changes": "恢复素材原始分辨率，无扩写、调色或额外裁切；桌面无损WebP。对应照片的简短标题、统一纵向位置及深色导航；产品中心Logo移至较干净的左侧位置，官方比例及颜色不变。",
+  "unchanged": "首页r67构图、产品目录、详情和其他页面内容；手机仍完整展示原照片。",
+  "status": "r68-a 已发布"
+}

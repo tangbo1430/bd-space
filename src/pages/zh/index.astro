@@ -4,60 +4,98 @@ import Icon from "../../components/Icon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EditorialImage from "../../components/EditorialImage.astro";
 import ProjectCTA from "../../components/ProjectCTA.astro";
-import BuildingSystems from "../../components/BuildingSystems.astro";
-import BuildingDiagram from "../../components/BuildingDiagram.astro";
+import SystemsTriptych from "../../components/SystemsTriptych.astro";
 import projects from "../../data/projects.json";
 import { company } from "../../data/company";
-import { translate } from "../../lib/translate";
-const selectedProjects = ["cayman", "changzhou"].map((id) =>
-  projects.find((p) => p.id === id)!,
-);
+import { getListedProducts } from "../../lib/catalog";
+
+const selectedProjects = [
+  "cayman",
+  "changzhou",
+  "zhongshan-mige",
+  "brisbane",
+].map((id) => projects.find((p) => p.id === id)!);
 const slides = [
   {
-    id: "6s",
-    base: "v11-home-6s",
-    name: "半打 6S",
-    note: "把生活，展开得更从容。",
-  },
-  {
     id: "4s",
-    base: "v11-home-4s",
     name: "半打 4S",
     note: "自然之中，安放日常。",
+    desktopImage: "/assets/img/r65-layered-4s.webp",
+    headerTone: "dark" as const,
   },
   {
     id: "5s",
-    base: "v11-home-5s",
     name: "半打 5S",
     note: "为相聚，留出更多空间。",
+    desktopImage: "/assets/img/r66-layered-5s.webp",
+    headerTone: "dark" as const,
+    brandTone: "dark" as const,
+    coverBrandTone: "dark" as const,
+    copyTop: "46%",
+    copyLayout: "low" as const,
+    copyInk: "photo" as const,
   },
-];
-import { getListedProducts } from "../../lib/catalog";
+  {
+    id: "6s",
+    name: "半打 6S",
+    note: "把生活，展开得更从容。",
+    desktopImage: "/assets/img/r67-original-6s.webp",
+    headerTone: "dark" as const,
+    coverHeaderTone: "dark" as const,
+    coverBrandTone: "dark" as const,
+    coverCopyTone: "dark" as const,
+    coverCopyLayout: "sky" as const,
+    coverCopyTop: "max(96px, 7vw)",
+  },
+  {
+    id: "grayscale",
+    name: "灰度空间",
+    note: "简洁的表达，自在的空间。",
+    desktopImage: "/assets/img/r66-layered-grayscale.webp",
+    headerTone: "dark" as const,
+    copyTone: "dark" as const,
+    copyLayout: "sky" as const,
+    copyInk: "photo" as const,
+    copyTop: "max(72px, 5.2vw)",
+  },
+  {
+    id: "grayscale-eco",
+    name: "灰度空间经济款",
+    note: "更轻的配置，完整的日常。",
+    desktopImage: "/assets/img/r66-layered-grayscale-eco.webp",
+    headerTone: "dark" as const,
+    coverBrandTone: "dark" as const,
+  },
+].map((s) => ({
+  ...s,
+  base: `r4-banner-${s.id}`,
+  mobileImage: `/assets/img/r4-banner-${s.id}-m.webp`,
+}));
 const products = (await getListedProducts()).filter((p) => p.featured);
-const summaryParts = (value: string) =>
-  (Astro.url.pathname.startsWith("/en/") ? translate(value) : value)
-    .split(/(?<=[房厅厨卫])|(?=[＋+])|(?<=,)\s*/u)
-    .filter(Boolean);
+const english = Astro.url.pathname.startsWith("/en/");
 const steps = [
   {
     title: "设计，把想法落到细节",
-    en: "DESIGN",
     text: "从场地与使用需求出发，梳理空间、结构与模块之间的关系。",
-    base: "",
-    mobile: false,
+    base: "r4-making-design",
+    caption: "半打产品是以混凝土墙体、功能模块的方式组合成一个房屋产品。",
+    alt: "混凝土墙体与功能模块组合成房屋的示意图",
+    mobile: true,
   },
   {
     title: "制造，让空间在工厂成形",
-    en: "MANUFACTURE",
     text: "混凝土构件与空间模块在产线上制作，让建造过程有序展开。",
     base: "v11-factory",
+    caption: "工厂产线上的混凝土构件",
+    alt: "工厂产线上的混凝土构件",
     mobile: false,
   },
   {
     title: "交付，让建筑抵达生活",
-    en: "DELIVER",
     text: "通过运输、吊装与现场拼装，让完成的模块成为可以使用的空间。",
     base: "flow-step06-crane-panel",
+    caption: "现场吊装与拼装墙板",
+    alt: "现场吊装与拼装墙板",
     mobile: true,
   },
 ];
@@ -68,332 +106,174 @@ const steps = [
   description="半打空间，装配式混凝土空间的设计与制造者。探索模块化住宅、真实项目与从工厂到现场的建造过程。"
   current="home"
   headerStyle="overlay"
+  headerTone="dark"
 >
-  <div class="studio">
+  <div class="h40">
     <HeroCarousel slides={slides}>
-      <span class="eyebrow">装配式混凝土空间</span>
-      <h1>
-        让空间，
-        <br />
-        回归生活。
-      </h1>
-      <p>
-        在工厂建造，为生活而生。
-        <br />
-        连接设计、制造与交付，让建筑融入日常。
-      </p>
-      <div class="cover-actions">
-        <a class="action action-primary" href="/zh/products/">
-          探索产品
-        </a>
-        <a class="action action-secondary" href="/zh/contact/">
-          项目咨询
-        </a>
+      <div class="h-hero-copy">
+        <h1 class="h-title">
+          <span>{english ? "Where Space" : "让空间，"}</span>
+          {english && " "}
+          <span>{english ? "Meets Life." : "回归生活。"}</span>
+        </h1>
+        <p class="h-hero-sub">在工厂建造，为生活而生</p>
       </div>
+      <a slot="action" class="action action-primary" href="/zh/products/">
+        探索产品
+      </a>
     </HeroCarousel>
 
+    {/* A continuous photographic collection; product facts remain in the catalog. */}
     <section
-      class="product-section ed-section"
+      id="selected-spaces"
+      class="h-sec h-products"
       aria-labelledby="products-heading"
     >
-      <div class="ed-wrap">
-        <div class="section-label rv">
-          <span>空间产品</span>
-          <a href="/zh/products/">全部产品</a>
-        </div>
-        <div class="section-heading rv">
-          <h2 id="products-heading">
-            一个模块。
-            <br />
-            更多可能。
-          </h2>
-          <p>
-            一组空间产品，
-            <br />
-            回应不同的生活想象。
-          </p>
-        </div>
-        <div class="collection-grid" data-collection>
-          <div class="collection-stage rv">
-            {products.map((p, i) => (
-              <div
-                class:list={["collection-frame", { active: i === 0 }]}
-                data-collection-image={p.id}
-                aria-hidden={i !== 0}
-              >
+      <h2 id="products-heading" class="sr-only">
+        {english ? "A Place for Everyday Life." : "为日常，找到一处空间。"}
+      </h2>
+      <div class="h-tiles">
+        {products.map((p, index) => (
+          <article class="h-tile rv">
+            <div class="h-tile-copy">
+              <h3>
+                <a href={`/zh/products/${p.id}/`}>{p.name}</a>
+              </h3>
+              <p class="h-tile-desc">
+                {index === 0 ? (
+                  <>
+                    <span>
+                      {english ? "Simple in expression." : "简洁的表达，"}
+                    </span>
+                    {english && " "}
+                    <span>{english ? "Open to life." : "自在的空间。"}</span>
+                  </>
+                ) : (
+                  p.desc
+                )}
+              </p>
+              <div class="h-tile-links">
+                <a
+                  class:list={[
+                    "action",
+                    index === 0 ? "action-primary" : "action-secondary",
+                  ]}
+                  href={`/zh/products/${p.id}/`}
+                >
+                  查看产品详情
+                </a>
+              </div>
+            </div>
+            <a
+              class="h-tile-img"
+              href={`/zh/products/${p.id}/`}
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <EditorialImage
+                fit="contain"
+                base={p.main}
+                alt=""
+                sizes={
+                  p.id === "grayscale"
+                    ? "100vw"
+                    : "(max-width: 767px) 100vw, 50vw"
+                }
+              />
+            </a>
+          </article>
+        ))}
+      </div>
+      <div class="h-collection-footer">
+        <a class="h-collection-link" href="/zh/products/#collection">
+          探索全部七款
+        </a>
+      </div>
+    </section>
+
+    {/* 建造体系：三种方式并列，一目了然 */}
+    <SystemsTriptych
+      headingLines={
+        english
+          ? ["Design and manufacturing,", "in one system"]
+          : ["设计与制造，", "在同一个系统里"]
+      }
+      note={company.intro}
+      aboutLink
+    />
+
+    {/* 项目实践：2×2 对齐 */}
+    <section class="h-sec h-cases" aria-labelledby="cases-heading">
+      <div class="h-wrap">
+        <header class="h-center-head rv">
+          <h2 id="cases-heading">走向不同的风景</h2>
+          <p>从想象到现场，让空间成为真实的日常</p>
+        </header>
+        <div class="selected-cases h-cases-grid">
+          {selectedProjects.map((p) => (
+            <a class="case-card rv" href={`/zh/cases/#${p.id}`}>
+              <div class="case-image">
                 <EditorialImage
                   fit="contain"
                   base={p.base}
-                  alt={p.imageCaption}
-                  sizes="(max-width: 767px) 100vw, 65vw"
+                  alt={p.name}
+                  sizes="(max-width: 767px) 100vw, 46vw"
                 />
               </div>
-            ))}
-          </div>
-          <div class="collection-list rv">
-            <div
-              class="collection-tabs"
-              role="tablist"
-              aria-label="选择空间产品"
-            >
-              {products.map((p, i) => (
-                <button
-                  type="button"
-                  class:list={["collection-tab", { active: i === 0 }]}
-                  role="tab"
-                  id={`tab-${p.id}`}
-                  aria-selected={i === 0}
-                  aria-controls="collection-info"
-                  tabindex={i === 0 ? 0 : -1}
-                  data-product-tab={p.id}
-                >
-                  <span>{p.name}</span>
-                  <span class="selection-mark" aria-hidden="true"></span>
-                </button>
-              ))}
-            </div>
-            <div
-              id="collection-info"
-              class="collection-info"
-              role="tabpanel"
-              aria-labelledby="tab-4s"
-              tabindex="0"
-            >
-              <p data-product-description>{products[0].desc}</p>
-              <dl class="collection-specs">
-                <div>
-                  <dt>建筑面积</dt>
-                  <dd data-product-area>
-                    {summaryParts(products[0].area).map((part) => (
-                      <span>{part}</span>
-                    ))}
-                  </dd>
-                </div>
-                <div>
-                  <dt>户型</dt>
-                  <dd data-product-layout>
-                    {summaryParts(products[0].layout).map((part) => (
-                      <span>{part}</span>
-                    ))}
-                  </dd>
-                </div>
-              </dl>
-              <a
-                class="text-link action action-secondary"
-                data-product-link
-                href="/zh/products/4s/"
-              >
-                探索产品
-              </a>
-            </div>
-            <script
-              type="application/json"
-              data-products-json
-              set:html={JSON.stringify(
-                products.map(({ id, desc, area, layout }) => ({
-                  id,
-                  desc,
-                  area,
-                  layout,
-                })),
-              )}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-company ed-wrap" aria-label="关于半打空间">
-      <span class="eyebrow">设计与制造，在同一个系统里。</span>
-      <div>
-        <p>{company.intro}</p>
-        <a class="action action-secondary" href="/zh/about/">
-          认识半打空间
-        </a>
-      </div>
-    </section>
-
-    <section
-      class="systems-section ed-section"
-      aria-labelledby="systems-heading"
-    >
-      <div class="ed-wrap">
-        <div class="section-heading rv">
-          <div>
-            <span class="eyebrow">建造体系</span>
-            <h2 id="systems-heading">
-              构件有序，
-              <br />
-              空间自由。
-            </h2>
-          </div>
-          <p>
-            从一块混凝土，到一种生活方式。
-            <br />
-            以系统思考建筑，让设计在工厂中成形。
-          </p>
-        </div>
-        <BuildingSystems />
-      </div>
-    </section>
-
-    <section class="living-section" aria-labelledby="living-heading">
-      <EditorialImage
-        base="home-banner-60m-dining-02"
-        alt="木色屋顶与暖白墙面的模块住宅餐厅"
-        mobile={false}
-      />
-      <div class="living-copy ed-wrap">
-        <h2 class="rv" id="living-heading">
-          建筑有边界，
-          <br />
-          生活没有。
-        </h2>
-        <p class="rv">
-          光、空气、相聚的时刻。
-          <br />
-          空间的意义，始终在生活里。
-        </p>
-        <a
-          class="text-link light rv action action-secondary"
-          href="/zh/products/4s/"
-        >
-          走进半打空间
-        </a>
-      </div>
-    </section>
-
-    <section
-      class="cases-section ed-wrap ed-section"
-      aria-labelledby="cases-heading"
-    >
-      <div class="section-label rv">
-        <span>项目实践</span>
-        <a href="/zh/cases/">所有项目</a>
-      </div>
-      <div class="section-heading rv">
-        <h2 id="cases-heading">走向不同的风景。</h2>
-        <p>
-          从想象到现场，
-          <br />
-          让空间成为真实的日常。
-        </p>
-      </div>
-      <div class="selected-cases">
-        {selectedProjects.map((p, i) => (
-          <a
-            class:list={["case-card rv", { offset: i === 1 }]}
-            href={`/zh/cases/#${p.id}`}
-          >
-            <div class="case-image">
-              <EditorialImage
-                base={p.base}
-                alt={p.name}
-                width={1920}
-                height={1200}
-                fit="contain"
-                sizes="(max-width: 767px) 100vw, 56vw"
-              />
-            </div>
-            <div class="case-caption">
-              <h3>{p.name}</h3>
-              <span>
-                {p.era} · {p.year} / {p.location}
-              </span>
-            </div>
-          </a>
-        ))}
-      </div>
-      <div class="cases-tail rv">
-        <a class="text-link action action-secondary" href="/zh/cases/">
-          查看项目实践
-        </a>
-      </div>
-    </section>
-
-    <section class="making-section ed-section" aria-labelledby="making-heading">
-      <div class="ed-wrap">
-        <div class="section-label rv">
-          <span>设计 · 制造 · 交付</span>
-          <a href="/zh/about/">走进制造体系</a>
-        </div>
-        <div class="section-heading rv">
-          <h2 id="making-heading">
-            把建造，
-            <br />
-            做成制造。
-          </h2>
-          <p>
-            让复杂的建造过程，
-            <br />
-            在有序的工序中展开。
-          </p>
-        </div>
-        <div class="making-grid" data-making>
-          <div class="making-steps rv">
-            {steps.map((s, i) => (
-              <div
-                class:list={["making-step", { active: i === 0 }]}
-                data-making-step
-              >
-                <button
-                  type="button"
-                  data-making-toggle
-                  aria-expanded={i === 0}
-                  aria-controls={`making-text-${i}`}
-                >
-                  <span class="step-number">0{i + 1}</span>
-                  <span>
-                    {s.title}
-                    <small>{s.en}</small>
-                  </span>
-                  <span class="step-plus" aria-hidden="true">
-                    <Icon name="plus" />
-                  </span>
-                </button>
-                <div
-                  id={`making-text-${i}`}
-                  class="making-description"
-                  hidden={i !== 0}
-                >
-                  <p>{s.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div class="making-stage rv">
-            {steps.map((s, i) => (
-              <div
-                class:list={[
-                  "making-frame",
-                  { active: i === 0, "making-frame--diagram": i === 0 },
-                ]}
-                data-making-image
-                aria-hidden={i !== 0}
-              >
-                {i === 0 ? (
-                  <div class="making-design">
-                    <BuildingDiagram systemId="hybrid" label="建造逻辑示意" />
-                    <p>建造逻辑示意，具体结构与连接方式以项目设计为准。</p>
-                  </div>
-                ) : (
-                  <EditorialImage
-                    fit="contain"
-                    base={s.base}
-                    alt={s.title}
-                    mobile={s.mobile}
-                    sizes="(max-width: 767px) 100vw, 50vw"
-                  />
-                )}
-                <span class="making-image-caption">
-                  0{i + 1} / {s.en}
+              <div class="case-caption">
+                <h3>{p.name}</h3>
+                <span>
+                  {p.year} · {p.location}
                 </span>
               </div>
-            ))}
-          </div>
+            </a>
+          ))}
+        </div>
+        <div class="h-center-more rv">
+          <a class="h-more" href="/zh/cases/">
+            查看全部项目 <Icon name="chevron-right" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* 设计 · 制造 · 交付：三步并列 */}
+    <section class="h-sec h-making" aria-labelledby="making-heading">
+      <div class="h-wrap">
+        <header class="h-center-head rv">
+          <h2 id="making-heading">把建造，做成制造</h2>
+          <p>让复杂的建造过程，在有序的工序中展开。</p>
+        </header>
+        <ol class="h-steps">
+          {steps.map((s, i) => (
+            <li class="h-step rv">
+              <div class="h-step-img">
+                <EditorialImage
+                  fit={i === 0 ? "contain" : "cover"}
+                  base={s.base}
+                  alt={s.alt}
+                  mobile={s.mobile}
+                  sizes="(max-width: 767px) 100vw, 33vw"
+                />
+              </div>
+              <span class="h-step-no">0{i + 1}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+              <p class="h-step-caption">{s.caption}</p>
+            </li>
+          ))}
+        </ol>
+        <div class="h-center-more rv">
+          <a class="h-more" href="/zh/about/">
+            走进半打空间 <Icon name="chevron-right" />
+          </a>
         </div>
       </div>
     </section>
     <ProjectCTA />
   </div>
 </BaseLayout>
+
+<script>
+  import "../../scripts/home.ts";
+</script>

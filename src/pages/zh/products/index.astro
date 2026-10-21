@@ -1,103 +1,129 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EditorialImage from "../../../components/EditorialImage.astro";
-import ProjectCTA from "../../../components/ProjectCTA.astro";
-import BuildingSystems from "../../../components/BuildingSystems.astro";
 import HeroCarousel from "../../../components/HeroCarousel.astro";
 import { getListedProducts } from "../../../lib/catalog";
+import ProductComparison from "../../../components/ProductComparison.astro";
+import { translate } from "../../../lib/translate";
 const products = await getListedProducts();
-const slides = products.map((product) => ({
-  id: product.id,
-  base: product.base,
-  mobileImage: product.mobileImage,
-  name: product.name,
-  note: product.desc,
-  caption: product.imageCaption,
+const english = Astro.url.pathname.startsWith("/en/");
+const local = (value: string) => (english ? translate(value) : value);
+const photoNotes = ["暮色中的住宅", "夕阳与屋檐", "屋檐下的光", "天际与立面"];
+const photoHeadings = english
+  ? ["A home, built.", "Evening light.", "Step inside.", "Eaves and light."]
+  : ["真实的空间。", "住宅与夕照。", "推门，走进生活。", "屋檐下的光影。"];
+const slides = photoNotes.map((note, i) => ({
+  id: "4s",
+  base: `r4-catalog-photo-${i + 1}`,
+  mobileImage: `/assets/img/r4-catalog-photo-${i + 1}-m.webp`,
+  desktopImage: `/assets/img/r68-catalog-original-${i + 1}.webp`,
+  heading: photoHeadings[i],
+  name: "半打 4S 实拍",
+  note,
+  label: note,
+  caption: `半打 4S · ${note} / 实拍`,
+  controlsTone: i === 3 ? ("dark" as const) : ("light" as const),
+  headerTone: "dark" as const,
+  brandTone: "dark" as const,
+  copySide: i === 0 ? ("left" as const) : ("right" as const),
+  copyTone: i === 0 ? ("light" as const) : ("dark" as const),
+  copyTop: "31%",
 }));
 ---
 
 <BaseLayout
   title="产品中心"
-  description="探索半打4S、5S、6S、灰度空间、半打8与半打9，了解户型、面积、结构与装运参考。"
+  description="探索灰度空间、灰度空间经济款、半打4S、5S、6S、半打8与半打9，了解户型、面积、结构与装运参考。"
   current="products"
   headerStyle="overlay"
+  headerTone="dark"
 >
-  <div class="page-editorial">
+  <div class="page-editorial h40">
     <HeroCarousel slides={slides} catalog>
-      <h1>
-        空间，有更多
-        <br />
-        打开方式。
-      </h1>
-      <p>
-        从独立住宅到组合空间，
-        <br />
-        找到适合您项目的建造方式。
-      </p>
-      <div class="cover-actions">
-        <a class="action action-primary" href="#collection">
-          探索空间产品
-        </a>
+      <div class="h-hero-copy">
+        <h1 class="h-title">{photoHeadings[0]}</h1>
+        <p class="h-hero-sub">
+          {english ? "BD-4S · Photography" : "半打 4S · 实拍"}
+        </p>
       </div>
+      <a slot="action" class="action action-primary" href="#collection">
+        探索空间产品
+      </a>
     </HeroCarousel>
     <section
-      class="product-catalog-section ed-section"
+      class="product-catalog-section"
       id="collection"
       aria-label="模块化空间产品"
     >
-      <div class="catalog-intro ed-wrap rv">
-        <span class="eyebrow">模块化空间系列</span>
-        <h2>与生活，恰好相遇。</h2>
+      <div class="catalog-heading">
+        <h2>{english ? "Our Spaces" : "空间产品"}</h2>
+        <nav class="catalog-index" aria-label="产品详情快捷入口">
+          {products.map((p) => (
+            <a href={`/zh/products/${p.id}/`}>{p.name}</a>
+          ))}
+        </nav>
+        <a class="text-link action action-secondary" href="#product-comparison">
+          比较型号
+        </a>
       </div>
       <div class="collection-catalog">
         {products.map((p) => (
-          <article class="catalog-feature">
-            <div class="catalog-feature-copy ed-wrap rv">
-              <h2>{p.name}</h2>
-              <p>{p.desc}</p>
-              <p class="catalog-facts">
-                {p.area} · {p.layout}
-              </p>
-              <div class="catalog-actions">
-                <a class="action action-primary" href={`/zh/products/${p.id}/`}>
-                  探索详情
-                </a>
-                <a
-                  class="text-link action action-secondary"
-                  href={`/zh/contact/?product=${p.id}`}
-                >
-                  咨询该产品
-                </a>
-              </div>
-            </div>
+          <article
+            class:list={[
+              "catalog-feature",
+              { "catalog-feature--compact": ["4s", "5s", "6s"].includes(p.id) },
+            ]}
+            id={`model-${p.id}`}
+            aria-labelledby={`title-${p.id}`}
+            tabindex="-1"
+          >
             <a
               class="catalog-feature-image"
               href={`/zh/products/${p.id}/`}
               aria-label={`探索${p.name}`}
             >
-              <EditorialImage fit="contain" base={p.base} alt={p.imageCaption} />
+              <EditorialImage
+                fit="contain"
+                base={p.main}
+                alt={p.imageCaption}
+                sizes={
+                  ["4s", "5s", "6s"].includes(p.id)
+                    ? "(max-width: 1023px) 100vw, 33.33vw"
+                    : "(max-width: 1023px) 100vw, 50vw"
+                }
+              />
             </a>
+            <div class="catalog-feature-copy">
+              <div class="catalog-feature-meta">
+                <h3 id={`title-${p.id}`}>
+                  <a href={`/zh/products/${p.id}/`}>{p.name}</a>
+                </h3>
+                <a
+                  class="action action-secondary catalog-detail-link"
+                  href={`/zh/products/${p.id}/`}
+                  aria-label={`${p.name} · 查看产品详情`}
+                >
+                  {english ? "View details" : "产品详情"}
+                </a>
+              </div>
+              <dl class="catalog-specs">
+                {p.selectionFacts.slice(0, 2).map((fact) => (
+                  <div>
+                    <dt>{local(fact.label)}</dt>
+                    <dd>{local(fact.value)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </article>
         ))}
       </div>
     </section>
-    <section class="systems-section ed-section">
-      <div class="ed-wrap">
-        <div class="section-label rv">
-          <span>02 / BUILDING SYSTEMS</span>
-          <span>建造体系</span>
-        </div>
-        <div class="section-heading rv">
-          <h2>以系统思考建筑。</h2>
-          <p>
-            构件、模块与组合，
-            <br />
-            组成空间的不同语法。
-          </p>
-        </div>
-        <BuildingSystems />
-      </div>
-    </section>
-    <ProjectCTA />
+    <ProductComparison products={products} />
   </div>
 </BaseLayout>
+
+<script>
+  import "../../../scripts/home.ts";
+  import "../../../scripts/product-selection.ts";
+</script>

@@ -1,15 +1,5 @@
 /* v1.1: original brand colors and shared bilingual layouts.
    Hero photography retains its immersive composition; body photographs and technical figures use their intrinsic proportions. */
-.banda-editorial .gnb {
-  background: #fff;
-  color: #142b31;
-  border-bottom: 1px solid #e7eae7;
-}
-@media (max-width: 1279px) {
-  .banda-editorial .gnb:not(.gnb-solid):not(.scrolled) :focus-visible {
-    outline-color: #007b68;
-  }
-}
 .banda-editorial .editorial-footer {
   background: #f5f6f4;
   color: #1c302c;
@@ -52,31 +42,13 @@
 .editorial-footer :focus-visible {
   outline-color: #007b68;
 }
-.banda-editorial .editorial-hero {
-  margin-top: 96px;
-  min-height: max(620px, calc(100svh - 96px));
-}
 .banda-editorial .cover-visual {
   margin-top: 96px;
 }
 /* Restore the established desktop masthead over photography. */
 @media (min-width: 1280px) {
-  .banda-editorial .gnb.gnb-overlay:not(.scrolled) {
-    background: transparent;
-    color: #fff;
-    border-bottom-color: transparent;
-  }
-  .banda-editorial .editorial-hero,
   .banda-editorial .cover-visual {
     margin-top: 0;
-  }
-  .banda-editorial .editorial-hero,
-  body.banda-editorial .editorial-hero .hero-intro {
-    min-height: 100svh;
-  }
-  body.banda-editorial .editorial-hero .hero-intro {
-    padding-top: 160px;
-    padding-bottom: 190px;
   }
 }
 .installation-film {
@@ -109,13 +81,6 @@ html[lang="en"] h2 {
 }
 html[lang="en"] .product-summary > div {
   grid-template-columns: 110px minmax(0, 1fr);
-}
-html[lang="en"] .hero-intro h1 {
-  max-width: 580px;
-  font-size: clamp(40px, 4.4vw, 64px);
-}
-html[lang="en"] .hero-intro p {
-  max-width: 520px;
 }
 html[lang="en"] .action {
   letter-spacing: 0.01em;
@@ -151,18 +116,8 @@ html[lang="en"] .product-jump {
   }
 }
 @media (max-width: 767px) {
-  .banda-editorial .editorial-hero {
-    margin-top: 76px;
-    min-height: max(664px, calc(100svh - 76px));
-  }
   .banda-editorial .cover-visual {
     margin-top: 76px;
-  }
-  .banda-editorial .hero-intro h1 {
-    font-size: 38px;
-  }
-  .banda-editorial .hero-intro > p {
-    max-width: 310px;
   }
   .installation-film,
   .vision-mission {
@@ -180,23 +135,8 @@ html[lang="en"] .product-jump {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  html[lang="en"] .hero-intro h1 {
-    font-size: 38px;
-  }
   html[lang="en"] .section-heading {
     gap: 24px;
-  }
-}
-.banda-editorial .editorial-hero .hero-intro {
-  min-height: max(620px, calc(100svh - 96px));
-  padding-top: 70px;
-  padding-bottom: 140px;
-}
-@media (max-width: 767px) {
-  .banda-editorial .editorial-hero .hero-intro {
-    min-height: max(664px, calc(100svh - 76px));
-    padding-top: 70px;
-    padding-bottom: 190px;
   }
 }
 

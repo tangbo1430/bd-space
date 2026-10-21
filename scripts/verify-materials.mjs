@@ -104,7 +104,21 @@ check(
 );
 const publicText = walk(fileURLToPath(new URL("dist/", root)))
   .filter((p) => /\.(?:html|js|css|svg|json)$/.test(p))
-  .map((p) => readFileSync(p, "utf8"))
+  .map((p) => {
+    const text = readFileSync(p, "utf8");
+    if (!/[\\/]zh[\\/]about[\\/]index\.html$/.test(p)) return text;
+    // The supplied company presentation includes a funding proposal, not
+    // product prices. Allow only its four reviewed amounts, in that section.
+    // Prices anywhere else (including the rest of About) remain forbidden.
+    return text.replace(
+      /<section\b[^>]*data-company-plan="funding"[^>]*>[\s\S]*?<\/section>/g,
+      (section) =>
+        section.replace(
+          /(?:3,000|1,200|1,000|800)\s*万元/g,
+          "[company funding proposal]",
+        ),
+    );
+  })
   .join("\n");
 check(
   "No published price amounts",

@@ -25,6 +25,22 @@ const products = defineCollection({
     /** 产品详情主图（PRODUCT_HERO_ASSETS 键：4s/5s/6s/grayscale）；缺省=占位 */
     heroAsset: z.string().optional(),
     heroBase: z.string().optional(),
+    /** 产品中心 / 首页产品模块统一尺寸主图 */
+    mainBase: z.string().optional(),
+    highlights: z.array(z.string()).default([]),
+    scenesText: z.string().default(""),
+    filmPhoto: z.object({ base: z.string(), caption: z.string() }).optional(),
+    videos: z
+      .array(
+        z.object({
+          src: z.string(),
+          poster: z.string(),
+          caption: z.string(),
+          width: z.number(),
+          height: z.number(),
+        }),
+      )
+      .default([]),
     featured: z.boolean().default(false),
     mobileImage: z.string().optional(),
     video: z
