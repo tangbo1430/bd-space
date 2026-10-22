@@ -162,13 +162,6 @@
     margin-left: auto;
     border-radius: 2px;
   }
-  /* The supplied catalog close-ups leave clear sky at the far-left edge. */
-  .banda-editorial:has(.catalog-hero) .gnb {
-    padding-left: clamp(20px, 1.6vw, 40px);
-  }
-  .banda-editorial:has(.catalog-hero) .gnb .official-brand {
-    width: min(148px, 6.8vw);
-  }
   .banda-editorial .gnb.gnb-overlay:not(.scrolled) {
     background: transparent;
     border-color: transparent;

@@ -1,0 +1,197 @@
+{
+  "release": "r75-a",
+  "scope": "Shared header geometry and product-carousel wordmark contrast",
+  "localPageStates": 208,
+  "localCarouselFrames": 24,
+  "publicPageStates": 78,
+  "publicCarouselFrames": 24,
+  "publicMatchingFiles": 73,
+  "scriptErrors": [],
+  "localWidths": [
+    320,
+    375,
+    768,
+    1024,
+    1280,
+    1440,
+    1920,
+    2560
+  ],
+  "publicWidths": [
+    375,
+    1440,
+    1920
+  ],
+  "after1440": [
+    {
+      "path": "/zh/",
+      "width": 1440,
+      "scrollY": 0,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 80,
+        "top": 0,
+        "right": 1440,
+        "bottom": 80,
+        "left": 0
+      },
+      "logo": {
+        "x": 60.46875,
+        "y": 18.5625,
+        "width": 148,
+        "height": 41.875,
+        "top": 18.5625,
+        "right": 208.46875,
+        "bottom": 60.4375,
+        "left": 60.46875
+      },
+      "originalVisible": true,
+      "overflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "path": "/zh/",
+      "width": 1440,
+      "scrollY": 400,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 80,
+        "top": 0,
+        "right": 1440,
+        "bottom": 80,
+        "left": 0
+      },
+      "logo": {
+        "x": 60.46875,
+        "y": 18.5625,
+        "width": 148,
+        "height": 41.875,
+        "top": 18.5625,
+        "right": 208.46875,
+        "bottom": 60.4375,
+        "left": 60.46875
+      },
+      "originalVisible": true,
+      "overflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "path": "/zh/products/",
+      "width": 1440,
+      "scrollY": 0,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 80,
+        "top": 0,
+        "right": 1440,
+        "bottom": 80,
+        "left": 0
+      },
+      "logo": {
+        "x": 60.46875,
+        "y": 18.5625,
+        "width": 148,
+        "height": 41.875,
+        "top": 18.5625,
+        "right": 208.46875,
+        "bottom": 60.4375,
+        "left": 60.46875
+      },
+      "originalVisible": true,
+      "overflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "path": "/zh/products/",
+      "width": 1440,
+      "scrollY": 400,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 80,
+        "top": 0,
+        "right": 1440,
+        "bottom": 80,
+        "left": 0
+      },
+      "logo": {
+        "x": 60.46875,
+        "y": 18.5625,
+        "width": 148,
+        "height": 41.875,
+        "top": 18.5625,
+        "right": 208.46875,
+        "bottom": 60.4375,
+        "left": 60.46875
+      },
+      "originalVisible": true,
+      "overflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "path": "/zh/about/",
+      "width": 1440,
+      "scrollY": 0,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 80,
+        "top": 0,
+        "right": 1440,
+        "bottom": 80,
+        "left": 0
+      },
+      "logo": {
+        "x": 60.46875,
+        "y": 18.5625,
+        "width": 148,
+        "height": 41.875,
+        "top": 18.5625,
+        "right": 208.46875,
+        "bottom": 60.4375,
+        "left": 60.46875
+      },
+      "originalVisible": true,
+      "overflow": 0,
+      "brokenImages": 0
+    },
+    {
+      "path": "/zh/about/",
+      "width": 1440,
+      "scrollY": 400,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 80,
+        "top": 0,
+        "right": 1440,
+        "bottom": 80,
+        "left": 0
+      },
+      "logo": {
+        "x": 60.46875,
+        "y": 18.5625,
+        "width": 148,
+        "height": 41.875,
+        "top": 18.5625,
+        "right": 208.46875,
+        "bottom": 60.4375,
+        "left": 60.46875
+      },
+      "originalVisible": true,
+      "overflow": 0,
+      "brokenImages": 0
+    }
+  ],
+  "sourceSha256": "3ce5974c95a938973904dadde5b554906eb73fefa13293e94e5070187a1464cb",
+  "screenshots": "artifacts/r75-header/public/"
+}

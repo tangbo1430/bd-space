@@ -24,7 +24,7 @@ const slides = photoNotes.map((note, i) => ({
   caption: `半打 4S · ${note} / 实拍`,
   controlsTone: i === 3 ? ("dark" as const) : ("light" as const),
   headerTone: "dark" as const,
-  brandTone: "dark" as const,
+  brandTone: i >= 2 ? ("light" as const) : ("dark" as const),
   copySide: i === 0 ? ("left" as const) : ("right" as const),
   copyTone: i === 0 ? ("light" as const) : ("dark" as const),
   copyTop: "31%",
