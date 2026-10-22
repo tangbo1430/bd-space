@@ -1,6 +1,41 @@
 import { ui, isEnglish } from "../lib/translate";
 import { validateInquiry, hasErrors } from "../lib/form";
 document.documentElement.classList.add("js-enabled");
+// Keep keyboard focus visible in both model and chapter navigation strips.
+document
+  .querySelectorAll<HTMLElement>(".catalog-index, .product-jump")
+  .forEach((nav) => {
+    nav.addEventListener("focusin", (event) => {
+      const target = event.target;
+      if (
+        !(target instanceof HTMLAnchorElement) ||
+        !target.matches(":focus-visible") ||
+        nav.scrollWidth <= nav.clientWidth
+      )
+        return;
+      const bounds = nav.getBoundingClientRect();
+      const link = target.getBoundingClientRect();
+      const inset = 24;
+      if (link.left < bounds.left + inset)
+        nav.scrollLeft += link.left - bounds.left - inset;
+      else if (link.right > bounds.right - inset)
+        nav.scrollLeft += link.right - bounds.right + inset;
+    });
+  });
+// Account for the chapter bar once, including its responsive scrollbar height.
+document
+  .querySelectorAll<HTMLElement>(".product-detail .product-jump")
+  .forEach((bar) => {
+    const product = bar.closest<HTMLElement>(".product-detail");
+    const syncHeight = () => {
+      product?.style.setProperty(
+        "--product-jump-height",
+        `${bar.getBoundingClientRect().height}px`,
+      );
+    };
+    syncHeight();
+    new ResizeObserver(syncHeight).observe(bar);
+  });
 /** Progressive interactions for the architectural editorial pages. */
 document.querySelectorAll<HTMLElement>("[data-collection]").forEach((root) => {
   const tabs = Array.from(

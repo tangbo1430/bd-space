@@ -1702,8 +1702,7 @@ html.js-enabled:not([data-motion="off"]) .rv:not(.in) {
 .banda-editorial .field.err textarea {
   border-bottom-color: var(--state-error);
 }
-.making-section :focus-visible,
-.drawer :focus-visible {
+.making-section :focus-visible {
   outline-color: #e0e8d5;
 }
 @media (max-width: 767px) {

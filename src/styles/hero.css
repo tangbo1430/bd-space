@@ -90,9 +90,6 @@
 .editorial-hero .h-hero-copy {
   display: block;
 }
-.editorial-hero .hero-action .action {
-  letter-spacing: 0.02em;
-}
 .editorial-hero .hero-controls {
   grid-area: photo;
   position: relative;

@@ -491,7 +491,6 @@ body.banda-editorial {
 /* Close-set captions keep the photograph as the dominant part of each product. */
 .product-catalog-section {
   background: #fff;
-  scroll-margin-top: 80px;
   border-top: 2px solid #fff;
 }
 .catalog-heading {
@@ -562,7 +561,6 @@ body.banda-editorial {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  scroll-margin-top: 100px;
   background: var(--catalog-surface);
   color: var(--catalog-ink);
 }
@@ -622,12 +620,6 @@ body.banda-editorial {
   .catalog-feature:has(a:hover) h3 a {
     text-decoration-color: currentColor;
   }
-}
-.banda-editorial .catalog-detail-link {
-  min-height: 44px;
-  padding-block: 10px;
-  font-size: 13px;
-  letter-spacing: 0;
 }
 .catalog-specs {
   display: flex;
@@ -988,8 +980,6 @@ body.banda-editorial {
   .catalog-heading > .action {
     grid-column: 2;
     grid-row: 1;
-    font-size: 13px;
-    letter-spacing: 0;
   }
   .catalog-index {
     grid-column: 1 / -1;

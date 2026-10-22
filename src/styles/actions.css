@@ -8,6 +8,10 @@
   --action-text: #18221e;
   --action-rule: #18221e60;
   --action-focus: #007963;
+  --action-tracking: 0.06em;
+}
+html[lang="en"] {
+  --action-tracking: 0.01em;
 }
 :is(.editorial-hero, .cover-visual, .project-cta, .living-section, .drawer),
 .gnb:not(.gnb-solid):not(.scrolled) {
@@ -36,7 +40,7 @@
   font-size: 14px;
   font-weight: 450;
   line-height: 1.6;
-  letter-spacing: 0.06em;
+  letter-spacing: var(--action-tracking);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;

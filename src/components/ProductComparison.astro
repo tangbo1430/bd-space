@@ -130,7 +130,6 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
   .product-comparison {
     background: var(--c-soft);
     padding: 32px 24px;
-    scroll-margin-top: 96px;
   }
   .comparison-heading {
     display: grid;
@@ -269,10 +268,19 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
       grid-column: 2;
     }
   }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .comparison-model-heading {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .comparison-name {
+      min-height: 2.6em;
+    }
+  }
   @media (max-width: 767px) {
     .product-comparison {
       padding: 32px 24px;
-      scroll-margin-top: 80px;
     }
     .comparison-heading {
       display: block;
@@ -319,10 +327,13 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
       overflow-wrap: break-word;
     }
     .comparison-model-heading {
-      display: block;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      gap: 8px;
     }
     .comparison-picker {
-      margin-top: 8px;
+      margin-top: auto;
     }
     tbody th {
       grid-column: 1 / -1;
@@ -333,10 +344,6 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
     }
     tfoot tr {
       padding: 8px 0;
-    }
-    tfoot .action {
-      font-size: 13px;
-      letter-spacing: 0;
     }
   }
 </style>

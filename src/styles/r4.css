@@ -292,7 +292,7 @@
 
 /* ---------- 10. 产品详情 ---------- */
 .product-detail .product-jump {
-  justify-content: center;
+  justify-content: safe center;
 }
 .pd-band {
   padding-block: var(--r4-section);
@@ -1004,15 +1004,13 @@
   backdrop-filter: saturate(1.4) blur(10px);
 }
 .product-detail .pd-band {
-  scroll-margin-top: 136px;
+  /* The document already offsets the masthead and a 24px reading gap. */
+  scroll-margin-top: calc(var(--product-jump-height, 65px) - 24px);
 }
 @media (max-width: 767px) {
   .banda-editorial .product-detail .product-jump {
     top: var(--gnb-h);
     padding-inline: 24px;
-  }
-  .product-detail .pd-band {
-    scroll-margin-top: 120px;
   }
 }
 

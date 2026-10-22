@@ -233,7 +233,11 @@ const aboutGroupActive = aboutSub !== null;
         data-default-open={String(aboutGroupActive)}
       >
         <div class="p-sub-row">
-          <a class="p-sub-link" href={item.href}>
+          <a
+            class:list={["p-sub-link", { cur: item.key === current }]}
+            href={item.href}
+            aria-current={item.key === current ? "page" : undefined}
+          >
             {item.label}
           </a>
           <button
@@ -278,7 +282,11 @@ const aboutGroupActive = aboutSub !== null;
         </div>
       </div>
     ) : (
-      <a class="drawer-link" href={item.href}>
+      <a
+        class:list={["drawer-link", { cur: item.key === current }]}
+        href={item.href}
+        aria-current={item.key === current ? "page" : undefined}
+      >
         {item.label}
       </a>
     ),

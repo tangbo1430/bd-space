@@ -5,26 +5,6 @@ type Model = {
   facts: { label: string; value: string }[];
 };
 
-// Keep a keyboard-focused model fully visible in the mobile directory strip.
-document.querySelectorAll<HTMLElement>(".catalog-index").forEach((nav) => {
-  nav.addEventListener("focusin", (event) => {
-    const target = event.target;
-    if (
-      !(target instanceof HTMLAnchorElement) ||
-      !target.matches(":focus-visible") ||
-      nav.scrollWidth <= nav.clientWidth
-    )
-      return;
-    const bounds = nav.getBoundingClientRect();
-    const link = target.getBoundingClientRect();
-    const inset = 24;
-    if (link.left < bounds.left + inset)
-      nav.scrollLeft += link.left - bounds.left - inset;
-    else if (link.right > bounds.right - inset)
-      nav.scrollLeft += link.right - bounds.right + inset;
-  });
-});
-
 document
   .querySelectorAll<HTMLElement>("[data-product-comparison]")
   .forEach((root) => {
