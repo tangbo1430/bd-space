@@ -5,12 +5,16 @@ import Icon from "./Icon.astro";
 interface Props {
   heading?: string;
   headingLines?: string[];
+  subheading?: string;
+  images?: Partial<Record<"panels" | "modules" | "hybrid", string>>;
   note?: string;
   aboutLink?: boolean;
 }
 const {
   heading = "构件有序，空间自由",
   headingLines,
+  subheading,
+  images = {},
   note = "从一块混凝土，到一种生活方式。以系统思考建筑，让设计在工厂中成形。",
   aboutLink = false,
 } = Astro.props;
@@ -40,6 +44,7 @@ const systems = [
         {headingLines
           ? headingLines.map((line) => <span>{line}</span>)
           : heading}
+        {subheading && <small class="system-subheading">{subheading}</small>}
       </h2>
       <p>{note}</p>
     </header>
@@ -49,7 +54,10 @@ const systems = [
           <div class="h-system-img">
             <EditorialImage
               fit="contain"
-              base={`r4-system-${s.id}`}
+              base={
+                images[s.id as "panels" | "modules" | "hybrid"] ??
+                `r4-system-${s.id}`
+              }
               alt={`${s.title}建造方式示意`}
               mobile={false}
               sizes="(max-width: 767px) 100vw, 33vw"
@@ -73,3 +81,14 @@ const systems = [
     </div>
   </div>
 </section>
+
+<style>
+  .system-subheading {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: 12px;
+    letter-spacing: 0;
+  }
+</style>

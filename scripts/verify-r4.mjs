@@ -14,8 +14,8 @@ const ok = (cond, name) => {
 };
 const home = page("zh");
 ok(
-  ["grayscale", "grayscale-eco", "4s", "5s", "6s"].every((k) =>
-    home.includes(`r4-banner-${k}`),
+  ["r78-home-grayscale", "r4-banner-grayscale-eco", "r78-home-4s", "r4-banner-5s", "r4-banner-6s"].every((asset) =>
+    home.includes(asset),
   ),
   "home carousel uses the five product renderings",
 );
@@ -29,11 +29,11 @@ ok(
 );
 ok(/\.project-cta:after\{content:none/.test(css), "footer CTA overlay removed");
 ok(
-  home.includes("r4-cta") && home.includes("r4-making-design"),
+  home.includes("r4-cta") && home.includes("r78-design"),
   "CTA and design legend replaced",
 );
 ok(
-  ["panels", "modules", "hybrid"].every((k) => home.includes(`r4-system-${k}`)),
+  ["r78-system-panels", "r4-system-modules", "r78-system-hybrid"].every((asset) => home.includes(asset)),
   "building systems use 2D / 3D / combined images",
 );
 ok(
@@ -43,7 +43,7 @@ ok(
 ok(home.includes("灰度空间经济款"), "economy model featured on home");
 const catalog = page("zh/products");
 ok(
-  [1, 2, 3, 4].every((n) => catalog.includes(`r4-catalog-photo-${n}`)),
+  [1, 2, 3, 4].every((n) => catalog.includes(`r78-catalog-${n}`)),
   "catalog carousel uses four 4S photos",
 );
 const order = [
@@ -84,7 +84,11 @@ for (const k of [
 const quals = page("zh/qualifications");
 ok(
   (quals.match(/r4-patent-\d\d/g) ?? []).length >= 17,
-  "17 patent certificates shown",
+  "17 original patent certificates retained",
+);
+ok(
+  [1, 2, 3].every((n) => quals.includes(`r77-patent-${n}`)),
+  "three supplied patent certificates appended",
 );
 ok(
   [1, 2, 3].every((n) => quals.includes(`r4-award-${n}`)),

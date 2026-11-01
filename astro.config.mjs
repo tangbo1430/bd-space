@@ -62,6 +62,7 @@ export default defineConfig({
       // /en/ 为未发布预留态、404 为错误页：不进入站点地图（PRD FR-13 / AC-10）
       filter: (page) =>
         !page.includes("/404") &&
+        !page.includes("/review/") &&
         !page.includes("/zh/privacy/") &&
         !page.includes("/zh/cookies/") &&
         !unlistedProducts.some(

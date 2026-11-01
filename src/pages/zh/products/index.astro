@@ -10,14 +10,38 @@ const english = Astro.url.pathname.startsWith("/en/");
 const local = (value: string) => (english ? translate(value) : value);
 const photoNotes = ["暮色中的住宅", "夕阳与屋檐", "屋檐下的光", "天际与立面"];
 const photoHeadings = english
-  ? ["A home, built.", "Evening light.", "Step inside.", "Eaves and light."]
-  : ["真实的空间。", "住宅与夕照。", "推门，走进生活。", "屋檐下的光影。"];
+  ? [
+      "Prefabricated walls.\nStandardised beams.",
+      "Evening light.",
+      "The door opens.\nLife begins.",
+      "A line drawn in the factory.\nA poem written in light.",
+    ]
+  : [
+      "墙是预制的，\n梁是标准化的，",
+      "住宅与夕照。",
+      "一推一开之间，",
+      "直线是工厂的尺，\n光线是生活的诗。",
+    ];
+const photoCopy = english
+  ? [
+      "But when the lights come on, it becomes home.\n— A real space. BD-4S, photographed.",
+      "BD-4S · Photography",
+      "Industrialisation ends, and living begins.\nThe evening sky falls behind you;\nlife welcomes you in.",
+      "As the sunset follows the eaves,\na standardised roof takes on a human story.\n— BD-4S. Light beneath the eaves.",
+    ]
+  : [
+      "但灯亮起的那一刻，它就是家。\n—— 真实的空间，半打 4S 实拍。",
+      "半打 4S · 实拍",
+      "工业化结束，生活开始。\n天地晚霞，都退到身后，\n只有生活，迎面走来。",
+      "当夕照沿着屋檐落下，\n标准化的屋顶，便有了人的故事。\n—— 半打 4S，屋檐下的光影。",
+    ];
 const slides = photoNotes.map((note, i) => ({
   id: "4s",
-  base: `r4-catalog-photo-${i + 1}`,
-  mobileImage: `/assets/img/r4-catalog-photo-${i + 1}-m.webp`,
-  desktopImage: `/assets/img/r68-catalog-original-${i + 1}.webp`,
+  base: `r78-catalog-${i + 1}`,
+  mobileImage: `/assets/img/r78-catalog-${i + 1}-m.webp`,
+  desktopImage: `/assets/img/r78-catalog-${i + 1}.webp`,
   heading: photoHeadings[i],
+  subtitle: photoCopy[i],
   name: "半打 4S 实拍",
   note,
   label: note,
@@ -42,9 +66,7 @@ const slides = photoNotes.map((note, i) => ({
     <HeroCarousel slides={slides} catalog>
       <div class="h-hero-copy">
         <h1 class="h-title">{photoHeadings[0]}</h1>
-        <p class="h-hero-sub">
-          {english ? "BD-4S · Photography" : "半打 4S · 实拍"}
-        </p>
+        <p class="h-hero-sub">{photoCopy[0]}</p>
       </div>
       <a slot="action" class="action action-primary" href="#collection">
         探索空间产品

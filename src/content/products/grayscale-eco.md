@@ -139,6 +139,13 @@
       "caption": "灰度空间经济款 · 构造爆炸图 / 技术示意",
       "width": 2400,
       "height": 1350
+    },
+    {
+      "src": "/assets/img/r77-eco-packing.webp",
+      "viewerSrc": "/assets/img/r77-eco-packing.webp",
+      "caption": "灰度空间经济款 · 装箱方案 / 技术示意",
+      "width": 1001,
+      "height": 747
     }
   ],
   "highlights": [
@@ -147,6 +154,12 @@
     "单元化产品，可独立使用，也可多单元拼接",
     "预制率高，现场装配速度快"
   ],
-  "scenesText": "海外 ADU 附属住宅、乡村小住宅、景区旅居小屋、营地宿舍、应急安置单元"
+  "scenesText": "海外 ADU 附属住宅、乡村小住宅、景区旅居小屋、营地宿舍、应急安置单元",
+  "diagramRows": [
+    2,
+    2,
+    1,
+    1
+  ]
 }
 ---

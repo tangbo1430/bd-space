@@ -9,6 +9,7 @@ interface Props {
     name: string;
     note: string;
     heading?: string;
+    subtitle?: string;
     mobileImage?: string;
     desktopImage?: string;
     caption?: string;
@@ -80,6 +81,7 @@ const dimensions = imageDimensions(`/assets/img/${first.base}.jpg`);
         data-cover-copy-top={s.coverCopyTop}
         data-copy-tone={s.copyTone ?? "light"}
         data-copy-heading={s.heading}
+        data-copy-subtitle={s.subtitle}
         data-copy-side={s.copySide ?? "left"}
         data-copy-top={s.copyTop ?? "25%"}
         data-copy-layout={s.copyLayout ?? "stack"}

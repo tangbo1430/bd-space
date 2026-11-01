@@ -1,5 +1,9 @@
 ---
+import WallIntroduction from "../../components/WallIntroduction.astro";
+import PhotoViewer from "../../components/PhotoViewer.astro";
+const { wallPreview = false } = Astro.props;
 import HeroCarousel from "../../components/HeroCarousel.astro";
+import { imageDimensions } from "../../lib/image-dimensions";
 import Icon from "../../components/Icon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EditorialImage from "../../components/EditorialImage.astro";
@@ -20,8 +24,9 @@ const slides = [
     id: "4s",
     name: "半打 4S",
     note: "自然之中，安放日常。",
-    desktopImage: "/assets/img/r65-layered-4s.webp",
-    headerTone: "dark" as const,
+    desktopImage: "/assets/img/r78-home-4s.webp",
+    headerTone: "light" as const,
+    brandTone: "light" as const,
   },
   {
     id: "5s",
@@ -51,7 +56,7 @@ const slides = [
     id: "grayscale",
     name: "灰度空间",
     note: "简洁的表达，自在的空间。",
-    desktopImage: "/assets/img/r66-layered-grayscale.webp",
+    desktopImage: "/assets/img/r78-home-grayscale.webp",
     headerTone: "dark" as const,
     copyTone: "dark" as const,
     copyLayout: "sky" as const,
@@ -68,8 +73,12 @@ const slides = [
   },
 ].map((s) => ({
   ...s,
-  base: `r4-banner-${s.id}`,
-  mobileImage: `/assets/img/r4-banner-${s.id}-m.webp`,
+  base: ["4s", "grayscale"].includes(s.id)
+    ? `r78-home-${s.id}`
+    : `r4-banner-${s.id}`,
+  mobileImage: ["4s", "grayscale"].includes(s.id)
+    ? `/assets/img/r78-home-${s.id}-m.webp`
+    : `/assets/img/r4-banner-${s.id}-m.webp`,
 }));
 const products = (await getListedProducts()).filter((p) => p.featured);
 const english = Astro.url.pathname.startsWith("/en/");
@@ -77,9 +86,9 @@ const steps = [
   {
     title: "设计，把想法落到细节",
     text: "从场地与使用需求出发，梳理空间、结构与模块之间的关系。",
-    base: "r4-making-design",
+    base: "r78-design",
     caption: "半打产品是以混凝土墙体、功能模块的方式组合成一个房屋产品。",
-    alt: "混凝土墙体与功能模块组合成房屋的示意图",
+    alt: "半打墙构造示意",
     mobile: true,
   },
   {
@@ -102,6 +111,7 @@ const steps = [
 ---
 
 <BaseLayout
+  noindex={wallPreview}
   title="让空间，回归生活"
   description="半打空间，装配式混凝土空间的设计与制造者。探索模块化住宅、真实项目与从工厂到现场的建造过程。"
   current="home"
@@ -122,6 +132,7 @@ const steps = [
         探索产品
       </a>
     </HeroCarousel>
+    {wallPreview && <WallIntroduction />}
 
     {/* A continuous photographic collection; product facts remain in the catalog. */}
     <section
@@ -172,7 +183,7 @@ const steps = [
             >
               <EditorialImage
                 fit="contain"
-                base={p.main}
+                base={p.id === "4s" ? "r78-home-4s" : p.main}
                 alt=""
                 sizes={
                   p.id === "grayscale"
@@ -193,11 +204,13 @@ const steps = [
 
     {/* 建造体系：三种方式并列，一目了然 */}
     <SystemsTriptych
-      headingLines={
+      heading={english ? "Ways to build" : "建造方式"}
+      subheading={
         english
-          ? ["Design and manufacturing,", "in one system"]
-          : ["设计与制造，", "在同一个系统里"]
+          ? "Three ways to build, for possibilities around the world."
+          : "用三种建造方式，接住全球市场的所有可能"
       }
+      images={{ panels: "r78-system-panels", hybrid: "r78-system-hybrid" }}
       note={company.intro}
       aboutLink
     />
@@ -244,7 +257,7 @@ const steps = [
           <h2 id="making-heading">把建造，做成制造</h2>
           <p>让复杂的建造过程，在有序的工序中展开。</p>
         </header>
-        <ol class="h-steps">
+        <ol class="h-steps" style={`--step-columns:${steps.map(s => { const [w,h] = imageDimensions(`/assets/img/${s.base}.jpg`); return `minmax(0,${w/h}fr)`; }).join(" ")}`}>
           {steps.map((s, i) => (
             <li class="h-step rv">
               <div class="h-step-img">
@@ -271,6 +284,7 @@ const steps = [
       </div>
     </section>
     <ProjectCTA />
+    {wallPreview && <PhotoViewer />}
   </div>
 </BaseLayout>
 

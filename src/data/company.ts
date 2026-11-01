@@ -20,9 +20,14 @@ export const company = {
 };
 
 export const contacts = [
-  { id: "wang", name: "王先生", phone: "18073804567" },
   { id: "huang", name: "黄先生", phone: "13702363540" },
   { id: "tang", name: "唐小姐", phone: "18503005860" },
+  {
+    id: "wang",
+    name: "王先生",
+    phone: "13600001448",
+    additionalPhone: "+852 6725 6153",
+  },
 ];
 export const investors = [
   { name: "昆记投资（中山）有限公司", percent: 60 },

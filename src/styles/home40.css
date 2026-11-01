@@ -477,7 +477,7 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
 }
 .h40 .h-steps {
   display: grid;
-  grid-template-columns: 1.243902439fr 1.333333333fr 1.777777778fr;
+  grid-template-columns: var(--step-columns, 1.243902439fr 1.333333333fr 1.777777778fr);
   gap: var(--gap);
   margin: 0;
   padding: 0;

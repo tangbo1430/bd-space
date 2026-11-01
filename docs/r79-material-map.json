@@ -1,0 +1,375 @@
+[
+  {
+    "source": "1首页/轮播图/3半打4S.jpeg",
+    "base": "r78-home-4s",
+    "sourceSHA256": "75148595e9a9d3c646301fdc9dd65ce4244fe003425a84d46a6ae8069dadc020",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-home-4s.jpg",
+        "sha256": "1d368a29a0840d5e102afa1e8013ab7672be1a9724e16a92c76e793f283ec230"
+      },
+      {
+        "path": "/assets/img/r78-home-4s.webp",
+        "sha256": "77da4c23e00f38b78dd72323c4686302ae842f21ff320ecbc7b352d80c04ed02"
+      },
+      {
+        "path": "/assets/img/r78-home-4s-m.webp",
+        "sha256": "46deb34e571bc4a153af76f3a140a2988c3372cc39ef37e3d357cc4a75975e2a"
+      },
+      {
+        "path": "/assets/thumbs/r78-home-4s.webp",
+        "sha256": "700c722b99a7393344ec3784764507b22da3f3408da20e45c78d52fc196b50bc"
+      }
+    ]
+  },
+  {
+    "source": "1首页/轮播图/1灰度空间.jpeg",
+    "base": "r78-home-grayscale",
+    "sourceSHA256": "8f6e4241fa70af5313c4dcffa205e12c41600b8574123a9ca698ec7c40039103",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-home-grayscale.jpg",
+        "sha256": "95496a6fa53edda128fbbaed8e3f3fe59e082ed5f7268296ab9fea2a2945f614"
+      },
+      {
+        "path": "/assets/img/r78-home-grayscale.webp",
+        "sha256": "f9e129bebfeea9dd3db8ff9da9781abd5578694abb435422733fe35ad12d7043"
+      },
+      {
+        "path": "/assets/img/r78-home-grayscale-m.webp",
+        "sha256": "e91b00e8d8e999d683180b268afdc3a95fc32a655c84072e44039642b6fd05b7"
+      },
+      {
+        "path": "/assets/thumbs/r78-home-grayscale.webp",
+        "sha256": "4311bce83383891bffa6138759cb99650451ff19de38d19650ff0f7f5c6ae53e"
+      }
+    ]
+  },
+  {
+    "source": "1首页/2D.png",
+    "base": "r78-system-panels",
+    "sourceSHA256": "29bdc998e0cd009529b1802af605e44a77c500ff5fdd19abe37ff83f970fdd9e",
+    "originalSize": [
+      1628,
+      1304
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-system-panels.jpg",
+        "sha256": "19083398f6a247e71aa340e769fbbbac18be5f3249a93b36b43d7da41b486dae"
+      },
+      {
+        "path": "/assets/img/r78-system-panels.webp",
+        "sha256": "83d3037c512f4e0473373073ee5e3e10acb613292cb786f28d192d66f4d839ab"
+      },
+      {
+        "path": "/assets/img/r78-system-panels-m.webp",
+        "sha256": "a88b4f1c88799f65cafcb39b16f70543ededf45653d5347dab6645cfe711a924"
+      },
+      {
+        "path": "/assets/thumbs/r78-system-panels.webp",
+        "sha256": "9c498026025123ef23ccc929a7c5e96180a096f25efc12f5dfeeb92bbf63f8e1"
+      }
+    ]
+  },
+  {
+    "source": "1首页/组合.png",
+    "base": "r78-system-hybrid",
+    "sourceSHA256": "c88fee1716e5fc7f70bce457a9be7b925d0c98555f12db810eebb0d21024fc6f",
+    "originalSize": [
+      826,
+      682
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-system-hybrid.jpg",
+        "sha256": "6a12146bccaa66d861253f5257ecc620a71f70aae22b70a009df9139ff81196a"
+      },
+      {
+        "path": "/assets/img/r78-system-hybrid.webp",
+        "sha256": "4e73f74a46cd2cbbc5f6a22a836de671bef4e1c11563502e61eef8794324126f"
+      },
+      {
+        "path": "/assets/img/r78-system-hybrid-m.webp",
+        "sha256": "4e73f74a46cd2cbbc5f6a22a836de671bef4e1c11563502e61eef8794324126f"
+      },
+      {
+        "path": "/assets/thumbs/r78-system-hybrid.webp",
+        "sha256": "2c3459a2780a00e96ab88189434ee2b390fe3ed4ecb54313c5aaefbe116bd268"
+      }
+    ]
+  },
+  {
+    "source": "1首页/设计，把想法落到细节.png",
+    "base": "r78-design",
+    "sourceSHA256": "3dd71cec503b6753399c81028e6c3916906c73ca6a02d79a4ad750109fab524f",
+    "originalSize": [
+      2122,
+      1477
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-design.jpg",
+        "sha256": "a751ab2e8c49a5fb7f94027ae87e5b57566c023dccfef9f22926d851af726e0e"
+      },
+      {
+        "path": "/assets/img/r78-design.webp",
+        "sha256": "d78fab54108a83d408c918270c7d29663f981e6e97a12d56b354a926fb91edd6"
+      },
+      {
+        "path": "/assets/img/r78-design-m.webp",
+        "sha256": "f3a369572ced9d77e6887ea8c12153ec80c9561b171d0a3f2e7790514aced456"
+      },
+      {
+        "path": "/assets/thumbs/r78-design.webp",
+        "sha256": "c9e7ef8333fa786ed85f7649ff2f50ef9ccfe13cbf628f43bff6b25602c719fe"
+      }
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图1.png",
+    "base": "r78-catalog-1",
+    "sourceSHA256": "46fcb98f7368fef93248763e0132f0621c5cfbf90bfb33aef43ef989c52a9f59",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-catalog-1.jpg",
+        "sha256": "f711a3b8832f27309f9ac13f3c5d05d22a5f34a056317dad956d1050026d611f"
+      },
+      {
+        "path": "/assets/img/r78-catalog-1.webp",
+        "sha256": "4e810349ba259f404532c870cbcaa9018adb21e9890d90304f639f9e493b39ba"
+      },
+      {
+        "path": "/assets/img/r78-catalog-1-m.webp",
+        "sha256": "4a6495ce91010802b8a8efd27453dcf94d1ad6f0ceaf0be6d1801fa3c5ddcb1a"
+      },
+      {
+        "path": "/assets/thumbs/r78-catalog-1.webp",
+        "sha256": "ea140612d180cc2211b300373efb6925140dea76951b44ab32442ad14168eed0"
+      }
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图2.png",
+    "base": "r78-catalog-2",
+    "sourceSHA256": "98bd75b512e2215d87d264ea2cd07a5fff39bc564feb05a17eb1d6575be0ef97",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-catalog-2.jpg",
+        "sha256": "28f9b03d7d7c4b957495aad604c721bc3a315e631b2c9b8ff078305a2e500a3b"
+      },
+      {
+        "path": "/assets/img/r78-catalog-2.webp",
+        "sha256": "30cf1b257738dd46e47b215596cebcb84d91ce8e25c3abcf3c268f7013f1b890"
+      },
+      {
+        "path": "/assets/img/r78-catalog-2-m.webp",
+        "sha256": "faa6e0638c3e96dcd6b3b1a50fdfb01d002d2d1d11d2ed21e18dd6d97489e267"
+      },
+      {
+        "path": "/assets/thumbs/r78-catalog-2.webp",
+        "sha256": "5bebadb2d02997d4532c5849b742bee4d36efbc45103eafd27499e3fe9f69834"
+      }
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图3.png",
+    "base": "r78-catalog-3",
+    "sourceSHA256": "9799e448bb97870110ee314b1a17cc57dc137a719c42314105c1867de15e4d3a",
+    "originalSize": [
+      2368,
+      960
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-catalog-3.jpg",
+        "sha256": "559eeaa6f72f2bc5ff26ebacb1c3ebffb31d9c25b10644e525b8401a4d8f9d37"
+      },
+      {
+        "path": "/assets/img/r78-catalog-3.webp",
+        "sha256": "ac0f200ffe1f4a67b15c0abd30a7740eda9c452a4272827aa3a68d61fd695a19"
+      },
+      {
+        "path": "/assets/img/r78-catalog-3-m.webp",
+        "sha256": "c974253326ed8de53eb5c32de9999b6bfdedb15b7ad3a1b3d4e5f7a2f7eecc6d"
+      },
+      {
+        "path": "/assets/thumbs/r78-catalog-3.webp",
+        "sha256": "ccd9f806acc143345fb62fe6bb968ad64d2a8399d644020518c6dd7fe94beb73"
+      }
+    ]
+  },
+  {
+    "source": "2产品中心/轮播图/产品中心-轮播图4.png",
+    "base": "r78-catalog-4",
+    "sourceSHA256": "13f1b95cb85c2b6f65331a5e182f90b64b6450397f85b745913e95129b8c6564",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "treatment": "Proportional web derivative; composition unchanged",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r78-catalog-4.jpg",
+        "sha256": "a4adccf9c1c684d936cd67f2c27395a464fdb9fb7781dd0a59aeb6f797ebe113"
+      },
+      {
+        "path": "/assets/img/r78-catalog-4.webp",
+        "sha256": "5351baa84e61a577a4f8988133ea92fa970fca0c1369e784ac4d9bf1fea110fc"
+      },
+      {
+        "path": "/assets/img/r78-catalog-4-m.webp",
+        "sha256": "d5858926a044b092b0de924a36ea39b482c4fefdea39d9cf3eea5f16c3993c27"
+      },
+      {
+        "path": "/assets/thumbs/r78-catalog-4.webp",
+        "sha256": "06cebd4d2cbb37597c3f775c27be4ff886aeb86def7c150ae793ca0ade3e8fd3"
+      }
+    ]
+  },
+  {
+    "source": "2产品中心/灰度空间经济款-加图/增加装箱方案的图.png",
+    "base": "r77-eco-packing",
+    "sourceSHA256": "2de0dfa19787e850a6d6fd6cd4ce77db75a6982105c789f478d3c9a80a6339ea",
+    "webpSHA256": "6333773ce3912e767872cf528c0ea72058bfd2fc44493ee3752145b1100feb97",
+    "originalSize": [
+      1001,
+      747
+    ],
+    "treatment": "Individually rechecked against source and model reference; reused derivative only.",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r77-eco-packing.webp",
+        "sha256": "6333773ce3912e767872cf528c0ea72058bfd2fc44493ee3752145b1100feb97"
+      },
+      {
+        "path": "/assets/thumbs/r77-eco-packing.webp",
+        "sha256": "e3b109df016113a88c60e3478e975ceff459d1949b718254c01d2fd46a9ce384"
+      }
+    ]
+  },
+  {
+    "source": "3资质能力/实用新型专利证书-半打空间-组合墙体的新式连接结构 (1).jpg",
+    "base": "r77-patent-1",
+    "sourceSHA256": "3286f90e81ca7fff7fdce3185a6c4dbd0cc54311b125107277df71dfc75d18e2",
+    "webpSHA256": "d912b40f916a0438ca2dc2fc7752b06043bac3ed36023b14e053c77e05246a3f",
+    "originalSize": [
+      2480,
+      3508
+    ],
+    "treatment": "Individually rechecked against source and model reference; reused derivative only.",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r77-patent-1.jpg",
+        "sha256": "aea5cacab701c231aa9dc25236ad1ab0169b96c31921d11f4cd9b17ff4dc1521"
+      },
+      {
+        "path": "/assets/img/r77-patent-1.webp",
+        "sha256": "d912b40f916a0438ca2dc2fc7752b06043bac3ed36023b14e053c77e05246a3f"
+      },
+      {
+        "path": "/assets/img/r77-patent-1-m.webp",
+        "sha256": "6a64aecab677322c646c33c786c35882f20782b91e0d7d446a7334f73322a295"
+      },
+      {
+        "path": "/assets/thumbs/r77-patent-1.webp",
+        "sha256": "d3ca466e38b8b3b7e15567a1acb7167520e2c57b174f5938ddbdd77f9cf7f581"
+      }
+    ]
+  },
+  {
+    "source": "3资质能力/实用新型专利证书-半打空间-组合墙体的新式连接结构.jpg",
+    "base": "r77-patent-2",
+    "sourceSHA256": "521854dad589526295353203e043f67c1ecf908fb5098a963c11d852c28e70a0",
+    "webpSHA256": "d626a664e279bd8787498365d8222483c59e981daa7522a0482550992c868a4e",
+    "originalSize": [
+      2480,
+      3508
+    ],
+    "treatment": "Individually rechecked against source and model reference; reused derivative only.",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r77-patent-2.jpg",
+        "sha256": "a70ba4aed8424f8a19a7633bdb08f2d20c3a58d507842764f458bd70c24a4480"
+      },
+      {
+        "path": "/assets/img/r77-patent-2.webp",
+        "sha256": "d626a664e279bd8787498365d8222483c59e981daa7522a0482550992c868a4e"
+      },
+      {
+        "path": "/assets/img/r77-patent-2-m.webp",
+        "sha256": "e42f77ce8e2aa2ffcb73652b7b00d38373f79f58579f8fa3f0fb9b5549452582"
+      },
+      {
+        "path": "/assets/thumbs/r77-patent-2.webp",
+        "sha256": "64ac46e69af7e92bc851b18c9fa39f5626fb83ca6d8d3ecdb5e23190da221b8f"
+      }
+    ]
+  },
+  {
+    "source": "3资质能力/实用新型专利证书-半打空间-高精度钢骨架预制墙体及房屋建筑结构.jpg",
+    "base": "r77-patent-3",
+    "sourceSHA256": "5bbbfd571f855f60f054ca711d74069abd2899e2d7ff47910f21334fb8c2b796",
+    "webpSHA256": "97431c9917d0e8658d2eeb5350534ff64d6f61eecf502dab33adcc2a0a1556b6",
+    "originalSize": [
+      2480,
+      3508
+    ],
+    "treatment": "Individually rechecked against source and model reference; reused derivative only.",
+    "r79SourceRechecked": true,
+    "outputs": [
+      {
+        "path": "/assets/img/r77-patent-3.jpg",
+        "sha256": "479e3f5db3a201b58aaf409f41287544646d655348ff9b6d2b60c42c80eac747"
+      },
+      {
+        "path": "/assets/img/r77-patent-3.webp",
+        "sha256": "97431c9917d0e8658d2eeb5350534ff64d6f61eecf502dab33adcc2a0a1556b6"
+      },
+      {
+        "path": "/assets/img/r77-patent-3-m.webp",
+        "sha256": "3e2dd46c9530ec25389faf29f03565aa625cfbf675961f287d3db5c05ce20bb5"
+      },
+      {
+        "path": "/assets/thumbs/r77-patent-3.webp",
+        "sha256": "91d16c56ed322eaebf13b2376ea65f685b9415ccfb42316cb9d641de6c6ed530"
+      }
+    ]
+  }
+]

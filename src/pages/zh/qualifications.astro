@@ -10,10 +10,18 @@ import {
   awards,
   awardProject,
 } from "../../data/credentials";
-const patentCerts = Array.from({ length: 17 }, (_, i) => ({
-  base: `r4-patent-${String(i + 1).padStart(2, "0")}`,
-  caption: i < 6 ? "发明专利证书" : "实用新型专利证书",
-}));
+const patentCerts = [
+  ...Array.from({ length: 17 }, (_, i) => ({
+    base: `r4-patent-${String(i + 1).padStart(2, "0")}`,
+    caption: i < 6 ? "发明专利证书" : "实用新型专利证书",
+  })),
+  ...patents
+    .slice(-3)
+    .map((p, i) => ({
+      base: `r77-patent-${i + 1}`,
+      caption: `${p.title} · ${p.number}`,
+    })),
+];
 const awardCerts = [
   { base: "r4-award-1", caption: "广东省土木建筑学会科学技术奖励 · 二等奖" },
   { base: "r4-award-2", caption: "广东省土木建筑学会科学技术奖励 · 个人" },
@@ -140,7 +148,9 @@ const awardCerts = [
         <div class="cert-block">
           <div class="cert-block-head">
             <span class="eyebrow">专利证书展示</span>
-            <p>共 17 项：发明专利 6 项、实用新型专利 11 项。点击证书可查看大图。</p>
+            <p>
+              共 20 项：发明专利 6 项、实用新型专利 14 项。点击证书可查看大图。
+            </p>
           </div>
           <CertificateShowcase
             items={patentCerts}

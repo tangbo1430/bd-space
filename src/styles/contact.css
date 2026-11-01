@@ -193,6 +193,21 @@
   padding-block: 10px;
   min-height: 44px;
 }
+.contact-phone--additional {
+  margin-inline-start: 12px;
+}
+@media (min-width: 768px) {
+  .contact-person .person-body {
+    height: 100%;
+    grid-template-rows: 1fr auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .contact-phone--additional {
+    display: table;
+    margin-inline-start: 0;
+  }
+}
 .qr-instruction {
   display: block;
   font-size: 12px;
@@ -334,6 +349,10 @@
   }
   .direct-contact .wechat-code {
     width: 136px;
+  }
+  .contact-phone--additional {
+    display: table;
+    margin-inline-start: 0;
   }
   .qr-instruction {
     margin-top: 6px;

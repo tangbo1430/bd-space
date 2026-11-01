@@ -1,4 +1,5 @@
 ---
+import { imageDimensions } from "../../../lib/image-dimensions";
 import Icon from "../../../components/Icon.astro";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import GalleryImage from "../../../components/GalleryImage.astro";
@@ -60,6 +61,12 @@ const next = data.listed
   : undefined;
 const plan = data.diagrams.find((d) => d.caption.includes("平面"));
 const diagrams = data.diagrams.filter((d) => d !== plan);
+let diagramOffset = 0;
+const drawingRows = data.diagramRows?.map((count) => {
+  const row = diagrams.slice(diagramOffset, diagramOffset + count);
+  diagramOffset += count;
+  return row;
+});
 const hasFilm = data.videos.length > 0 || Boolean(data.video);
 const videos =
   data.videos.length > 0 ? data.videos : data.video ? [data.video] : [];
@@ -82,6 +89,8 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
 >
   <div
     class="page-editorial product-detail"
+    data-film-aligned={product.id === "4s" || undefined}
+    data-drawing-aligned={Boolean(drawingRows) || undefined}
     data-layout={data.listed ? "complete" : undefined}
   >
     {copy.hero ? (
@@ -267,7 +276,7 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
           </header>
           <div
             class:list={["pd-film", { "pd-film--photo": data.filmPhoto }]}
-            style={`--film-count:${videos.length}`}
+            style={`--film-count:${videos.length};--film-columns:${[...(data.filmPhoto ? [imageDimensions(`/assets/img/${data.filmPhoto.base}.jpg`)] : []), ...videos.map((v) => [v.width, v.height])].map(([w, h]) => `minmax(0,${w / h}fr)`).join(" ")};--video-columns:${videos.map((v) => `minmax(0,${v.width / v.height}fr)`).join(" ")}`}
           >
             {data.filmPhoto && (
               <figure class="pd-film-photo rv">
@@ -285,6 +294,11 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
             {videos.map((v) => (
               <figure class="pd-video rv">
                 <video
+                  style={
+                    product.id === "4s"
+                      ? `aspect-ratio:${v.width}/${v.height}`
+                      : undefined
+                  }
                   controls
                   playsinline
                   preload="none"
@@ -315,29 +329,55 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
             <h2 id="diagram-heading">{data.diagramTitle}</h2>
             {data.diagramIntro && <p>{data.diagramIntro}</p>}
           </header>
-          <div
-            class:list={[
-              "pd-drawings",
-              {
-                "pd-drawings--single": diagrams.length === 1,
-                "pd-drawings--odd":
-                  diagrams.length > 1 && diagrams.length % 2 === 1,
-              },
-            ]}
-          >
-            {diagrams.map((diagram) => (
-              <figure class="pd-drawing rv">
-                <GalleryImage
-                  {...diagram}
-                  alt={diagram.caption}
-                  group={`${product.id}-diagrams`}
-                  fit="contain"
-                  sizes="(max-width: 767px) calc(100vw - 48px), 1100px"
-                />
-                <figcaption>{diagram.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
+          {drawingRows ? (
+            <div class="pd-aligned-drawings">
+              {drawingRows.map((row) => (
+                <div
+                  class="pd-aligned-row"
+                  style={`--drawing-columns:${row.map((d) => `minmax(0,${d.width / d.height}fr)`).join(" ")}`}
+                >
+                  {row.map((diagram) => (
+                    <figure class="pd-drawing rv">
+                      <GalleryImage
+                        {...diagram}
+                        alt={diagram.caption}
+                        group={`${product.id}-diagrams`}
+                        fit="contain"
+                        sizes="(max-width:767px) calc(100vw - 48px), 600px"
+                      />
+                      <figcaption>{diagram.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <>
+              <div
+                class:list={[
+                  "pd-drawings",
+                  {
+                    "pd-drawings--single": diagrams.length === 1,
+                    "pd-drawings--odd":
+                      diagrams.length > 1 && diagrams.length % 2 === 1,
+                  },
+                ]}
+              >
+                {diagrams.map((diagram) => (
+                  <figure class="pd-drawing rv">
+                    <GalleryImage
+                      {...diagram}
+                      alt={diagram.caption}
+                      group={`${product.id}-diagrams`}
+                      fit="contain"
+                      sizes="(max-width: 767px) calc(100vw - 48px), 1100px"
+                    />
+                    <figcaption>{diagram.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
     )}

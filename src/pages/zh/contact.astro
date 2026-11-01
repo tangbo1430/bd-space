@@ -7,10 +7,7 @@ import { getCollection } from "astro:content";
 import projects from "../../data/projects.json";
 import { translate } from "../../lib/translate";
 import "../../styles/contact.css";
-const people = [
-  contacts.find((p) => p.id === "tang")!,
-  ...contacts.filter((p) => p.id !== "tang"),
-];
+const people = contacts;
 const en = Astro.url.pathname.startsWith("/en/");
 const names = Object.fromEntries([
   ...(await getCollection("products")).map((p) => [
@@ -146,6 +143,14 @@ const names = Object.fromEntries([
                   >
                     {en ? `+86 ${p.phone}` : p.phone}
                   </a>
+                  {p.additionalPhone && (
+                    <a
+                      class="contact-phone contact-phone--additional"
+                      href={`tel:${p.additionalPhone.replaceAll(" ", "")}`}
+                    >
+                      {p.additionalPhone}
+                    </a>
+                  )}
                   <span class="qr-instruction">点击二维码查看大图</span>
                 </div>
                 <a

@@ -1,0 +1,167 @@
+[
+  {
+    "asset": "r79-wall-house",
+    "source": "C:\\Users\\Administrator\\Documents\\web-test\\artifacts\\r77-material-review\\materials\\5\\1首页\\插图.png",
+    "sourceSHA256": "e236684e1cdfe01d75b86102282f72b0b6d77e7110ca73742265d9b81e3b31ed",
+    "crop": [
+      0,
+      480,
+      1950,
+      1480
+    ],
+    "size": [
+      1950,
+      1000
+    ],
+    "note": "Layout figure extraction; no changes inside figure. Full original panel available for zoom."
+  },
+  {
+    "asset": "r79-wall-node-0",
+    "source": "C:\\Users\\Administrator\\Documents\\web-test\\artifacts\\r77-material-review\\materials\\5\\1首页\\插图.png",
+    "sourceSHA256": "e236684e1cdfe01d75b86102282f72b0b6d77e7110ca73742265d9b81e3b31ed",
+    "crop": [
+      0,
+      4100,
+      4000,
+      6250
+    ],
+    "size": [
+      4000,
+      2150
+    ],
+    "note": "Layout figure extraction; no changes inside figure. Full original panel available for zoom."
+  },
+  {
+    "asset": "r79-wall-node-1",
+    "source": "C:\\Users\\Administrator\\Documents\\web-test\\artifacts\\r77-material-review\\materials\\5\\1首页\\插图.png",
+    "sourceSHA256": "e236684e1cdfe01d75b86102282f72b0b6d77e7110ca73742265d9b81e3b31ed",
+    "crop": [
+      0,
+      6250,
+      4000,
+      8500
+    ],
+    "size": [
+      4000,
+      2250
+    ],
+    "note": "Layout figure extraction; no changes inside figure. Full original panel available for zoom."
+  },
+  {
+    "asset": "r79-wall-node-2",
+    "source": "C:\\Users\\Administrator\\Documents\\web-test\\artifacts\\r77-material-review\\materials\\5\\1首页\\插图.png",
+    "sourceSHA256": "e236684e1cdfe01d75b86102282f72b0b6d77e7110ca73742265d9b81e3b31ed",
+    "crop": [
+      0,
+      8500,
+      4000,
+      10700
+    ],
+    "size": [
+      4000,
+      2200
+    ],
+    "note": "Layout figure extraction; no changes inside figure. Full original panel available for zoom."
+  },
+  {
+    "asset": "r79-wall-node-3",
+    "source": "C:\\Users\\Administrator\\Documents\\web-test\\artifacts\\r77-material-review\\materials\\5\\1首页\\插图.png",
+    "sourceSHA256": "e236684e1cdfe01d75b86102282f72b0b6d77e7110ca73742265d9b81e3b31ed",
+    "crop": [
+      0,
+      10700,
+      4000,
+      12950
+    ],
+    "size": [
+      4000,
+      2250
+    ],
+    "note": "Layout figure extraction; no changes inside figure. Full original panel available for zoom."
+  },
+  {
+    "asset": "r79-wall-photos",
+    "source": "C:\\Users\\Administrator\\Documents\\web-test\\artifacts\\r77-material-review\\materials\\5\\1首页\\插图.png",
+    "sourceSHA256": "e236684e1cdfe01d75b86102282f72b0b6d77e7110ca73742265d9b81e3b31ed",
+    "crop": [
+      245,
+      13478,
+      3680,
+      14678
+    ],
+    "size": [
+      3435,
+      1200
+    ],
+    "note": "Layout figure extraction; no changes inside figure. Full original panel available for zoom."
+  },
+  {
+    "source": "r79-wall-photos.webp",
+    "outputs": [
+      {
+        "name": "r79-wall-photo-0",
+        "pixelBounds": [
+          0,
+          0,
+          900,
+          1200
+        ]
+      },
+      {
+        "name": "r79-wall-photo-1",
+        "pixelBounds": [
+          927,
+          0,
+          1713,
+          596
+        ]
+      },
+      {
+        "name": "r79-wall-photo-2",
+        "pixelBounds": [
+          1741,
+          0,
+          2529,
+          596
+        ]
+      },
+      {
+        "name": "r79-wall-photo-3",
+        "pixelBounds": [
+          2556,
+          0,
+          3425,
+          596
+        ]
+      },
+      {
+        "name": "r79-wall-photo-4",
+        "pixelBounds": [
+          927,
+          642,
+          1713,
+          1200
+        ]
+      },
+      {
+        "name": "r79-wall-photo-5",
+        "pixelBounds": [
+          1741,
+          642,
+          2529,
+          1200
+        ]
+      },
+      {
+        "name": "r79-wall-photo-6",
+        "pixelBounds": [
+          2556,
+          642,
+          3425,
+          1200
+        ]
+      }
+    ],
+    "note": "Individual photographs extracted from the intact source mosaic for mobile readability; no rescaling up."
+  }
+]

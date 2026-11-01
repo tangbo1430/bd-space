@@ -29,6 +29,7 @@ const products = defineCollection({
     mainBase: z.string().optional(),
     highlights: z.array(z.string()).default([]),
     scenesText: z.string().default(""),
+    diagramRows: z.array(z.number().int().positive()).optional(),
     filmPhoto: z.object({ base: z.string(), caption: z.string() }).optional(),
     videos: z
       .array(

@@ -173,6 +173,14 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
   td:first-child {
     width: 18%;
   }
+  tr > :nth-child(2) {
+    background: #fff;
+    padding-left: 16px;
+  }
+  tr > :nth-child(3) {
+    background: #f5f6f4;
+    padding-left: 16px;
+  }
   thead th {
     padding-top: 0;
     padding-bottom: 20px;
@@ -194,7 +202,7 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
   .comparison-model-heading {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 4px 16px;
   }
@@ -338,6 +346,10 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
     tbody th {
       grid-column: 1 / -1;
       font-size: 13px;
+    }
+    tr > :nth-child(2),
+    tr > :nth-child(3) {
+      padding: 10px 12px;
     }
     tbody td {
       font-size: 16px;

@@ -697,15 +697,13 @@
   margin: 0;
   scroll-snap-align: center;
   transform: scale(0.84);
-  opacity: 0.55;
-  transition:
-    transform 0.45s ease,
-    opacity 0.45s ease;
+  transition: transform 0.45s ease;
 }
 .cert-item.is-active {
   transform: scale(1);
-  opacity: 1;
 }
+.cert-item .cert-paper { opacity:.55;transition:opacity .45s ease; }
+.cert-item.is-active .cert-paper { opacity:1; }
 .cert-paper {
   background: #fff;
   padding: 10px;

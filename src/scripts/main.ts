@@ -121,6 +121,36 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     hero.querySelectorAll<HTMLButtonElement>("[data-dot]"),
   );
   const live = hero.querySelector<HTMLElement>("[data-banner-live]");
+  // PDF p7 adds full poems. Reserve their natural text height on small screens
+  // so changing slides does not move the photograph and controls up and down.
+  if (hero.classList.contains("catalog-hero")) {
+    const title = hero.querySelector<HTMLElement>("h1");
+    const copy = hero.querySelector<HTMLElement>(".h-hero-sub");
+    const sizeCaptions = () => {
+      if (!title || !copy) return;
+      title.style.minHeight = "";
+      copy.style.minHeight = "";
+      if (window.innerWidth >= 1280) return;
+      const original = [title.textContent, copy.textContent];
+      let titleHeight = 0,
+        copyHeight = 0;
+      for (const slide of slides) {
+        title.textContent = slide.dataset.copyHeading ?? original[0];
+        copy.textContent = slide.dataset.copySubtitle ?? original[1];
+        titleHeight = Math.max(
+          titleHeight,
+          title.getBoundingClientRect().height,
+        );
+        copyHeight = Math.max(copyHeight, copy.getBoundingClientRect().height);
+      }
+      [title.textContent, copy.textContent] = original;
+      title.style.minHeight = `${Math.ceil(titleHeight)}px`;
+      copy.style.minHeight = `${Math.ceil(copyHeight)}px`;
+    };
+    sizeCaptions();
+    document.fonts.ready.then(sizeCaptions);
+    window.addEventListener("resize", sizeCaptions, { passive: true });
+  }
   let i = 0;
   let pendingIndex: number | null = null;
   let pendingImage: AbortController | undefined;
@@ -229,6 +259,9 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     const heading = hero.querySelector<HTMLHeadingElement>("h1");
     if (heading && active?.dataset.copyHeading)
       heading.textContent = active.dataset.copyHeading;
+    const subtitle = hero.querySelector<HTMLElement>(".h-hero-sub");
+    if (subtitle && active?.dataset.copySubtitle)
+      subtitle.textContent = active.dataset.copySubtitle;
     if (active?.dataset.imageRatio)
       hero.style.setProperty("--hero-ratio", active.dataset.imageRatio);
     hero.dataset.controlsTone = active?.dataset.controlsTone ?? "light";

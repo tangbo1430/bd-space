@@ -1,0 +1,249 @@
+---
+import EditorialImage from "./EditorialImage.astro";
+import GalleryImage from "./GalleryImage.astro";
+const en = Astro.url.pathname.startsWith("/en/");
+const nodes = en
+  ? [
+      "Wall to foundation",
+      "Wall connection · 1",
+      "Wall connection · 2",
+      "Wall connection · 3",
+    ]
+  : [
+      "墙与地基连接",
+      "墙体连接节点 · 1",
+      "墙体连接节点 · 2",
+      "墙体连接节点 · 3",
+    ];
+---
+
+<section class="wall-introduction" id="banda-wall" aria-labelledby="wall-title">
+  <header class="wall-heading">
+    <div>
+      <span class="eyebrow">{en ? "The Banda Wall" : "半打墙"}</span>
+      <h2 id="wall-title">
+        {en ? (
+          "An industrialised building system for housing."
+        ) : (
+          <>
+            <span>一套可以工业化制造的</span>
+            <span>建房系统。</span>
+          </>
+        )}
+      </h2>
+    </div>
+    <p>
+      {en
+        ? "Biomimicry applied to architecture: bone, muscle and skin. A key to manufacturing homes through industrial processes."
+        : "把仿生学用于建筑——骨＋肉＋皮。由此，找到了工业化制造房子的密钥。"}
+    </p>
+  </header>
+  <div class="wall-overview">
+    <figure class="wall-house">
+      <EditorialImage
+        src="/assets/img/r79-wall-house.webp"
+        fit="contain"
+        alt={
+          en
+            ? "Banda building system, housing illustration"
+            : "半打建房系统，住宅示意"
+        }
+      />
+      <figcaption>
+        {en ? "A system for building homes." : "从建房系统，到日常居所。"}
+      </figcaption>
+    </figure>
+    <figure class="wall-structure">
+      <GalleryImage
+        base="r78-design"
+        fit="contain"
+        group="wall-structure"
+        alt={en ? "Banda Wall structural illustration" : "半打墙构造示意"}
+      />
+      <figcaption>
+        {en
+          ? "The skeleton gives the wall its soul—and a foundation for trust."
+          : "骨的存在，让墙有了灵魂，也有了信任。"}
+      </figcaption>
+    </figure>
+  </div>
+  <div class="wall-detail-heading">
+    <h3>{en ? "Connections" : "连接方式"}</h3>
+    <span>
+      {en ? "Select a drawing to enlarge" : "点击技术图，查看完整标注"}
+    </span>
+  </div>
+  <div class="wall-connections">
+    {nodes.map((caption, i) => (
+      <figure>
+        <GalleryImage
+          src={`/assets/img/r79-wall-node-${i}.webp`}
+          fit="contain"
+          group="wall-connections"
+          alt={caption}
+          caption={caption}
+        />
+        <figcaption>{caption}</figcaption>
+      </figure>
+    ))}
+  </div>
+  <div class="wall-detail-heading">
+    <h3>{en ? "Finished walls" : "半打墙实拍"}</h3>
+    <span>
+      {en
+        ? "Manufacturing, transport and installation"
+        : "制造、运输与现场装配"}
+    </span>
+  </div>
+  <figure class="wall-photo-overview"><GalleryImage src="/assets/img/r79-wall-photos.webp" fit="contain" group="wall-photos-overview" alt={en ? 'Banda Wall manufacturing, transport and installation photographs' : '半打墙制造、运输与现场装配实拍组图'} /></figure>
+  <div class="wall-photographs">
+    {Array.from({ length: 7 }, (_, i) => (
+      <figure>
+        <GalleryImage
+          src={`/assets/img/r79-wall-photo-${i}.webp`}
+          fit="contain"
+          group="wall-photos"
+          alt={
+            en
+              ? `Banda Wall manufacturing and installation photograph ${i + 1}`
+              : `半打墙制造与装配实拍 ${i + 1}`
+          }
+        />
+      </figure>
+    ))}
+  </div>
+</section>
+<style>
+  .wall-introduction {
+    padding: var(--sec-pad) var(--content-inset) 40px;
+    background: #fff;
+    color: var(--c-ink);
+  }
+  .wall-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    align-items: end;
+    gap: var(--gap);
+    margin-bottom: 24px;
+  }
+  .wall-heading h2 {
+    margin: 8px 0 0;
+    font-size: var(--fs-h2);
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+    max-width: 20em;
+  }
+  .wall-heading p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--c-body);
+    max-width: 36em;
+    justify-self: end;
+  }
+  .wall-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.95fr) minmax(0, 1.4367fr);
+    gap: var(--gap);
+  }
+  figure {
+    margin: 0;
+    min-width: 0;
+  }
+  .wall-overview figure {
+    display: flex;
+    flex-direction: column;
+  }
+  .wall-introduction :global(.editorial-image),
+  .wall-introduction :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .wall-introduction :global(.gallery-link) {
+    display: block;
+  }
+  figcaption {
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #555;
+    background: var(--c-soft);
+  }
+  .wall-overview figcaption {
+    flex: 1;
+  }
+  .wall-photographs {display:none;}
+  .wall-detail-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin: 32px 0 16px;
+  }
+  .wall-detail-heading h3 {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .wall-detail-heading span {
+    font-size: 13px;
+    color: var(--c-body);
+  }
+  .wall-connections {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--gap);
+  }
+  .wall-connections figure {
+    display: flex;
+    flex-direction: column;
+  }
+  .wall-connections :global(.gallery-link) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: 1023px) {
+    .wall-heading {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .wall-heading p {
+      justify-self: start;
+    }
+    .wall-connections {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 767px) {
+    .wall-introduction {
+      padding-block: 40px;
+    }
+    .wall-overview,
+    .wall-connections {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .wall-heading h2 {
+      font-size: 28px;
+    }
+    .wall-heading h2 span {
+      display: block;
+    }
+    .wall-photo-overview {display:none;}
+    .wall-photographs {display:grid;grid-template-columns:minmax(0,1fr);gap:16px;}
+    .wall-detail-heading {
+      display: block;
+    }
+    .wall-detail-heading span {
+      display: block;
+      margin-top: 8px;
+    }
+    .wall-introduction :global(.gallery-open) {
+      font-size: 12px;
+    }
+  }
+</style>
