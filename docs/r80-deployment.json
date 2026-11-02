@@ -1,0 +1,13 @@
+{
+  "release": "r80-sky-preview",
+  "commit": "631e839",
+  "url": "http://23.251.34.150:8080/zh/?v=r80-sky",
+  "releaseDirectory": "/opt/banda-space-preview/releases/r80-sky-631e839",
+  "container": "banda-space-preview",
+  "previousRelease": "/opt/banda-space-preview/releases/r76-visual-202610222221",
+  "rollbackContainer": "banda-r76-before-r80-631e839",
+  "rollbackCommand": "sh /opt/banda-space-preview/releases/r80-sky-631e839/rollback.sh",
+  "archiveSha256": "d68825657a2cf099d6619b7c52b4a3417f2769bfd7021f5e7949edc60e83d034",
+  "validation": "SHA256 verified before extraction; staged HTTP and asset checks passed; public Chinese/English home at 375/1440/1920, first photo, manual five-slide transitions, no overflow or page errors; public version matches 631e839; noindex header retained.",
+  "limitations": "Visual trial approved for publication, not full acceptance. r79 first batch only. Catalog long-copy and third-frame navigation conflicts remain documented. Generated desktop first image is 1857x847, not 4K. Mobile retains original. No wall module inserted into normal home."
+}
