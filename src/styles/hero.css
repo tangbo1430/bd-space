@@ -357,6 +357,13 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     object-fit: cover;
     object-position: 50% 50%;
   }
+  /* The first photograph has a small sky extension. Trim its framing by 24px
+     so the existing white heading stays entirely over foliage, while the
+     navigation remains on the clear sky. Other slides keep their framing. */
+  .banda-editorial .home-hero .slide[data-product="4s"] .editorial-image img {
+    height: calc(100% + 24px);
+    margin-top: -24px;
+  }
 }
 @media (min-width: 1280px) {
   .catalog-hero .hero-content {
