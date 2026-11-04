@@ -31,6 +31,13 @@ const products = defineCollection({
     scenesText: z.string().default(""),
     diagramRows: z.array(z.number().int().positive()).optional(),
     filmPhoto: z.object({ base: z.string(), caption: z.string() }).optional(),
+    filmLabel: z.string().default("施工记录 · FROM FACTORY TO SITE"),
+    filmTitle: z.string().default("从工厂，到场地。"),
+    filmIntro: z
+      .string()
+      .default(
+        "模块在工厂完成制造，经运输、吊装与现场装配，成为可以使用的空间。",
+      ),
     videos: z
       .array(
         z.object({

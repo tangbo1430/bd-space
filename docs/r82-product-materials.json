@@ -1,0 +1,420 @@
+[
+  {
+    "source": "主图-半打11.png",
+    "sha256": "677a530c5debdbeee0b1f1b1f6c35eaaad8b5bdf58e83cf2c120461907813fc1",
+    "output": "r82-bd11-main",
+    "originalSize": [
+      2880,
+      1376
+    ],
+    "webSize": [
+      2880,
+      1376
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\首图-半打11.jpeg",
+    "sha256": "21602e62b64a994f369ea71595eacd1efc14fe3d63bc32d56f54ad5e5b4446be",
+    "output": "r82-bd11-hero",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "webSize": [
+      3072,
+      1248
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\效果图1 (1).png",
+    "sha256": "392e78ad5e0b7bec2c65313485ad74f5ef1754decb99517ae2380358247934fe",
+    "output": "r82-bd11-space-1",
+    "originalSize": [
+      2000,
+      1344
+    ],
+    "webSize": [
+      2000,
+      1344
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\效果图1 (2).png",
+    "sha256": "c7e81f6072c18ee3f8b22c98033d91fdf13a4356b9f3948de0699bf9f95a7999",
+    "output": "r82-bd11-space-2",
+    "originalSize": [
+      1250,
+      838
+    ],
+    "webSize": [
+      1250,
+      838
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 平面图.png",
+    "sha256": "e23ae2cb75a6971e5543bbd893489ea90dd753cd7e31a2ec181900af48f4ec06",
+    "output": "r82-bd11-diagram-0",
+    "originalSize": [
+      1569,
+      937
+    ],
+    "webSize": [
+      1569,
+      937
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 首层平面图.png",
+    "sha256": "730148f53e7fc5ed922512b5bce44125ffa790a919e302dd5fb92aff17d41e4a",
+    "output": "r82-bd11-diagram-1",
+    "originalSize": [
+      2559,
+      2315
+    ],
+    "webSize": [
+      2559,
+      2315
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 二层平面图.png",
+    "sha256": "66ccafe89b32d0857484e73f97e604e1228bbc328268deae2a187ec07216ab4a",
+    "output": "r82-bd11-diagram-2",
+    "originalSize": [
+      2525,
+      2313
+    ],
+    "webSize": [
+      2525,
+      2313
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 屋顶平面图.png",
+    "sha256": "8ad5ce3f9375b61f0a352fab02649033f802e3cf5320a79e9f2f2da52a9bb4f2",
+    "output": "r82-bd11-diagram-3",
+    "originalSize": [
+      2469,
+      2245
+    ],
+    "webSize": [
+      2469,
+      2245
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 正立面图.png",
+    "sha256": "5ce7e197385f96bb59186514d54cd5ffe7bf3e04893ffc1376b975b98e98bb07",
+    "output": "r82-bd11-diagram-4",
+    "originalSize": [
+      2587,
+      1758
+    ],
+    "webSize": [
+      2587,
+      1758
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 背立面图.png",
+    "sha256": "86ddb5f753abcf0b240670bcd9927e70f132c606201aa13aad187c1407778f21",
+    "output": "r82-bd11-diagram-5",
+    "originalSize": [
+      2587,
+      1766
+    ],
+    "webSize": [
+      2587,
+      1766
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 左立面图.png",
+    "sha256": "eb77af00236b4db88bd8d3f2a2943d804d0d8b3aac3b589cf23e51d7d9456300",
+    "output": "r82-bd11-diagram-6",
+    "originalSize": [
+      2734,
+      1783
+    ],
+    "webSize": [
+      2734,
+      1783
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 右立面图.png",
+    "sha256": "7bdabfedf602413cb55e611def64f125e7f33b510496e6858be766d3e3735fa9",
+    "output": "r82-bd11-diagram-7",
+    "originalSize": [
+      2734,
+      1737
+    ],
+    "webSize": [
+      2734,
+      1737
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 1-1剖面图.png",
+    "sha256": "dd47ef8dde9501b923dd1b06587b883e32aa78717e2c55a743cd655f51e73120",
+    "output": "r82-bd11-diagram-8",
+    "originalSize": [
+      2567,
+      1888
+    ],
+    "webSize": [
+      2567,
+      1888
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\BD11 2-2剖面图.png",
+    "sha256": "7a4819762b6169729435b4090030433879a0a850e4aa85b2703c31ee3e0a8e9e",
+    "output": "r82-bd11-diagram-9",
+    "originalSize": [
+      2749,
+      1888
+    ],
+    "webSize": [
+      2749,
+      1888
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-半打11\\半打11漫游视频.mp4",
+    "sha256": "2258b9c505f5ae9df8499dbbde0ab30a35f517e748e27ccf9d019483f8c3495a",
+    "output": "/assets/video/r82-bd11.mp4",
+    "treatment": "H.264 yuv420p + faststart; manual playback"
+  },
+  {
+    "source": "主图-栖元.png",
+    "sha256": "859a4e4060c408cddf120783f0a9ebd9792d30926f1d12448efe60968af0caad",
+    "output": "r82-qiyuan-main",
+    "originalSize": [
+      2880,
+      1376
+    ],
+    "webSize": [
+      2880,
+      1376
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-栖元\\首图-半打11.jpeg",
+    "sha256": "79aa2a7848b82c02a253ff7212df1870ce6c5107a149d1b43d03c2ca4e1cacc6",
+    "output": "r82-qiyuan-hero",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "webSize": [
+      3072,
+      1248
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-栖元\\效果图 (1).png",
+    "sha256": "eceab4058b7920d2135807dee8cb206b677c26fae443b2a24726cd6048c28ed4",
+    "output": "r82-qiyuan-space-1",
+    "originalSize": [
+      3000,
+      1998
+    ],
+    "webSize": [
+      3000,
+      1998
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-栖元\\效果图 (2).png",
+    "sha256": "9a988521dc86bebfb81d9f6f253fc90567857681eafa002ade11a0d4f2434f36",
+    "output": "r82-qiyuan-space-2",
+    "originalSize": [
+      3000,
+      1998
+    ],
+    "webSize": [
+      3000,
+      1998
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-栖元\\栖元 平面图.png",
+    "sha256": "11da802237c7ffbd68bf6b318b19a7af37d09bff9d1ae8441bd38d76df7d54a6",
+    "output": "r82-qiyuan-diagram-0",
+    "originalSize": [
+      4041,
+      2535
+    ],
+    "webSize": [
+      3072,
+      1927
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-栖元\\首层平面图.png",
+    "sha256": "cfde917220531ef4f4e4f8a43e352193435af36f16faed45deb05bf9b95e4d68",
+    "output": "r82-qiyuan-diagram-1",
+    "originalSize": [
+      7452,
+      8369
+    ],
+    "webSize": [
+      2735,
+      3072
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-栖元\\二层平面图.png",
+    "sha256": "d7d1fded862f5a1f8bc6244532f17930b1c454e92746dec5d247190f93fbd0d6",
+    "output": "r82-qiyuan-diagram-2",
+    "originalSize": [
+      7243,
+      8466
+    ],
+    "webSize": [
+      2628,
+      3072
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "主图-诗诺.png",
+    "sha256": "adcb3bef2c5286e9bdbc37e24f8dc0399cb06c3213f1cf8d23d4f9cc12ff6ee3",
+    "output": "r82-snow11-main",
+    "originalSize": [
+      2880,
+      1376
+    ],
+    "webSize": [
+      2880,
+      1376
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\首图-诗诺.jpeg",
+    "sha256": "692d1fd228ce1e719bbdd75aff1a7e4775ebb8faede830b9af192b1af3feee8f",
+    "output": "r82-snow11-hero",
+    "originalSize": [
+      3072,
+      1248
+    ],
+    "webSize": [
+      3072,
+      1248
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\效果图 (1).png",
+    "sha256": "362c71c5207e8da7c6b80063e27995d2e8aaae61133ab456d4ae9621e632b758",
+    "output": "r82-snow11-space-1",
+    "originalSize": [
+      3000,
+      1915
+    ],
+    "webSize": [
+      3000,
+      1915
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\效果图 (2).png",
+    "sha256": "5ca9a986b8e2dee6430950b60f6c5a0e790c27fc4b4ffb0e168687f507af2ce7",
+    "output": "r82-snow11-space-2",
+    "originalSize": [
+      3000,
+      1915
+    ],
+    "webSize": [
+      3000,
+      1915
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\效果图 (3).png",
+    "sha256": "5be2a3f37548530c8ac958f89e7b5b320551472746acf36fcbb9026d0612d9f3",
+    "output": "r82-snow11-space-3",
+    "originalSize": [
+      3000,
+      1915
+    ],
+    "webSize": [
+      3000,
+      1915
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\效果图 (4).png",
+    "sha256": "e43989f5c5d328f9015f76aa7d6907df1ec71839e666325a24a15b7e0d14e806",
+    "output": "r82-snow11-space-4",
+    "originalSize": [
+      3000,
+      1913
+    ],
+    "webSize": [
+      3000,
+      1913
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\首层及二层平面图.png",
+    "sha256": "091bf70b4a9b740913f295f0853ed1b496f589f9d614164186705005f0b7aa0a",
+    "output": "r82-snow11-diagram-0",
+    "originalSize": [
+      9295,
+      8816
+    ],
+    "webSize": [
+      3072,
+      2914
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\平面图.png",
+    "sha256": "ed39e2d3bfe6fbbc31d29ff2a5d96a731c3a1908ff6badbaac0f6c994345fe6e",
+    "output": "r82-snow11-diagram-1",
+    "originalSize": [
+      965,
+      899
+    ],
+    "webSize": [
+      965,
+      899
+    ],
+    "treatment": "complete, proportional web image"
+  },
+  {
+    "source": "增加产品-诗诺\\诗诺安装动画演示.mp4",
+    "sha256": "fc9d455d3a11eb49c3b9afd4f1f0cbe845baac21ed7d6a0e6678468b1b812db0",
+    "output": "/assets/video/r82-snow11.mp4",
+    "treatment": "H.264 yuv420p + faststart; manual playback"
+  }
+]

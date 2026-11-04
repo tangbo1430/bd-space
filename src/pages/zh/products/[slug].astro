@@ -135,7 +135,9 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
         <a href="#specifications">产品参数</a>
         {data.designGallery.length > 0 && <a href="#spaces">空间体验</a>}
         {data.gallery.length > 0 && <a href="#construction">实拍与构造</a>}
-        {hasFilm && <a href="#installation-video">施工记录</a>}
+        {hasFilm && (
+          <a href="#installation-video">{data.filmLabel.split(" · ")[0]}</a>
+        )}
         {diagrams.length > 0 && <a href="#diagrams">{data.diagramLabel}</a>}
       </nav>
     )}
@@ -268,14 +270,21 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
       >
         <div class="ed-wrap">
           <header class="pd-head rv">
-            <span class="pd-eyebrow">施工记录 · FROM FACTORY TO SITE</span>
-            <h2 id="film-heading">从工厂，到场地。</h2>
-            <p>
-              模块在工厂完成制造，经运输、吊装与现场装配，成为可以使用的空间。
-            </p>
+            <span class="pd-eyebrow">{data.filmLabel}</span>
+            <h2 id="film-heading">{data.filmTitle}</h2>
+            <p>{data.filmIntro}</p>
           </header>
           <div
-            class:list={["pd-film", { "pd-film--photo": data.filmPhoto }]}
+            class:list={[
+              "pd-film",
+              {
+                "pd-film--photo": data.filmPhoto,
+                "pd-film--landscape":
+                  !data.filmPhoto &&
+                  videos.length === 1 &&
+                  videos[0].width > videos[0].height,
+              },
+            ]}
             style={`--film-count:${videos.length};--film-columns:${[...(data.filmPhoto ? [imageDimensions(`/assets/img/${data.filmPhoto.base}.jpg`)] : []), ...videos.map((v) => [v.width, v.height])].map(([w, h]) => `minmax(0,${w / h}fr)`).join(" ")};--video-columns:${videos.map((v) => `minmax(0,${v.width / v.height}fr)`).join(" ")}`}
           >
             {data.filmPhoto && (
@@ -294,11 +303,7 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
             {videos.map((v) => (
               <figure class="pd-video rv">
                 <video
-                  style={
-                    product.id === "4s"
-                      ? `aspect-ratio:${v.width}/${v.height}`
-                      : undefined
-                  }
+                  style={`aspect-ratio:${v.width}/${v.height}`}
                   controls
                   playsinline
                   preload="none"

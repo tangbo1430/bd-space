@@ -12,7 +12,18 @@ function check(name, test) {
   assert(test, name);
   results.push(name);
 }
-const listed = ["4s", "5s", "6s", "grayscale", "bd8", "bd9"];
+const listed = [
+  "4s",
+  "5s",
+  "6s",
+  "grayscale",
+  "grayscale-eco",
+  "bd8",
+  "bd9",
+  "bd11",
+  "qiyuan",
+  "snow11",
+];
 const legacy = ["slab", "wall", "stair"];
 const sitemap = readdirSync(new URL("dist/", root))
   .filter((p) => /^sitemap.*\.xml$/.test(p))
@@ -25,10 +36,11 @@ for (const id of listed) {
       html("products").includes(`href="/zh/products/${id}/"`),
   );
   check(
-    `${id}: real specs and indexable route`,
-    html(`products/${id}`).includes("180mm") &&
-      html(`products/${id}`).includes("40尺HC") &&
-      !html(`products/${id}`).includes('content="noindex'),
+    `${id}: supplied specs and published route`,
+    JSON.parse(
+      read(`src/content/products/${id}.md`).split("---")[1],
+    ).params.every((p) => html(`products/${id}`).includes(p.value)) &&
+      sitemap.includes(`/products/${id}/`),
   );
 }
 for (const id of legacy) {

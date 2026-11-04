@@ -3,8 +3,11 @@ import { hasEnglish, alternateLanguage, corePaths } from "../src/lib/locale";
 import { translate } from "../src/lib/translate";
 import { validateInquiry } from "../src/lib/form";
 describe("published bilingual pages", () => {
-  it("has exactly twelve reciprocal counterparts", () => {
-    expect(corePaths).toHaveLength(12);
+  it("has exactly fifteen reciprocal counterparts including the three new products", () => {
+    expect(corePaths).toHaveLength(15);
+    for (const slug of ["bd11", "qiyuan", "snow11"]) {
+      expect(corePaths).toContain(`products/${slug}/`);
+    }
     for (const path of corePaths) {
       expect(hasEnglish(`/zh/${path}`)).toBe(true);
       expect(alternateLanguage(alternateLanguage(`/zh/${path}`))).toBe(

@@ -104,7 +104,18 @@ for (const route of ["/zh/", "/zh/products/", "/en/", "/en/products/"]) {
     `${route}: no-text controls, keyboard, selection and pause`,
   );
 }
-for (const id of ["4s", "5s", "6s", "grayscale", "bd8", "bd9"]) {
+for (const id of [
+  "4s",
+  "5s",
+  "6s",
+  "grayscale",
+  "grayscale-eco",
+  "bd8",
+  "bd9",
+  "bd11",
+  "qiyuan",
+  "snow11",
+]) {
   await page.goto(`${base}/en/products/${id}/`, { waitUntil: "networkidle" });
   const trigger = page.locator(`[data-gallery="${id}-diagrams"]`).first();
   const count = await page.locator(`[data-gallery="${id}-diagrams"]`).count();

@@ -1,0 +1,88 @@
+---
+import Icon from "./Icon.astro";
+import { contacts, company } from "../data/company";
+const en = Astro.url.pathname.startsWith("/en/");
+const names: Record<string, string> = { huang: "Mr Huang", tang: "Ms Tang", wang: "Mr Wang" };
+---
+
+<div class="closing-artwork">
+  <picture class="closing-landscape">
+    <source media="(max-width:767px)" srcset="/assets/img/r82-contact-gray-m.webp" />
+    <img src="/assets/img/r82-contact-gray.webp" width="2172" height="724" loading="lazy" decoding="async" alt={en ? "Banda residence in a gray architectural illustration" : "灰色建筑插画中的半打住宅"} />
+  </picture>
+  <div class="closing-title">
+    <h2>{en ? "Get in touch" : "联系我们"}</h2>
+    {!en && <span lang="en">Contact us.</span>}
+  </div>
+  <div class="closing-panel">
+    <p class="closing-note">{en ? "WeChat · select a code to enlarge" : "微信联系 · 点击二维码放大"}</p>
+    <div class="closing-people">
+      {contacts.map(p => <article class="closing-person">
+        <a class="closing-qr" href={`/assets/img/wechat-${p.id}.png`} data-closing-qr data-contact-name={en ? names[p.id] : p.name} aria-haspopup="dialog" aria-label={en ? `Enlarge ${names[p.id]}'s WeChat QR code` : `放大${p.name}的微信二维码`}>
+          <img src={`/assets/img/wechat-${p.id}.png`} width="1000" height="1000" loading="lazy" alt={en ? `${names[p.id]} · WeChat` : `${p.name}微信二维码`} />
+        </a>
+        <div class="closing-person-info">
+          <h3>{en ? names[p.id] : p.name}</h3>
+          <a class="closing-phone" href={`tel:+86${p.phone}`}>{en ? `+86 ${p.phone}` : p.phone}</a>
+          {p.additionalPhone && <a class="closing-phone" href={`tel:${p.additionalPhone.replaceAll(" ", "")}`}>{p.additionalPhone}</a>}
+        </div>
+      </article>)}
+    </div>
+    <div class="closing-details">
+      <a href={`mailto:${company.contact.email}`}>{company.contact.email}</a>
+      <p>{en ? "2/F, Building 2, No. 8 Huancui East Road, Cuishanhu New District, Kaiping, Jiangmen, Guangdong" : company.contact.address}</p>
+    </div>
+  </div>
+  <dialog class="closing-qr-dialog" aria-label={en ? "WeChat QR code" : "微信二维码"}>
+    <div class="closing-dialog-head"><strong data-closing-name></strong><button type="button" data-closing-close aria-label={en ? "Close QR code" : "关闭二维码"}><Icon name="close" /></button></div>
+    <img data-closing-image src={`/assets/img/wechat-${contacts[0].id}.png`} width="1000" height="1000" loading="lazy" alt={en ? "WeChat QR code" : "微信二维码"} />
+    <p>{en ? "Scan with WeChat to connect." : "使用微信扫一扫，添加联系人。"}</p>
+  </dialog>
+</div>
+
+<style>
+  .closing-artwork { position:relative;width:100%;max-width:none;background:#e8eae6;color:#172c30; }
+  .closing-landscape,.closing-landscape img { display:block;width:100%;height:auto; }
+  .closing-title { position:absolute;left:5%;bottom:7%; }
+  .closing-title h2 { margin:0;color:inherit;font-size:clamp(24px,2.2vw,40px);font-weight:400;line-height:1.25; }
+  .closing-title span { display:block;margin-top:4px;font-size:clamp(16px,1.4vw,24px);line-height:1.4; }
+  .closing-panel { position:absolute;top:8%;right:4%;width:31%;max-width:760px; }
+  .closing-note { margin:0 0 12px;color:#243c40;font-size:12px;line-height:1.5; }
+  .closing-people { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.2vw,24px); }
+  .closing-person { min-width:0; }
+  .closing-qr { display:block;width:min(100%,160px);line-height:0; }
+  .closing-qr img { display:block;width:100%;height:auto; }
+  .closing-person h3 { margin:12px 0 0;color:inherit;font-size:16px;font-weight:500;line-height:1.5; }
+  .closing-phone { display:flex;align-items:center;min-height:44px;width:fit-content;color:inherit;font-size:13px;line-height:1.4;font-variant-numeric:tabular-nums;white-space:nowrap;text-decoration:none; }
+  .closing-details { margin-top:8px;color:#243c40; }
+  .closing-details a { display:flex;align-items:center;min-height:44px;width:fit-content;color:inherit;font-size:14px; }
+  .closing-details p { margin:0;max-width:38em;color:inherit;font-size:13px;line-height:1.7; }
+  .closing-panel a:hover { color:#005b47; }
+  .closing-panel a:focus-visible { outline:2px solid #005b47;outline-offset:4px; }
+  .closing-qr-dialog { border:0;border-radius:2px;padding:24px;width:min(440px,calc(100vw - 32px));max-height:calc(100svh - 32px);overflow:auto;background:#fff;color:#172c30; }
+  .closing-qr-dialog::backdrop { background:rgb(11 15 14 / .7); }
+  .closing-dialog-head { display:flex;align-items:center;justify-content:space-between;gap:24px; }
+  .closing-dialog-head strong { font-size:20px;font-weight:400; }
+  .closing-dialog-head button { display:grid;place-items:center;width:44px;height:44px;border:0;background:transparent;color:inherit;cursor:pointer; }
+  .closing-qr-dialog > img { display:block;width:100%;height:auto;margin:12px 0; }
+  .closing-qr-dialog > p { margin:0;color:#4a524e;font-size:14px;line-height:1.7; }
+  @media(min-width:1920px) { .closing-panel { top:12%; } .closing-phone,.closing-details a { font-size:16px; } .closing-note,.closing-details p { font-size:14px; } }
+  @media(max-width:1279px) {
+    .closing-title { position:static;padding:24px 24px 0; }
+    .closing-title span { display:none; }
+    .closing-panel { position:static;width:auto;max-width:none;padding:20px 24px 28px; }
+    .closing-qr { width:128px; }
+    .closing-details { margin-top:12px; }
+    .closing-phone { font-size:14px; }
+  }
+  @media(max-width:599px) {
+    .closing-people { grid-template-columns:minmax(0,1fr);gap:20px; }
+    .closing-person { display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:center; }
+    .closing-qr { width:112px; }
+    .closing-person h3 { margin:0; }
+    .closing-details { margin-top:20px; }
+  }
+</style>
+<script>
+  import "../scripts/closing-contact";
+</script>

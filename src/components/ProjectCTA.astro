@@ -1,15 +1,10 @@
 ---
-import EditorialImage from "./EditorialImage.astro";
+import ClosingArtwork from "./ClosingArtwork.astro";
 const { compact = false } = Astro.props;
 ---
 
-<section class:list={["project-cta", { compact }]} aria-label="项目咨询">
-  <EditorialImage
-    base="r4-cta"
-    fit="contain"
-    alt="夕阳下的半打住宅外观"
-    sizes="100vw"
-  />
+<section id="project-contact" class:list={["project-cta", { compact }]} aria-label="项目咨询">
+  <ClosingArtwork />
   <div class="cta-content ed-wrap">
     <span class="eyebrow">让想法，成为日常。</span>
     <h2>

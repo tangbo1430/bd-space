@@ -1,0 +1,21 @@
+---
+import EditorialImage from './EditorialImage.astro';
+import { introductionCopy } from '../data/about-revision';
+const en=Astro.url.pathname.startsWith('/en/');
+const copy=introductionCopy[en?'en':'zh'];
+---
+<section class="product-introduction" aria-label={en?'Our approach to housing':'我们对住宅的理解'}>
+ <div class="intro-understanding">
+  <EditorialImage base="r82-about-understanding" fit="contain" alt={en?'Architectural drawing of the BD-4S entrance':'半打4S入口建筑线稿'} sizes="(max-width:767px) 100vw, 42vw" />
+  <div class="intro-copy"><h2>{copy.understanding}</h2><p>{copy.lead}<br/>{copy.rest}</p><div class="intro-principles">{copy.statements.map(t=><p>{t}</p>)}</div><p>{copy.end}</p></div>
+ </div>
+ <div class="intro-definition">
+  <div><h2>{copy.definition}</h2><p class="intro-method">{copy.method}</p><EditorialImage base="r82-about-definition" fit="contain" alt={en?'BD-4S and grayscale space, architectural renderings':'半打4S与灰度空间建筑效果图'} sizes="(max-width:767px) 100vw, 50vw" /></div>
+  <div class="intro-copy">{copy.ideas.map(t=><p>{t}</p>)}<p class="intro-signature">{copy.signature}</p></div>
+ </div>
+</section>
+<style>
+.product-introduction{padding:clamp(40px,5vw,80px) var(--page-gutter,4.5vw);background:#fff;color:#172c28}.intro-understanding,.intro-definition{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:center;max-width:1440px;margin:auto}.intro-understanding{grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}.intro-copy{min-width:0}.product-introduction h2{font-size:clamp(28px,2.8vw,40px);font-weight:400;line-height:1.3;margin:0 0 24px}.product-introduction p{font-size:16px;line-height:1.8;margin:0 0 18px}.intro-principles{margin:28px 0}.intro-principles p{font-size:clamp(18px,1.6vw,23px);margin:4px 0}.intro-definition{margin-top:48px;grid-template-columns:1.2fr 1fr}.product-introduction .intro-signature{font-size:clamp(26px,3vw,42px);font-weight:400;line-height:1.2;margin-top:24px}.intro-understanding :global(picture.editorial-image){max-height:440px;aspect-ratio:auto!important;width:fit-content;max-width:100%;background:transparent;justify-self:center}.intro-understanding :global(img){max-height:440px;object-fit:contain!important;width:auto;max-width:100%;height:auto}.intro-definition :global(img){width:100%;height:auto}.intro-method{color:#555}
+@media(max-width:767px){.product-introduction{padding:40px 24px}.intro-understanding,.intro-definition{grid-template-columns:1fr;gap:24px}.intro-understanding :global(picture){max-height:300px}.intro-understanding :global(img){max-height:300px}.intro-definition{margin-top:36px}.intro-copy p:last-child{margin-bottom:0}}
+</style>
+

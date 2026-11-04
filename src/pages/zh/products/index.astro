@@ -4,6 +4,7 @@ import EditorialImage from "../../../components/EditorialImage.astro";
 import HeroCarousel from "../../../components/HeroCarousel.astro";
 import { getListedProducts } from "../../../lib/catalog";
 import ProductComparison from "../../../components/ProductComparison.astro";
+import ProductIntroduction from "../../../components/ProductIntroduction.astro";
 import { translate } from "../../../lib/translate";
 const products = await getListedProducts();
 const english = Astro.url.pathname.startsWith("/en/");
@@ -57,7 +58,7 @@ const slides = photoNotes.map((note, i) => ({
 
 <BaseLayout
   title="产品中心"
-  description="探索灰度空间、灰度空间经济款、半打4S、5S、6S、半打8与半打9，了解户型、面积、结构与装运参考。"
+  description={english ? "Explore ten Banda homes and compare layouts, floor areas, structures and shipping references." : "探索半打空间十款住宅产品，比较户型、面积、结构与装运参考。"}
   current="products"
   headerStyle="overlay"
   headerTone="dark"
@@ -72,6 +73,7 @@ const slides = photoNotes.map((note, i) => ({
         探索空间产品
       </a>
     </HeroCarousel>
+    <ProductIntroduction />
     <section
       class="product-catalog-section"
       id="collection"
@@ -93,7 +95,7 @@ const slides = photoNotes.map((note, i) => ({
           <article
             class:list={[
               "catalog-feature",
-              { "catalog-feature--compact": ["4s", "5s", "6s"].includes(p.id) },
+              { "catalog-feature--compact": ["4s", "5s", "6s", "bd11", "qiyuan", "snow11"].includes(p.id) },
             ]}
             id={`model-${p.id}`}
             aria-labelledby={`title-${p.id}`}

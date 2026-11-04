@@ -1,0 +1,167 @@
+[
+  {
+    "source": "4关于我们/首图.jpeg",
+    "base": "r82-about-cover",
+    "sourceSHA256": "51e8a14646c08836f2972bd7b2ee383e5207cb5582c64b16af417c0f2d41d418",
+    "crop": null,
+    "sourceSize": [
+      3072,
+      1248
+    ],
+    "width": 2560,
+    "height": 1040
+  },
+  {
+    "source": "4关于我们/首图.jpeg",
+    "base": "r82-about-cover-house",
+    "sourceSHA256": "51e8a14646c08836f2972bd7b2ee383e5207cb5582c64b16af417c0f2d41d418",
+    "crop": [
+      150,
+      400,
+      1600,
+      1080
+    ],
+    "sourceSize": [
+      1450,
+      680
+    ],
+    "width": 1450,
+    "height": 680
+  },
+  {
+    "source": "4关于我们/换图/1.png",
+    "base": "r82-about-founder",
+    "sourceSHA256": "27473d6327e7d046f553d823989f44cab19db9b43cf96927a2ed551fd8620bfb",
+    "crop": [
+      0,
+      0,
+      1000,
+      2250
+    ],
+    "sourceSize": [
+      1000,
+      2250
+    ],
+    "width": 1000,
+    "height": 2250
+  },
+  {
+    "source": "4关于我们/换图/2.png",
+    "base": "r82-about-ground",
+    "sourceSHA256": "badcd027740571c658b6133161997d93bc88b732f2db2af68beb77759a8ed7c1",
+    "crop": [
+      1304,
+      30,
+      2612,
+      2210
+    ],
+    "sourceSize": [
+      1308,
+      2180
+    ],
+    "width": 1308,
+    "height": 2180
+  },
+  {
+    "source": "4关于我们/换图/3.png",
+    "base": "r82-about-wall",
+    "sourceSHA256": "149edfd4e73a8fea9cbcdff1ac3fa72e2e4a5493e700e5146a53cd9392b5811f",
+    "crop": [
+      300,
+      870,
+      2150,
+      2150
+    ],
+    "sourceSize": [
+      1850,
+      1280
+    ],
+    "width": 1850,
+    "height": 1280
+  },
+  {
+    "source": "4关于我们/换图/4.png",
+    "base": "r82-about-components",
+    "sourceSHA256": "b965b555c4230f402b5dfb0f6dc5537d0115b35bd26d84404447baf4603fc6d3",
+    "crop": [
+      260,
+      1250,
+      1600,
+      2110
+    ],
+    "sourceSize": [
+      1340,
+      860
+    ],
+    "width": 1340,
+    "height": 860
+  },
+  {
+    "source": "4关于我们/换图/4.png",
+    "base": "r82-about-car",
+    "sourceSHA256": "b965b555c4230f402b5dfb0f6dc5537d0115b35bd26d84404447baf4603fc6d3",
+    "crop": [
+      1750,
+      610,
+      3750,
+      2200
+    ],
+    "sourceSize": [
+      2000,
+      1590
+    ],
+    "width": 2000,
+    "height": 1590
+  },
+  {
+    "source": "4关于我们/换图/5.png",
+    "base": "r82-about-homes",
+    "sourceSHA256": "8e51a5156ff127a18bf7756e835c181efdba63d564f941a38ba0972c9ef6d98d",
+    "crop": [
+      2350,
+      335,
+      3835,
+      1615
+    ],
+    "sourceSize": [
+      1485,
+      1280
+    ],
+    "width": 1485,
+    "height": 1280
+  },
+  {
+    "source": "4关于我们/换图/6.png",
+    "base": "r82-about-understanding",
+    "sourceSHA256": "3afc82b7d633be5708d2395a1e7e07b63a3429fde1da12b2b0e7205c3acdac86",
+    "crop": [
+      0,
+      0,
+      1700,
+      2250
+    ],
+    "sourceSize": [
+      1700,
+      2250
+    ],
+    "width": 1700,
+    "height": 2250
+  },
+  {
+    "source": "4关于我们/换图/7.png",
+    "base": "r82-about-definition",
+    "sourceSHA256": "3cfb7f2b208972e847e7f46704491e569c4ad984ae1663fbb677afefd7ec06f2",
+    "crop": [
+      290,
+      745,
+      2290,
+      1390
+    ],
+    "sourceSize": [
+      2000,
+      645
+    ],
+    "width": 2000,
+    "height": 645
+  }
+]
