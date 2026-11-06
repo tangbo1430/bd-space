@@ -101,7 +101,7 @@
 
 /* ---------- 3. 底部咨询大图：完整原图、无蒙版 ---------- */
 .project-cta {
-  background: #1b211d;
+  background: var(--paper-deep);
 }
 .project-cta:after {
   content: none;
@@ -131,8 +131,8 @@
 .project-cta .cta-content h2,
 .project-cta .cta-content p,
 .project-cta .cta-content .eyebrow {
-  color: #fff;
-  text-shadow: var(--r4-shadow);
+  color: var(--charcoal);
+  text-shadow: none;
 }
 .project-cta .cta-content h2 {
   font-size: clamp(30px, 2.8vw, 46px);
@@ -1276,7 +1276,7 @@
   }
 }
 
-/* 底部咨询：图片完整展示，文字放在图片下方的深色区域，不压在画面上 */
+/* Contact illustration and its action share a light surface. */
 .project-cta .cta-content {
   position: relative;
   inset: auto;
@@ -1294,7 +1294,7 @@
 .project-cta .cta-content .eyebrow {
   grid-area: eyebrow;
   margin-bottom: 20px;
-  color: #9fb0a7;
+  color: var(--ink-body);
 }
 .project-cta .cta-content h2 {
   grid-area: title;
@@ -1303,7 +1303,7 @@
 .project-cta .cta-content p {
   grid-area: note;
   margin: 18px 0 0;
-  color: #b7c3bd;
+  color: var(--ink-body);
 }
 .project-cta .cta-content > .action {
   grid-area: action;

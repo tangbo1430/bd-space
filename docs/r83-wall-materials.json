@@ -1,0 +1,50 @@
+[
+  {
+    "source": "r79-wall-node-0.webp",
+    "crop": [
+      990,
+      265,
+      3730,
+      1990
+    ],
+    "preview": "r83-wall-detail-0.webp",
+    "viewer": "r79-wall-node-0.webp",
+    "note": "Detail preview only; full annotated source retained in viewer."
+  },
+  {
+    "source": "r79-wall-node-1.webp",
+    "crop": [
+      1260,
+      330,
+      3690,
+      1940
+    ],
+    "preview": "r83-wall-detail-1.webp",
+    "viewer": "r79-wall-node-1.webp",
+    "note": "Detail preview only; full annotated source retained in viewer."
+  },
+  {
+    "source": "r79-wall-node-2.webp",
+    "crop": [
+      1260,
+      285,
+      3635,
+      1970
+    ],
+    "preview": "r83-wall-detail-2.webp",
+    "viewer": "r79-wall-node-2.webp",
+    "note": "Detail preview only; full annotated source retained in viewer."
+  },
+  {
+    "source": "r79-wall-node-3.webp",
+    "crop": [
+      1300,
+      330,
+      3640,
+      2020
+    ],
+    "preview": "r83-wall-detail-3.webp",
+    "viewer": "r79-wall-node-3.webp",
+    "note": "Detail preview only; full annotated source retained in viewer."
+  }
+]

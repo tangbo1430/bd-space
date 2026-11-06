@@ -174,7 +174,7 @@
   transition: none;
 }
 .h40 .project-cta {
-  background: var(--c-night);
+  background: var(--paper-deep);
 }
 .h40 .project-cta .cta-content {
   position: relative;

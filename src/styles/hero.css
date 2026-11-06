@@ -337,9 +337,9 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     width: 220px;
   }
 }
-@media (min-width: 1280px) and (max-aspect-ratio: 19/10) {
-  /* Fill ordinary landscape screens; cap enlargement on taller viewports so
-     the five supplied photographs retain the complete building silhouette. */
+@media (min-width: 1280px) {
+  /* Use the same immersive height on all desktop aspect ratios. The cap on
+     taller viewports protects the existing architectural framing. */
   .banda-editorial .home-hero {
     height: clamp(40.625vw, 100svh, 56.8vw);
   }

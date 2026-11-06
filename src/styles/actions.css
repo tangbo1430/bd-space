@@ -13,7 +13,7 @@
 html[lang="en"] {
   --action-tracking: 0.01em;
 }
-:is(.editorial-hero, .cover-visual, .project-cta, .living-section, .drawer),
+:is(.editorial-hero, .cover-visual, .living-section, .drawer),
 .gnb:not(.gnb-solid):not(.scrolled) {
   --action-fill: #f5f6f4;
   --action-ink: #18221e;

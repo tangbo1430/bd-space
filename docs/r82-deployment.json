@@ -1,0 +1,12 @@
+{
+  "release": "r82-review",
+  "date": "2026-11-05",
+  "commit": "49478e1f176bc7f0530e59756050c0fe0f1b9575",
+  "url": "http://23.251.34.150:8080/zh/?v=r82-review",
+  "directory": "/opt/banda-space-preview/releases/r82-49478e1",
+  "previousContainer": "banda-r80-before-r82-49478e1",
+  "rollback": "sh /opt/banda-space-preview/releases/r82-49478e1/rollback.sh",
+  "sha256": "90dc2622432f0d45f5d891aefc13f182009716dcd4cc39bdd2185b233abc74cc",
+  "limitations": "Approved preview publication. Existing catalog frame2 full-copy and frame3 navigation contrast exceptions remain; about absolute claims remain pending business review.",
+  "validation": "Archive SHA256 passed; 14 bilingual public pages byte-identical to local; both videos HTTP206; public version matches commit; mobile375 home zh/en and catalog carousel checks completed. Desktop automated browser check timed out and was not marked passed."
+}

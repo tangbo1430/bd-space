@@ -405,8 +405,8 @@ body.banda-editorial {
 .project-cta {
   position: relative;
   overflow: hidden;
-  background: var(--dark);
-  color: #fff;
+  background: var(--paper-deep);
+  color: var(--charcoal);
 }
 .project-cta > .editorial-image {
   position: absolute;
@@ -430,11 +430,11 @@ body.banda-editorial {
   padding-block: 100px;
 }
 .project-cta h2 {
-  color: #fff;
+  color: var(--charcoal);
   margin: 24px 0;
 }
 .project-cta p {
-  color: #e3ece6;
+  color: var(--ink-body);
   font-size: 14px;
 }
 .project-cta .action {

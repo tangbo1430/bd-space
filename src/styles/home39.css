@@ -703,7 +703,7 @@
 
 /* ---------- 8. 底部咨询（首页内） ---------- */
 .h39 .project-cta {
-  background: var(--c-night);
+  background: var(--paper-deep);
 }
 .h39 .project-cta .cta-content h2 {
   font-size: var(--fs-h2);

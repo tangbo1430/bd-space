@@ -6,6 +6,7 @@ interface Props {
   base?: string;
   src?: string;
   viewerSrc?: string;
+  previewSrc?: string;
   width?: number;
   height?: number;
   mobileWidth?: number;
@@ -23,6 +24,7 @@ const {
   mobileImage,
   src,
   viewerSrc,
+  previewSrc,
   width: suppliedWidth,
   height: suppliedHeight,
   mobileWidth,
@@ -37,6 +39,7 @@ const {
 const intrinsic = imageDimensions(src ?? `/assets/img/${base}.jpg`);
 const width = suppliedWidth ?? intrinsic[0];
 const height = suppliedHeight ?? intrinsic[1];
+const previewSize = previewSrc ? imageDimensions(previewSrc) : [width, height];
 ---
 
 <a
@@ -62,9 +65,9 @@ const height = suppliedHeight ?? intrinsic[1];
     base={base}
     mobileImage={mobileImage}
     src={src}
-    previewSrc={viewerSrc}
-    width={width}
-    height={height}
+    previewSrc={previewSrc ?? viewerSrc}
+    width={previewSize[0]}
+    height={previewSize[1]}
     mobileWidth={mobileWidth}
     fit={fit}
     alt={alt}
