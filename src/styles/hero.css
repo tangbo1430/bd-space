@@ -209,6 +209,9 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
 .editorial-hero .hero-action {
   margin: 26px 0 0;
 }
+.catalog-hero .hero-intro h1 {
+  white-space: pre-line;
+}
 @media (max-width: 1279px) {
   .editorial-hero .hero-content {
     display: contents;
@@ -356,22 +359,22 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
 @media (min-width: 1280px) {
   /* Use the same immersive height on all desktop aspect ratios. The cap on
      taller viewports protects the existing architectural framing. */
-  .banda-editorial .home-hero {
+  .banda-editorial .editorial-hero {
     height: clamp(40.625vw, 100svh, 56.8vw);
   }
-  .home-hero .hero-stage {
+  .editorial-hero .hero-stage {
     height: 100%;
     aspect-ratio: auto;
   }
   .home-hero:has(.slide.on[data-product="4s"]) .hero-content {
     top: max(144px, 20%);
   }
-  .banda-editorial .home-hero .slide > .editorial-image,
-  .banda-editorial .home-hero .hero-stage .slide .editorial-image img {
+  .banda-editorial .editorial-hero .slide > .editorial-image,
+  .banda-editorial .editorial-hero .hero-stage .slide .editorial-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 50%;
+    object-position: var(--hero-photo-position, 50% 50%);
   }
   /* The first photograph has a small sky extension. Trim its framing by 24px
      so the existing white heading stays entirely over foliage, while the
@@ -385,13 +388,19 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   .catalog-hero .hero-content {
     width: clamp(280px, 22vw, 380px);
   }
+  .catalog-hero:has(.hero-scene.on[data-dot="0"]) .hero-content {
+    width: min(320px, 23vw);
+  }
+  .catalog-hero:has(.hero-scene.on[data-dot="0"]) .h-hero-sub {
+    max-width: clamp(12em, 16vw, 15em);
+    text-wrap: balance;
+  }
   .catalog-hero .hero-intro h1,
   html[lang="en"] .catalog-hero .hero-intro h1 {
     max-width: none;
     font-size: clamp(32px, 2.55vw, 44px);
     line-height: 1.3;
     letter-spacing: -0.025em;
-    white-space: pre-line;
   }
   .catalog-hero .h-hero-sub {
     white-space: pre-line;
@@ -407,7 +416,8 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     justify-self: end;
   }
   /* Both side views need a clear sky margin between the copy and the eaves. */
-  .catalog-hero:has(.hero-scene.on:is([data-dot="1"], [data-dot="2"])) .hero-content {
+  .catalog-hero:has(.hero-scene.on:is([data-dot="1"], [data-dot="2"]))
+    .hero-content {
     width: min(420px, 19.4vw);
     margin-inline-end: clamp(24px, 3vw, 80px);
   }

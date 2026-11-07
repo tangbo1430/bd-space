@@ -22,15 +22,19 @@ const copy = introductionCopy[en ? "en" : "zh"];
       sizes="(max-width:767px) 100vw, 42vw"
     />
     <div class="intro-copy">
-      <h2>{copy.understanding}</h2>
-      <p class="intro-lead">{copy.lead}</p>
-      <p>{copy.rest}</p>
-      <div class="intro-principles">
-        {copy.statements.map((t) => (
-          <p>{t}</p>
-        ))}
+      <div class="intro-summary">
+        <h2>{copy.understanding}</h2>
+        <p class="intro-lead">{copy.lead}</p>
+        <p>{copy.rest}</p>
       </div>
-      <p>{copy.end}</p>
+      <div class="intro-viewpoint">
+        <div class="intro-principles">
+          {copy.statements.map((t) => (
+            <p>{t}</p>
+          ))}
+        </div>
+        <p>{copy.end}</p>
+      </div>
     </div>
   </div>
   <div class="intro-definition">
@@ -68,12 +72,11 @@ const copy = introductionCopy[en ? "en" : "zh"];
   }
   .intro-understanding,
   .intro-definition {
-    max-width: 1440px;
-    margin-inline: auto;
+    min-width: 0;
   }
   .intro-understanding {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.7fr);
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.7fr);
     gap: clamp(32px, 3.4vw, 56px);
     align-items: center;
   }
@@ -111,19 +114,16 @@ const copy = introductionCopy[en ? "en" : "zh"];
     text-wrap: pretty;
   }
   .intro-understanding :global(picture.editorial-image) {
-    width: fit-content;
-    max-width: 100%;
-    max-height: 480px;
+    width: 100%;
     aspect-ratio: auto !important;
     background: transparent;
     justify-self: start;
   }
   .intro-understanding :global(img) {
     display: block;
-    width: auto;
+    width: 100%;
     height: auto;
     max-width: 100%;
-    max-height: 480px;
     object-fit: contain !important;
   }
   .intro-definition {
@@ -161,6 +161,29 @@ const copy = introductionCopy[en ? "en" : "zh"];
     color: var(--charcoal);
     text-wrap: balance;
   }
+  @media (min-width: 1600px) {
+    .intro-understanding {
+      grid-template-columns: minmax(0, min(25vw, 520px)) minmax(0, 1fr);
+    }
+    .intro-understanding > .intro-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(32px, 3vw, 72px);
+      align-items: start;
+    }
+    .intro-understanding .intro-principles {
+      margin: 0 0 28px;
+    }
+    .intro-understanding .intro-principles p:first-child {
+      margin-top: 0;
+    }
+    .intro-understanding .intro-principles p {
+      font-size: clamp(28px, 1.7vw, 36px);
+    }
+    .intro-understanding .intro-principles p + p {
+      margin-top: 20px;
+    }
+  }
   @media (max-width: 767px) {
     .product-introduction {
       padding: 40px 24px;
@@ -172,6 +195,8 @@ const copy = introductionCopy[en ? "en" : "zh"];
     }
     .intro-understanding :global(picture.editorial-image),
     .intro-understanding :global(img) {
+      width: auto;
+      max-width: 100%;
       max-height: 280px;
     }
     .intro-understanding :global(picture.editorial-image) {

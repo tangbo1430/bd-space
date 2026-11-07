@@ -41,6 +41,7 @@ const slides = photoNotes.map((note, i) => ({
   base: `r78-catalog-${i + 1}`,
   mobileImage: `/assets/img/r78-catalog-${i + 1}-m.webp`,
   desktopImage: `/assets/img/r78-catalog-${i + 1}.webp`,
+  desktopPosition: ["35% 50%", "85% 50%", "85% 50%", "35% 50%"][i],
   heading: photoHeadings[i],
   subtitle: photoCopy[i],
   name: "半打 4S 实拍",
@@ -58,7 +59,11 @@ const slides = photoNotes.map((note, i) => ({
 
 <BaseLayout
   title="产品中心"
-  description={english ? "Explore ten Banda homes and compare layouts, floor areas, structures and shipping references." : "探索半打空间十款住宅产品，比较户型、面积、结构与装运参考。"}
+  description={
+    english
+      ? "Explore ten Banda homes and compare layouts, floor areas, structures and shipping references."
+      : "探索半打空间十款住宅产品，比较户型、面积、结构与装运参考。"
+  }
   current="products"
   headerStyle="overlay"
   headerTone="dark"
@@ -95,7 +100,16 @@ const slides = photoNotes.map((note, i) => ({
           <article
             class:list={[
               "catalog-feature",
-              { "catalog-feature--compact": ["4s", "5s", "6s", "bd11", "qiyuan", "snow11"].includes(p.id) },
+              {
+                "catalog-feature--compact": [
+                  "4s",
+                  "5s",
+                  "6s",
+                  "bd11",
+                  "qiyuan",
+                  "snow11",
+                ].includes(p.id),
+              },
             ]}
             id={`model-${p.id}`}
             aria-labelledby={`title-${p.id}`}

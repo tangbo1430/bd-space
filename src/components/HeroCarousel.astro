@@ -12,6 +12,7 @@ interface Props {
     subtitle?: string;
     mobileImage?: string;
     desktopImage?: string;
+    desktopPosition?: string;
     caption?: string;
     label?: string;
     controlsTone?: "light" | "dark";
@@ -71,6 +72,11 @@ const dimensions = imageDimensions(`/assets/img/${first.base}.jpg`);
         class:list={["slide", { on: i === 0 }]}
         data-slide
         data-product={s.id}
+        style={
+          s.desktopPosition
+            ? `--hero-photo-position:${s.desktopPosition}`
+            : undefined
+        }
         data-controls-tone={s.controlsTone ?? "light"}
         data-header-tone={s.headerTone ?? "light"}
         data-brand-tone={s.brandTone ?? s.headerTone ?? "light"}
