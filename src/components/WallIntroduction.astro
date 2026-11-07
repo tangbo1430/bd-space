@@ -19,30 +19,28 @@ const nodes = en
       <p class="wall-statement">
         {en
           ? "An industrialised building system for housing."
-          : "一套可以工业化制造的建房系统。"}
+          : <>一套可以<span class="wall-phrase">工业化制造</span>的建房系统。</>}
       </p>
       <p>
         {en
           ? "Biomimicry applied to architecture: bone, muscle and skin. A key to manufacturing homes through industrial processes."
           : "把仿生学用于建筑——骨＋肉＋皮。由此，找到了工业化制造房子的密钥。"}
       </p>
-      <figure class="wall-house">
-        <EditorialImage
-          src="/assets/img/r79-wall-house.webp"
-          fit="contain"
-          alt={
-            en
-              ? "Banda building system, housing illustration"
-              : "半打建房系统，住宅示意"
-          }
-        />
-        <figcaption>
-          {en
-            ? "From a building system to a home."
-            : "从建房系统，到日常居所。"}
-        </figcaption>
-      </figure>
     </header>
+    <figure class="wall-house">
+      <EditorialImage
+        src="/assets/img/r79-wall-house.webp"
+        fit="contain"
+        alt={
+          en
+            ? "Banda building system, housing illustration"
+            : "半打建房系统，住宅示意"
+        }
+      />
+      <figcaption>
+        {en ? "From a building system to a home." : "从建房系统，到日常居所。"}
+      </figcaption>
+    </figure>
     <figure class="wall-structure">
       <GalleryImage
         base="r78-design"
@@ -117,36 +115,46 @@ const nodes = en
   }
   .wall-overview {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
-    gap: clamp(32px, 5vw, 96px);
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
+    grid-template-areas: "heading structure" "house structure";
+    gap: 28px clamp(32px, 4vw, 72px);
+    align-items: start;
+  }
+  .wall-heading {
+    grid-area: heading;
+  }
+  .wall-structure {
+    grid-area: structure;
+    align-self: center;
   }
   .wall-heading h2 {
-    margin: 0 0 20px;
-    font-size: clamp(32px, 3vw, 48px);
+    margin: 0 0 24px;
+    font-size: clamp(40px, 4.2vw, 64px);
     font-weight: 400;
     line-height: 1.2;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.04em;
     text-wrap: balance;
   }
   .wall-heading p {
     margin: 16px 0 0;
-    max-width: 29em;
+    max-width: 26em;
     font-size: 16px;
     line-height: 1.8;
     color: var(--ink-body);
   }
   .wall-heading .wall-statement {
     margin: 0;
-    max-width: 16em;
-    font-size: clamp(22px, 1.65vw, 28px);
-    line-height: 1.5;
+    max-width: 14em;
+    font-size: clamp(24px, 1.9vw, 30px);
+    line-height: 1.45;
     color: var(--charcoal);
+    text-wrap: balance;
   }
+  .wall-phrase { white-space: nowrap; }
   .wall-house {
-    margin-top: 24px;
+    grid-area: house;
+    align-self: start;
     width: 100%;
-    max-width: 360px;
   }
   .wall-introduction :global(.editorial-image),
   .wall-introduction :global(img) {
@@ -167,7 +175,7 @@ const nodes = en
     text-align: right;
   }
   .wall-house figcaption {
-    font-size: 13px;
+    font-size: 14px;
   }
   .wall-detail-heading {
     display: flex;
@@ -270,6 +278,7 @@ const nodes = en
   @media (max-width: 767px) {
     .wall-overview {
       grid-template-columns: minmax(0, 1fr);
+      grid-template-areas: "heading" "house" "structure";
       gap: 24px;
     }
     .wall-house {

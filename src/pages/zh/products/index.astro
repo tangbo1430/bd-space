@@ -52,7 +52,7 @@ const slides = photoNotes.map((note, i) => ({
   brandTone: i >= 2 ? ("light" as const) : ("dark" as const),
   copySide: i === 0 ? ("left" as const) : ("right" as const),
   copyTone: i === 0 ? ("light" as const) : ("dark" as const),
-  copyTop: "31%",
+  copyTop: i === 1 || i === 2 ? "23%" : "31%",
 }));
 ---
 
