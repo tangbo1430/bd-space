@@ -222,7 +222,7 @@
   --c-signal: #00a586;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --gap: clamp(20px, 2vw, 36px);
-  --fs-h2: clamp(28px, 2.4vw, 38px);
+  --fs-h2: clamp(28px, 3vw, 48px);
   --fs-h3: clamp(26px, 2.3vw, 36px);
   --fs-lead: clamp(16px, 1.15vw, 18px);
   --sec-pad: clamp(48px, 4.2vw, 80px);
@@ -263,7 +263,7 @@
   grid-template-areas: "title links" "description links";
   align-items: center;
   gap: 6px 24px;
-  padding: 24px clamp(24px, 3.125vw, 80px) 28px;
+  padding: 24px var(--content-inset) 28px;
 }
 .h40 .h-tile h3 {
   grid-area: title;
@@ -289,7 +289,7 @@
 .h40 .h-collection-footer {
   display: flex;
   justify-content: flex-end;
-  padding: 0 clamp(24px, 3.125vw, 80px) 16px;
+  padding: 0 var(--content-inset) 16px;
   background: var(--c-paper);
   color: var(--c-ink);
 }
@@ -307,7 +307,7 @@
   .h40 .h-tile:first-child .h-tile-copy {
     position: absolute;
     top: clamp(24px, 2.5vw, 64px);
-    left: clamp(24px, 3.125vw, 80px);
+    left: var(--content-inset);
     z-index: 1;
     padding: 0;
     max-width: 25%;
@@ -321,7 +321,7 @@
     --action-pressed: #cfdfd5;
   }
   .h40 .h-tile:first-child h3 {
-    font-size: clamp(30px, 2.5vw, 48px);
+    font-size: clamp(36px, 3vw, 52px);
   }
   .h40 .h-tile:first-child .h-tile-desc {
     color: var(--c-ink);
@@ -341,15 +341,14 @@
   align-items: baseline;
   gap: 32px;
   max-width: none;
-  margin: 0 0 24px;
+  margin: 0 0 28px;
   text-align: left;
-  margin-bottom: 28px;
 }
 .h40 .h-center-head h2 {
   margin: 0;
   font-size: var(--fs-h2);
   font-weight: 400;
-  line-height: 1.35;
+  line-height: 1.25;
   letter-spacing: -0.02em;
   color: inherit;
 }
