@@ -1,0 +1,47 @@
+{
+  "release": "r86-scale",
+  "date": "2026-11-07",
+  "commit": "046caa303ea7aac951f8df616aacdf3e8df82b70",
+  "branch": "codex/r79-targeted-review",
+  "pushed": false,
+  "url": "http://23.251.34.150:8080/zh/products/?v=r86-scale",
+  "directory": "/opt/banda-space-preview/releases/r86-046caa3",
+  "previousRelease": "r85-added",
+  "previousContainer": "banda-r85-before-r86-046caa3",
+  "rollback": "sh /opt/banda-space-preview/releases/r86-046caa3/rollback.sh",
+  "staticArchive": "artifacts/r86-release/banda-r86-static.tar.gz",
+  "staticSha256": "793ac4843b83c307047d4ee2426c588cc89d9ae69f33b769527e737f70586d65",
+  "sourceArchive": "/opt/banda-space-preview/releases/r86-046caa3/banda-r86-source.zip",
+  "sourceSha256": "f7dc847bfe882c2c4dd88a708db2f8e1fe026ce0121918e7a6ad17ed74e888da",
+  "scope": "产品中心桌面banner与首页共用尺度；新增产品介绍展开内容宽度；保留首页首屏、既有A方向、指定照片和文案。",
+  "localValidation": {
+    "unitTests": 50,
+    "generatedPages": 43,
+    "imageReferences": 609,
+    "layouts": 20,
+    "carouselFrames": 80,
+    "interactionGroups": 20,
+    "scopedAxeChecks": 6,
+    "finalCaptionChecks": 8,
+    "homepagePixelIdenticalWidths": [375, 1440, 1920, 2560],
+    "evidence": "artifacts/r86-scale/regression.json"
+  },
+  "publicValidation": {
+    "pagesMatchingLocalHtml": 14,
+    "catalogLayouts": 4,
+    "carouselFrames": 16,
+    "interactionGroups": 4,
+    "browserScriptErrors": 0,
+    "horizontalOverflow": 0,
+    "versionMatched": true,
+    "evidence": "artifacts/r86-release/public-check.json",
+    "notes": "中英文桌面与375px模拟手机逐张查看四张图；暂停、键盘切换通过。桌面产品中心与同视口首页等高。公网截图已打开检查。"
+  },
+  "limitations": [
+    "桌面封面铺满会按焦点裁切边缘；手机及正文继续原比例展示。",
+    "第2张完整长稿仍待业务方确认，本次保留已确认短稿。",
+    "Taste的6 FAIL/6 WARN保留在报告，不据此改动指定内容或既有全站风格。",
+    "仅Windows Edge/Chromium模拟视口，未覆盖真实手机和Safari；等效视口不冒充真实200%缩放。",
+    "本机C盘在制作源码归档时空间不足，已删除本轮不完整zip；源码归档改为从对应Git提交直接传到服务器非公开版本目录，不删除任何旧版或用户文件。"
+  ]
+}
