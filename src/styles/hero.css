@@ -393,6 +393,7 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   }
   .catalog-hero:has(.hero-scene.on[data-dot="0"]) .h-hero-sub {
     max-width: clamp(12em, 16vw, 15em);
+    white-space: normal;
     text-wrap: balance;
   }
   .catalog-hero .hero-intro h1,
