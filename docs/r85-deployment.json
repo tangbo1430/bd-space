@@ -1,0 +1,41 @@
+{
+  "release": "r85-added",
+  "date": "2026-11-06",
+  "commit": "62eeb10191df7ae5326e1acc27f31119642b1cb4",
+  "branch": "codex/r79-targeted-review",
+  "pushed": false,
+  "urls": [
+    "http://23.251.34.150:8080/zh/?v=r85-added",
+    "http://23.251.34.150:8080/zh/products/?v=r85-added"
+  ],
+  "directory": "/opt/banda-space-preview/releases/r85-62eeb10",
+  "previousRelease": "r83-refinement",
+  "previousContainer": "banda-r83-before-r85-62eeb10",
+  "rollback": "sh /opt/banda-space-preview/releases/r85-62eeb10/rollback.sh",
+  "staticArchive": "artifacts/r85-release/banda-r85-static.tar.gz",
+  "staticSha256": "6aca6c9520f0f69f3672fa03c89d2f023123ed5d74522dfa9b1097b352717b11",
+  "sourceArchive": "artifacts/r85-release/banda-r85-source.zip",
+  "scope": "发布用户确认的 r85 样页：半打墙、产品介绍、灰色联系收尾精修；产品中心第 2、3 张轮播文字避让屋檐。首页原有首屏保持不变。",
+  "releaseValidation": "本轮重新构建 43 页；剔除 387 个未引用的部署资源，保留 823 个被使用资源。609 个图片资源引用、静态发布检查及翻译检查通过。服务器先在仅本机可访问的暂存容器检查 14 个页面，再切换正式容器；归档 SHA256 校验通过，保留旧容器和版本目录。",
+  "priorLocalValidation": "同一代码提交的 r85 本地精修验收记录：50 项单元测试；162 文件类型检查无 errors/warnings（10 条既有 hints）；改动文件 lint；40 个布局、20 个轮播帧、12 组局部可访问性、4 组二维码/阅图交互检查。详见 docs 中 r85 质量报告与 artifacts/r85-added-content/regression.json。发布阶段未重复计为新一轮单元/可访问性测试。",
+  "publicValidation": {
+    "pagesMatchingLocalHtml": 14,
+    "viewportsAndRoutes": 7,
+    "carouselFramesRendered": 23,
+    "newSectionsCaptured": 10,
+    "interactionGroups": 10,
+    "browserScriptErrors": 0,
+    "horizontalOverflow": 0,
+    "versionMatched": true,
+    "evidence": "artifacts/r85-release/public-check.json",
+    "interactions": "7 组轮播暂停/键盘切换、3 组二维码与技术图放大、Escape 关闭及焦点恢复通过。中英文桌面与手机截图已人工查看。",
+    "slowFirstLoad": "中文首页 1920px 的第 5 张图片首次下载超过等待窗口，下载完成后重新点击通过。保留该记录，不宣称所有首访加载均通过。",
+    "testHarnessCorrection": "首次公网检查将阅图挂载容器当作 img 调用 decode，导致测试脚本报错；更正为其内部 img 后完整重跑。原始结果保留 public-check-first-run.json/log。无需修改网站代码。"
+  },
+  "knownLimitations": [
+    "产品中心第 3 张中文顶部导航局部与屋顶对比不足仍在既有待处理清单，本轮只调整正文及按钮与建筑的距离。",
+    "产品中心第 2 张完整长稿仍待业务确认，本次继续使用已确认短稿。",
+    "Windows Edge/Chromium 模拟桌面、手机视口；未覆盖真实手机、Safari 或真实 200% 缩放。",
+    "本次是经确认样页的发布与公网复核，不代表全部历史待确认项或全站最终视觉验收通过。"
+  ]
+}
