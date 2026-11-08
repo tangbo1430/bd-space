@@ -308,9 +308,13 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     pendingIndex = next;
     hero.setAttribute("aria-busy", "true");
     play();
+    // Prioritise the requested photograph over inactive slides and body images.
+    const previousPriority = image.fetchPriority;
+    image.fetchPriority = "high";
     image.loading = "eager";
     void new Promise<boolean>((resolve) => {
       const finish = (ready: boolean) => {
+        image.fetchPriority = previousPriority;
         window.clearTimeout(timeout);
         image.removeEventListener("load", loaded);
         image.removeEventListener("error", failed);

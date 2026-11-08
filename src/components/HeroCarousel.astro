@@ -105,6 +105,7 @@ const dimensions = imageDimensions(`/assets/img/${first.base}.jpg`);
           desktopImage={s.desktopImage}
           fit="contain"
           eager={i === 0}
+          fetchPriority={i === 0 ? "high" : "low"}
         />
       </div>
     ))}

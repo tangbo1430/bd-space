@@ -12,6 +12,7 @@ interface Props {
   desktopImage?: string;
   alt: string;
   eager?: boolean;
+  fetchPriority?: "high" | "low" | "auto";
   class?: string;
   sizes?: string;
   mobile?: boolean;
@@ -22,6 +23,7 @@ const {
   desktopImage,
   alt,
   eager = false,
+  fetchPriority = eager ? "high" : "auto",
   class: cls = "",
   sizes = "100vw",
   mobile = true,
@@ -73,7 +75,7 @@ const mobileWidth =
     width={width}
     height={height}
     loading={eager ? "eager" : "lazy"}
-    fetchpriority={eager ? "high" : "auto"}
+    fetchpriority={fetchPriority}
     decoding="async"
   />
 </picture>
