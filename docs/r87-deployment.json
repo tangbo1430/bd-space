@@ -1,0 +1,30 @@
+{
+  "release": "r87-review",
+  "date": "2026-11-07",
+  "commit": "6005160f3bac3f3ef6a6cd959ca28185d14d544d",
+  "branch": "codex/r79-targeted-review",
+  "pushed": false,
+  "url": "http://23.251.34.150:8080/zh/products/?v=r87-review",
+  "directory": "/opt/banda-space-preview/releases/r87-6005160",
+  "previousRelease": "r86-scale",
+  "previousContainer": "banda-r86-before-r87-6005160",
+  "rollback": "sh /opt/banda-space-preview/releases/r87-6005160/rollback.sh",
+  "staticArchive": "/opt/banda-space-preview/releases/r87-6005160/site.tar.gz",
+  "staticSha256": "d95a881f3db9d6931141569902b29a54458387cebbae5cdd498424fdcf378e59",
+  "source": "Git commit plus artifacts/r87-release/r86-to-r87.bundle; bundle copied to non-public server release directory, requires r86 commit 046caa303ea7aac951f8df616aacdf3e8df82b70",
+  "deploymentMethod": "New directory copied from r86, apply validated delta; remove only two obsolete _astro files; verify all 886 file hashes against local manifest before starting staging container. Staging checks 14 routes; old container retained for rollback.",
+  "deltaSha256": "3b06c4da187446699df46c6f9ad25ed42b59fc7f78bba6b592a975dfb931d1f5",
+  "publicValidation": {
+    "pagesMatchingLocalHtml": 14,
+    "catalogLayouts": 4,
+    "carouselFrames": 16,
+    "carouselInteractionGroups": 4,
+    "comparisonInteractionGroups": 4,
+    "browserScriptErrors": 0,
+    "horizontalOverflow": 0,
+    "versionMatched": true,
+    "evidence": "artifacts/r87-release/public-check.json",
+    "screenshots": "public-* catalog, intro, comparison; comparison-viewport screenshots avoid fixed navigation appearing across an element screenshot taller than the viewport."
+  },
+  "limits": "See docs/r87-quality.txt. This is a targeted visual review and fix, not closure of all historical content or whole-site acceptance items."
+}
