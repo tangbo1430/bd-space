@@ -355,6 +355,15 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     justify-self: start;
     margin: 0 24px 24px;
   }
+  html[lang="en"] .catalog-hero .hero-intro h1 {
+    font-size: clamp(26px, 7.5vw, 30px);
+  }
+  html[lang="en"]
+    .catalog-hero:has(.hero-scene.on[data-dot="3"])
+    .hero-intro
+    h1 {
+    font-size: clamp(24px, 7.5vw, 30px);
+  }
 }
 @media (min-width: 1280px) {
   /* Use the same immersive height on all desktop aspect ratios. The cap on
@@ -412,6 +421,11 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   }
   html[lang="en"] .catalog-hero .hero-intro h1 {
     font-size: clamp(30px, 2.15vw, 38px);
+  }
+  html[lang="en"]
+    .catalog-hero:has(.hero-scene.on[data-dot="3"])
+    .hero-content {
+    width: min(560px, 31vw);
   }
   .catalog-hero[data-copy-side="right"] .hero-content {
     justify-self: end;

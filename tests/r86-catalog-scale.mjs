@@ -5,7 +5,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 
 const base = process.env.TEST_URL || "http://127.0.0.1:4354";
-const out = "artifacts/r86-scale";
+const out = process.env.REVIEW_OUTPUT || "artifacts/r86-scale";
 await fs.mkdir(out, { recursive: true });
 const report = {
   layouts: [],

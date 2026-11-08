@@ -128,8 +128,10 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
 
 <style>
   .product-comparison {
-    background: var(--c-soft);
-    padding: 32px 24px;
+    --comparison-left: color-mix(in srgb, var(--c-soft) 45%, var(--c-paper));
+    --comparison-right: var(--c-soft);
+    background: var(--c-paper);
+    padding: 40px var(--content-inset);
   }
   .comparison-heading {
     display: grid;
@@ -174,15 +176,15 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
     width: 18%;
   }
   tr > :nth-child(2) {
-    background: #fff;
-    padding-left: 16px;
+    background: var(--comparison-left);
+    padding-inline: 24px;
   }
   tr > :nth-child(3) {
-    background: #f5f6f4;
-    padding-left: 16px;
+    background: var(--comparison-right);
+    padding-inline: 24px;
   }
   thead th {
-    padding-top: 0;
+    padding-top: 16px;
     padding-bottom: 20px;
   }
   .comparison-label,
