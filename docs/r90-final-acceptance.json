@@ -1,0 +1,391 @@
+{
+  "dateUTC": "2026-11-08T13:55:08.226112+00:00",
+  "release": "r90-acceptance",
+  "runtimeCommit": "ec464e1a80f7b1908d467d4d5c2a9ee42bf7a161",
+  "sourcePDF": "C:\\Users\\Administrator\\Downloads\\半打空间网站调整20261029(1).pdf",
+  "sourcePDFSha256": "78a7c9bc962278c9c6c2cd85483c1dacb3e0d091f93e138ddb5798f80ad2f1ac",
+  "conclusion": {
+    "visualContent": "可进入甲方视觉与内容验收",
+    "fullDelivery": "视觉与内容可以提交甲方审阅；目前不能标记完整验收通过，仍有公网首次切换等待偏长。",
+    "businessConfirmationItems": 0
+  },
+  "changes": [
+    "沿用已有 heading-phrase 规则，为十款中文产品页保持完整语义分行；修复手机上“确／定”被拆开。字体、字号、颜色、间距及英文未改。",
+    "首页第 2、3、5 张桌面图按原分辨率重新编码：合计 11,545,114 → 2,340,164 字节；无新增裁切、调色、扩图或蒙版。逐张核对原尺寸局部，未见明显细节退化。第 1、4 张及手机图未改。",
+    "半打11视频从源文件重编码为 H.264、faststart、每秒关键帧：4,186,531 → 3,243,349 字节；时长9.166658秒、1074×720、30fps保持。封面、播放器与手动播放保持。",
+    "未展示的轮播图片延后下载，选中图片优先加载；仍保留当前图直到目标图可显示。保留原600ms渐变切换、暂停、键盘、触摸、离屏停止、错误提示与减少动态设置。此处的渐变切换指透明度过渡，未向图片增加渐变蒙版。",
+    "修正15秒保护将慢传输误判成失败：15秒后提示“正在加载图片…”，继续等待真实load/error；始终保留当前帧，可取消，成功后自动切换。新增故意延迟16秒的回归通过；公网20秒观察窗口未放宽。"
+  ],
+  "stylePreservation": "所有 src/styles 文件及官方 Logo 文件均无差异；A 方向、首屏尺寸与构图、文案位置、按钮、章节配色和正文图片分组保持现状。",
+  "pdfItems": [
+    {
+      "id": "H1",
+      "pdfPage": 2,
+      "requirement": "首页①：4S、灰度空间轮播换图",
+      "status": "已落实",
+      "finding": "指定新图及牌匾已替换，五张顺序不变。4S 桌面使用后续批准的轻微扩天空版本；手机使用对应原图。不是更换网站 Logo。",
+      "evidence": [
+        "zh-1920-frame1.jpg",
+        "zh-1920-frame4.jpg",
+        "zh-375-frame1.jpg"
+      ]
+    },
+    {
+      "id": "H2",
+      "pdfPage": 2,
+      "requirement": "首页②：精选 4S 换图",
+      "status": "已落实",
+      "finding": "已换成对应新素材；首页精选仍为原三项，没有随新增产品自动扩充。同排轻裁天空／地面为后续已确认的处理。",
+      "evidence": [
+        "home-zh-1920-selected-spaces.jpg"
+      ]
+    },
+    {
+      "id": "H3",
+      "pdfPage": 3,
+      "requirement": "首页③：2D、组合建造示意",
+      "status": "已落实",
+      "finding": "已替换两张指定图；中间 3D 图和三列结构保留。",
+      "evidence": [
+        "home-zh-1920-h-systems.jpg"
+      ]
+    },
+    {
+      "id": "H4",
+      "pdfPage": 3,
+      "requirement": "首页④：建造方式文案",
+      "status": "已落实",
+      "finding": "“建造方式”“用三种建造方式，接住全球市场的所有可能”已出现；未另起一套模块。",
+      "evidence": [
+        "home-zh-1920-h-systems.jpg"
+      ]
+    },
+    {
+      "id": "H5",
+      "pdfPage": 4,
+      "requirement": "首页⑤：制造流程第一张",
+      "status": "已落实",
+      "finding": "设计步骤已使用墙板图；深色章节、制造／交付图片与三步顺序保留。",
+      "evidence": [
+        "home-zh-1920-h-making.jpg"
+      ]
+    },
+    {
+      "id": "H6",
+      "pdfPage": 4,
+      "requirement": "首页⑥：半打墙介绍",
+      "status": "按确认边界适配",
+      "finding": "已插入轮播后、精选产品前。建房系统、仿生学说明、四个连接节点、七张实拍已接入。后续获准分离图片与网页文字，不再把整套长海报缩小铺入；局部节点预览保留完整图放大入口。",
+      "evidence": [
+        "zh-1920-part1.jpg",
+        "zh-375-part1.jpg"
+      ]
+    },
+    {
+      "id": "P1",
+      "pdfPage": 6,
+      "requirement": "产品①：理解—定义介绍",
+      "status": "按确认边界适配",
+      "finding": "“理解—定义—Design by manufacture.”及正文、线稿和两张住宅图已使用。按后续确认的网页图文关系适配，未逐像素照搬参考海报。",
+      "evidence": [
+        "zh-products-1920-part1.jpg",
+        "zh-products-375-part1.jpg"
+      ]
+    },
+    {
+      "id": "P2",
+      "pdfPage": 6,
+      "requirement": "产品②：四张修瑕轮播",
+      "status": "已落实",
+      "finding": "当前使用 r78-catalog-1～4，对应本次编号素材及原顺序。指定牌匾／天线／电线处理以提供的修瑕图为准。1280、1440、1920、2560 检查中未复现旧报告中第三帧导航文字压到屋顶的问题。",
+      "evidence": [
+        "zh-products-1920-frame1.jpg",
+        "zh-products-1920-frame2.jpg",
+        "zh-products-1920-frame3.jpg",
+        "zh-products-1920-frame4.jpg"
+      ]
+    },
+    {
+      "id": "P3",
+      "pdfPage": 7,
+      "requirement": "产品③：四组完整轮播文案",
+      "status": "按确认边界适配",
+      "finding": "第 1、3、4 张保留要求的完整文案；第 2 张保留已认可的短标题，把 PDF 全文放入同页既有介绍区，中英文同步。与 PDF 的差异是全文位置，不是漏文案；避免在不改首屏构图的前提下压到树冠和建筑。",
+      "evidence": [
+        "zh-products-1920-frame2.jpg",
+        "zh-products-1920-part1.jpg",
+        "en-products-375-part1.jpg"
+      ]
+    },
+    {
+      "id": "P4",
+      "pdfPage": 7,
+      "requirement": "产品④：比较区归属",
+      "status": "已落实",
+      "finding": "更换型号紧邻所属型号；两侧分别更新。使用接近的浅色底与边界分区，没有把某个型号设为推荐等级。",
+      "evidence": [
+        "zh-products-1920-part3.jpg",
+        "zh-products-375-part3.jpg"
+      ]
+    },
+    {
+      "id": "P5",
+      "pdfPage": 7,
+      "requirement": "产品⑤：半打11、栖元、诗诺",
+      "status": "已落实",
+      "finding": "三款中英文详情、目录、比较、下一款和语言入口已接入；参数依据本次正式表，效果图 2／2／4 张及独立视频保留。13 张技术图已恢复透明线条，本轮逐图检查并回归放大。首页入口为“探索全部产品”，中英均为十款目录。",
+      "evidence": [
+        "en-products-bd11-1920-part1.jpg",
+        "en-products-qiyuan-1920-part1.jpg",
+        "en-products-snow11-1920-part1.jpg",
+        "sheet-technical-1.jpg",
+        "sheet-technical-2.jpg",
+        "sheet-technical-3.jpg",
+        "sheet-technical-4.jpg"
+      ]
+    },
+    {
+      "id": "P6",
+      "pdfPage": 8,
+      "requirement": "产品⑥：经济款装箱图",
+      "status": "已落实",
+      "finding": "技术内容末尾已有指定装箱图，完整展示，配置独立放大阅读；未替换为其他型号运输图。",
+      "evidence": [
+        "zh-products-grayscale-eco-1920-part3.jpg"
+      ]
+    },
+    {
+      "id": "P7",
+      "pdfPage": 8,
+      "requirement": "产品⑦：底边、白条、图注对齐",
+      "status": "已落实",
+      "finding": "4S 照片与两段竖视频的媒体底边及图注对齐；技术组完整展示。经济款 C／D 立面的内部屋檐、基础线及图注本轮重测通过，不只比较外框。64 组视口、16 组对齐检查、44 组阅图检查记录见 technical-layouts/report.json。",
+      "evidence": [
+        "zh-products-4s-1920-part4.jpg",
+        "zh-products-grayscale-eco-1920-part3.jpg"
+      ]
+    },
+    {
+      "id": "Q1",
+      "pdfPage": 9,
+      "requirement": "资质①：三项专利",
+      "status": "已落实",
+      "finding": "原 17 张后追加三张，共 20 张；名称以证书正文为准。新式的中空双皮墙（ZL202522305043.7）、组合墙体的新式连接结构（ZL202522305045.6）、高精度钢骨架预制墙体及房屋建筑结构（ZL202522305044.1）；权利人为半打空间集成房屋（江门）有限公司，授权日期 2026-10-09。",
+      "evidence": [
+        "certificate-18.jpg",
+        "certificate-19.jpg",
+        "certificate-20.jpg"
+      ]
+    },
+    {
+      "id": "A1",
+      "pdfPage": 10,
+      "requirement": "关于①：首图",
+      "status": "按确认边界适配",
+      "finding": "中文首图已使用提供的完整设计图；英文使用相应建筑画面和英文网页文字，避免把中文海报当成英文正文。",
+      "evidence": [
+        "zh-about-1920-part1.jpg",
+        "en-about-1920-part1.jpg"
+      ]
+    },
+    {
+      "id": "A2",
+      "pdfPage": 10,
+      "requirement": "关于②：1–8 组内容",
+      "status": "按确认边界适配",
+      "finding": "八组内容及顺序保留，中英文同义。r89 已将缺乏范围证据的“最大”“唯一”等断言改为建筑理念和技术方法，并去掉英文 His conviction 等额外归属；本轮核对原稿、现页和双语文案，不恢复未经证实的绝对化宣传。",
+      "evidence": [
+        "zh-about-1920-part2.jpg",
+        "zh-about-1920-part3.jpg",
+        "zh-about-1920-part4.jpg",
+        "zh-about-1920-part5.jpg",
+        "zh-about-1920-part6.jpg",
+        "zh-about-1920-part7.jpg",
+        "zh-about-1920-part8.jpg",
+        "zh-about-1920-part9.jpg",
+        "en-about-375-part2.jpg",
+        "en-about-375-part5.jpg"
+      ]
+    },
+    {
+      "id": "C1",
+      "pdfPage": 11,
+      "requirement": "联系①：王先生双号码",
+      "status": "已落实",
+      "finding": "王先生 13600001448 与 +852 6725 6153 已展示并绑定电话链接，当前页面未混用旧号码；页尾与联系页使用同一数据。",
+      "evidence": [
+        "contact-desktop-loaded.jpg",
+        "zh-contact-375-part1.jpg"
+      ]
+    },
+    {
+      "id": "C2",
+      "pdfPage": 11,
+      "requirement": "联系②：联系人顺序",
+      "status": "已落实",
+      "finding": "黄先生→唐小姐→王先生，姓名、二维码、电话按身份关联；没有只换姓名导致二维码错配。",
+      "evidence": [
+        "contact-desktop-loaded.jpg",
+        "zh-contact-375-part1.jpg"
+      ]
+    },
+    {
+      "id": "G1",
+      "pdfPage": 12,
+      "requirement": "其他①：导航字号字重",
+      "status": "已落实",
+      "finding": "已显示桌面主栏目 16px／600；语言入口作为独立控件维持现有样式。官方 Logo、现有 A 方向与首屏本轮均未更动。",
+      "evidence": [
+        "deferred/frame-2560-1.jpg",
+        "deferred/frame-375-1.jpg"
+      ]
+    },
+    {
+      "id": "G2",
+      "pdfPage": 12,
+      "requirement": "其他②：页尾建筑联系图",
+      "status": "按确认边界适配",
+      "finding": "原有页尾槽位使用灰色建筑背景，二维码、姓名、电话、邮箱为独立可操作内容，不是整张带二维码的示意图。后续已获准保留此构图并移除突兀黑色咨询底；不恢复被否定的硬贴海报方案。",
+      "evidence": [
+        "home-zh-1920-project-contact.jpg",
+        "home-zh-375-project-contact.jpg"
+      ]
+    }
+  ],
+  "freshTests": {
+    "baselineThisTurn": {
+      "publicHtmlParity": 43,
+      "pages": 39,
+      "viewportChecks": 312,
+      "viewports": [
+        320,
+        375,
+        768,
+        1024,
+        1440,
+        1920,
+        2560,
+        "812×375"
+      ],
+      "heroFrames": 36,
+      "axeGroups": 26,
+      "axeViolations": 0,
+      "overflow": 0,
+      "brokenImages": 0,
+      "scriptErrors": 0
+    },
+    "afterFixLocal": {
+      "chineseProductLayouts": 80,
+      "homeFrameChecksBeforeLoadingFix": 30,
+      "finalHeroFrameChecks": 54,
+      "loadCancellationRecoveryScenarios": 4,
+      "carouselKeyboardPauseMotionScenarios": 4,
+      "technicalLayouts": 64,
+      "technicalImages": 13,
+      "alignmentChecks": 16,
+      "viewerChecks": 44,
+      "lateTransferOver15s": 1,
+      "finalHeroFrameCheckTiming": "54帧在最后的纯加载超时处理变更之前完成；最后提交重新执行4组轮播状态、4组加载取消/恢复和1组16秒慢加载回归，页面样式与布局未再变化。"
+    },
+    "technical": {
+      "unitTests": 50,
+      "technicalImageUnitTests": 2,
+      "typeCheckFiles": 166,
+      "typeErrors": 0,
+      "typeWarnings": 0,
+      "existingHints": 10,
+      "lint": "pass",
+      "buildPages": 43,
+      "assetReferences": 609,
+      "untranslatedEntries": 0,
+      "internalLinksAndAnchors": 2085,
+      "brokenInternalLinks": 0
+    },
+    "materials": {
+      "recordsRehashed": 54,
+      "technicalImagesRechecked": 13,
+      "newProductParametersChecked": 3,
+      "note": "54 条为本次已登记网页素材来源核对数，不是压缩包全部文件数或利用率。"
+    },
+    "publicFinal": {
+      "htmlParity": 43,
+      "serverManifestFiles": 886,
+      "coldVisits": 8,
+      "coldFramesPassedWithin20s": 32,
+      "coldFramesTotal": 36,
+      "coldFramesExceeding20s": [
+        {
+          "route": "/zh/",
+          "width": 1920,
+          "frame": 4,
+          "pass": false,
+          "message": "page.waitForFunction: Timeout 20000ms exceeded."
+        },
+        {
+          "route": "/zh/",
+          "width": 1920,
+          "frame": 5,
+          "pass": false,
+          "message": "page.waitForFunction: Timeout 20000ms exceeded."
+        },
+        {
+          "route": "/en/",
+          "width": 1920,
+          "frame": 5,
+          "pass": false,
+          "message": "page.waitForFunction: Timeout 20000ms exceeded."
+        },
+        {
+          "route": "/zh/products/",
+          "width": 1920,
+          "frame": 2,
+          "pass": false,
+          "message": "page.waitForFunction: Timeout 20000ms exceeded."
+        }
+      ],
+      "scriptErrors": [],
+      "videoRange": {
+        "status": 206,
+        "bytes": 1024
+      }
+    }
+  },
+  "interactionCoverage": [
+    "中英文菜单、关闭及焦点返回",
+    "中英比较区全部十款、左右独立更新及详情入口",
+    "案例地区筛选：国内7／海外3／全部10",
+    "阅图首尾、缩放、焦点恢复及独立技术图组",
+    "三名联系人二维码放大与电话、邮箱链接",
+    "18–20号新证书放大",
+    "首页及产品中心键盘、触摸、暂停、离屏停止、减少动态设置",
+    "4S两段、半打11、诗诺视频手动播放、暂停、首中尾、拖动和全屏；播放前不请求MP4"
+  ],
+  "remainingTechnicalItems": [
+    {
+      "id": "T1",
+      "severity": "完整验收尚未关闭",
+      "description": "最终8次公网无缓存访问，36帧中32帧在20秒观察窗口内完成，4帧未在窗口内完成。 这是切换等待时长的观测，不是HTTP 502或浏览器脚本错误。",
+      "assessment": "同一1028148字节图片，服务器本机200响应约0.002秒，Caddy CPU约0.06%、内存17.6MiB；单独公网传输约11.30秒。证据表明公网传输是重要因素，但不能据此指定某个运营商或供应商故障。",
+      "completed": "图片保持原分辨率压缩；未展示图片延后下载、所选图片优先；慢传输不再误报失败，等待中当前图片保留、可以取消。原20秒公网观察窗口未放宽。",
+      "next": "正式完整交付前，仍需完成公网传输、缓存与真实设备性能验收；无需业务方决定文案或排版。",
+      "evidence": [
+        "slow/public.json",
+        "slow/public.log",
+        "slow/loading.log",
+        "deferred/isolated.json",
+        "deferred/server-diagnostics.log",
+        "deferred/public-transfer.log"
+      ]
+    }
+  ],
+  "limits": [
+    "全部数量均来自本轮重新执行，312组等全站结果为本轮起始r89基线；最后修改后另做80组详情、54帧轮播等定向回归，未把312组描述为最终提交重新全量跑过。",
+    "Windows Edge/Chromium 桌面与模拟视口；尚未实测 iOS Safari、Android 真机。960 CSS像素检查仅为200%等效布局，不冒称真实浏览器200%缩放。",
+    "Axe26组0违规是自动工具结果，不等于全部WCAG项目人工认证。照片叠字逐帧目视检查，但未声称逐像素全部达到固定对比度。",
+    "Taste检查器原始6项FAIL、6项WARN经过人工分类：已确认细线/眉题、照片容器pointer-events命中、未展开菜单、横向章节导航及动态偏好等，不以通用审美规则重做现有A方向；原始报告保留。",
+    "初测的真实冷加载和视频缓冲问题、测试脚本命中非交互标题、Python预览缺Range等失败记录都保留；相应修正与复测分别列出，未删除失败证据。",
+    "未增加域名、HTTPS、表单发送服务、新闻招聘内容或缺少的6S室内照片；这些不作为本轮视觉新增工作，也不补写业务事实。",
+    "本轮中间部署与最终提交分开留档。deferred/public.json等为修正慢加载误判前的结果；最终线上实测为slow/public.json，不能混用。"
+  ],
+  "evidenceRoot": "C:\\Users\\Administrator\\.codex\\worktrees\\r79-targeted-review\\web-test\\artifacts\\r90-final"
+}

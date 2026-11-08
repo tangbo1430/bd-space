@@ -1,0 +1,63 @@
+{
+  "release": "r90-acceptance",
+  "verifiedAtUtc": "2026-11-08T13:55:08.260861+00:00",
+  "runtimeCommit": "ec464e1a80f7b1908d467d4d5c2a9ee42bf7a161",
+  "baselineCommit": "e1b5f8db0609bf8d4213b90000f464bbe339cc18",
+  "branch": "codex/r79-targeted-review",
+  "githubPushed": false,
+  "directory": "/opt/banda-space-preview/releases/r90-ec464e1",
+  "retainedBaseline": "/opt/banda-space-preview/releases/r89-e1b5f8d",
+  "rollback": "sh /opt/banda-space-preview/releases/r90-ec464e1/rollback-to-r89.sh",
+  "staticArchiveSha256": "34a9f0afd4c25f38f92c4c0ecc95adaa698dd027831c12c00b3264ff95a90e7b",
+  "serverManifestFiles": 886,
+  "publicHtmlParity": 43,
+  "coldFailures": [
+    {
+      "route": "/zh/",
+      "width": 1920,
+      "frame": 4,
+      "pass": false,
+      "message": "page.waitForFunction: Timeout 20000ms exceeded."
+    },
+    {
+      "route": "/zh/",
+      "width": 1920,
+      "frame": 5,
+      "pass": false,
+      "message": "page.waitForFunction: Timeout 20000ms exceeded."
+    },
+    {
+      "route": "/en/",
+      "width": 1920,
+      "frame": 5,
+      "pass": false,
+      "message": "page.waitForFunction: Timeout 20000ms exceeded."
+    },
+    {
+      "route": "/zh/products/",
+      "width": 1920,
+      "frame": 2,
+      "pass": false,
+      "message": "page.waitForFunction: Timeout 20000ms exceeded."
+    }
+  ],
+  "evidence": [
+    "artifacts/r90-final/slow/public.json",
+    "artifacts/r90-final/slow/publish.log",
+    "artifacts/r90-final/slow/manifest.json"
+  ],
+  "sourceBundles": [
+    {
+      "file": "r89-to-r90-final.bundle",
+      "requires": "e1b5f8db0609bf8d4213b90000f464bbe339cc18",
+      "tip": "f1a8e3ca2198ceffc5ed8a5ba15a8a5f522b14f2",
+      "sha256": "a879e14ea28f1ca79f0f713b72ea6295622c7e5f888536b815d03ac42321c23a"
+    },
+    {
+      "file": "r90-late-load.bundle",
+      "requires": "f1a8e3ca2198ceffc5ed8a5ba15a8a5f522b14f2",
+      "tip": "ec464e1a80f7b1908d467d4d5c2a9ee42bf7a161",
+      "sha256": "00a5f07453274e5d99e9c7fc0cbe0c798fd57206ef0b5d10bbfd1588ecf13a3a"
+    }
+  ]
+}
