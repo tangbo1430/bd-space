@@ -150,7 +150,7 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
         <header class="pd-head rv">
           <span class="pd-eyebrow">产品参数 · SPECIFICATION</span>
           <h2 id="spec-heading">
-            {product.id === "4s" && !Astro.url.pathname.startsWith("/en/") ? (
+            {data.listed && !Astro.url.pathname.startsWith("/en/") ? (
               <>
                 <span class="heading-phrase">从项目需求，</span>
                 <span class="heading-phrase">确定空间细节。</span>
