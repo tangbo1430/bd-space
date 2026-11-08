@@ -1,8 +1,9 @@
 ---
 import EditorialImage from "./EditorialImage.astro";
-import { introductionCopy } from "../data/about-revision";
+import { catalogEveningCopy, introductionCopy } from "../data/about-revision";
 const en = Astro.url.pathname.startsWith("/en/");
 const copy = introductionCopy[en ? "en" : "zh"];
+const evening = catalogEveningCopy[en ? "en" : "zh"];
 ---
 
 <section
@@ -54,12 +55,19 @@ const copy = introductionCopy[en ? "en" : "zh"];
         sizes="(max-width:767px) 100vw, 60vw"
       />
       <div class="intro-copy">
-        {copy.ideas.map((t) => (
-          <p>{t}</p>
-        ))}
-        <p class="intro-signature" lang="en">
-          {copy.signature}
-        </p>
+        <div class="intro-design">
+          {copy.ideas.map((t) => (
+            <p>{t}</p>
+          ))}
+          <p class="intro-signature" lang="en">
+            {copy.signature}
+          </p>
+        </div>
+        <div class="intro-evening" id="evening-light">
+          <p>{evening.opening}</p>
+          <p>{evening.detail}</p>
+          <p class="intro-attribution">{evening.attribution}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -160,6 +168,29 @@ const copy = introductionCopy[en ? "en" : "zh"];
     letter-spacing: -0.035em;
     color: var(--charcoal);
     text-wrap: balance;
+  }
+  .intro-evening {
+    margin-top: 24px;
+  }
+  .intro-evening p {
+    margin-bottom: 8px;
+  }
+  .intro-evening .intro-attribution {
+    margin: 12px 0 0;
+  }
+  @media (min-width: 768px) and (max-width: 1279px) {
+    .intro-definition-body {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+    }
+    .intro-definition-body > .intro-copy {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 32px;
+    }
+    .intro-evening {
+      margin-top: 0;
+    }
   }
   @media (min-width: 1280px) {
     .intro-understanding {
