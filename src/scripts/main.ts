@@ -326,7 +326,11 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
       };
       const loaded = () => finish(true);
       const failed = () => finish(false);
-      const timeout = window.setTimeout(failed, 15000);
+      // A slow transfer is not an image error. Keep the last complete frame
+      // and allow another selection to cancel this pending transition.
+      const timeout = window.setTimeout(() => {
+        if (manual && live) live.textContent = ui("正在加载图片…");
+      }, 15000);
       image.addEventListener("load", loaded);
       image.addEventListener("error", failed);
       request.signal.addEventListener("abort", failed, { once: true });

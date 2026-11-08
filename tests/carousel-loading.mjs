@@ -104,6 +104,39 @@ try {
       await page.waitForFunction(() =>
         document.querySelectorAll("[data-slide]")[1].classList.contains("on"),
       );
+      if (lang === "zh" && suffix === "") {
+        await page.unroute(target);
+        let finishSlowTransfer;
+        const slowTransfer = new Promise((resolve) => {
+          finishSlowTransfer = resolve;
+        });
+        await page.route(target, async (route) => {
+          await slowTransfer;
+          await route.continue();
+        });
+        await page.reload({ waitUntil: "domcontentloaded" });
+        await page.locator("[data-dot]").nth(3).click();
+        await page.waitForTimeout(16000);
+        assert.equal(await hero.getAttribute("aria-busy"), "true");
+        assert.equal(
+          await page.locator("[data-banner-live]").textContent(),
+          "正在加载图片…",
+        );
+        assert(
+          await page
+            .locator("[data-slide]")
+            .first()
+            .evaluate((e) => e.classList.contains("on")),
+        );
+        finishSlowTransfer();
+        await page.waitForFunction(() =>
+          document.querySelectorAll("[data-slide]")[3].classList.contains("on"),
+        );
+        assert.equal(await hero.getAttribute("aria-busy"), null);
+        console.log(
+          "PASS slow transfer beyond 15s: no false error, current frame retained, automatic completion",
+        );
+      }
       console.log(
         `PASS ${lang}/${suffix}: requested priority, loading guard, cancellation, error recovery`,
       );
