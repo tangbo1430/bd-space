@@ -47,7 +47,8 @@
   .editorial-image,
 .product-detail[data-layout="complete"] :is(.pd-plan, .pd-drawing) img {
   height: auto !important;
-  aspect-ratio: auto !important;
+  /* Reserve the original paper size while lazy technical images are loading. */
+  aspect-ratio: var(--image-ratio) !important;
 }
 .product-detail[data-layout="complete"] .pd-film {
   align-items: start;
