@@ -2,6 +2,7 @@
 from pathlib import Path
 import json, hashlib, subprocess
 from PIL import Image, ImageOps
+from technical_image import on_paper
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = Path('C:/Users/Administrator/Documents/web-test/artifacts/r77-material-review/materials/5/2产品中心')
@@ -18,6 +19,7 @@ def asset(file, base, technical=False):
     im = original.copy()
     im.thumbnail((3200, 5000) if technical else (3072, 3072))
     if technical:
+        im = on_paper(im)
         im.save(IMG / (base + '.webp'), lossless=True, method=6)
     else:
         im = im.convert('RGB')
@@ -47,7 +49,7 @@ for slug, (folder, hero_name, photos, drawings) in settings.items():
         w,h = asset(src/file, base+f'-space-{i+1}')
         data['designGallery'][i].update(base=base+f'-space-{i+1}',width=w,height=h,mobileWidth=min(w,960,round(w*960/h)))
     for i, file in enumerate(drawings):
-        w,h = asset(src/file, base+f'-diagram-{i}')
+        w,h = asset(src/file, base+f'-diagram-{i}', technical=True)
         # Snow's low-resolution overview is the parameter illustration; detailed double plan follows.
         entry = next(d for d in data['diagrams'] if f'-diagram-{i}.' in d['src'])
         entry.update(src='/assets/img/'+base+f'-diagram-{i}.webp',viewerSrc='/assets/img/'+base+f'-diagram-{i}.webp',width=w,height=h)

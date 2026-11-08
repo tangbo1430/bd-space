@@ -84,8 +84,8 @@
       "height": 899
     },
     {
-      "src": "/assets/img/r82-snow11-diagram-0.webp",
-      "viewerSrc": "/assets/img/r82-snow11-diagram-0.webp",
+      "src": "/assets/img/r88-snow11-diagram-0.webp",
+      "viewerSrc": "/assets/img/r88-snow11-diagram-0.webp",
       "caption": "诗诺1.1 · 首层及二层平面图 / 技术示意",
       "width": 3072,
       "height": 2914

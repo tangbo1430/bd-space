@@ -124,14 +124,28 @@
       "viewerSrc": "/assets/img/r4-grayscale-eco-drawing-3.webp",
       "caption": "灰度空间经济款 · C 立面 / 技术示意",
       "width": 2400,
-      "height": 1628
+      "height": 1628,
+      "previewFrame": {
+        "width": 2400,
+        "height": 1673,
+        "imageWidth": 2400,
+        "left": 0,
+        "top": 40
+      }
     },
     {
       "src": "/assets/img/r4-grayscale-eco-drawing-4.webp",
       "viewerSrc": "/assets/img/r4-grayscale-eco-drawing-4.webp",
       "caption": "灰度空间经济款 · D 立面 / 技术示意",
       "width": 2400,
-      "height": 1673
+      "height": 1673,
+      "previewFrame": {
+        "width": 2400,
+        "height": 1673,
+        "imageWidth": 2342.420937840785,
+        "left": 28.789531079607443,
+        "top": 10.71646673936749
+      }
     },
     {
       "src": "/assets/img/r4-grayscale-eco-drawing-5.webp",

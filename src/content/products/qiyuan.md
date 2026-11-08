@@ -63,22 +63,22 @@
   ],
   "diagrams": [
     {
-      "src": "/assets/img/r82-qiyuan-diagram-0.webp",
-      "viewerSrc": "/assets/img/r82-qiyuan-diagram-0.webp",
+      "src": "/assets/img/r88-qiyuan-diagram-0.webp",
+      "viewerSrc": "/assets/img/r88-qiyuan-diagram-0.webp",
       "caption": "栖元 · 首层与二层平面图 / 技术示意",
       "width": 3072,
       "height": 1927
     },
     {
-      "src": "/assets/img/r82-qiyuan-diagram-1.webp",
-      "viewerSrc": "/assets/img/r82-qiyuan-diagram-1.webp",
+      "src": "/assets/img/r88-qiyuan-diagram-1.webp",
+      "viewerSrc": "/assets/img/r88-qiyuan-diagram-1.webp",
       "caption": "栖元 · 首层平面图 / 技术示意",
       "width": 2735,
       "height": 3072
     },
     {
-      "src": "/assets/img/r82-qiyuan-diagram-2.webp",
-      "viewerSrc": "/assets/img/r82-qiyuan-diagram-2.webp",
+      "src": "/assets/img/r88-qiyuan-diagram-2.webp",
+      "viewerSrc": "/assets/img/r88-qiyuan-diagram-2.webp",
       "caption": "栖元 · 二层平面图 / 技术示意",
       "width": 2628,
       "height": 3072

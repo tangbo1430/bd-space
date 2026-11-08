@@ -7,6 +7,13 @@ interface Props {
   src?: string;
   viewerSrc?: string;
   previewSrc?: string;
+  previewFrame?: {
+    width: number;
+    height: number;
+    imageWidth: number;
+    left: number;
+    top: number;
+  };
   width?: number;
   height?: number;
   mobileWidth?: number;
@@ -25,6 +32,7 @@ const {
   src,
   viewerSrc,
   previewSrc,
+  previewFrame,
   width: suppliedWidth,
   height: suppliedHeight,
   mobileWidth,
@@ -61,21 +69,54 @@ const previewSize = previewSrc ? imageDimensions(previewSrc) : [width, height];
   data-gallery-caption={caption}
   aria-label={`查看大图：${caption}`}
 >
-  <EditorialImage
-    base={base}
-    mobileImage={mobileImage}
-    src={src}
-    previewSrc={previewSrc ?? viewerSrc}
-    width={previewSize[0]}
-    height={previewSize[1]}
-    mobileWidth={mobileWidth}
-    fit={fit}
-    alt={alt}
-    eager={eager}
-    sizes={sizes}
-  />
+  {previewFrame ? (
+    <div
+      class="gallery-preview-frame"
+      style={`aspect-ratio:${previewFrame.width}/${previewFrame.height};--frame-image-width:${(previewFrame.imageWidth / previewFrame.width) * 100}%;--frame-left:${(previewFrame.left / previewFrame.width) * 100}%;--frame-top:${(previewFrame.top / previewFrame.height) * 100}%`}
+    >
+      <EditorialImage
+        src={src}
+        previewSrc={previewSrc ?? viewerSrc}
+        width={previewSize[0]}
+        height={previewSize[1]}
+        fit="contain"
+        alt={alt}
+        eager={eager}
+        sizes={sizes}
+      />
+    </div>
+  ) : (
+    <EditorialImage
+      base={base}
+      mobileImage={mobileImage}
+      src={src}
+      previewSrc={previewSrc ?? viewerSrc}
+      width={previewSize[0]}
+      height={previewSize[1]}
+      mobileWidth={mobileWidth}
+      fit={fit}
+      alt={alt}
+      eager={eager}
+      sizes={sizes}
+    />
+  )}
   <span class="gallery-open" aria-hidden="true">
     <span>查看大图</span>
     <Icon name="expand" />
   </span>
 </a>
+
+<style>
+  /* Only explicitly configured elevations use a paper frame; originals stay intact. */
+  .gallery-preview-frame {
+    position: relative;
+    width: 100%;
+    background: #fff;
+  }
+  .gallery-preview-frame :global(.editorial-image) {
+    position: absolute;
+    width: var(--frame-image-width);
+    left: var(--frame-left);
+    top: var(--frame-top);
+  }
+</style>

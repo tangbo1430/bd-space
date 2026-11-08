@@ -83,6 +83,15 @@ const products = defineCollection({
         z.object({
           src: z.string(),
           viewerSrc: z.string(),
+          previewFrame: z
+            .object({
+              width: z.number().positive(),
+              height: z.number().positive(),
+              imageWidth: z.number().positive(),
+              left: z.number().nonnegative(),
+              top: z.number().nonnegative(),
+            })
+            .optional(),
           zoomX: z.number().min(0).max(1).optional(),
           caption: z.string(),
           width: z.number().int().positive(),

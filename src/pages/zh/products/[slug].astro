@@ -339,7 +339,7 @@ const tint = (key: string) => bands.indexOf(key) % 2 === 0;
               {drawingRows.map((row) => (
                 <div
                   class="pd-aligned-row"
-                  style={`--drawing-columns:${row.map((d) => `minmax(0,${d.width / d.height}fr)`).join(" ")}`}
+                  style={`--drawing-columns:${row.map((d) => `minmax(0,${d.previewFrame ? d.previewFrame.width / d.previewFrame.height : d.width / d.height}fr)`).join(" ")}`}
                 >
                   {row.map((diagram) => (
                     <figure class="pd-drawing rv">
