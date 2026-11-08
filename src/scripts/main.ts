@@ -297,6 +297,9 @@ document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((hero) => {
     pendingIndex = null;
     hero.removeAttribute("aria-busy");
     const next = (n + slides.length) % slides.length;
+    // Keep never-viewed slides out of native lazy loading's viewport queue.
+    // Reveal the requested slot before decoding; opacity still protects the current frame.
+    if (slides[next]) slides[next].hidden = false;
     const image = slides[next]?.querySelector<HTMLImageElement>("img");
     // Preserve the current photograph until the requested image is ready.
     if (next === i || !image) {

@@ -1,4 +1,4 @@
-/* global document */
+/* global document, location */
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
 
@@ -11,6 +11,8 @@ try {
         viewport: { width: 1920, height: 1080 },
         reducedMotion: "reduce",
       });
+      const initialRequests = [];
+      page.on("request", (request) => initialRequests.push(request.url()));
       // Read the exact fourth photo, then hold its request on a fresh visit.
       await page.goto(`${base}/${lang}/${suffix}`, {
         waitUntil: "domcontentloaded",
@@ -18,7 +20,27 @@ try {
       const target = await page
         .locator("[data-slide] img")
         .nth(3)
-        .evaluate((e) => e.currentSrc);
+        .evaluate(
+          (e) =>
+            new URL(
+              e.currentSrc ||
+                e
+                  .closest("picture")
+                  .querySelector('source[media="(min-width: 1280px)"]')
+                  ?.srcset ||
+                e.src,
+              location.href,
+            ).href,
+        );
+      await page
+        .locator("[data-slide] img")
+        .first()
+        .evaluate((e) => e.decode());
+      await page.waitForTimeout(500);
+      assert(
+        !initialRequests.includes(target),
+        "Never-viewed photo must not compete with the first frame",
+      );
       let release;
       const held = new Promise((resolve) => {
         release = resolve;

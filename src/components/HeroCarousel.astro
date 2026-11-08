@@ -71,6 +71,7 @@ const dimensions = imageDimensions(`/assets/img/${first.base}.jpg`);
       <div
         class:list={["slide", { on: i === 0 }]}
         data-slide
+        hidden={i !== 0}
         data-product={s.id}
         style={
           s.desktopPosition
