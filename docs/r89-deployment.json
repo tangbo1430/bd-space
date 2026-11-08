@@ -1,0 +1,49 @@
+{
+  "release": "r89-copy",
+  "verifiedAtUtc": "2026-11-08T06:07:17.399843+00:00",
+  "runtimeCommit": "e1b5f8db0609bf8d4213b90000f464bbe339cc18",
+  "baselineCommit": "0e7876ec9a8436f4efb072ea00d89453bae9c2cf",
+  "branch": "codex/r79-targeted-review",
+  "githubPushed": false,
+  "directory": "/opt/banda-space-preview/releases/r89-e1b5f8d",
+  "retainedPrevious": "/opt/banda-space-preview/releases/r88-0e7876e",
+  "rollback": "sh /opt/banda-space-preview/releases/r89-e1b5f8d/rollback.sh",
+  "staticArchive": "/opt/banda-space-preview/releases/r89-e1b5f8d/site.tar.gz",
+  "staticArchiveSha256": "b160d2568a8837cafe5541329f3f05a889ee07b91a3d0caca6c8e4a30be5bfa4",
+  "sourceBundle": "/opt/banda-space-preview/releases/r89-e1b5f8d/r88-to-r89.bundle",
+  "sourceBundleRequiresBase": "0e7876ec9a8436f4efb072ea00d89453bae9c2cf",
+  "filesVerifiedOnServer": 886,
+  "publicHtmlHashesMatched": 43,
+  "publicLayouts": 12,
+  "finalLocalLayouts": 32,
+  "heroPixelComparisons": 12,
+  "heroComparisonTiming": "First local candidate versus public r88, before the later component-scoped 768-1279px definition layout adjustment. Hero/navigation files and all media unchanged in final source.",
+  "assetsChanged": 0,
+  "businessItems": {
+    "E3": "Full catalog frame-2 copy retained in the existing introduction; short hero unchanged.",
+    "E5": "Unsubstantiated maximum/only claims replaced by building philosophy, aligned in Chinese and English."
+  },
+  "evidence": [
+    "artifacts/r89-copy/checks.json",
+    "artifacts/r89-copy/checks-before-tablet-fix.json",
+    "artifacts/r89-release/public.json",
+    "artifacts/r89-release/publish.log"
+  ],
+  "coldCarousel": {
+    "requests": [],
+    "errors": [],
+    "before": {
+      "complete": false,
+      "width": 0,
+      "source": ""
+    },
+    "after": {
+      "elapsedMs": 2686,
+      "text": "Evening light.\n\nBD-4S Â· Photography"
+    }
+  },
+  "limitations": [
+    "Simulated Windows Edge/Chromium viewports; no physical mobile or Safari test.",
+    "No full-site historical interaction or accessibility suite rerun."
+  ]
+}
