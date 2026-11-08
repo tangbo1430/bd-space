@@ -1,0 +1,56 @@
+{
+  "release": "r88-repairs",
+  "verifiedAtUtc": "2026-11-08T04:19:28.117593+00:00",
+  "runtimeCommit": "0e7876ec9a8436f4efb072ea00d89453bae9c2cf",
+  "branch": "codex/r79-targeted-review",
+  "githubPushed": false,
+  "url": "http://23.251.34.150:8080/zh/?v=r88-repairs",
+  "directory": "/opt/banda-space-preview/releases/r88-0e7876e",
+  "previousStable": "/opt/banda-space-preview/releases/r87-6005160",
+  "previousStableCommit": "6005160f3bac3f3ef6a6cd959ca28185d14d544d",
+  "retainedIntermediate": "/opt/banda-space-preview/releases/r88-1c278b1",
+  "rollbackToIntermediate": "sh /opt/banda-space-preview/releases/r88-0e7876e/rollback.sh",
+  "rollbackToR87InOrder": [
+    "sh /opt/banda-space-preview/releases/r88-0e7876e/rollback.sh",
+    "sh /opt/banda-space-preview/releases/r88-1c278b1/rollback.sh"
+  ],
+  "staticArchive": "/opt/banda-space-preview/releases/r88-0e7876e/site.tar.gz",
+  "staticArchiveSha256": "fe754410646b9414cfef85939dbd46537433fd1ffc3e76ae9239018ebf3faef3",
+  "sourceBundle": "/opt/banda-space-preview/releases/r88-0e7876e/r87-to-r88-final.bundle",
+  "sourceBundleRequiresBase": "6005160f3bac3f3ef6a6cd959ca28185d14d544d",
+  "manifestFiles": 886,
+  "manifestSha256": "dc7cff89048c6e02a0da6bd4d33b3070c970042b338b488e79c4d81e2fecd901",
+  "publicVerification": {
+    "matchingHtmlPages": 43,
+    "matchingRepairedAssets": 26,
+    "layouts": 16,
+    "scriptErrors": 0,
+    "lazyLoading": {
+      "before": {
+        "height": 959.984375,
+        "natural": 0
+      },
+      "after": {
+        "height": 959.984375,
+        "natural": 3072
+      },
+      "passed": true
+    }
+  },
+  "evidence": [
+    "artifacts/r88-release/public-check.json",
+    "artifacts/r88-release/public-loading.json",
+    "artifacts/r88-release/publish-final.log",
+    "artifacts/r88-repair/local/report.json",
+    "artifacts/r88-repair/preserved.json"
+  ],
+  "pendingUnchanged": [
+    "E3: 产品中心第二帧完整长文案",
+    "E5: 关于页绝对化表述"
+  ],
+  "limits": [
+    "Windows Edge/Chromium simulated viewports, not physical mobile devices or Safari",
+    "No full historical site accessibility/interaction rerun",
+    "No real 200% browser zoom test"
+  ]
+}
