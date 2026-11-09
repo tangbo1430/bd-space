@@ -1,0 +1,12 @@
+r91 banner typography — local preview
+Scope: src/styles/hero.css only; no imagery, page content, navigation or hero height changes.
+1920px Chinese home heading: 64 -> 80px; sky layout 56 -> 72px.
+1920px Chinese catalogue: 44 -> 55.68px; first frame constrained to48px.
+Desktop supporting text:16 ->18–20px. Mobile type remains unchanged.
+English sizes and first-frame measure separately constrained for readable wrapping.
+Checks: initial18 baseline frames;72 updated frame/viewport checks across zh/en home/catalogue at375,1440,1920,2560; final English36-frame rerun; English first-frame4-viewport follow-up. All completed checks: no JS errors or horizontal overflow. A hot-reload-interrupted run was rerun, not treated as a pass.
+Build:43 pages; Prettier and git diff --check pass. CSS-only change: no new unit tests.
+Taste full-page heuristic report retains8FAIL/6WARN; not a full-site acceptance pass. Findings include existing decorative numbering/footer rules, existing specified content, hidden menu items and dev-load heuristics. Existing design preserved rather than redesigned to satisfy unrelated heuristics.
+Visual evidence: artifacts/r91-banner-type. Desktop/mobile are simulated browser viewports, not physical devices.
+Preview:http://127.0.0.1:4361/zh/ and /zh/products/
+Not deployed; online r90 unchanged.
