@@ -21,12 +21,17 @@ const filters = [
 >
   <div class="page-editorial">
     <section class="cases-hero" aria-labelledby="cases-title">
-      <div class="cases-hero-copy">
-        <span class="eyebrow">项目与实践</span>
+      <EditorialImage
+        base={heroProject.base}
+        class="cases-hero-photo"
+        alt={heroProject.name}
+        eager
+        sizes="100vw"
+      />
+      <div class="cases-hero-copy ed-wrap">
         <h1 id="cases-title">
-          空间，
-          <br />
-          在世界发生。
+          <span>空间，</span>
+          <span>在世界发生。</span>
         </h1>
         <p>
           2026年的半打项目，
@@ -36,13 +41,6 @@ const filters = [
           记录从工厂到现场的探索。
         </p>
       </div>
-      <EditorialImage
-        base={heroProject.base}
-        class="cases-hero-photo"
-        alt={heroProject.name}
-        eager
-        sizes="(max-width: 767px) 100vw, 65vw"
-      />
     </section>
     <div class="cases-controls ed-wrap">
       <div class="case-filter" role="group" aria-label="按项目地区筛选">
@@ -141,46 +139,52 @@ const filters = [
 
 <style>
   .cases-hero {
-    display: grid;
-    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr);
     margin-top: var(--gnb-h);
-    background: #222b28;
-    color: #fff;
+    background: var(--paper);
+  }
+
+  .cases-hero :global(.cases-hero-photo) {
+    aspect-ratio: 2.45;
+    height: auto;
+    max-height: min(64svh, 650px);
+  }
+
+  .cases-hero :global(.cases-hero-photo img) {
+    display: block;
+    object-position: center 52%;
   }
 
   .cases-hero-copy {
-    align-self: center;
-    padding: clamp(32px, 4.2vw, 80px) var(--content-inset);
-  }
-
-  .cases-hero-copy .eyebrow {
-    color: #d8e0db;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    align-items: center;
+    gap: clamp(20px, 5vw, 84px);
+    padding-block: clamp(26px, 3.4vw, 60px) 20px;
   }
 
   .cases-hero h1 {
-    margin: 14px 0 20px;
-    color: #fff;
-    font-size: clamp(36px, 3.7vw, 68px);
+    margin: 0;
+    color: var(--charcoal);
+    font-size: clamp(31px, 4vw, 60px);
     font-weight: 400;
-    line-height: 1.12;
+    line-height: 1.15;
     letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  .cases-hero h1 span {
+    display: inline-block;
   }
 
   .cases-hero p {
     margin: 0;
-    color: #e5eae7;
-    font-size: clamp(15px, 1.1vw, 19px);
+    color: var(--ink-body);
+    font-size: clamp(15px, 1.15vw, 18px);
     line-height: 1.7;
   }
 
-  .cases-hero :global(.cases-hero-photo) {
-    min-height: 0;
-    aspect-ratio: 1.7;
-    height: 100%;
-  }
-
   .cases-controls {
-    padding-block: clamp(24px, 3vw, 48px);
+    padding-block: 12px clamp(24px, 3vw, 44px);
   }
 
   .cases-controls .case-filter {
@@ -188,21 +192,13 @@ const filters = [
   }
 
   @media (max-width: 767px) {
-    .cases-hero {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
     .cases-hero :global(.cases-hero-photo) {
-      grid-row: 1;
-      aspect-ratio: 1.55;
+      aspect-ratio: 1.65;
     }
 
     .cases-hero-copy {
-      padding: 24px var(--content-inset) 28px;
-    }
-
-    .cases-hero h1 {
-      margin: 10px 0 14px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 12px;
     }
   }
 </style>
