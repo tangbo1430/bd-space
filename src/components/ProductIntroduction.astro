@@ -16,12 +16,6 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
       <h2>{copy.understanding}</h2>
       <p class="intro-lead">{copy.lead}</p>
       <p>{copy.rest}</p>
-      <div class="intro-viewpoint">
-        {copy.statements.map((statement) => (
-          <p>{statement}</p>
-        ))}
-        <p>{copy.end}</p>
-      </div>
     </div>
     <figure class="intro-drawing">
       <EditorialImage
@@ -32,9 +26,12 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
             ? "Architectural drawing of the BD-4S entrance"
             : "半打4S入口建筑线稿"
         }
-        sizes="(max-width: 900px) 220px, 300px"
+        sizes="(max-width: 599px) 28vw, (max-width: 999px) 210px, 260px"
       />
     </figure>
+    <p class="intro-viewpoint">
+      {[...copy.statements, copy.end].join(en ? " " : "")}
+    </p>
   </div>
   <div class="intro-definition">
     <div class="intro-definition-copy">
@@ -56,7 +53,7 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
             ? "BD-4S and grayscale space, architectural renderings"
             : "半打4S与灰度空间建筑效果图"
         }
-        sizes="(max-width: 767px) 100vw, 58vw"
+        sizes="(max-width: 999px) 92vw, 48vw"
       />
       <figcaption class="intro-evening" id="evening-light">
         <p>{evening.opening}</p>
@@ -67,19 +64,38 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
   </div>
 </section>
 <style>
-  .intro-understanding,
-  .intro-definition {
+  .product-introduction {
+    width: min(100% - 2 * var(--ed-gutter), 1320px);
+    margin-inline: auto;
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: clamp(32px, 5vw, 96px);
-    align-items: center;
-    padding: clamp(40px, 4.5vw, 80px) var(--content-inset);
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    gap: clamp(30px, 4vw, 62px);
+    padding-block: clamp(34px, 4.5vw, 64px);
+    scroll-margin-top: var(--gnb-h);
+  }
+
+  .intro-understanding {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(110px, 43%);
+    grid-template-areas: "summary drawing" "viewpoint drawing";
+    gap: 14px clamp(14px, 2vw, 28px);
+    align-items: start;
+    align-self: start;
+  }
+
+  .intro-summary {
+    grid-area: summary;
+  }
+
+  .intro-summary,
+  .intro-definition-copy {
+    min-width: 0;
   }
 
   .product-introduction h2 {
-    margin: 0 0 12px;
-    font-size: clamp(32px, 3vw, 46px);
-    line-height: 1.15;
+    margin: 0 0 10px;
+    font-size: clamp(26px, 2.45vw, 39px);
+    line-height: 1.2;
     font-weight: 500;
     letter-spacing: -0.025em;
     color: var(--charcoal);
@@ -88,25 +104,22 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
   .product-introduction p {
     margin: 0;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.65;
     color: var(--ink-body);
   }
 
   .product-introduction .intro-lead,
   .product-introduction .intro-method {
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     color: var(--charcoal);
-    line-height: 1.2;
-    font-size: clamp(22px, 2.1vw, 32px);
-    font-weight: 400;
-    letter-spacing: -0.035em;
-    text-wrap: balance;
+    line-height: 1.35;
+    font-size: clamp(19px, 1.65vw, 25px);
+    text-wrap: pretty;
   }
 
-  .intro-viewpoint {
-    display: grid;
-    gap: 6px;
-    margin-top: 24px;
+  .product-introduction .intro-viewpoint {
+    grid-area: viewpoint;
+    max-width: 54ch;
   }
 
   .intro-drawing,
@@ -114,51 +127,59 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
     margin: 0;
   }
 
+  .intro-drawing {
+    grid-area: drawing;
+    align-self: center;
+  }
+
   .intro-drawing :global(.editorial-image) {
-    width: min(100%, 300px);
-    margin-inline: auto;
     background: var(--paper);
+  }
+
+  .intro-homes {
+    margin-top: 18px;
   }
 
   .intro-evening {
     scroll-margin-top: calc(var(--gnb-h) + 12px);
-    margin-top: 14px;
+    margin-top: 10px;
   }
 
-  .intro-evening .intro-attribution {
-    margin-top: 8px;
+  .intro-evening p {
     font-size: 14px;
   }
 
-  .intro-definition {
-    background: var(--paper-deep);
-  }
-
-  .intro-definition-copy {
-    min-width: 0;
+  .intro-evening .intro-attribution {
+    margin-top: 4px;
   }
 
   .intro-definition-copy .intro-signature {
-    margin-top: 12px;
+    margin-top: 8px;
     color: var(--charcoal);
-    font-size: clamp(21px, 1.65vw, 28px);
-    line-height: 1.35;
+    font-size: clamp(18px, 1.5vw, 23px);
   }
 
-  .intro-definition :global(img) {
-    display: block;
-  }
-
-  @media (max-width: 900px) {
-    .intro-understanding,
-    .intro-definition {
+  @media (max-width: 999px) {
+    .product-introduction {
       grid-template-columns: minmax(0, 1fr);
-      gap: 24px;
     }
 
-    .intro-drawing :global(.editorial-image) {
-      width: min(100%, 220px);
-      margin-inline: 0;
+    .intro-understanding {
+      grid-template-columns: minmax(0, 1fr) minmax(110px, 30%);
+    }
+
+    .intro-drawing {
+      width: min(100%, 210px);
+      justify-self: end;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .intro-understanding {
+      grid-template-columns: minmax(0, 1fr) minmax(72px, 28%);
+      grid-template-areas: "summary drawing" "viewpoint viewpoint";
+      align-items: start;
+      gap: 12px;
     }
   }
 </style>

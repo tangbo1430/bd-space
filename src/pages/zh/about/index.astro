@@ -33,7 +33,7 @@ const locale = english ? "en" : "zh";
           ) : (
             <>
               一套可以<span class="company-title-phrase">工业化制造</span>
-              的建房系统。
+              {"的建房系统。"}
             </>
           )}
         </h1>
@@ -94,7 +94,7 @@ const locale = english ? "en" : "zh";
                       ? "(max-width: 699px) calc(100vw - 40px), 40vw"
                       : index >= 4
                         ? "(max-width: 699px) calc(100vw - 40px), 48vw"
-                        : "(max-width: 699px) calc(100vw - 40px), (max-width: 1099px) 42vw, 360px"
+                        : "(max-width: 699px) calc(100vw - 40px), (max-width: 1820px) 30vw, 520px"
                   }
                 />
                 {second && (
@@ -123,7 +123,7 @@ const locale = english ? "en" : "zh";
 <style>
   .company-cover,
   .company-revision {
-    width: min(100% - 2 * var(--ed-gutter), 1160px);
+    width: min(100% - 2 * var(--ed-gutter), 1680px);
     margin-inline: auto;
   }
 
@@ -250,7 +250,7 @@ const locale = english ? "en" : "zh";
   .company-residential {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: minmax(0, clamp(240px, 34%, 360px)) minmax(0, 1fr);
+    grid-template-columns: minmax(0, clamp(240px, 39%, 460px)) minmax(0, 1fr);
     align-items: center;
     gap: clamp(24px, 4vw, 56px);
   }
@@ -261,7 +261,7 @@ const locale = english ? "en" : "zh";
   }
 
   .company-residential .company-text p {
-    max-width: 620px;
+    max-width: 780px;
     font-size: clamp(17px, 1.5vw, 22px);
     line-height: 1.65;
   }

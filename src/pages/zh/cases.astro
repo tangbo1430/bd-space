@@ -5,7 +5,11 @@ import GalleryImage from "../../components/GalleryImage.astro";
 import PhotoViewer from "../../components/PhotoViewer.astro";
 import ProjectCTA from "../../components/ProjectCTA.astro";
 import projects from "../../data/projects.json";
-const heroProject = projects.find((project) => project.id === "cayman")!;
+const english = Astro.url.pathname.startsWith("/en/");
+const featuredIds = ["changzhou", "cayman", "brisbane"];
+const featured = featuredIds.map((id) =>
+  projects.find((project) => project.id === id)!,
+);
 const filters = [
   { id: "all", name: "全部项目" },
   { id: "domestic", name: "中国项目" },
@@ -21,13 +25,6 @@ const filters = [
 >
   <div class="page-editorial">
     <section class="cases-hero" aria-labelledby="cases-title">
-      <EditorialImage
-        base={heroProject.base}
-        class="cases-hero-photo"
-        alt={heroProject.name}
-        eager
-        sizes="100vw"
-      />
       <div class="cases-hero-copy ed-wrap">
         <h1 id="cases-title">
           <span>空间，</span>
@@ -40,6 +37,25 @@ const filters = [
           <br />
           记录从工厂到现场的探索。
         </p>
+      </div>
+      <div class="cases-hero-gallery">
+        {featured.map((project, index) => (
+          <EditorialImage
+            base={project.base}
+            alt={project.name}
+            class={
+              index === 1
+                ? "cases-hero-photo cases-hero-main"
+                : "cases-hero-photo"
+            }
+            eager={index === 1}
+            sizes={
+              index === 1
+                ? "(max-width: 767px) 92vw, 48vw"
+                : "(max-width: 767px) 46vw, 24vw"
+            }
+          />
+        ))}
       </div>
     </section>
     <div class="cases-controls ed-wrap">
@@ -65,7 +81,7 @@ const filters = [
         显示 {projects.length} 个项目
       </p>
     </div>
-    <div class="case-grid ed-wrap">
+    <div class="case-grid cases-list ed-wrap">
       {projects.map((p, i) => (
         <article class="case-project" id={p.id} data-case-region={p.region}>
           <div class="project-lead">
@@ -76,7 +92,7 @@ const filters = [
               group={p.id}
               caption={`${p.name} / ${p.year} / ${p.era}`}
               eager={i < 2}
-              sizes="(max-width: 767px) 100vw, 50vw"
+              sizes="(max-width: 767px) 92vw, 44vw"
             />
           </div>
           <div class="case-project-head">
@@ -86,46 +102,52 @@ const filters = [
             <h2>{p.name}</h2>
             <p class="project-location">{p.location}</p>
           </div>
-          <dl class="project-facts">
-            <div>
-              <dt>项目面积</dt>
-              <dd>{p.area}</dd>
+          <details class="case-details">
+            <summary>
+              <span>{english ? "Project details" : "查看项目详情"}</span>
+              <span aria-hidden="true" class="case-details-icon"></span>
+            </summary>
+            <dl class="project-facts">
+              <div>
+                <dt>项目面积</dt>
+                <dd>{p.area}</dd>
+              </div>
+              <div>
+                <dt>工期</dt>
+                <dd>{p.duration}</dd>
+              </div>
+              <div>
+                <dt>完工状态</dt>
+                <dd>{p.status}</dd>
+              </div>
+              <div>
+                <dt>建造方式</dt>
+                <dd>{p.method}</dd>
+              </div>
+            </dl>
+            <p class="project-description">
+              <span class="eyebrow">交付范围</span>
+              <br />
+              {p.scope}
+            </p>
+            <div class="project-photos" aria-label={`${p.name}的现场照片`}>
+              {p.gallery.map((photo) => (
+                <GalleryImage
+                  fit="contain"
+                  base={photo.base}
+                  alt={photo.caption}
+                  group={p.id}
+                  sizes="(max-width: 767px) 25vw, 12vw"
+                />
+              ))}
             </div>
-            <div>
-              <dt>工期</dt>
-              <dd>{p.duration}</dd>
-            </div>
-            <div>
-              <dt>完工状态</dt>
-              <dd>{p.status}</dd>
-            </div>
-            <div>
-              <dt>建造方式</dt>
-              <dd>{p.method}</dd>
-            </div>
-          </dl>
-          <p class="project-description">
-            <span class="eyebrow">交付范围</span>
-            <br />
-            {p.scope}
-          </p>
-          <div class="project-photos" aria-label={`${p.name}的现场照片`}>
-            {p.gallery.map((photo) => (
-              <GalleryImage
-                fit="contain"
-                base={photo.base}
-                alt={photo.caption}
-                group={p.id}
-                sizes="(max-width: 767px) 25vw, 12vw"
-              />
-            ))}
-          </div>
-          <a
-            class="action action-secondary"
-            href={`/zh/contact/?project=${p.id}`}
-          >
-            咨询类似项目
-          </a>
+            <a
+              class="action action-secondary"
+              href={`/zh/contact/?project=${p.id}`}
+            >
+              咨询类似项目
+            </a>
+          </details>
         </article>
       ))}
     </div>
@@ -137,39 +159,65 @@ const filters = [
   </div>
 </BaseLayout>
 
+<script>
+  function openLinkedProject() {
+    const project = document.getElementById(location.hash.slice(1));
+    const details = project?.querySelector<HTMLDetailsElement>(".case-details");
+    if (details) details.open = true;
+  }
+
+  openLinkedProject();
+  window.addEventListener("hashchange", openLinkedProject);
+</script>
+
 <style>
   .cases-hero {
     margin-top: var(--gnb-h);
-    background: var(--paper);
-  }
-
-  .cases-hero :global(.cases-hero-photo) {
-    aspect-ratio: 2.45;
-    height: auto;
-    max-height: min(64svh, 650px);
-  }
-
-  .cases-hero :global(.cases-hero-photo img) {
-    display: block;
-    object-position: center 52%;
+    padding-block: clamp(26px, 3.7vw, 58px) clamp(26px, 3vw, 48px);
+    background: var(--paper-deep);
   }
 
   .cases-hero-copy {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
-    align-items: center;
-    gap: clamp(20px, 5vw, 84px);
-    padding-block: clamp(26px, 3.4vw, 60px) 20px;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+    align-items: end;
+    gap: clamp(12px, 4vw, 60px);
+    margin-bottom: clamp(20px, 3vw, 42px);
+  }
+
+  .cases-hero-gallery {
+    width: min(100% - 2 * var(--ed-gutter), 1680px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.75fr) minmax(0, 0.8fr);
+    align-items: start;
+    gap: clamp(10px, 1.4vw, 24px);
+  }
+
+  .cases-hero-gallery :global(.cases-hero-photo) {
+    aspect-ratio: 1.2;
+    height: auto;
+  }
+
+  .cases-hero-gallery :global(.cases-hero-main) {
+    aspect-ratio: 1.65;
+  }
+
+  .cases-hero-gallery :global(.cases-hero-photo:last-child) {
+    align-self: end;
+  }
+
+  .cases-hero-gallery :global(img) {
+    display: block;
   }
 
   .cases-hero h1 {
     margin: 0;
     color: var(--charcoal);
-    font-size: clamp(31px, 4vw, 60px);
+    font-size: clamp(30px, 4vw, 60px);
     font-weight: 400;
     line-height: 1.15;
     letter-spacing: -0.035em;
-    text-wrap: balance;
   }
 
   .cases-hero h1 span {
@@ -179,26 +227,94 @@ const filters = [
   .cases-hero p {
     margin: 0;
     color: var(--ink-body);
-    font-size: clamp(15px, 1.15vw, 18px);
-    line-height: 1.7;
+    font-size: 16px;
+    line-height: 1.65;
   }
 
   .cases-controls {
-    padding-block: 12px clamp(24px, 3vw, 44px);
+    padding-block: clamp(14px, 2vw, 28px);
   }
 
   .cases-controls .case-filter {
     margin: 0;
   }
 
-  @media (max-width: 767px) {
-    .cases-hero :global(.cases-hero-photo) {
-      aspect-ratio: 1.65;
-    }
+  .cases-list {
+    align-items: start;
+    row-gap: clamp(32px, 4vw, 64px);
+  }
 
+  .cases-list .case-project {
+    scroll-margin-top: calc(var(--gnb-h) + 16px);
+  }
+
+  .cases-list .case-project-head {
+    margin: 15px 0 10px;
+  }
+
+  .cases-list .case-project-head h2 {
+    font-size: clamp(21px, 2vw, 28px);
+    line-height: 1.35;
+  }
+
+  .cases-list .case-project-head .eyebrow {
+    margin-bottom: 5px;
+  }
+
+  .case-details summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    gap: 16px;
+    padding-block: 8px;
+    border-top: 1px solid var(--hairline);
+    color: var(--charcoal);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .case-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .case-details-icon {
+    position: relative;
+    flex: 0 0 16px;
+    height: 16px;
+  }
+
+  .case-details-icon::before,
+  .case-details-icon::after {
+    content: "";
+    position: absolute;
+    inset: 7px 1px auto;
+    border-top: 1px solid currentColor;
+  }
+
+  .case-details-icon::after {
+    transform: rotate(90deg);
+  }
+
+  .case-details[open] .case-details-icon::after {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
     .cases-hero-copy {
       grid-template-columns: minmax(0, 1fr);
-      gap: 12px;
+    }
+
+    .cases-hero-gallery {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cases-hero-gallery :global(.cases-hero-main) {
+      grid-area: 1 / 1 / 2 / -1;
+    }
+
+    .cases-hero-gallery :global(.cases-hero-photo:not(.cases-hero-main)) {
+      aspect-ratio: 1.55;
     }
   }
 </style>
