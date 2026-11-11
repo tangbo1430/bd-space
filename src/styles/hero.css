@@ -340,30 +340,6 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   .editorial-hero .hero-scenes {
     width: 220px;
   }
-  /* Product captions are longer than the home slogan. Keep the paragraph at
-     reading width instead of squeezing it beside the action on a phone. */
-  .banda-editorial .catalog-hero {
-    grid-template-areas: "title title" "subtitle subtitle" "action action" "photo photo" "controls controls";
-  }
-  .catalog-hero .h-hero-sub {
-    margin: 0 24px 20px;
-    max-width: none;
-    white-space: pre-line;
-    text-wrap: pretty;
-  }
-  .catalog-hero .hero-action {
-    justify-self: start;
-    margin: 0 24px 24px;
-  }
-  html[lang="en"] .catalog-hero .hero-intro h1 {
-    font-size: clamp(26px, 7.5vw, 30px);
-  }
-  html[lang="en"]
-    .catalog-hero:has(.hero-scene.on[data-dot="3"])
-    .hero-intro
-    h1 {
-    font-size: clamp(24px, 7.5vw, 30px);
-  }
 }
 @media (min-width: 1280px) {
   /* Use the same immersive height on all desktop aspect ratios. The cap on
@@ -403,10 +379,16 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   .catalog-hero:has(.hero-scene.on[data-dot="0"]) .hero-content {
     width: clamp(300px, 25vw, 380px);
   }
+  .catalog-hero:has(.hero-scene.on[data-dot="0"]) .hero-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(7 18 18 / 65%), transparent 35%);
+    mask-image: linear-gradient(transparent 8%, #000 25% 70%, transparent 94%);
+    pointer-events: none;
+  }
   .catalog-hero:has(.hero-scene.on[data-dot="0"]) .h-hero-sub {
-    max-width: clamp(12em, 16vw, 15em);
-    white-space: normal;
-    text-wrap: balance;
+    max-width: 15em;
   }
   .catalog-hero .hero-intro h1,
   html[lang="en"] .catalog-hero .hero-intro h1 {
@@ -414,10 +396,6 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     font-size: clamp(40px, 2.9vw, 60px);
     line-height: 1.2;
     letter-spacing: -0.025em;
-  }
-  .catalog-hero .h-hero-sub {
-    white-space: pre-line;
-    margin-top: 16px;
   }
   .editorial-hero .h-hero-sub {
     font-size: clamp(18px, 1vw, 20px);
@@ -453,8 +431,8 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   /* Both side views need a clear sky margin between the copy and the eaves. */
   .catalog-hero:has(.hero-scene.on:is([data-dot="1"], [data-dot="2"]))
     .hero-content {
-    width: min(480px, 21.5vw);
-    margin-inline-end: clamp(24px, 3vw, 80px);
+    width: clamp(272px, 23vw, 480px);
+    margin-inline-end: clamp(16px, 2vw, 48px);
   }
   html[lang="en"] .editorial-hero[data-copy-layout="low"] .h-hero-sub {
     max-width: 19ch;
@@ -493,5 +471,125 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
 @media (prefers-reduced-motion: reduce) {
   .editorial-hero .slide {
     transition: none;
+  }
+}
+
+.catalog-hero .hero-intro h1 {
+  letter-spacing: -0.02em;
+  text-wrap: wrap;
+}
+
+.catalog-hero .h-hero-sub {
+  margin-top: 12px;
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.55;
+  white-space: pre-line;
+  text-wrap: wrap;
+}
+
+.catalog-hero-credit {
+  margin: 7px 0 0;
+  font-size: clamp(13px, 0.9vw, 15px);
+  line-height: 1.5;
+}
+
+@media (min-width: 1280px) {
+  .catalog-hero:has(.hero-scene.on[data-dot="1"]) .hero-content {
+    top: max(calc(var(--gnb-h) + 20px), 15%);
+  }
+
+  .catalog-hero:has(.hero-scene.on:is([data-dot="1"], [data-dot="2"]))
+    .hero-intro
+    h1 {
+    font-size: clamp(23px, 1.72vw, 34px);
+  }
+
+  html[lang="zh-CN"]
+    .catalog-hero:has(.hero-scene.on[data-dot="2"])
+    .hero-intro
+    h1 {
+    font-size: clamp(27px, 2vw, 40px);
+  }
+}
+
+/* Keep catalog captions on the photograph at tablet and phone widths. */
+@media (max-width: 1279px) {
+  .banda-editorial .catalog-hero {
+    --action-fill: #f9faf8;
+    --action-ink: #142c34;
+    --action-hover: #e8ede8;
+    --action-pressed: #d9e1da;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "photo";
+    color: #fff;
+  }
+
+  .catalog-hero .hero-stage {
+    min-height: clamp(460px, 70svh, 640px);
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .banda-editorial .catalog-hero .hero-stage .slide > .editorial-image,
+  .banda-editorial .catalog-hero .hero-stage .slide .editorial-image img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .catalog-hero .hero-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      rgb(7 18 18 / 92%),
+      rgb(7 18 18 / 65%) 34%,
+      transparent 76%
+    );
+    pointer-events: none;
+  }
+
+  .catalog-hero .hero-content {
+    display: block;
+    top: auto;
+    width: min(calc(100% - 2 * var(--hero-gutter)), 540px);
+    align-self: end;
+    margin: 28px var(--hero-gutter) 64px;
+  }
+
+  .catalog-hero .hero-intro,
+  .catalog-hero .h-hero-copy {
+    display: block;
+    padding: 0;
+  }
+
+  .catalog-hero .hero-intro h1,
+  html[lang="en"] .catalog-hero .hero-intro h1 {
+    margin: 0;
+    max-width: none;
+    font-size: clamp(23px, 5.6vw, 36px);
+    line-height: 1.2;
+  }
+
+  .catalog-hero .h-hero-sub {
+    max-width: none;
+    margin: 8px 0 0;
+    color: inherit;
+    font-size: clamp(14px, 1.8vw, 16px);
+    line-height: 1.5;
+    white-space: pre-line;
+  }
+
+  .catalog-hero .hero-action {
+    margin: 14px 0 0;
+    justify-self: start;
+    padding: 0;
+  }
+
+  .catalog-hero .hero-controls {
+    grid-area: photo;
+    align-self: end;
+    color: #fff;
+    margin-bottom: 8px;
   }
 }

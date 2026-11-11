@@ -1,8 +1,3 @@
-export const introductionCopy = {
-  zh: {understanding:'理解', lead:'房子，是安心之所，是灵魂港湾。', rest:'是累了一天之后，让身心慢慢疗养的地方。', statements:['温馨舒适，是它应有的温度。','抚慰心灵，是它存在的意义。','以人为本，是它从始至终的理念。'], end:'它盛放的不只是生活，更是人世间最柔软的归处。', definition:'定义', method:'前沿工法反向定义产品形态', ideas:['我们超级有个性，所以我们的产品也必将与众不同。','除了颜值，我们更多的思考：'], signature:'Design by manufacture.'},
-  en: {understanding:'Understanding', lead:'A home is a place of reassurance, a harbour for the soul.', rest:'A place to restore body and mind after a long day.', statements:['Warmth and comfort give it its character.','Peace of mind gives it its meaning.','People remain at the heart of its design.'], end:'It holds more than everyday life: it is a place of belonging.', definition:'Definition', method:'Construction methods shape the product.', ideas:['Our distinctive character shapes distinctive homes.','Beyond appearance, we think about how a home is made.'], signature:'Design by manufacture.'}
-};
-
 export const catalogEveningCopy = {
   zh: {
     opening: '当标准化遇上晚霞，模块化住宅便有了人的温度。',

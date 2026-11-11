@@ -4,37 +4,55 @@ import EditorialImage from "../../../components/EditorialImage.astro";
 import HeroCarousel from "../../../components/HeroCarousel.astro";
 import { getListedProducts } from "../../../lib/catalog";
 import ProductComparison from "../../../components/ProductComparison.astro";
-import ProductIntroduction from "../../../components/ProductIntroduction.astro";
+import { catalogEveningCopy } from "../../../data/about-revision";
 import { translate } from "../../../lib/translate";
 const products = await getListedProducts();
 const english = Astro.url.pathname.startsWith("/en/");
 const local = (value: string) => (english ? translate(value) : value);
+const evening = catalogEveningCopy[english ? "en" : "zh"];
+const eveningHeading = evening.opening.replace(
+  english ? ", " : "，",
+  english ? ",\n" : "，\n",
+);
 const photoNotes = ["暮色中的住宅", "夕阳与屋檐", "屋檐下的光", "天际与立面"];
 const photoHeadings = english
   ? [
       "Prefabricated walls.\nStandardised beams.",
-      "Evening light.",
-      "The door opens.\nLife begins.",
+      eveningHeading,
+      "The door opens.\nIndustrialisation ends, and living begins.",
       "A line drawn in the factory.\nA poem written in light.",
     ]
   : [
       "墙是预制的，\n梁是标准化的，",
-      "住宅与夕照。",
-      "一推一开之间，",
+      eveningHeading,
+      "一推一开之间，\n工业化结束，生活开始。",
       "直线是工厂的尺，\n光线是生活的诗。",
     ];
 const photoCopy = english
   ? [
-      "But when the lights come on, it becomes home.\n— A real space. BD-4S, photographed.",
-      "BD-4S · Photography",
-      "Industrialisation ends, and living begins.\nThe evening sky falls behind you;\nlife welcomes you in.",
-      "As the sunset follows the eaves,\na standardised roof takes on a human story.\n— BD-4S. Light beneath the eaves.",
+      "But when the lights come on, it becomes home.",
+      evening.detail,
+      "The evening sky falls behind you;\nlife welcomes you in.",
+      "As the sunset follows the eaves,\na standardised roof takes on a human story.",
     ]
   : [
-      "但灯亮起的那一刻，它就是家。\n—— 真实的空间，半打 4S 实拍。",
-      "半打 4S · 实拍",
-      "工业化结束，生活开始。\n天地晚霞，都退到身后，\n只有生活，迎面走来。",
-      "当夕照沿着屋檐落下，\n标准化的屋顶，便有了人的故事。\n—— 半打 4S，屋檐下的光影。",
+      "但灯亮起的那一刻，它就是家。",
+      evening.detail.replace("，", "，\n"),
+      "天地晚霞，都退到身后，\n只有生活，迎面走来。",
+      "当夕照沿着屋檐落下，\n标准化的屋顶，便有了人的故事。",
+    ];
+const photoCredits = english
+  ? [
+      "— A real space. BD-4S, photographed.",
+      evening.attribution,
+      "",
+      "— BD-4S. Light beneath the eaves.",
+    ]
+  : [
+      "—— 真实的空间，半打 4S 实拍。",
+      evening.attribution,
+      "",
+      "—— 半打 4S，屋檐下的光影。",
     ];
 const slides = photoNotes.map((note, i) => ({
   id: "4s",
@@ -44,6 +62,7 @@ const slides = photoNotes.map((note, i) => ({
   desktopPosition: ["35% 50%", "85% 50%", "85% 50%", "35% 50%"][i],
   heading: photoHeadings[i],
   subtitle: photoCopy[i],
+  credit: photoCredits[i],
   name: "半打 4S 实拍",
   note,
   label: note,
@@ -73,12 +92,14 @@ const slides = photoNotes.map((note, i) => ({
       <div class="h-hero-copy">
         <h1 class="h-title">{photoHeadings[0]}</h1>
         <p class="h-hero-sub">{photoCopy[0]}</p>
+        <p class="catalog-hero-credit" data-carousel-credit>
+          {photoCredits[0]}
+        </p>
       </div>
       <a slot="action" class="action action-primary" href="#collection">
         探索空间产品
       </a>
     </HeroCarousel>
-    <ProductIntroduction />
     <section
       class="product-catalog-section"
       id="collection"

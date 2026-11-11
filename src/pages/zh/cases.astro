@@ -6,10 +6,7 @@ import PhotoViewer from "../../components/PhotoViewer.astro";
 import ProjectCTA from "../../components/ProjectCTA.astro";
 import projects from "../../data/projects.json";
 const english = Astro.url.pathname.startsWith("/en/");
-const featuredIds = ["changzhou", "cayman", "brisbane"];
-const featured = featuredIds.map((id) =>
-  projects.find((project) => project.id === id)!,
-);
+const heroProject = projects.find((project) => project.id === "cayman")!;
 const filters = [
   { id: "all", name: "全部项目" },
   { id: "domestic", name: "中国项目" },
@@ -25,10 +22,16 @@ const filters = [
 >
   <div class="page-editorial">
     <section class="cases-hero" aria-labelledby="cases-title">
+      <EditorialImage
+        base={heroProject.base}
+        alt={heroProject.name}
+        class="cases-hero-photo"
+        eager
+        sizes="100vw"
+      />
       <div class="cases-hero-copy ed-wrap">
         <h1 id="cases-title">
-          <span>空间，</span>
-          <span>在世界发生。</span>
+          {english ? "Spaces, across the world." : "空间，在世界发生。"}
         </h1>
         <p>
           2026年的半打项目，
@@ -37,25 +40,6 @@ const filters = [
           <br />
           记录从工厂到现场的探索。
         </p>
-      </div>
-      <div class="cases-hero-gallery">
-        {featured.map((project, index) => (
-          <EditorialImage
-            base={project.base}
-            alt={project.name}
-            class={
-              index === 1
-                ? "cases-hero-photo cases-hero-main"
-                : "cases-hero-photo"
-            }
-            eager={index === 1}
-            sizes={
-              index === 1
-                ? "(max-width: 767px) 92vw, 48vw"
-                : "(max-width: 767px) 46vw, 24vw"
-            }
-          />
-        ))}
       </div>
     </section>
     <div class="cases-controls ed-wrap">
@@ -172,62 +156,56 @@ const filters = [
 
 <style>
   .cases-hero {
+    display: grid;
+    align-items: end;
+    position: relative;
+    isolation: isolate;
+    min-height: clamp(360px, 52vw, 680px);
     margin-top: var(--gnb-h);
-    padding-block: clamp(26px, 3.7vw, 58px) clamp(26px, 3vw, 48px);
-    background: var(--paper-deep);
+    color: #fff;
+    background: var(--charcoal);
+  }
+
+  .cases-hero :global(.cases-hero-photo) {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    z-index: -2;
+  }
+
+  .cases-hero :global(img) {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cases-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgb(10 19 19 / 85%), transparent 66%);
   }
 
   .cases-hero-copy {
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
-    align-items: end;
-    gap: clamp(12px, 4vw, 60px);
-    margin-bottom: clamp(20px, 3vw, 42px);
-  }
-
-  .cases-hero-gallery {
-    width: min(100% - 2 * var(--ed-gutter), 1680px);
-    margin-inline: auto;
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.75fr) minmax(0, 0.8fr);
-    align-items: start;
-    gap: clamp(10px, 1.4vw, 24px);
-  }
-
-  .cases-hero-gallery :global(.cases-hero-photo) {
-    aspect-ratio: 1.2;
-    height: auto;
-  }
-
-  .cases-hero-gallery :global(.cases-hero-main) {
-    aspect-ratio: 1.65;
-  }
-
-  .cases-hero-gallery :global(.cases-hero-photo:last-child) {
-    align-self: end;
-  }
-
-  .cases-hero-gallery :global(img) {
-    display: block;
+    padding-block: 28px clamp(30px, 4vw, 62px);
   }
 
   .cases-hero h1 {
     margin: 0;
-    color: var(--charcoal);
-    font-size: clamp(30px, 4vw, 60px);
+    color: inherit;
+    font-size: clamp(30px, 4.1vw, 60px);
     font-weight: 400;
     line-height: 1.15;
     letter-spacing: -0.035em;
-  }
-
-  .cases-hero h1 span {
-    display: inline-block;
+    text-wrap: balance;
   }
 
   .cases-hero p {
-    margin: 0;
-    color: var(--ink-body);
-    font-size: 16px;
+    margin: 12px 0 0;
+    color: inherit;
+    font-size: clamp(14px, 1.15vw, 17px);
     line-height: 1.65;
   }
 
@@ -301,20 +279,8 @@ const filters = [
   }
 
   @media (max-width: 767px) {
-    .cases-hero-copy {
-      grid-template-columns: minmax(0, 1fr);
-    }
-
-    .cases-hero-gallery {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .cases-hero-gallery :global(.cases-hero-main) {
-      grid-area: 1 / 1 / 2 / -1;
-    }
-
-    .cases-hero-gallery :global(.cases-hero-photo:not(.cases-hero-main)) {
-      aspect-ratio: 1.55;
+    .cases-hero::before {
+      background: linear-gradient(0deg, rgb(10 19 19 / 89%), transparent 78%);
     }
   }
 </style>
