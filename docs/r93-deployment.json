@@ -1,0 +1,16 @@
+{
+  "release": "r93-preview",
+  "runtimeCommit": "7c2ccd8701983d563b8cb5377a116a2fe49fcfca",
+  "verifiedAtUtc": "2026-11-11T03:07:52.672989+00:00",
+  "url": "http://23.251.34.150:8080/zh/?v=r93-preview",
+  "directory": "/opt/banda-space-preview/releases/r93-7c2ccd8",
+  "retainedBaseline": "/opt/banda-space-preview/releases/r90-ec464e1",
+  "rollback": "sh /opt/banda-space-preview/releases/r93-7c2ccd8/rollback.sh",
+  "serverManifestFiles": 886,
+  "publicHtmlParity": 43,
+  "publicBrowserChecks": "zh/en products, cases, about at 375 and 1440 CSS px; no overflow or script errors; case filters 7/3/10 and founder viewer open/close pass",
+  "githubPushed": false,
+  "deltaSha256": "dd7f6e5826bafbcebd61b69738b6b05788cd81efdbd2a87a71542c71b342d5f9",
+  "remaining": "r90 public carousel cold-loading T1 retained; physical devices not tested",
+  "evidence": "artifacts/r93-release"
+}
