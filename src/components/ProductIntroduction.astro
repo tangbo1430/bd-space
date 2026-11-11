@@ -137,18 +137,29 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
     object-fit: contain;
   }
   .intro-definition-head {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
     align-items: baseline;
-    gap: 12px 24px;
-    margin-bottom: 24px;
+    gap: 16px;
+    margin-bottom: 16px;
   }
   .intro-definition-head h2,
   .intro-definition-head p {
     margin: 0;
   }
+  .intro-definition-head h2 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  .intro-definition-head .intro-method {
+    font-size: clamp(20px, 1.55vw, 30px);
+    line-height: 1.35;
+    color: var(--charcoal);
+    text-wrap: pretty;
+  }
   .intro-definition-body > .intro-copy {
-    margin-top: 24px;
+    margin-top: 16px;
   }
   .product-introduction .intro-signature {
     margin: 20px 0 0;
@@ -234,16 +245,11 @@ const evening = catalogEveningCopy[en ? "en" : "zh"];
       margin-bottom: 16px;
     }
     .intro-definition-head {
-      display: block;
-      margin-bottom: 20px;
+      gap: 12px;
     }
     .intro-definition-head h2 {
-      margin-bottom: 8px;
-    }
-    .intro-definition-body > .intro-copy {
-      grid-template-columns: minmax(0, 1fr);
-      gap: 24px;
-      margin-top: 20px;
+      font-size: 15px;
+      margin: 0;
     }
     .product-introduction .intro-signature {
       max-width: none;

@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialImage from "../../components/EditorialImage.astro";
 import GalleryImage from "../../components/GalleryImage.astro";
 import PhotoViewer from "../../components/PhotoViewer.astro";
 import ProjectCTA from "../../components/ProjectCTA.astro";
 import projects from "../../data/projects.json";
+const heroProject = projects.find((project) => project.id === "cayman")!;
 const filters = [
   { id: "all", name: "全部项目" },
   { id: "domestic", name: "中国项目" },
@@ -18,10 +20,10 @@ const filters = [
   headerStyle="solid"
 >
   <div class="page-editorial">
-    <section class="page-opening ed-wrap">
-      <span class="eyebrow">项目与实践</span>
-      <div class="page-heading">
-        <h1>
+    <section class="cases-hero" aria-labelledby="cases-title">
+      <div class="cases-hero-copy">
+        <span class="eyebrow">项目与实践</span>
+        <h1 id="cases-title">
           空间，
           <br />
           在世界发生。
@@ -34,6 +36,15 @@ const filters = [
           记录从工厂到现场的探索。
         </p>
       </div>
+      <EditorialImage
+        base={heroProject.base}
+        class="cases-hero-photo"
+        alt={heroProject.name}
+        eager
+        sizes="(max-width: 767px) 100vw, 65vw"
+      />
+    </section>
+    <div class="cases-controls ed-wrap">
       <div class="case-filter" role="group" aria-label="按项目地区筛选">
         {filters.map((f) => (
           <button
@@ -55,12 +66,13 @@ const filters = [
       <p class="sr-only" data-filter-status role="status">
         显示 {projects.length} 个项目
       </p>
-    </section>
+    </div>
     <div class="case-grid ed-wrap">
       {projects.map((p, i) => (
         <article class="case-project" id={p.id} data-case-region={p.region}>
           <div class="project-lead">
-            <GalleryImage fit="contain"
+            <GalleryImage
+              fit="contain"
               base={p.base}
               alt={`${p.name} · 项目外观`}
               group={p.id}
@@ -101,7 +113,8 @@ const filters = [
           </p>
           <div class="project-photos" aria-label={`${p.name}的现场照片`}>
             {p.gallery.map((photo) => (
-              <GalleryImage fit="contain"
+              <GalleryImage
+                fit="contain"
                 base={photo.base}
                 alt={photo.caption}
                 group={p.id}
@@ -125,3 +138,71 @@ const filters = [
     <PhotoViewer />
   </div>
 </BaseLayout>
+
+<style>
+  .cases-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr);
+    margin-top: var(--gnb-h);
+    background: #222b28;
+    color: #fff;
+  }
+
+  .cases-hero-copy {
+    align-self: center;
+    padding: clamp(32px, 4.2vw, 80px) var(--content-inset);
+  }
+
+  .cases-hero-copy .eyebrow {
+    color: #d8e0db;
+  }
+
+  .cases-hero h1 {
+    margin: 14px 0 20px;
+    color: #fff;
+    font-size: clamp(36px, 3.7vw, 68px);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  .cases-hero p {
+    margin: 0;
+    color: #e5eae7;
+    font-size: clamp(15px, 1.1vw, 19px);
+    line-height: 1.7;
+  }
+
+  .cases-hero :global(.cases-hero-photo) {
+    min-height: 0;
+    aspect-ratio: 1.7;
+    height: 100%;
+  }
+
+  .cases-controls {
+    padding-block: clamp(24px, 3vw, 48px);
+  }
+
+  .cases-controls .case-filter {
+    margin: 0;
+  }
+
+  @media (max-width: 767px) {
+    .cases-hero {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cases-hero :global(.cases-hero-photo) {
+      grid-row: 1;
+      aspect-ratio: 1.55;
+    }
+
+    .cases-hero-copy {
+      padding: 24px var(--content-inset) 28px;
+    }
+
+    .cases-hero h1 {
+      margin: 10px 0 14px;
+    }
+  }
+</style>

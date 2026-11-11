@@ -17,7 +17,7 @@ export const catalogEveningCopy = {
 };
 
 export const aboutRevision = [
- {image:'r82-about-founder', zh:{title:'把人生都 all in。', paragraphs:['就是这个狂人，总想革人家的命，把人生都 all in。']}, en:{title:'A life committed to building.', paragraphs:['A maverick determined to change the way things are done — putting his whole life into it.']}},
+ {image:'founder-huang-kun', zh:{title:'把人生都 all in。', paragraphs:['就是这个狂人，总想革人家的命，把人生都 all in。']}, en:{title:'A life committed to building.', paragraphs:['A maverick determined to change the way things are done — putting his whole life into it.']}},
  {image:'r82-about-ground', zh:{title:'像造车一样造房子。', paragraphs:['以工业化制造的方法，探索房屋建造的新路径。','像造车一样造房子，是无数人的梦想。他死磕这个赛道18年，他，终于成功了。']}, en:{title:'Making homes as we make cars.', paragraphs:['Exploring new ways to build homes through industrial manufacturing.','Making homes as we make cars is a dream shared by many. After eighteen years devoted to this path, he reached his goal.']}},
  {image:'r82-about-wall', zh:{title:'半打墙', paragraphs:['他发明出了一种能够工业化制造的建房系统。','他巧妙地把仿生学用于了建筑——骨＋肉＋皮。由此，他算是找到了工业化制造房子的密钥。','骨的存在，让墙有了灵魂，也有了信任。']}, en:{title:'The Banda wall', paragraphs:['He developed a building system designed for industrial manufacture.','Biomimicry informs its construction: bone, flesh and skin. This became his key to manufacturing homes.','The structural skeleton gives the wall its character and a basis for trust.']}},
  {image:'r82-about-car', second:'r82-about-components', zh:{title:'零件化', paragraphs:['技术核心。','这项技术最大的杀伤力，是能让房子的所有部品部件零件化。']}, en:{title:'Standardised building components', paragraphs:['The technical core.','The strength of this approach is its ability to turn every part of a home into a manufactured component.']}},
