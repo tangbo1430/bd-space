@@ -20,38 +20,35 @@ const locale = english ? "en" : "zh";
   headerStyle="solid"
 >
   <div class="page-editorial">
-    <section
-      class:list={["company-cover", { "company-cover--en": english }]}
-      aria-label={english ? "About Banda" : "关于半打空间"}
-    >
-      {english ? (
-        <>
-          <EditorialImage
-            base="r82-about-cover-house"
-            eager
-            fit="contain"
-            alt="Banda housing system — architectural rendering"
-          />
-          <div class="company-cover-copy">
-            <h1>An industrialised building system for housing.</h1>
-            <p>Semi Six Modular Building Manufacturing (Jiangmen) Co.,Ltd</p>
-          </div>
-        </>
-      ) : (
-        <>
-          <h1 class="sr-only">半打空间，一套可以工业化制造的建房系统。</h1>
-          <GalleryImage
-            base="r82-about-cover"
-            eager
-            fit="contain"
-            group="company-cover"
-            alt="半打空间，一套可以工业化制造的建房系统"
-          />
-          <p class="company-cover-mobile">
-            半打空间，一套可以工业化制造的建房系统。
-          </p>
-        </>
-      )}
+    <section class="company-cover" aria-labelledby="company-title">
+      <div class="company-cover-copy">
+        <p>
+          {english
+            ? "Semi Six Modular Building Manufacturing (Jiangmen) Co., Ltd."
+            : "半打空间"}
+        </p>
+        <h1 id="company-title">
+          {english ? (
+            "An industrialised building system for housing."
+          ) : (
+            <>
+              一套可以<span class="company-title-phrase">工业化制造</span>
+              的建房系统。
+            </>
+          )}
+        </h1>
+      </div>
+      <EditorialImage
+        base="r82-about-cover-house"
+        eager
+        fit="contain"
+        alt={
+          english
+            ? "Banda housing system architectural rendering"
+            : "半打空间建房系统效果图"
+        }
+        sizes="(max-width: 699px) calc(100vw - 40px), 50vw"
+      />
     </section>
     <section
       class="company-revision"
@@ -61,26 +58,28 @@ const locale = english ? "en" : "zh";
       {aboutRevision.map((story, index) => {
         const copy = story[locale];
         const founder = index === 0;
+        const second = "second" in story ? story.second : undefined;
         return (
           <section
             class:list={[
               "company-section",
-              "company-section--" + (index + 1),
-              { "company-section--text": !story.image },
+              {
+                "company-founder": founder,
+                "company-field": index === 1,
+                "company-residential": index === 4 || index === 5,
+                "company-homes": index === 4,
+                "company-drawing": index === 5,
+                "company-definition": index === 6,
+                "company-outlook": !story.image,
+              },
             ]}
             data-source-panel={index + 1}
           >
-            <div class="company-text">
-              <h2>{founder ? (english ? "Huang Kun" : "黄昆") : copy.title}</h2>
-              {copy.paragraphs.map((text) => (
-                <p>{text}</p>
-              ))}
-            </div>
             {story.image && (
-              <div class="company-art">
+              <div class:list={["company-art", { "company-art-pair": second }]}>
                 <GalleryImage
                   base={story.image}
-                  fit="contain"
+                  fit={index === 1 || index === 4 ? "cover" : "contain"}
                   group="company-art"
                   alt={
                     founder
@@ -90,19 +89,29 @@ const locale = english ? "en" : "zh";
                       : copy.title
                   }
                   caption={copy.title}
-                  sizes="(max-width:767px) calc(100vw - 48px), 52vw"
+                  sizes={
+                    founder
+                      ? "(max-width: 699px) calc(100vw - 40px), 40vw"
+                      : index >= 4
+                        ? "(max-width: 699px) calc(100vw - 40px), 48vw"
+                        : "(max-width: 699px) calc(100vw - 40px), (max-width: 1099px) 42vw, 360px"
+                  }
                 />
-                {"second" in story && story.second && (
+                {second && (
                   <GalleryImage
-                    base={story.second}
+                    base={second}
                     fit="contain"
                     group="company-art"
                     alt={english ? "Building components" : "住宅部品分解示意"}
-                    sizes="(max-width:767px) calc(100vw - 48px), 24vw"
+                    sizes="(max-width: 699px) 45vw, 180px"
                   />
                 )}
               </div>
             )}
+            <div class="company-text">
+              <h2>{copy.title}</h2>
+              <p>{copy.body}</p>
+            </div>
           </section>
         );
       })}
@@ -112,73 +121,89 @@ const locale = english ? "en" : "zh";
   </div>
 </BaseLayout>
 <style>
-  .company-cover {
-    width: 100%;
-    margin-top: var(--gnb-h);
-    background: var(--paper);
+  .company-cover,
+  .company-revision {
+    width: min(100% - 2 * var(--ed-gutter), 1160px);
+    margin-inline: auto;
   }
 
-  .company-cover :global(.gallery-link),
+  .company-cover {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 56px);
+    margin-top: var(--gnb-h);
+    padding-block: clamp(28px, 3.8vw, 54px);
+  }
+
+  .company-cover h1 {
+    margin: 8px 0 0;
+    color: var(--charcoal);
+    font-size: clamp(30px, 3.2vw, 46px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .company-title-phrase {
+    white-space: nowrap;
+  }
+
+  .company-cover p,
+  .company-text p {
+    margin: 0;
+    color: var(--ink-body);
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .company-text p {
+    line-height: 1.82;
+  }
+
   .company-cover :global(img) {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  .company-cover--en {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(24px, 5vw, 72px);
-    padding: clamp(28px, 5vw, 80px) var(--content-inset);
-  }
-
-  .company-cover h1,
-  .company-text h2 {
-    margin: 0 0 16px;
-    font-size: clamp(28px, 2.65vw, 44px);
-    font-weight: 400;
-    line-height: 1.18;
-    letter-spacing: -0.03em;
-    text-wrap: balance;
-  }
-
-  .company-cover-copy p,
-  .company-text p {
-    margin: 0 0 12px;
-    max-width: 44ch;
-    color: var(--ink-body);
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  .company-cover-mobile {
-    display: none;
-  }
-
   .company-revision {
-    scroll-margin-top: var(--gnb-h);
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: clamp(22px, 3.2vw, 40px);
+    row-gap: clamp(34px, 4.4vw, 62px);
+    scroll-margin-top: calc(var(--gnb-h) + 12px);
+    margin-bottom: clamp(36px, 4.6vw, 64px);
   }
 
   .company-section {
-    display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    gap: clamp(28px, 5vw, 90px);
-    align-items: center;
-    padding: clamp(36px, 4.8vw, 72px) var(--content-inset);
-  }
-
-  .company-section + .company-section {
-    border-top: 1px solid var(--hairline);
-  }
-
-  .company-text,
-  .company-art {
+    grid-column: span 2;
     min-width: 0;
   }
 
-  .company-text p:last-child {
-    margin-bottom: 0;
+  .company-text h2 {
+    margin: 0 0 10px;
+    font-size: clamp(21px, 2vw, 27px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  .company-art {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    aspect-ratio: 1.62;
+    margin-bottom: 16px;
+    background: var(--paper);
+  }
+
+  .company-art-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    background: var(--paper);
   }
 
   .company-art :global(.gallery-link),
@@ -186,81 +211,146 @@ const locale = english ? "en" : "zh";
   .company-art :global(img) {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .company-section:not(.company-founder) .company-art :global(.gallery-link) {
+    position: relative;
+  }
+
+  .company-section:not(.company-founder)
+    .company-art
+    :global(.editorial-image) {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+
+  .company-section:not(.company-founder)
+    .company-art
+    :global(.editorial-image img) {
+    height: 100%;
   }
 
   .company-art :global(.editorial-image) {
+    aspect-ratio: auto !important;
     background: transparent;
   }
 
-  .company-section--1 {
-    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-    background: var(--paper-deep);
+  .company-art :global(img) {
+    object-fit: contain;
   }
 
-  .company-section--1 .company-art {
-    grid-area: 1 / 1;
+  .company-field .company-art :global(img) {
+    object-fit: cover;
+    object-position: center top;
   }
 
-  .company-section--1 h2 {
-    font-size: clamp(36px, 4vw, 62px);
-  }
-
-  .company-section--1 .company-text p {
-    color: var(--charcoal);
-    font-size: clamp(18px, 1.5vw, 23px);
-    line-height: 1.6;
-  }
-
-  .company-section--2 .company-art,
-  .company-section--6 .company-art {
-    width: min(100%, 230px);
-  }
-
-  .company-section--4 .company-art {
+  .company-residential {
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, clamp(240px, 34%, 360px)) minmax(0, 1fr);
     align-items: center;
-    gap: 16px;
+    gap: clamp(24px, 4vw, 56px);
   }
 
-  .company-section--text {
-    display: block;
-    background: var(--paper-deep);
+  .company-residential .company-text h2 {
+    margin-bottom: clamp(12px, 1.4vw, 20px);
+    font-size: clamp(30px, 3.2vw, 48px);
   }
 
-  .company-section--text .company-text {
+  .company-residential .company-text p {
+    max-width: 620px;
+    font-size: clamp(17px, 1.5vw, 22px);
+    line-height: 1.65;
+  }
+
+  .company-residential .company-art {
+    aspect-ratio: 1;
+    margin: 0;
+  }
+
+  .company-homes .company-art :global(img) {
+    object-fit: cover;
+    object-position: center 58%;
+  }
+
+  .company-drawing .company-art :global(.editorial-image img) {
+    object-fit: cover;
+    object-position: center 56%;
+  }
+
+  .company-definition {
+    grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    column-gap: clamp(28px, 5vw, 90px);
+    grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(18px, 3.4vw, 42px);
   }
 
-  .company-section--text p {
-    grid-column: 2;
+  .company-definition .company-art {
+    aspect-ratio: 2000 / 645;
+    margin: 0;
   }
 
-  .company-section--text h2 {
-    grid-row: 1 / span 5;
+  .company-founder,
+  .company-outlook {
+    grid-column: 1 / -1;
+    background: var(--paper-deep);
+    padding: clamp(18px, 2.5vw, 32px);
   }
 
-  @media (max-width: 767px) {
-    .company-cover--en,
-    .company-section,
-    .company-section--text .company-text {
+  .company-founder {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    padding: 0;
+    gap: clamp(18px, 3vw, 36px);
+  }
+
+  .company-founder .company-text {
+    padding: clamp(16px, 2.5vw, 32px);
+  }
+
+  .company-founder .company-art {
+    margin: 0;
+    aspect-ratio: auto;
+  }
+
+  .company-founder .company-art :global(.gallery-link),
+  .company-founder .company-art :global(.editorial-image),
+  .company-founder .company-art :global(img) {
+    height: auto;
+  }
+
+  .company-founder p,
+  .company-outlook p {
+    max-width: 64ch;
+  }
+
+  @media (max-width: 699px) {
+    .company-cover,
+    .company-revision,
+    .company-founder,
+    .company-residential,
+    .company-definition {
       grid-template-columns: minmax(0, 1fr);
-      gap: 20px;
     }
 
-    .company-cover-mobile {
-      display: block;
-      margin: 0;
-      padding: 18px var(--content-inset);
-      font-size: 20px;
-      line-height: 1.5;
+    .company-cover,
+    .company-founder,
+    .company-residential,
+    .company-definition {
+      gap: 12px;
     }
 
-    .company-section--text .company-text {
-      display: block;
+    .company-section {
+      grid-column: 1 / -1;
+    }
+
+    .company-art {
+      margin-bottom: 12px;
     }
   }
 </style>

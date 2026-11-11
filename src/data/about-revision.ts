@@ -17,13 +17,92 @@ export const catalogEveningCopy = {
 };
 
 export const aboutRevision = [
- {image:'founder-huang-kun', zh:{title:'把人生都 all in。', paragraphs:['就是这个狂人，总想革人家的命，把人生都 all in。']}, en:{title:'A life committed to building.', paragraphs:['A maverick determined to change the way things are done — putting his whole life into it.']}},
- {image:'r82-about-ground', zh:{title:'像造车一样造房子。', paragraphs:['以工业化制造的方法，探索房屋建造的新路径。','像造车一样造房子，是无数人的梦想。他死磕这个赛道18年，他，终于成功了。']}, en:{title:'Making homes as we make cars.', paragraphs:['Exploring new ways to build homes through industrial manufacturing.','Making homes as we make cars is a dream shared by many. After eighteen years devoted to this path, he reached his goal.']}},
- {image:'r82-about-wall', zh:{title:'半打墙', paragraphs:['他发明出了一种能够工业化制造的建房系统。','他巧妙地把仿生学用于了建筑——骨＋肉＋皮。由此，他算是找到了工业化制造房子的密钥。','骨的存在，让墙有了灵魂，也有了信任。']}, en:{title:'The Banda wall', paragraphs:['He developed a building system designed for industrial manufacture.','Biomimicry informs its construction: bone, flesh and skin. This became his key to manufacturing homes.','The structural skeleton gives the wall its character and a basis for trust.']}},
- {image:'r82-about-car', second:'r82-about-components', zh:{title:'零件化', paragraphs:['技术核心。','这项技术最大的杀伤力，是能让房子的所有部品部件零件化。']}, en:{title:'Standardised building components', paragraphs:['The technical core.','The strength of this approach is its ability to turn every part of a home into a manufactured component.']}},
- {image:'r82-about-homes', zh:{title:'Less is more.', paragraphs:['让复杂的建造，回到清晰的结构与部件。','在他的眼里，大道至简。','以更简洁的技术，探索工业化制造房子的可能。']}, en:{title:'Less is more.', paragraphs:['A clearer approach to construction, built around structure and components.','In his view, simplicity is the ultimate principle.','Exploring the possibilities of industrialised home manufacturing through simpler technology.']}},
- {image:'r82-about-understanding', zh:{title:introductionCopy.zh.understanding, paragraphs:[introductionCopy.zh.lead,introductionCopy.zh.rest,...introductionCopy.zh.statements,introductionCopy.zh.end]}, en:{title:introductionCopy.en.understanding, paragraphs:[introductionCopy.en.lead,introductionCopy.en.rest,...introductionCopy.en.statements,introductionCopy.en.end]}},
- {image:'r82-about-definition', zh:{title:'Design by manufacture.', paragraphs:[introductionCopy.zh.definition,introductionCopy.zh.method,...introductionCopy.zh.ideas]}, en:{title:'Design by manufacture.', paragraphs:[introductionCopy.en.definition,introductionCopy.en.method,...introductionCopy.en.ideas]}},
- {zh:{title:'Housing for All.', paragraphs:['业务线。','全球开发房地产——当地地主出地，半打出房子。','用工业化制造的方式，给全球的所有国家，建造大量的社会性保障房。','在全球开设4S店，卖标准化制造的房子产品。','兼济天下。']}, en:{title:'Housing for All.', paragraphs:['Business lines.','Property development around the world: local landowners provide the land, Banda provides the homes.','Using industrial manufacturing to build social housing in countries around the world.','Establishing a global network of 4S stores for standardised manufactured homes.','A commitment to wider access to housing.']}}
+  {
+    "image": "founder-huang-kun",
+    "zh": {
+      "title": "黄昆",
+      "body": "黄昆把多年心力投入工业化建房，想改变造房子的方式。从结构到部件，他沿着这条路持续探索。"
+    },
+    "en": {
+      "title": "Huang Kun",
+      "body": "Huang Kun has devoted years to industrialised construction. His work explores how the structure and components of a home can change the way it is built."
+    }
+  },
+  {
+    "image": "r82-about-ground",
+    "zh": {
+      "title": "像造车一样造房子",
+      "body": "能不能像造车一样造房子？黄昆用十八年探索这条路，把工厂里的标准化制造方法用到住宅建造上。"
+    },
+    "en": {
+      "title": "Making homes like cars",
+      "body": "Could homes be made the way cars are? Huang Kun spent eighteen years exploring how the methods of standardised factory production could be applied to housing."
+    }
+  },
+  {
+    "image": "r82-about-wall",
+    "zh": {
+      "title": "半打墙",
+      "body": "半打墙借用「骨、肉、皮」的思路组织墙体结构。骨架为墙体提供支撑，让墙体成为可在工厂制造的建造部件。"
+    },
+    "en": {
+      "title": "The Banda wall",
+      "body": "Inspired by bone, flesh and skin, the Banda wall uses a structural skeleton for support. The wall is designed as a component that can be made in a factory."
+    }
+  },
+  {
+    "image": "r82-about-car",
+    "second": "r82-about-components",
+    "zh": {
+      "title": "零件化",
+      "body": "把整栋房子拆成可在工厂制造的标准部件，再由部件组合成完整住宅。零件化是这套建房系统的核心。"
+    },
+    "en": {
+      "title": "Building with components",
+      "body": "A house is broken down into standard components that can be made in a factory and assembled into a complete home. This is the basis of the building system."
+    }
+  },
+  {
+    "image": "r82-about-homes",
+    "zh": {
+      "title": "Less is more.",
+      "body": "让复杂的建造回到清晰的结构与部件。用更简洁的工法组织设计与制造，探索住宅工业化生产的可能。"
+    },
+    "en": {
+      "title": "Less is more.",
+      "body": "Complex construction starts with a clear structure and a set of components. Simpler methods help connect design and manufacture, opening up ways to produce homes industrially."
+    }
+  },
+  {
+    "image": "r82-about-understanding",
+    "zh": {
+      "title": "理解",
+      "body": "家是一天结束后安顿身心的地方。我们把人的感受放在设计中心，让住宅有应有的温度、舒适和归属感。"
+    },
+    "en": {
+      "title": "Understanding",
+      "body": "Home is where people can rest and recover after a long day. Warmth, comfort and a sense of belonging are central to how we think about housing."
+    }
+  },
+  {
+    "image": "r82-about-definition",
+    "zh": {
+      "title": "定义",
+      "body": "前沿工法反向定义产品形态。我们在考虑外观的同时，也从部件和制造方式出发设计住宅。Design by manufacture."
+    },
+    "en": {
+      "title": "Definition",
+      "body": "Construction methods shape the product. We consider how a home looks alongside how its components are made and assembled. That is what we mean by design by manufacture."
+    }
+  },
+  {
+    "zh": {
+      "title": "Housing for All.",
+      "body": "与各地土地业主合作开发住宅，用工业化建造拓展保障性住房，并通过 4S 店销售标准化制造的房屋产品。"
+    },
+    "en": {
+      "title": "Housing for All.",
+      "body": "We work with local landowners to develop homes, explore industrial manufacture for social housing and plan to offer standardised homes through a network of 4S stores."
+    }
+  }
 ];
-
