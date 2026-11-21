@@ -7,97 +7,89 @@ export const catalogEveningCopy = {
   en: {
     opening: 'When standardisation meets the evening sky, a modular home takes on a human warmth.',
     detail: 'In the dusk, every industrial detail softens into the feeling of home.',
-    attribution: '— BD-4S, framed by the evening light.',
+    attribution: '— BD 4S, framed by the evening light.',
   },
 };
 
 export const aboutRevision = [
   {
-    "image": "founder-huang-kun",
     "zh": {
       "title": "黄昆",
-      "body": "黄昆把多年心力投入工业化建房，想改变造房子的方式。从结构到部件，他沿着这条路持续探索。"
+      "body": "他把人生都押在一个梦想上，想改变造房子的方式。"
     },
     "en": {
       "title": "Huang Kun",
-      "body": "Huang Kun has devoted years to industrialised construction. His work explores how the structure and components of a home can change the way it is built."
+      "body": "Huang Kun went all in on a different way to build a home."
     }
   },
   {
-    "image": "r82-about-ground",
     "zh": {
       "title": "像造车一样造房子",
-      "body": "能不能像造车一样造房子？黄昆用十八年探索这条路，把工厂里的标准化制造方法用到住宅建造上。"
+      "body": "建筑是人类最大的产业，也是工业化仍待深入的领域。像造车一样造房子，是无数人的梦想。黄昆在这条路上走了十八年。"
     },
     "en": {
       "title": "Making homes like cars",
-      "body": "Could homes be made the way cars are? Huang Kun spent eighteen years exploring how the methods of standardised factory production could be applied to housing."
+      "body": "Building is one of humanity’s largest industries and a frontier for industrial manufacturing. Huang Kun pursued the dream of making homes like cars for 18 years."
     }
   },
   {
-    "image": "r82-about-wall",
     "zh": {
       "title": "半打墙",
-      "body": "半打墙借用「骨、肉、皮」的思路组织墙体结构。骨架为墙体提供支撑，让墙体成为可在工厂制造的建造部件。"
+      "body": "一套可工业化制造的房屋系统。把仿生学用进建筑：骨、肉、皮。我们由此找到了工业化造房的密钥。骨的存在，让墙有了灵魂，也让房子有了底气。"
     },
     "en": {
-      "title": "The Banda wall",
-      "body": "Inspired by bone, flesh and skin, the Banda wall uses a structural skeleton for support. The wall is designed as a component that can be made in a factory."
+      "title": "Banda Wall",
+      "body": "Biomimicry applied to architecture: bone, muscle and skin. This is the key to industrialised home manufacturing. The skeleton gives the wall its soul—and the home its confidence."
     }
   },
   {
-    "image": "r82-about-car",
-    "second": "r82-about-components",
     "zh": {
       "title": "零件化",
-      "body": "把整栋房子拆成可在工厂制造的标准部件，再由部件组合成完整住宅。零件化是这套建房系统的核心。"
+      "body": "这项技术让房子的部品部件都可以零件化，成为标准化制造的建筑部件。"
     },
     "en": {
       "title": "Building with components",
-      "body": "A house is broken down into standard components that can be made in a factory and assembled into a complete home. This is the basis of the building system."
+      "body": "The system makes it possible to manufacture the parts of a house as standardised components."
     }
   },
   {
-    "image": "r82-about-homes",
     "zh": {
       "title": "Less is more.",
-      "body": "让复杂的建造回到清晰的结构与部件。用更简洁的工法组织设计与制造，探索住宅工业化生产的可能。"
+      "body": "当一项技术简单到了极致，就很难再被超越。在黄昆眼里，大道至简是工业化制造房子的关键。"
     },
     "en": {
       "title": "Less is more.",
-      "body": "Complex construction starts with a clear structure and a set of components. Simpler methods help connect design and manufacture, opening up ways to produce homes industrially."
+      "body": "A simple technique is hard to surpass. For Huang Kun, simplicity is what makes industrial production possible."
     }
   },
   {
-    "image": "r82-about-understanding",
     "zh": {
       "title": "理解",
-      "body": "家是一天结束后安顿身心的地方。我们把人的感受放在设计中心，让住宅有应有的温度、舒适和归属感。"
+      "body": "房子，是安心之所，是灵魂港湾。是累了一天之后，让身心慢慢疗养的地方。温馨舒适，是它应有的温度。抚慰心灵，是它存在的意义。以人为本，是它从始至终的理念。它盛放的不只是生活，更是人世间最柔软的归处。"
     },
     "en": {
       "title": "Understanding",
-      "body": "Home is where people can rest and recover after a long day. Warmth, comfort and a sense of belonging are central to how we think about housing."
+      "body": "Home is a place to rest and recover after a long day. It should offer warmth, comfort and care for the people who live there. It is a place to return to."
     }
   },
   {
-    "image": "r82-about-definition",
     "zh": {
       "title": "定义",
-      "body": "前沿工法反向定义产品形态。我们在考虑外观的同时，也从部件和制造方式出发设计住宅。Design by manufacture."
+      "body": "前沿工法反向定义产品形态。我们超级有个性，所以我们的产品也将与众不同。除了颜值，我们更多的思考：Design by manufacture."
     },
     "en": {
       "title": "Definition",
-      "body": "Construction methods shape the product. We consider how a home looks alongside how its components are made and assembled. That is what we mean by design by manufacture."
+      "body": "Construction methods shape the product. Its character comes from the way it is made. There is more to a home than how it looks. Design by manufacture."
     }
   },
   {
     "zh": {
-      "title": "Housing for All.",
-      "body": "与各地土地业主合作开发住宅，用工业化建造拓展保障性住房，并通过 4S 店销售标准化制造的房屋产品。"
+      "title": "兼济天下",
+      "body": "在全球开发房地产，由当地地主出地，半打出房子。以工业化制造的方式建造社会性保障房。在全球开设 4S 店，销售标准化制造的房屋产品。"
     },
     "en": {
-      "title": "Housing for All.",
-      "body": "We work with local landowners to develop homes, explore industrial manufacture for social housing and plan to offer standardised homes through a network of 4S stores."
+      "title": "Housing for All",
+      "body": "Local landowners provide land and Banda supplies homes. Industrial manufacturing can provide social housing for communities around the world. A global network of 4S stores sells standardised homes."
     }
   }
 ];

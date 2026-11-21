@@ -6,7 +6,7 @@ import PhotoViewer from "../../components/PhotoViewer.astro";
 import ProjectCTA from "../../components/ProjectCTA.astro";
 import projects from "../../data/projects.json";
 const english = Astro.url.pathname.startsWith("/en/");
-const heroProject = projects.find((project) => project.id === "cayman")!;
+
 const filters = [
   { id: "all", name: "全部项目" },
   { id: "domestic", name: "中国项目" },
@@ -23,8 +23,8 @@ const filters = [
   <div class="page-editorial">
     <section class="cases-hero" aria-labelledby="cases-title">
       <EditorialImage
-        base={heroProject.base}
-        alt={heroProject.name}
+        base="nov-cases"
+        alt={english ? "Residential buildings at dusk" : "暮色中的住宅建筑群"}
         class="cases-hero-photo"
         eager
         sizes="100vw"
@@ -160,7 +160,7 @@ const filters = [
     align-items: end;
     position: relative;
     isolation: isolate;
-    min-height: clamp(360px, 52vw, 680px);
+    min-height: clamp(285px, 40.6vw, 820px);
     margin-top: var(--gnb-h);
     color: #fff;
     background: var(--charcoal);
@@ -185,7 +185,7 @@ const filters = [
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(0deg, rgb(10 19 19 / 85%), transparent 66%);
+    background: linear-gradient(0deg, rgb(10 19 19 / 79%), transparent 55%);
   }
 
   .cases-hero-copy {
@@ -279,6 +279,19 @@ const filters = [
   }
 
   @media (max-width: 767px) {
+    .cases-hero {
+      min-height: clamp(239px, 61.5vw, 365px);
+    }
+    .cases-hero-copy {
+      padding-block: 32px 16px;
+    }
+    .cases-hero p {
+      max-width: 31em;
+      margin-top: 6px;
+    }
+    .cases-hero p br {
+      display: none;
+    }
     .cases-hero::before {
       background: linear-gradient(0deg, rgb(10 19 19 / 89%), transparent 78%);
     }

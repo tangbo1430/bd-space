@@ -10,17 +10,16 @@ import {
   awards,
   awardProject,
 } from "../../data/credentials";
+import { imageDimensions } from "../../lib/image-dimensions";
 const patentCerts = [
   ...Array.from({ length: 17 }, (_, i) => ({
     base: `r4-patent-${String(i + 1).padStart(2, "0")}`,
     caption: i < 6 ? "发明专利证书" : "实用新型专利证书",
   })),
-  ...patents
-    .slice(-3)
-    .map((p, i) => ({
-      base: `r77-patent-${i + 1}`,
-      caption: `${p.title} · ${p.number}`,
-    })),
+  ...patents.slice(-3).map((p, i) => ({
+    base: `r77-patent-${i + 1}`,
+    caption: `${p.title} · ${p.number}`,
+  })),
 ];
 const awardCerts = [
   { base: "r4-award-1", caption: "广东省土木建筑学会科学技术奖励 · 二等奖" },
@@ -107,6 +106,37 @@ const awardCerts = [
               <p class="evidence-note">
                 结果仅对送检样品负责；具体构造与适用条件需结合原报告核对。
               </p>
+              <ol class="report-pages" aria-label={`${r.title}报告页`}>
+                {Array.from({ length: r.pages }, (_, i) => {
+                  const name = `${r.imagePrefix}-${String(i + 1).padStart(2, "0")}.webp`;
+                  const src = `/assets/reports/${name}`;
+                  const thumb = `/assets/thumbs/${name}`;
+                  const [w, h] = imageDimensions(src);
+                  const caption = `${r.institution} · ${r.title} · 第 ${i + 1} 页`;
+                  return (
+                    <li>
+                      <a
+                        href={src}
+                        data-gallery={r.number}
+                        data-gallery-thumb={thumb}
+                        data-gallery-caption={caption}
+                        data-gallery-width={w}
+                        data-gallery-height={h}
+                        aria-label={caption}
+                      >
+                        <img
+                          src={thumb}
+                          width={w}
+                          height={h}
+                          alt=""
+                          loading="lazy"
+                        />
+                        <span>第 {i + 1} 页</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ol>
             </div>
           </details>
         ))}
@@ -226,3 +256,37 @@ const awardCerts = [
     <PhotoViewer />
   </div>
 </BaseLayout>
+
+<style>
+  .report-pages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(116px, 100%), 1fr));
+    gap: 20px 14px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .report-pages a {
+    display: block;
+    width: min(100%, 144px);
+    color: var(--charcoal);
+    text-decoration: none;
+  }
+  .report-pages a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+  .report-pages img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1.4;
+    object-fit: contain;
+    background: #f4f4f2;
+  }
+  .report-pages span {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+  }
+</style>

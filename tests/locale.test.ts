@@ -37,7 +37,7 @@ describe("published bilingual pages", () => {
   it("translates full gallery phrases without joining English words", () => {
     expect(translate("生活，在空间中展开。")).toBe("Life, unfolding in space.");
     expect(translate("半打 4S · 住宅外观实拍")).toBe(
-      "BD-4S · Home exterior / Photograph",
+      "BD 4S · Home exterior / Photograph",
     );
   });
   it("uses the singular container only for a single-container shipment", () => {

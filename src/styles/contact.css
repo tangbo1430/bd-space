@@ -370,3 +370,11 @@
     transition: none;
   }
 }
+
+.contact-region {
+  display: block;
+  width: 100%;
+  max-width: 590px;
+  height: auto;
+  margin-top: clamp(20px, 3vw, 42px);
+}

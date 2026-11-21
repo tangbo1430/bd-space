@@ -515,6 +515,7 @@ body.banda-editorial {
   align-items: center;
   justify-content: flex-start;
   flex: 1;
+  flex-wrap: wrap;
   gap: 0 clamp(16px, 1.25vw, 24px);
   margin-left: 24px;
   min-width: 0;
@@ -526,9 +527,10 @@ body.banda-editorial {
   min-width: 44px;
   min-height: 44px;
   flex: none;
-  font-size: 14px;
+  font-size: clamp(16px, 1.1vw, 18px);
+  font-weight: 500;
   line-height: 1.5;
-  color: var(--c-body);
+  color: var(--c-ink);
   text-decoration: underline;
   text-decoration-color: transparent;
   text-underline-offset: 6px;
@@ -988,6 +990,7 @@ body.banda-editorial {
     padding-inline: 24px;
     gap: 24px;
     overflow-x: auto;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     scrollbar-width: thin;
     scrollbar-color: #a5aaa6 transparent;

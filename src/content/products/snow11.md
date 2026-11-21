@@ -1,6 +1,6 @@
 ---
 {
-  "name": "诗诺1.1",
+  "name": "诗诺 1.1",
   "enTag": "Snow 1.1",
   "order": 10,
   "listed": true,
@@ -12,11 +12,11 @@
     "住宅",
     "文旅"
   ],
-  "listImageId": "r82-snow11-main",
-  "detailImageId": "r82-snow11-hero",
-  "heroBase": "r82-snow11-hero",
-  "mainBase": "r82-snow11-main",
-  "heroCaption": "诗诺1.1 · 外观 / 方案效果图",
+  "listImageId": "nov-snow-main",
+  "detailImageId": "nov-snow-hero",
+  "heroBase": "nov-snow-hero",
+  "mainBase": "nov-snow-main",
+  "heroCaption": "诗诺 1.1 · 外观 / 方案效果图",
   "params": [
     {
       "label": "建筑面积",
@@ -48,28 +48,28 @@
   "designGallery": [
     {
       "base": "r82-snow11-space-1",
-      "caption": "诗诺1.1 · 外观角度1 / 方案效果图",
+      "caption": "诗诺 1.1 · 外观角度1 / 方案效果图",
       "width": 3000,
       "height": 1915,
       "mobileWidth": 960
     },
     {
       "base": "r82-snow11-space-2",
-      "caption": "诗诺1.1 · 外观角度2 / 方案效果图",
+      "caption": "诗诺 1.1 · 外观角度2 / 方案效果图",
       "width": 3000,
       "height": 1915,
       "mobileWidth": 960
     },
     {
       "base": "r82-snow11-space-3",
-      "caption": "诗诺1.1 · 外观角度3 / 方案效果图",
+      "caption": "诗诺 1.1 · 外观角度3 / 方案效果图",
       "width": 3000,
       "height": 1915,
       "mobileWidth": 960
     },
     {
       "base": "r82-snow11-space-4",
-      "caption": "诗诺1.1 · 外观角度4 / 方案效果图",
+      "caption": "诗诺 1.1 · 外观角度4 / 方案效果图",
       "width": 3000,
       "height": 1913,
       "mobileWidth": 960
@@ -79,14 +79,14 @@
     {
       "src": "/assets/img/r82-snow11-diagram-1.webp",
       "viewerSrc": "/assets/img/r82-snow11-diagram-1.webp",
-      "caption": "诗诺1.1 · 户型平面 / 技术示意",
+      "caption": "诗诺 1.1 · 户型平面 / 技术示意",
       "width": 965,
       "height": 899
     },
     {
       "src": "/assets/img/r88-snow11-diagram-0.webp",
       "viewerSrc": "/assets/img/r88-snow11-diagram-0.webp",
-      "caption": "诗诺1.1 · 首层及二层平面图 / 技术示意",
+      "caption": "诗诺 1.1 · 首层及二层平面图 / 技术示意",
       "width": 3072,
       "height": 2914
     }
@@ -96,11 +96,11 @@
   "gallery": [],
   "filmLabel": "安装示意",
   "filmTitle": "从模块，到住宅。",
-  "filmIntro": "诗诺1.1模块装配过程示意。",
+  "filmIntro": "诗诺 1.1模块装配过程示意。",
   "video": {
-    "src": "/assets/video/r82-snow11.mp4",
-    "poster": "/assets/img/r82-snow11-video-poster.webp",
-    "caption": "诗诺1.1 · 安装动画",
+    "src": "/assets/video/nov-snow-installation.mp4",
+    "poster": "/assets/img/nov-snow-poster.webp",
+    "caption": "诗诺 1.1 · 安装动画",
     "width": 1920,
     "height": 1080
   },

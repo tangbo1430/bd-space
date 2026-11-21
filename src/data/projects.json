@@ -1,7 +1,7 @@
 [
   {
     "id": "jiangmen",
-    "name": "半打4S · 广东江门志特工厂样板",
+    "name": "半打 4S · 广东江门志特工厂样板",
     "location": "中国 · 广东江门",
     "year": 2026,
     "area": "98㎡",
@@ -14,23 +14,23 @@
     "gallery": [
       {
         "base": "project-jiangmen-01",
-        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 01"
+        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 01"
       },
       {
         "base": "project-jiangmen-02",
-        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 02"
+        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 02"
       },
       {
         "base": "project-jiangmen-03",
-        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 03"
+        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 03"
       },
       {
         "base": "project-jiangmen-04",
-        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 04"
+        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 04"
       },
       {
         "base": "project-jiangmen-05",
-        "caption": "半打4S · 广东江门志特工厂样板 / 施工记录 05"
+        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 05"
       }
     ],
     "status": "已竣工",
@@ -38,7 +38,7 @@
   },
   {
     "id": "changzhou",
-    "name": "半打4S · 江苏常州星星充电样板",
+    "name": "半打 4S · 江苏常州星星充电样板",
     "location": "中国 · 江苏常州",
     "year": 2026,
     "area": "98㎡",
@@ -51,23 +51,23 @@
     "gallery": [
       {
         "base": "project-changzhou-01",
-        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 01"
+        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 01"
       },
       {
         "base": "project-changzhou-02",
-        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 02"
+        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 02"
       },
       {
         "base": "project-changzhou-03",
-        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 03"
+        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 03"
       },
       {
         "base": "project-changzhou-04",
-        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 04"
+        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 04"
       },
       {
         "base": "project-changzhou-05",
-        "caption": "半打4S · 江苏常州星星充电样板 / 施工记录 05"
+        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 05"
       }
     ],
     "status": "已竣工",
@@ -226,7 +226,7 @@
     "name": "中山隔离方舱",
     "location": "中国 · 广东中山",
     "year": 2022,
-    "area": "1750㎡",
+    "area": "4483.2㎡",
     "duration": "70天",
     "method": "板拼混凝土模块",
     "description": "由175个板拼混凝土模块组装，回应集中使用的空间需求。",
@@ -263,7 +263,7 @@
     "name": "成都航空学院宿舍",
     "location": "中国 · 成都",
     "year": 2022,
-    "area": "4360㎡",
+    "area": "14700㎡",
     "duration": "60天",
     "method": "混凝土模块组合",
     "description": "由436个模块组装，通过重复与连接形成集中居住空间。",
@@ -300,7 +300,7 @@
     "name": "中建三局深圳营房",
     "location": "中国 · 深圳",
     "year": 2023,
-    "area": "740㎡",
+    "area": "3990.46㎡",
     "duration": "50天",
     "method": "混凝土模块组合",
     "description": "74个混凝土模块，采用简装交付。",
@@ -337,10 +337,10 @@
     "name": "斐济样箱",
     "location": "斐济",
     "year": 2024,
-    "area": "120㎡",
+    "area": "75㎡",
     "duration": "1天",
     "method": "精装混凝土模块",
-    "description": "3个模块，每个40㎡；项目记录了精装修模块的远洋运输与现场组合。",
+    "description": "3个模块，每个25㎡；项目记录了精装修模块的远洋运输与现场组合。",
     "region": "overseas",
     "era": "团队历年实践",
     "base": "project-fiji-cover",
@@ -371,6 +371,6 @@
       }
     ],
     "status": "已竣工",
-    "scope": "3个模块，每个40㎡；项目记录了精装修模块的远洋运输与现场组合。"
+    "scope": "3个模块，每个25㎡；项目记录了精装修模块的远洋运输与现场组合。"
   }
 ]

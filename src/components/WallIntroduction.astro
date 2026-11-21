@@ -4,7 +4,7 @@ import GalleryImage from "./GalleryImage.astro";
 const en = Astro.url.pathname.startsWith("/en/");
 const nodes = en
   ? [
-      "Wall to foundation",
+      "Wall-to-foundation connection",
       "Wall connection 1",
       "Wall connection 2",
       "Wall connection 3",
@@ -17,14 +17,18 @@ const nodes = en
     <header class="wall-heading">
       <h2 id="wall-title">{en ? "The Banda Wall" : "半打墙"}</h2>
       <p class="wall-statement">
-        {en
-          ? "An industrialised building system for housing."
-          : <>一套可以<span class="wall-phrase">工业化制造</span>的建房系统。</>}
+        {en ? (
+          "An industrialised building system for housing."
+        ) : (
+          <>
+            一套可<span class="wall-phrase">工业化制造</span>的房屋系统。
+          </>
+        )}
       </p>
       <p>
         {en
-          ? "Biomimicry applied to architecture: bone, muscle and skin. A key to manufacturing homes through industrial processes."
-          : "把仿生学用于建筑——骨＋肉＋皮。由此，找到了工业化制造房子的密钥。"}
+          ? "Biomimicry applied to architecture: bone, muscle and skin. This is the key to industrialised home manufacturing."
+          : "把仿生学用进建筑：骨、肉、皮。我们由此找到了工业化造房的密钥。"}
       </p>
     </header>
     <figure class="wall-house">
@@ -50,8 +54,8 @@ const nodes = en
       />
       <figcaption>
         {en
-          ? "The skeleton gives the wall its soul—and a foundation for trust."
-          : "骨的存在，让墙有了灵魂，也有了信任。"}
+          ? "The skeleton gives the wall its soul—and the home its confidence."
+          : "骨的存在，让墙有了灵魂，也让房子有了底气。"}
       </figcaption>
     </figure>
   </div>
@@ -59,7 +63,7 @@ const nodes = en
     <h3>{en ? "Connections" : "连接方式"}</h3>
     <p>
       {en
-        ? "Explore each connection in the complete annotated drawing."
+        ? "Explore the four key connections in detail."
         : "从地基到墙体，查看每一处连接的完整节点图。"}
     </p>
   </div>
@@ -68,7 +72,11 @@ const nodes = en
       <figure>
         <GalleryImage
           src={`/assets/img/r79-wall-node-${i}.webp`}
-          previewSrc={`/assets/img/r83-wall-detail-${i}.webp`}
+          previewSrc={
+            i === 0
+              ? "/assets/img/nov-wall-detail-0.webp"
+              : `/assets/img/r83-wall-detail-${i}.webp`
+          }
           fit="contain"
           group="wall-connections"
           alt={en ? `${caption}, detail preview` : `${caption}，构造局部`}
@@ -82,8 +90,8 @@ const nodes = en
     <h3>{en ? "From manufacture to installation" : "从制造，到现场装配"}</h3>
     <p>
       {en
-        ? "Banda Wall in the factory, in transit and on site."
-        : "半打墙的制造、运输与现场实拍。"}
+        ? "Banda Wall manufacture, transport and lifting on site."
+        : "半打墙的制造、运输与现场吊装。"}
     </p>
   </div>
   <div class="wall-photographs">
@@ -150,7 +158,9 @@ const nodes = en
     color: var(--charcoal);
     text-wrap: balance;
   }
-  .wall-phrase { white-space: nowrap; }
+  .wall-phrase {
+    white-space: nowrap;
+  }
   .wall-house {
     grid-area: house;
     align-self: start;
@@ -172,7 +182,13 @@ const nodes = en
     color: var(--ink-body);
   }
   .wall-structure figcaption {
-    text-align: right;
+    padding: 0;
+    max-width: 32em;
+    font-size: clamp(20px, 2vw, 32px);
+    color: var(--charcoal);
+    font-weight: 500;
+    line-height: 1.45;
+    text-wrap: balance;
   }
   .wall-house figcaption {
     font-size: 14px;

@@ -3,7 +3,7 @@
   "name": "灰度空间",
   "enTag": "A quiet point of view",
   "order": 1,
-  "tagline": "简洁的表达，自在的空间。",
+  "tagline": "克制的表达，自在的空间。",
   "description": "简洁的混凝土建筑语言，在住宅与办公之间，为使用者保留想象。",
   "scenes": [
     "住宅",
@@ -43,9 +43,9 @@
       "value": "1个40尺HC集装箱／套"
     }
   ],
-  "listImageId": "v11-grayscale-hero",
-  "detailImageId": "v11-grayscale-hero",
-  "heroBase": "r4-grayscale-hero",
+  "listImageId": "nov-gray-main",
+  "detailImageId": "nov-gray-hero",
+  "heroBase": "nov-gray-hero",
   "gallery": [],
   "specNote": "建筑面积含外墙，不含户外平台；各类面积分别计算，不相加。装运配置供参考，实际方案以项目约定为准。",
   "listed": true,
@@ -53,7 +53,7 @@
   "heroCaption": "灰度空间 · 外观 / 方案效果图",
   "designGallery": [
     {
-      "base": "r4-grayscale-space-1",
+      "base": "nov-gray-courtyard",
       "caption": "灰度空间 · 庭院外观 / 方案效果图",
       "width": 1920,
       "height": 917,
@@ -88,10 +88,10 @@
       "mobileWidth": 960
     },
     {
-      "base": "r4-grayscale-space-6",
+      "base": "nov-gray-main",
       "caption": "灰度空间 · 住宅立面 / 方案效果图",
-      "width": 1920,
-      "height": 917,
+      "width": 2400,
+      "height": 1147,
       "mobileWidth": 960
     }
   ],
@@ -137,7 +137,7 @@
   "diagramLabel": "技术图",
   "diagramIntro": "图示供方案参考，实际尺寸、配置与装运方式以项目约定为准。",
   "featured": true,
-  "mainBase": "r4-main-grayscale",
+  "mainBase": "nov-gray-main",
   "highlights": [
     "单个 40 尺 HC 整柜出海，物流成本优势明显",
     "阁楼拓展空间，小占地实现两房居住",

@@ -43,7 +43,7 @@
 }
 /* Full-width product photographs with information attached to each scene. */
 .h40 .h-products {
-  padding: 0;
+  padding: var(--sec-pad) var(--content-inset) 0;
 }
 .h40 .h-tile-copy h3 a {
   color: inherit;
@@ -71,14 +71,14 @@
 }
 /* Paired catalogue previews share a frame; the full images remain in details. */
 @media (min-width: 768px) {
-  .h40 .h-tile:not(:first-child) .h-tile-img {
-    aspect-ratio: 3072 / 1248;
+  .h40 .h-tile .h-tile-img {
+    aspect-ratio: 2 / 1;
   }
-  .h40 .h-tile:not(:first-child) .h-tile-img picture.editorial-image {
+  .h40 .h-tile .h-tile-img picture.editorial-image {
     width: 100%;
     height: 100%;
   }
-  .h40 .h-tile:not(:first-child) .h-tile-img picture.editorial-image img {
+  .h40 .h-tile .h-tile-img picture.editorial-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -233,7 +233,7 @@
 .h40 .h-tiles {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2px;
+  gap: 14px var(--gap);
   background: var(--c-paper);
 }
 .h40 .h-tile {
@@ -254,16 +254,14 @@
 .h40 .h-tile-img {
   order: -1;
 }
-.h40 .h-tile:first-child {
-  grid-column: 1 / -1;
-}
+
 .h40 .h-tile-copy {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas: "title links" "description links";
   align-items: center;
   gap: 6px 24px;
-  padding: 24px var(--content-inset) 28px;
+  padding: 18px 0 30px;
 }
 .h40 .h-tile h3 {
   grid-area: title;
@@ -286,55 +284,7 @@
   align-self: center;
   justify-self: start;
 }
-.h40 .h-collection-footer {
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 var(--content-inset) 16px;
-  background: var(--c-paper);
-  color: var(--c-ink);
-}
-.h40 .h-collection-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: inherit;
-  font-size: 14px;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-  text-decoration-thickness: 1px;
-}
-@media (min-width: 1280px) {
-  .h40 .h-tile:first-child .h-tile-copy {
-    position: absolute;
-    top: clamp(24px, 2.5vw, 64px);
-    left: var(--content-inset);
-    z-index: 1;
-    padding: 0;
-    max-width: 25%;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "title" "description" "links";
-    gap: 12px;
-    color: var(--c-ink);
-    --action-fill: #f5f6f4;
-    --action-ink: #18221e;
-    --action-hover: #e1eee6;
-    --action-pressed: #cfdfd5;
-  }
-  .h40 .h-tile:first-child h3 {
-    font-size: clamp(36px, 3vw, 52px);
-  }
-  .h40 .h-tile:first-child .h-tile-desc {
-    color: var(--c-ink);
-  }
-  .h40 .h-tile:first-child .h-tile-links {
-    margin-top: 8px;
-  }
-}
-@media (min-width: 1280px) and (max-width: 1599px) {
-  .h40 .h-tile:first-child .h-tile-desc span {
-    display: block;
-  }
-}
+
 .h40 .h-center-head {
   display: flex;
   justify-content: space-between;
@@ -497,7 +447,10 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
 }
 .h40 .h-steps {
   display: grid;
-  grid-template-columns: var(--step-columns, 1.243902439fr 1.333333333fr 1.777777778fr);
+  grid-template-columns: var(
+    --step-columns,
+    1.243902439fr 1.333333333fr 1.777777778fr
+  );
   gap: var(--gap);
   margin: 0;
   padding: 0;
@@ -513,11 +466,7 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "title" "description" "links";
     gap: 8px;
-    padding: 24px;
-  }
-  .h40 .h-tile:first-child .h-tile-copy {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas: "title links" "description links";
+    padding: 16px 0 24px;
   }
 }
 @media (max-width: 1023px) {
@@ -560,11 +509,10 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
     grid-template-columns: minmax(0, 1fr);
     gap: 2px;
   }
-  .h40 .h-tile-copy,
-  .h40 .h-tile:first-child .h-tile-copy {
+  .h40 .h-tile-copy {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "title" "description" "links";
-    padding: 20px 24px 24px;
+    padding: 16px 0 24px;
   }
   .h40 .h-tile h3 {
     font-size: 27px;
@@ -592,4 +540,14 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
   .h40 .h-cases-grid {
     grid-template-columns: minmax(0, 1fr);
   }
+}
+
+.h40 .collection-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.h40 .collection-head .h-more {
+  flex-shrink: 0;
 }

@@ -23,7 +23,7 @@ const slides = [
   {
     id: "4s",
     name: "半打 4S",
-    note: "自然之中，安放日常。",
+    note: "工厂造好，现场安家。",
     desktopImage: "/assets/img/r80-home-4s-sky.webp",
     headerTone: "dark" as const,
     brandTone: "dark" as const,
@@ -55,8 +55,8 @@ const slides = [
   {
     id: "grayscale",
     name: "灰度空间",
-    note: "简洁的表达，自在的空间。",
-    desktopImage: "/assets/img/r78-home-grayscale.webp",
+    note: "克制的表达，自在的空间。",
+    desktopImage: "/assets/img/nov-gray-main.webp",
     headerTone: "dark" as const,
     copyTone: "dark" as const,
     copyLayout: "sky" as const,
@@ -66,19 +66,25 @@ const slides = [
   {
     id: "grayscale-eco",
     name: "灰度空间经济款",
-    note: "更轻的配置，完整的日常。",
+    note: "轻量户型，装下完整日常。",
     desktopImage: "/assets/img/r90-home-grayscale-eco.webp",
     headerTone: "dark" as const,
     coverBrandTone: "dark" as const,
   },
 ].map((s) => ({
   ...s,
-  base: ["4s", "grayscale"].includes(s.id)
-    ? `r78-home-${s.id}`
-    : `r4-banner-${s.id}`,
-  mobileImage: ["4s", "grayscale"].includes(s.id)
-    ? `/assets/img/r78-home-${s.id}-m.webp`
-    : `/assets/img/r4-banner-${s.id}-m.webp`,
+  base:
+    s.id === "grayscale"
+      ? "nov-gray-main"
+      : s.id === "4s"
+        ? `r78-home-${s.id}`
+        : `r4-banner-${s.id}`,
+  mobileImage:
+    s.id === "grayscale"
+      ? "/assets/img/nov-gray-main-m.webp"
+      : s.id === "4s"
+        ? `/assets/img/r78-home-${s.id}-m.webp`
+        : `/assets/img/r4-banner-${s.id}-m.webp`,
 }));
 const products = (await getListedProducts()).filter((p) => p.featured);
 const english = Astro.url.pathname.startsWith("/en/");
@@ -87,13 +93,14 @@ const steps = [
     title: "设计，把想法落到细节",
     text: "从场地与使用需求出发，梳理空间、结构与模块之间的关系。",
     base: "r78-design",
-    caption: "半打产品是以混凝土墙体、功能模块的方式组合成一个房屋产品。",
+    caption:
+      "半打产品由混凝土墙体与功能模块组合而成，本身即是一套完整的房屋产品。",
     alt: "半打墙构造示意",
     mobile: true,
   },
   {
     title: "制造，让空间在工厂成形",
-    text: "混凝土构件与空间模块在产线上制作，让建造过程有序展开。",
+    text: "混凝土构件与空间模块在产线上协同制作，让建造过程环环相扣。",
     base: "v11-factory",
     caption: "工厂产线上的混凝土构件",
     alt: "工厂产线上的混凝土构件",
@@ -126,7 +133,7 @@ const steps = [
           {english && " "}
           <span>{english ? "Meets Life." : "回归生活。"}</span>
         </h1>
-        <p class="h-hero-sub">在工厂建造，为生活而生</p>
+        <p class="h-hero-sub">在工厂制造，为生活而生</p>
       </div>
       <a slot="action" class="action action-primary" href="/zh/products/">
         探索产品
@@ -140,35 +147,25 @@ const steps = [
       class="h-sec h-products"
       aria-labelledby="products-heading"
     >
-      <h2 id="products-heading" class="sr-only">
-        {english ? "A Place for Everyday Life." : "为日常，找到一处空间。"}
-      </h2>
+      <header class="h-center-head collection-head">
+        <h2 id="products-heading">
+          {english ? "A Place for Everyday Life." : "为日常，找到一处空间。"}
+        </h2>
+        <a class="h-more" href="/zh/products/#collection">
+          探索全部产品 <Icon name="chevron-right" />
+        </a>
+      </header>
       <div class="h-tiles">
-        {products.map((p, index) => (
+        {products.map((p) => (
           <article class="h-tile rv">
             <div class="h-tile-copy">
               <h3>
                 <a href={`/zh/products/${p.id}/`}>{p.name}</a>
               </h3>
-              <p class="h-tile-desc">
-                {index === 0 ? (
-                  <>
-                    <span>
-                      {english ? "Simple in expression." : "简洁的表达，"}
-                    </span>
-                    {english && " "}
-                    <span>{english ? "Open to life." : "自在的空间。"}</span>
-                  </>
-                ) : (
-                  p.desc
-                )}
-              </p>
+              <p class="h-tile-desc">{p.desc}</p>
               <div class="h-tile-links">
                 <a
-                  class:list={[
-                    "action",
-                    index === 0 ? "action-primary" : "action-secondary",
-                  ]}
+                  class="action action-secondary"
                   href={`/zh/products/${p.id}/`}
                 >
                   查看产品详情
@@ -183,32 +180,23 @@ const steps = [
             >
               <EditorialImage
                 fit="contain"
-                base={p.id === "4s" ? "r78-home-4s" : p.main}
+                base={p.id === "qiyuan" ? "nov-qiyuan" : p.main}
                 alt=""
-                sizes={
-                  p.id === "grayscale"
-                    ? "100vw"
-                    : "(max-width: 767px) 100vw, 50vw"
-                }
+                sizes={"(max-width: 767px) 100vw, 50vw"}
               />
             </a>
           </article>
         ))}
       </div>
-      <div class="h-collection-footer">
-        <a class="h-collection-link" href="/zh/products/#collection">
-          探索全部产品
-        </a>
-      </div>
     </section>
 
     {/* 建造体系：三种方式并列，一目了然 */}
     <SystemsTriptych
-      heading={english ? "Ways to build" : "建造方式"}
+      heading={english ? "Three ways to build" : "建造方式"}
       subheading={
         english
-          ? "Three ways to build, for possibilities around the world."
-          : "用三种建造方式，接住全球市场的所有可能"
+          ? "— three answers to a global market."
+          : "三种解法，应对全球市场的不同需求"
       }
       images={{ panels: "r78-system-panels", hybrid: "r78-system-hybrid" }}
       note={company.intro}
@@ -219,7 +207,7 @@ const steps = [
     <section class="h-sec h-cases" aria-labelledby="cases-heading">
       <div class="h-wrap">
         <header class="h-center-head rv">
-          <h2 id="cases-heading">走向不同的风景</h2>
+          <h2 id="cases-heading">把想象，建成风景</h2>
           <p>从想象到现场，让空间成为真实的日常</p>
         </header>
         <div class="selected-cases h-cases-grid">
@@ -257,7 +245,15 @@ const steps = [
           <h2 id="making-heading">把建造，做成制造</h2>
           <p>让复杂的建造过程，在有序的工序中展开。</p>
         </header>
-        <ol class="h-steps" style={`--step-columns:${steps.map(s => { const [w,h] = imageDimensions(`/assets/img/${s.base}.jpg`); return `minmax(0,${w/h}fr)`; }).join(" ")}`}>
+        <ol
+          class="h-steps"
+          style={`--step-columns:${steps
+            .map((s) => {
+              const [w, h] = imageDimensions(`/assets/img/${s.base}.jpg`);
+              return `minmax(0,${w / h}fr)`;
+            })
+            .join(" ")}`}
+        >
           {steps.map((s, i) => (
             <li class="h-step rv">
               <div class="h-step-img">

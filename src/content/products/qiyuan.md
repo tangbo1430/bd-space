@@ -5,7 +5,7 @@
   "order": 9,
   "listed": true,
   "published": true,
-  "featured": false,
+  "featured": true,
   "tagline": "通透复式，让生活舒展。",
   "description": "独栋双层复式全装配式预制别墅，通透复式格局，空间舒适舒展，适配高品质自住需求。",
   "scenes": [

@@ -44,7 +44,7 @@ if (viewer && typeof viewer.showModal === "function") {
     if (hint)
       hint.textContent = value
         ? ui("方向键移动画面 · TAB 访问控件 · ESC 关闭")
-        : ui("方向键切换图片 · Esc 关闭");
+        : ui("滑动或方向键切换图片 · Esc 关闭");
     requestAnimationFrame(() => {
       mount.scrollLeft = value
         ? Math.max(

@@ -34,7 +34,7 @@ const names = Object.fromEntries([
         <EditorialImage
           base="v11-4s-living-perspective"
           fit="contain"
-          alt="半打4S客厅与阁楼，标准版方案效果图"
+          alt="半打 4S客厅与阁楼，标准版方案效果图"
           eager
           sizes="(max-width: 767px) calc(100vw - 48px), 46vw"
         />
@@ -183,6 +183,22 @@ const names = Object.fromEntries([
           期待与您见面。
         </h2>
         <p>到访前可通过电话确认安排。</p>
+        <img
+          class="contact-region"
+          src={
+            en
+              ? "/assets/img/nov-jiangmen-en.webp"
+              : "/assets/img/nov-jiangmen-zh.webp"
+          }
+          width="1180"
+          height="556"
+          alt={
+            en
+              ? "Jiangmen and neighbouring cities in Guangdong"
+              : "江门与广州、佛山、中山等周边城市的区位关系"
+          }
+          loading="lazy"
+        />
       </div>
       <div class="contact-visit-details">
         <dl class="visit-information">

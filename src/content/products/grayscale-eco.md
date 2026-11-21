@@ -1,9 +1,9 @@
 ---
 {
   "name": "灰度空间经济款",
-  "enTag": "Grey-Space Unit · Economy",
+  "enTag": "Grey-Space Unit Economy",
   "order": 2,
-  "tagline": "更轻的配置，完整的日常。",
+  "tagline": "轻量户型，装下完整日常。",
   "description": "紧凑型模块化单元，单柜即可完成整套海运，适配附属用房、小居所与办公空间。",
   "scenes": [
     "住宅",

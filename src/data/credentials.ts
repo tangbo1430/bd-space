@@ -1,9 +1,11 @@
-/** Historical evidence. Source documents and complete reports are not public downloads. */
+/** Historical evidence with scanned pages from the supplied reports. */
 export const reportOwner = "广东草根民墅房屋制造有限公司";
 export const reports = [
   {
     institution: "Intertek",
     number: "180727006SHF-001",
+    pages: 4,
+    imagePrefix: "report-01",
     date: "2018-09-10",
     title: "导热性能",
     sample: "XPS保温板，300 × 300 × 50mm",
@@ -12,6 +14,8 @@ export const reports = [
   {
     institution: "Intertek",
     number: "180727006SHF-002",
+    pages: 4,
+    imagePrefix: "report-02",
     date: "2018-09-10",
     title: "石棉定性检测",
     sample: "陶粒混凝土，150 × 150 × 150mm",
@@ -20,6 +24,8 @@ export const reports = [
   {
     institution: "Intertek",
     number: "180727006SHF-003",
+    pages: 4,
+    imagePrefix: "report-03",
     date: "2018-09-10",
     title: "水密性能",
     sample: "预制混凝土，600 × 600 × 150mm",
@@ -28,6 +34,8 @@ export const reports = [
   {
     institution: "Intertek",
     number: "180727006SHF-004",
+    pages: 24,
+    imagePrefix: "report-04",
     date: "2018-09-10",
     title: "墙体耐火性能",
     sample: "陶粒轻质混凝土墙体，2680 × 2250 × 150mm",
@@ -36,6 +44,8 @@ export const reports = [
   {
     institution: "Intertek",
     number: "180727006SHF-005",
+    pages: 9,
+    imagePrefix: "report-05",
     date: "2018-09-10",
     title: "空气声隔声性能",
     sample: "预制混凝土构件，450 × 2680 × 150mm",
@@ -44,6 +54,8 @@ export const reports = [
   {
     institution: "SGS",
     number: "GZIN1810052770CM",
+    pages: 3,
+    imagePrefix: "report-06",
     date: "2018-10-12",
     title: "抗压强度",
     sample: "水泥墙板试样，150 × 150 × 150mm",
@@ -52,6 +64,8 @@ export const reports = [
   {
     institution: "SGS",
     number: "GZIN1808044546CM",
+    pages: 3,
+    imagePrefix: "report-07",
     date: "2018-10-19",
     title: "水密性能",
     sample: "水泥墙板，600 × 500 × 150mm",
@@ -60,6 +74,8 @@ export const reports = [
   {
     institution: "SGS",
     number: "CANMLC1819525401",
+    pages: 3,
+    imagePrefix: "report-08",
     date: "2018-09-27",
     title: "石棉定性检测",
     sample: "水泥墙板（Grey stones）",
@@ -68,6 +84,8 @@ export const reports = [
   {
     institution: "SGS",
     number: "GZIN1808044545CM",
+    pages: 12,
+    imagePrefix: "report-09",
     date: "2018-10-25",
     title: "墙板耐火性能",
     sample: "非承重竖向水泥墙板，2690 × 900 × 150mm",
@@ -76,6 +94,8 @@ export const reports = [
   {
     institution: "SGS",
     number: "GZIN1808044544CM",
+    pages: 4,
+    imagePrefix: "report-10",
     date: "2018-11-05",
     title: "空气声隔声性能",
     sample: "水泥墙板（Cement Wall Panels）",
