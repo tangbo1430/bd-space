@@ -85,6 +85,11 @@ const slides = [
         ? `/assets/img/r78-home-${s.id}-m.webp`
         : `/assets/img/r4-banner-${s.id}-m.webp`,
 }));
+const homeProductImages: Record<string, string> = {
+  grayscale: "gray-front",
+  qiyuan: "nov-qiyuan",
+  "4s": "nov-4s",
+};
 const products = (await getListedProducts()).filter((p) => p.featured);
 const english = Astro.url.pathname.startsWith("/en/");
 const steps = [
@@ -179,13 +184,7 @@ const steps = [
             >
               <EditorialImage
                 fit="contain"
-                base={
-                  p.id === "grayscale"
-                    ? "gray-front"
-                    : p.id === "qiyuan"
-                      ? "nov-qiyuan"
-                      : p.main
-                }
+                base={homeProductImages[p.id] ?? p.main}
                 alt=""
                 sizes={
                   p.id === "grayscale"
