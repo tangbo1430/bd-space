@@ -63,8 +63,9 @@ const systems = [
               sizes="(max-width: 767px) 100vw, 33vw"
             />
           </div>
-          <span class="h-system-no">0{i + 1}</span>
-          <h3>{s.title}</h3>
+          <h3>
+            <span class="h-system-no">0{i + 1}</span> {s.title}
+          </h3>
           <p>{s.text}</p>
         </li>
       ))}

@@ -42,54 +42,61 @@ const locale = english ? "en" : "zh";
       id="about-idea"
       aria-label={english ? "Company profile" : "公司介绍"}
     >
-      <details class="profile-transcript">
-        <summary>
-          {english ? "Read the company profile as text" : "阅读公司介绍文字版"}
-        </summary>
-        <div class="profile-reading">
-          {aboutRevision.map((story) => (
-            <section>
-              <h2>{story[locale].title}</h2>
-              <p>{story[locale].body}</p>
-            </section>
-          ))}
-        </div>
-      </details>
-      <div class="profile-plates">
+      <input
+        class="profile-toggle"
+        id="profile-text"
+        type="checkbox"
+        aria-controls="profile-plates"
+      />
+      <label class="profile-toggle-label" for="profile-text">
+        {english ? "Show the text alongside each image" : "显示分段正文"}
+      </label>
+      <div class="profile-plates" id="profile-plates">
         {aboutRevision.map((story, i) => {
-          const file = `nov-profile-${locale}-${i + 1}`;
+          const file =
+            !english && i === 2
+              ? "profile-wall-zh"
+              : `nov-profile-${locale}-${i + 1}`;
           const full = `/assets/img/${file}.webp`;
           const [width, height] = imageDimensions(full);
           return (
-            <a
-              href={full}
-              data-gallery="profile"
-              data-gallery-source={full}
-              data-gallery-width={width}
-              data-gallery-height={height}
-              data-gallery-thumb={`/assets/thumbs/${file}.webp`}
-              data-gallery-caption={story[locale].title}
-              aria-label={
-                english
-                  ? `Enlarge: ${story.en.title}`
-                  : `放大查看：${story.zh.title}`
-              }
-            >
-              <picture>
-                <source
-                  media="(max-width: 650px)"
-                  srcset={`/assets/img/${file}-m.webp`}
-                />
-                <img
-                  src={full}
-                  alt={story[locale].title}
-                  width={width}
-                  height={height}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </a>
+            <figure>
+              <a
+                href={full}
+                data-gallery="profile"
+                data-gallery-source={full}
+                data-gallery-width={width}
+                data-gallery-height={height}
+                data-gallery-thumb={`/assets/thumbs/${file}.webp`}
+                data-gallery-caption={story[locale].title}
+                aria-label={
+                  english
+                    ? `Enlarge: ${story.en.title}`
+                    : `放大查看：${story.zh.title}`
+                }
+              >
+                <picture>
+                  <source
+                    media="(max-width: 650px)"
+                    srcset={`/assets/img/${file}-m.webp`}
+                  />
+                  <img
+                    src={full}
+                    alt={story[locale].title}
+                    width={width}
+                    height={height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </a>
+              <figcaption>
+                <h2>{story[locale].title}</h2>
+                {story[locale].body.split("\n").map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </figcaption>
+            </figure>
           );
         })}
       </div>
@@ -124,30 +131,51 @@ const locale = english ? "en" : "zh";
     outline: 3px solid var(--charcoal);
     outline-offset: -3px;
   }
-  .profile-transcript {
-    padding: 0 var(--ed-gutter);
+  .profile-toggle {
+    margin: 18px 8px 18px var(--ed-gutter);
+    accent-color: var(--charcoal);
   }
-  .profile-transcript summary {
-    width: fit-content;
-    margin-left: auto;
+  .profile-toggle-label {
+    display: inline-block;
     padding-block: 14px;
-    font-size: 14px;
+    font-size: 15px;
     cursor: pointer;
   }
-  .profile-reading {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-    gap: 24px 36px;
-    padding-block: 12px 32px;
+  .profile-plates figure {
+    margin: 0;
   }
-  .profile-reading h2 {
-    font-size: 21px;
-    margin: 0 0 8px;
-    line-height: 1.4;
+  .profile-plates figcaption {
+    display: none;
+    max-width: 70ch;
+    margin-inline: auto;
+    padding: 20px var(--ed-gutter) 38px;
   }
-  .profile-reading p {
+  .profile-toggle:checked ~ .profile-plates figcaption {
+    display: block;
+  }
+  .profile-plates h2 {
+    margin: 0 0 10px;
+    font-size: clamp(21px, 2vw, 28px);
+    line-height: 1.35;
+    font-weight: 500;
+  }
+  .profile-plates p {
     margin: 0;
     font-size: 16px;
     line-height: 1.75;
+    color: var(--ink-body);
+  }
+  .profile-plates p + p {
+    margin-top: 0.55em;
+  }
+  @media (max-width: 767px) {
+    .profile-toggle,
+    .profile-toggle-label {
+      display: none;
+    }
+    .profile-plates figcaption {
+      display: block;
+      padding: 20px clamp(20px, 5vw, 32px) 34px;
+    }
   }
 </style>

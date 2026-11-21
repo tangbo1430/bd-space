@@ -371,11 +371,12 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
   padding-bottom: 0;
 }
 .h40 .h-system-no {
-  font-size: 13px;
-  color: var(--c-signal);
+  display: inline-block;
+  margin-inline-end: .35em;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-body);
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0.08em;
-  display: none;
 }
 .h40 .h-system h3 {
   margin: 8px 0 0;
