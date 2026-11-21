@@ -118,7 +118,7 @@ const nodes = en
 </section>
 <style>
   .wall-introduction {
-    padding: clamp(48px, 4.2vw, 80px) var(--content-inset);
+    padding: clamp(48px, 4.2vw, 80px) var(--content-inset) 0;
     background: var(--paper);
     color: var(--charcoal);
   }
@@ -139,6 +139,7 @@ const nodes = en
   .wall-structure {
     grid-area: structure;
     align-self: center;
+    container-type: inline-size;
   }
   .wall-heading h2 {
     margin: 0 0 24px;
@@ -187,16 +188,33 @@ const nodes = en
     color: var(--ink-body);
   }
   .wall-structure figcaption {
-    padding-top: clamp(10px, 1.2vw, 20px);
-    max-width: 30ch;
-    font-size: clamp(21px, 2.25vw, 36px);
+    position: relative;
+    width: fit-content;
+    max-width: 96%;
+    margin: -11cqi 4% 0 auto;
+    padding: 0;
+    font-size: clamp(20px, 3.7cqi, 34px);
     color: var(--charcoal);
     font-weight: 500;
-    line-height: 1.45;
-    text-wrap: balance;
+    line-height: 1.4;
+    pointer-events: none;
   }
   .wall-structure figcaption span {
-    display: inline-block;
+    display: block;
+  }
+  .wall-structure figcaption:lang(en) {
+    width: min(96%, 27ch);
+    text-wrap: balance;
+  }
+  @container (max-width: 520px) {
+    .wall-structure figcaption {
+      margin-top: -3cqi;
+    }
+  }
+  @container (max-width: 390px) {
+    .wall-structure figcaption:lang(en) {
+      margin-top: 8px;
+    }
   }
   .wall-house figcaption {
     font-size: 14px;
@@ -307,9 +325,6 @@ const nodes = en
     }
     .wall-house {
       max-width: 240px;
-    }
-    .wall-structure figcaption {
-      text-align: left;
     }
     .wall-detail-heading {
       margin-top: 32px;

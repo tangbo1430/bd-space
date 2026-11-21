@@ -43,7 +43,7 @@
 }
 /* Full-width product photographs with information attached to each scene. */
 .h40 .h-products {
-  padding: var(--sec-pad) var(--content-inset) 0;
+  padding: clamp(24px, 2.5vw, 40px) var(--content-inset) 0;
 }
 .h40 .h-tile-copy h3 a {
   color: inherit;
