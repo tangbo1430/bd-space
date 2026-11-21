@@ -53,9 +53,14 @@ const nodes = en
         alt={en ? "Banda Wall structural illustration" : "半打墙构造示意"}
       />
       <figcaption>
-        {en
-          ? "The skeleton gives the wall its soul—and the home its confidence."
-          : "骨的存在，让墙有了灵魂，也让房子有了底气。"}
+        {en ? (
+          "The skeleton gives the wall its soul—and the home its confidence."
+        ) : (
+          <>
+            <span>骨的存在，让墙有了灵魂，</span>
+            <span>也让房子有了底气。</span>
+          </>
+        )}
       </figcaption>
     </figure>
   </div>
@@ -182,13 +187,16 @@ const nodes = en
     color: var(--ink-body);
   }
   .wall-structure figcaption {
-    padding: 0;
-    max-width: 32em;
-    font-size: clamp(20px, 2vw, 32px);
+    padding-top: clamp(10px, 1.2vw, 20px);
+    max-width: 30ch;
+    font-size: clamp(21px, 2.25vw, 36px);
     color: var(--charcoal);
     font-weight: 500;
     line-height: 1.45;
     text-wrap: balance;
+  }
+  .wall-structure figcaption span {
+    display: inline-block;
   }
   .wall-house figcaption {
     font-size: 14px;

@@ -372,7 +372,7 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
 }
 .h40 .h-system-no {
   display: inline-block;
-  margin-inline-end: .35em;
+  margin-inline-end: 0.35em;
   font-size: 15px;
   font-weight: 500;
   color: var(--ink-body);
@@ -551,4 +551,60 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
 }
 .h40 .collection-head .h-more {
   flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .h40 .h-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .h40 .h-tile:first-child {
+    grid-column: 1 / -1;
+  }
+  .h40 .h-tile:first-child .h-tile-img {
+    aspect-ratio: 1557 / 736;
+  }
+  .h40 .h-tile:first-child h3 {
+    font-size: clamp(32px, 2.55vw, 42px);
+  }
+  .h40 .h-tile-copy {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "description" "links";
+    gap: 5px;
+  }
+  .h40 .h-tile:first-child .h-tile-copy {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "title links" "description links";
+  }
+  .h40 .h-tile:not(:first-child) h3 {
+    font-size: clamp(23px, 1.8vw, 30px);
+  }
+}
+@media (max-width: 767px) {
+  .h40 .collection-head {
+    display: grid;
+    gap: 4px;
+    justify-items: start;
+    margin-bottom: 16px;
+  }
+  .h40 .collection-head h2 {
+    font-size: clamp(25px, 6vw, 29px);
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+  .h40 .h-tile-copy {
+    gap: 6px 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "title links" "description description";
+    padding: 12px 0 26px;
+  }
+  .h40 .h-tile-copy h3 {
+    font-size: 24px;
+  }
+  .h40 .h-tile-links {
+    margin: 0;
+    justify-self: end;
+  }
+  .h40 .h-tile-desc {
+    line-height: 1.55;
+  }
 }

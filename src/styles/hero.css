@@ -593,3 +593,23 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     margin-bottom: 8px;
   }
 }
+
+@media (min-width: 1280px) {
+  .home-hero .slide[data-product="grayscale"]::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    mask-image: linear-gradient(180deg, transparent, black 30%, black 85%, transparent);
+    background: linear-gradient(
+      90deg,
+      rgb(8 17 13 / 68%),
+      rgb(8 17 13 / 44%) 22%,
+      transparent 53%
+    );
+    pointer-events: none;
+  }
+  .home-hero:has(.slide.on[data-product="grayscale"]) .hero-content {
+    color: white;
+    width: clamp(275px, 26vw, 430px);
+  }
+}

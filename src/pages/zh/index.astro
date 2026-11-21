@@ -56,12 +56,11 @@ const slides = [
     id: "grayscale",
     name: "灰度空间",
     note: "克制的表达，自在的空间。",
-    desktopImage: "/assets/img/nov-gray-main.webp",
+    desktopImage: "/assets/img/gray-front.webp",
     headerTone: "dark" as const,
-    copyTone: "dark" as const,
-    copyLayout: "sky" as const,
-    copyInk: "photo" as const,
-    copyTop: "max(104px, 7.2vw)",
+    copyTone: "light" as const,
+    copyLayout: "stack" as const,
+    copyTop: "38%",
   },
   {
     id: "grayscale-eco",
@@ -75,13 +74,13 @@ const slides = [
   ...s,
   base:
     s.id === "grayscale"
-      ? "nov-gray-main"
+      ? "gray-front"
       : s.id === "4s"
         ? `r78-home-${s.id}`
         : `r4-banner-${s.id}`,
   mobileImage:
     s.id === "grayscale"
-      ? "/assets/img/nov-gray-main-m.webp"
+      ? "/assets/img/gray-front-m.webp"
       : s.id === "4s"
         ? `/assets/img/r78-home-${s.id}-m.webp`
         : `/assets/img/r4-banner-${s.id}-m.webp`,
@@ -180,9 +179,19 @@ const steps = [
             >
               <EditorialImage
                 fit="contain"
-                base={p.id === "qiyuan" ? "nov-qiyuan" : p.main}
+                base={
+                  p.id === "grayscale"
+                    ? "gray-front"
+                    : p.id === "qiyuan"
+                      ? "nov-qiyuan"
+                      : p.main
+                }
                 alt=""
-                sizes={"(max-width: 767px) 100vw, 50vw"}
+                sizes={
+                  p.id === "grayscale"
+                    ? "100vw"
+                    : "(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                }
               />
             </a>
           </article>
