@@ -132,6 +132,7 @@ const names: Record<string, string> = {
     position: absolute;
     left: clamp(24px, 4.2vw, 80px);
     bottom: 7%;
+    text-shadow: 0 2px 22px rgb(10 14 20 / 0.65);
   }
   .closing-title h2 {
     margin: 0;
@@ -146,6 +147,7 @@ const names: Record<string, string> = {
     margin-top: 8px;
     font-size: 16px;
     line-height: 1.4;
+    opacity: 0.86;
   }
   .closing-panel {
     position: absolute;
@@ -153,6 +155,12 @@ const names: Record<string, string> = {
     right: 4%;
     width: 31%;
     max-width: 680px;
+    padding: 20px 22px;
+    border-radius: 4px;
+    background: rgb(14 20 28 / 0.54);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(255 255 255 / 0.14);
   }
   .closing-note {
     margin: 0 0 16px;
@@ -171,7 +179,16 @@ const names: Record<string, string> = {
   .closing-qr {
     display: block;
     width: min(100%, 128px);
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 3px;
     line-height: 0;
+    transition: transform 240ms var(--vp-ease, ease);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .closing-qr:hover {
+      transform: scale(1.03);
+    }
   }
   .closing-qr img {
     display: block;
@@ -294,6 +311,11 @@ const names: Record<string, string> = {
       width: auto;
       max-width: none;
       padding: 20px 24px 28px;
+      background: transparent;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+      border: 0;
+      border-radius: 0;
     }
     .closing-qr {
       width: 128px;

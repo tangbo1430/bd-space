@@ -132,23 +132,83 @@ const locale = english ? "en" : "zh";
     outline-offset: -3px;
   }
   .profile-toggle {
-    margin: 18px 8px 18px var(--ed-gutter);
-    accent-color: var(--charcoal);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
   .profile-toggle-label {
-    display: inline-block;
-    padding-block: 14px;
-    font-size: 15px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px var(--ed-gutter);
+    padding: 9px 16px;
+    border: 1px solid var(--vp-border-strong, rgb(22 29 26 / 0.18));
+    border-radius: 999px;
+    background: var(--vp-card, #f9f8f5);
+    color: var(--vp-ink, #161d1a);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
     cursor: pointer;
+    user-select: none;
+    transition:
+      border-color 200ms var(--vp-ease, ease),
+      background-color 200ms var(--vp-ease, ease);
+  }
+  .profile-toggle-label::before {
+    content: "";
+    flex: none;
+    width: 34px;
+    height: 18px;
+    border-radius: 999px;
+    background: rgb(22 29 26 / 0.22);
+    transition: background-color 220ms var(--vp-ease, ease);
+  }
+  .profile-toggle-label::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    transform: translate(3px, -50%);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+    transition: transform 220ms var(--vp-ease, ease);
+  }
+  .profile-toggle:checked + .profile-toggle-label {
+    border-color: var(--vp-accent, #007963);
+    background: var(--vp-accent-soft, #e7f3ef);
+  }
+  .profile-toggle:checked + .profile-toggle-label::before {
+    background: var(--vp-accent, #007963);
+  }
+  .profile-toggle:checked + .profile-toggle-label::after {
+    transform: translate(19px, -50%);
+  }
+  .profile-toggle:focus-visible + .profile-toggle-label {
+    outline: 2px solid var(--vp-accent, #007963);
+    outline-offset: 4px;
   }
   .profile-plates figure {
     margin: 0;
   }
   .profile-plates figcaption {
     display: none;
-    max-width: 70ch;
-    margin-inline: auto;
-    padding: 20px var(--ed-gutter) 38px;
+    max-width: 72ch;
+    margin: 16px auto 32px;
+    padding: 20px 24px 22px;
+    background: var(--vp-card, #f9f8f5);
+    border: 1px solid var(--vp-border, rgb(22 29 26 / 0.09));
+    border-left: 3px solid var(--vp-accent, #007963);
+    border-radius: var(--vp-radius, 3px);
   }
   .profile-toggle:checked ~ .profile-plates figcaption {
     display: block;
@@ -175,7 +235,8 @@ const locale = english ? "en" : "zh";
     }
     .profile-plates figcaption {
       display: block;
-      padding: 20px clamp(20px, 5vw, 32px) 34px;
+      margin: 14px 20px 28px;
+      padding: 18px 20px 20px;
     }
   }
 </style>

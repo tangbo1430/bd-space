@@ -260,21 +260,22 @@ const awardCerts = [
 <style>
   .report-pages {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(116px, 100%), 1fr));
-    gap: 20px 14px;
+    grid-template-columns: repeat(auto-fill, minmax(min(126px, 100%), 1fr));
+    gap: 20px 16px;
     margin: 24px 0 0;
     padding: 0;
     list-style: none;
   }
   .report-pages a {
     display: block;
-    width: min(100%, 144px);
+    width: min(100%, 152px);
     color: var(--charcoal);
     text-decoration: none;
+    transition: transform 220ms var(--vp-ease, ease);
   }
   .report-pages a:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
+    outline: 2px solid var(--vp-accent, currentColor);
+    outline-offset: 4px;
   }
   .report-pages img {
     display: block;
@@ -282,11 +283,36 @@ const awardCerts = [
     height: auto;
     aspect-ratio: 1 / 1.4;
     object-fit: contain;
-    background: #f4f4f2;
+    background: #ffffff;
+    border: 1px solid var(--vp-border-strong, rgb(22 29 26 / 0.16));
+    border-radius: 2px;
+    box-shadow:
+      0 1px 3px rgb(22 29 26 / 0.06),
+      0 8px 18px -12px rgb(22 29 26 / 0.18);
+    transition:
+      border-color 200ms var(--vp-ease, ease),
+      box-shadow 220ms var(--vp-ease, ease);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .report-pages a:hover {
+      transform: translateY(-2px);
+    }
+    .report-pages a:hover img {
+      border-color: var(--vp-accent, #007963);
+      box-shadow:
+        0 4px 10px rgb(22 29 26 / 0.08),
+        0 14px 24px -14px rgb(22 29 26 / 0.24);
+    }
+    .report-pages a:hover span {
+      color: var(--vp-accent, #007963);
+    }
   }
   .report-pages span {
     display: block;
-    margin-top: 6px;
-    font-size: 14px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--vp-muted, #5b6660);
+    text-align: center;
+    transition: color 200ms var(--vp-ease, ease);
   }
 </style>

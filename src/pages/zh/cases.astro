@@ -185,7 +185,12 @@ const filters = [
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(0deg, rgb(10 19 19 / 79%), transparent 55%);
+    background: linear-gradient(
+      0deg,
+      rgb(10 19 19 / 84%) 0%,
+      rgb(10 19 19 / 34%) 38%,
+      transparent 68%
+    );
   }
 
   .cases-hero-copy {
@@ -245,11 +250,23 @@ const filters = [
     justify-content: space-between;
     min-height: 44px;
     gap: 16px;
-    padding-block: 8px;
-    border-top: 1px solid var(--hairline);
+    padding: 10px 14px;
+    border-top: 1px solid var(--vp-border, var(--hairline));
+    border-radius: 2px;
+    background: var(--vp-card, #f9f8f5);
     color: var(--charcoal);
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     list-style: none;
+    transition:
+      background-color 200ms var(--vp-ease, ease),
+      color 200ms var(--vp-ease, ease);
+  }
+
+  .case-details summary:hover {
+    background: var(--vp-stone, #f4f3ef);
+    color: var(--vp-accent, #007963);
   }
 
   .case-details summary::-webkit-details-marker {
@@ -267,7 +284,10 @@ const filters = [
     content: "";
     position: absolute;
     inset: 7px 1px auto;
-    border-top: 1px solid currentColor;
+    border-top: 1.5px solid currentColor;
+    transition:
+      transform 220ms var(--vp-ease, ease),
+      opacity 220ms var(--vp-ease, ease);
   }
 
   .case-details-icon::after {
@@ -275,7 +295,8 @@ const filters = [
   }
 
   .case-details[open] .case-details-icon::after {
-    display: none;
+    transform: rotate(0deg);
+    opacity: 0;
   }
 
   @media (max-width: 767px) {

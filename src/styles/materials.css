@@ -475,8 +475,8 @@
 }
 .patent-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 7%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 32px;
 }
 .patent-grid article {
   padding-top: 28px;

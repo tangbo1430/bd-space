@@ -134,6 +134,8 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
     padding: 40px var(--content-inset);
   }
   .comparison-heading {
+    max-width: 1440px;
+    margin-inline: auto;
     display: grid;
     grid-template-columns: minmax(220px, 1fr) minmax(0, 3fr) auto;
     gap: 24px;
@@ -157,18 +159,22 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
   }
   .comparison-content {
     min-width: 0;
+    max-width: 1440px;
+    margin-inline: auto;
   }
   table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
     text-align: left;
+    border: 1px solid var(--vp-border, rgb(22 29 26 / 0.09));
+    border-radius: var(--vp-radius, 3px);
   }
   th,
   td {
     font-weight: 400;
     vertical-align: top;
-    padding: 14px 24px 14px 0;
+    padding: 16px 24px;
     line-height: 1.7;
   }
   th:first-child,
@@ -212,13 +218,34 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
     display: none;
     position: relative;
     width: max-content;
-    min-height: 44px;
+    min-height: 36px;
+    padding: 4px 12px;
     align-items: center;
+    gap: 8px;
     margin-top: 0;
-    font-size: 14px;
-    text-decoration: underline;
-    text-underline-offset: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--vp-ink, #161d1a);
+    background: var(--vp-paper, #fff);
+    border: 1px solid var(--vp-border-strong, rgb(22 29 26 / 0.18));
+    border-radius: var(--vp-radius, 3px);
+    text-decoration: none;
     cursor: pointer;
+    transition:
+      border-color 200ms var(--vp-ease, ease),
+      background-color 200ms var(--vp-ease, ease);
+  }
+  .comparison-picker:hover {
+    border-color: var(--vp-ink, #161d1a);
+  }
+  .comparison-picker::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    opacity: 0.72;
   }
   [data-ready] .comparison-picker {
     display: flex;
