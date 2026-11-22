@@ -647,10 +647,16 @@ body.banda-editorial {
 }
 
 .catalog-feature-image {
+  position: relative;
   display: block;
+  flex: none;
   width: 100%;
   aspect-ratio: 1920 / 917;
   margin: 0;
+}
+.catalog-feature-image > .editorial-image {
+  position: absolute;
+  inset: 0;
 }
 .banda-editorial .catalog-feature-image:focus-visible {
   outline: 2px solid var(--action-focus);
