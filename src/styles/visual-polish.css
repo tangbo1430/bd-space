@@ -374,9 +374,10 @@ body.banda-editorial {
 }
 
 .catalog-heading {
-  max-width: 1440px;
+  max-width: 1920px;
   margin-inline: auto;
-  padding: clamp(36px, 3.6vw, 56px) var(--ed-gutter) 24px;
+  padding: clamp(36px, 3.6vw, 56px) var(--header-gutter, clamp(24px, 4.2vw, 80px))
+    24px;
   gap: 16px 24px;
 }
 
@@ -410,9 +411,9 @@ body.banda-editorial {
 }
 
 .collection-catalog {
-  max-width: 1440px;
+  max-width: 1920px;
   margin-inline: auto;
-  padding: 0 var(--ed-gutter) 16px;
+  padding: 0 var(--header-gutter, clamp(24px, 4.2vw, 80px)) 16px;
   gap: 20px;
 }
 
@@ -634,6 +635,20 @@ body.banda-editorial {
 }
 
 /* ---------- 7. Engineering Cases Cards & Compact Facts ---------- */
+/* Align cases gallery to the full masthead & homepage visual axis so cards and 1920x1200 photos scale generously on wide screens */
+.cases-hero-copy.ed-wrap,
+.cases-controls.ed-wrap,
+.cases-list.ed-wrap,
+.case-source-note.ed-wrap {
+  max-width: 1920px;
+  margin-inline: auto;
+  padding-inline: var(--header-gutter, clamp(24px, 4.2vw, 80px));
+}
+
+.cases-list {
+  gap: clamp(32px, 3vw, 48px) clamp(24px, 2.2vw, 36px);
+}
+
 .cases-controls .case-filter {
   gap: 10px;
 }
@@ -677,20 +692,47 @@ body.banda-editorial {
     box-shadow 320ms var(--vp-ease);
 }
 
+.cases-list .project-lead {
+  overflow: hidden;
+}
+
+.cases-list .project-lead img {
+  transition: transform 760ms var(--vp-ease);
+}
+
 @media (hover: hover) and (pointer: fine) {
   .cases-list .case-project:hover {
     border-color: var(--vp-border-strong);
     box-shadow: var(--vp-shadow-md);
   }
+
+  .cases-list .case-project:hover .project-lead img {
+    transform: scale(1.022);
+  }
 }
 
 .cases-list .case-project-head {
   margin: 0;
-  padding: 20px 24px 16px;
+  padding: 22px 26px 16px;
+}
+
+.cases-list .case-project-head h2 {
+  font-size: clamp(22px, 1.55vw, 30px);
 }
 
 .cases-list .case-details {
-  padding: 0 24px 20px;
+  padding: 0 26px 22px;
+}
+
+.cases-list .project-photos {
+  gap: 12px;
+  margin: 20px 0 18px;
+}
+
+.cases-list .project-photos .gallery-link {
+  flex: 0 0 calc(var(--image-ratio) * 144px);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 /* Compact 2x2 metrics block so expanded drawer stays tight & balanced */
@@ -745,6 +787,10 @@ body.banda-editorial {
 
   .cases-list .project-facts {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cases-list .project-photos .gallery-link {
+    flex: 0 0 calc(var(--image-ratio) * 108px);
   }
 }
 
@@ -1037,6 +1083,7 @@ body.banda-editorial {
   .catalog-feature,
   .catalog-feature-image img,
   .cases-list .case-project,
+  .cases-list .project-lead img,
   .direct-contact .contact-person,
   .direct-contact .wechat-code,
   .editorial-footer .footer-links a {
