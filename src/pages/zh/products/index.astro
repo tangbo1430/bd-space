@@ -154,11 +154,10 @@ const slides = photoNotes.map((note, i) => ({
               aria-label={`探索${p.name}`}
             >
               <EditorialImage
-                fit="contain"
                 base={p.main}
                 alt={p.imageCaption}
                 sizes={
-                  ["4s", "5s", "6s"].includes(p.id)
+                  ["4s", "5s", "6s", "bd11", "qiyuan", "snow11"].includes(p.id)
                     ? "(max-width: 1023px) 100vw, 33.33vw"
                     : "(max-width: 1023px) 100vw, 50vw"
                 }

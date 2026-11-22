@@ -53,6 +53,21 @@
 .product-detail[data-layout="complete"] .pd-film {
   align-items: start;
 }
+.pd-band > .ed-wrap:has(> .pd-film--landscape) {
+  max-width: 2000px;
+  padding-inline: clamp(16px, 2vw, 40px);
+}
+.pd-film--landscape video {
+  object-fit: contain;
+}
+@media (max-width: 767px) {
+  .pd-band > .ed-wrap:has(> .pd-film--landscape) {
+    padding-inline: 0;
+  }
+  .pd-head:has(+ .pd-film--landscape) {
+    padding-inline: var(--ed-gutter);
+  }
+}
 .product-detail[data-layout="complete"] .pd-film-photo > .gallery-link {
   aspect-ratio: auto;
   flex: none;

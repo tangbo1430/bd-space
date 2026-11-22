@@ -649,6 +649,7 @@ body.banda-editorial {
 .catalog-feature-image {
   display: block;
   width: 100%;
+  aspect-ratio: 1920 / 917;
   margin: 0;
 }
 .banda-editorial .catalog-feature-image:focus-visible {
@@ -659,8 +660,8 @@ body.banda-editorial {
 .catalog-feature-image img {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 @media (max-width: 1023px) {
   .collection-catalog {
