@@ -155,8 +155,8 @@
       "height": 1350
     },
     {
-      "src": "/assets/img/r77-eco-packing.webp",
-      "viewerSrc": "/assets/img/r77-eco-packing.webp",
+      "src": "/assets/img/r77-eco-packing-v2.webp",
+      "viewerSrc": "/assets/img/r77-eco-packing-v2.webp",
       "caption": "灰度空间经济款 · 装箱方案 / 技术示意",
       "width": 1001,
       "height": 747
