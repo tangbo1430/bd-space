@@ -110,7 +110,7 @@ const globalDim = dim("/assets/img/about-story-global.webp");
             {english ? (
               <h2 id="story-02" class="about-pioneer-title">
                 <strong class="about-giant">Building</strong>
-                <span>is humanity’s largest industry,</span>
+                <span>is humanity's largest industry,</span>
                 <span>yet industrial manufacturing</span>
                 <span>has barely touched it.</span>
               </h2>
@@ -718,12 +718,9 @@ const globalDim = dim("/assets/img/about-story-global.webp");
   }
 
   /* ---------- 01 · Founder ---------- */
-  .about-band--founder .about-band-inner {
-    padding-left: 0;
-  }
   .about-founder-grid {
     display: grid;
-    grid-template-columns: minmax(280px, 38%) minmax(0, 1fr);
+    grid-template-columns: minmax(300px, 40%) minmax(0, 1fr);
     align-items: center;
     gap: clamp(32px, 5vw, 96px);
     min-height: clamp(580px, 82svh, 880px);
@@ -732,7 +729,8 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     align-self: end;
     display: flex;
     align-items: flex-end;
-    max-width: 580px;
+    max-width: 620px;
+    padding-top: clamp(24px, 3vw, 48px);
   }
   .about-founder-portrait img {
     display: block;
@@ -1121,6 +1119,7 @@ const globalDim = dim("/assets/img/about-story-global.webp");
   .about-simplicity-photos :global(.editorial-image),
   .about-simplicity-photos :global(img) {
     height: 100%;
+    max-height: clamp(460px, 66svh, 760px);
     aspect-ratio: 9 / 16;
     object-fit: cover;
   }
@@ -1368,7 +1367,6 @@ const globalDim = dim("/assets/img/about-story-global.webp");
 
   /* ---------- Tablet & Mobile Responsive ---------- */
   @media (max-width: 1023px) {
-    .about-band--founder .about-band-inner,
     .about-band--understanding .about-band-inner {
       padding-left: var(--header-gutter, 24px);
     }
