@@ -98,11 +98,11 @@
   "filmTitle": "从模块，到住宅。",
   "filmIntro": "诗诺 1.1模块装配过程示意。",
   "video": {
-    "src": "/assets/video/nov-snow-installation.mp4",
-    "poster": "/assets/img/nov-snow-poster.webp",
+    "src": "/assets/video/nov-snow-installation-v2.mp4",
+    "poster": "/assets/img/nov-snow-poster-v2.webp",
     "caption": "诗诺 1.1 · 安装动画",
-    "width": 1920,
-    "height": 1080
+    "width": 2560,
+    "height": 1440
   },
   "diagramRows": [
     1
