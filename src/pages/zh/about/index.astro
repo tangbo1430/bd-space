@@ -1,12 +1,22 @@
 ---
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import EditorialImage from "../../../components/EditorialImage.astro";
-import { imageDimensions } from "../../../lib/image-dimensions";
+import GalleryImage from "../../../components/GalleryImage.astro";
 import PhotoViewer from "../../../components/PhotoViewer.astro";
 import ProjectCTA from "../../../components/ProjectCTA.astro";
-import { aboutRevision } from "../../../data/about-revision";
+import { imageDimensions } from "../../../lib/image-dimensions";
+
 const english = Astro.url.pathname.startsWith("/en/");
-const locale = english ? "en" : "zh";
+
+const dim = (path: string) => {
+  const [w, h] = imageDimensions(path);
+  return { width: w, height: h };
+};
+
+const founderDim = dim("/assets/img/about-story-founder.webp");
+const groundDim = dim("/assets/img/about-story-ground.webp");
+const understandingDim = dim("/assets/img/about-story-understanding.webp");
+const globalDim = dim("/assets/img/about-story-global.webp");
 ---
 
 <BaseLayout
@@ -37,206 +47,1437 @@ const locale = english ? "en" : "zh";
         }
       />
     </section>
-    <section
+
+    <div
       class="company-profile"
       id="about-idea"
       aria-label={english ? "Company profile" : "公司介绍"}
     >
-      <input
-        class="profile-toggle"
-        id="profile-text"
-        type="checkbox"
-        aria-controls="profile-plates"
-      />
-      <label class="profile-toggle-label" for="profile-text">
-        {english ? "Show the text alongside each image" : "显示分段正文"}
-      </label>
-      <div class="profile-plates" id="profile-plates">
-        {aboutRevision.map((story, i) => {
-          const file =
-            !english && i === 2
-              ? "profile-wall-zh"
-              : `nov-profile-${locale}-${i + 1}`;
-          const full = `/assets/img/${file}.webp`;
-          const [width, height] = imageDimensions(full);
-          return (
-            <figure>
-              <a
-                href={full}
-                data-gallery="profile"
-                data-gallery-source={full}
-                data-gallery-width={width}
-                data-gallery-height={height}
-                data-gallery-thumb={`/assets/thumbs/${file}.webp`}
-                data-gallery-caption={story[locale].title}
-                aria-label={
+      {/* 01 · 创始人黄昆 */}
+      <section class="about-band about-band--founder" aria-labelledby="story-01">
+        <div class="about-band-inner about-founder-grid">
+          <div class="about-founder-portrait">
+            <img
+              src="/assets/img/about-story-founder.webp"
+              width={founderDim.width}
+              height={founderDim.height}
+              alt={english ? "Huang Kun, founder of Semi-Six Modular" : "半打空间创始人黄昆"}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+          <div class="about-founder-copy">
+            <span class="about-chapter">
+              {english ? "01 / FOUNDER · HUANG KUN" : "01 / 创始人 · 黄昆"}
+            </span>
+            {english ? (
+              <>
+                <h2 id="story-01" class="about-display-xl">
+                  <span>A man with</span>
+                  <span>a crazy dream.</span>
+                </h2>
+                <p class="about-lead-lg">
+                  Huang Kun went all in on a different way to build a home.
+                </p>
+              </>
+            ) : (
+              <>
+                <h2 id="story-01" class="about-founder-lines">
+                  <span>
+                    就是这个狂<strong class="about-key">人</strong>
+                  </span>
+                  <span>
+                    总想革人家的<strong class="about-key">命</strong>
+                  </span>
+                  <span>
+                    把人生都 all 了 <strong class="about-key-en">in</strong>
+                  </span>
+                </h2>
+                <p class="about-founder-sub">Crazy Man With a Crazy Dream.</p>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* 02 · 像造车一样造房子 */}
+      <section class="about-band about-band--pioneer" aria-labelledby="story-02">
+        <div class="about-band-inner about-pioneer-grid">
+          <div class="about-pioneer-left">
+            <span class="about-chapter">
+              {english ? "02 / THE INDUSTRY" : "02 / 行业探索"}
+            </span>
+            {english ? (
+              <h2 id="story-02" class="about-pioneer-title">
+                <strong class="about-giant">Building</strong>
+                <span>is humanity’s largest industry,</span>
+                <span>yet industrial manufacturing</span>
+                <span>has barely touched it.</span>
+              </h2>
+            ) : (
+              <h2 id="story-02" class="about-pioneer-title">
+                <strong class="about-giant">建筑</strong>
+                <span>
+                  是人类<strong>最大的</strong>产业
+                </span>
+                <span>也是唯一没有被工业开垦的</span>
+                <strong class="about-giant about-giant--end">处女地</strong>
+              </h2>
+            )}
+            <p class="about-pioneer-foot">
+              {english
+                ? "Semi Six Modular Building Manufacturing (Jiangmen) Co.,Ltd · 2026"
+                : "半打空间集成房屋（江门）有限公司 · 2026"}
+            </p>
+          </div>
+
+          <figure class="about-pioneer-media">
+            <img
+              src="/assets/img/about-story-ground.webp"
+              width={groundDim.width}
+              height={groundDim.height}
+              alt={
+                english
+                  ? "Open land waiting for industrialised building"
+                  : "等待工业化开垦的建筑原野"
+              }
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <div class="about-pioneer-right">
+            {english ? (
+              <>
+                <div class="about-pioneer-dream">
+                  <strong>Making homes like cars</strong>
+                  <span>is a dream shared by many.</span>
+                </div>
+                <div class="about-pioneer-rule" aria-hidden="true"></div>
+                <div class="about-pioneer-milestone">
+                  <p>
+                    Huang Kun spent <strong>18 years</strong> pursuing that dream.
+                  </p>
+                  <p>
+                    At last, he <strong>succeeded.</strong>
+                  </p>
+                </div>
+              </>
+            ) : (
+              <>
+                <div class="about-pioneer-dream">
+                  <strong>像造车一样造房子</strong>
+                  <span>是无数人的梦想</span>
+                </div>
+                <div class="about-pioneer-rule" aria-hidden="true"></div>
+                <div class="about-pioneer-milestone">
+                  <p>
+                    他死磕这个赛道 <strong>18年</strong>
+                  </p>
+                  <p>
+                    他，终于 <strong>成功</strong> 了
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* 03 · 半打墙 */}
+      <section class="about-band about-band--wall" aria-labelledby="story-03">
+        <div class="about-band-inner about-wall-grid">
+          <div class="about-wall-visual">
+            <span class="about-chapter">
+              {english ? "03 / BANDA WALL" : "03 / 建房系统"}
+            </span>
+            <p class="about-wall-lead">
+              {english
+                ? "An industrialised building system for housing"
+                : "他发明出了一种能够工业化制造的建房系统"}
+            </p>
+            <h2 id="story-03" class="about-wall-title">
+              {english ? "Banda Wall" : "半打墙"}
+            </h2>
+            <p class="about-wall-en">AN INDUSTRIALISED BUILDING SYSTEM FOR HOUSING</p>
+            <div class="about-wall-figure">
+              <GalleryImage
+                src="/assets/img/about-story-wall.webp"
+                fit="contain"
+                group="profile-story"
+                alt={english ? "Banda Wall structural illustration" : "半打墙构造示意"}
+                caption={
                   english
-                    ? `Enlarge: ${story.en.title}`
-                    : `放大查看：${story.zh.title}`
+                    ? "Banda Wall — Bone, muscle and skin"
+                    : "半打墙 —— 仿生学构造（骨、肉、皮）"
                 }
-              >
-                <picture>
-                  <source
-                    media="(max-width: 650px)"
-                    srcset={`/assets/img/${file}-m.webp`}
-                  />
-                  <img
-                    src={full}
-                    alt={story[locale].title}
-                    width={width}
-                    height={height}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </a>
-              <figcaption>
-                <h2>{story[locale].title}</h2>
-                {story[locale].body.split("\n").map((paragraph) => (
-                  <p>{paragraph}</p>
-                ))}
-              </figcaption>
-            </figure>
-          );
-        })}
-      </div>
-    </section>
+                sizes="(max-width: 1023px) 94vw, 56vw"
+              />
+            </div>
+          </div>
+
+          <div class="about-wall-notes">
+            {english ? (
+              <>
+                <article class="about-wall-note">
+                  <span class="about-note-marker" aria-hidden="true">▶</span>
+                  <p>
+                    Biomimicry applied to architecture — <strong>bone, muscle and skin.</strong>
+                  </p>
+                </article>
+                <article class="about-wall-note">
+                  <span class="about-note-marker" aria-hidden="true">▶</span>
+                  <p>
+                    This is the <strong>key</strong> to industrialised home manufacturing.
+                  </p>
+                </article>
+                <article class="about-wall-note">
+                  <span class="about-note-marker" aria-hidden="true">▶</span>
+                  <p>
+                    The skeleton gives the wall its <strong>soul</strong> — and the home its{" "}
+                    <strong>confidence</strong>.
+                  </p>
+                </article>
+              </>
+            ) : (
+              <>
+                <article class="about-wall-note">
+                  <span class="about-note-marker" aria-hidden="true">▶</span>
+                  <p>
+                    他巧妙地把 <strong>仿生学</strong> 用于了建筑 ——{" "}
+                    <span class="about-formula">骨 + 肉 + 皮</span>
+                  </p>
+                </article>
+                <article class="about-wall-note">
+                  <span class="about-note-marker" aria-hidden="true">▶</span>
+                  <p>
+                    由此，他算是找到了工业化制造房子的 <strong>密钥</strong>
+                  </p>
+                </article>
+                <article class="about-wall-note">
+                  <span class="about-note-marker" aria-hidden="true">▶</span>
+                  <p>
+                    骨的存在，让墙有了 <strong>灵魂</strong>，也让房子有了{" "}
+                    <strong>底气</strong>。
+                  </p>
+                </article>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* 04 · 零件化 */}
+      <section class="about-band about-band--components" aria-labelledby="story-04">
+        <div class="about-band-inner">
+          <div class="about-comp-head">
+            <div class="about-comp-title-wrap">
+              <span class="about-chapter">
+                {english ? "04 / STANDARDISED PARTS" : "04 / 技术核心"}
+              </span>
+              {english ? (
+                <>
+                  <p class="about-comp-lead">
+                    The power of this technology lies in turning every part of a home into
+                  </p>
+                  <h2 id="story-04" class="about-comp-title">
+                    Standardised Building Components
+                  </h2>
+                </>
+              ) : (
+                <>
+                  <p class="about-comp-lead">
+                    这项技术最大的杀伤力，是能让房子的所有部品部件
+                  </p>
+                  <h2 id="story-04" class="about-comp-title">零件化</h2>
+                </>
+              )}
+            </div>
+            <p class="about-comp-badge">
+              {english ? "CORE TECH · COMPONENT SYSTEM" : "技术核心 | Standardized Building Components"}
+            </p>
+          </div>
+
+          <div class="about-comp-grid">
+            <div class="about-comp-arch">
+              <div class="about-comp-wire">
+                <GalleryImage
+                  src="/assets/img/about-story-house-wire.webp"
+                  fit="contain"
+                  group="profile-story"
+                  alt={
+                    english
+                      ? "Assembled modular house wireframe"
+                      : "装配式住宅整体构造线稿"
+                  }
+                  caption={
+                    english
+                      ? "Complete house assembled from standardised parts"
+                      : "零件化装配成完整房屋"
+                  }
+                  sizes="(max-width: 1023px) 92vw, 24vw"
+                />
+              </div>
+              <div class="about-comp-exploded">
+                <GalleryImage
+                  src="/assets/img/about-story-house-exploded.webp"
+                  fit="contain"
+                  group="profile-story"
+                  alt={
+                    english
+                      ? "Exploded architectural layers of a Banda home"
+                      : "半打房屋系统分层爆炸图"
+                  }
+                  caption={
+                    english
+                      ? "Exploded architectural structural layers"
+                      : "房屋各结构层级分解"
+                  }
+                  sizes="(max-width: 1023px) 92vw, 20vw"
+                />
+              </div>
+            </div>
+
+            <div class="about-comp-car">
+              <GalleryImage
+                src="/assets/img/about-story-car.webp"
+                fit="contain"
+                group="profile-story"
+                alt={
+                  english
+                    ? "Automotive body-in-white exploded manufacturing reference"
+                    : "汽车工业级零件化拆解示意"
+                }
+                caption={
+                  english
+                    ? "Making homes with automotive component discipline"
+                    : "以汽车制造的零件化逻辑造房子"
+                }
+                sizes="(max-width: 1023px) 94vw, 52vw"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 05 · 大道至简 / Less is more. */}
+      <section class="about-band about-band--simplicity" aria-labelledby="story-05">
+        <div class="about-band-inner about-simplicity-grid">
+          <div class="about-simplicity-copy">
+            <span class="about-chapter">
+              {english ? "05 / SIMPLICITY" : "05 / 极简之道"}
+            </span>
+            <p class="about-simplicity-top">
+              {english
+                ? "When a technology reaches its simplest form, it is hard to surpass."
+                : "当一项技术简单到了极致，就很难再被超越"}
+            </p>
+            <div class="about-simplicity-mid">
+              <span class="about-simplicity-vert" aria-hidden="true">
+                Ultimate Simplicity Wins.
+              </span>
+              <p>
+                {english ? "In his view," : "在他的眼里"}
+              </p>
+            </div>
+            <div class="about-simplicity-lockup">
+              <span class="about-simplicity-cn">
+                {english ? "ULTIMATE SIMPLICITY" : "大道至简"}
+              </span>
+              <h2 id="story-05" class="about-simplicity-en">
+                Less <small>is more.</small>
+              </h2>
+            </div>
+          </div>
+
+          <div class="about-simplicity-right">
+            <div class="about-simplicity-photos">
+              <figure>
+                <GalleryImage
+                  src="/assets/img/about-story-simplicity-1.webp"
+                  fit="cover"
+                  group="profile-story"
+                  alt={english ? "Semi Six Modular BD 4S at dusk" : "暮色中的半打 4S 实拍"}
+                  caption={english ? "BD 4S · Built for everyday life" : "半打 4S 实景外观"}
+                  sizes="(max-width: 767px) 46vw, 22vw"
+                />
+              </figure>
+              <figure>
+                <GalleryImage
+                  src="/assets/img/about-story-simplicity-2.webp"
+                  fit="cover"
+                  group="profile-story"
+                  alt={english ? "Semi Six Modular two-storey home at sunset" : "夕阳下的装配式住宅"}
+                  caption={english ? "Industrialised modular residence" : "工业化制造住宅实景"}
+                  sizes="(max-width: 767px) 46vw, 22vw"
+                />
+              </figure>
+            </div>
+            <p class="about-simplicity-bottom">
+              {english ? (
+                <>
+                  This is the <strong>only technique</strong> available today that can deliver{" "}
+                  <strong>industrial-scale</strong> home manufacturing.
+                </>
+              ) : (
+                <>
+                  这是时下，<strong>唯一</strong>能实现<strong>工业化</strong>制造房子的技术手段，
+                  <strong>没有之一！</strong>
+                </>
+              )}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 06 · 理解 */}
+      <section class="about-band about-band--understanding" aria-labelledby="story-06">
+        <div class="about-band-inner about-understanding-grid">
+          <div class="about-understanding-art">
+            <img
+              src="/assets/img/about-story-understanding.webp"
+              width={understandingDim.width}
+              height={understandingDim.height}
+              alt={
+                english
+                  ? "Architectural line sketch of BD 4S eaves and warm exterior lights"
+                  : "半打 4S 建筑屋檐与暖光壁灯线稿"
+              }
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="about-understanding-copy">
+            <span class="about-chapter">
+              {english ? "06 / UNDERSTANDING" : "06 / 建筑温度"}
+            </span>
+            <h2 id="story-06" class="about-section-title-spaced">
+              {english ? "Understanding" : "理 解"}
+            </h2>
+            {english ? (
+              <div class="about-understanding-body">
+                <p class="about-u-soft">
+                  A home is a place of peace, a harbour for the soul.
+                  <br />
+                  After a long day, it gives the body and mind time to recover.
+                </p>
+                <p class="about-u-strong">
+                  It should offer warmth and comfort.
+                  <br />
+                  It exists to soothe the spirit,
+                  <br />
+                  with people at the heart of its design from the start.
+                </p>
+                <p class="about-u-soft">
+                  It holds daily life and offers a gentle place to return to.
+                </p>
+              </div>
+            ) : (
+              <div class="about-understanding-body">
+                <p class="about-u-soft">
+                  房子，是安心之所，是灵魂港湾
+                  <br />
+                  是累了一天之后，让身心慢慢疗养的地方
+                </p>
+                <p class="about-u-strong">
+                  温馨舒适，是它应有的温度
+                  <br />
+                  抚慰心灵，是它存在的意义
+                  <br />
+                  以人为本，是它从始至终的理念
+                </p>
+                <p class="about-u-soft">
+                  它盛放的不只是生活，更是人世间最柔软的归处
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* 07 · 定义 / Design by manufacture. */}
+      <section class="about-band about-band--definition" aria-labelledby="story-07">
+        <div class="about-band-inner about-definition-wrap">
+          <div class="about-def-top">
+            <div>
+              <span class="about-chapter">
+                {english ? "07 / DEFINITION" : "07 / 产品定义"}
+              </span>
+              <p class="about-def-lead">
+                {english
+                  ? "Construction methods shape the product"
+                  : "前沿工法反向定义产品形态"}
+              </p>
+            </div>
+            <h2 id="story-07" class="about-section-title-spaced">
+              {english ? "Definition" : "定 义"}
+            </h2>
+          </div>
+
+          <div class="about-def-mid">
+            <div class="about-def-renders">
+              <figure>
+                <GalleryImage
+                  src="/assets/img/about-story-definition-1.webp"
+                  fit="cover"
+                  group="profile-story"
+                  alt={english ? "BD 4S exterior rendering" : "半打 4S 现代立面渲染图"}
+                  caption={english ? "BD 4S — Design by manufacture" : "半打 4S 外立面"}
+                  sizes="(max-width: 767px) 92vw, 28vw"
+                />
+              </figure>
+              <figure>
+                <GalleryImage
+                  src="/assets/img/about-story-definition-2.webp"
+                  fit="cover"
+                  group="profile-story"
+                  alt={
+                    english
+                      ? "Timber-veranda modular residence rendering"
+                      : "木构游廊模块化住宅渲染图"
+                  }
+                  caption={
+                    english
+                      ? "Modular home with pitched gable roof"
+                      : "坡屋顶模块化住宅"
+                  }
+                  sizes="(max-width: 767px) 92vw, 28vw"
+                />
+              </figure>
+            </div>
+
+            <div class="about-def-notes">
+              {english ? (
+                <>
+                  <p>
+                    We have a <strong>character</strong> of our own,
+                  </p>
+                  <p>
+                    and so our homes are <strong>distinctive</strong>.
+                  </p>
+                  <p class="about-def-pointer">
+                    Beyond <strong>appearance</strong>, we think about how they are built:
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    我们超级有 <strong>个性</strong>
+                  </p>
+                  <p>
+                    所以我们的产品也必将 <strong>与众不同</strong>
+                  </p>
+                  <p class="about-def-pointer">
+                    除了 <strong>颜值</strong>，我们更多的思考：
+                  </p>
+                </>
+              )}
+              <span class="about-def-vert" aria-hidden="true">Design by manufacture.</span>
+            </div>
+          </div>
+
+          <div class="about-def-bottom">
+            <p class="about-def-manifesto">
+              <span>Design by</span> <strong>manufacture.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 08 · 兼济天下 / Housing for All. */}
+      <section class="about-band about-band--global" aria-labelledby="story-08">
+        <div class="about-global-backdrop" aria-hidden="true">
+          <img
+            src="/assets/img/about-story-global.webp"
+            width={globalDim.width}
+            height={globalDim.height}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="about-band-inner about-global-inner">
+          <div class="about-global-top">
+            <span class="about-chapter">
+              {english ? "08 / BUSINESS LINE" : "08 / 业务线 · BUSINESS LINE"}
+            </span>
+            <ol class="about-global-list">
+              {english ? (
+                <>
+                  <li>
+                    <span class="about-global-num">1.</span>
+                    <span>
+                      Develop housing around the world — local landowners provide the land,{" "}
+                      <strong>Banda provides the homes.</strong>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="about-global-num">2.</span>
+                    <span>
+                      Use <strong>industrial manufacturing</strong> to build{" "}
+                      <strong>social housing at scale</strong> across countries worldwide.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="about-global-num">3.</span>
+                    <span>
+                      Open <strong>4S stores</strong> worldwide to sell standardised,
+                      factory-made homes.
+                    </span>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <span class="about-global-num">1.</span>
+                    <span>
+                      全球开发房地产 —— 当地地主出地，<strong>半打出房子</strong>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="about-global-num">2.</span>
+                    <span>
+                      用 <strong>工业化制造</strong> 的方式，给全球的所有国家，建造大量的{" "}
+                      <strong>社会性保障房</strong>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="about-global-num">3.</span>
+                    <span>
+                      在全球开设 <strong>4S 店</strong>，卖标准化制造的房子产品
+                    </span>
+                  </li>
+                </>
+              )}
+            </ol>
+          </div>
+
+          <div class="about-global-bottom">
+            <span class="about-global-kicker">
+              {english ? "OUR VISION" : "兼济天下"}
+            </span>
+            <h2 id="story-08" class="about-global-headline">
+              Housing for <strong>All.</strong>
+            </h2>
+            <div class="about-global-rule" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
     <ProjectCTA />
     <PhotoViewer />
   </div>
 </BaseLayout>
+
 <style>
   .company-cover {
     margin-top: var(--gnb-h);
-    background: white;
+    background: #eceeed;
+    width: 100%;
   }
-  .company-cover :global(img),
-  .profile-plates :is(a, picture, img) {
+  .company-cover :global(.editorial-image),
+  .company-cover :global(img) {
     display: block;
     width: 100%;
     height: auto;
   }
+
   .company-profile {
-    max-width: 1560px;
-    margin-inline: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0;
     scroll-margin-top: var(--gnb-h);
   }
-  .profile-plates {
-    width: 100%;
-  }
-  .profile-plates a {
-    cursor: zoom-in;
-  }
-  .profile-plates a:focus-visible {
-    outline: 3px solid var(--charcoal);
-    outline-offset: -3px;
-  }
-  .profile-toggle {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-  .profile-toggle-label {
+
+  .about-band {
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    margin: 20px 0 18px var(--ed-gutter);
-    padding: 9px 16px;
-    border: 1px solid var(--vp-border-strong, rgb(22 29 26 / 0.18));
-    border-radius: 999px;
-    background: var(--vp-card, #f9f8f5);
-    color: var(--vp-ink, #161d1a);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.4;
-    cursor: pointer;
-    user-select: none;
-    transition:
-      border-color 200ms var(--vp-ease, ease),
-      background-color 200ms var(--vp-ease, ease);
-  }
-  .profile-toggle-label::before {
-    content: "";
-    flex: none;
-    width: 34px;
-    height: 18px;
-    border-radius: 999px;
-    background: rgb(22 29 26 / 0.22);
-    transition: background-color 220ms var(--vp-ease, ease);
-  }
-  .profile-toggle-label::after {
-    content: "";
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+    width: 100%;
+    overflow: hidden;
     background: #ffffff;
-    transform: translate(3px, -50%);
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
-    transition: transform 220ms var(--vp-ease, ease);
+    color: var(--vp-ink, #161d1a);
+    border-top: 1px solid var(--vp-border, rgb(22 29 26 / 0.09));
   }
-  .profile-toggle:checked + .profile-toggle-label {
-    border-color: var(--vp-accent, #007963);
-    background: var(--vp-accent-soft, #e7f3ef);
+
+  .about-band-inner {
+    width: 100%;
+    max-width: 1920px;
+    margin-inline: auto;
+    padding-inline: var(--header-gutter, clamp(24px, 4.2vw, 80px));
   }
-  .profile-toggle:checked + .profile-toggle-label::before {
-    background: var(--vp-accent, #007963);
+
+  .about-chapter {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--vp-accent, #007963);
+    text-transform: uppercase;
   }
-  .profile-toggle:checked + .profile-toggle-label::after {
-    transform: translate(19px, -50%);
+
+  /* ---------- 01 · Founder ---------- */
+  .about-band--founder .about-band-inner {
+    padding-left: 0;
   }
-  .profile-toggle:focus-visible + .profile-toggle-label {
-    outline: 2px solid var(--vp-accent, #007963);
-    outline-offset: 4px;
+  .about-founder-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 38%) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 96px);
+    min-height: clamp(580px, 82svh, 880px);
   }
-  .profile-plates figure {
+  .about-founder-portrait {
+    align-self: end;
+    display: flex;
+    align-items: flex-end;
+    max-width: 580px;
+  }
+  .about-founder-portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: clamp(540px, 78svh, 840px);
+    object-fit: contain;
+    object-position: left bottom;
+  }
+  .about-founder-copy {
+    padding-block: clamp(48px, 6vw, 96px);
+  }
+  .about-founder-lines {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(14px, 1.8vw, 28px);
+    font-size: clamp(30px, 3.2vw, 56px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--vp-ink, #161d1a);
   }
-  .profile-plates figcaption {
-    display: none;
-    max-width: 72ch;
-    margin: 16px auto 32px;
-    padding: 20px 24px 22px;
-    background: var(--vp-card, #f9f8f5);
-    border: 1px solid var(--vp-border, rgb(22 29 26 / 0.09));
-    border-left: 3px solid var(--vp-accent, #007963);
-    border-radius: var(--vp-radius, 3px);
-  }
-  .profile-toggle:checked ~ .profile-plates figcaption {
+  .about-founder-lines span {
     display: block;
   }
-  .profile-plates h2 {
-    margin: 0 0 10px;
-    font-size: clamp(21px, 2vw, 28px);
-    line-height: 1.35;
-    font-weight: 500;
+  .about-founder-lines span:nth-child(2) {
+    padding-left: clamp(24px, 5vw, 96px);
   }
-  .profile-plates p {
+  .about-founder-lines span:nth-child(3) {
+    padding-left: clamp(48px, 10vw, 192px);
+  }
+  .about-key {
+    font-size: 1.48em;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    vertical-align: baseline;
+  }
+  .about-key-en {
+    font-size: 1.55em;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--vp-accent, #007963);
+  }
+  .about-founder-sub {
+    margin: clamp(28px, 3vw, 48px) 0 0;
+    padding-left: clamp(48px, 10vw, 192px);
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--vp-muted, #5b6660);
+  }
+  .about-display-xl {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.75;
-    color: var(--ink-body);
+    font-size: clamp(42px, 4.8vw, 84px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
   }
-  .profile-plates p + p {
-    margin-top: 0.55em;
+  .about-display-xl span {
+    display: block;
   }
-  @media (max-width: 767px) {
-    .profile-toggle,
-    .profile-toggle-label {
+  .about-lead-lg {
+    margin: 24px 0 0;
+    max-width: 30em;
+    font-size: clamp(18px, 1.45vw, 24px);
+    line-height: 1.65;
+    color: var(--vp-body, #46504b);
+  }
+
+  /* ---------- 02 · Pioneer Triptych ---------- */
+  .about-pioneer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 33vw) minmax(0, 1fr);
+    align-items: stretch;
+    gap: clamp(24px, 4vw, 64px);
+    min-height: clamp(640px, 88svh, 960px);
+  }
+  .about-pioneer-left,
+  .about-pioneer-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(48px, 5vw, 88px);
+  }
+  .about-pioneer-left {
+    position: relative;
+  }
+  .about-pioneer-title {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: clamp(18px, 1.35vw, 24px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--vp-body, #46504b);
+  }
+  .about-pioneer-title strong {
+    color: var(--vp-ink, #161d1a);
+    font-weight: 700;
+  }
+  .about-giant {
+    font-size: clamp(44px, 4.6vw, 80px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-giant--end {
+    align-self: flex-end;
+    margin-top: 16px;
+  }
+  .about-pioneer-foot {
+    margin: auto 0 0;
+    padding-top: 32px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--vp-muted, #5b6660);
+  }
+  .about-pioneer-media {
+    margin: 0;
+    height: 100%;
+    min-height: 520px;
+  }
+  .about-pioneer-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-pioneer-dream strong {
+    display: block;
+    font-size: clamp(22px, 1.8vw, 32px);
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-pioneer-dream span {
+    display: block;
+    margin-top: 8px;
+    font-size: clamp(17px, 1.25vw, 22px);
+    color: var(--vp-body, #46504b);
+  }
+  .about-pioneer-rule {
+    width: 72px;
+    height: 1.5px;
+    margin: clamp(24px, 3vw, 44px) 0;
+    background: var(--vp-border-strong, rgb(22 29 26 / 0.2));
+  }
+  .about-pioneer-milestone p {
+    margin: 0;
+    font-size: clamp(19px, 1.45vw, 26px);
+    line-height: 1.6;
+    color: var(--vp-body, #46504b);
+  }
+  .about-pioneer-milestone p + p {
+    margin-top: 16px;
+  }
+  .about-pioneer-milestone strong {
+    font-size: 1.55em;
+    font-weight: 700;
+    color: var(--vp-ink, #161d1a);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- 03 · Banda Wall ---------- */
+  .about-band--wall {
+    padding-block: clamp(56px, 6vw, 96px);
+  }
+  .about-wall-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: clamp(32px, 4.5vw, 80px);
+    align-items: center;
+    min-height: clamp(580px, 80svh, 860px);
+  }
+  .about-wall-lead {
+    margin: 0;
+    font-size: clamp(20px, 1.75vw, 30px);
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-wall-title {
+    margin: 10px 0 6px;
+    font-size: clamp(46px, 5vw, 84px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-wall-en {
+    margin: 0 0 24px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: var(--vp-muted, #5b6660);
+  }
+  .about-wall-figure {
+    max-width: 960px;
+  }
+  .about-wall-figure :global(.editorial-image) {
+    background: #ffffff;
+  }
+  .about-wall-notes {
+    border-left: 1px solid var(--vp-border, rgb(22 29 26 / 0.12));
+    padding-left: clamp(24px, 3.5vw, 56px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .about-wall-note {
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr);
+    gap: 12px;
+    align-items: baseline;
+    padding-bottom: clamp(20px, 2.5vw, 34px);
+    border-bottom: 1px solid var(--vp-border, rgb(22 29 26 / 0.1));
+  }
+  .about-wall-note:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .about-note-marker {
+    font-size: 12px;
+    color: var(--vp-accent, #007963);
+  }
+  .about-wall-note p {
+    margin: 0;
+    font-size: clamp(18px, 1.4vw, 24px);
+    line-height: 1.65;
+    color: var(--vp-body, #46504b);
+  }
+  .about-wall-note strong {
+    font-size: 1.35em;
+    font-weight: 700;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-formula {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--vp-ink, #161d1a);
+  }
+
+  /* ---------- 04 · Components ---------- */
+  .about-band--components {
+    padding-block: clamp(56px, 6vw, 96px);
+  }
+  .about-comp-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: clamp(28px, 3vw, 44px);
+  }
+  .about-comp-lead {
+    margin: 0;
+    font-size: clamp(19px, 1.55vw, 26px);
+    font-weight: 500;
+    color: var(--vp-body, #46504b);
+  }
+  .about-comp-title {
+    margin: 10px 0 0;
+    font-size: clamp(46px, 5vw, 84px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-comp-badge {
+    margin: 0;
+    padding: 8px 16px;
+    border: 1px solid var(--vp-border-strong, rgb(22 29 26 / 0.16));
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--vp-ink, #161d1a);
+    white-space: nowrap;
+  }
+  .about-comp-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+    gap: clamp(24px, 3.5vw, 56px);
+    align-items: center;
+  }
+  .about-comp-arch {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 20px;
+    align-items: center;
+    padding-right: clamp(12px, 2vw, 32px);
+    border-right: 1px solid var(--vp-border, rgb(22 29 26 / 0.1));
+  }
+  .about-comp-wire :global(.editorial-image),
+  .about-comp-exploded :global(.editorial-image),
+  .about-comp-car :global(.editorial-image) {
+    background: #ffffff;
+  }
+
+  /* ---------- 05 · Less is more ---------- */
+  .about-band--simplicity {
+    background: #f9f8f5;
+    padding-block: clamp(56px, 6vw, 96px);
+  }
+  .about-simplicity-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(32px, 4.5vw, 72px);
+    align-items: stretch;
+    min-height: clamp(580px, 82svh, 880px);
+  }
+  .about-simplicity-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 8px;
+  }
+  .about-simplicity-top {
+    margin: 0;
+    font-size: clamp(22px, 1.85vw, 32px);
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-simplicity-mid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-block: 36px;
+  }
+  .about-simplicity-vert {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--vp-muted, #5b6660);
+  }
+  .about-simplicity-mid p {
+    margin: 0 auto 0 0;
+    font-size: clamp(24px, 2vw, 36px);
+    font-weight: 500;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-simplicity-cn {
+    display: block;
+    margin-bottom: 8px;
+    font-size: clamp(22px, 1.8vw, 30px);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--vp-accent, #007963);
+  }
+  .about-simplicity-en {
+    margin: 0;
+    font-size: clamp(52px, 5.8vw, 96px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-simplicity-en small {
+    font-size: 0.48em;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .about-simplicity-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .about-simplicity-photos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(14px, 1.6vw, 24px);
+    flex: 1;
+  }
+  .about-simplicity-photos figure {
+    margin: 0;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: var(--vp-shadow-sm);
+  }
+  .about-simplicity-photos :global(.gallery-link),
+  .about-simplicity-photos :global(.editorial-image),
+  .about-simplicity-photos :global(img) {
+    height: 100%;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+  }
+  .about-simplicity-bottom {
+    margin: 0;
+    font-size: clamp(17px, 1.3vw, 22px);
+    line-height: 1.6;
+    color: var(--vp-body, #46504b);
+    text-align: right;
+  }
+  .about-simplicity-bottom strong {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--vp-ink, #161d1a);
+  }
+
+  /* ---------- 06 · Understanding ---------- */
+  .about-band--understanding .about-band-inner {
+    padding-left: 0;
+  }
+  .about-understanding-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: clamp(32px, 4.5vw, 80px);
+    align-items: center;
+    min-height: clamp(600px, 84svh, 900px);
+  }
+  .about-understanding-art {
+    align-self: end;
+  }
+  .about-understanding-art img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .about-understanding-copy {
+    padding-block: clamp(48px, 6vw, 96px);
+  }
+  .about-section-title-spaced {
+    margin: 0 0 32px;
+    font-size: clamp(38px, 3.6vw, 60px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-understanding-body {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(22px, 2.4vw, 34px);
+  }
+  .about-u-soft {
+    margin: 0;
+    font-size: clamp(16px, 1.25vw, 21px);
+    line-height: 1.9;
+    color: var(--vp-body, #46504b);
+  }
+  .about-u-strong {
+    margin: 0;
+    padding-left: 20px;
+    border-left: 2px solid var(--vp-accent, #007963);
+    font-size: clamp(22px, 1.95vw, 34px);
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--vp-ink, #161d1a);
+  }
+
+  /* ---------- 07 · Definition ---------- */
+  .about-band--definition {
+    background: #f9f8f5;
+    padding-block: clamp(56px, 6vw, 96px);
+  }
+  .about-definition-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(28px, 3.5vw, 52px);
+    min-height: clamp(600px, 82svh, 880px);
+  }
+  .about-def-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+  }
+  .about-def-top .about-section-title-spaced {
+    margin: 0;
+  }
+  .about-def-lead {
+    margin: 0;
+    font-size: clamp(20px, 1.7vw, 30px);
+    font-weight: 500;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-def-mid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+    gap: clamp(28px, 4vw, 64px);
+    align-items: center;
+  }
+  .about-def-renders {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .about-def-renders figure {
+    margin: 0;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: var(--vp-shadow-sm);
+  }
+  .about-def-renders :global(.gallery-link),
+  .about-def-renders :global(.editorial-image),
+  .about-def-renders :global(img) {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+  }
+  .about-def-notes {
+    position: relative;
+    padding-right: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .about-def-notes p {
+    margin: 0;
+    font-size: clamp(19px, 1.5vw, 26px);
+    line-height: 1.6;
+    color: var(--vp-body, #46504b);
+  }
+  .about-def-notes strong {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-def-vert {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--vp-muted, #5b6660);
+  }
+  .about-def-bottom {
+    padding-top: 12px;
+    border-top: 1px solid var(--vp-border, rgb(22 29 26 / 0.1));
+  }
+  .about-def-manifesto {
+    margin: 0;
+    font-size: clamp(40px, 5.2vw, 92px);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-def-manifesto span {
+    font-size: 0.56em;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .about-def-manifesto strong {
+    font-weight: 700;
+  }
+
+  /* ---------- 08 · Global / Housing for All ---------- */
+  .about-band--global {
+    padding-block: clamp(64px, 7vw, 112px);
+    min-height: clamp(600px, 84svh, 900px);
+    display: flex;
+  }
+  .about-global-backdrop {
+    position: absolute;
+    right: -4%;
+    bottom: -4%;
+    width: min(56vw, 760px);
+    pointer-events: none;
+    opacity: 0.92;
+  }
+  .about-global-backdrop img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .about-global-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 48px;
+  }
+  .about-global-list {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    max-width: 58em;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(18px, 2.2vw, 32px);
+  }
+  .about-global-list li {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px;
+    align-items: baseline;
+    font-size: clamp(18px, 1.45vw, 25px);
+    line-height: 1.6;
+    color: var(--vp-body, #46504b);
+  }
+  .about-global-num {
+    font-weight: 700;
+    color: var(--vp-ink, #161d1a);
+    font-variant-numeric: tabular-nums;
+  }
+  .about-global-list strong {
+    font-size: 1.22em;
+    font-weight: 700;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-global-kicker {
+    display: block;
+    margin-bottom: 10px;
+    font-size: clamp(20px, 1.8vw, 30px);
+    font-weight: 500;
+    color: var(--vp-muted, #5b6660);
+  }
+  .about-global-headline {
+    margin: 0;
+    font-size: clamp(46px, 5.6vw, 96px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    color: var(--vp-ink, #161d1a);
+  }
+  .about-global-headline strong {
+    font-weight: 800;
+  }
+  .about-global-rule {
+    margin-top: 24px;
+    width: min(560px, 100%);
+    height: 4px;
+    background: var(--vp-border-strong, rgb(22 29 26 / 0.25));
+  }
+
+  /* ---------- Tablet & Mobile Responsive ---------- */
+  @media (max-width: 1023px) {
+    .about-band--founder .about-band-inner,
+    .about-band--understanding .about-band-inner {
+      padding-left: var(--header-gutter, 24px);
+    }
+    .about-founder-grid,
+    .about-pioneer-grid,
+    .about-wall-grid,
+    .about-comp-grid,
+    .about-simplicity-grid,
+    .about-understanding-grid,
+    .about-def-mid {
+      grid-template-columns: minmax(0, 1fr);
+      min-height: 0;
+    }
+    .about-founder-portrait {
+      max-width: 340px;
+      margin-top: 24px;
+    }
+    .about-founder-copy {
+      padding-top: 0;
+    }
+    .about-founder-lines span:nth-child(2),
+    .about-founder-lines span:nth-child(3),
+    .about-founder-sub {
+      padding-left: 0;
+    }
+    .about-pioneer-media {
+      min-height: 0;
+      aspect-ratio: 4 / 3;
+    }
+    .about-pioneer-foot {
+      padding-top: 20px;
+    }
+    .about-wall-notes {
+      border-left: 0;
+      border-top: 1px solid var(--vp-border, rgb(22 29 26 / 0.12));
+      padding-left: 0;
+      padding-top: 24px;
+    }
+    .about-comp-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .about-comp-badge {
+      white-space: normal;
+    }
+    .about-comp-arch {
+      border-right: 0;
+      padding-right: 0;
+    }
+    .about-simplicity-mid {
+      margin-block: 20px;
+    }
+    .about-simplicity-vert,
+    .about-def-vert {
       display: none;
     }
-    .profile-plates figcaption {
-      display: block;
-      margin: 14px 20px 28px;
-      padding: 18px 20px 20px;
+    .about-simplicity-bottom {
+      text-align: left;
+    }
+    .about-understanding-art {
+      order: 2;
+    }
+    .about-understanding-copy {
+      padding-bottom: 12px;
+    }
+    .about-def-top {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .about-def-notes {
+      padding-right: 0;
+    }
+    .about-band--global {
+      min-height: 0;
+    }
+    .about-global-backdrop {
+      position: static;
+      width: min(100%, 420px);
+      margin: 0 auto 24px;
+      order: -1;
+    }
+    .about-band--global {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about-band {
+      padding-block: 44px;
+    }
+    .about-band--founder,
+    .about-band--pioneer,
+    .about-band--understanding {
+      padding-block: 44px;
+    }
+    .about-founder-copy,
+    .about-pioneer-left,
+    .about-pioneer-right,
+    .about-understanding-copy {
+      padding-block: 0;
+    }
+    .about-comp-arch {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .about-def-renders {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .about-global-list li {
+      grid-template-columns: 26px minmax(0, 1fr);
     }
   }
 </style>
