@@ -13,7 +13,7 @@ const dim = (path: string) => {
   return { width: w, height: h };
 };
 
-const founderDim = dim("/assets/img/r82-about-founder.webp");
+const founderDim = dim("/assets/img/about-founder-edge.webp");
 const groundDim = dim("/assets/img/about-story-ground.webp");
 const understandingDim = dim("/assets/img/about-story-understanding.webp");
 const globalDim = dim("/assets/img/about-story-global.webp");
@@ -60,12 +60,12 @@ const globalDim = dim("/assets/img/about-story-global.webp");
             <picture>
               <source
                 media="(max-width: 767px)"
-                srcset="/assets/img/r82-about-founder-m.webp"
-                width="622"
-                height="1400"
+                srcset="/assets/img/about-founder-edge-m.webp"
+                width="620"
+                height="1327"
               />
               <img
-                src="/assets/img/r82-about-founder.webp"
+                src="/assets/img/about-founder-edge.webp"
                 width={founderDim.width}
                 height={founderDim.height}
                 alt={english ? "Huang Kun, founder of Semi-Six Modular" : "半打空间创始人黄昆"}
@@ -74,38 +74,40 @@ const globalDim = dim("/assets/img/about-story-global.webp");
               />
             </picture>
           </div>
-          <div class="about-founder-copy">
-            <span class="about-chapter">
-              {english ? "01 / FOUNDER · HUANG KUN" : "01 / 创始人 · 黄昆"}
-            </span>
-            {english ? (
-              <h2 id="story-01" class="about-display-xl">
-                <span>A man with</span>
-                <span>a crazy dream.</span>
-              </h2>
-            ) : (
-              <h2 id="story-01" class="about-founder-lines">
-                <span>
-                  就是这个狂<strong class="about-key">人</strong>
-                </span>
-                <span>
-                  总想革人家的<strong class="about-key">命</strong>
-                </span>
-                <span>
-                  把人生都 all 了 <strong class="about-key-en">in</strong>
-                </span>
-              </h2>
-            )}
-          </div>
-          <div class="about-founder-motto">
-            <span class="about-founder-rule" aria-hidden="true"></span>
-            {english ? (
-              <p class="about-lead-lg">
-                Huang Kun went all in on a different way to build a home.
-              </p>
-            ) : (
-              <p class="about-founder-sub">Crazy Man With a Crazy Dream.</p>
-            )}
+          <div class="about-founder-body">
+            <div class="about-founder-copy">
+              <span class="about-chapter">
+                {english ? "01 / FOUNDER · HUANG KUN" : "01 / 创始人 · 黄昆"}
+              </span>
+              {english ? (
+                <h2 id="story-01" class="about-display-xl">
+                  <span>A man with</span>
+                  <span>a crazy dream.</span>
+                </h2>
+              ) : (
+                <h2 id="story-01" class="about-founder-lines">
+                  <span>
+                    就是这个狂<strong class="about-key">人</strong>
+                  </span>
+                  <span>
+                    总想革人家的<strong class="about-key">命</strong>
+                  </span>
+                  <span>
+                    把人生都 all 了 <strong class="about-key-en">in</strong>
+                  </span>
+                </h2>
+              )}
+            </div>
+            <div class="about-founder-motto">
+              <span class="about-founder-rule" aria-hidden="true"></span>
+              {english ? (
+                <p class="about-lead-lg">
+                  Huang Kun went all in on a different way to build a home.
+                </p>
+              ) : (
+                <p class="about-founder-sub">Crazy Man With a Crazy Dream.</p>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -729,20 +731,18 @@ const globalDim = dim("/assets/img/about-story-global.webp");
 
   /* ---------- 01 · Founder ---------- */
   .about-band--founder {
-    background: #fdfdfd;
+    background: #ffffff;
   }
   .about-founder-stage {
     width: 100%;
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    grid-template-rows: 1.12fr 0.88fr;
+    align-items: stretch;
     column-gap: clamp(32px, 6vw, 128px);
     min-height: clamp(580px, 84svh, 900px);
     padding-right: clamp(28px, 5vw, 112px);
   }
   .about-founder-portrait {
-    grid-column: 1;
-    grid-row: 1 / -1;
     align-self: end;
     justify-self: start;
     padding-top: clamp(24px, 3vw, 48px);
@@ -753,16 +753,19 @@ const globalDim = dim("/assets/img/about-story-global.webp");
   }
   .about-founder-portrait img {
     display: block;
-    width: clamp(250px, min(31vw, 36.5svh), 430px);
+    width: clamp(270px, min(33vw, 40svh), 460px);
     height: auto;
     object-fit: contain;
     object-position: left bottom;
   }
+  .about-founder-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(48px, 6vw, 96px);
+  }
   .about-founder-copy {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: end;
-    padding-top: clamp(48px, 6vw, 92px);
+    padding: 0;
   }
   .about-founder-lines {
     margin: 0;
@@ -797,14 +800,10 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     color: var(--vp-accent, #007963);
   }
   .about-founder-motto {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: start;
     display: flex;
     flex-direction: column;
     gap: 14px;
     padding-top: clamp(28px, 3vw, 44px);
-    padding-bottom: clamp(44px, 5vw, 80px);
     padding-left: clamp(48px, 10vw, 192px);
   }
   :global(html[lang="en"]) .about-founder-motto {
@@ -1519,6 +1518,9 @@ const globalDim = dim("/assets/img/about-story-global.webp");
         "portrait motto";
       column-gap: 20px;
       row-gap: 12px;
+    }
+    .about-founder-body {
+      display: contents;
     }
     .about-founder-copy {
       grid-area: copy;
