@@ -278,6 +278,17 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     color: #58645f;
     margin-top: 10px;
   }
+  /* Keep all five home slides on one steady panoramic ratio below desktop
+     so Slide 4 (grayscale, 1557x736) never shifts the page down by 25px. */
+  .home-hero .hero-stage {
+    aspect-ratio: 2560 / 1040;
+  }
+  .home-hero .slide[data-product="grayscale"] > .editorial-image,
+  .home-hero .slide[data-product="grayscale"] img {
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 82%;
+  }
 }
 @media (max-width: 767px) {
   .banda-editorial .editorial-hero {
