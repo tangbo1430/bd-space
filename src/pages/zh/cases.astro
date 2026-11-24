@@ -301,20 +301,42 @@ const filters = [
 
   @media (max-width: 767px) {
     .cases-hero {
-      min-height: clamp(239px, 61.5vw, 365px);
+      display: block;
+      min-height: 0;
+      background: #fff;
+      color: var(--charcoal);
+      border-bottom: 1px solid var(--vp-border, var(--hairline));
+    }
+    .cases-hero::before {
+      display: none;
+    }
+    .cases-hero :global(.cases-hero-photo) {
+      position: relative;
+      inset: auto;
+      z-index: auto;
+      width: 100%;
+      height: auto;
+    }
+    .cases-hero :global(img) {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
     .cases-hero-copy {
-      padding-block: 32px 16px;
+      padding-block: 24px 24px;
+    }
+    .cases-hero h1 {
+      color: var(--charcoal);
+      font-size: clamp(28px, 7.6vw, 34px);
     }
     .cases-hero p {
       max-width: 31em;
-      margin-top: 6px;
+      margin-top: 10px;
+      color: var(--vp-body, #46504b);
+      font-size: 15px;
     }
     .cases-hero p br {
       display: none;
-    }
-    .cases-hero::before {
-      background: linear-gradient(0deg, rgb(10 19 19 / 89%), transparent 78%);
     }
   }
 </style>

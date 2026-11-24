@@ -512,49 +512,67 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   }
 }
 
-/* Keep catalog captions on the photograph at tablet and phone widths. */
+/* Show full uncropped catalog photography above captions at tablet and phone widths. */
 @media (max-width: 1279px) {
   .banda-editorial .catalog-hero {
-    --action-fill: #f9faf8;
-    --action-ink: #142c34;
-    --action-hover: #e8ede8;
-    --action-pressed: #d9e1da;
+    --action-fill: #142c34;
+    --action-ink: #fff;
+    --action-hover: #30473b;
+    --action-pressed: #0b0f0e;
+    --hero-controls-ink: #142c34;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "photo";
-    color: #fff;
+    grid-template-areas:
+      "photo"
+      "controls"
+      "content";
+    column-gap: 0;
+    background: #fff;
+    color: #142c34;
+    border-bottom: 1px solid rgb(20 44 52 / 0.08);
   }
 
   .catalog-hero .hero-stage {
-    min-height: clamp(460px, 70svh, 640px);
-    height: 100%;
-    aspect-ratio: auto;
+    grid-area: photo;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: var(--hero-ratio);
+    background: #0b0f0e;
   }
 
   .banda-editorial .catalog-hero .hero-stage .slide > .editorial-image,
   .banda-editorial .catalog-hero .hero-stage .slide .editorial-image img {
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   .catalog-hero .hero-stage::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      0deg,
-      rgb(7 18 18 / 92%),
-      rgb(7 18 18 / 65%) 34%,
-      transparent 76%
-    );
-    pointer-events: none;
+    content: none;
+  }
+
+  .catalog-hero .hero-controls {
+    grid-area: controls;
+    align-self: center;
+    justify-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 2 * var(--hero-gutter) + 16px);
+    margin: 4px calc(var(--hero-gutter) - 8px) 0;
+    height: 44px;
+    color: #142c34;
   }
 
   .catalog-hero .hero-content {
+    grid-area: content;
     display: block;
+    position: relative;
     top: auto;
-    width: min(calc(100% - 2 * var(--hero-gutter)), 540px);
-    align-self: end;
-    margin: 28px var(--hero-gutter) 64px;
+    width: 100%;
+    max-width: 680px;
+    align-self: start;
+    justify-self: start;
+    margin: 0;
+    padding: 8px var(--hero-gutter) 32px;
   }
 
   .catalog-hero .hero-intro,
@@ -567,30 +585,31 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
   html[lang="en"] .catalog-hero .hero-intro h1 {
     margin: 0;
     max-width: none;
-    font-size: clamp(23px, 5.6vw, 36px);
-    line-height: 1.2;
+    color: #142c34;
+    font-size: clamp(24px, 6.2vw, 34px);
+    line-height: 1.25;
   }
 
   .catalog-hero .h-hero-sub {
     max-width: none;
-    margin: 8px 0 0;
-    color: inherit;
-    font-size: clamp(14px, 1.8vw, 16px);
-    line-height: 1.5;
+    margin: 10px 0 0;
+    color: #46504b;
+    font-size: clamp(14px, 3.8vw, 16px);
+    line-height: 1.6;
     white-space: pre-line;
   }
 
-  .catalog-hero .hero-action {
-    margin: 14px 0 0;
-    justify-self: start;
-    padding: 0;
+  .catalog-hero .catalog-hero-credit {
+    margin: 8px 0 0;
+    color: #5b6660;
+    font-size: 13px;
+    line-height: 1.5;
   }
 
-  .catalog-hero .hero-controls {
-    grid-area: photo;
-    align-self: end;
-    color: #fff;
-    margin-bottom: 8px;
+  .catalog-hero .hero-action {
+    margin: 18px 0 0;
+    justify-self: start;
+    padding: 0;
   }
 }
 
