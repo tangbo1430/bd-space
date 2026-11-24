@@ -335,11 +335,16 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
     tfoot {
       display: block;
     }
+    table {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+    }
     tr {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 12px 20px;
-      padding: 20px 0;
+      gap: 10px 12px;
+      padding: 16px 14px;
     }
     th,
     td,
@@ -349,7 +354,7 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
       padding: 0;
     }
     thead tr {
-      padding-top: 0;
+      padding: 14px;
     }
     thead th {
       padding: 0;
@@ -359,8 +364,8 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
       display: none;
     }
     .comparison-name {
-      font-size: 24px;
-      line-height: 1.4;
+      font-size: 22px;
+      line-height: 1.35;
       overflow-wrap: break-word;
     }
     .comparison-model-heading {
@@ -374,17 +379,20 @@ const initial = [models[0], models.find((p) => p.id === "4s") ?? models[1]];
     }
     tbody th {
       grid-column: 1 / -1;
+      padding: 0 2px;
       font-size: 13px;
+      font-weight: 500;
     }
     tr > :nth-child(2),
     tr > :nth-child(3) {
-      padding: 10px 12px;
+      padding: 12px;
+      border-radius: 4px;
     }
     tbody td {
-      font-size: 16px;
+      font-size: 15px;
     }
     tfoot tr {
-      padding: 8px 0;
+      padding: 12px 14px;
     }
   }
 </style>

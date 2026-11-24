@@ -13,7 +13,7 @@ const dim = (path: string) => {
   return { width: w, height: h };
 };
 
-const founderDim = dim("/assets/img/about-founder-edge.webp");
+const founderDim = dim("/assets/img/about-founder-edge-v2.webp");
 const groundDim = dim("/assets/img/about-story-ground.webp");
 const understandingDim = dim("/assets/img/about-story-understanding.webp");
 const globalDim = dim("/assets/img/about-story-global.webp");
@@ -60,12 +60,12 @@ const globalDim = dim("/assets/img/about-story-global.webp");
             <picture>
               <source
                 media="(max-width: 767px)"
-                srcset="/assets/img/about-founder-edge-m.webp"
-                width="620"
-                height="1327"
+                srcset="/assets/img/about-founder-edge-v2-m.webp"
+                width="680"
+                height="1143"
               />
               <img
-                src="/assets/img/about-founder-edge.webp"
+                src="/assets/img/about-founder-edge-v2.webp"
                 width={founderDim.width}
                 height={founderDim.height}
                 alt={english ? "Huang Kun, founder of Semi-Six Modular" : "半打空间创始人黄昆"}
@@ -753,7 +753,7 @@ const globalDim = dim("/assets/img/about-story-global.webp");
   }
   .about-founder-portrait img {
     display: block;
-    width: clamp(270px, min(33vw, 40svh), 460px);
+    width: clamp(320px, min(37vw, 50svh), 540px);
     height: auto;
     object-fit: contain;
     object-position: left bottom;
@@ -1424,7 +1424,7 @@ const globalDim = dim("/assets/img/about-story-global.webp");
       padding-right: 28px;
     }
     .about-founder-portrait img {
-      width: clamp(200px, 31vw, 300px);
+      width: clamp(240px, 37vw, 360px);
     }
     .about-founder-lines {
       font-size: clamp(26px, 3.6vw, 38px);
@@ -1511,12 +1511,12 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     .about-founder-stage {
       min-height: 0;
       padding-right: 0;
-      grid-template-columns: minmax(156px, 46%) minmax(0, 1fr);
+      grid-template-columns: minmax(186px, 53%) minmax(0, 1fr);
       grid-template-rows: auto auto;
       grid-template-areas:
         "copy copy"
         "portrait motto";
-      column-gap: 20px;
+      column-gap: 16px;
       row-gap: 12px;
     }
     .about-founder-body {
