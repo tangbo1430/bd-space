@@ -13,7 +13,7 @@ const dim = (path: string) => {
   return { width: w, height: h };
 };
 
-const founderDim = dim("/assets/img/about-story-founder-full.webp");
+const founderDim = dim("/assets/img/r82-about-founder.webp");
 const groundDim = dim("/assets/img/about-story-ground.webp");
 const understandingDim = dim("/assets/img/about-story-understanding.webp");
 const globalDim = dim("/assets/img/about-story-global.webp");
@@ -55,46 +55,56 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     >
       {/* 01 · 创始人黄昆 */}
       <section class="about-band about-band--founder" aria-labelledby="story-01">
-        <div class="about-band-inner about-founder-grid">
+        <div class="about-founder-stage">
           <div class="about-founder-portrait">
-            <img
-              src="/assets/img/about-story-founder-full.webp"
-              width={founderDim.width}
-              height={founderDim.height}
-              alt={english ? "Huang Kun, founder of Semi-Six Modular" : "半打空间创始人黄昆"}
-              loading="eager"
-              decoding="async"
-            />
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="/assets/img/r82-about-founder-m.webp"
+                width="622"
+                height="1400"
+              />
+              <img
+                src="/assets/img/r82-about-founder.webp"
+                width={founderDim.width}
+                height={founderDim.height}
+                alt={english ? "Huang Kun, founder of Semi-Six Modular" : "半打空间创始人黄昆"}
+                loading="eager"
+                decoding="async"
+              />
+            </picture>
           </div>
           <div class="about-founder-copy">
             <span class="about-chapter">
               {english ? "01 / FOUNDER · HUANG KUN" : "01 / 创始人 · 黄昆"}
             </span>
             {english ? (
-              <>
-                <h2 id="story-01" class="about-display-xl">
-                  <span>A man with</span>
-                  <span>a crazy dream.</span>
-                </h2>
-                <p class="about-lead-lg">
-                  Huang Kun went all in on a different way to build a home.
-                </p>
-              </>
+              <h2 id="story-01" class="about-display-xl">
+                <span>A man with</span>
+                <span>a crazy dream.</span>
+              </h2>
             ) : (
-              <>
-                <h2 id="story-01" class="about-founder-lines">
-                  <span>
-                    就是这个狂<strong class="about-key">人</strong>
-                  </span>
-                  <span>
-                    总想革人家的<strong class="about-key">命</strong>
-                  </span>
-                  <span>
-                    把人生都 all 了 <strong class="about-key-en">in</strong>
-                  </span>
-                </h2>
-                <p class="about-founder-sub">Crazy Man With a Crazy Dream.</p>
-              </>
+              <h2 id="story-01" class="about-founder-lines">
+                <span>
+                  就是这个狂<strong class="about-key">人</strong>
+                </span>
+                <span>
+                  总想革人家的<strong class="about-key">命</strong>
+                </span>
+                <span>
+                  把人生都 all 了 <strong class="about-key-en">in</strong>
+                </span>
+              </h2>
+            )}
+          </div>
+          <div class="about-founder-motto">
+            <span class="about-founder-rule" aria-hidden="true"></span>
+            {english ? (
+              <p class="about-lead-lg">
+                Huang Kun went all in on a different way to build a home.
+              </p>
+            ) : (
+              <p class="about-founder-sub">Crazy Man With a Crazy Dream.</p>
             )}
           </div>
         </div>
@@ -718,30 +728,41 @@ const globalDim = dim("/assets/img/about-story-global.webp");
   }
 
   /* ---------- 01 · Founder ---------- */
-  .about-founder-grid {
+  .about-band--founder {
+    background: #fdfdfd;
+  }
+  .about-founder-stage {
+    width: 100%;
     display: grid;
-    grid-template-columns: minmax(300px, 40%) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(32px, 5vw, 96px);
-    min-height: clamp(580px, 82svh, 880px);
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: 1.12fr 0.88fr;
+    column-gap: clamp(32px, 6vw, 128px);
+    min-height: clamp(580px, 84svh, 900px);
+    padding-right: clamp(28px, 5vw, 112px);
   }
   .about-founder-portrait {
+    grid-column: 1;
+    grid-row: 1 / -1;
     align-self: end;
-    display: flex;
-    align-items: flex-end;
-    max-width: 620px;
+    justify-self: start;
     padding-top: clamp(24px, 3vw, 48px);
+    line-height: 0;
+  }
+  .about-founder-portrait picture {
+    display: block;
   }
   .about-founder-portrait img {
     display: block;
-    width: 100%;
+    width: clamp(250px, min(31vw, 36.5svh), 430px);
     height: auto;
-    max-height: clamp(540px, 78svh, 840px);
     object-fit: contain;
     object-position: left bottom;
   }
   .about-founder-copy {
-    padding-block: clamp(48px, 6vw, 96px);
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    padding-top: clamp(48px, 6vw, 92px);
   }
   .about-founder-lines {
     margin: 0;
@@ -750,7 +771,7 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     gap: clamp(14px, 1.8vw, 28px);
     font-size: clamp(30px, 3.2vw, 56px);
     font-weight: 500;
-    line-height: 1.25;
+    line-height: 1.24;
     letter-spacing: -0.02em;
     color: var(--vp-ink, #161d1a);
   }
@@ -775,9 +796,28 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     letter-spacing: -0.04em;
     color: var(--vp-accent, #007963);
   }
-  .about-founder-sub {
-    margin: clamp(28px, 3vw, 48px) 0 0;
+  .about-founder-motto {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: clamp(28px, 3vw, 44px);
+    padding-bottom: clamp(44px, 5vw, 80px);
     padding-left: clamp(48px, 10vw, 192px);
+  }
+  :global(html[lang="en"]) .about-founder-motto {
+    padding-left: 0;
+  }
+  .about-founder-rule {
+    display: block;
+    width: 44px;
+    height: 2px;
+    background: var(--vp-accent, #007963);
+  }
+  .about-founder-sub {
+    margin: 0;
     font-size: 14px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -785,7 +825,7 @@ const globalDim = dim("/assets/img/about-story-global.webp");
   }
   .about-display-xl {
     margin: 0;
-    font-size: clamp(42px, 4.8vw, 84px);
+    font-size: clamp(40px, 4.6vw, 80px);
     font-weight: 600;
     line-height: 1.12;
     letter-spacing: -0.03em;
@@ -794,9 +834,9 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     display: block;
   }
   .about-lead-lg {
-    margin: 24px 0 0;
-    max-width: 30em;
-    font-size: clamp(18px, 1.45vw, 24px);
+    margin: 0;
+    max-width: 28em;
+    font-size: clamp(17px, 1.4vw, 23px);
     line-height: 1.65;
     color: var(--vp-body, #46504b);
   }
@@ -1370,7 +1410,6 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     .about-band--understanding .about-band-inner {
       padding-left: var(--header-gutter, 24px);
     }
-    .about-founder-grid,
     .about-pioneer-grid,
     .about-wall-grid,
     .about-comp-grid,
@@ -1380,17 +1419,23 @@ const globalDim = dim("/assets/img/about-story-global.webp");
       grid-template-columns: minmax(0, 1fr);
       min-height: 0;
     }
-    .about-founder-portrait {
-      max-width: 340px;
-      margin-top: 24px;
+    .about-founder-stage {
+      min-height: clamp(500px, 68svh, 680px);
+      column-gap: 32px;
+      padding-right: 28px;
     }
-    .about-founder-copy {
-      padding-top: 0;
+    .about-founder-portrait img {
+      width: clamp(200px, 31vw, 300px);
     }
-    .about-founder-lines span:nth-child(2),
+    .about-founder-lines {
+      font-size: clamp(26px, 3.6vw, 38px);
+    }
+    .about-founder-lines span:nth-child(2) {
+      padding-left: 24px;
+    }
     .about-founder-lines span:nth-child(3),
-    .about-founder-sub {
-      padding-left: 0;
+    .about-founder-motto {
+      padding-left: 48px;
     }
     .about-pioneer-media {
       min-height: 0;
@@ -1457,12 +1502,60 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     .about-band {
       padding-block: 44px;
     }
-    .about-band--founder,
+    .about-band--founder {
+      padding-block: 0;
+    }
     .about-band--pioneer,
     .about-band--understanding {
       padding-block: 44px;
     }
-    .about-founder-copy,
+    .about-founder-stage {
+      min-height: 0;
+      padding-right: 0;
+      grid-template-columns: minmax(156px, 46%) minmax(0, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "copy copy"
+        "portrait motto";
+      column-gap: 20px;
+      row-gap: 12px;
+    }
+    .about-founder-copy {
+      grid-area: copy;
+      padding: 40px 24px 8px;
+    }
+    .about-founder-lines {
+      font-size: clamp(23px, 6.4vw, 30px);
+      gap: 10px;
+    }
+    .about-founder-lines span:nth-child(2) {
+      padding-left: 18px;
+    }
+    .about-founder-lines span:nth-child(3) {
+      padding-left: 36px;
+    }
+    .about-founder-portrait {
+      grid-area: portrait;
+      padding-top: 0;
+      width: 100%;
+    }
+    .about-founder-portrait img {
+      width: 100%;
+    }
+    .about-founder-motto {
+      grid-area: motto;
+      align-self: center;
+      padding: 0 24px 36px 0;
+      gap: 12px;
+    }
+    .about-founder-rule {
+      width: 32px;
+    }
+    .about-founder-sub {
+      font-size: 12px;
+      letter-spacing: 0.11em;
+      line-height: 1.65;
+    }
     .about-pioneer-left,
     .about-pioneer-right,
     .about-understanding-copy {
