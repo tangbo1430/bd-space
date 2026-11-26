@@ -3,7 +3,7 @@
   "name": "灰度空间",
   "enTag": "A quiet point of view",
   "order": 1,
-  "tagline": "克制的表达，自在的空间。",
+  "tagline": "灰度之间，安放日常。",
   "description": "简洁的混凝土建筑语言，在住宅与办公之间，为使用者保留想象。",
   "scenes": [
     "住宅",

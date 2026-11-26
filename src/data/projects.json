@@ -1,7 +1,7 @@
 [
   {
     "id": "jiangmen",
-    "name": "半打 4S · 广东江门志特工厂样板",
+    "name": "半打 4S · 广东江门志特工厂样板房",
     "location": "中国 · 广东江门",
     "year": 2026,
     "area": "98㎡",
@@ -14,23 +14,23 @@
     "gallery": [
       {
         "base": "project-jiangmen-01",
-        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 01"
+        "caption": "半打 4S · 广东江门志特工厂样板房 / 施工记录 01"
       },
       {
         "base": "project-jiangmen-02",
-        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 02"
+        "caption": "半打 4S · 广东江门志特工厂样板房 / 施工记录 02"
       },
       {
         "base": "project-jiangmen-03",
-        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 03"
+        "caption": "半打 4S · 广东江门志特工厂样板房 / 施工记录 03"
       },
       {
         "base": "project-jiangmen-04",
-        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 04"
+        "caption": "半打 4S · 广东江门志特工厂样板房 / 施工记录 04"
       },
       {
         "base": "project-jiangmen-05",
-        "caption": "半打 4S · 广东江门志特工厂样板 / 施工记录 05"
+        "caption": "半打 4S · 广东江门志特工厂样板房 / 施工记录 05"
       }
     ],
     "status": "已竣工",
@@ -38,7 +38,7 @@
   },
   {
     "id": "changzhou",
-    "name": "半打 4S · 江苏常州星星充电样板",
+    "name": "半打 4S · 江苏常州星星充电样板房",
     "location": "中国 · 江苏常州",
     "year": 2026,
     "area": "98㎡",
@@ -51,23 +51,23 @@
     "gallery": [
       {
         "base": "project-changzhou-01",
-        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 01"
+        "caption": "半打 4S · 江苏常州星星充电样板房 / 施工记录 01"
       },
       {
         "base": "project-changzhou-02",
-        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 02"
+        "caption": "半打 4S · 江苏常州星星充电样板房 / 施工记录 02"
       },
       {
         "base": "project-changzhou-03",
-        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 03"
+        "caption": "半打 4S · 江苏常州星星充电样板房 / 施工记录 03"
       },
       {
         "base": "project-changzhou-04",
-        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 04"
+        "caption": "半打 4S · 江苏常州星星充电样板房 / 施工记录 04"
       },
       {
         "base": "project-changzhou-05",
-        "caption": "半打 4S · 江苏常州星星充电样板 / 施工记录 05"
+        "caption": "半打 4S · 江苏常州星星充电样板房 / 施工记录 05"
       }
     ],
     "status": "已竣工",

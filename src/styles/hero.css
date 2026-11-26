@@ -618,7 +618,8 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
 }
 
 @media (min-width: 1280px) {
-  .home-hero .slide[data-product="grayscale"]::after {
+  .home-hero .slide[data-product="grayscale"]::after,
+  .home-hero .slide[data-product="snow11"]::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -631,7 +632,8 @@ html[lang="en"] .editorial-hero .hero-intro h1 {
     );
     pointer-events: none;
   }
-  .home-hero:has(.slide.on[data-product="grayscale"]) .hero-content {
+  .home-hero:has(.slide.on[data-product="grayscale"]) .hero-content,
+  .home-hero:has(.slide.on[data-product="snow11"]) .hero-content {
     color: white;
     width: clamp(275px, 26vw, 430px);
   }

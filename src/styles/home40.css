@@ -312,7 +312,7 @@
 .h40 .h-systems .h-center-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-  align-items: start;
+  align-items: end;
   gap: 48px;
 }
 .h40 .h-systems .h-center-head h2 {
@@ -326,9 +326,76 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
   max-width: 15em;
 }
 .h40 .h-systems .h-center-head p {
-  max-width: 38em;
+  max-width: 39.5em;
+  justify-self: end;
+  text-align: right;
   font-size: 16px;
   line-height: 1.8;
+}
+
+/* Home Snow 1.1 installation film showcase */
+.h40 .h-film {
+  background:
+    radial-gradient(
+      ellipse 70% 45% at 50% 0%,
+      rgb(0 165 134 / 0.12),
+      transparent 72%
+    ),
+    #0d1411;
+  color: #f4f7f5;
+}
+.h40 .h-film .h-center-head {
+  align-items: end;
+  margin-bottom: 32px;
+}
+.h40 .h-film .h-center-head p {
+  color: rgb(244 247 245 / 0.72);
+  text-align: right;
+}
+.h40 .h-film-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #34c6a8;
+  text-transform: uppercase;
+}
+.h40 .h-film-stage {
+  margin: 0;
+}
+.h40 .h-film-frame {
+  border-radius: var(--vp-radius, 4px);
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  background: #050807;
+  box-shadow: 0 24px 60px rgb(0 0 0 / 0.42);
+}
+.h40 .h-film-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #050807;
+}
+.h40 .h-film-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 18px;
+}
+.h40 .h-film-caption {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: rgb(244 247 245 / 0.68);
+}
+.h40 .h-film .h-more {
+  color: #f4f7f5;
+}
+.h40 .h-film .h-more:hover {
+  color: #34c6a8;
 }
 .h40 .h-cases-grid {
   display: grid;
@@ -499,6 +566,16 @@ html[lang="en"] .h40 .h-systems .h-center-head h2 {
   }
   .h40 .h-systems .h-center-head p {
     margin-top: 0;
+    justify-self: start;
+    text-align: left;
+  }
+  .h40 .h-film .h-center-head p {
+    text-align: left;
+  }
+  .h40 .h-film-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }
 @media (max-width: 767px) {

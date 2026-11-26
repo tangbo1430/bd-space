@@ -29,18 +29,6 @@ const slides = [
     brandTone: "dark" as const,
   },
   {
-    id: "5s",
-    name: "半打 5S",
-    note: "为相聚，留出更多空间。",
-    desktopImage: "/assets/img/r90-home-5s.webp",
-    headerTone: "dark" as const,
-    brandTone: "dark" as const,
-    coverBrandTone: "dark" as const,
-    copyTop: "46%",
-    copyLayout: "low" as const,
-    copyInk: "photo" as const,
-  },
-  {
     id: "6s",
     name: "半打 6S",
     note: "把生活，展开得更从容。",
@@ -55,7 +43,7 @@ const slides = [
   {
     id: "grayscale",
     name: "灰度空间",
-    note: "克制的表达，自在的空间。",
+    note: "灰度之间，安放日常。",
     desktopImage: "/assets/img/r78-home-grayscale.webp",
     headerTone: "dark" as const,
     copyTone: "light" as const,
@@ -70,16 +58,33 @@ const slides = [
     headerTone: "dark" as const,
     coverBrandTone: "dark" as const,
   },
+  {
+    id: "snow11",
+    name: "诗诺 1.1",
+    note: "留一间书房，也留一份从容。",
+    desktopImage: "/assets/img/nov-snow-hero.webp",
+    headerTone: "light" as const,
+    brandTone: "light" as const,
+    coverHeaderTone: "light" as const,
+    coverBrandTone: "light" as const,
+    copyTone: "light" as const,
+    copyLayout: "stack" as const,
+    copyTop: "38%",
+  },
 ].map((s) => ({
   ...s,
   base:
-    s.id === "grayscale" || s.id === "4s"
-      ? `r78-home-${s.id}`
-      : `r4-banner-${s.id}`,
+    s.id === "snow11"
+      ? "nov-snow-hero"
+      : s.id === "grayscale" || s.id === "4s"
+        ? `r78-home-${s.id}`
+        : `r4-banner-${s.id}`,
   mobileImage:
-    s.id === "grayscale" || s.id === "4s"
-      ? `/assets/img/r78-home-${s.id}-m.webp`
-      : `/assets/img/r4-banner-${s.id}-m.webp`,
+    s.id === "snow11"
+      ? "/assets/img/nov-snow-hero-m.webp"
+      : s.id === "grayscale" || s.id === "4s"
+        ? `/assets/img/r78-home-${s.id}-m.webp`
+        : `/assets/img/r4-banner-${s.id}-m.webp`,
 }));
 const homeProductImages: Record<string, string> = {
   grayscale: "r78-home-grayscale",
@@ -149,7 +154,7 @@ const steps = [
     >
       <header class="h-center-head collection-head">
         <h2 id="products-heading">
-          {english ? "A Place for Everyday Life." : "为日常，找到一处空间。"}
+          {english ? "Built by Banda, Answered in Space." : "半打建造，空间作答。"}
         </h2>
         <a class="h-more" href="/zh/products/#collection">
           探索全部产品 <Icon name="chevron-right" />
@@ -206,6 +211,57 @@ const steps = [
       note={company.intro}
       aboutLink
     />
+
+    {/* 诗诺 1.1 安装动画演示：将模块化建造过程直观呈现 */}
+    <section
+      id="snow11-film"
+      class="h-sec h-film"
+      aria-labelledby="home-film-heading"
+    >
+      <div class="h-wrap">
+        <header class="h-center-head rv">
+          <div>
+            <span class="h-film-eyebrow">
+              {english ? "SNOW 1.1 · INSTALLATION FILM" : "诗诺 1.1 · 安装动画演示"}
+            </span>
+            <h2 id="home-film-heading">
+              {english ? "From Modules to a Home." : "从模块，到住宅。"}
+            </h2>
+          </div>
+          <p>
+            {english
+              ? "Watch how Snow 1.1 arrives in factory-finished modules and assembles on site into a complete two-storey residence."
+              : "直击诗诺 1.1 工厂预制模块从运输吊装到现场落位的完整建造过程。"}
+          </p>
+        </header>
+        <figure class="h-film-stage rv">
+          <div class="h-film-frame">
+            <video
+              controls
+              playsinline
+              preload="none"
+              poster="/assets/img/nov-snow-poster-v2.webp"
+              width="2560"
+              height="1440"
+              aria-label={english ? "Snow 1.1 installation animation" : "诗诺 1.1 · 安装动画演示"}
+            >
+              <source src="/assets/video/nov-snow-installation-v2.mp4" type="video/mp4" />
+              {english ? "Your browser does not support video playback." : "您的浏览器不支持视频播放。"}
+            </video>
+          </div>
+          <figcaption class="h-film-bar">
+            <span class="h-film-caption">
+              {english
+                ? "Snow 1.1 · Modular installation animation"
+                : "诗诺 1.1 · 装配式模块安装动画演示"}
+            </span>
+            <a class="h-more" href="/zh/products/snow11/">
+              {english ? "Explore Snow 1.1" : "查看诗诺 1.1 详情"} <Icon name="chevron-right" />
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
     {/* 项目实践：2×2 对齐 */}
     <section class="h-sec h-cases" aria-labelledby="cases-heading">
