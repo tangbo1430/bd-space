@@ -801,45 +801,38 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     padding-top: clamp(18px, 2.2vw, 32px);
     padding-left: 33%;
   }
-  /* Chinese founder band mirrors the original 16:9 presentation poster:
-     portrait anchors flush bottom-left while the oversized art lettering
-     interlocks cleanly across the open white space above the right shoulder. */
+  /* Chinese founder band preserves the bold poster scale using a strict
+     non-overlapping 2-column grid so the slogan artwork can never cover the
+     founder's sleeve or arm at any viewport width or aspect ratio. */
   .about-founder-stage--poster {
-    position: relative;
-    display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    min-height: clamp(460px, 56vw, 600px);
-    max-height: 88svh;
-    padding-right: 0;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: stretch;
+    column-gap: clamp(16px, 2.2vw, 44px);
+    min-height: clamp(500px, min(56vw, 84svh), 860px);
+    padding-right: clamp(20px, 2.8vw, 52px);
   }
   .about-founder-stage--poster .about-founder-portrait {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 92%;
-    width: auto;
-    padding-top: 0;
-    z-index: 1;
-    pointer-events: none;
+    align-self: end;
+    justify-self: start;
+    padding-top: clamp(24px, 3vw, 48px);
+    line-height: 0;
   }
   .about-founder-stage--poster .about-founder-portrait picture,
   .about-founder-stage--poster .about-founder-portrait img {
-    height: 100%;
-    width: auto;
-    max-width: none;
+    display: block;
+    width: clamp(220px, min(27vw, 46svh), 470px);
+    height: auto;
+    object-fit: contain;
+    object-position: left bottom;
   }
   .about-founder-stage--poster .about-founder-body {
-    position: absolute;
-    left: 22%;
-    right: 2.5%;
-    top: 0;
-    bottom: 0;
-    z-index: 2;
-    width: auto;
-    max-width: none;
-    padding: clamp(22px, 3vw, 48px) 0 clamp(22px, 3.2vw, 52px);
+    width: 100%;
+    max-width: 1380px;
+    padding-block: clamp(36px, 4.5vw, 72px);
+    display: flex;
+    flex-direction: column;
     justify-content: center;
   }
   .about-founder-id {
@@ -873,15 +866,17 @@ const globalDim = dim("/assets/img/about-story-global.webp");
   }
   .about-founder-stage--poster .about-founder-id {
     margin-bottom: clamp(10px, 1.2vw, 18px);
-    padding-left: 3%;
+    padding-left: 2%;
   }
   .about-founder-stage--poster .about-founder-art img {
-    width: min(100%, 126svh);
+    display: block;
+    width: 100%;
+    max-width: min(100%, 126svh);
     height: auto;
   }
   .about-founder-stage--poster .about-founder-motto {
-    padding-top: clamp(14px, 2vw, 28px);
-    padding-left: 24%;
+    padding-top: clamp(16px, 2vw, 28px);
+    padding-left: 30%;
   }
   :global(html[lang="en"]) .about-founder-motto {
     padding-left: 0;
