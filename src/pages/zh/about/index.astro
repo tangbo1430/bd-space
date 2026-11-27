@@ -14,6 +14,8 @@ const dim = (path: string) => {
 };
 
 const founderDim = dim("/assets/img/about-founder-edge-v2.webp");
+const sloganDim = dim("/assets/img/about-founder-slogan.webp");
+const sloganMobileDim = dim("/assets/img/about-founder-slogan-m.webp");
 const groundDim = dim("/assets/img/about-story-ground.webp");
 const understandingDim = dim("/assets/img/about-story-understanding.webp");
 const globalDim = dim("/assets/img/about-story-global.webp");
@@ -85,16 +87,23 @@ const globalDim = dim("/assets/img/about-story-global.webp");
                   <span>a crazy dream.</span>
                 </h2>
               ) : (
-                <h2 id="story-01" class="about-founder-lines">
-                  <span>
-                    就是这个狂<strong class="about-key" data-ren-axis>人</strong>
-                  </span>
-                  <span>
-                    总想革<em class="about-ren" data-ren-axis>人</em>家的<strong class="about-key">命</strong>
-                  </span>
-                  <span>
-                    把<em class="about-ren" data-ren-axis>人</em>生都 all 了 <strong class="about-key-en">in</strong>
-                  </span>
+                <h2 id="story-01" class="about-founder-art">
+                  <picture>
+                    <source
+                      media="(max-width: 767px)"
+                      srcset="/assets/img/about-founder-slogan-m.webp"
+                      width={sloganMobileDim.width}
+                      height={sloganMobileDim.height}
+                    />
+                    <img
+                      src="/assets/img/about-founder-slogan.webp"
+                      width={sloganDim.width}
+                      height={sloganDim.height}
+                      alt="就是这个狂人，总想革人家的命，把人生都 all 了 in"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </picture>
                 </h2>
               )}
             </div>
@@ -759,61 +768,31 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     object-position: left bottom;
   }
   .about-founder-body {
-    --founder-line-size: clamp(30px, 3.2vw, 56px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-block: clamp(48px, 6vw, 96px);
+    max-width: 780px;
   }
   .about-founder-copy {
     padding: 0;
   }
-  .about-founder-lines {
+  .about-founder-art {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: clamp(14px, 1.8vw, 28px);
-    font-size: var(--founder-line-size);
-    font-weight: 500;
-    line-height: 1.24;
-    letter-spacing: -0.02em;
-    color: var(--vp-ink, #161d1a);
+    line-height: 0;
   }
-  .about-founder-lines > span {
+  .about-founder-art picture,
+  .about-founder-art img {
     display: block;
-    white-space: nowrap;
-  }
-  /* Align the horizontal center of all three "人" characters on one vertical axis:
-     Line 1: 5 * 0.98em + 1.48em / 2 = 5.64em
-     Line 2: 3 * 0.98em + 1.00em / 2 = 3.44em -> +2.20em
-     Line 3: 1 * 0.98em + 1.00em / 2 = 1.48em -> +4.16em */
-  .about-founder-lines > span:nth-child(2) {
-    padding-left: 2.2em;
-  }
-  .about-founder-lines > span:nth-child(3) {
-    padding-left: 4.16em;
-  }
-  .about-ren {
-    font-style: normal;
-  }
-  .about-key {
-    font-size: 1.48em;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    vertical-align: baseline;
-  }
-  .about-key-en {
-    font-size: 1.55em;
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    color: var(--vp-accent, #007963);
+    width: 100%;
+    height: auto;
   }
   .about-founder-motto {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    padding-top: clamp(28px, 3vw, 44px);
-    padding-left: calc(var(--founder-line-size) * 4.16);
+    padding-top: clamp(24px, 2.8vw, 40px);
+    padding-left: 33%;
   }
   :global(html[lang="en"]) .about-founder-motto {
     padding-left: 0;
@@ -1435,9 +1414,6 @@ const globalDim = dim("/assets/img/about-story-global.webp");
     .about-founder-portrait img {
       width: clamp(240px, 37vw, 360px);
     }
-    .about-founder-body {
-      --founder-line-size: clamp(24px, 3.1vw, 34px);
-    }
     .about-pioneer-media {
       min-height: 0;
       aspect-ratio: 4 / 3;
@@ -1522,15 +1498,12 @@ const globalDim = dim("/assets/img/about-story-global.webp");
       row-gap: 12px;
     }
     .about-founder-body {
-      --founder-line-size: clamp(20px, 5.8vw, 28px);
       display: contents;
+      max-width: none;
     }
     .about-founder-copy {
       grid-area: copy;
-      padding: 40px 24px 8px;
-    }
-    .about-founder-lines {
-      gap: 10px;
+      padding: 36px 20px 8px;
     }
     .about-founder-portrait {
       grid-area: portrait;
