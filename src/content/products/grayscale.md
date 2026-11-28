@@ -1,6 +1,6 @@
 ---
 {
-  "name": "灰度空间",
+  "name": "灰度空间轻奢款",
   "enTag": "A quiet point of view",
   "order": 1,
   "tagline": "灰度之间，安放日常。",
@@ -50,46 +50,46 @@
   "specNote": "建筑面积含外墙，不含户外平台；各类面积分别计算，不相加。装运配置供参考，实际方案以项目约定为准。",
   "listed": true,
   "published": true,
-  "heroCaption": "灰度空间 · 外观 / 方案效果图",
+  "heroCaption": "灰度空间轻奢款 · 外观 / 方案效果图",
   "designGallery": [
     {
       "base": "nov-gray-courtyard",
-      "caption": "灰度空间 · 庭院外观 / 方案效果图",
+      "caption": "灰度空间轻奢款 · 庭院外观 / 方案效果图",
       "width": 1920,
       "height": 917,
       "mobileWidth": 960
     },
     {
       "base": "r4-grayscale-space-2",
-      "caption": "灰度空间 · 客厅 / 方案效果图",
+      "caption": "灰度空间轻奢款 · 客厅 / 方案效果图",
       "width": 1920,
       "height": 1290,
       "mobileWidth": 960
     },
     {
       "base": "r4-grayscale-space-3",
-      "caption": "灰度空间 · 餐厨 / 方案效果图",
+      "caption": "灰度空间轻奢款 · 餐厨 / 方案效果图",
       "width": 1920,
       "height": 1290,
       "mobileWidth": 960
     },
     {
       "base": "r4-grayscale-space-4",
-      "caption": "灰度空间 · 卧室 / 方案效果图",
+      "caption": "灰度空间轻奢款 · 卧室 / 方案效果图",
       "width": 1920,
       "height": 1290,
       "mobileWidth": 960
     },
     {
       "base": "r4-grayscale-space-5",
-      "caption": "灰度空间 · 客餐厅 / 方案效果图",
+      "caption": "灰度空间轻奢款 · 客餐厅 / 方案效果图",
       "width": 1920,
       "height": 1290,
       "mobileWidth": 960
     },
     {
       "base": "nov-gray-main",
-      "caption": "灰度空间 · 住宅立面 / 方案效果图",
+      "caption": "灰度空间轻奢款 · 住宅立面 / 方案效果图",
       "width": 2400,
       "height": 1147,
       "mobileWidth": 960
@@ -100,35 +100,35 @@
     {
       "src": "/assets/img/r4-grayscale-plan.webp",
       "viewerSrc": "/assets/img/r4-grayscale-plan.webp",
-      "caption": "灰度空间 · 平面图 / 技术示意",
+      "caption": "灰度空间轻奢款 · 平面图 / 技术示意",
       "width": 2400,
       "height": 1604
     },
     {
       "src": "/assets/img/r4-grayscale-drawing-1.webp",
       "viewerSrc": "/assets/img/r4-grayscale-drawing-1.webp",
-      "caption": "灰度空间 · A 立面 / 技术示意",
+      "caption": "灰度空间轻奢款 · A 立面 / 技术示意",
       "width": 832,
       "height": 430
     },
     {
       "src": "/assets/img/r4-grayscale-drawing-2.webp",
       "viewerSrc": "/assets/img/r4-grayscale-drawing-2.webp",
-      "caption": "灰度空间 · B 立面 / 技术示意",
+      "caption": "灰度空间轻奢款 · B 立面 / 技术示意",
       "width": 799,
       "height": 430
     },
     {
       "src": "/assets/img/r4-grayscale-drawing-3.webp",
       "viewerSrc": "/assets/img/r4-grayscale-drawing-3.webp",
-      "caption": "灰度空间 · C 立面 / 技术示意",
+      "caption": "灰度空间轻奢款 · C 立面 / 技术示意",
       "width": 974,
       "height": 438
     },
     {
       "src": "/assets/img/r4-grayscale-drawing-4.webp",
       "viewerSrc": "/assets/img/r4-grayscale-drawing-4.webp",
-      "caption": "灰度空间 · D 立面 / 技术示意",
+      "caption": "灰度空间轻奢款 · D 立面 / 技术示意",
       "width": 975,
       "height": 438
     }

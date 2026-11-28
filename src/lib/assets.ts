@@ -91,7 +91,7 @@ export const PRODUCT_HERO_ASSETS: Record<string, Img16> = {
   '4s': { base: 'product-4s-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '半打 4S 产品外观实景' },
   '5s': { base: 'product-5s-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '半打 5S 产品外观实景' },
   '6s': { base: 'product-6s-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '半打 6S 产品外观实景' },
-  grayscale: { base: 'product-grayscale-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '灰度空间产品外观实景' },
+  grayscale: { base: 'product-grayscale-hero', w: 1920, h: 1080, mw: 960, mh: 540, msuf: '-m', alt: '灰度空间轻奢款产品外观实景' },
 };
 
 /** M3 交付流程 step02 工厂生产实拍（无人物；panels 无移动档、上限 1280px） */
